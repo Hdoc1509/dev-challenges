@@ -1,0 +1,43 @@
+[class*="button--"] {
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0 2px 3px 0 #33333333;
+  border: none;
+}
+
+.button--default {
+  background-color: #e0e0e0;
+  color: #3f3f3f;
+
+  &:hover,
+  &:focus {
+    background-color: #aeaeae;
+  }
+}
+
+.button--outline {
+  --outline-color: #3d5afe;
+
+  background-color: #ffffff;
+  color: var(--outline-color);
+  outline: solid 1px var(--outline-color);
+  box-shadow: none;
+
+  &:hover,
+  &:focus {
+    background-color: #2962ff1a;
+  }
+}
+
+.button--text {
+  color: #3d5afe;
+  background-color: #ffffff;
+  box-shadow: none;
+
+  &:hover,
+  &:focus {
+    background-color: #2962ff1a;
+  }
+}

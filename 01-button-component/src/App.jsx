@@ -1,4 +1,5 @@
 import "./App.scss";
+import { Button } from "./components/Button";
 import { ButtonVariant } from "./components/ButtonVariant";
 
 function App() {
@@ -10,49 +11,49 @@ function App() {
       <main>
         <div className="buttons-grid">
           <ButtonVariant name="Default">
-            <button>Default</button>
+            <Button />
           </ButtonVariant>
           <ButtonVariant name="Outline">
-            <button>Default</button>
+            <Button variant="outline" />
           </ButtonVariant>
           <ButtonVariant name="Text">
-            <button>Default</button>
+            <Button variant="text" />
           </ButtonVariant>
           <ButtonVariant name="Disable shadow">
-            <button>Default</button>
+            <Button>Default</Button>
           </ButtonVariant>
           <ButtonVariant name="Disabled">
-            <button>Default</button>
+            <Button>Default</Button>
           </ButtonVariant>
           <ButtonVariant name="Text disabled">
-            <button>Default</button>
+            <Button>Default</Button>
           </ButtonVariant>
           <ButtonVariant name="Start icon">
-            <button>Default</button>
+            <Button>Default</Button>
           </ButtonVariant>
           <ButtonVariant name="End icon">
-            <button>Default</button>
+            <Button>Default</Button>
           </ButtonVariant>
           <ButtonVariant name="Small (sm)">
-            <button>Default</button>
+            <Button>Default</Button>
           </ButtonVariant>
           <ButtonVariant name="Medium (md)">
-            <button>Default</button>
+            <Button>Default</Button>
           </ButtonVariant>
           <ButtonVariant name="Large (lg)">
-            <button>Default</button>
+            <Button>Default</Button>
           </ButtonVariant>
           <ButtonVariant name="Color default">
-            <button>Default</button>
+            <Button>Default</Button>
           </ButtonVariant>
           <ButtonVariant name="Color primary">
-            <button>Default</button>
+            <Button>Default</Button>
           </ButtonVariant>
           <ButtonVariant name="Color secondary">
-            <button>Default</button>
+            <Button>Default</Button>
           </ButtonVariant>
           <ButtonVariant name="Color danger">
-            <button>Default</button>
+            <Button>Default</Button>
           </ButtonVariant>
         </div>
       </main>
