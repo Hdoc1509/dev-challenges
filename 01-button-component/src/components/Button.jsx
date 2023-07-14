@@ -1,8 +1,10 @@
+import classNames from "classnames";
 import "./Button.scss";
 
 export const Button = ({ variant }) => {
-  let btnClass = "btn";
-  if (variant) btnClass += ` btn--${variant}`;
+  const btnClass = classNames("btn", {
+    [`btn--${variant}`]: variant !== undefined,
+  });
 
   return <button className={btnClass}>Default</button>;
 };
