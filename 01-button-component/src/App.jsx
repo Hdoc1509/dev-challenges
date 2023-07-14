@@ -20,7 +20,7 @@ function App() {
             <Button variant="text" />
           </ButtonVariant>
           <ButtonVariant name="Disable shadow">
-            <Button>Default</Button>
+            <Button disableShadow>Default</Button>
           </ButtonVariant>
           <ButtonVariant name="Disabled">
             <Button>Default</Button>
