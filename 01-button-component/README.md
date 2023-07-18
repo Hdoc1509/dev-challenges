@@ -22,7 +22,7 @@
 
 - [x] User story: I can see different button types: default, outline and text
 - [x] User story: I can choose to disable box-shadow
-- [ ] User story: I can choose to disable the button
+- [x] User story: I can choose to disable the button
 - [ ] User story: I can choose to have an icon on the left or right (Use Google Icon and at least 5 variants)
 - [ ] User story: I can have different button sizes
 - [ ] User story: I can have different colors

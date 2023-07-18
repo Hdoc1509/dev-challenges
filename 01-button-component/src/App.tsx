@@ -20,40 +20,40 @@ function App() {
             <Button variant="text" />
           </ButtonVariant>
           <ButtonVariant name="Disable shadow">
-            <Button disableShadow>Default</Button>
+            <Button disableShadow />
           </ButtonVariant>
           <ButtonVariant name="Disabled">
-            <Button>Default</Button>
+            <Button disabled />
           </ButtonVariant>
           <ButtonVariant name="Text disabled">
-            <Button>Default</Button>
+            <Button variant="text" disabled />
           </ButtonVariant>
           <ButtonVariant name="Start icon">
-            <Button>Default</Button>
+            <Button />
           </ButtonVariant>
           <ButtonVariant name="End icon">
-            <Button>Default</Button>
+            <Button />
           </ButtonVariant>
           <ButtonVariant name="Small (sm)">
-            <Button>Default</Button>
+            <Button />
           </ButtonVariant>
           <ButtonVariant name="Medium (md)">
-            <Button>Default</Button>
+            <Button />
           </ButtonVariant>
           <ButtonVariant name="Large (lg)">
-            <Button>Default</Button>
+            <Button />
           </ButtonVariant>
           <ButtonVariant name="Color default">
-            <Button>Default</Button>
+            <Button />
           </ButtonVariant>
           <ButtonVariant name="Color primary">
-            <Button>Default</Button>
+            <Button />
           </ButtonVariant>
           <ButtonVariant name="Color secondary">
-            <Button>Default</Button>
+            <Button />
           </ButtonVariant>
           <ButtonVariant name="Color danger">
-            <Button>Default</Button>
+            <Button />
           </ButtonVariant>
         </div>
       </main>

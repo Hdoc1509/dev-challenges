@@ -11,9 +11,13 @@
   background-color: #e0e0e0;
   color: #3f3f3f;
 
-  &:hover,
-  &:focus {
+  &:hover:enabled,
+  &:focus:enabled {
     background-color: #aeaeae;
+  }
+
+  &:disabled {
+    color: #9e9e9e;
   }
 }
 
@@ -25,8 +29,8 @@
   outline: solid 1px var(--outline-color);
   box-shadow: none;
 
-  &:hover,
-  &:focus {
+  &:hover:enabled,
+  &:focus:enabled {
     background-color: #2962ff1a;
   }
 }
@@ -36,8 +40,8 @@
   background-color: #ffffff;
   box-shadow: none;
 
-  &:hover,
-  &:focus {
+  &:hover:enabled,
+  &:focus:enabled {
     background-color: #2962ff1a;
   }
 }
