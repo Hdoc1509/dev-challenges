@@ -16,6 +16,7 @@
 ## Overview
 
 <!-- TODO: Update screenshot once project has deployed -->
+
 ![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
 
 **Challenge**: Create a reusable button with all the states in the design and a page displaying all the states. You can work on the same project with other design system challenges. Use Front-end libraries like React or Vue. Don’t look at the existing solution. Fulfill user stories below:
@@ -23,7 +24,7 @@
 - [x] User story: I can see different button types: default, outline and text
 - [x] User story: I can choose to disable box-shadow
 - [x] User story: I can choose to disable the button
-- [ ] User story: I can choose to have an icon on the left or right (Use Google Icon and at least 5 variants)
+- [x] User story: I can choose to have an icon on the left or right (Use Google Icon and at least 5 variants)
 - [ ] User story: I can have different button sizes
 - [ ] User story: I can have different colors
 - [ ] User story: When I hover or focus, I can see visual indicators
@@ -34,12 +35,16 @@
 
 - [React.js](https://react.dev/)
 - [Vite](https://vitejs.dev/)
-- [Sass](https://sass-lang.com/) 
+- [Sass](https://sass-lang.com/)
+- [classnames](https://github.com/JedWatson/classnames)
+- [BEM](https://getbem.com/)
 
 ### What I learned
 
-<!-- TODO: Complete this section -->
-WIP
+In this challenge I learned:
+
+- Integrate easily `BEM` and `React.js` with `classnames`
+- Use `Material Icons` for a web project
 
 ## How To Use
 

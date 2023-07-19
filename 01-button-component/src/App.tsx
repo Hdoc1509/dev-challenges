@@ -29,10 +29,22 @@ function App() {
             <Button variant="text" disabled />
           </ButtonVariant>
           <ButtonVariant name="Start icon">
-            <Button />
+            <Button startIcon="add_shopping_cart" />
           </ButtonVariant>
-          <ButtonVariant name="End icon">
-            <Button />
+          <ButtonVariant name="End icon - filled">
+            <Button endIcon="add_shopping_cart" />
+          </ButtonVariant>
+          <ButtonVariant name="End icon - outlined">
+            <Button endIcon="add_shopping_cart" iconStyle="outlined" />
+          </ButtonVariant>
+          <ButtonVariant name="End icon - round">
+            <Button endIcon="add_shopping_cart" iconStyle="round" />
+          </ButtonVariant>
+          <ButtonVariant name="End icon - sharp">
+            <Button endIcon="add_shopping_cart" iconStyle="sharp" />
+          </ButtonVariant>
+          <ButtonVariant name="End icon - tow-tone">
+            <Button endIcon="add_shopping_cart" iconStyle="two-tone" />
           </ButtonVariant>
           <ButtonVariant name="Small (sm)">
             <Button />

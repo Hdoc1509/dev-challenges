@@ -1,4 +1,6 @@
 [class*="btn"] {
+  display: inline-flex;
+  gap: 8px;
   border-radius: 6px;
   padding: 8px 16px;
   font-size: 14px;
@@ -48,4 +50,19 @@
 
 .btn--no-shadow {
   box-shadow: none;
+}
+
+[class*="material-icons"] {
+  &.md-18 {
+    font-size: 18px;
+  }
+  &.md-24 {
+    font-size: 24px;
+  }
+  &.md-36 {
+    font-size: 36px;
+  }
+  &.md-48 {
+    font-size: 48px;
+  }
 }
