@@ -25,9 +25,9 @@
 - [x] User story: I can choose to disable box-shadow
 - [x] User story: I can choose to disable the button
 - [x] User story: I can choose to have an icon on the left or right (Use Google Icon and at least 5 variants)
-- [ ] User story: I can have different button sizes
+- [x] User story: I can have different button sizes
 - [ ] User story: I can have different colors
-- [ ] User story: When I hover or focus, I can see visual indicators
+- [x] User story: When I hover or focus, I can see visual indicators
 - [ ] User story: I can still access all button attributes
 - [ ] User story (optional): Show button in a similar way like the design or use [Storybook](https://storybook.js.org/). Otherwise, showing the button in multiple states is enough
 
@@ -45,6 +45,7 @@ In this challenge I learned:
 
 - Integrate easily `BEM` and `React.js` with `classnames`
 - Use `Material Icons` for a web project
+- Use CSS `custom properties` for re-calculate easily properties values
 
 ## How To Use
 

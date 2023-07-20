@@ -13,6 +13,7 @@
 .btn {
   background-color: #e0e0e0;
   color: #3f3f3f;
+  padding: var(--padding-y) calc(var(--padding-y) * 2);
 
   &:hover:enabled,
   &:focus:enabled {
@@ -51,6 +52,21 @@
 
 .btn--no-shadow {
   box-shadow: none;
+}
+
+.btn--sm {
+  --padding-y: 6px;
+  height: 32px;
+}
+
+.btn--md {
+  --padding-y: 8px;
+  height: 36px;
+}
+
+.btn--lg {
+  --padding-y: 11px;
+  height: 42px;
 }
 
 [class*="material-icons"] {

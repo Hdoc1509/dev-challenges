@@ -8,6 +8,7 @@ type Props = {
   startIcon?: string;
   endIcon?: string;
   iconStyle?: "outlined" | "round" | "sharp" | "two-tone";
+  size?: "sm" | "md" | "lg";
 };
 
 export const Button = ({
@@ -17,10 +18,12 @@ export const Button = ({
   startIcon,
   endIcon,
   iconStyle,
+  size = "md",
 }: Props) => {
   const btnClass = classNames("btn", {
     [`btn--${variant}`]: variant !== undefined,
     ["btn--no-shadow"]: disableShadow,
+    [`btn--${size}`]: size !== undefined,
   });
   const iconClass = classNames("md-18", {
     ["material-icons"]: iconStyle === undefined,

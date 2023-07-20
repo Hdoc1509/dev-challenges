@@ -49,13 +49,13 @@ function App() {
             <Button endIcon={buttonIcon} iconStyle="two-tone" />
           </ButtonVariant>
           <ButtonVariant name="Small (sm)">
-            <Button />
+            <Button size="sm" />
           </ButtonVariant>
           <ButtonVariant name="Medium (md)">
-            <Button />
+            <Button size="md" />
           </ButtonVariant>
           <ButtonVariant name="Large (lg)">
-            <Button />
+            <Button size="lg" />
           </ButtonVariant>
           <ButtonVariant name="Color default">
             <Button />
