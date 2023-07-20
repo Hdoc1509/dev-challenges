@@ -49,16 +49,14 @@
     box-shadow: none;
   }
 
-  &-sm {
+  &--sm {
     --padding-y: 6px;
     height: 32px;
   }
-
   &--md {
     --padding-y: 8px;
     height: 36px;
   }
-
   &--lg {
     --padding-y: 11px;
     height: 42px;
