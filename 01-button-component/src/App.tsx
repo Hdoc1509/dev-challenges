@@ -58,16 +58,16 @@ function App() {
             <Button size="lg" />
           </ButtonVariant>
           <ButtonVariant name="Color default">
-            <Button />
+            <Button color="default" />
           </ButtonVariant>
           <ButtonVariant name="Color primary">
-            <Button />
+            <Button color="primary" />
           </ButtonVariant>
           <ButtonVariant name="Color secondary">
-            <Button />
+            <Button color="secondary" />
           </ButtonVariant>
           <ButtonVariant name="Color danger">
-            <Button />
+            <Button color="danger" />
           </ButtonVariant>
         </div>
       </main>

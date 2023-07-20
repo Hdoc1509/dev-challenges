@@ -63,6 +63,34 @@
     --padding-y: 11px;
     height: 42px;
   }
+
+  &--primary {
+    background-color: #2962ff;
+    color: #fff;
+
+    &:hover:enabled,
+    &:focus:enabled {
+      background-color: #0039cb;
+    }
+  }
+  &--secondary {
+    background-color: #455a64;
+    color: #fff;
+
+    &:hover:enabled,
+    &:focus:enabled {
+      background-color: #1c313a;
+    }
+  }
+  &--danger {
+    background-color: #d32f2f;
+    color: #fff;
+
+    &:hover:enabled,
+    &:focus:enabled {
+      background-color: #9a0007;
+    }
+  }
 }
 
 [class*="material-icons"] {
