@@ -33,7 +33,7 @@ function App() {
           <ButtonVariant name="Start icon">
             <Button startIcon="add_shopping_cart" />
           </ButtonVariant>
-          <ButtonVariant name="End icon - filled">
+          <ButtonVariant name="End icon">
             <Button endIcon="add_shopping_cart" />
           </ButtonVariant>
           <ButtonVariant name="End icon - outlined">
