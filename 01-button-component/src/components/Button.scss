@@ -10,6 +10,7 @@
   background-color: #e0e0e0;
   color: #3f3f3f;
   padding: var(--padding-y) calc(var(--padding-y) * 2);
+  transition: background-color 0.1s ease;
 
   &:hover:enabled,
   &:focus:enabled {
@@ -23,7 +24,7 @@
   &--outline {
     --outline-color: #3d5afe;
 
-		background-color: transparent;
+    background-color: transparent;
     color: var(--outline-color);
     outline: solid 1px var(--outline-color);
     box-shadow: none;
