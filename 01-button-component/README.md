@@ -34,6 +34,7 @@
 ### Built With
 
 - [React.js](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
 - [Vite](https://vitejs.dev/)
 - [Sass](https://sass-lang.com/)
 - [classnames](https://github.com/JedWatson/classnames)
