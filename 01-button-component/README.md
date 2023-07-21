@@ -28,8 +28,8 @@
 - [x] User story: I can have different button sizes
 - [x] User story: I can have different colors
 - [x] User story: When I hover or focus, I can see visual indicators
-- [ ] User story: I can still access all button attributes
-- [ ] User story (optional): Show button in a similar way like the design or use [Storybook](https://storybook.js.org/). Otherwise, showing the button in multiple states is enough
+- [x] User story: I can still access all button attributes
+- [x] User story (optional): Show button in a similar way like the design or use [Storybook](https://storybook.js.org/). Otherwise, showing the button in multiple states is enough
 
 ### Built With
 
@@ -46,6 +46,7 @@ In this challenge I learned:
 - Integrate easily `BEM` and `React.js` with `classnames`
 - Use `Material Icons` for a web project
 - Use CSS `custom properties` for re-calculate easily properties values
+- Use `ComponentProps` utility for extend component props
 
 ## How To Use
 

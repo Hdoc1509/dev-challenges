@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import "./Button.scss";
+import { ComponentProps } from "react";
 
 type Props = {
   variant?: "outline" | "text";
@@ -10,17 +11,17 @@ type Props = {
   iconStyle?: "outlined" | "round" | "sharp" | "two-tone";
   size?: "sm" | "md" | "lg";
   color?: "default" | "primary" | "secondary" | "danger";
-};
+} & Omit<ComponentProps<"button">, 'className'>;
 
 export const Button = ({
   variant,
   disableShadow = false,
-  disabled = false,
   startIcon,
   endIcon,
   iconStyle,
   size = "md",
   color,
+  ...restProps
 }: Props) => {
   const btnClass = classNames("btn", {
     [`btn--${variant}`]: variant !== undefined,
@@ -34,7 +35,7 @@ export const Button = ({
   });
 
   return (
-    <button className={btnClass} disabled={disabled}>
+    <button {...restProps} className={btnClass}>
       {startIcon && <span className={iconClass}>{startIcon}</span>}
       Default
       {endIcon && <span className={iconClass}>{endIcon}</span>}
