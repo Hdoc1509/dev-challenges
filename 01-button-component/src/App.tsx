@@ -71,7 +71,12 @@ function App() {
           </ButtonVariant>
         </div>
       </main>
-      <footer></footer>
+      <footer>
+        <p className="credits">
+          created by <span className="username">Hdoc1509</span> -
+          devChallenges.io
+        </p>
+      </footer>
     </>
   );
 }
