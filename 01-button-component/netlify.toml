@@ -1,0 +1,3 @@
+[build]
+base = '/01-button-component'
+command = 'pnpm run build'
