@@ -2,9 +2,8 @@
 
 <div align="center">
   <h3>
-  <!-- TODO: Update link for demo. Deploy on netlify  -->
-    <a href="https://{your-demo-link.your-domain}">
-      Demo
+    <a href="https://hdoc-button-component.netlify.app/">
+      Solution
     </a>
     <span> | </span>
     <a href="https://devchallenges.io/challenges/ohgVTyJCbm5OZyTB2gNY">
@@ -15,9 +14,7 @@
 
 ## Overview
 
-<!-- TODO: Update screenshot once project has deployed -->
-
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![screenshot](screenshots/button-component.png)
 
 **Challenge**: Create a reusable button with all the states in the design and a page displaying all the states. You can work on the same project with other design system challenges. Use Front-end libraries like React or Vue. Don’t look at the existing solution. Fulfill user stories below:
 
