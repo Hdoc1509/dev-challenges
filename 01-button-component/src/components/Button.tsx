@@ -3,7 +3,14 @@ import "./Button.scss";
 import { ComponentProps } from "react";
 import type { MaterialIcon } from "@material-design-icons/font";
 
-type Props = {
+// Taken from https://stackoverflow.com/a/76212204
+type Prettify<T> = T extends infer R
+  ? {
+      [K in keyof R]: R[K];
+    }
+  : never;
+
+type Props = Prettify<{
   variant?: "outline" | "text";
   disableShadow?: boolean;
   disabled?: boolean;
@@ -12,7 +19,7 @@ type Props = {
   iconStyle?: "outlined" | "round" | "sharp" | "two-tone";
   size?: "sm" | "md" | "lg";
   color?: "default" | "primary" | "secondary" | "danger";
-} & Omit<ComponentProps<"button">, "className">;
+} & Omit<ComponentProps<"button">, 'className'>>;
 
 export const Button = ({
   variant,
