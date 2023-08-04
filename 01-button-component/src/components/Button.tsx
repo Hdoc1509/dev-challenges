@@ -1,17 +1,18 @@
 import classNames from "classnames";
 import "./Button.scss";
 import { ComponentProps } from "react";
+import type { MaterialIcon } from "@material-design-icons/font";
 
 type Props = {
   variant?: "outline" | "text";
   disableShadow?: boolean;
   disabled?: boolean;
-  startIcon?: string;
-  endIcon?: string;
+  startIcon?: MaterialIcon;
+  endIcon?: MaterialIcon;
   iconStyle?: "outlined" | "round" | "sharp" | "two-tone";
   size?: "sm" | "md" | "lg";
   color?: "default" | "primary" | "secondary" | "danger";
-} & Omit<ComponentProps<"button">, 'className'>;
+} & Omit<ComponentProps<"button">, "className">;
 
 export const Button = ({
   variant,
