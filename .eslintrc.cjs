@@ -1,29 +1,29 @@
-/* eslint-env node */
-
 module.exports = {
   root: true,
   env: { browser: true, es2020: true },
   extends: [
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:@typescript-eslint/recommended-type-checked",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
     "plugin:react-hooks/recommended",
-    "prettier",
   ],
-  parser: "@typescript-eslint/parser",
+  ignorePatterns: ["dist", ".eslintrc.cjs"],
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
-    project: ['./tsconfig.json','tsconfig.node.json'],
+    project: "./tsconfig.json",
     tsconfigRootDir: __dirname,
   },
+  parser: "@typescript-eslint/parser",
   plugins: ["react-refresh"],
   rules: {
     "react-refresh/only-export-components": [
       "warn",
       { allowConstantExport: true },
     ],
-    "react/prop-types": "off",
-    "@typescript-eslint/no-non-null-assertion": "off",
+  },
+  settings: {
+    react: { version: "detect" },
   },
 };
