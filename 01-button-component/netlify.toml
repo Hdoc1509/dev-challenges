@@ -1,4 +1,5 @@
 [build]
-base = '01-button-component'
-command = 'pnpm run build'
-publish = 'dist'
+	base = '01-button-component'
+	command = 'pnpm run build'
+	publish = 'dist'
+	ignore = 'bash ../scripts/docs-check.sh 01-button-component'
