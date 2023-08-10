@@ -54,8 +54,11 @@ To clone and run this application, you'll need [Git](https://git-scm.com), [Node
 # Clone this repository
 git clone https://github.com/Hdoc1509/dev-challenges
 
+# install linter-related dependencies
+cd dev-challenges && pnpm install
+
 # go to 01-button-component
-cd dev-challenges/01-button-component
+cd 01-button-component
 
 # Install dependencies
 pnpm install
