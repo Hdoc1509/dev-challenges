@@ -1,0 +1,50 @@
+{
+  "name": "@hdoc/material-icon",
+  "private": false,
+  "version": "1.0.0",
+  "type": "module",
+  "license": "MIT",
+  "author": "Héctor Ochoa <hector.ochoa.dev@gmail.com>",
+  "main": "dist/material-icon.js",
+  "types": "dist/main.d.ts",
+  "files": ["dist"],
+  "sideEffets": ["**/*.css"],
+  "prepublishOnly": "pnpm run build ",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hdoc1509/dev-challenges.git",
+    "directory": "packages/material-icon"
+  },
+  "bugs": {
+    "url": "https://github.com/Hdoc1509/dev-challenges/issues"
+  },
+  "homepage": "https://github.com/Hdoc1509/dev-challenges/tree/master/packages/material-icon/#readme",
+  "peerDependencies": {
+    "@material-design-icons/font": "0.14.10",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@material-design-icons/font": "0.14.10",
+    "@monorepo/tsconfig": "workspace:*",
+    "@types/node": "20.4.10",
+    "@types/react": "18.2.15",
+    "@types/react-dom": "18.2.7",
+    "@vitejs/plugin-react-swc": "3.3.2",
+    "clsx": "2.0.0",
+    "eslint": "8.45.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "sass": "1.65.0",
+    "typescript": "5.0.2",
+    "vite": "4.4.5",
+    "vite-plugin-dts": "3.5.1",
+    "vite-plugin-lib-inject-css": "1.2.0"
+  }
+}
