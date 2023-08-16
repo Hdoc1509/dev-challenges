@@ -1,5 +1,4 @@
 [build]
-	base = 'button-component'
-	command = 'pnpm run build'
-	publish = 'dist'
-	ignore = 'bash ../scripts/docs-check.sh button-component'
+	command = 'nx run build button-component'
+	publish = 'apps/button-component/dist'
+	ignore = 'bash ./scripts/docs-check.sh apps/button-component'
