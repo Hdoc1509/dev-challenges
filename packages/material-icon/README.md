@@ -47,7 +47,7 @@ Type: `string`
 
 The color of the icon.
 
-Type: `'primary'| 'secondary'| 'error'| 'warning'| 'info'| 'success'`
+Type: `'primary' | 'secondary' | 'error' | 'warning' | 'info' | 'success'`
 
 ---
 
@@ -71,7 +71,7 @@ Type: `boolean`
 
 Font size for the icon.
 
-Type: `'small'| 'medium'| 'large'`
+Type: `'small' | 'medium' | 'large'`
 
 ---
 
@@ -79,7 +79,7 @@ Type: `'small'| 'medium'| 'large'`
 
 Variant of the icon.
 
-Type: `'outlined'|'round'|'sharp'|'two-tone'`
+Type: `'outlined' | 'round' | 'sharp' | 'two-tone'`
 
 ## CSS
 
