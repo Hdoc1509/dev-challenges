@@ -1,5 +1,5 @@
 {
-  "name": "01-button-component",
+  "name": "button-component",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -29,8 +29,5 @@
   "engines": {
     "node": ">=18",
     "pnpm": ">=8"
-  },
-	"eslintConfig": {
-		"extends": "../.eslintrc.cjs"
-	}
+  }
 }
