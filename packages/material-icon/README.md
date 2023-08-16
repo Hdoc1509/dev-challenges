@@ -93,6 +93,9 @@ The following class names are used for styling with CSS:
 | `.material-icons--warning`   | `color="warning"`   |
 | `.material-icons--info`      | `color="info"`      |
 | `.material-icons--success`   | `color="success"`   |
+| `.material-icons--small`     | `size="small"`      |
+| `.material-icons--medium`    | `size="medium"`     |
+| `.material-icons--large`     | `size="large"`      |
 | `.material-icons--disabled`  | `disabled=true`     |
 | `.material-icons-outlined`   | `style="outlined"`  |
 | `.material-icons-round`      | `style="round"`     |
