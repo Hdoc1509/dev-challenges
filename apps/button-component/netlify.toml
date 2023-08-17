@@ -1,4 +1,4 @@
 [build]
-	command = 'nx run build button-component'
+	command = 'nx bulid button-component'
 	publish = 'apps/button-component/dist'
 	ignore = 'bash ./scripts/docs-check.sh apps/button-component'
