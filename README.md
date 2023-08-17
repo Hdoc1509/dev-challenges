@@ -4,11 +4,11 @@ This repository hosts my solutions for [Front-end Developer path](https://devcha
 
 ## Challenges
 
-- [x] [Button component](/button-component/)
-- [ ] [Input component](/input-component/)
-- [ ] [Windbnb](/windbnb/)
-- [ ] [Todo app](/todo-app/)
-- [ ] [Random quote generator](/random-quote-generator/)
-- [ ] [Country quiz](/country-quiz/)
-- [ ] [Weather app](/weather-app/)
-- [ ] [Github Jobs](/github-jobs/)
+- [x] [Button component](/apps/button-component/)
+- [ ] [Input component](/apps/input-component/)
+- [ ] [Windbnb](/apps/windbnb/)
+- [ ] [Todo app](/apps/todo-app/)
+- [ ] [Random quote generator](/apps/random-quote-generator/)
+- [ ] [Country quiz](/apps/country-quiz/)
+- [ ] [Weather app](/apps/weather-app/)
+- [ ] [Github Jobs](/apps/github-jobs/)
