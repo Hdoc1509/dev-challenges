@@ -78,9 +78,6 @@ importers:
 
   apps/input-component:
     dependencies:
-      '@hdoc/material-icon':
-        specifier: workspace:*
-        version: link:../../packages/material-icon
       clsx:
         specifier: 2.0.0
         version: 2.0.0
@@ -91,6 +88,9 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
     devDependencies:
+      '@hdoc/material-icons-react':
+        specifier: workspace:^
+        version: link:../../packages/material-icons-react
       '@material-design-icons/font':
         specifier: 0.14.10
         version: 0.14.10
@@ -113,7 +113,7 @@ importers:
         specifier: ^4.4.5
         version: 4.4.5(@types/node@20.5.0)(sass@1.65.0)
 
-  packages/material-icon:
+  packages/material-icons-react:
     devDependencies:
       '@material-design-icons/font':
         specifier: 0.14.10
