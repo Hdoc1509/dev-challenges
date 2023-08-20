@@ -5,7 +5,7 @@ Simple component for material design icons in your React app.
 ## Installation
 
 ```bash
-npm install @hdoc/material-icon @material-design-icons/font
+npm install @hdoc/material-icons-react @material-design-icons/font
 ```
 
 ## Usage
@@ -21,7 +21,7 @@ Check [@material-design-icons/font docs](https://www.npmjs.com/package/@material
 Then, in your `App.jsx` or another file:
 
 ```jsx
-import { Icon } from "@hdoc/material-icon";
+import { Icon } from "@hdoc/material-icons-react";
 
 function App() {
   return (
