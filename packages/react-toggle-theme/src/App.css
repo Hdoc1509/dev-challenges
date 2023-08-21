@@ -1,0 +1,19 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Example for overrive default colors */
+.theme-button {
+  --hover-light-bg-color: transparent;
+  --active-light-bg-color: #e6e6e6;
+
+  --hover-dark-bg-color: #3f3f3f;
+  --active-dark-bg-color: #595959;
+}
+
+.dark-icon {
+  color: skyblue
+}
