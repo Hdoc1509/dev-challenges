@@ -1,11 +1,11 @@
 {
-  "name": "@hdoc/material-icons-react",
+  "name": "@hdoc/react-material-icons",
   "private": false,
   "version": "1.0.0",
   "type": "module",
   "license": "MIT",
   "author": "Héctor Ochoa <hector.ochoa.dev@gmail.com>",
-  "main": "dist/material-icons-react.js",
+  "main": "dist/react-material-icons.js",
   "types": "dist/main.d.ts",
   "files": [
     "dist"
@@ -23,12 +23,12 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Hdoc1509/dev-challenges.git",
-    "directory": "packages/material-icon"
+    "directory": "packages/react-material-icons"
   },
   "bugs": {
     "url": "https://github.com/Hdoc1509/dev-challenges/issues"
   },
-  "homepage": "https://github.com/Hdoc1509/dev-challenges/tree/master/packages/material-icons-react/#readme",
+  "homepage": "https://github.com/Hdoc1509/dev-challenges/tree/master/packages/react-material-icons/#readme",
   "peerDependencies": {
     "@material-design-icons/font": "0.14.10",
     "react": "18.2.0",
