@@ -49,7 +49,7 @@ body[data-theme="light"] { /* this is optional */
   ...
 }
 body[date-theme="dark"] {
-
+  ...
 }
 
 body[data-theme="light"] .my-class { /* this is optional */
@@ -86,22 +86,22 @@ The following CSS custom properties are used by `.theme-button` class:
 
 `--hover-light-bg-color`
 
-Background color of the icon when `hover` and the theme is `light`.
+Background color of the button when `hover` and the theme is `light`.
 
 ---
 
 `--active-light-bg-color`
 
-Background color of the icon when `click` and the theme is `light`.
+Background color of the button when `click` and the theme is `light`.
 
 ---
 
 `--hover-dark-bg-color`
 
-Background color of the icon when `hover` and the theme is `dark`.
+Background color of the button when `hover` and the theme is `dark`.
 
 ---
 
 `--active-dark-bg-color`
 
-Background color of the icon when `click` and the theme is `dark`.
+Background color of the button when `click` and the theme is `dark`.
