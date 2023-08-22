@@ -3,7 +3,7 @@ import { clsx } from "clsx";
 import "./Icon.scss";
 
 type IconProps = {
-  style?: "outlined" | "round" | "sharp" | "two-tone";
+  variant?: "outlined" | "round" | "sharp" | "two-tone";
   size?: "small" | "medium" | "large";
   name: IconName;
   color?: "primary" | "secondary" | "error" | "warning" | "info" | "success";
@@ -12,15 +12,15 @@ type IconProps = {
 };
 
 export const Icon = ({
-  style,
+  variant,
   size = "medium",
   name,
   color,
   className,
   disabled,
-}: IconProps) => {
+}: IconProps): JSX.Element => {
   const iconClass = clsx(
-    style === undefined ? "material-icons" : `material-icons-${style}`,
+    variant === undefined ? "material-icons" : `material-icons-${variant}`,
     {
       [`material-icons--${size}`]: size,
       [`material-icons--${color}`]: color,

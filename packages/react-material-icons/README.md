@@ -27,7 +27,7 @@ function App() {
   return (
     <>
       ...
-      <Icon name="shopping_cart" size="large" style="oulined" />
+      <Icon name="shopping_cart" size="large" variant="oulined" />
     </>
   );
 }
@@ -75,7 +75,7 @@ Type: `'small' | 'medium' | 'large'`
 
 ---
 
-`style`
+`variant`
 
 Variant of the icon.
 
@@ -85,21 +85,21 @@ Type: `'outlined' | 'round' | 'sharp' | 'two-tone'`
 
 The following class names are used for styling with CSS:
 
-| Class                             | Prop                |
-| --------------------------------- | ------------------- |
-| `.material-icons--primary` (\*)   | `color="primary"`   |
-| `.material-icons--secondary` (\*) | `color="secondary"` |
-| `.material-icons--error`          | `color="error"`     |
-| `.material-icons--warning`        | `color="warning"`   |
-| `.material-icons--info`           | `color="info"`      |
-| `.material-icons--success`        | `color="success"`   |
-| `.material-icons--small`          | `size="small"`      |
-| `.material-icons--medium`         | `size="medium"`     |
-| `.material-icons--large`          | `size="large"`      |
-| `.material-icons--disabled`       | `disabled=true`     |
-| `.material-icons-outlined`        | `style="outlined"`  |
-| `.material-icons-round`           | `style="round"`     |
-| `.material-icons-sharp`           | `style="sharp"`     |
-| `.material-icons-two-tone`        | `style="two-tone"`  |
+| Class                             | Prop                 |
+| --------------------------------- | -------------------- |
+| `.material-icons--primary` (\*)   | `color="primary"`    |
+| `.material-icons--secondary` (\*) | `color="secondary"`  |
+| `.material-icons--error`          | `color="error"`      |
+| `.material-icons--warning`        | `color="warning"`    |
+| `.material-icons--info`           | `color="info"`       |
+| `.material-icons--success`        | `color="success"`    |
+| `.material-icons--small`          | `size="small"`       |
+| `.material-icons--medium`         | `size="medium"`      |
+| `.material-icons--large`          | `size="large"`       |
+| `.material-icons--disabled`       | `disabled=true`      |
+| `.material-icons-outlined`        | `variant="outlined"` |
+| `.material-icons-round`           | `variant="round"`    |
+| `.material-icons-sharp`           | `variant="sharp"`    |
+| `.material-icons-two-tone`        | `variant="two-tone"` |
 
 **(\*): Class names those has no built-in styles.**

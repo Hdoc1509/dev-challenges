@@ -12,7 +12,7 @@ function App() {
       <button onClick={toggleError}>toggle error</button>
       <Icon
         name="shopping_cart"
-        style="outlined"
+        variant="outlined"
         size="large"
         color="success"
         disabled={error}
