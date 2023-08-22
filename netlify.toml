@@ -1,5 +1,0 @@
-[[redirects]]
-from = '/01-button-component/*'
-to = 'hdoc-button-component.netlify.app/:splat'
-status = 200
-force = true
