@@ -41,13 +41,13 @@ function App() {
 Finally, you will need to add your styles manually:
 
 ```css
-[data-theme="dark"] { ... }
-/* or */
-body[data-theme="dark"] { ... }
+/* For light theme: */
+[data-theme="light"] { ... }
+[data-theme="light"] .my-class { ... }
 
+/* For dark theme: */
+[data-theme="dark"] { ... }
 [data-theme="dark"] .my-class { ... }
-/* or */
-body[data-theme="dark"] .my-class { ... }
 ```
 
 ## Props
