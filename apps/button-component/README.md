@@ -36,6 +36,8 @@
 - [Sass](https://sass-lang.com/)
 - [classnames](https://github.com/JedWatson/classnames)
 - [BEM](https://getbem.com/)
+- [@hdoc/react-material-icons](/packages/react-material-icons/)
+- [@hdoc/react-toggle-theme](/packages/react-toggle-theme/)
 
 ### What I learned
 
