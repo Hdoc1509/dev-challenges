@@ -49,3 +49,13 @@ footer {
   top: 5px;
   right: 30px;
 }
+
+.theme-button {
+  --icon-color: #ffa500;
+
+  color: var(--icon-color);
+
+  body[data-theme="dark"] & {
+    --icon-color: #87ceeb;
+  }
+}
