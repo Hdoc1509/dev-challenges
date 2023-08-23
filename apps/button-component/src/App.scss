@@ -38,7 +38,7 @@ footer {
 
   color: var(--icon-color);
 
-  body[data-theme="dark"] & {
+  [data-theme="dark"] & {
     --icon-color: #87ceeb;
   }
 }
