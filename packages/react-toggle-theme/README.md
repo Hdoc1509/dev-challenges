@@ -84,7 +84,7 @@ Default class name
 
 `theme-button--full-rounded`
 
-Styles the button with rounded corners when `fullRounded=true`
+Styles the button as a circle when `fullRounded=true`
 
 ## CSS custom properties
 
