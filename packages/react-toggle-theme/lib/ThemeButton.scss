@@ -20,6 +20,10 @@
     background-color: var(--active-light-bg-color);
   }
 
+  &--full-rounded {
+    border-radius: 50%;
+  }
+
   body[data-theme="dark"] & {
     &:hover {
       background-color: var(--hover-dark-bg-color);

@@ -34,6 +34,7 @@ function App() {
       <ThemeButton
         lightElement={<span>Light</span>}
         darkElement={<span>Dark</span>}
+        fullRounded
       />
     </>
   );
@@ -60,7 +61,7 @@ body[data-theme="dark"] .my-class {
 }
 ```
 
-### Props
+## Props
 
 `lightElement`
 
@@ -78,9 +79,25 @@ Type: `ReactNode`
 
 ---
 
-### CSS
+`fullRounded`
 
-The button component uses the class `theme-button`.
+Whether to render the button with rounded corners as a circle.
+
+Type: `boolean`
+
+## CSS classes
+
+`theme-button`
+
+Default class name
+
+---
+
+`theme-button--full-rounded`
+
+Styles the button with rounded corners when `fullRounded=true`
+
+## CSS custom properties
 
 The following CSS custom properties are used by `.theme-button` class:
 

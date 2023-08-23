@@ -5,11 +5,13 @@ import "./ThemeButton.scss";
 type ThemeButtonProps = {
   lightElement: ReactNode;
   darkElement: ReactNode;
+  fullRounded?: boolean;
 };
 
 export const ThemeButton = ({
   darkElement,
-  lightElement
+  lightElement,
+  fullRounded = false,
 }: ThemeButtonProps) => {
   const [theme, setTheme] = useState<Theme>(getTheme());
 
@@ -21,8 +23,13 @@ export const ThemeButton = ({
   };
 
   return (
-    <button className="theme-button" onClick={handleToggleTheme}>
-      {theme === 'light' ? lightElement : darkElement}
+    <button
+      className={`theme-button${
+        fullRounded ? " theme-button--full-rounded" : ""
+      }`}
+      onClick={handleToggleTheme}
+    >
+      {theme === "light" ? lightElement : darkElement}
     </button>
   );
 };

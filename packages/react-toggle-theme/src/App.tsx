@@ -1,5 +1,5 @@
 import { ThemeButton } from "../lib/ThemeButton";
-import { Icon } from '@hdoc/react-material-icons'
+import { Icon } from "@hdoc/react-material-icons";
 import "./App.css";
 
 function App() {
@@ -7,6 +7,7 @@ function App() {
     <ThemeButton
       lightElement={<Icon name="light_mode" size="small" color="warning" />}
       darkElement={<Icon name="dark_mode" size="small" className="dark-icon" />}
+      fullRounded
     />
   );
 }
