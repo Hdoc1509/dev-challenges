@@ -1,15 +1,8 @@
 import { Button } from "./components/Button";
 import { ButtonVariant } from "./components/ButtonVariant";
 import { ThemeButton } from "@hdoc/react-toggle-theme";
+import { Icon } from "@hdoc/react-material-icons";
 import "./App.scss";
-
-const LightThemeIcon = () => (
-  <span className="material-icons md-18">light_mode</span>
-);
-
-const DarkThemeIcon = () => (
-  <span className="material-icons md-18">dark_mode</span>
-);
 
 function App() {
   const buttonIcon = "shopping_cart";
@@ -20,8 +13,9 @@ function App() {
         <h1>Buttons</h1>
         <div className="theme-switcher">
           <ThemeButton
-            lightElement={<LightThemeIcon />}
-            darkElement={<DarkThemeIcon />}
+            lightElement={<Icon name="light_mode" />}
+            darkElement={<Icon name="dark_mode" />}
+            fullRounded
           />
         </div>
       </header>

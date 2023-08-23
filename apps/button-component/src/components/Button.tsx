@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import "./Button.scss";
 import { ComponentProps } from "react";
-import type { MaterialIcon } from "@material-design-icons/font";
+import { Icon } from "@hdoc/react-material-icons";
 
 // Taken from https://stackoverflow.com/a/76212204
 type Prettify<T> = T extends infer R
@@ -10,13 +10,15 @@ type Prettify<T> = T extends infer R
     }
   : never;
 
+type IconProps = ComponentProps<typeof Icon>;
+
 type Props = Prettify<{
   variant?: "outline" | "text";
   disableShadow?: boolean;
   disabled?: boolean;
-  startIcon?: MaterialIcon;
-  endIcon?: MaterialIcon;
-  iconStyle?: "outlined" | "round" | "sharp" | "two-tone";
+  startIcon?: IconProps['name'];
+  endIcon?: IconProps['name'];
+  iconStyle?: IconProps['variant'];
   size?: "sm" | "md" | "lg";
   color?: "default" | "primary" | "secondary" | "danger";
 } & Omit<ComponentProps<"button">, 'className'>>;
@@ -37,16 +39,12 @@ export const Button = ({
     [`btn--${size}`]: size !== undefined,
     [`btn--${color}`]: color !== undefined && color !== "default",
   });
-  const iconClass = classNames("md-18", {
-    ["material-icons"]: iconStyle === undefined,
-    [`material-icons-${iconStyle}`]: iconStyle !== undefined,
-  });
 
   return (
     <button {...restProps} className={btnClass}>
-      {startIcon && <span className={iconClass}>{startIcon}</span>}
+      {startIcon && <Icon name={startIcon} variant={iconStyle} size="small" />}
       Default
-      {endIcon && <span className={iconClass}>{endIcon}</span>}
+      {endIcon && <Icon name={endIcon} variant={iconStyle} size="small" />}
     </button>
   );
 };
