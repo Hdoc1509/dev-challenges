@@ -10,16 +10,13 @@ npm install @hdoc/react-toggle-theme
 
 ## Usage
 
-Import `load-theme.js` inside `<head>` tag in your `index.html`:
+First, import `load-theme.js` in your `index.html`:
 
 ```html
-<head>
-  ...
-  <script
-    type="module"
-    src="/path/to/@hdoc/react-toggle-theme/dist/load-theme.js"
-  ></script>
-</head>
+<script
+  type="module"
+  src="/path/to/@hdoc/react-toggle-theme/dist/load-theme.js"
+></script>
 ```
 
 Then, in your `App.jsx` or another file:
@@ -41,24 +38,16 @@ function App() {
 }
 ```
 
-This component will set the `document.body.dataset.theme` to `light` or `dark`.
-
-You will need to add your styles manually:
+Finally, you will need to add your styles manually:
 
 ```css
-body[data-theme="light"] { /* this is optional */
-  ...
-}
-body[date-theme="dark"] {
-  ...
-}
+[data-theme="dark"] { ... }
+/* or */
+body[data-theme="dark"] { ... }
 
-body[data-theme="light"] .my-class { /* this is optional */
-  ...
-}
-body[data-theme="dark"] .my-class {
-  ...
-}
+[data-theme="dark"] .my-class { ... }
+/* or */
+body[data-theme="dark"] .my-class { ... }
 ```
 
 ## Props
