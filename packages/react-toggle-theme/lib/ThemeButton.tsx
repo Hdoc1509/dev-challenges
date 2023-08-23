@@ -12,7 +12,7 @@ export const ThemeButton = ({
   darkElement,
   lightElement,
   fullRounded = false,
-}: ThemeButtonProps) => {
+}: ThemeButtonProps): JSX.Element => {
   const [theme, setTheme] = useState<Theme>(getTheme());
 
   const handleToggleTheme = () => {
