@@ -1,7 +1,7 @@
 import { Button } from "./components/Button";
 import { ButtonVariant } from "./components/ButtonVariant";
-import { ThemeButton } from "@hdoc/react-toggle-theme";
-import { Icon } from "@hdoc/react-material-icons";
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
 import "./App.scss";
 
 function App() {
@@ -9,18 +9,9 @@ function App() {
 
   return (
     <>
-      <header>
-        <h1>Buttons</h1>
-        <div className="theme-switcher">
-          <ThemeButton
-            lightElement={<Icon name="light_mode" />}
-            darkElement={<Icon name="dark_mode" />}
-            fullRounded
-          />
-        </div>
-      </header>
+      <Header />
       <main>
-        <div className="buttons-grid">
+        <section className="buttons-grid">
           <ButtonVariant name="Default">
             <Button />
           </ButtonVariant>
@@ -78,14 +69,9 @@ function App() {
           <ButtonVariant name="Color danger">
             <Button color="danger" />
           </ButtonVariant>
-        </div>
+        </section>
       </main>
-      <footer>
-        <p className="credits">
-          created by <span className="username">Hdoc1509</span> -
-          devChallenges.io
-        </p>
-      </footer>
+      <Footer />
     </>
   );
 }

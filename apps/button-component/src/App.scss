@@ -10,35 +10,3 @@
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 16px;
 }
-
-footer {
-  margin: 1.5rem 0;
-}
-
-.credits {
-  color: #a9a9a9;
-  font-family: "Montserrat", sans-serif;
-  text-align: center;
-}
-
-.username {
-  text-decoration: underline;
-}
-
-.theme-switcher {
-  position: absolute;
-  top: 5px;
-  right: 30px;
-}
-
-.theme-button {
-  --hover-light-bg-color: #e0e0e0;
-
-  --icon-color: #ffa500;
-
-  color: var(--icon-color);
-
-  [data-theme="dark"] & {
-    --icon-color: #87ceeb;
-  }
-}
