@@ -47,6 +47,9 @@ importers:
 
   apps/button-component:
     dependencies:
+      '@hdoc/react-material-icons':
+        specifier: workspace:1.0.0
+        version: link:../../packages/react-material-icons
       '@hdoc/react-toggle-theme':
         specifier: workspace:1.0.0
         version: link:../../packages/react-toggle-theme
@@ -81,6 +84,12 @@ importers:
 
   apps/input-component:
     dependencies:
+      '@hdoc/react-material-icons':
+        specifier: workspace:1.0.0
+        version: link:../../packages/react-material-icons
+      '@hdoc/react-toggle-theme':
+        specifier: workspace:1.0.0
+        version: link:../../packages/react-toggle-theme
       clsx:
         specifier: 2.0.0
         version: 2.0.0
@@ -91,9 +100,6 @@ importers:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
     devDependencies:
-      '@hdoc/react-material-icons':
-        specifier: workspace:1.0.0
-        version: link:../../packages/react-material-icons
       '@material-design-icons/font':
         specifier: ^0.14.10
         version: 0.14.10
@@ -115,39 +121,6 @@ importers:
       vite:
         specifier: 4.4.5
         version: 4.4.5(@types/node@20.5.0)(sass@1.65.0)
-
-  packages/material-icons-react:
-    devDependencies:
-      '@material-design-icons/font':
-        specifier: 0.14.10
-        version: 0.14.10
-      '@vitejs/plugin-react-swc':
-        specifier: 3.3.2
-        version: 3.3.2(vite@4.4.5)
-      clsx:
-        specifier: 2.0.0
-        version: 2.0.0
-      react:
-        specifier: 18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: 18.2.0
-        version: 18.2.0(react@18.2.0)
-      sass:
-        specifier: 1.65.0
-        version: 1.65.0
-      typescript:
-        specifier: 5.0.2
-        version: 5.0.2
-      vite:
-        specifier: 4.4.5
-        version: 4.4.5(@types/node@20.5.0)(sass@1.65.0)
-      vite-plugin-dts:
-        specifier: 3.5.1
-        version: 3.5.1(@types/node@20.5.0)(typescript@5.0.2)(vite@4.4.5)
-      vite-plugin-lib-inject-css:
-        specifier: 1.2.0
-        version: 1.2.0(vite@4.4.5)
 
   packages/react-material-icons:
     devDependencies:
