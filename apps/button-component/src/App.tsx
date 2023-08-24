@@ -1,7 +1,6 @@
 import { Button } from "./components/Button";
 import { ButtonVariant } from "./components/ButtonVariant";
-import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
+import { Footer, HeaderWithTheme as Header } from "@internal/components";
 import "./App.scss";
 
 function App() {
@@ -9,7 +8,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header title="Buttons" />
       <main>
         <section className="buttons-grid">
           <ButtonVariant name="Default">

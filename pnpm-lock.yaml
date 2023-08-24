@@ -53,6 +53,9 @@ importers:
       '@hdoc/react-toggle-theme':
         specifier: workspace:1.0.0
         version: link:../../packages/react-toggle-theme
+      '@internal/components':
+        specifier: workspace:1.0.0
+        version: link:../../libs/components
       classnames:
         specifier: ^2.3.2
         version: 2.3.2
@@ -121,6 +124,15 @@ importers:
       vite:
         specifier: 4.4.5
         version: 4.4.5(@types/node@20.5.0)(sass@1.65.0)
+
+  libs/components:
+    dependencies:
+      '@hdoc/react-material-icons':
+        specifier: ^1.0.0
+        version: link:../../packages/react-material-icons
+      '@hdoc/react-toggle-theme':
+        specifier: ^1.0.0
+        version: link:../../packages/react-toggle-theme
 
   packages/react-material-icons:
     devDependencies:
