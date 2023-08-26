@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+    "lint": "eslint --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "gen:app": "hygen app new"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +21,7 @@
     "eslint-plugin-react": "^7.33.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
+    "hygen": "6.2.11",
     "nx": "^16.6.0",
     "prettier": "^3.0.1",
     "typescript": "^5.1.6"

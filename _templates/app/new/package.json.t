@@ -1,0 +1,35 @@
+---
+to: apps/<%= name %>/package.json
+---
+
+{
+  "name": "<%= name %>",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@hdoc/react-material-icons": "workspace:1.0.0",
+    "@hdoc/react-toggle-theme": "workspace:1.0.0",
+    "@internal/components": "workspace:1.0.0",
+    "clsx": "2.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@material-design-icons/font": "^0.14.10",
+    "@vitejs/plugin-react-swc": "3.3.2",
+    "sass": "1.65.0",
+    "typescript": "5.1.6",
+    "vite": "4.4.5"
+  },
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=8"
+  }
+}
