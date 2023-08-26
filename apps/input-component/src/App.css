@@ -5,3 +5,9 @@
   margin: 0 auto;
   padding: 0 1rem;
 }
+
+.inputs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

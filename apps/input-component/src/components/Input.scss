@@ -1,0 +1,41 @@
+$focus-color: #2962FF;
+
+.input-label {
+  display: flex;
+  flex-direction: column;
+
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+
+  &:focus-within {
+    color: $focus-color;
+  }
+}
+
+.input-label > .input {
+  width: 200px;
+
+  border: 1px solid #828282;
+  border-radius: 8px;
+  box-sizing: border-box;
+  outline: none;
+  padding: 18px 12px;
+  margin-top: 2px;
+
+  font-size: 14px;
+
+  &::placeholder {
+    font-family: "Noto Sans JP", sans-serif;
+    font-weight: 500;
+    color: #828282;
+  }
+
+  &:hover {
+    border-color: #333;
+  }
+
+  &:focus {
+    border-color: $focus-color;
+  }
+}
