@@ -9,7 +9,10 @@ function App() {
       <Header title="Inputs" />
       <main className="inputs-container">
         <InputVariant legend="<Input />">
-          <Input label="Label" placeholder="Placeholder" />
+          <Input />
+        </InputVariant>
+        <InputVariant legend='<Input error />'>
+          <Input error />
         </InputVariant>
       </main>
       <Footer />
