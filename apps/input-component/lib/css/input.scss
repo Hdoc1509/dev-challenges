@@ -31,4 +31,9 @@
       border-color: $error-color;
     }
   }
+
+  &:disabled {
+    background-color: #f2f2f2;
+    border-color: #e0e0e0;
+  }
 }
