@@ -1,5 +1,5 @@
 import { Footer, HeaderWithTheme as Header } from "@internal/components";
-import { Input } from "./components/Input";
+import { Input } from "../lib/Input";
 import { InputVariant } from "./components/InputVariant";
 import "./App.css";
 
