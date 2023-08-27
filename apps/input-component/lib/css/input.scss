@@ -1,35 +1,3 @@
-$focus-color: #2962ff;
-$error-color: #d32f2f;
-
-.input-label {
-  display: flex;
-  flex-direction: column;
-
-  font-family: "Noto Sans JP", sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-
-  &:focus-within {
-    color: $focus-color;
-  }
-
-  &--error {
-    color: $error-color;
-
-    &:hover {
-      color: #333;
-
-      [data-theme="dark"] & {
-        color: #fff;
-      }
-    }
-
-    &:focus-within, [data-theme="dark"] &:focus-within {
-      color: $error-color;
-    }
-  }
-}
-
 .input-label > .input {
   width: 200px;
 

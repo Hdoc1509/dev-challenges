@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import "./Input.scss";
+import './css/styles.scss'
 
 type Props = {
   label?: string;
