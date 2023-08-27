@@ -2,6 +2,10 @@
   font-size: 10px;
   color: #828282;
 
+  [data-theme="dark"] & {
+    color: #a9a9a9;
+  }
+
   .input-label--error & {
     color: $error-color;
   }
