@@ -1,5 +1,7 @@
 .input-variant {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   &__legend {
     font-family: "Ubuntu Mono", monospace;
