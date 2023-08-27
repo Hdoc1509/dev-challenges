@@ -8,19 +8,19 @@ function App() {
     <>
       <Header title="Inputs" />
       <main className="inputs-container">
-        <InputVariant legend="<Input />">
+        <InputVariant legend="Default">
           <Input />
         </InputVariant>
-        <InputVariant legend='<Input error />'>
+        <InputVariant legend="Error">
           <Input error />
         </InputVariant>
-        <InputVariant legend='<Input disabled />'>
+        <InputVariant legend="Disabled">
           <Input disabled />
         </InputVariant>
-        <InputVariant legend='<Input helperText="Some interesting text" />'>
+        <InputVariant legend="Helper text">
           <Input helperText="Some interesting text" />
         </InputVariant>
-        <InputVariant legend='<Input helperText="Some interesting text" error />'>
+        <InputVariant legend="Helper text with error">
           <Input helperText="Some interesting text" error />
         </InputVariant>
       </main>
