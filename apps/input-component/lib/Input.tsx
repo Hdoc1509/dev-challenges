@@ -1,14 +1,21 @@
 import clsx from "clsx";
-import './css/styles.scss'
+import "./css/styles.scss";
 
 type Props = {
   label?: string;
   placeholder?: string;
   error?: boolean;
   disabled?: boolean;
+  helperText?: string;
 };
 
-export const Input = ({ label, placeholder, error, disabled }: Props) => {
+export const Input = ({
+  label,
+  placeholder,
+  error,
+  disabled,
+  helperText,
+}: Props) => {
   const labelClass = clsx("input-label", {
     "input-label--error": error,
   });
@@ -26,6 +33,7 @@ export const Input = ({ label, placeholder, error, disabled }: Props) => {
           placeholder={placeholder ?? "Placeholder"}
           disabled={disabled}
         />
+        {helperText && <span className="input-helper">{helperText}</span>}
       </label>
     </>
   );

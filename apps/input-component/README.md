@@ -22,7 +22,7 @@
 
 - [x] User story: I can see error state
 - [x] User story: I can choose to disable input
-- [ ] User story: I can choose to have helper text
+- [x] User story: I can choose to have helper text
 - [ ] User story: I can choose to have an icon on the left or right (Use Google Icon and at least 5 variants)
 - [ ] User story: I can have different input sizes
 - [ ] User story: I can have different colors

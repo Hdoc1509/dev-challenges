@@ -1,0 +1,8 @@
+.input-helper {
+  font-size: 10px;
+  color: #828282;
+
+  .input-label--error & {
+    color: $error-color;
+  }
+}

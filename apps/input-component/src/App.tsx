@@ -17,6 +17,12 @@ function App() {
         <InputVariant legend='<Input disabled />'>
           <Input disabled />
         </InputVariant>
+        <InputVariant legend='<Input helperText="Some interesting text" />'>
+          <Input helperText="Some interesting text" />
+        </InputVariant>
+        <InputVariant legend='<Input helperText="Some interesting text" error />'>
+          <Input helperText="Some interesting text" error />
+        </InputVariant>
       </main>
       <Footer />
     </>
