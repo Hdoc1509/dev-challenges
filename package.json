@@ -6,7 +6,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "gen:app": "hygen app new"
+    "gen:app": "hygen app new",
+    "publish-packages": "nx run-many -t build --projects='@hdoc/react-*' && pnpm -r publish --access public"
   },
   "keywords": [],
   "author": "",
