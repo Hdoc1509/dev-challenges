@@ -103,3 +103,18 @@ The following class names are used for styling with CSS:
 | `.material-icons-two-tone`        | `variant="two-tone"` |
 
 **(\*): Class names those has no built-in styles.**
+
+## Customization
+
+You can customize the color of the icon by using the following CSS custom properties:
+
+```css
+.any-parent-of-icon-component {
+  --icon-color: black; /* default color */
+  --icon-color-error: red;
+  --icon-color-warning: orange;
+  --icon-color-info: blue;
+  --icon-color-success: green;
+  --icon-color-disabled: gray;
+}
+```

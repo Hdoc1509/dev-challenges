@@ -4,3 +4,12 @@
   padding: 2rem;
   text-align: center;
 }
+
+.icon-container {
+  --icon-color: blue;
+}
+
+.my-container-with-custom-color {
+  --icon-color-error: salmon;
+  --icon-color-disabled: gray;
+}
