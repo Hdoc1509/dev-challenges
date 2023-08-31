@@ -9,7 +9,7 @@
     "gen:app": "hygen app new",
     "build-packages": "nx run-many -t build --projects='@hdoc/react-*'",
     "release-packages": "changeset version && changeset tag",
-    "publish-packages": "pnpm run build-packages && pnpm -r publish --access public"
+    "publish-packages": "pnpm run build-packages && changeset publish"
   },
   "keywords": [],
   "author": "",
