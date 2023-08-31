@@ -9,7 +9,7 @@
     "lint": "eslint --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "gen:app": "hygen app new",
     "build-packages": "nx run-many -t build --projects='@hdoc/react-*'",
-    "release-packages": "changeset version && changeset tag",
+    "release-packages": "changeset version",
     "publish-packages": "pnpm run build-packages && changeset publish"
   },
   "author": "Héctor Ochoa <hector.ochoa.dev@gmail.com>",
