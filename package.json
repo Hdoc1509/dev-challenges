@@ -7,7 +7,9 @@
   "scripts": {
     "lint": "eslint --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "gen:app": "hygen app new",
-    "publish-packages": "nx run-many -t build --projects='@hdoc/react-*' && pnpm -r publish --access public"
+    "build-packages": "nx run-many -t build --projects='@hdoc/react-*'",
+    "release-packages": "changeset version && changeset tag",
+    "publish-packages": "pnpm run build-packages && pnpm -r publish --access public"
   },
   "keywords": [],
   "author": "",
