@@ -1,5 +1,12 @@
 # input-component
 
+## 0.6.2
+
+### Patch Changes
+
+- Updated dependencies [f81f5c7]
+  - @hdoc/react-toggle-theme@1.0.1
+
 ## 0.6.1
 
 ### Patch Changes
