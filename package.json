@@ -1,5 +1,5 @@
 {
-  "name": "dev-challenges",
+  "name": "@hdoc/dev-challenges",
   "private": true,
   "version": "1.0.0",
   "description": "",
@@ -12,8 +12,7 @@
     "release-packages": "changeset version && changeset tag",
     "publish-packages": "pnpm run build-packages && changeset publish"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Héctor Ochoa <hector.ochoa.dev@gmail.com>",
   "packageManager": "pnpm@8.6.12",
   "license": "ISC",
   "devDependencies": {
