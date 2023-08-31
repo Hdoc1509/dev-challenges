@@ -1,7 +1,7 @@
 {
   "name": "input-component",
   "private": true,
-  "version": "0.6.0",
+  "version": "0.6.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,9 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@hdoc/react-material-icons": "workspace:1.0.0",
+    "@hdoc/react-material-icons": "workspace:1.1.0",
     "@hdoc/react-toggle-theme": "workspace:1.0.0",
-    "@internal/components": "workspace:1.0.0",
+    "@internal/components": "workspace:2.0.0",
     "clsx": "2.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
