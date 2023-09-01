@@ -1,11 +1,5 @@
 .theme-button {
-  --hover-light-bg-color: #ccc;
-  --active-light-bg-color: #e6e6e6;
-
-  --hover-dark-bg-color: #3f3f3f;
-  --active-dark-bg-color: #595959;
-
-  background-color: transparent;
+  background-color: var(--button-bg, transparent);
   border: none;
   border-radius: 8px;
   padding: 4px;
@@ -13,11 +7,11 @@
   cursor: pointer;
 
   &:hover {
-    background-color: var(--hover-light-bg-color);
+    background-color: var(--button-bg-hover, #ccc);
   }
 
   &:active {
-    background-color: var(--active-light-bg-color);
+    background-color: var(--button-bg-active, #e6e6e6);
   }
 
   &--full-rounded {
@@ -25,12 +19,7 @@
   }
 
   body[data-theme="dark"] & {
-    &:hover {
-      background-color: var(--hover-dark-bg-color);
-    }
-
-    &:active {
-      background-color: var(--active-dark-bg-color);
-    }
+    --button-bg-hover: #3f3f3f;
+    --button-bg-active: #595959;
   }
 }

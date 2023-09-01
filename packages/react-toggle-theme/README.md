@@ -86,28 +86,21 @@ Default class name
 
 Styles the button as a circle when `fullRounded=true`
 
-## CSS custom properties
+## Customization
 
-The following CSS custom properties are used by `.theme-button` class:
+You can customize the background color of the button with the following CSS custom properties:
 
-`--hover-light-bg-color`
+```css
+.theme-button {
+  --button-bg: #fff;
+  --button-bg-hover: #eee;
+  --button-bg-active: #ddd;
+}
 
-Background color of the button when `hover` and the theme is `light`.
-
----
-
-`--active-light-bg-color`
-
-Background color of the button when `click` and the theme is `light`.
-
----
-
-`--hover-dark-bg-color`
-
-Background color of the button when `hover` and the theme is `dark`.
-
----
-
-`--active-dark-bg-color`
-
-Background color of the button when `click` and the theme is `dark`.
+/* The same custom properties applies for dark theme. */
+[data-theme="dark"] .theme-button {
+  --button-bg: #333;
+  --button-bg-hover: #444;
+  --button-bg-active: #555;
+}
+```

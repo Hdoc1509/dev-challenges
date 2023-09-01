@@ -5,15 +5,17 @@
   text-align: center;
 }
 
-/* Example for overrive default colors */
+/* Example for overide default colors */
 .theme-button {
-  --hover-light-bg-color: transparent;
-  --active-light-bg-color: #e6e6e6;
+  --button-bg-hover: transparent;
+  --button-bg-active: #e6e6e6;
+}
 
-  --hover-dark-bg-color: #3f3f3f;
-  --active-dark-bg-color: #595959;
+body[data-theme="dark"] .theme-button {
+  --button-bg-hover: #3f3f3f;
+  --button-bg-active: #595959;
 }
 
 .dark-icon {
-  color: skyblue
+  color: skyblue;
 }
