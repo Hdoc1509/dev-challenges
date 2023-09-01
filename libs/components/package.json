@@ -1,11 +1,11 @@
 {
   "name": "@internal/components",
   "private": true,
-  "version": "2.0.0",
+  "version": "3.0.0",
   "main": "./src/main.tsx",
   "type": "module",
   "peerDependencies": {
     "@hdoc/react-material-icons": "^1.1.0",
-    "@hdoc/react-toggle-theme": "^1.0.0"
+    "@hdoc/react-toggle-theme": "^2.0.0"
   }
 }
