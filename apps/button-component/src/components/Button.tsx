@@ -1,27 +1,23 @@
 import classNames from "classnames";
-import "./Button.scss";
 import { ComponentProps } from "react";
 import { Icon } from "@hdoc/react-material-icons";
-
-// Taken from https://stackoverflow.com/a/76212204
-type Prettify<T> = T extends infer R
-  ? {
-      [K in keyof R]: R[K];
-    }
-  : never;
+import type { Simplify } from "type-fest";
+import "./Button.scss";
 
 type IconProps = ComponentProps<typeof Icon>;
 
-type Props = Prettify<{
-  variant?: "outline" | "text";
-  disableShadow?: boolean;
-  disabled?: boolean;
-  startIcon?: IconProps['name'];
-  endIcon?: IconProps['name'];
-  iconStyle?: IconProps['variant'];
-  size?: "sm" | "md" | "lg";
-  color?: "default" | "primary" | "secondary" | "danger";
-} & Omit<ComponentProps<"button">, 'className'>>;
+type Props = Simplify<
+  {
+    variant?: "outline" | "text";
+    disableShadow?: boolean;
+    disabled?: boolean;
+    startIcon?: IconProps["name"];
+    endIcon?: IconProps["name"];
+    iconStyle?: IconProps["variant"];
+    size?: "sm" | "md" | "lg";
+    color?: "default" | "primary" | "secondary" | "danger";
+  } & Omit<ComponentProps<"button">, "className">
+>;
 
 export const Button = ({
   variant,

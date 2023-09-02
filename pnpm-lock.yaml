@@ -57,13 +57,13 @@ importers:
   apps/button-component:
     dependencies:
       '@hdoc/react-material-icons':
-        specifier: workspace:1.0.0
+        specifier: workspace:1.1.0
         version: link:../../packages/react-material-icons
       '@hdoc/react-toggle-theme':
-        specifier: workspace:1.0.0
+        specifier: workspace:2.0.0
         version: link:../../packages/react-toggle-theme
       '@internal/components':
-        specifier: workspace:1.0.0
+        specifier: workspace:3.0.0
         version: link:../../libs/components
       classnames:
         specifier: ^2.3.2
@@ -84,6 +84,9 @@ importers:
       sass:
         specifier: ^1.63.6
         version: 1.65.0
+      type-fest:
+        specifier: 4.3.1
+        version: 4.3.1
       typescript:
         specifier: ^5.1.6
         version: 5.1.6
@@ -97,13 +100,13 @@ importers:
   apps/input-component:
     dependencies:
       '@hdoc/react-material-icons':
-        specifier: workspace:1.0.0
+        specifier: workspace:1.1.0
         version: link:../../packages/react-material-icons
       '@hdoc/react-toggle-theme':
-        specifier: workspace:1.0.0
+        specifier: workspace:2.0.0
         version: link:../../packages/react-toggle-theme
       '@internal/components':
-        specifier: workspace:1.0.0
+        specifier: workspace:3.0.0
         version: link:../../libs/components
       clsx:
         specifier: 2.0.0
@@ -134,10 +137,10 @@ importers:
   libs/components:
     dependencies:
       '@hdoc/react-material-icons':
-        specifier: ^1.0.0
+        specifier: ^1.1.0
         version: link:../../packages/react-material-icons
       '@hdoc/react-toggle-theme':
-        specifier: ^1.0.0
+        specifier: ^2.0.0
         version: link:../../packages/react-toggle-theme
 
   packages/react-material-icons:
@@ -4689,6 +4692,11 @@ packages:
   /type-fest@3.13.1:
     resolution: {integrity: sha512-tLq3bSNx+xSpwvAJnzrK0Ep5CLNWjvFTOp71URMaAEWBfRb9nnJiBoUe0tF8bI4ZFO3omgBR6NvnbzVUT3Ly4g==}
     engines: {node: '>=14.16'}
+    dev: true
+
+  /type-fest@4.3.1:
+    resolution: {integrity: sha512-pphNW/msgOUSkJbH58x8sqpq8uQj6b0ZKGxEsLKMUnGorRcDjrUaLS+39+/ub41JNTwrrMyJcUB8+YZs3mbwqw==}
+    engines: {node: '>=16'}
     dev: true
 
   /typed-array-buffer@1.0.0:
