@@ -1,5 +1,12 @@
 # button-component
 
+## 1.2.1
+
+### Patch Changes
+
+- Updated dependencies [9a1a8da]
+  - @hdoc/react-toggle-theme@2.0.1
+
 ## 1.1.4
 
 ### Patch Changes

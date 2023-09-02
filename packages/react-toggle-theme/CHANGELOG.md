@@ -1,5 +1,11 @@
 # @hdoc/react-toggle-theme
 
+## 2.0.1
+
+### Patch Changes
+
+- 9a1a8da: Add badges to README
+
 ## 2.0.0
 
 ### Major Changes
