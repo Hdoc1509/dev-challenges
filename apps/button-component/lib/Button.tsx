@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { ComponentProps } from "react";
 import { Icon } from "@hdoc/react-material-icons";
 import type { Simplify } from "type-fest";
-import "./Button.scss";
+import "./css/styles.scss";
 
 type IconProps = ComponentProps<typeof Icon>;
 
