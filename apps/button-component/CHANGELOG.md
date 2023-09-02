@@ -1,5 +1,13 @@
 # button-component
 
+## 1.2.2
+
+### Patch Changes
+
+- Updated dependencies [a45ff53]
+  - @hdoc/react-material-icons@1.1.1
+  - @hdoc/react-toggle-theme@2.0.1
+
 ## 1.2.1
 
 ### Patch Changes

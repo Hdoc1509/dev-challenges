@@ -1,5 +1,13 @@
 # input-component
 
+## 0.6.5
+
+### Patch Changes
+
+- Updated dependencies [a45ff53]
+  - @hdoc/react-material-icons@1.1.1
+  - @hdoc/react-toggle-theme@2.0.1
+
 ## 0.6.4
 
 ### Patch Changes

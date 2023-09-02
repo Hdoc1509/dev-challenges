@@ -1,5 +1,11 @@
 # @hdoc/react-material-icons
 
+## 1.1.1
+
+### Patch Changes
+
+- a45ff53: Add badges to README
+
 ## 1.1.0
 
 ### Minor Changes
