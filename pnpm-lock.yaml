@@ -137,10 +137,10 @@ importers:
   libs/components:
     dependencies:
       '@hdoc/react-material-icons':
-        specifier: ^1.1.0
+        specifier: workspace:^1.1.0
         version: link:../../packages/react-material-icons
       '@hdoc/react-toggle-theme':
-        specifier: ^2.0.0
+        specifier: workspace:^2.0.0
         version: link:../../packages/react-toggle-theme
 
   packages/react-material-icons:
