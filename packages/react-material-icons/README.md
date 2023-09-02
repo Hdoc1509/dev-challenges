@@ -1,5 +1,13 @@
 # @hdoc/react-material-icons
 
+<p align="center">
+  <a href="https://www.npmjs.com/package/@hdoc/react-material-icons">
+    <img alt="npm" src="https://img.shields.io/npm/v/%40hdoc%2Freact-material-icons">
+  </a>
+  <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/%40hdoc%2Freact-material-icons">
+  <img alt="npm" src="https://img.shields.io/npm/dm/%40hdoc%2Freact-material-icons">
+</p>
+
 Simple component for material design icons in your React app.
 
 ## Installation
