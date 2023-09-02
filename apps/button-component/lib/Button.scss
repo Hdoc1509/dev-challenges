@@ -5,98 +5,99 @@
 
   border: none;
   border-radius: 6px;
-  box-shadow: 0 2px 3px 0 #33333333;
-  background-color: #e0e0e0;
-  padding: var(--padding-y) calc(var(--padding-y) * 2);
+  box-shadow: var(--button-shadow, 0 2px 3px 0 #33333333);
+  background-color: var(--button-bg, #e0e0e0);
+  padding: var(--button-padding-y) calc(var(--button-padding-y) * 2);
 
   font-family: "Noto Sans JP", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  color: #3f3f3f;
+  color: var(--button-text, #3f3f3f);
 
   transition: background-color 0.1s ease;
 
   &:hover,
   &:focus {
-    background-color: #aeaeae;
+    --button-bg: #aeaeae;
   }
 
   &:disabled {
-    color: #9e9e9e;
-    background-color: #e0e0e0;
+    --button-text: #9e9e9e;
+    --button-bg: #e0e0e0;
+    --button-shadow: none;
   }
 
   &--outline {
     --outline-color: #3d5afe;
 
-    background-color: transparent;
-    color: var(--outline-color);
+    --button-bg: transparent;
+    --button-text: var(--outline-color);
+    --button-shadow: none;
     outline: solid 1px var(--outline-color);
-    box-shadow: none;
 
     &:hover,
     &:focus {
-      background-color: #2962ff1a;
+      --button-bg: #2962ff1a;
     }
   }
 
   &--text {
-    color: #3d5afe;
-    background-color: transparent;
-    box-shadow: none;
+    --button-bg: transparent;
+    --button-text: #3d5afe;
+    --button-shadow: none;
 
     &:hover,
     &:focus {
-      background-color: #2962ff1a;
+      --button-bg: #2962ff1a;
     }
 
     &:disabled {
-      background-color: transparent;
+      --button-bg: transparent;
     }
   }
 
   &--no-shadow {
-    box-shadow: none;
+    --button-shadow: none;
   }
 
   &--sm {
-    --padding-y: 6px;
+    --button-padding-y: 6px;
     height: 32px;
   }
   &--md {
-    --padding-y: 8px;
+    --button-padding-y: 8px;
     height: 36px;
   }
   &--lg {
-    --padding-y: 11px;
+    --button-padding-y: 11px;
     height: 42px;
   }
 
   &--primary {
-    background-color: #2962ff;
-    color: #fff;
+    --button-bg: #2962ff;
+    --button-text: #fff;
 
     &:hover,
     &:focus {
-      background-color: #0039cb;
+      --button-bg: #0039cb;
     }
   }
   &--secondary {
-    background-color: #455a64;
-    color: #fff;
+    --button-bg: #455a64;
+    --button-text: #fff;
 
     &:hover,
     &:focus {
-      background-color: #1c313a;
+      --button-bg: #1c313a;
     }
   }
   &--danger {
-    background-color: #d32f2f;
-    color: #fff;
+    --button-bg: #d32f2f;
+    --button-text: #fff;
 
     &:hover,
     &:focus {
-      background-color: #9a0007;
+      --button-bg: #9a0007;
     }
   }
 }
