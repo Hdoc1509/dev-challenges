@@ -4,16 +4,16 @@
 
 ### Major Changes
 
-- 3aadcf5: #### Changed custom properties for customize background color
+- 3aadcf5: Changed custom properties for customize background color
 
-  The following css custom properties where removed:
+  #### Removed properties
 
   - `--hover-light-bg-color`
   - `--active-light-bg-color`
   - `--hover-dark-bg-color`
   - `--active-dark-bg-color`
 
-  The following css custom properties where added:
+  #### Added properties
 
   - `--button-bg`
 
