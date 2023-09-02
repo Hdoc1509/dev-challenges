@@ -1,0 +1,14 @@
+.btn {
+  &--sm {
+    --button-padding-y: 6px;
+    height: 32px;
+  }
+  &--md {
+    --button-padding-y: 8px;
+    height: 36px;
+  }
+  &--lg {
+    --button-padding-y: 11px;
+    height: 42px;
+  }
+}

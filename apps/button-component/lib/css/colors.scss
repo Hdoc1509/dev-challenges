@@ -1,3 +1,29 @@
-$default-bg: #e0e0e0;
-$default-text: #3f3f3f;
-$default-shadow: 0 2px 3px 0 #33333333;
+.btn {
+  &--primary {
+    --button-bg: #2962ff;
+    --button-text: #fff;
+
+    &:hover,
+    &:focus {
+      --button-bg: #0039cb;
+    }
+  }
+  &--secondary {
+    --button-bg: #455a64;
+    --button-text: #fff;
+
+    &:hover,
+    &:focus {
+      --button-bg: #1c313a;
+    }
+  }
+  &--danger {
+    --button-bg: #d32f2f;
+    --button-text: #fff;
+
+    &:hover,
+    &:focus {
+      --button-bg: #9a0007;
+    }
+  }
+}

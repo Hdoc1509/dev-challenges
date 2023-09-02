@@ -1,0 +1,15 @@
+.btn {
+  &--outline {
+    --outline-color: #3d5afe;
+
+    --button-bg: transparent;
+    --button-text: var(--outline-color);
+    --button-shadow: none;
+    outline: solid 1px var(--outline-color);
+
+    &:hover,
+    &:focus {
+      --button-bg: #2962ff1a;
+    }
+  }
+}

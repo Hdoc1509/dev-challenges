@@ -1,3 +1,7 @@
+$default-bg: #e0e0e0;
+$default-text: #3f3f3f;
+$default-shadow: 0 2px 3px 0 #33333333;
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -27,77 +31,7 @@
     --button-shadow: none;
   }
 
-  &--outline {
-    --outline-color: #3d5afe;
-
-    --button-bg: transparent;
-    --button-text: var(--outline-color);
-    --button-shadow: none;
-    outline: solid 1px var(--outline-color);
-
-    &:hover,
-    &:focus {
-      --button-bg: #2962ff1a;
-    }
-  }
-
-  &--text {
-    --button-bg: transparent;
-    --button-text: #3d5afe;
-    --button-shadow: none;
-
-    &:hover,
-    &:focus {
-      --button-bg: #2962ff1a;
-    }
-
-    &:disabled {
-      --button-bg: transparent;
-    }
-  }
-
   &--no-shadow {
     --button-shadow: none;
-  }
-
-  &--sm {
-    --button-padding-y: 6px;
-    height: 32px;
-  }
-  &--md {
-    --button-padding-y: 8px;
-    height: 36px;
-  }
-  &--lg {
-    --button-padding-y: 11px;
-    height: 42px;
-  }
-
-  &--primary {
-    --button-bg: #2962ff;
-    --button-text: #fff;
-
-    &:hover,
-    &:focus {
-      --button-bg: #0039cb;
-    }
-  }
-  &--secondary {
-    --button-bg: #455a64;
-    --button-text: #fff;
-
-    &:hover,
-    &:focus {
-      --button-bg: #1c313a;
-    }
-  }
-  &--danger {
-    --button-bg: #d32f2f;
-    --button-text: #fff;
-
-    &:hover,
-    &:focus {
-      --button-bg: #9a0007;
-    }
   }
 }
