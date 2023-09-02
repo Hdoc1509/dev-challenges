@@ -2,14 +2,18 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
+
+  border: none;
   border-radius: 6px;
+  box-shadow: 0 2px 3px 0 #33333333;
+  background-color: #e0e0e0;
+  padding: var(--padding-y) calc(var(--padding-y) * 2);
+
+  font-family: "Noto Sans JP", sans-serif;
   font-size: 14px;
   font-weight: 500;
-  box-shadow: 0 2px 3px 0 #33333333;
-  border: none;
-  background-color: #e0e0e0;
   color: #3f3f3f;
-  padding: var(--padding-y) calc(var(--padding-y) * 2);
+
   transition: background-color 0.1s ease;
 
   &:hover,
