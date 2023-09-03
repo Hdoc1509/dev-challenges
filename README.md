@@ -15,5 +15,5 @@ Monorepo that hosts my [solutions](#challenges) for [Front-end Developer path](h
 
 ## Packages
 
-- [@hdoc/react-toggle-theme](/packages/react-toggle-theme/)
-- [@hdoc/react-material-icons](/packages/react-material-icons/)
+- [@hdoc/react-material-icons](https://github.com/Hdoc1509/react-components/tree/master/packages/react-material-icons#readme)
+- [@hdoc/react-toggle-theme](https://github.com/Hdoc1509/react-components/tree/master/packages/react-toggle-theme#readme)
