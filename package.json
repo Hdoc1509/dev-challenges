@@ -1,9 +1,6 @@
 {
   "name": "@hdoc/dev-challenges",
   "private": true,
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
     "clean": "npkill",
     "lint": "eslint --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
