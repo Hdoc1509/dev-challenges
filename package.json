@@ -4,10 +4,7 @@
   "scripts": {
     "clean": "npkill",
     "lint": "eslint --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "gen:app": "hygen app new",
-    "pkgs:build": "nx run-many -t build --projects='@hdoc/react-*'",
-    "pkgs:release": "changeset version",
-    "pkgs:publish": "pnpm run pkgs:build && changeset publish"
+    "gen:app": "hygen app new"
   },
   "author": "Héctor Ochoa <hector.ochoa.dev@gmail.com>",
   "packageManager": "pnpm@8.6.12",
