@@ -2,14 +2,8 @@
   font-size: 10px;
   color: #828282;
 
+  .input-label:focus-within &,
   .input-label--error & {
-    color: $error-color;
-  }
-  .input-label--error:hover & {
-    color: #333;
-
-    [data-theme="dark"] & {
-      color: #fff;
-    }
+    color: inherit;
   }
 }
