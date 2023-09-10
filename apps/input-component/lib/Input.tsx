@@ -1,19 +1,7 @@
 import clsx from "clsx";
-import { ComponentProps } from "react";
 import { Icon } from "@hdoc/react-material-icons";
+import type { InputProps as Props } from "./types";
 import "./css/styles.scss";
-
-type IconProps = ComponentProps<typeof Icon>;
-
-type Props = {
-  label?: string;
-  placeholder?: string;
-  error?: boolean;
-  disabled?: boolean;
-  helperText?: string;
-  startIcon?: IconProps["name"];
-  endIcon?: IconProps["name"];
-};
 
 export const Input = ({
   label,
@@ -39,7 +27,7 @@ export const Input = ({
         {label ?? "Label"}
         <div className="input-container">
           {startIcon && (
-            <Icon name={startIcon} className="input-icon input-icon--start"/>
+            <Icon name={startIcon} className="input-icon input-icon--start" />
           )}
           <input
             type="text"
@@ -48,7 +36,7 @@ export const Input = ({
             disabled={disabled}
           />
           {endIcon && (
-            <Icon name={endIcon} className="input-icon input-icon--end"/>
+            <Icon name={endIcon} className="input-icon input-icon--end" />
           )}
         </div>
         {helperText && <span className="input-helper">{helperText}</span>}
