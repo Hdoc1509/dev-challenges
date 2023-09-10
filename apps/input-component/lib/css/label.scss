@@ -5,13 +5,20 @@
   font-family: "Noto Sans JP", sans-serif;
   font-size: 12px;
   font-weight: 400;
+  color: #333;
+
+  [data-theme="dark"] & {
+    color: unset;
+  }
 
   &:focus-within {
     color: $focus-color;
   }
 
   &--error {
-    color: $error-color;
+    &, [data-theme="dark"] & {
+      color: $error-color;
+    }
 
     &:hover {
       color: #333;
