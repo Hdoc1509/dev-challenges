@@ -1,0 +1,18 @@
+.input-container > .input-icon {
+  position: absolute;
+
+  --icon-color: #828282;
+
+  &--start {
+    left: 12px;
+  }
+
+  &--end {
+    right: 12px;
+  }
+
+  .input-label:focus-within &,
+  .input-label--error & {
+    --icon-color: inherit;
+  }
+}

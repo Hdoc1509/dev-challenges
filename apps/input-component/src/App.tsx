@@ -23,6 +23,12 @@ function App() {
         <InputVariant legend="Helper text with error">
           <Input helperText="Some interesting text" error />
         </InputVariant>
+        <InputVariant legend="Start icon">
+          <Input startIcon="phone" />
+        </InputVariant>
+        <InputVariant legend="End icon">
+          <Input endIcon="lock" />
+        </InputVariant>
       </main>
       <Footer />
     </>
