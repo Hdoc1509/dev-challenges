@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Header title="Inputs" />
-      <main className="inputs-container">
+      <div className="inputs-grid">
         <InputVariant legend="Default">
           <Input />
         </InputVariant>
@@ -38,7 +38,7 @@ function App() {
         <InputVariant legend="Small size">
           <Input size="md" />
         </InputVariant>
-      </main>
+      </div>
       <Footer />
     </>
   );
