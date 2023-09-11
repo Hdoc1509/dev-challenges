@@ -32,6 +32,12 @@ function App() {
         <InputVariant legend="With value">
           <Input value="Text" />
         </InputVariant>
+        <InputVariant legend="Small size">
+          <Input size="sm" />
+        </InputVariant>
+        <InputVariant legend="Small size">
+          <Input size="md" />
+        </InputVariant>
       </main>
       <Footer />
     </>

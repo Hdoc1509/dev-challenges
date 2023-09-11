@@ -24,7 +24,7 @@
 - [x] User story: I can choose to disable input
 - [x] User story: I can choose to have helper text
 - [x] User story: I can choose to have an icon on the left or right (Use Google Icon and at least 5 variants)
-- [ ] User story: I can have different input sizes
+- [x] User story: I can have different input sizes
 - [ ] User story: I can have different colors
 - [ ] User story: I can choose to have input take the width of the parent
 - [ ] User story: I can have multiline input like a textarea

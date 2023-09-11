@@ -11,13 +11,15 @@ export const Input = ({
   helperText,
   startIcon,
   endIcon,
-  value
+  value,
+  size
 }: Props) => {
   const labelClass = clsx("input-label", {
     "input-label--error": error,
   });
   const inputClass = clsx("input", {
     "input--error": error,
+    "input--sm": size === "sm",
     "input-with-icon-start": startIcon,
     "input-with-icon-end": endIcon,
   });

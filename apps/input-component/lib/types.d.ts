@@ -12,4 +12,5 @@ export type InputProps = {
   startIcon?: IconProps["name"];
   endIcon?: IconProps["name"];
   value?: string;
+  size?: "sm" | "md";
 };
