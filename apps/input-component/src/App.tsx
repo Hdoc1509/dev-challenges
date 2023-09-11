@@ -29,6 +29,9 @@ function App() {
         <InputVariant legend="End icon">
           <Input endIcon="lock" />
         </InputVariant>
+        <InputVariant legend="With value">
+          <Input value="Text" />
+        </InputVariant>
       </main>
       <Footer />
     </>

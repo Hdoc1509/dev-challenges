@@ -11,6 +11,7 @@ export const Input = ({
   helperText,
   startIcon,
   endIcon,
+  value
 }: Props) => {
   const labelClass = clsx("input-label", {
     "input-label--error": error,
@@ -34,6 +35,7 @@ export const Input = ({
             className={inputClass}
             placeholder={placeholder ?? "Placeholder"}
             disabled={disabled}
+            defaultValue={value}
           />
           {endIcon && (
             <Icon name={endIcon} className="input-icon input-icon--end" />

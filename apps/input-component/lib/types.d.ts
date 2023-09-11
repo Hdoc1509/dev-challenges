@@ -11,4 +11,5 @@ export type InputProps = {
   helperText?: string;
   startIcon?: IconProps["name"];
   endIcon?: IconProps["name"];
+  value?: string;
 };
