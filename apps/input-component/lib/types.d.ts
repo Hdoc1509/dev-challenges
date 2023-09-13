@@ -14,4 +14,6 @@ export type InputProps = {
   value?: string;
   size?: "sm" | "md";
   fullWidth?: boolean;
+  multiline?: boolean;
+  rows?: number;
 };

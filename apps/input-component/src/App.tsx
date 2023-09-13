@@ -43,6 +43,9 @@ function App() {
         <InputVariant legend="Full width">
           <Input fullWidth />
         </InputVariant>
+        <InputVariant legend="Multiline with 4 rows">
+          <Input multiline rows={4} />
+        </InputVariant>
       </main>
       <Footer />
     </>
