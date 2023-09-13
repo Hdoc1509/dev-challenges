@@ -12,6 +12,7 @@
   outline: none;
   padding: 18px 12px;
   margin: 2px 0;
+  resize: none;
 
   font-size: 14px;
 
@@ -54,8 +55,4 @@
   &--fullwidth {
     width: 100%;
   }
-}
-
-.input-wrapper > textarea.input {
-  resize: none;
 }
