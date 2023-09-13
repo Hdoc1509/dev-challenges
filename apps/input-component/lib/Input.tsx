@@ -12,16 +12,19 @@ export const Input = ({
   startIcon,
   endIcon,
   value,
-  size
+  size,
+  fullWidth
 }: Props) => {
   const labelClass = clsx("input-label", {
     "input-label--error": error,
+    "input-label--fullwidth": fullWidth
   });
   const inputClass = clsx("input", {
     "input--error": error,
     "input--sm": size === "sm",
     "input-with-icon-start": startIcon,
     "input-with-icon-end": endIcon,
+    "input--fullwidth": fullWidth
   });
 
   return (

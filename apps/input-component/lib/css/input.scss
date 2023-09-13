@@ -4,6 +4,7 @@
 
 .input-container > .input {
   width: 200px;
+  min-width: 200px;
 
   border: 1px solid #828282;
   border-radius: 8px;
@@ -51,5 +52,9 @@
 
   &--sm {
     padding-block: 10px;
+  }
+
+  &--fullwidth {
+    width: 100%;
   }
 }
