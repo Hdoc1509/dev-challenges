@@ -1,6 +1,9 @@
 .input-container > .input-icon {
   position: absolute;
 
+  inset-block: 0;
+  margin: auto;
+
   --icon-color: #828282;
 
   &--start {
