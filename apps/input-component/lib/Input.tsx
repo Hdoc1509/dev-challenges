@@ -40,7 +40,7 @@ export const Input = ({
     <>
       <label className={labelClass}>
         {label ?? "Label"}
-        <div className="input-container">
+        <div className="input-wrapper">
           {startIcon && (
             <Icon name={startIcon} className="input-icon input-icon--start" />
           )}
