@@ -27,7 +27,6 @@ export const Input = ({
     "input-with-icon-start": startIcon,
     "input-with-icon-end": endIcon,
     "input--fullwidth": fullWidth,
-    "input--multilne": multiline,
   });
   const sharedAttributes = {
     className: inputClass,
