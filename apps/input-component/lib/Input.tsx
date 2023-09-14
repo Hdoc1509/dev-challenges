@@ -36,24 +36,22 @@ export const Input = ({
   };
 
   return (
-    <>
-      <label className={labelClass}>
-        {label ?? "Label"}
-        <div className="input-wrapper">
-          {startIcon && (
-            <Icon name={startIcon} className="input-icon input-icon--start" />
-          )}
-          {multiline ? (
-            <textarea {...sharedAttributes} rows={rows}></textarea>
-          ) : (
-            <input type="text" {...sharedAttributes} />
-          )}
-          {endIcon && (
-            <Icon name={endIcon} className="input-icon input-icon--end" />
-          )}
-        </div>
-        {helperText && <span className="input-helper">{helperText}</span>}
-      </label>
-    </>
+    <label className={labelClass}>
+      {label ?? "Label"}
+      <div className="input-wrapper">
+        {startIcon && (
+          <Icon name={startIcon} className="input-icon input-icon--start" />
+        )}
+        {multiline ? (
+          <textarea {...sharedAttributes} rows={rows}></textarea>
+        ) : (
+          <input type="text" {...sharedAttributes} />
+        )}
+        {endIcon && (
+          <Icon name={endIcon} className="input-icon input-icon--end" />
+        )}
+      </div>
+      {helperText && <span className="input-helper">{helperText}</span>}
+    </label>
   );
 };
