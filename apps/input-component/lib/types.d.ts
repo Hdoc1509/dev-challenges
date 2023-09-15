@@ -2,6 +2,8 @@ import type { ComponentProps } from "react";
 import { Icon } from "@hdoc/react-material-icons";
 
 type IconProps = ComponentProps<typeof Icon>;
+type InputMultiline = { multiline: true; rows?: number };
+type InputNotMultiline = { multiline?: never; rows?: never };
 
 export type InputProps = {
   label?: string;
@@ -14,6 +16,4 @@ export type InputProps = {
   value?: string;
   size?: "sm" | "md";
   fullWidth?: boolean;
-  multiline?: boolean;
-  rows?: number;
-};
+} & (InputNotMultiline | InputMultiline);
