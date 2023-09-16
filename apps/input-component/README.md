@@ -29,8 +29,8 @@
 - [x] User story: I can choose to have input take the width of the parent
 - [x] User story: I can have multiline input like a textarea
 - [x] User story: When I hover or focus, I can see visual indicators
-- [ ] User story: I can still access all input attributes
-- [ ] User story (optional): Show input in a similar way like the design or use [Storybook](https://storybook.js.org/). Otherwise, showing the input in multiple states is enough
+- [x] User story: I can still access all input attributes
+- [x] User story (optional): Show input in a similar way like the design or use [Storybook](https://storybook.js.org/). Otherwise, showing the input in multiple states is enough
 
 ### Built With
 

@@ -1,21 +1,21 @@
 import clsx from "clsx";
 import { Icon } from "@hdoc/react-material-icons";
 import type { InputProps as Props } from "./types";
+import type { ComponentProps } from "react";
 import "./css/styles.scss";
 
 export const Input = ({
   label,
   placeholder = "Placeholder",
   error,
-  disabled,
   helperText,
   startIcon,
   endIcon,
-  value,
   size,
   fullWidth,
   multiline,
   rows,
+  ...restProps
 }: Props) => {
   const labelClass = clsx("input-label", {
     "input-label--error": error,
@@ -31,8 +31,7 @@ export const Input = ({
   const sharedAttributes = {
     className: inputClass,
     placeholder,
-    disabled,
-    defaultValue: value,
+    ...restProps,
   };
 
   return (
@@ -43,9 +42,13 @@ export const Input = ({
           <Icon name={startIcon} className="input-icon input-icon--start" />
         )}
         {multiline ? (
-          <textarea {...sharedAttributes} rows={rows}></textarea>
+          // NOTE: You should use a different component that wraps a textarea, not this
+          <textarea
+            {...(sharedAttributes as ComponentProps<"textarea">)}
+            rows={rows}
+          ></textarea>
         ) : (
-          <input type="text" {...sharedAttributes} />
+          <input {...sharedAttributes} />
         )}
         {endIcon && (
           <Icon name={endIcon} className="input-icon input-icon--end" />
