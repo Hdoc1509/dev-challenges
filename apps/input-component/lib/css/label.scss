@@ -1,36 +1,36 @@
 .input-label {
+  --text-color: #333;
+  --error-color: #d32f2f;
+  --focus-color: #2962ff;
+
   font-family: "Noto Sans JP", sans-serif;
   font-size: 12px;
   font-weight: 400;
-  color: #333;
+  color: var(--label-text, var(--text-color));
 
-  [data-theme="dark"] & {
-    color: unset;
+  &:hover {
+    color: var(--label-text-hover, var(--text-color));
   }
 
   &:focus-within {
-    color: $focus-color;
+    color: var(--label-text-focus, var(--focus-color));
+  }
+
+  [data-theme="dark"] & {
+    --label-text-hover: #fff;
+    --label-text: #fff;
   }
 
   &--error {
-    &, [data-theme="dark"] & {
-      color: $error-color;
-    }
+    --label-text: var(--error-color);
+    --label-text-focus: var(--error-color);
 
-    &:hover {
-      color: #333;
-
-      [data-theme="dark"] & {
-        color: #fff;
-      }
-    }
-
-    &:focus-within, [data-theme="dark"] &:focus-within {
-      color: $error-color;
+    [data-theme="dark"] & {
+      --label-text: var(--error-color);
     }
   }
 
   &--fullwidth {
-    width: 100%
+    width: 100%;
   }
 }
