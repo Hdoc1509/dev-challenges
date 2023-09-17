@@ -22,7 +22,7 @@
   &::placeholder {
     font-family: "Noto Sans JP", sans-serif;
     font-weight: 500;
-    color: #828282;
+    color: var(--placeholder-color, #828282);
   }
 
   &:hover {
@@ -41,6 +41,11 @@
   &:disabled {
     --input-bg-color: #f2f2f2;
     --input-border-color: #e0e0e0;
+
+    [data-theme="dark"] & {
+      --input-bg-color: #d9d9d9;
+      --placeholder-color: #5c5c5c;
+    }
   }
 
   &-with-icon-start {
