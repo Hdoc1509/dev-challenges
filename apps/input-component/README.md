@@ -14,9 +14,7 @@
 
 ## Overview
 
-<!-- TODO: Update screenshot once project has completed -->
-
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![screenshot](screenshots/input-component.png)
 
 **Challenge**: Create a reusable input with all the states in the design and a page displaying all the states. You can work on the same project with other design system challenges. Use Front-end libraries like React or Vue. Don’t look at the existing solution. Fulfill user stories below:
 
@@ -45,7 +43,10 @@
 
 ### What I learned
 
-WIP
+In this challenge I learned:
+
+- Create a reusable and extensible input component
+- Use Typescript discriminated unions for more restrictive types
 
 ## How To Use
 
@@ -59,7 +60,7 @@ git clone https://github.com/Hdoc1509/dev-challenges
 cd dev-challenges && pnpm install
 
 # Run input-component in dev-mode with pnpm
-pnpm nx dev input-component
+pnpm nx dev --open input-component
 # or npm
-npx nx dev input-component
+npx nx dev --open input-component
 ```
