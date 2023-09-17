@@ -36,7 +36,7 @@ function App() {
           <InputVariant legend="Small size">
             <Input size="sm" />
           </InputVariant>
-          <InputVariant legend="Small size">
+          <InputVariant legend="Medium size (Normal)">
             <Input size="md" />
           </InputVariant>
         </div>
