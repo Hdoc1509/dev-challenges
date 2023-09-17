@@ -5,7 +5,7 @@ Monorepo that hosts my [solutions](#challenges) for [Front-end Developer path](h
 ## Challenges
 
 - [x] [Button component](/apps/button-component/)
-- [ ] [Input component](/apps/input-component/)
+- [x] [Input component](/apps/input-component/)
 - [ ] [Windbnb](/apps/windbnb/)
 - [ ] [Todo app](/apps/todo-app/)
 - [ ] [Random quote generator](/apps/random-quote-generator/)
