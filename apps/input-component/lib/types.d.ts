@@ -9,6 +9,8 @@ type InputNotMultiline = { multiline?: never; rows?: never };
 export type InputProps = Simplify<
   {
     label?: string;
+    labelClassName?: string;
+    inputClassName?: string;
     error?: boolean;
     helperText?: string;
     startIcon?: IconProps["name"];
@@ -16,5 +18,5 @@ export type InputProps = Simplify<
     size?: "sm" | "md";
     fullWidth?: boolean;
   } & (InputNotMultiline | InputMultiline) &
-    Omit<ComponentProps<"input">, "size">
+    Omit<ComponentProps<"input">, "size" | "className">
 >;
