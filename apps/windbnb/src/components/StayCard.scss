@@ -3,6 +3,8 @@
   flex-direction: column;
   gap: 16px;
 
+  font-family: "Montserrat", sans-serif;
+
   &__image {
     object-fit: cover;
     border-radius: 24px;
@@ -31,7 +33,7 @@
   }
 
   &__rating {
-    --icon-color: #EB5757;
+    --icon-color: #eb5757;
 
     display: inline-flex;
     align-items: center;
@@ -43,6 +45,8 @@
   }
 
   &__description {
+    margin-top: 0;
+
     color: #333;
     font-size: 16px;
     font-weight: 600;

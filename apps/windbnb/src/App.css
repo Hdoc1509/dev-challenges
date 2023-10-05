@@ -5,3 +5,7 @@
   margin: 0 auto;
   padding: 2rem;
 }
+
+.button {
+  font-family: unset;
+}
