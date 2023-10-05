@@ -10,7 +10,6 @@ export function StayCard() {
         alt=""
       />
       <div className="stay-card__features">
-        {/* TODO: show super-host and type on left, rating on right */}
         <span className="stay-card__super-host">SUPER HOST</span>
         <span className="stay-card__type">Entire apartment. 2 beds</span>
         <span className="stay-card__rating">
