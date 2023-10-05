@@ -1,0 +1,19 @@
+.search-results {
+  &__city {
+    color: #333;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  &__count {
+    color: #4f4f4f;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+  }
+}

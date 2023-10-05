@@ -1,3 +1,6 @@
+import { Icon } from "@hdoc/react-material-icons";
+import "./StayCard.scss";
+
 export function StayCard() {
   return (
     <div className="stay-card">
@@ -7,9 +10,13 @@ export function StayCard() {
         alt=""
       />
       <div className="stay-card__features">
-        <span className="stay-card__host-badge">SUPER HOST</span>
+        {/* TODO: show super-host and type on left, rating on right */}
+        <span className="stay-card__super-host">SUPER HOST</span>
         <span className="stay-card__type">Entire apartment. 2 beds</span>
-        <span className="stay-card__rating">★ 4.40</span>
+        <span className="stay-card__rating">
+          <Icon name="star" variant="round" size="small" />
+          4.40
+        </span>
       </div>
       <p className="stay-card__description">
         Stylist apartment in center of the city

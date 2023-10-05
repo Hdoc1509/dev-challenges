@@ -1,0 +1,50 @@
+.stay-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__image {
+    object-fit: cover;
+    border-radius: 24px;
+  }
+
+  &__features {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__super-host {
+    border-radius: 12px;
+    border: 1px solid #4f4f4f;
+    padding: 4px 8px;
+
+    color: #4f4f4f;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  &__type {
+    color: #828282;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  &__rating {
+    --icon-color: #EB5757;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+
+    color: #4f4f4f;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  &__description {
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+  }
+}

@@ -1,6 +1,7 @@
 import { Footer } from "@internal/components";
+import { SearchResults } from "./components/Results";
+import { SearchBar } from "./components/SearchBar";
 import logoUrl from "../assets/logo.png";
-import { StayCard } from "./components/StayCard";
 import "./App.css";
 
 function App() {
@@ -8,21 +9,10 @@ function App() {
     <>
       <header>
         <img src={logoUrl} alt="windbnb logo" />
-        <div className="searchbar">
-          <button className="location">Helsinki, Finland</button>
-          <button className="guests">Add guests</button>
-          <button className="search">Search</button>
-        </div>
+        <SearchBar />
       </header>
       <main>
-        <header>
-          <h2>Stays in Finland</h2>
-          <span>12+ stays</span>
-        </header>
-        <StayCard />
-        <StayCard />
-        <StayCard />
-        <StayCard />
+        <SearchResults />
       </main>
       <Footer />
     </>

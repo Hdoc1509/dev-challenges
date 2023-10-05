@@ -1,0 +1,36 @@
+.searchbar {
+  --button-bg: transparent;
+  --button-bg-hover: #efefef;
+  --button-shadow: none;
+
+  display: flex;
+
+  border-radius: 16px;
+  box-shadow: 0px 1px 6px 0px var(--shadow-color, #0000001a);
+
+  &:hover {
+    --shadow-color: #00000033;
+  }
+
+  &__location {
+    --button-color: #333;
+    border-radius: 16px 0 0 16px;
+    font-weight: 400;
+  }
+
+  &__guests {
+    --button-color: #bdbdbd;
+    border-radius: 0;
+    font-weight: 400;
+  }
+
+  &__search {
+    --icon-color: #eb5757;
+    border-radius: 0 16px 16px 0;
+  }
+
+  &__guests,
+  &__search {
+    border-left: 1px solid #e5e5e5;
+  }
+}

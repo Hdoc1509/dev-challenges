@@ -10,15 +10,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@hdoc/react-material-icons": "1.1.2",
+    "@hdoc/react-button": "1.1.1",
+    "@hdoc/react-material-icons": "1.5.0",
     "@hdoc/react-toggle-theme": "2.0.1",
     "@internal/components": "workspace:3.0.0",
+    "@material-design-icons/font": "^0.14.10",
     "clsx": "2.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@material-design-icons/font": "^0.14.10",
     "@vitejs/plugin-react-swc": "3.3.2",
     "sass": "1.65.0",
     "typescript": "5.1.6",

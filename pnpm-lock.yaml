@@ -136,15 +136,21 @@ importers:
 
   apps/windbnb:
     dependencies:
+      '@hdoc/react-button':
+        specifier: 1.1.1
+        version: 1.1.1(@hdoc/react-material-icons@1.5.0)(@material-design-icons/font@0.14.11)(react-dom@18.2.0)(react@18.2.0)
       '@hdoc/react-material-icons':
-        specifier: 1.1.2
-        version: 1.1.2(@material-design-icons/font@0.14.11)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 1.5.0
+        version: 1.5.0(@material-design-icons/font@0.14.11)(react-dom@18.2.0)(react@18.2.0)
       '@hdoc/react-toggle-theme':
         specifier: 2.0.1
         version: 2.0.1
       '@internal/components':
         specifier: workspace:3.0.0
         version: link:../../libs/components
+      '@material-design-icons/font':
+        specifier: ^0.14.10
+        version: 0.14.11
       clsx:
         specifier: 2.0.0
         version: 2.0.0
@@ -155,9 +161,6 @@ importers:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
     devDependencies:
-      '@material-design-icons/font':
-        specifier: ^0.14.10
-        version: 0.14.11
       '@vitejs/plugin-react-swc':
         specifier: 3.3.2
         version: 3.3.2(vite@4.4.5)
@@ -175,7 +178,7 @@ importers:
     dependencies:
       '@hdoc/react-material-icons':
         specifier: ^1.1.0
-        version: 1.1.1(@material-design-icons/font@0.14.11)(react-dom@18.2.0)(react@18.2.0)
+        version: 1.1.1(@material-design-icons/font@0.14.13)(react-dom@18.2.0)(react@18.2.0)
       '@hdoc/react-toggle-theme':
         specifier: ^2.0.0
         version: 2.0.1
@@ -646,6 +649,21 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
+  /@hdoc/react-button@1.1.1(@hdoc/react-material-icons@1.5.0)(@material-design-icons/font@0.14.11)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-A9lKKMpSw8uN01CXjFyS9NP6AK8icNQfvUm0yawJySnRvCL/Ypvwh9aPHugWfFrjG69JXm+ThCqy+9sF2fTdDg==}
+    peerDependencies:
+      '@hdoc/react-material-icons': ^1.5.0
+      '@material-design-icons/font': ^0.14.10
+      react: ^18.2.0
+      react-dom: ^18.2.0
+    dependencies:
+      '@hdoc/react-material-icons': 1.5.0(@material-design-icons/font@0.14.11)(react-dom@18.2.0)(react@18.2.0)
+      '@material-design-icons/font': 0.14.11
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      type-fest: 4.3.1
+    dev: false
+
   /@hdoc/react-material-icons@1.1.1(@material-design-icons/font@0.14.11)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-FS5NMaDLy/ciGp5AIAstyxI5smXwSqfx0F7Rgqr87HLPFeoSPBAfZmTYbOYW+QK/u0Are6YiI1P/zkAwt2PiCw==}
     peerDependencies:
@@ -658,14 +676,27 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@hdoc/react-material-icons@1.1.2(@material-design-icons/font@0.14.11)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-bpFv2larz+4uWdsMov6Yv46ljXSrFycFKzLUSmBa7QJlqC9w0Po0Vknk2HOAFglSZlDe7ioZObmRLIniNTjfRQ==}
+  /@hdoc/react-material-icons@1.1.1(@material-design-icons/font@0.14.13)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-FS5NMaDLy/ciGp5AIAstyxI5smXwSqfx0F7Rgqr87HLPFeoSPBAfZmTYbOYW+QK/u0Are6YiI1P/zkAwt2PiCw==}
     peerDependencies:
       '@material-design-icons/font': ^0.14.10
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
+      '@material-design-icons/font': 0.14.13
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@hdoc/react-material-icons@1.5.0(@material-design-icons/font@0.14.11)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-i3gm+eqjDNENrim08eG6mxrR7W8saQtmtKH6cOk6Pj1q/7bXCF4eL4Yi3QEPVGmsdawI5lb/dLW6kp9vCyVTpg==}
+    peerDependencies:
+      '@material-design-icons/font': ^0.14.0
+      react: ^17.0.0 || ^18.0.0
+      react-dom: ^17.0.0 || ^18.0.0
+    dependencies:
       '@material-design-icons/font': 0.14.11
+      clsx: 2.0.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
@@ -727,6 +758,10 @@ packages:
 
   /@material-design-icons/font@0.14.11:
     resolution: {integrity: sha512-s9L+2pgNPSNlmvVf17ST7A5D9QnU2bikHfL/08Huf4Q0haw+DkaZCyiLLXyaECnD1Kyzl66a6WqPeqfGtgj4sQ==}
+
+  /@material-design-icons/font@0.14.13:
+    resolution: {integrity: sha512-qU5Zms9VUdxxq4oC7lY+Eibz+O6YjmctGZKToUfqQOC4qVkbUNksu+0UizFBdbtx8euERZ3GGcFoN6F9LeXSMw==}
+    dev: false
 
   /@nodelib/fs.scandir@2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -3615,7 +3650,6 @@ packages:
   /type-fest@4.3.1:
     resolution: {integrity: sha512-pphNW/msgOUSkJbH58x8sqpq8uQj6b0ZKGxEsLKMUnGorRcDjrUaLS+39+/ub41JNTwrrMyJcUB8+YZs3mbwqw==}
     engines: {node: '>=16'}
-    dev: true
 
   /typed-array-buffer@1.0.0:
     resolution: {integrity: sha512-Y8KTSIglk9OZEr8zywiIHG/kmQ7KWyjseXs1CbSo8vC42w7hg2HgYTxSWwP0+is7bWDc1H+Fo026CpHFwm8tkw==}
