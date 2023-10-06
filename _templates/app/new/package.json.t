@@ -23,7 +23,7 @@ to: apps/<%= name %>/package.json
   },
   "devDependencies": {
     "@material-design-icons/font": "^0.14.10",
-    "@vitejs/plugin-react-swc": "3.3.2",
+    "@vitejs/plugin-react": "^4.0.1",
     "sass": "1.65.0",
     "typescript": "5.1.6",
     "vite": "4.4.5"
