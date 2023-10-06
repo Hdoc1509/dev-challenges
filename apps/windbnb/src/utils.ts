@@ -1,15 +1,17 @@
-import type { RawStayData } from "./types";
+import { validateResults } from "./schemas/results-schema";
+import type { Stay } from "./types";
 
-export const parseResults = (results: RawStayData[]) => {
-  return results.map(
-    ({ city, photo, title, rating, superHost, type, beds }) => ({
-      city,
-      imageUrl: photo,
-      title,
-      rating,
-      isSuperHost: superHost,
-      type,
-      beds,
-    }),
-  );
+export const parseResults = (results: unknown): Stay[] => {
+  const parsedResults = validateResults(results);
+
+  if (!parsedResults.success) {
+    console.error(parsedResults.error);
+    return [];
+  }
+
+  return parsedResults.data.map(({ photo, superHost, ...rest }) => ({
+    imageUrl: photo,
+    isSuperHost: superHost,
+    ...rest,
+  }));
 };
