@@ -2,15 +2,16 @@ import { Button } from "@hdoc/react-button";
 import { FilterLocation } from "./FilterLocation";
 import { FilterGuests } from "./FilterGuests";
 import "./FilterDrawer.scss";
+import clsx from "clsx";
 
 type Props = {
   isOpen?: boolean;
 };
 
 export const FilterDrawer = ({ isOpen }: Props) => {
-  const filterDrawerClass = isOpen
-    ? "filter-container filter-container--open"
-    : "filter-container";
+  const filterDrawerClass = clsx("filter-container", {
+    "filter-container--open": isOpen,
+  });
 
   return (
     <div className={filterDrawerClass}>

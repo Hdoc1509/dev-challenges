@@ -1,3 +1,4 @@
+import { FilterInput } from "./FilterInput";
 import { Icon } from "@hdoc/react-material-icons";
 import "./FilterLocation.scss";
 
@@ -5,10 +6,12 @@ import "./FilterLocation.scss";
 export const FilterLocation = () => {
   return (
     <div className="filter-location">
-      <div className="filter-location__input">
-        <span className="filter-location__label">Location</span>
-        <span className="filter-location__city-country">Helsinki, Finland</span>
-      </div>
+      <FilterInput
+        label="Location"
+        value="Helsinki, Finland"
+        name="location"
+        isSelected
+      />
       <div className="filter-location__menu">
         <div className="filter-location__option">
           <Icon name="location_on" />
