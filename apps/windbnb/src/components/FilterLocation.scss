@@ -1,13 +1,14 @@
 .filter-location {
   display: flex;
   flex-direction: column;
+  gap: 20px;
 
   &__menu {
     display: flex;
     flex-direction: column;
     gap: 20px;
 
-    padding: 20px;
+    padding-inline: 20px;
   }
 
   &__option {
@@ -18,5 +19,9 @@
     gap: 10px;
 
     color: #4f4f4f;
+  }
+
+  .filter-input {
+    border-radius: 16px 0 0 16px;
   }
 }
