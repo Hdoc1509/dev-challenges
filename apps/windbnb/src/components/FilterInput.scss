@@ -1,23 +1,24 @@
 .filter-input {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-
-  border-radius: 16px;
-  padding: 12px 26px;
   box-shadow: 0px 4px 6px 0px rgb(0 0 0 / 10%);
 
   color: #333;
   font-family: "Mulish", sans-serif;
 
-  &--selected {
-    outline: solid 1px #333;
-  }
-
   & label {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    padding: 12px 26px;
+
     font-weight: 800;
     font-size: 10px;
     text-transform: uppercase;
+
+    &.selected {
+      border-radius: 16px;
+      outline: solid 1px #333;
+    }
   }
 
   & input {
@@ -25,7 +26,7 @@
     outline: none;
     padding: 0;
 
-    font-family: 'Mulish', sans-serif;
+    font-family: "Mulish", sans-serif;
     font-size: 14px;
     font-weight: 400;
     color: #333;
