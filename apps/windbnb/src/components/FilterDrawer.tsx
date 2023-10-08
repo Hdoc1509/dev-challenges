@@ -12,10 +12,14 @@ export const FilterDrawer = ({ isOpen }: Props) => {
   const filterDrawerClass = clsx("filter-container", {
     "filter-container--open": isOpen,
   });
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(Object.fromEntries(new FormData(e.currentTarget)));
+  };
 
   return (
     <div className={filterDrawerClass}>
-      <div className="filter-drawer ">
+      <form className="filter-drawer" onSubmit={handleSubmit}>
         <FilterLocation />
         <FilterGuests />
         <div className="filter-drawer__search">
@@ -25,7 +29,7 @@ export const FilterDrawer = ({ isOpen }: Props) => {
             className="filter-drawer__search-button"
           />
         </div>
-      </div>
+      </form>
     </div>
   );
 };

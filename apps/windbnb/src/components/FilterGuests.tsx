@@ -19,6 +19,7 @@ const FilterGuestsCriteria = ({
           size="small"
           variant="outline"
           className="filter-guests__criteria-button"
+          type="button"
         />
         <span className="filter-guests__criteria-count">0</span>
         <ButtonIcon
@@ -26,6 +27,7 @@ const FilterGuestsCriteria = ({
           icon="add"
           size="small"
           variant="outline"
+          type="button"
         />
       </div>
     </div>
