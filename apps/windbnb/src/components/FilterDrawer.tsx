@@ -23,11 +23,15 @@ export const FilterDrawer = ({ isOpen }: Props) => {
         <FilterLocation />
         <FilterGuests />
         <div className="filter-drawer__search">
-          <Button
-            text="Search"
-            iconStart="search"
-            className="filter-drawer__search-button"
-          />
+          <div className="filter-drawer__search-button-wrapper">
+            <Button
+              text="Search"
+              iconStart="search"
+              className="filter-drawer__search-button"
+              size="large"
+              color="danger"
+            />
+          </div>
         </div>
       </form>
     </div>

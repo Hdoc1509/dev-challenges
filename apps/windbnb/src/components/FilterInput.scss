@@ -4,7 +4,7 @@
   color: #333;
   font-family: "Mulish", sans-serif;
 
-  & label {
+  label {
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -21,7 +21,7 @@
     }
   }
 
-  & input {
+  input {
     border: none;
     outline: none;
     padding: 0;
