@@ -20,24 +20,24 @@ export const FilterLocation = ({ isSelected }: { isSelected?: boolean }) => {
         isSelected={isSelected}
         onClick={() => setFilter("location")}
       />
-      <div className="filter-location__menu">
-        <div className="filter-location__option">
+      <ul className="filter-location__menu">
+        <li className="filter-location__option">
           <Icon name="location_on" />
           <span>Helsinki, Finland</span>
-        </div>
-        <div className="filter-location__option">
+        </li>
+        <li className="filter-location__option">
           <Icon name="location_on" />
           <span>Turky, Finland</span>
-        </div>
-        <div className="filter-location__option">
+        </li>
+        <li className="filter-location__option">
           <Icon name="location_on" />
           <span>Oulu, Finland</span>
-        </div>
-        <div className="filter-location__option">
+        </li>
+        <li className="filter-location__option">
           <Icon name="location_on" />
           <span>Vaasa, Finland</span>
-        </div>
-      </div>
+        </li>
+      </ul>
     </div>
   );
 };

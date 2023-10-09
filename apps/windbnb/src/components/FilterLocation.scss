@@ -5,12 +5,12 @@
 
   &__menu {
     display: none;
-    padding-inline: 20px;
+    margin: 0;
+    padding-left: 10px;
   }
   &--selected &__menu {
     display: flex;
     flex-direction: column;
-    gap: 26px;
   }
 
   &__option {
@@ -20,7 +20,16 @@
     align-items: center;
     gap: 10px;
 
+    border-radius: 16px;
+    padding: 10px;
+
     color: #4f4f4f;
+
+    cursor: pointer;
+
+    &:hover {
+      background-color: #efefef;
+    }
   }
 
   .filter-input {
