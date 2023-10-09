@@ -6,6 +6,12 @@
   padding-inline: 3rem;
 }
 
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+}
+
 @media (min-width: 1440px) {
   #root {
     padding-inline: 6rem;
@@ -14,4 +20,26 @@
 
 .button {
   font-family: unset;
+}
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 32px;
+}
+
+@media (max-width: 460px) {
+  .main-header {
+    flex-direction: column;
+    justify-content: unset;
+    gap: 30px;
+
+    margin-bottom: 12px;
+  }
+
+  .main-header__logo {
+    align-self: flex-start;
+  }
 }

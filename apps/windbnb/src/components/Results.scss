@@ -1,10 +1,23 @@
 .search-results {
   font-family: "Montserrat", sans-serif;
 
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   &__city {
+    margin-block: 32px;
+
     color: #333;
     font-size: 24px;
     font-weight: 700;
+
+    @media (max-width: 768px) {
+      margin-block: 24px;
+      font-size: 18px;
+    }
   }
 
   &__count {
@@ -14,8 +27,14 @@
   }
 
   &__cards {
+    --grid-min-width: 380px;
+
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(var(--grid-min-width), 1fr));
     gap: 32px;
+
+    @media (max-width: 768px) {
+      --grid-min-width: 290px;
+    }
   }
 }

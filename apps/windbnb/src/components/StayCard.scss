@@ -1,7 +1,9 @@
 .stay-card {
+  // NOTE: Smallest supported screen size is 360px
+  // WARNING: Screens less than 360px can affect display of internal elements
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
 
   font-family: "Montserrat", sans-serif;
 
@@ -16,29 +18,40 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 12px;
+    gap: 10px;
 
     height: 25px;
   }
 
   &__super-host {
+    // WARNING: In resolutions less than 340px, text can be wrapped
     border-radius: 12px;
     border: 1px solid #4f4f4f;
-    padding: 4px 8px;
+    padding: 6px 10px;
 
     color: #4f4f4f;
     font-size: 12px;
     font-weight: 700;
+
+    @media (max-width: 768px) {
+      padding-inline: 8px;
+      font-size: 10px;
+    }
   }
 
   &__type {
     color: #828282;
     font-size: 14px;
     font-weight: 500;
+
+    @media (max-width: 768px) {
+      font-size: 12px;
+    }
   }
 
   &__rating {
     --icon-color: #eb5757;
+    --icon-size: 18px;
 
     display: inline-flex;
     align-items: center;
@@ -49,13 +62,23 @@
     color: #4f4f4f;
     font-size: 14px;
     font-weight: 500;
+
+    @media (max-width: 768px) {
+      --icon-size: 16px;
+      font-size: 12px;
+    }
   }
 
   &__description {
-    margin-top: 0;
+    // WARNING: In resolutions less than 340px, some descriptions are line wrapped
+    margin: 0;
 
     color: #333;
     font-size: 16px;
     font-weight: 600;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
   }
 }

@@ -12,8 +12,8 @@ function App() {
 
   return (
     <>
-      <header>
-        <img src={logoUrl} alt="windbnb logo" />
+      <header className="main-header">
+        <img src={logoUrl} className="main-header__logo" alt="windbnb logo" />
         <SearchBar />
         <FilterDrawer isOpen={filter !== null}/>
       </header>

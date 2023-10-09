@@ -18,10 +18,10 @@ export function StayCard({ stay }: Props) {
           <span className="stay-card__super-host">SUPER HOST</span>
         )}
         <span className="stay-card__type">
-          {type}. {beds && `${beds} beds`}
+          {`${type}.`} {beds && `${beds} beds`}
         </span>
         <span className="stay-card__rating">
-          <Icon name="star" variant="round" size="small" />
+          <Icon name="star" variant="round" />
           {rating}
         </span>
       </div>
