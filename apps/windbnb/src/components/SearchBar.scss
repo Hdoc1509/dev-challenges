@@ -22,17 +22,15 @@
 
   &__guests {
     --button-color: #bdbdbd;
+
+    border-inline: 1px solid #e5e5e5;
     border-radius: 0;
+
     font-weight: 400;
   }
 
   &__search {
     --icon-color: #eb5757;
     border-radius: 0 16px 16px 0;
-  }
-
-  &__guests,
-  &__search {
-    border-left: 1px solid #e5e5e5;
   }
 }
