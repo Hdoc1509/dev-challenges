@@ -7,6 +7,7 @@ type Props = {
   isSelected?: boolean;
   name: string;
   placeholder?: string;
+  onClick: () => void;
 };
 
 export const FilterInput = ({
@@ -15,11 +16,12 @@ export const FilterInput = ({
   isSelected,
   name,
   placeholder,
+  onClick,
 }: Props) => {
-  const labelClass = clsx({ 'selected': isSelected });
+  const labelClass = clsx({ selected: isSelected });
 
   return (
-    <div className="filter-input">
+    <div className="filter-input" onClick={onClick}>
       <label className={labelClass}>
         {label}
         <input name={name} value={value} placeholder={placeholder} readOnly />

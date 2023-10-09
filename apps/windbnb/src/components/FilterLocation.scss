@@ -4,11 +4,13 @@
   gap: 20px;
 
   &__menu {
+    display: none;
+    padding-inline: 20px;
+  }
+  &--selected &__menu {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-
-    padding-inline: 20px;
+    gap: 26px;
   }
 
   &__option {

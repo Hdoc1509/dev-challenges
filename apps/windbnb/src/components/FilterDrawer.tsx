@@ -1,14 +1,16 @@
 import { Button } from "@hdoc/react-button";
 import { FilterLocation } from "./FilterLocation";
 import { FilterGuests } from "./FilterGuests";
-import "./FilterDrawer.scss";
+import { Filter, useFilterStore } from "../store/filter";
 import clsx from "clsx";
+import "./FilterDrawer.scss";
 
 type Props = {
   isOpen?: boolean;
 };
 
 export const FilterDrawer = ({ isOpen }: Props) => {
+  const filter = useFilterStore((state) => state.filter);
   const filterDrawerClass = clsx("filter-container", {
     "filter-container--open": isOpen,
   });
@@ -20,8 +22,8 @@ export const FilterDrawer = ({ isOpen }: Props) => {
   return (
     <div className={filterDrawerClass}>
       <form className="filter-drawer" onSubmit={handleSubmit}>
-        <FilterLocation />
-        <FilterGuests />
+        <FilterLocation isSelected={filter === Filter.location} />
+        <FilterGuests isSelected={filter === Filter.guests} />
         <div className="filter-drawer__search">
           <div className="filter-drawer__search-button-wrapper">
             <Button

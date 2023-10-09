@@ -3,7 +3,10 @@
   flex-direction: column;
   gap: 20px;
 
-  &__options {
+  &__menu {
+    display: none;
+  }
+  &--selected &__menu {
     display: flex;
     flex-direction: column;
     gap: 30px;
