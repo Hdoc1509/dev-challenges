@@ -8,16 +8,15 @@ import "./App.css";
 
 function App() {
   const filter = useFilterStore((state) => state.filter);
-  const setFilter = useFilterStore((state) => state.setFilter);
 
   return (
     <>
       <header className="main-header">
         <img src={logoUrl} className="main-header__logo" alt="windbnb logo" />
         <SearchBar />
-        <FilterDrawer isOpen={filter !== null}/>
+        <FilterDrawer isOpen={filter !== null} />
       </header>
-      <main onClick={() => setFilter(null)}>
+      <main>
         <SearchResults />
       </main>
       <Footer />

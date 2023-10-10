@@ -11,6 +11,7 @@ type Props = {
 
 export const FilterDrawer = ({ isOpen }: Props) => {
   const filter = useFilterStore((state) => state.filter);
+  const setFilter = useFilterStore((state) => state.setFilter);
   const filterDrawerClass = clsx("filter-container", {
     "filter-container--open": isOpen,
   });
@@ -20,22 +21,27 @@ export const FilterDrawer = ({ isOpen }: Props) => {
   };
 
   return (
-    <div className={filterDrawerClass}>
-      <form className="filter-drawer" onSubmit={handleSubmit}>
-        <FilterLocation isSelected={filter === Filter.location} />
-        <FilterGuests isSelected={filter === Filter.guests} />
-        <div className="filter-drawer__search">
-          <div className="filter-drawer__search-button-wrapper">
-            <Button
-              text="Search"
-              iconStart="search"
-              className="filter-drawer__search-button"
-              size="large"
-              color="danger"
-            />
+    <>
+      <div className={filterDrawerClass}>
+        <form className="filter-drawer" onSubmit={handleSubmit}>
+          <FilterLocation isSelected={filter === Filter.location} />
+          <FilterGuests isSelected={filter === Filter.guests} />
+          <div className="filter-drawer__search">
+            <div className="filter-drawer__search-button-wrapper">
+              <Button
+                text="Search"
+                iconStart="search"
+                className="filter-drawer__search-button"
+                size="large"
+                color="danger"
+              />
+            </div>
           </div>
-        </div>
-      </form>
-    </div>
+        </form>
+      </div>
+      {isOpen && (
+        <div className="filter-backdrop" onClick={() => setFilter(null)}></div>
+      )}
+    </>
   );
 };
