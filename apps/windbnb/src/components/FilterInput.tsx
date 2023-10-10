@@ -1,14 +1,11 @@
+import { ComponentProps } from "react";
 import clsx from "clsx";
 import "./FilterInput.scss";
 
 type Props = {
   label: string;
-  value?: string;
   isSelected?: boolean;
-  name: string;
-  placeholder?: string;
-  onClick: () => void;
-};
+} & Pick<ComponentProps<"input">, "value" | "name" | "placeholder" | "onClick">;
 
 export const FilterInput = ({
   label,
