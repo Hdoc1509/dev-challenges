@@ -18,14 +18,14 @@ export const FilterInput = ({
   placeholder,
   onClick,
 }: Props) => {
-  const labelClass = clsx({ selected: isSelected });
+  const wrapperClass = clsx({ selected: isSelected });
 
   return (
     <div className="filter-input" onClick={onClick}>
-      <label className={labelClass}>
+      <span className={wrapperClass}>
         {label}
         <input name={name} value={value} placeholder={placeholder} readOnly />
-      </label>
+      </span>
     </div>
   );
 };

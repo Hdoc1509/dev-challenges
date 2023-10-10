@@ -4,8 +4,7 @@
   color: #333;
   font-family: "Mulish", sans-serif;
 
-
-  label {
+  span {
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -17,11 +16,11 @@
     font-size: 10px;
     text-transform: uppercase;
 
+    cursor: pointer;
 
     &:hover:not(.selected) {
       background-color: #efefef;
       border-radius: 16px;
-      cursor: pointer;
     }
 
     &.selected {
