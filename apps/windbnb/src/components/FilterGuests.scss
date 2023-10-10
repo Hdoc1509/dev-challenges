@@ -45,8 +45,14 @@
   &__criteria-button {
     --button-bg: transparent;
     --button-outline-color: #828282;
+    --icon-size: 16px;
 
     padding: 2px;
     cursor: pointer;
+    border-radius: 4px;
+
+    &:hover {
+      --button-outline-color: #222;
+    }
   }
 }
