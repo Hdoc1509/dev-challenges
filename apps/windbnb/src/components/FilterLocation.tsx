@@ -4,39 +4,42 @@ import { useFilterStore } from "../store/filter";
 import clsx from "clsx";
 import "./FilterLocation.scss";
 
-// TODO: Try https://www.npmjs.com/package/bemt for create classNames
-export const FilterLocation = ({ isSelected }: { isSelected?: boolean }) => {
-  const setFilter = useFilterStore((state) => state.setFilter);
-  const filterLocationClass = clsx("filter-location", {
-    "filter-location--selected": isSelected,
-  })
+const LocationOption = ({ location }: { location: string }) => {
+  const setLocation = useFilterStore((state) => state.setLocation);
 
   return (
-    <div className={filterLocationClass}>
+    <li
+      className="filter-location__option"
+      onClick={() => setLocation(location)}
+    >
+      <Icon name="location_on" />
+      <span>{location}</span>
+    </li>
+  );
+};
+
+export const FilterLocation = ({ isSelected }: { isSelected?: boolean }) => {
+  const setFilter = useFilterStore((state) => state.setFilter);
+  const location = useFilterStore((state) => state.location);
+  const className = clsx("filter-location", {
+    "filter-location--selected": isSelected,
+  });
+
+  return (
+    <div className={className}>
       <FilterInput
         label="Location"
-        value="Helsinki, Finland"
+        value={location ?? ""}
         name="location"
+        placeholder="Add location"
         isSelected={isSelected}
         onClick={() => setFilter("location")}
       />
       <ul className="filter-location__menu">
-        <li className="filter-location__option">
-          <Icon name="location_on" />
-          <span>Helsinki, Finland</span>
-        </li>
-        <li className="filter-location__option">
-          <Icon name="location_on" />
-          <span>Turky, Finland</span>
-        </li>
-        <li className="filter-location__option">
-          <Icon name="location_on" />
-          <span>Oulu, Finland</span>
-        </li>
-        <li className="filter-location__option">
-          <Icon name="location_on" />
-          <span>Vaasa, Finland</span>
-        </li>
+        <LocationOption location="Helsinki, Finland" />
+        <LocationOption location="Turky, Finland" />
+        <LocationOption location="Oulu, Finland" />
+        <LocationOption location="Vaasa, Finland" />
       </ul>
     </div>
   );

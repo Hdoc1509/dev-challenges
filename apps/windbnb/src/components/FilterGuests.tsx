@@ -1,16 +1,21 @@
 import { FilterInput } from "./FilterInput";
 import { ButtonIcon } from "@hdoc/react-button";
+import { type GuestType, useFilterStore } from "../store/filter";
 import clsx from "clsx";
 import "./FilterGuests.scss";
-import { useFilterStore } from "../store/filter";
 
 const FilterGuestsCriteria = ({
   criteria,
   criteriaHint,
 }: {
-  criteria: string;
+  criteria: Capitalize<GuestType>;
   criteriaHint: string;
 }) => {
+  const guests = useFilterStore((state) => state.guests);
+  const addGuest = useFilterStore((state) => state.addGuest);
+  const removeGuest = useFilterStore((state) => state.removeGuest);
+  const criteriaLower = criteria.toLowerCase() as GuestType;
+
   return (
     <div className="filter-guests__criteria">
       <span className="filter-guests__criteria-label">{criteria}</span>
@@ -18,18 +23,21 @@ const FilterGuestsCriteria = ({
       <div className="filter-guests__criteria-counter">
         <ButtonIcon
           icon="remove"
-          size="small"
           variant="outline"
           className="filter-guests__criteria-button"
           type="button"
+          onClick={() => removeGuest(criteriaLower)}
+          disabled={guests[criteriaLower] === 0}
         />
-        <span className="filter-guests__criteria-count">0</span>
+        <span className="filter-guests__criteria-count">
+          {guests[criteriaLower]}
+        </span>
         <ButtonIcon
           className="filter-guests__criteria-button"
           icon="add"
-          size="small"
           variant="outline"
           type="button"
+          onClick={() => addGuest(criteriaLower)}
         />
       </div>
     </div>
@@ -38,15 +46,16 @@ const FilterGuestsCriteria = ({
 
 export const FilterGuests = ({ isSelected }: { isSelected?: boolean }) => {
   const setFilter = useFilterStore((state) => state.setFilter);
+  const guests = useFilterStore((state) => state.guests.total);
   const filterGuestsClass = clsx("filter-guests", {
     "filter-guests--selected": isSelected,
-  })
+  });
 
   return (
     <div className={filterGuestsClass}>
       <FilterInput
         label="Guests"
-        value={undefined}
+        value={guests === 0 ? "" : `${guests} guests`}
         name="guests"
         placeholder="Add guests"
         isSelected={isSelected}
