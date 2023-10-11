@@ -1,17 +1,10 @@
-.filter-location {
+.filter-location-menu {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  grid-area: location-menu;
 
-  &__menu {
-    display: none;
-    margin: 0;
-    padding-left: 10px;
-  }
-  &--selected &__menu {
-    display: flex;
-    flex-direction: column;
-  }
+  margin: 0;
+  padding-left: 10px;
 
   &__option {
     --icon-color: #4f4f4f;
@@ -30,9 +23,5 @@
     &:hover {
       background-color: #efefef;
     }
-  }
-
-  .filter-input {
-    border-radius: 16px 0 0 16px;
   }
 }

@@ -33,18 +33,41 @@
 .filter-drawer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 60px 0;
+  grid-template-areas:
+    "location-input guests-input search-button"
+    "location-menu guests-menu .";
+  row-gap: 0;
 
   width: 100%;
   max-width: 1280px;
   padding: 3rem;
+  overflow: hidden;
+
+  transition: grid-template-rows 0.3s ease;
+
+  &--with-menu {
+    grid-template-rows: 60px 180px;
+    row-gap: 30px;
+  }
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    grid-template-rows: auto-fit;
+  }
+
+  & .filter-input:nth-child(1) {
+    grid-area: location-input;
+    border-radius: 16px 0 0 16px;
+  }
+  & .filter-input:nth-child(2) {
+    grid-area: guests-input;
   }
 
   &__search-button-wrapper {
     display: flex;
     justify-content: center;
+    grid-area: search-button;
 
     padding: 10px;
     border-radius: 0 16px 16px 0;

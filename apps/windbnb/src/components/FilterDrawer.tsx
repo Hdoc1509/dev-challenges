@@ -5,16 +5,17 @@ import { Filter, useFilterStore } from "../store/filter";
 import clsx from "clsx";
 import "./FilterDrawer.scss";
 
-type Props = {
-  isOpen?: boolean;
-};
-
-export const FilterDrawer = ({ isOpen }: Props) => {
+export const FilterDrawer = ({ isOpen }: { isOpen?: boolean }) => {
   const filter = useFilterStore((state) => state.filter);
   const setFilter = useFilterStore((state) => state.setFilter);
-  const filterDrawerClass = clsx("filter-container", {
+
+  const containerClass = clsx("filter-container", {
     "filter-container--open": isOpen,
   });
+  const drawerClass = clsx("filter-drawer", {
+    "filter-drawer--with-menu": filter,
+  });
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(Object.fromEntries(new FormData(e.currentTarget)));
@@ -22,20 +23,18 @@ export const FilterDrawer = ({ isOpen }: Props) => {
 
   return (
     <>
-      <div className={filterDrawerClass}>
-        <form className="filter-drawer" onSubmit={handleSubmit}>
+      <div className={containerClass}>
+        <form className={drawerClass} onSubmit={handleSubmit}>
           <FilterLocation isSelected={filter === Filter.location} />
           <FilterGuests isSelected={filter === Filter.guests} />
-          <div className="filter-drawer__search">
-            <div className="filter-drawer__search-button-wrapper">
-              <Button
-                text="Search"
-                iconStart="search"
-                className="filter-drawer__search-button"
-                size="large"
-                color="danger"
-              />
-            </div>
+          <div className="filter-drawer__search-button-wrapper">
+            <Button
+              text="Search"
+              iconStart="search"
+              className="filter-drawer__search-button"
+              size="large"
+              color="danger"
+            />
           </div>
         </form>
       </div>

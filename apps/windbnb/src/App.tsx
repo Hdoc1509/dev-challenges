@@ -3,8 +3,8 @@ import { SearchResults } from "./components/Results";
 import { SearchBar } from "./components/SearchBar";
 import { FilterDrawer } from "./components/FilterDrawer";
 import { useFilterStore } from "./store/filter";
-import logoUrl from "../assets/logo.png";
 import { parseResults } from "./utils.ts";
+import logoUrl from "../assets/logo.png";
 import results from "../mocks/stays.json";
 import "./App.css";
 
