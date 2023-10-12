@@ -30,7 +30,7 @@
     cursor: pointer;
     border-radius: 4px;
 
-    &:hover {
+    &:hover:not(:disabled) {
       --button-outline-color: #222;
     }
   }
