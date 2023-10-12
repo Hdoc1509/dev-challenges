@@ -32,7 +32,6 @@ export const FilterDrawer = ({ isOpen }: { isOpen?: boolean }) => {
               text="Search"
               iconStart="search"
               className="filter-drawer__search-button"
-              size="large"
               color="danger"
             />
           </div>
