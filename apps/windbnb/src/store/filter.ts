@@ -1,11 +1,12 @@
+import type { ValueOf } from "type-fest";
 import { create } from "zustand";
 
-export const Filter = Object.freeze({
-  location: "location",
-  guests: "guests",
+export const FILTER = Object.freeze({
+  LOCATION: "LOCATION",
+  GUESTS: "GUESTS",
 });
 
-type TFilter = keyof typeof Filter;
+type TFilter = ValueOf<typeof FILTER>;
 export type GuestType = "adults" | "children";
 
 type FilterStore = {

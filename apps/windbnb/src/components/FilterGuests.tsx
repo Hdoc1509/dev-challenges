@@ -1,6 +1,6 @@
 import { FilterInput } from "./FilterInput";
 import { ButtonIcon } from "@hdoc/react-button";
-import { type GuestType, useFilterStore } from "../store/filter";
+import { type GuestType, useFilterStore, FILTER } from "../store/filter";
 import "./FilterGuests.scss";
 
 export const FilterGuestsCriteria = ({
@@ -56,7 +56,7 @@ export const FilterGuests = ({ isSelected }: { isSelected?: boolean }) => {
         name="guests"
         placeholder="Add guests"
         isSelected={isSelected}
-        onClick={() => setFilter("guests")}
+        onClick={() => setFilter(FILTER.GUESTS)}
       />
       {isSelected && (
         <div className="filter-guests-menu">

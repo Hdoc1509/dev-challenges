@@ -1,5 +1,5 @@
 import { Button, ButtonIcon } from "@hdoc/react-button";
-import { useFilterStore } from "../store/filter";
+import { FILTER, useFilterStore } from "../store/filter";
 import "./SearchBar.scss";
 
 export const SearchBar = () => {
@@ -10,17 +10,17 @@ export const SearchBar = () => {
       <Button
         className="searchbar__location"
         text="Helsinki, Finland"
-        onClick={() => setFilter("location")}
+        onClick={() => setFilter(FILTER.LOCATION)}
       />
       <Button
         className="searchbar__guests"
         text="Add guests"
-        onClick={() => setFilter("guests")}
+        onClick={() => setFilter(FILTER.GUESTS)}
       />
       <ButtonIcon
         icon="search"
         className="searchbar__search"
-        onClick={() => setFilter("location")}
+        onClick={() => setFilter(FILTER.LOCATION)}
       />
     </div>
   );

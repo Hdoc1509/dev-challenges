@@ -1,6 +1,6 @@
 import { FilterInput } from "./FilterInput";
 import { Icon } from "@hdoc/react-material-icons";
-import { useFilterStore } from "../store/filter";
+import { FILTER, useFilterStore } from "../store/filter";
 import "./FilterLocation.scss";
 
 export const LocationOption = ({ location }: { location: string }) => {
@@ -29,7 +29,7 @@ export const FilterLocation = ({ isSelected }: { isSelected?: boolean }) => {
         name="location"
         placeholder="Add location"
         isSelected={isSelected}
-        onClick={() => setFilter("location")}
+        onClick={() => setFilter(FILTER.LOCATION)}
       />
       {isSelected && (
         <ul className="filter-location-menu">
