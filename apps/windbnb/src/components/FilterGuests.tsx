@@ -50,6 +50,7 @@ export const FilterGuests = ({ isSelected }: { isSelected?: boolean }) => {
   return (
     <>
       <FilterInput
+        className="filter-guests-input"
         label="Guests"
         value={guests === 0 ? "" : `${guests} guests`}
         name="guests"

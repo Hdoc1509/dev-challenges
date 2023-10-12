@@ -5,7 +5,10 @@ import "./FilterInput.scss";
 type Props = {
   label: string;
   isSelected?: boolean;
-} & Pick<ComponentProps<"input">, "value" | "name" | "placeholder" | "onClick">;
+} & Pick<
+  ComponentProps<"input">,
+  "value" | "name" | "placeholder" | "onClick" | "className"
+>;
 
 export const FilterInput = ({
   label,
@@ -13,12 +16,14 @@ export const FilterInput = ({
   isSelected,
   name,
   placeholder,
+  className,
   onClick,
 }: Props) => {
+  const containerClass = clsx("filter-input", className);
   const wrapperClass = clsx({ selected: isSelected });
 
   return (
-    <div className="filter-input" onClick={onClick}>
+    <div className={containerClass} onClick={onClick}>
       <span className={wrapperClass}>
         {label}
         <input name={name} value={value} placeholder={placeholder} readOnly />
