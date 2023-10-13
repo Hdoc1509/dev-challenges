@@ -8,7 +8,7 @@ export const SearchResults = ({ results }: { results: Stay[] }) => {
       <header>
         <h2 className="search-results__city">Stays in Finland</h2>
         {results.length > 0 && (
-          <span className="search-results__count">12+ stays</span>
+          <span className="search-results__count">{results.length} stays</span>
         )}
       </header>
       <div className="search-results__cards">
