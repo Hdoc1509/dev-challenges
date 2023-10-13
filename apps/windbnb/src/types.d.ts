@@ -11,3 +11,11 @@ export type Stay = {
   beds: number | null;
   imageUrl: string;
 };
+
+export type SearchOptions = {
+  location?: {
+    city: string;
+    country: string;
+  };
+  guests?: number;
+};

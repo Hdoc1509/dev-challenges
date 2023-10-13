@@ -4,9 +4,17 @@ import { FilterLocation } from "./FilterLocation";
 import { FILTER, useFilterStore } from "../store/filter";
 import clsx from "clsx";
 import "./FilterDrawer.scss";
+import { SearchOptions } from "../types";
 
-export const FilterDrawer = ({ isOpen }: { isOpen?: boolean }) => {
+type Props = {
+  isOpen?: boolean;
+  onSearch: (options: SearchOptions) => void;
+};
+
+export const FilterDrawer = ({ isOpen, onSearch }: Props) => {
   const filter = useFilterStore((state) => state.filter);
+  const guests = useFilterStore((state) => state.guests.total);
+  const location = useFilterStore((state) => state.location);
   const setFilter = useFilterStore((state) => state.setFilter);
 
   const containerClass = clsx("filter-container", {
@@ -18,23 +26,39 @@ export const FilterDrawer = ({ isOpen }: { isOpen?: boolean }) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(Object.fromEntries(new FormData(e.currentTarget)));
+
+    if (location) {
+      const [city, country] = location.split(",");
+
+      onSearch({
+        guests,
+        location: { city, country: country.trim() },
+      });
+    } else {
+      onSearch({ guests });
+    }
+
+    setFilter(null);
   };
 
   return (
     <>
       <div className={containerClass}>
         <form className={drawerClass} onSubmit={handleSubmit}>
-          <FilterLocation isSelected={filter === FILTER.LOCATION} />
-          <FilterGuests isSelected={filter === FILTER.GUESTS} />
-          <div className="filter-drawer__search-button-wrapper">
-            <Button
-              text="Search"
-              iconStart="search"
-              className="filter-drawer__search-button"
-              color="danger"
-            />
-          </div>
+          {isOpen && (
+            <>
+              <FilterLocation isSelected={filter === FILTER.LOCATION} />
+              <FilterGuests isSelected={filter === FILTER.GUESTS} />
+              <div className="filter-drawer__search-button-wrapper">
+                <Button
+                  text="Search"
+                  iconStart="search"
+                  className="filter-drawer__search-button"
+                  color="danger"
+                />
+              </div>
+            </>
+          )}
         </form>
       </div>
       {isOpen && (
