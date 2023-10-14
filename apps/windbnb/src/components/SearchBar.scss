@@ -2,6 +2,7 @@
   --button-bg: transparent;
   --button-bg-hover: #efefef;
   --button-shadow: none;
+  --button-color: #bdbdbd;
 
   display: flex;
 
@@ -15,18 +16,20 @@
   }
 
   &__location {
-    --button-color: #333;
     border-radius: 16px 0 0 16px;
     font-weight: 400;
   }
 
   &__guests {
-    --button-color: #bdbdbd;
-
     border-inline: 1px solid #e5e5e5;
     border-radius: 0;
 
     font-weight: 400;
+  }
+
+  &__location.with-value,
+  &__guests.with-value {
+    --button-color: #333;
   }
 
   &__search {

@@ -1,9 +1,9 @@
+import { useEffect, useMemo } from "react";
 import { FilterInput } from "./FilterInput";
 import { Icon } from "@hdoc/react-material-icons";
 import { FILTER, useFilterStore } from "../store/filter";
-import "./FilterLocation.scss";
 import { useStays } from "../hooks/useStays";
-import { useEffect, useMemo } from "react";
+import "./FilterLocation.scss";
 
 export const LocationOption = ({ location }: { location: string }) => {
   const setLocation = useFilterStore((state) => state.setLocation);
