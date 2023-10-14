@@ -46,9 +46,20 @@
   flex-direction: column;
   gap: 30px;
   grid-area: guests-menu;
+
+  @media (max-width: 768px) {
+    margin-block: 30px;
+    margin-left: 25px;
+  }
 }
 
 .filter-guests-input {
   grid-area: guests-input;
   border-inline: 1px solid #e5e5e5;
+
+  @media (max-width: 768px) {
+    border-inline: none;
+    border-top: 1px solid #e5e5e5;
+    border-radius: 0 0 16px 16px;
+  }
 }

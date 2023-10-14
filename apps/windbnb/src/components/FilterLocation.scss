@@ -8,6 +8,10 @@
   margin: 0;
   padding-left: 10px;
 
+  @media (max-width: 768px) {
+    margin-block: 30px;
+  }
+
   &__option {
     --icon-color: #4f4f4f;
 
@@ -31,4 +35,9 @@
 .filter-location-input {
   grid-area: location-input;
   border-radius: 16px 0 0 16px;
+
+  @media (max-width: 768px) {
+    border-radius: 16px 16px 0 0;
+    box-shadow: none;
+  }
 }

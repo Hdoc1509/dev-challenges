@@ -17,11 +17,13 @@
 
   &__location {
     border-radius: 16px 0 0 16px;
+    padding: 18px 16px;
     font-weight: 400;
   }
 
   &__guests {
     border-inline: 1px solid #e5e5e5;
+    padding: 18px 16px;
     border-radius: 0;
 
     font-weight: 400;
@@ -35,5 +37,6 @@
   &__search {
     --icon-color: #eb5757;
     border-radius: 0 16px 16px 0;
+    padding: 18px;
   }
 }
