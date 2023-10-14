@@ -51,17 +51,10 @@
     row-gap: 30px;
   }
 
+  // TODO: Improve styles for responsive
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     grid-template-rows: auto-fit;
-  }
-
-  & .filter-input:nth-child(1) {
-    grid-area: location-input;
-    border-radius: 16px 0 0 16px;
-  }
-  & .filter-input:nth-child(2) {
-    grid-area: guests-input;
   }
 
   &__search-button-wrapper {

@@ -39,6 +39,7 @@ export const FilterLocation = ({ isSelected }: { isSelected?: boolean }) => {
         value={location ?? ""}
         name="location"
         placeholder="Add location"
+        className="filter-location-input"
         isSelected={isSelected}
         onClick={() => setFilter(FILTER.LOCATION)}
       />
