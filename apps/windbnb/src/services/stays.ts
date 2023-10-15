@@ -1,5 +1,5 @@
-import results from "../../mocks/stays.json";
-import type { Stay } from "../../types";
+import results from "../mocks/stays.json";
+import type { Stay } from "../types";
 
 type SearchOptions = {
   location?: {

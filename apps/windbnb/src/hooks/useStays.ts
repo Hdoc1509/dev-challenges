@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { searchStays } from "../components/services/stays";
+import { searchStays } from "../services/stays";
 import type { SearchOptions, Stay } from "../types";
 
 type Result = {
