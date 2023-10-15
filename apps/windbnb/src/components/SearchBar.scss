@@ -1,3 +1,5 @@
+@use '../scss/mixins' as *;
+
 .searchbar {
   --button-bg: transparent;
   --button-bg-hover: #efefef;
@@ -16,7 +18,7 @@
   }
 
   &__location {
-    border-radius: 16px 0 0 16px;
+    @include border-left-rounded(16px);
     padding: 18px 16px;
     font-weight: 400;
   }
@@ -36,7 +38,7 @@
 
   &__search {
     --icon-color: #eb5757;
-    border-radius: 0 16px 16px 0;
+    @include border-right-rounded(16px);
     padding: 18px;
   }
 }

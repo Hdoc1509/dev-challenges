@@ -14,3 +14,22 @@
 @mixin large-screen {
   @media (min-width: 1200px) { @content; }
 }
+
+@mixin border-left-rounded($radius) {
+  border-radius: $radius 0 0 $radius;
+}
+@mixin border-right-rounded($radius) {
+  border-radius: 0 $radius $radius 0;
+}
+@mixin border-top-rounded($radius) {
+  border-radius: $radius $radius 0 0;
+}
+@mixin border-bottom-rounded($radius) {
+  border-radius: 0 0 $radius $radius;
+}
+
+@mixin debug {
+  background: rgb(255 0 0 / 50%) !important;
+}
+
+// TODO: Create mixin for default box-shadow

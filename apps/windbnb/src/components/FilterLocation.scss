@@ -36,10 +36,10 @@
 
 .filter-location-input {
   grid-area: location-input;
-  border-radius: 16px 0 0 16px;
+  @include border-left-rounded(16px);
 
   @include extra-small-screen {
-    border-radius: 16px 16px 0 0;
-    box-shadow: none;
+    @include border-top-rounded(16px);
+    box-shadow: 0 1px 6px 0 rgb(0 0 0 / 10%);
   }
 }

@@ -62,6 +62,6 @@
   @include extra-small-screen {
     border-inline: none;
     border-top: 1px solid #e5e5e5;
-    border-radius: 0 0 16px 16px;
+    @include border-bottom-rounded(16px);
   }
 }
