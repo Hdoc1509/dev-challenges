@@ -1,3 +1,5 @@
+@use "../scss/mixins" as *;
+
 .filter-location-menu {
   display: flex;
   flex-direction: column;
@@ -8,7 +10,7 @@
   margin: 0;
   padding-left: 10px;
 
-  @media (max-width: 768px) {
+  @include extra-small-screen {
     margin-block: 30px;
   }
 
@@ -36,7 +38,7 @@
   grid-area: location-input;
   border-radius: 16px 0 0 16px;
 
-  @media (max-width: 768px) {
+  @include extra-small-screen {
     border-radius: 16px 16px 0 0;
     box-shadow: none;
   }

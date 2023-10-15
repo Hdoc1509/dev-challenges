@@ -1,0 +1,16 @@
+// prettier-ignore
+@mixin extra-small-screen {
+  @media (max-width: 767px) { @content; }
+}
+// prettier-ignore
+@mixin small-screen {
+  @media (min-width: 768px) { @content; }
+}
+// prettier-ignore
+@mixin medium-screen {
+  @media (min-width: 900px) { @content; }
+}
+// prettier-ignore
+@mixin large-screen {
+  @media (min-width: 1200px) { @content; }
+}

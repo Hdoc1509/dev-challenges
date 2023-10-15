@@ -2,9 +2,9 @@ import { Button } from "@hdoc/react-button";
 import { FilterGuests } from "./FilterGuests";
 import { FilterLocation } from "./FilterLocation";
 import { FILTER, useFilterStore } from "../store/filter";
+import { SearchOptions } from "../types";
 import clsx from "clsx";
 import "./FilterDrawer.scss";
-import { SearchOptions } from "../types";
 
 type Props = {
   isOpen?: boolean;

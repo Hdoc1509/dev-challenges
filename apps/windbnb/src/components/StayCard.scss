@@ -1,3 +1,5 @@
+@use "../scss/mixins" as *;
+
 .stay-card {
   // NOTE: Smallest supported screen size is 360px
   // WARNING: Screens less than 360px can affect display of internal elements
@@ -33,7 +35,7 @@
     font-size: 12px;
     font-weight: 700;
 
-    @media (max-width: 768px) {
+    @include extra-small-screen {
       padding-inline: 8px;
       font-size: 10px;
     }
@@ -44,7 +46,7 @@
     font-size: 14px;
     font-weight: 500;
 
-    @media (max-width: 768px) {
+    @include extra-small-screen {
       font-size: 12px;
     }
   }
@@ -63,7 +65,7 @@
     font-size: 14px;
     font-weight: 500;
 
-    @media (max-width: 768px) {
+    @include extra-small-screen {
       --icon-size: 16px;
       font-size: 12px;
     }
@@ -77,7 +79,7 @@
     font-size: 16px;
     font-weight: 600;
 
-    @media (max-width: 768px) {
+    @include extra-small-screen {
       font-size: 14px;
     }
   }

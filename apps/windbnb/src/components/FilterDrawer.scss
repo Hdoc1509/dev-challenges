@@ -1,3 +1,5 @@
+@use "../scss/mixins" as *;
+
 .filter-container {
   position: absolute;
   top: 0;
@@ -54,7 +56,7 @@
 
   transition: grid-template-rows 0.3s ease;
 
-  @media (max-width: 768px) {
+  @include extra-small-screen {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto 300px auto;
     row-gap: 0;
@@ -78,7 +80,7 @@
     border-radius: 0 16px 16px 0;
     box-shadow: 0px 4px 6px 0px rgb(0 0 0 / 10%);
 
-    @media (max-width: 768px) {
+    @include extra-small-screen {
       margin-top: 50px;
       box-shadow: none;
     }

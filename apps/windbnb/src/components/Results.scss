@@ -1,3 +1,5 @@
+@use '../scss/mixins' as *;
+
 .search-results {
   font-family: "Montserrat", sans-serif;
 
@@ -14,7 +16,7 @@
     font-size: 24px;
     font-weight: 700;
 
-    @media (max-width: 768px) {
+    @include extra-small-screen {
       margin-block: 24px;
       font-size: 18px;
     }
@@ -33,7 +35,7 @@
     grid-template-columns: repeat(auto-fit, minmax(var(--grid-min-width), 1fr));
     gap: 32px;
 
-    @media (max-width: 768px) {
+    @include extra-small-screen {
       --grid-min-width: 290px;
     }
   }
