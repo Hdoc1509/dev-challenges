@@ -6,6 +6,7 @@ export const parseResults = (results: unknown): Stay[] => {
 
   if (!parsedResults.success) {
     console.error(parsedResults.error);
+    // NOTE: should return an empty array(?)
     return [];
   }
 
