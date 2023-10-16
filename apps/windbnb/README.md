@@ -29,16 +29,22 @@
 
 - [React](https://reactjs.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
+- [zod](https://zod.dev/)
+- [zustand](https://docs.pmnd.rs/zustand/getting-started/introduction)
 - [Vite](https://vitejs.dev/)
 - [Sass](https://sass-lang.com/)
 - [clsx](https://github.com/lukeed/clsx#readme)
 - [BEM](https://getbem.com/)
+- [@hdoc/react-button](https://www.npmjs.com/package/@hdoc/react-button)
 - [@hdoc/react-material-icons](https://www.npmjs.com/package/@hdoc/react-material-icons)
 - [@hdoc/react-toggle-theme](https://www.npmjs.com/package/@hdoc/react-toggle-theme)
 
 ### What I learned
 
-WIP
+- Display data following a given design
+- Filter data by different criteria
+- Share data and functions between components with `zustand`
+- Validate received data with `zod` schemas
 
 ## How To Use
 
