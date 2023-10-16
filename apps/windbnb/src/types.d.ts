@@ -1,5 +1,3 @@
-// Generated with app.quicktype.io
-
 export type Stay = {
   city: string;
   country: string;
@@ -19,3 +17,5 @@ export type SearchOptions = {
   };
   guests?: number;
 };
+
+export type FnSearchOptions = (options?: SearchOptions) => Promise<void>;

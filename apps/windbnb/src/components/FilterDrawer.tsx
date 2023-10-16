@@ -2,13 +2,13 @@ import { Button, ButtonIcon } from "@hdoc/react-button";
 import { FilterGuests } from "./FilterGuests";
 import { FilterLocation } from "./FilterLocation";
 import { FILTER, useFilterStore } from "../store/filter";
-import { SearchOptions } from "../types";
+import { FnSearchOptions } from "../types";
 import clsx from "clsx";
 import "./FilterDrawer.scss";
 
 type Props = {
   isOpen?: boolean;
-  onSearch: (options: SearchOptions) => void;
+  onSearch: FnSearchOptions;
 };
 
 export const FilterDrawer = ({ isOpen, onSearch }: Props) => {
@@ -27,12 +27,12 @@ export const FilterDrawer = ({ isOpen, onSearch }: Props) => {
     if (location) {
       const [city, country] = location.split(",");
 
-      onSearch({
+      void onSearch({
         guests,
         location: { city, country: country.trim() },
       });
     } else {
-      onSearch({ guests });
+      void onSearch({ guests });
     }
 
     setFilter(null);
@@ -41,7 +41,11 @@ export const FilterDrawer = ({ isOpen, onSearch }: Props) => {
   return (
     <>
       <div className={containerClass}>
-        <form className="filter-drawer" data-filter={filter} onSubmit={handleSubmit}>
+        <form
+          className="filter-drawer"
+          data-filter={filter}
+          onSubmit={handleSubmit}
+        >
           {isOpen && (
             <>
               <header className="filter-drawer__header">

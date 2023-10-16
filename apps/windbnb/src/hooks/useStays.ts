@@ -1,11 +1,11 @@
 import { useCallback, useState } from "react";
 import { searchStays } from "../services/stays";
-import type { SearchOptions, Stay } from "../types";
+import type { FnSearchOptions, SearchOptions, Stay } from "../types";
 
 type Result = {
   isLoading: boolean;
   stays: Stay[];
-  getStays: (options?: SearchOptions) => Promise<void>;
+  getStays: FnSearchOptions;
 };
 
 export const useStays = (): Result => {
