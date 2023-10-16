@@ -15,5 +15,7 @@ Monorepo that hosts my [solutions](#challenges) for [Front-end Developer path](h
 
 ## Packages
 
-- [@hdoc/react-material-icons](https://github.com/Hdoc1509/react-components/tree/master/packages/react-material-icons#readme)
-- [@hdoc/react-toggle-theme](https://github.com/Hdoc1509/react-components/tree/master/packages/react-toggle-theme#readme)
+- [@hdoc/react-button](https://www.npmjs.com/package/@hdoc/react-button)
+- [@hdoc/react-input](https://www.npmjs.com/package/@hdoc/react-input)
+- [@hdoc/react-material-icons](https://www.npmjs.com/package/@hdoc/react-material-icons)
+- [@hdoc/react-toggle-theme](https://www.npmjs.com/package/@hdoc/react-toggle-theme)
