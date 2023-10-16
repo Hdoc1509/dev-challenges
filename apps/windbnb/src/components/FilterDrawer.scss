@@ -43,8 +43,8 @@
 
 .filter-drawer {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: min-content 180px;
+  grid-template-columns: var(--grid-columns, repeat(3, 1fr));
+  grid-template-rows: var(--grid-rows,  min-content 180px);
   grid-template-areas:
     "location-input  guests-input  search-button"
     "location-menu   guests-menu   .";
@@ -58,10 +58,10 @@
   transition: grid-template-rows 0.3s ease;
 
   @include extra-small-screen {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto 300px auto;
-    row-gap: 0;
+    --grid-columns: 1fr;
+    --grid-rows: auto auto auto 250px auto;
 
+    row-gap: 0;
     padding: 6px 12px 24px 12px;
 
     &[data-filter="LOCATION"] {
@@ -104,7 +104,6 @@
     box-shadow: 0px 4px 6px 0px rgb(0 0 0 / 10%);
 
     @include extra-small-screen {
-      margin-top: 50px;
       box-shadow: none;
     }
   }
