@@ -1,4 +1,4 @@
-import { Button } from "@hdoc/react-button";
+import { Button, ButtonIcon } from "@hdoc/react-button";
 import { FilterGuests } from "./FilterGuests";
 import { FilterLocation } from "./FilterLocation";
 import { FILTER, useFilterStore } from "../store/filter";
@@ -44,6 +44,10 @@ export const FilterDrawer = ({ isOpen, onSearch }: Props) => {
         <form className="filter-drawer" data-filter={filter} onSubmit={handleSubmit}>
           {isOpen && (
             <>
+              <header className="filter-drawer__header">
+                <span>Edit your search</span>
+                <ButtonIcon icon="close" onClick={() => setFilter(null)} />
+              </header>
               <FilterLocation isSelected={filter === FILTER.LOCATION} />
               <FilterGuests isSelected={filter === FILTER.GUESTS} />
               <div className="filter-drawer__search-button-wrapper">

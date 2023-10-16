@@ -25,7 +25,7 @@
 - [x] User story: I can open the filter drawer
 - [x] User story: I can filter properties by location and number of guests
 - [x] User story: I can see the number of filtered items
-- [ ] User story: I can see pages following given designs
+- [x] User story: I can see pages following given designs
 
 ### Built With
 
