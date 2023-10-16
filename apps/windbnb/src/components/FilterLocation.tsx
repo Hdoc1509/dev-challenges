@@ -3,9 +3,15 @@ import { FilterInput } from "./FilterInput";
 import { Icon } from "@hdoc/react-material-icons";
 import { FILTER, useFilterStore } from "../store/filter";
 import { useStays } from "../hooks/useStays";
+import type { RequiredSearchLocation } from "../types";
+import { splitStringLocation, stringifyLocation } from "../utils";
 import "./FilterLocation.scss";
 
-export const LocationOption = ({ location }: { location: string }) => {
+export const LocationOption = ({
+  location,
+}: {
+  location: RequiredSearchLocation;
+}) => {
   const setLocation = useFilterStore((state) => state.setLocation);
 
   return (
@@ -14,7 +20,7 @@ export const LocationOption = ({ location }: { location: string }) => {
       onClick={() => setLocation(location)}
     >
       <Icon name="location_on" />
-      <span>{location}</span>
+      <span>{stringifyLocation(location)}</span>
     </li>
   );
 };
@@ -27,7 +33,7 @@ export const FilterLocation = ({ isSelected }: { isSelected?: boolean }) => {
   const locationOptions = useMemo(() => {
     return Array.from(
       new Set(stays.map((stay) => `${stay.city}, ${stay.country}`)),
-    );
+    ).map(splitStringLocation);
   }, [stays]);
 
   useEffect(() => void getStays(), [getStays]);
@@ -36,7 +42,7 @@ export const FilterLocation = ({ isSelected }: { isSelected?: boolean }) => {
     <>
       <FilterInput
         label="Location"
-        value={location ?? ""}
+        value={location ? `${stringifyLocation(location)}` : ""}
         name="location"
         placeholder="Add location"
         className="filter-location-input"
@@ -50,7 +56,10 @@ export const FilterLocation = ({ isSelected }: { isSelected?: boolean }) => {
           ) : (
             <ul className="filter-location-menu">
               {locationOptions.map((location) => (
-                <LocationOption key={location} location={location} />
+                <LocationOption
+                  key={stringifyLocation(location)}
+                  location={location}
+                />
               ))}
             </ul>
           )}

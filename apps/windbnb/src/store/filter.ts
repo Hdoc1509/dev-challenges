@@ -1,4 +1,5 @@
 import type { ValueOf } from "type-fest";
+import type { RequiredSearchLocation, SearchOptions } from "../types";
 import { create } from "zustand";
 
 export const FILTER = Object.freeze({
@@ -12,8 +13,8 @@ export type GuestType = "adults" | "children";
 type FilterStore = {
   filter: TFilter | null;
   setFilter: (filter: TFilter | null) => void;
-  location: string | null;
-  setLocation: (location?: string | null) => void;
+  location: SearchOptions["location"];
+  setLocation: (location: RequiredSearchLocation) => void;
   guests: {
     adults: number;
     children: number;
@@ -26,7 +27,7 @@ type FilterStore = {
 export const useFilterStore = create<FilterStore>((set) => ({
   filter: null,
   setFilter: (filter) => set({ filter }),
-  location: null,
+  location: undefined,
   setLocation: (location) => set({ location }),
   guests: {
     adults: 0,

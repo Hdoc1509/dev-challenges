@@ -1,5 +1,5 @@
 import { validateResults } from "./schemas/results-schema";
-import type { Stay } from "./types";
+import type { RequiredSearchLocation, Stay } from "./types";
 
 export const parseResults = (results: unknown): Stay[] => {
   const parsedResults = validateResults(results);
@@ -15,4 +15,15 @@ export const parseResults = (results: unknown): Stay[] => {
     isSuperHost: superHost,
     ...rest,
   }));
+};
+
+export const stringifyLocation = (location: RequiredSearchLocation): string => {
+  return `${location.city}, ${location.country}`;
+};
+
+export const splitStringLocation = (
+  location: string,
+): RequiredSearchLocation => {
+  const [city, country] = location.split(",");
+  return { city, country: country.trim() };
 };

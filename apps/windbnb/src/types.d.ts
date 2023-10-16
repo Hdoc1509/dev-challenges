@@ -18,4 +18,7 @@ export type SearchOptions = {
   guests?: number;
 };
 
+export type RequiredSearchOptions = Required<SearchOptions>;
+export type RequiredSearchLocation = RequiredSearchOptions["location"];
+
 export type FnSearchOptions = (options?: SearchOptions) => Promise<void>;

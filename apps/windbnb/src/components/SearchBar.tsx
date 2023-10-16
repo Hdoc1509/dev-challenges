@@ -1,7 +1,8 @@
 import { Button, ButtonIcon } from "@hdoc/react-button";
 import { FILTER, useFilterStore } from "../store/filter";
-import "./SearchBar.scss";
+import { stringifyLocation } from "../utils";
 import clsx from "clsx";
+import "./SearchBar.scss";
 
 export const SearchBar = () => {
   const location = useFilterStore((state) => state.location);
@@ -14,7 +15,7 @@ export const SearchBar = () => {
     <div className="searchbar">
       <Button
         className={locationClass}
-        text={location ?? "Add location"}
+        text={location ? `${stringifyLocation(location)}` : "Add location"}
         onClick={() => setFilter(FILTER.LOCATION)}
       />
       <Button

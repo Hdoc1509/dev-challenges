@@ -14,9 +14,7 @@ export const Header = ({ getStays }: { getStays: FnSearchOptions }) => {
       <SearchBar />
       <FilterDrawer
         isOpen={filter !== null}
-        onSearch={(search) =>
-          getStays({ guests: search?.guests, location: search?.location })
-        }
+        onSearch={({ guests, location } = {}) => getStays({ guests, location })}
       />
     </header>
   );

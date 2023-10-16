@@ -24,17 +24,7 @@ export const FilterDrawer = ({ isOpen, onSearch }: Props) => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (location) {
-      const [city, country] = location.split(",");
-
-      void onSearch({
-        guests,
-        location: { city, country: country.trim() },
-      });
-    } else {
-      void onSearch({ guests });
-    }
-
+    void onSearch({ guests, location });
     setFilter(null);
   };
 
