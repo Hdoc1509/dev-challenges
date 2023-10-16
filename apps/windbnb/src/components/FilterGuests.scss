@@ -35,6 +35,10 @@
     &:hover:not(:disabled) {
       --button-outline-color: #222;
     }
+
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
 
   &__count {
