@@ -2,7 +2,7 @@ import { SearchBar } from "./SearchBar";
 import { FilterDrawer } from "./FilterDrawer";
 import { useFilterStore } from "../store/filter";
 import type { FnSearchOptions } from "../types";
-import logoUrl from "../../assets/logo.png";
+import logoUrl from "../../assets/logo.svg";
 import "./Header.scss";
 
 export const Header = ({ getStays }: { getStays: FnSearchOptions }) => {
