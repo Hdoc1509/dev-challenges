@@ -12,13 +12,18 @@ export function StayCard({ stay }: Props) {
 
   return (
     <div className="stay-card">
-      <img className="stay-card__image" src={imageUrl} alt={title} />
+      <img
+        className="stay-card__image"
+        src={imageUrl}
+        alt={title}
+        title={title}
+      />
       <div className="stay-card__features">
         {isSuperHost && (
           <span className="stay-card__super-host">SUPER HOST</span>
         )}
         <span className="stay-card__type">
-          {`${type}.`} {beds && `${beds} beds`}
+          {`${type}`} {beds && `. ${beds} beds`}
         </span>
         <span className="stay-card__rating">
           <Icon name="star" variant="round" />
