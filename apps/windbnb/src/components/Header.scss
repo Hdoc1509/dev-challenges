@@ -1,0 +1,21 @@
+@use "../scss/mixins" as *;
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 32px;
+
+  @include extra-small-screen {
+    flex-direction: column;
+    justify-content: unset;
+    gap: 30px;
+
+    margin-bottom: 12px;
+
+    &__logo {
+      align-self: flex-start;
+    }
+  }
+}
