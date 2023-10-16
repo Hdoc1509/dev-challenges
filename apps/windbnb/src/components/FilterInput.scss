@@ -10,6 +10,7 @@
     gap: 4px;
 
     border: solid 1px transparent;
+    border-radius: 16px;
     padding: 10px 26px;
 
     font-weight: 800;
@@ -20,11 +21,9 @@
 
     &:hover:not(.selected) {
       background-color: #efefef;
-      border-radius: 16px;
     }
 
     &.selected {
-      border-radius: 16px;
       border: solid 1px #333;
     }
   }
