@@ -36,6 +36,9 @@
     );
     gap: 32px;
 
+    @include large-screen {
+      --grid-columns: repeat(3, 1fr);
+    }
     @include extra-large-screen {
       --grid-columns: repeat(4, 1fr);
     }
