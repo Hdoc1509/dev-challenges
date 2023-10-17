@@ -14,8 +14,8 @@ to: apps/<%= name %>/package.json
     "preview": "vite preview"
   },
   "dependencies": {
-    "@hdoc/react-material-icons": "1.1.2",
-    "@hdoc/react-toggle-theme": "2.0.1",
+    "@hdoc/react-material-icons": "1.5.0",
+    "@hdoc/react-toggle-theme": "2.1.1",
     "@internal/components": "workspace:3.0.0",
     "clsx": "2.0.0",
     "react": "18.2.0",
