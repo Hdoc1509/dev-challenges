@@ -7,7 +7,7 @@ type HeaderWithThemeProps = {
 }
 
 export const HeaderWithTheme = ({ title }: HeaderWithThemeProps) => (
-  <header>
+  <header className="main-header">
     <h1>{title}</h1>
     <div className="theme-switcher">
       <ThemeButton

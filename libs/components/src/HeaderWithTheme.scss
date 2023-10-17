@@ -1,12 +1,23 @@
+.main-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: ". title theme-button";
+
+  h1 {
+    grid-area: title;
+  }
+}
+
 .theme-switcher {
-  position: absolute;
-  top: 5px;
-  right: 30px;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  grid-area: theme-button;
 }
 
 .theme-button {
   --button-bg-hover: #e0e0e0;
-
   --icon-color: #ffa500;
 
   color: var(--icon-color);
