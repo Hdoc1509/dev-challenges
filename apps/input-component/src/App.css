@@ -3,7 +3,12 @@
 
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding-inline: 2rem;
+}
+@media (max-width: 768px) {
+  #root {
+    padding-inline: 1rem;
+  }
 }
 
 .inputs-grid {
