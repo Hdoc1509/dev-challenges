@@ -2,11 +2,12 @@ import { Icon } from "@hdoc/react-material-icons";
 import { ThemeButton } from "@hdoc/react-toggle-theme";
 import "./HeaderWithTheme.scss";
 
-type HeaderWithThemeProps = {
+type Props = {
   title: string;
-}
+  nav?: React.ReactNode;
+};
 
-export const HeaderWithTheme = ({ title }: HeaderWithThemeProps) => (
+export const HeaderWithTheme = ({ title, nav }: Props) => (
   <header className="main-header">
     <h1>{title}</h1>
     <div className="theme-switcher">
@@ -16,5 +17,6 @@ export const HeaderWithTheme = ({ title }: HeaderWithThemeProps) => (
         fullRounded
       />
     </div>
+    {nav}
   </header>
 );
