@@ -134,6 +134,46 @@ importers:
         specifier: 4.4.5
         version: 4.4.5(@types/node@20.5.0)(sass@1.65.0)
 
+  apps/todo-list:
+    dependencies:
+      '@hdoc/react-button':
+        specifier: 1.1.1
+        version: 1.1.1(@hdoc/react-material-icons@1.5.0)(@material-design-icons/font@0.14.11)(react-dom@18.2.0)(react@18.2.0)
+      '@hdoc/react-material-icons':
+        specifier: 1.5.0
+        version: 1.5.0(@material-design-icons/font@0.14.11)(react-dom@18.2.0)(react@18.2.0)
+      '@hdoc/react-toggle-theme':
+        specifier: 2.0.1
+        version: 2.0.1
+      '@internal/components':
+        specifier: workspace:3.0.0
+        version: link:../../libs/components
+      clsx:
+        specifier: 2.0.0
+        version: 2.0.0
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: 18.2.0
+        version: 18.2.0(react@18.2.0)
+    devDependencies:
+      '@material-design-icons/font':
+        specifier: ^0.14.10
+        version: 0.14.11
+      '@vitejs/plugin-react':
+        specifier: ^4.0.1
+        version: 4.0.4(vite@4.4.5)
+      sass:
+        specifier: 1.65.0
+        version: 1.65.0
+      typescript:
+        specifier: 5.1.6
+        version: 5.1.6
+      vite:
+        specifier: 4.4.5
+        version: 4.4.5(@types/node@20.5.0)(sass@1.65.0)
+
   apps/windbnb:
     dependencies:
       '@hdoc/react-button':
