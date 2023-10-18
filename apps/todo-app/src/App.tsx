@@ -1,19 +1,11 @@
 import { Footer, HeaderWithTheme as Header } from "@internal/components";
+import { Nav } from "./components/Nav";
 import "./App.css";
 
 function App() {
   return (
     <>
-      <Header
-        title="#todo"
-        nav={
-          <nav style={{ gridArea: "nav" }}>
-            <a href="#">All</a>
-            <a href="#">Active</a>
-            <a href="#">Completed</a>
-          </nav>
-        }
-      />
+      <Header title="#todo" nav={<Nav />} />
       <main>
         <div className="todo-container">
           <form className="todo-form">

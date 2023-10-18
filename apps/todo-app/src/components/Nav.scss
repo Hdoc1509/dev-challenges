@@ -1,0 +1,50 @@
+@mixin border-top-rounded($radius) {
+  border-radius: $radius $radius 0 0;
+}
+
+.main-nav {
+  grid-area: nav;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  border-bottom: 1px solid #bdbdbd;
+  margin-bottom: 16px;
+
+  &__link {
+    position: relative;
+
+    padding: 18px;
+
+    color: #333;
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+
+      inset-inline: 0;
+      bottom: 0;
+      height: 4px;
+      width: 90px;
+      margin: 0 auto;
+      @include border-top-rounded(4px);
+
+      background-color: var(--primary);
+
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    &--selected:after {
+      transform: scaleX(1);
+    }
+
+    [data-theme="dark"] & {
+      color: #fff;
+    }
+  }
+}
