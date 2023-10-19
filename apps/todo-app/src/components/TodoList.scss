@@ -9,6 +9,37 @@
 
 .todo-form {
   grid-area: form;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+
+  input {
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color, #bdbdbd);
+    outline: none;
+
+    font-family: "Montserrat", sans-serif;
+    font-size: 14px;
+    font-weight: 2400px;
+
+    &:focus {
+      --border-color: var(--primary);
+    }
+
+    &::placeholder {
+      color: #828282;
+    }
+  }
+
+  .button {
+    padding: 20px 40px;
+    border-radius: 12px;
+
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+  }
 }
 
 .todo-list {
