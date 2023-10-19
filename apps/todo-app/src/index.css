@@ -8,6 +8,7 @@
   -webkit-text-size-adjust: 100%;
 
   --primary: #2f80ed;
+  --primary-hover: #1366d6;
 }
 
 [data-theme="light"] {

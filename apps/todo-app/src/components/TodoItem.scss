@@ -1,0 +1,46 @@
+.todo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  list-style: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+
+  &:hover {
+    --checkbox-bg: #ededed;
+    --checkbox-border-color: #343434;
+  }
+
+  &--completed {
+    text-decoration: line-through;
+
+    &:hover {
+      --checkbox-bg__checked: var(--primary-hover);
+    }
+  }
+
+  &__checkbox {
+    --icon-color: transparent;
+
+    width: 24px;
+    height: 24px;
+    background-color: var(--checkbox-bg, transparent);
+    border: 1px solid var(--checkbox-border-color, #828282);
+    border-radius: 4px;
+
+    &--checked {
+      --icon-color: #fff;
+      --checkbox-bg: var(--checkbox-bg__checked, var(--primary));
+      --checkbox-border-color: var(--primary);
+    }
+
+    .material-icons-round::selection {
+      background-color: transparent;
+    }
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+}

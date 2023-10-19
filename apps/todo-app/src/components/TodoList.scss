@@ -1,0 +1,21 @@
+.todo-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    "form form"
+    "list .";
+  gap: 32px;
+}
+
+.todo-form {
+  grid-area: form;
+}
+
+.todo-list {
+  display: grid;
+  gap: 25px;
+  grid-area: list;
+
+  margin: 0;
+  padding: 0;
+}
