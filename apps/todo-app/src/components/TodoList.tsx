@@ -6,12 +6,13 @@ import "./TodoList.scss";
 type Props = {
   todos: Todo[];
   addTodo: (title: string) => void;
+  toggleCompleted: (id: number) => void;
 };
 type TodoForm = {
   todo: { value: string };
 };
 
-export const TodoList = ({ todos = [], addTodo }: Props) => {
+export const TodoList = ({ todos = [], addTodo, toggleCompleted }: Props) => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -31,7 +32,13 @@ export const TodoList = ({ todos = [], addTodo }: Props) => {
         {todos.length === 0 ? (
           <span>No todos</span>
         ) : (
-          todos.map((todo) => <TodoItem key={todo.id} todo={todo} />)
+          todos.map((todo) => (
+            <TodoItem
+              key={todo.id}
+              todo={todo}
+              onToggle={() => toggleCompleted(todo.id)}
+            />
+          ))
         )}
       </ul>
     </div>

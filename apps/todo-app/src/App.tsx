@@ -18,12 +18,23 @@ function App() {
       },
     ]);
   };
+  const toggleCompleted = (id: number) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo,
+      ),
+    );
+  };
 
   return (
     <>
       <Header title="#todo" nav={<Nav />} />
       <main>
-        <TodoList todos={todos} addTodo={addTodo} />
+        <TodoList
+          todos={todos}
+          addTodo={addTodo}
+          toggleCompleted={toggleCompleted}
+        />
       </main>
       <Footer />
     </>
