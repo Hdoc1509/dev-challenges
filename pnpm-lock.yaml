@@ -226,11 +226,11 @@ importers:
   libs/components:
     dependencies:
       '@hdoc/react-material-icons':
-        specifier: ^1.1.0
-        version: 1.1.1(@material-design-icons/font@0.14.13)(react-dom@18.2.0)(react@18.2.0)
+        specifier: ^1.5.0
+        version: 1.5.0(@material-design-icons/font@0.14.13)(react-dom@18.2.0)(react@18.2.0)
       '@hdoc/react-toggle-theme':
-        specifier: ^2.0.0
-        version: 2.0.1
+        specifier: ^2.1.1
+        version: 2.1.1(react-dom@18.2.0)(react@18.2.0)
 
 packages:
 
@@ -725,18 +725,6 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@hdoc/react-material-icons@1.1.1(@material-design-icons/font@0.14.13)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-FS5NMaDLy/ciGp5AIAstyxI5smXwSqfx0F7Rgqr87HLPFeoSPBAfZmTYbOYW+QK/u0Are6YiI1P/zkAwt2PiCw==}
-    peerDependencies:
-      '@material-design-icons/font': ^0.14.10
-      react: ^18.2.0
-      react-dom: ^18.2.0
-    dependencies:
-      '@material-design-icons/font': 0.14.13
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-    dev: false
-
   /@hdoc/react-material-icons@1.5.0(@material-design-icons/font@0.14.11)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-i3gm+eqjDNENrim08eG6mxrR7W8saQtmtKH6cOk6Pj1q/7bXCF4eL4Yi3QEPVGmsdawI5lb/dLW6kp9vCyVTpg==}
     peerDependencies:
@@ -750,9 +738,33 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
+  /@hdoc/react-material-icons@1.5.0(@material-design-icons/font@0.14.13)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-i3gm+eqjDNENrim08eG6mxrR7W8saQtmtKH6cOk6Pj1q/7bXCF4eL4Yi3QEPVGmsdawI5lb/dLW6kp9vCyVTpg==}
+    peerDependencies:
+      '@material-design-icons/font': ^0.14.0
+      react: ^17.0.0 || ^18.0.0
+      react-dom: ^17.0.0 || ^18.0.0
+    dependencies:
+      '@material-design-icons/font': 0.14.13
+      clsx: 2.0.0
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
   /@hdoc/react-toggle-theme@2.0.1:
     resolution: {integrity: sha512-/LAqLX/85vqiJPY2q5jG94AoqpuDc1saaR358ZMToWOa/zN1EoTqkyucANENdjg6I0sm5qm8BbEHUUxVkFI1fg==}
     engines: {node: '>=13.2.0'}
+    dev: false
+
+  /@hdoc/react-toggle-theme@2.1.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-IBE7Dot+dvRvfZMR4/HR7GiD4eYvhbmSxAjPDS/c34aZseNZQPBnBo5Csv5I55OA/M2uTxOJnEJtKBErxyChFA==}
+    engines: {node: '>=13.2.0'}
+    peerDependencies:
+      react: ^17.0.0 || ^18.0.0
+      react-dom: ^17.0.0 || ^18.0.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /@humanwhocodes/config-array@0.11.11:
