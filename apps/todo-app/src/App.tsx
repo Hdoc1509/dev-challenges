@@ -27,6 +27,11 @@ function App() {
       ),
     );
   };
+  const removeTodo = (id: number) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
+  const removeCompletedTodos = () =>
+    setTodos(todos.filter((todo) => !todo.completed));
 
   const filteredTodos = todos.filter((todo) => FILTERS[filter](todo));
 
@@ -37,7 +42,10 @@ function App() {
         <TodoList
           todos={filteredTodos}
           addTodo={addTodo}
+          removeTodo={removeTodo}
+          removeCompleted={removeCompletedTodos}
           toggleCompleted={toggleCompleted}
+          filter={filter}
         />
       </main>
       <Footer />

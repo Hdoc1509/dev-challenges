@@ -6,9 +6,10 @@ import "./TodoItem.scss";
 type Props = {
   todo: Todo;
   onToggle: () => void;
+  onRemove: () => void;
 };
 
-export const TodoItem = ({ todo, onToggle }: Props) => {
+export const TodoItem = ({ todo, onToggle, onRemove }: Props) => {
   const { title, completed } = todo;
 
   const className = clsx("todo-item", {
@@ -19,16 +20,23 @@ export const TodoItem = ({ todo, onToggle }: Props) => {
   });
 
   return (
-    <label className={className}>
-      <input
-        type="checkbox"
-        defaultChecked={completed}
-        onClick={() => onToggle()}
-      />
-      <span className={checkboxClassName}>
-        <Icon name="check" variant="round" />
-      </span>
-      {title}
-    </label>
+    <div style={{ display: "flex" }}>
+      <label className={className}>
+        <input
+          type="checkbox"
+          defaultChecked={completed}
+          onClick={() => onToggle()}
+        />
+        <span className={checkboxClassName}>
+          <Icon name="check" variant="round" />
+        </span>
+        {title}
+      </label>
+      {completed && (
+        <span className="todo-item__delete" onClick={() => onRemove()}>
+          <Icon name="delete" variant="outlined" />
+        </span>
+      )}
+    </div>
   );
 };

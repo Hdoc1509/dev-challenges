@@ -9,6 +9,8 @@
 
   --primary: #2f80ed;
   --primary-hover: #1366d6;
+  --danger: #EB5757;
+  --danger-hover: #db1a1a;
 }
 
 *,

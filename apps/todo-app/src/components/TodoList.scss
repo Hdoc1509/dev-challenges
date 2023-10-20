@@ -5,6 +5,20 @@
     "form form"
     "list .";
   gap: 32px;
+
+  font-size: 18px;
+
+  &[data-filter="completed"] {
+    grid-template-areas:
+      "list list"
+      ". delete-all";
+    grid-template-columns: 1fr auto;
+  }
+
+  &__delete-all {
+    grid-area: delete-all;
+    padding: 12px 24px;
+  }
 }
 
 .todo-form {

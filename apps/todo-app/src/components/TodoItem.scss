@@ -40,6 +40,21 @@
     }
   }
 
+  &__delete {
+    --icon-color: #bdbdbd;
+    display: none;
+    margin-left: auto;
+    cursor: default;
+
+    &:hover {
+      --icon-color: #696969;
+    }
+
+    [data-filter="completed"] & {
+      display: inline;
+    }
+  }
+
   input[type="checkbox"] {
     display: none;
   }

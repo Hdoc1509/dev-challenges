@@ -23,7 +23,7 @@
 - [x] User story: I can add a new task
 - [x] User story: I can complete a task
 - [x] User story: I can toggle between All, Active and Completed
-- [ ] User story: I can remove one or all tasks under the Completed tab
+- [x] User story: I can remove one or all tasks under the Completed tab
 - [ ] User story (optional): Store the data in local storage that when I refresh the page I can still see my progress
 
 ### Built With
