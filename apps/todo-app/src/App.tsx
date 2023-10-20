@@ -3,10 +3,12 @@ import { Nav } from "./components/Nav";
 import { TodoList } from "./components/TodoList";
 import { todos as defaultTodos } from "./data";
 import { useState } from "react";
+import { FILTERS, type Filter } from "./utils";
 import "./App.css";
 
 function App() {
   const [todos, setTodos] = useState(defaultTodos);
+  const [filter, setFilter] = useState<Filter>("all");
 
   const addTodo = (title: string) => {
     setTodos([
@@ -26,12 +28,14 @@ function App() {
     );
   };
 
+  const filteredTodos = todos.filter((todo) => FILTERS[filter](todo));
+
   return (
     <>
-      <Header title="#todo" nav={<Nav />} />
+      <Header title="#todo" nav={<Nav setPath={setFilter} path={filter} />} />
       <main>
         <TodoList
-          todos={todos}
+          todos={filteredTodos}
           addTodo={addTodo}
           toggleCompleted={toggleCompleted}
         />
