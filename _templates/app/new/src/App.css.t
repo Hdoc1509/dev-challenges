@@ -4,7 +4,12 @@ to: apps/<%= name %>/src/App.css
 
 #root {
   position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 
+
+  min-height: 100vh;
+  min-height: 100dvh;
   max-width: 1280px;
   margin: 0 auto;
   padding-inline: 2rem;
