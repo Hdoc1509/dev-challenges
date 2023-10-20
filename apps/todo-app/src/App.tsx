@@ -1,13 +1,14 @@
+import { useState } from "react";
 import { Footer, HeaderWithTheme as Header } from "@internal/components";
 import { Nav } from "./components/Nav";
 import { TodoList } from "./components/TodoList";
 import { todos as defaultTodos } from "./data";
-import { useState } from "react";
 import { FILTERS, type Filter } from "./utils";
+import { useLocalStorage } from "./hooks/useLocalStorage";
 import "./App.css";
 
 function App() {
-  const [todos, setTodos] = useState(defaultTodos);
+  const [todos, setTodos] = useLocalStorage("todos", defaultTodos);
   const [filter, setFilter] = useState<Filter>("all");
 
   const addTodo = (title: string) => {
