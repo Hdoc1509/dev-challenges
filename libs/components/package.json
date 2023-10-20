@@ -4,7 +4,7 @@
   "version": "3.0.0",
   "main": "./src/main.tsx",
   "type": "module",
-  "peerDependencies": {
+  "dependencies": {
     "@hdoc/react-material-icons": "^1.1.0",
     "@hdoc/react-toggle-theme": "^2.0.0"
   }
