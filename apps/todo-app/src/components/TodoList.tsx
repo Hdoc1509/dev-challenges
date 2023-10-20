@@ -39,7 +39,7 @@ export const TodoList = ({
     <div className="todo-container" data-filter={filter}>
       {!isCompletedTab && (
         <form className="todo-form" onSubmit={handleSubmit}>
-          <input type="text" placeholder="Add details" name="todo" />
+          <input type="text" placeholder="Add a todo" name="todo" />
           <Button text="Add" color="primary" />
         </form>
       )}
