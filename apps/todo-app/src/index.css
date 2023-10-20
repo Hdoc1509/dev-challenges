@@ -11,6 +11,12 @@
   --primary-hover: #1366d6;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 [data-theme="light"] {
   --color-bg: #fff;
   --color-text: #000;
