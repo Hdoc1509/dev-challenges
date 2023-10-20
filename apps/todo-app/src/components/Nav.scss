@@ -22,7 +22,7 @@
     text-align: center;
     text-decoration: none;
 
-    &:after {
+    &::after {
       content: "";
       display: block;
       position: absolute;
@@ -39,7 +39,7 @@
       transform: scaleX(0);
       transition: transform 0.3s ease;
     }
-    &--selected:after {
+    &--selected::after {
       transform: scaleX(1);
     }
 
