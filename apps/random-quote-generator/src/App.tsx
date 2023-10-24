@@ -31,9 +31,19 @@ function App() {
       </header>
       <main>
         {quote && (
-          <blockquote>
+          <blockquote className="quote">
             <p>{quote.text}</p>
-            <cite>{quote.author}</cite>
+            <footer>
+              <button className="quote-credits">
+                <span className="quote-credits__author">{quote.author}</span>
+                <span className="quote-credits__genre">{quote.genre}</span>
+                <Icon
+                  className="quote-credits__arrow"
+                  name="arrow_right_alt"
+                  size="large"
+                />
+              </button>
+            </footer>
           </blockquote>
         )}
       </main>
