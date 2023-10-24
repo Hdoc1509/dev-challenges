@@ -3,6 +3,7 @@ import { Footer } from "@internal/components";
 import { ThemeButton } from "@hdoc/react-toggle-theme";
 import { Icon } from "@hdoc/react-material-icons";
 import { Button } from "@hdoc/react-button";
+import { BlockQuote } from "./components/BlockQuote";
 import { getRandomQuote } from "./services/quotes";
 import type { Quote } from "./schemas/quotes";
 import "./App.css";
@@ -29,24 +30,7 @@ function App() {
           fullRounded
         />
       </header>
-      <main>
-        {quote && (
-          <blockquote className="quote">
-            <p>{quote.text}</p>
-            <footer>
-              <button className="quote-credits">
-                <span className="quote-credits__author">{quote.author}</span>
-                <span className="quote-credits__genre">{quote.genre}</span>
-                <Icon
-                  className="quote-credits__arrow"
-                  name="arrow_right_alt"
-                  size="large"
-                />
-              </button>
-            </footer>
-          </blockquote>
-        )}
-      </main>
+      <main>{quote && <BlockQuote quote={quote} withFooter />}</main>
       <Footer />
     </>
   );
