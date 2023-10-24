@@ -9,21 +9,24 @@ import type { Quote } from "./schemas/quotes";
 import "./App.css";
 
 function App() {
+  // TODO: Add hook useQuote() with props: quote, getQuote, isLoading
   const [quote, setQuote] = useState<Quote>();
 
   useEffect(() => {
-    const getQuote = async () => {
-      const quote = await getRandomQuote();
-      setQuote(quote);
-    };
-
-    void getQuote();
+    void getRandomQuote().then(setQuote);
   }, []);
 
   return (
     <>
       <header className="main-header">
-        <Button text="random" iconEnd="autorenew" disableShadow />
+        <Button
+          text="random"
+          iconEnd="autorenew"
+          onClick={() => {
+            void getRandomQuote().then(setQuote);
+          }}
+          disableShadow
+        />
         <ThemeButton
           lightElement={<Icon name="light_mode" />}
           darkElement={<Icon name="dark_mode" />}
