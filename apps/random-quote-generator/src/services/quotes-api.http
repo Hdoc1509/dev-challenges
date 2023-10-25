@@ -1,5 +1,5 @@
 ### Random Quote
-GET https://quote-garden.onrender.com/api/v3/quotes?limit=1
+GET https://quote-garden.onrender.com/api/v3/quotes/random
 
 ### Quotes by Author
 GET https://quote-garden.onrender.com/api/v3/quotes?author=Bill Gates
