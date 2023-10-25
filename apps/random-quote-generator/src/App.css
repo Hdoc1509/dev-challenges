@@ -35,3 +35,10 @@
   justify-content: center;
   gap: 40px;
 }
+
+.quotes-author {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+}
