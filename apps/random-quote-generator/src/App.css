@@ -29,16 +29,17 @@
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   align-items: center;
-  justify-content: center;
+  grid-template-columns: minmax(280px, 800px);
   gap: 40px;
+  margin: 0 auto;
 }
 
 .quotes-author {
   margin: 0;
   font-family: 'Raleway', sans-serif;
-  font-size: 36px;
+  font-size: clamp(20px, 3vw, 36px);
   font-weight: 700;
+  padding-left: 2.45em;
 }

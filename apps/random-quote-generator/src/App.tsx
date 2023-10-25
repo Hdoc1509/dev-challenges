@@ -9,7 +9,6 @@ import type { Quote } from "./schemas/quotes";
 import "./App.css";
 
 function App() {
-  // TODO: Add hook useQuote() with props: quote, getQuote, isLoading
   const [isLoading, setIsLoading] = useState(false);
   const [quotes, setQuotes] = useState<Quote[]>([]);
   const [showAuthorQuotes, setShowAuthorQuotes] = useState(false);
