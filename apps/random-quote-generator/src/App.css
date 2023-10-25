@@ -20,6 +20,12 @@
   gap: 10px;
 
   padding-block: 1rem;
+
+  font-family: 'Raleway', sans-serif;
+}
+.main-header .button {
+  font-family: inherit;
+  font-weight: 500;
 }
 
 .content {

@@ -28,6 +28,10 @@
     width: 85%;
     margin: 0;
   }
+
+  & * {
+    font-family: "Raleway", sans-serif;
+  }
 }
 
 .quote-credits {
@@ -59,7 +63,6 @@
 
 .quote-credits__author {
   grid-area: author;
-  font-family: "Raleway", sans-serif;
   font-size: 24px;
   font-weight: 700;
   color: var(--quote-author-text, #4f4f4f);
@@ -67,8 +70,8 @@
 
 .quote-credits__genre {
   grid-area: genre;
-  font-family: "Raleway", sans-serif;
   font-size: 14px;
+  font-weight: 500;
   color: var(--quote-genre-text, #828282);
 }
 
