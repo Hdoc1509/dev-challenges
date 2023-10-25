@@ -2,23 +2,31 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 800px;
-  margin: 0 auto;
+  gap: 2.75em;
+
+  max-width: 800px;
+  margin: 0;
 
   font-family: "Raleway", sans-serif;
-  font-size: 36px;
+  font-size: clamp(20px, 3vw, 36px);
   font-weight: 500;
-}
 
-.quote p {
-  padding-left: 80px;
-  border-left: 8px solid #f7df94;
+  p {
+    margin: 0;
+    padding-left: 2.1em;
+    border-left: 8px solid #f7df94;
 
-  &::before {
-    content: "\201C";
+    &::before {
+      content: "\201C";
+    }
+    &::after {
+      content: "\201D";
+    }
   }
-  &::after {
-    content: "\201D";
+
+  footer {
+    width: 85%;
+    margin: 0;
   }
 }
 
@@ -31,13 +39,14 @@
     "author . arrow"
     "genre . arrow";
 
-  width: 680px;
+  width: 100%;
   background-color: transparent;
   border: none;
-  padding: 50px 30px;
+  padding: 1.5em 1em;
 
   --icon-color: transparent;
   text-align: left;
+  font-size: 1em;
 
   cursor: pointer;
   transition: background-color 0.3s ease;

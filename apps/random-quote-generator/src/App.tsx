@@ -33,7 +33,7 @@ function App() {
           fullRounded
         />
       </header>
-      <main>{quote && <BlockQuote quote={quote} withFooter />}</main>
+      <main className="content">{quote && <BlockQuote quote={quote} withFooter />}</main>
       <Footer />
     </>
   );

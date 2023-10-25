@@ -2,6 +2,7 @@
   position: relative;
   display: grid;
   grid-template-rows: auto 1fr auto;
+  gap: 24px;
 
   min-height: 100vh;
   min-height: 100dvh;
@@ -19,4 +20,12 @@
   gap: 10px;
 
   padding-block: 1rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
 }
