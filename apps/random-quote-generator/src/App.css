@@ -33,7 +33,7 @@
   align-items: center;
   grid-template-columns: minmax(280px, 800px);
   gap: 40px;
-  margin: 0 auto;
+  margin: auto;
 }
 
 .quotes-author {
