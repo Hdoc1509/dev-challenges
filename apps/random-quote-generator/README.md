@@ -31,7 +31,6 @@
 - [TypeScript](https://www.typescriptlang.org/)
 - [Vite](https://vitejs.dev/)
 - [Sass](https://sass-lang.com/)
-- [clsx](https://github.com/lukeed/clsx#readme)
 - [BEM](https://getbem.com/)
 - [@hdoc/react-material-icons](https://www.npmjs.com/package/@hdoc/react-material-icons)
 - [@hdoc/react-toggle-theme](https://www.npmjs.com/package/@hdoc/react-toggle-theme)
