@@ -23,15 +23,10 @@ function App() {
     });
   };
   const handleAuthorQuotes = (author: string) => {
-    if (quotes.length === 1) {
-      setShowAuthorQuotes(true);
-      return;
-    }
-
     setIsLoading(true);
     setQuotes([]);
-    void getAuthorQuotes(author, 2).then((newQuotes) => {
-      setQuotes([...quotes, ...newQuotes]);
+    void getAuthorQuotes(author).then((newQuotes) => {
+      setQuotes(newQuotes.length > 1 ? newQuotes : [newQuotes[0]]);
       setIsLoading(false);
       setShowAuthorQuotes(true);
     });
