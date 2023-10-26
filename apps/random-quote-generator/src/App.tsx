@@ -23,6 +23,11 @@ function App() {
     });
   };
   const handleAuthorQuotes = (author: string) => {
+    if (quotes.length === 1) {
+      setShowAuthorQuotes(true);
+      return;
+    }
+
     setIsLoading(true);
     setQuotes([]);
     void getAuthorQuotes(author, 2).then((newQuotes) => {

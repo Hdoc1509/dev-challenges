@@ -9,8 +9,6 @@ export const getRandomQuote = async (): Promise<Quote> => {
   return data[0];
 };
 
-// TODO: Try to return a tuple based on limit number
-//  - Use FixedLengthArray from type-fest
 export const getAuthorQuotes = async (
   author: string,
   limit = 3,
