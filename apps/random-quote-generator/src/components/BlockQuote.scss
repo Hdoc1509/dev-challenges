@@ -41,7 +41,7 @@
   grid-template-columns: auto 1fr auto;
   grid-template-areas:
     "author . arrow"
-    "genre . author-quotes";
+    "genre  . more-quotes";
 
   width: 100%;
   background-color: transparent;
@@ -65,7 +65,7 @@
     --quote-author-text: #fff;
     --quote-genre-text: #bdbdbd;
     --icon-color: #fff;
-    --quote-author-quotes-text: #bdbdbd;
+    --quote-more-quotes-text: #bdbdbd;
   }
 
   &__author {
@@ -87,11 +87,11 @@
     margin-left: auto;
   }
 
-  &__author-quotes {
-    grid-area: author-quotes;
+  &__more-quotes {
+    grid-area: more-quotes;
     text-align: right;
     font-size: 14px;
     font-weight: 500;
-    color: var(--quote-author-quotes-text, #828282);
+    color: var(--quote-more-quotes-text, #828282);
   }
 }
