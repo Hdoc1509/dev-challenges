@@ -1,5 +1,6 @@
 import { useCallback, useState } from "react";
 import { getAuthorQuotes, getRandomQuote } from "../services/quotes";
+import { parseError } from "../utils/error";
 import type { Quote } from "../schemas/quotes";
 
 export const useQuotes = () => {
@@ -16,18 +17,7 @@ export const useQuotes = () => {
       .then((quote) => {
         setQuotes([quote]);
       })
-      .catch((error) => {
-        if (!(error instanceof Error)) {
-          setError({ name: "Error", message: "An unknown error occurred" });
-          return;
-        }
-
-        if (error.name === "AbortError") {
-          setError({ name: "Error", message: "Request timed out" });
-        } else {
-          setError(error);
-        }
-      })
+      .catch((error) => setError(parseError(error)))
       .finally(() => {
         setIsLoading(false);
       });
@@ -36,10 +26,16 @@ export const useQuotes = () => {
   const handleAuthorQuotes = useCallback((author: string) => {
     setIsLoading(true);
     setQuotes([]);
-    void getAuthorQuotes(author).then((newQuotes) => {
-      setQuotes(newQuotes.length > 1 ? newQuotes : [newQuotes[0]]);
-      setIsLoading(false);
-    });
+    setError(null);
+
+    getAuthorQuotes(author)
+      .then((newQuotes) => {
+        setQuotes(newQuotes.length > 1 ? newQuotes : [newQuotes[0]]);
+      })
+      .catch((error) => setError(parseError(error)))
+      .finally(() => {
+        setIsLoading(false);
+      });
   }, []);
 
   return {
