@@ -5,7 +5,7 @@ import { Icon } from "@hdoc/react-material-icons";
 import { Button } from "@hdoc/react-button";
 import { BlockQuote } from "./components/BlockQuote";
 import { useQuotes } from "./hooks/useQuotes";
-import "./App.css";
+import "./App.scss";
 
 function App() {
   const { isLoading, quotes, error, getRandomQuote, getAuthorQuotes } =

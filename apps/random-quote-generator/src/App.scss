@@ -22,17 +22,20 @@
 
   padding-block: 1rem;
 
-  font-family: 'Raleway', sans-serif;
-}
-[data-theme='dark'] .main-header {
-  --button-color: #fff;
-}
-.main-header .button {
-  font-family: inherit;
-  font-weight: 500;
-}
-.main-header .button:hover {
-  --button-color: #fff;
+  font-family: "Raleway", sans-serif;
+
+  [data-theme="dark"] & {
+    --button-color: #fff;
+  }
+
+  & .button {
+    font-family: inherit;
+    font-weight: 500;
+
+    &:hover {
+      --button-color: #fff;
+    }
+  }
 }
 
 .content {
@@ -45,7 +48,7 @@
 
 .quotes-author {
   margin: 0;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: clamp(20px, 3vw, 36px);
   font-weight: 700;
   padding-left: 2.45em;
