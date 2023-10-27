@@ -41,24 +41,25 @@
   grid-template-columns: auto 1fr auto;
   grid-template-areas:
     "author . arrow"
-    "genre . arrow";
+    "genre . author-quotes";
 
   width: 100%;
   background-color: transparent;
   border: none;
   padding: 1.5em 1em;
 
-  --icon-color: transparent;
+  --icon-color: #4f4f4f;
   text-align: left;
   font-size: 1em;
 
   cursor: pointer;
   transition: background-color 0.3s ease;
-}
-.quote-credits:hover {
-  background-color: #333;
-  --quote-author-text: #fff;
-  --icon-color: #fff;
+
+  &:hover {
+    background-color: #333;
+    --quote-author-text: #fff;
+    --icon-color: #fff;
+  }
 }
 
 .quote-credits__author {
@@ -77,4 +78,12 @@
 
 .quote-credits__arrow {
   grid-area: arrow;
+  margin-left: auto;
+}
+
+.quote-credits__author-quotes {
+  grid-area: author-quotes;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--quote-author-quotes-text, #828282);
 }

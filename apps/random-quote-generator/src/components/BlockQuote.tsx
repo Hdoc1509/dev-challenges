@@ -22,6 +22,7 @@ export const BlockQuote = ({ quote, withFooter, onClick }: Props) => {
               name="arrow_right_alt"
               size="large"
             />
+            <span className="quote-credits__author-quotes">More quotes</span>
           </button>
         </footer>
       )}
