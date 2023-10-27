@@ -28,11 +28,12 @@
     --button-color: #fff;
   }
 
-  & .button {
+  .button {
     font-family: inherit;
     font-weight: 500;
 
-    &:hover {
+    &:hover,
+    &:focus {
       --button-color: #fff;
     }
   }
