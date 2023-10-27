@@ -1,38 +1,27 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Footer } from "@internal/components";
 import { ThemeButton } from "@hdoc/react-toggle-theme";
 import { Icon } from "@hdoc/react-material-icons";
 import { Button } from "@hdoc/react-button";
 import { BlockQuote } from "./components/BlockQuote";
-import { getAuthorQuotes, getRandomQuote } from "./services/quotes";
-import type { Quote } from "./schemas/quotes";
+import { useQuotes } from "./hooks/useQuotes";
 import "./App.css";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(false);
-  const [quotes, setQuotes] = useState<Quote[]>([]);
+  const { isLoading, quotes, error, getRandomQuote, getAuthorQuotes } =
+    useQuotes();
   const [showAuthorQuotes, setShowAuthorQuotes] = useState(false);
 
-  const handleRandomQuote = () => {
-    setIsLoading(true);
-    setQuotes([]);
-    void getRandomQuote().then((quote) => {
-      setQuotes([quote]);
-      setIsLoading(false);
-      setShowAuthorQuotes(false);
-    });
-  };
+  const handleRandomQuote = useCallback(() => {
+    getRandomQuote();
+    setShowAuthorQuotes(false);
+  }, [getRandomQuote]);
   const handleAuthorQuotes = (author: string) => {
-    setIsLoading(true);
-    setQuotes([]);
-    void getAuthorQuotes(author).then((newQuotes) => {
-      setQuotes(newQuotes.length > 1 ? newQuotes : [newQuotes[0]]);
-      setIsLoading(false);
-      setShowAuthorQuotes(true);
-    });
+    getAuthorQuotes(author);
+    setShowAuthorQuotes(true);
   };
 
-  useEffect(() => handleRandomQuote(), []);
+  useEffect(() => handleRandomQuote(), [handleRandomQuote]);
 
   return (
     <>
@@ -51,6 +40,7 @@ function App() {
       </header>
       <main className="content">
         {isLoading && <p>loading...</p>}
+        {error && <p>Error: {error.message}</p>}
         {showAuthorQuotes && (
           <h2 className="quotes-author">{quotes[0]?.author}</h2>
         )}
