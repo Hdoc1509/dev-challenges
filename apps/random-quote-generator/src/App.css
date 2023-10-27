@@ -13,7 +13,8 @@
 
 .main-header {
   --button-bg: transparent;
-  --button-bg-hover: #e0e0e0;
+  --button-bg-hover: #333;
+  --button-color: #4f4f4f;
 
   display: flex;
   justify-content: flex-end;
@@ -23,9 +24,15 @@
 
   font-family: 'Raleway', sans-serif;
 }
+[data-theme='dark'] .main-header {
+  --button-color: #fff;
+}
 .main-header .button {
   font-family: inherit;
   font-weight: 500;
+}
+.main-header .button:hover {
+  --button-color: #fff;
 }
 
 .content {

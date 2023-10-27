@@ -60,6 +60,13 @@
     --quote-author-text: #fff;
     --icon-color: #fff;
   }
+
+  [data-theme="dark"] & {
+    --quote-author-text: #fff;
+    --quote-genre-text: #bdbdbd;
+    --icon-color: #fff;
+    --quote-author-quotes-text: #bdbdbd;
+  }
 }
 
 .quote-credits__author {
@@ -83,6 +90,7 @@
 
 .quote-credits__author-quotes {
   grid-area: author-quotes;
+  text-align: right;
   font-size: 14px;
   font-weight: 500;
   color: var(--quote-author-quotes-text, #828282);
