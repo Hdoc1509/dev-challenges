@@ -5,6 +5,7 @@ import { Icon } from "@hdoc/react-material-icons";
 import { Button } from "@hdoc/react-button";
 import { BlockQuote } from "./components/BlockQuote";
 import { useQuotes } from "./hooks/useQuotes";
+import { LoaderRing } from "./components/LoaderRing";
 import "./App.scss";
 
 function App() {
@@ -39,7 +40,7 @@ function App() {
         />
       </header>
       <main className="content">
-        {isLoading && <p>loading...</p>}
+        {isLoading && <LoaderRing />}
         {error && <p>Error: {error.message}</p>}
         {showAuthorQuotes && (
           <h2 className="quotes-author">{quotes[0]?.author}</h2>

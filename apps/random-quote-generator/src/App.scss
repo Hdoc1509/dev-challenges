@@ -44,6 +44,11 @@
   grid-template-columns: minmax(280px, 800px);
   gap: 40px;
   margin: auto;
+
+  .loader-ring {
+    --loader-animation-duration: 1s;
+    margin-inline: auto;
+  }
 }
 
 .quotes-author {
