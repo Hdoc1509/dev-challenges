@@ -14,9 +14,7 @@
 
 ## Overview
 
-<!-- TODO: Update screenshot once project has completed -->
-
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![screenshot](screenshots/random-quote-generator.png)
 
 **Challenge**: Create a quote generator app. Use Front-end libraries like React or Vue. Don’t look at the existing solution. Fulfill user stories below:
 
@@ -32,12 +30,22 @@
 - [Vite](https://vitejs.dev/)
 - [Sass](https://sass-lang.com/)
 - [BEM](https://getbem.com/)
+- [zod](https://zod.dev/)
+- [@hdoc/react-button](https://www.npmjs.com/package/@hdoc/react-button)
 - [@hdoc/react-material-icons](https://www.npmjs.com/package/@hdoc/react-material-icons)
 - [@hdoc/react-toggle-theme](https://www.npmjs.com/package/@hdoc/react-toggle-theme)
 
+### Extra Features
+
+- Dark mode
+- Handling errors and custom error messages
+- Custom loader
+
 ### What I learned
 
-WIP
+- Create a random quote generator app
+- Retrieve data from an API, handling errors with Zod and custom utils
+- Simplify data handling with custom hooks
 
 ## How To Use
 
