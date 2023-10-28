@@ -1,11 +1,12 @@
 import { useCallback, useEffect, useState } from "react";
-import { Footer } from "@internal/components";
+import { useQuotes } from "./hooks/useQuotes";
 import { ThemeButton } from "@hdoc/react-toggle-theme";
 import { Icon } from "@hdoc/react-material-icons";
 import { Button } from "@hdoc/react-button";
+import { Footer } from "@internal/components";
 import { BlockQuote } from "./components/BlockQuote";
-import { useQuotes } from "./hooks/useQuotes";
 import { LoaderRing } from "./components/LoaderRing";
+import { ErrorMessage } from "./components/ErrorMessage";
 import "./App.scss";
 
 function App() {
@@ -41,7 +42,7 @@ function App() {
       </header>
       <main className="content">
         {isLoading && <LoaderRing />}
-        {error && <p>Error: {error.message}</p>}
+        {error && <ErrorMessage message={error.message} />}
         {showAuthorQuotes && (
           <h2 className="quotes-author">{quotes[0]?.author}</h2>
         )}

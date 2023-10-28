@@ -1,0 +1,14 @@
+.error-message {
+  background-color: #e84040;
+
+  color: #fff;
+  text-align: center;
+
+  a {
+    color: currentColor;
+  }
+
+  [data-theme="dark"] & {
+    background-color: #971212;
+  }
+}
