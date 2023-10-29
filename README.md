@@ -8,7 +8,7 @@ Monorepo that hosts my [solutions](#challenges) for [Front-end Developer path](h
 - [x] [Input component](/apps/input-component/)
 - [x] [Windbnb](/apps/windbnb/)
 - [x] [Todo app](/apps/todo-app/)
-- [ ] [Random quote generator](/apps/random-quote-generator/)
+- [x] [Random quote generator](/apps/random-quote-generator/)
 - [ ] [Country quiz](/apps/country-quiz/)
 - [ ] [Weather app](/apps/weather-app/)
 - [ ] [Github Jobs](/apps/github-jobs/)
