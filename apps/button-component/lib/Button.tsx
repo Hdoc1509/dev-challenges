@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { ComponentProps } from "react";
+import { type ComponentProps } from "react";
 import { Icon } from "@hdoc/react-material-icons";
 import type { Simplify } from "type-fest";
 import "./css/styles.scss";
