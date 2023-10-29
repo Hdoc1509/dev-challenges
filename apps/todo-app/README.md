@@ -54,7 +54,8 @@ git clone https://github.com/Hdoc1509/dev-challenges
 cd dev-challenges && pnpm install
 
 # Run todo-app in dev-mode with pnpm
-pnpm nx dev --open todo-app
+cd apps/todo-app
+pnpm run dev --open
 # or npm
-npx nx dev --open todo-app
+npm run dev --open
 ```

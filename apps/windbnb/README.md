@@ -58,7 +58,8 @@ git clone https://github.com/Hdoc1509/dev-challenges
 cd dev-challenges && pnpm install
 
 # Run windbnb in dev-mode with pnpm
-pnpm nx dev --open windbnb
+cd apps/windbnb
+pnpm run dev --open
 # or npm
-npx nx dev --open windbnb
+npm run dev --open
 ```

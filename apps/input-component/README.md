@@ -60,7 +60,8 @@ git clone https://github.com/Hdoc1509/dev-challenges
 cd dev-challenges && pnpm install
 
 # Run input-component in dev-mode with pnpm
-pnpm nx dev --open input-component
+cd apps/input-component
+pnpm run dev --open
 # or npm
-npx nx dev --open input-component
+npm run dev --open
 ```

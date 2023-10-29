@@ -60,7 +60,8 @@ git clone https://github.com/Hdoc1509/dev-challenges
 cd dev-challenges && pnpm install
 
 # Run button-component in dev-mode with pnpm
-pnpm nx dev --open button-component
+cd apps/button-component
+pnpm run dev --open
 # or npm
-npx nx dev --open button-component
+npm run dev --open
 ```

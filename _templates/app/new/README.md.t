@@ -51,7 +51,8 @@ git clone https://github.com/Hdoc1509/dev-challenges
 cd dev-challenges && pnpm install
 
 # Run <%= name %> in dev-mode with pnpm
-pnpm nx dev --open <%= name %>
+cd apps/<%= name %>
+pnpm run dev --open
 # or npm
-npx nx dev --open <%= name %>
+npm run dev --open
 ```
