@@ -1,4 +1,4 @@
 [build]
-  command = 'nx build input-component'
+  command = 'pnpm --filter input-component build'
   publish = 'apps/input-component/dist'
   ignore = 'bash ./scripts/docs-check.sh apps/input-component'
