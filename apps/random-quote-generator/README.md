@@ -58,9 +58,7 @@ git clone https://github.com/Hdoc1509/dev-challenges
 # install all workspace dependencies
 cd dev-challenges && pnpm install
 
-# Run random-quote-generator in dev-mode with pnpm
+# Run random-quote-generator in dev-mode
 cd apps/random-quote-generator
 pnpm run dev --open
-# or npm
-npm run dev --open
 ```

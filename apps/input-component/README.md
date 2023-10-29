@@ -59,9 +59,7 @@ git clone https://github.com/Hdoc1509/dev-challenges
 # install all workspace dependencies
 cd dev-challenges && pnpm install
 
-# Run input-component in dev-mode with pnpm
+# Run input-component in dev-mode
 cd apps/input-component
 pnpm run dev --open
-# or npm
-npm run dev --open
 ```
