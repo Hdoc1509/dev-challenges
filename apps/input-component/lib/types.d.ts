@@ -1,6 +1,6 @@
 import type { ComponentProps } from "react";
 import type { Simplify } from "type-fest";
-import { Icon } from "@hdoc/react-material-icons";
+import type { Icon } from "@hdoc/react-material-icons";
 
 type IconProps = ComponentProps<typeof Icon>;
 type InputMultiline = { multiline: true; rows?: number };
