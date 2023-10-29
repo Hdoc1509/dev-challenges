@@ -2,7 +2,7 @@ import { Button, ButtonIcon } from "@hdoc/react-button";
 import { FilterGuests } from "./FilterGuests";
 import { FilterLocation } from "./FilterLocation";
 import { FILTER, useFilterStore } from "../store/filter";
-import { FnSearchOptions } from "../types";
+import type { FnSearchOptions } from "../types";
 import clsx from "clsx";
 import "./FilterDrawer.scss";
 

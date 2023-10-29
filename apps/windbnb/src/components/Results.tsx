@@ -1,5 +1,5 @@
 import { StayCard } from "./StayCard";
-import { Stay } from "../types";
+import type { Stay } from "../types";
 import "./Results.scss";
 
 export const SearchResults = ({ results }: { results: Stay[] }) => {
