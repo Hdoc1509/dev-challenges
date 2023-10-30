@@ -7,6 +7,7 @@ export const getRandomQuote = async (): Promise<Quote> => {
   setTimeout(() => controller.abort(), 5000);
 
   const res = await fetch(`${API_URL}/random`, { signal: controller.signal });
+  if (!res.ok) throw new Error("Failed to get a random quote");
   const { data } = quoteResponseSchema.parse(await res.json());
 
   return data[0];
@@ -23,6 +24,7 @@ export const getAuthorQuotes = async (
   const res = await fetch(`${API_URL}?${params.toString()}`, {
     signal: controller.signal,
   });
+  if (!res.ok) throw new Error("Failed to get author's quotes");
   const { data } = quoteResponseSchema.parse(await res.json());
 
   return data;
