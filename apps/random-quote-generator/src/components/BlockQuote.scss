@@ -35,13 +35,9 @@
 }
 
 .quote-credits {
-  display: grid;
+  display: flex;
   align-items: center;
-  gap: 8px;
-  grid-template-columns: auto 1fr auto;
-  grid-template-areas:
-    "author . arrow"
-    "genre  . more-quotes";
+  justify-content: space-between;
 
   width: 100%;
   background-color: transparent;
@@ -68,28 +64,29 @@
     --more-quotes-text: #bdbdbd;
   }
 
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
   &__author {
-    grid-area: author;
     font-size: 24px;
     font-weight: 700;
     color: var(--author-text, #4f4f4f);
   }
 
   &__genre {
-    grid-area: genre;
     font-size: 14px;
     font-weight: 500;
     color: var(--genre-text, #828282);
   }
 
   &__arrow {
-    grid-area: arrow;
     margin-left: auto;
   }
 
   &__more-quotes {
-    grid-area: more-quotes;
-    text-align: right;
     font-size: 14px;
     font-weight: 500;
     color: var(--more-quotes-text, #828282);

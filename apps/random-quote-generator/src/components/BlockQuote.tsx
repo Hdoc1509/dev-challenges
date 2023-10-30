@@ -15,14 +15,18 @@ export const BlockQuote = ({ quote, withFooter, onClick }: Props) => {
       {withFooter && (
         <footer>
           <button className="quote-credits" onClick={onClick}>
-            <span className="quote-credits__author">{quote.author}</span>
-            <span className="quote-credits__genre">{quote.genre}</span>
-            <Icon
-              className="quote-credits__arrow"
-              name="arrow_right_alt"
-              size="large"
-            />
-            <span className="quote-credits__more-quotes">More quotes</span>
+            <div>
+              <span className="quote-credits__author">{quote.author}</span>
+              <span className="quote-credits__genre">{quote.genre}</span>
+            </div>
+            <div>
+              <Icon
+                className="quote-credits__arrow"
+                name="arrow_right_alt"
+                size="large"
+              />
+              <span className="quote-credits__more-quotes">More quotes</span>
+            </div>
           </button>
         </footer>
       )}
