@@ -12,10 +12,6 @@
 }
 
 .main-header {
-  --button-bg: transparent;
-  --button-bg-hover: #333;
-  --button-color: #4f4f4f;
-
   display: flex;
   justify-content: flex-end;
   gap: 10px;
@@ -24,16 +20,16 @@
 
   font-family: "Raleway", sans-serif;
 
-  [data-theme="dark"] & {
-    --button-color: #fff;
-  }
-
-  .button {
+  &__random-button {
+    --button-bg: transparent;
+    --button-bg-hover: #333;
+    --button-color: #4f4f4f;
     font-family: inherit;
     font-weight: 500;
 
     &:hover,
-    &:focus {
+    &:focus,
+    [data-theme="dark"] & {
       --button-color: #fff;
     }
   }

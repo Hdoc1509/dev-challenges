@@ -29,6 +29,7 @@ function App() {
     <>
       <header className="main-header">
         <Button
+          className="main-header__random-button"
           text="random"
           iconEnd="autorenew"
           onClick={handleRandomQuote}
