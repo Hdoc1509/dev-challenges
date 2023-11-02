@@ -87,8 +87,10 @@
   }
 
   &__more-quotes {
+    margin-right: 4px;
     font-size: 14px;
     font-weight: 500;
+    text-align: right;
     color: var(--more-quotes-text, #828282);
   }
 }
