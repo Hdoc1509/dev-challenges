@@ -12,7 +12,7 @@ export const HeaderWithTheme = ({ title, nav }: Props) => (
     <h1>{title}</h1>
     <div className="theme-switcher">
       <ThemeButton
-        lightElement={<Icon name="light_mode" />}
+        lightElement={<Icon name="light_mode" color="warning" />}
         darkElement={<Icon name="dark_mode" />}
         fullRounded
       />

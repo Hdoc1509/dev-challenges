@@ -20,9 +20,6 @@
 
 .theme-button {
   --button-bg-hover: #e0e0e0;
-  --icon-color: #ffa500;
-
-  color: var(--icon-color);
 
   [data-theme="dark"] & {
     --icon-color: #87ceeb;
