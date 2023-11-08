@@ -14,8 +14,8 @@ to: apps/<%= name %>/package.json
     "preview": "vite preview"
   },
   "dependencies": {
-    "@hdoc/react-button": "1.1.0",
-    "@hdoc/react-material-icons": "1.5.0",
+    "@hdoc/react-button": "1.2.0",
+    "@hdoc/react-material-icons": "1.6.0",
     "@hdoc/react-toggle-theme": "2.1.1",
     "@internal/components": "workspace:3.0.0",
     "@material-design-icons/font": "^0.14.10",
