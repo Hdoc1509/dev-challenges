@@ -1,0 +1,4 @@
+[build]
+  command = 'pnpm --filter country-quiz build'
+  publish = 'apps/country-quiz/dist'
+  ignore = 'bash ./scripts/docs-check.sh apps/country-quiz'

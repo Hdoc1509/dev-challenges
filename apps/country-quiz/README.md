@@ -1,0 +1,60 @@
+<h1 align="center">Country Quiz</h1>
+
+<div align="center">
+  <h3>
+    <a href="https://hdoc-country-quiz.netlify.app">
+      Solution
+    </a>
+    <span> | </span>
+    <a href="https://legacy.devchallenges.io/challenges/Bu3G2irnaXmfwQ8sZkw8">
+      Challenge
+    </a>
+  </h3>
+</div>
+
+## Overview
+
+<!-- TODO: Update screenshot once project has completed -->
+
+![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+
+**Challenge**: Create a country quiz app using an API. Use Front-end libraries like React or Vue. Don’t look at the existing solution. Fulfill user stories below:
+
+- [ ] User story: I can see at least 2 types of questions: a city is the capital of.. or a flag belong to country..
+- [ ] User story: I can see select an answer
+- [ ] User story: I can see if my answer is correct or incorrect
+- [ ] User story: When I answer correctly, I can move on to the next question
+- [ ] User story: When I answer incorrectly, I can see my results and try again
+- [ ] User story: I can try again
+
+### Built With
+
+- [React](https://reactjs.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [Sass](https://sass-lang.com/)
+- [clsx](https://github.com/lukeed/clsx#readme)
+- [BEM](https://getbem.com/)
+- [@hdoc/react-button](https://www.npmjs.com/package/@hdoc/react-button)
+- [@hdoc/react-material-icons](https://www.npmjs.com/package/@hdoc/react-material-icons)
+- [@hdoc/react-toggle-theme](https://www.npmjs.com/package/@hdoc/react-toggle-theme)
+
+### What I learned
+
+WIP
+
+## How To Use
+
+To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/download/) and [pnpm](https://pnpm.io/installation) installed on your computer. From your command line:
+
+```bash
+# Clone this repository
+git clone https://github.com/Hdoc1509/dev-challenges
+
+# install all workspace dependencies
+cd dev-challenges && pnpm install
+
+# Run country-quiz in dev-mode
+cd apps/country-quiz
+pnpm run dev --open
+```

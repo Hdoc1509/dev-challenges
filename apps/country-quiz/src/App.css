@@ -1,0 +1,110 @@
+#root {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  align-items: center;
+
+  min-height: 100vh;
+  min-height: 100dvh;
+  max-width: 470px;
+  margin: 0 auto;
+}
+@media (max-width: 767px) {
+  #root {
+    padding-inline: 2rem;
+  }
+}
+
+h1 {
+  width: 60%;
+  margin-block: 24px;
+
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+}
+
+.quiz-container {
+  position: relative;
+  display: grid;
+  gap: 32px;
+
+  border-radius: 24px;
+  background-color: #fff;
+  padding: 32px;
+}
+
+.quiz-container__character {
+  position: absolute;
+
+  top: -75px;
+  right: 0;
+}
+
+.quiz-question {
+  margin-bottom: 0;
+
+  color: #2f527b;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.quiz-answers {
+  display: grid;
+
+  gap: 32px;
+}
+.quiz-answers .quiz-answers__option {
+  gap: 40px;
+  justify-content: flex-start;
+
+  --button-radius: 12px;
+  --button-padding-y: 10px;
+  --button-outline-color: #6066d0b2;
+
+  --button-font-family: "Poppins";
+  font-size: 18px;
+}
+.quiz-answers__option:hover {
+  --button-bg: var(--warning);
+  --button-color: #fff;
+  --button-outline-color: var(--warning);
+}
+.quiz-answers__option::before {
+  font-style: 24px;
+}
+.quiz-answers__option::before {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+}
+.quiz-answers__option:nth-child(1)::before {
+  content: "A";
+}
+.quiz-answers__option:nth-child(2)::before {
+  content: "B";
+}
+.quiz-answers__option:nth-child(3)::before {
+  content: "C";
+}
+.quiz-answers__option:nth-child(4)::before {
+  content: "D";
+}
+
+.quiz-next {
+  margin-left: auto;
+
+  --button-radius: 12px;
+  --button-padding: 14px 36px;
+  --button-font-family: "Poppins";
+  --button-font-weight: 700;
+  font-size: 18px;
+}
+
+.credits {
+  color: #f2f2f2;
+  /* TODO: Add this to Footer from @internal/components */
+  font-size: 14px;
+}
