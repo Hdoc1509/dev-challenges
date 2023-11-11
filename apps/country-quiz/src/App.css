@@ -34,63 +34,11 @@ h1 {
   background-color: #fff;
   padding: 32px;
 }
-
 .quiz-container__character {
   position: absolute;
 
   top: -75px;
   right: 0;
-}
-
-.quiz-question {
-  margin-bottom: 0;
-
-  color: #2f527b;
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-size: 24px;
-}
-
-.quiz-answers {
-  display: grid;
-
-  gap: 32px;
-}
-.quiz-answers .quiz-answers__option {
-  gap: 40px;
-  justify-content: flex-start;
-
-  --button-radius: 12px;
-  --button-padding-y: 10px;
-  --button-outline-color: #6066d0b2;
-
-  --button-font-family: "Poppins";
-  font-size: 18px;
-}
-.quiz-answers__option:hover {
-  --button-bg: var(--warning);
-  --button-color: #fff;
-  --button-outline-color: var(--warning);
-}
-.quiz-answers__option::before {
-  font-style: 24px;
-}
-.quiz-answers__option::before {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-size: 24px;
-}
-.quiz-answers__option:nth-child(1)::before {
-  content: "A";
-}
-.quiz-answers__option:nth-child(2)::before {
-  content: "B";
-}
-.quiz-answers__option:nth-child(3)::before {
-  content: "C";
-}
-.quiz-answers__option:nth-child(4)::before {
-  content: "D";
 }
 
 .quiz-next {

@@ -1,0 +1,52 @@
+.quiz-question {
+  margin-bottom: 0;
+
+  color: #2f527b;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.quiz-answers {
+  display: grid;
+  gap: 32px;
+
+  &__option {
+    gap: 40px;
+    justify-content: flex-start;
+
+    --button-radius: 12px;
+    --button-padding-y: 10px;
+    --button-outline-color: #6066d0b2;
+
+    --button-font-family: "Poppins";
+    font-size: 18px;
+
+    &:hover {
+      --button-bg: var(--warning);
+      --button-color: #fff;
+      --button-outline-color: var(--warning);
+    }
+
+    &::before {
+      font-size: 24px;
+    }
+    &:nth-child(1)::before {
+      content: "A";
+    }
+    &:nth-child(2)::before {
+      content: "B";
+    }
+    &:nth-child(3)::before {
+      content: "C";
+    }
+    &:nth-child(4)::before {
+      content: "D";
+    }
+
+    & .material-icons-outlined {
+      margin-left: auto;
+      --icon-size: 24px;
+    }
+  }
+}
