@@ -7,6 +7,8 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
+  --error: #EA8282;
+  --success: #60BF88;
   --warning: #f9a826;
   --warning-hover: #e69006;
 }

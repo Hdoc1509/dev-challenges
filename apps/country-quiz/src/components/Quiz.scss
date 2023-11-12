@@ -15,17 +15,32 @@
     gap: 40px;
     justify-content: flex-start;
 
-    --button-radius: 12px;
-    --button-padding-y: 10px;
+    --button-bg-hover: var(--warning);
+    --button-color-disabled: #6066d0b2;
     --button-outline-color: #6066d0b2;
+    --button-outline-color-disabled: #6066d0b2;
+    --button-padding-y: 10px;
+    --button-radius: 12px;
 
     --button-font-family: "Poppins";
     font-size: 18px;
 
-    &:hover {
-      --button-bg: var(--warning);
+    &:hover:not(:disabled) {
       --button-color: #fff;
       --button-outline-color: var(--warning);
+    }
+
+    &.correct {
+      --button-bg: var(--success);
+      --button-outline-color: var(--success);
+    }
+    &.wrong {
+      --button-bg: var(--error);
+      --button-outline-color: var(--error);
+    }
+    &.correct,
+    &.wrong {
+      --button-color: #fff;
     }
 
     &::before {

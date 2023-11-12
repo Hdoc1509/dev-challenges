@@ -1,18 +1,18 @@
 import { Button } from "@hdoc/react-button";
+import { clsx } from "clsx";
+import type { Question } from "../types";
 import "./Quiz.scss";
 
-type Props = {
-  answerOptions: string[];
-  question: string;
+type Props = Omit<Question, "category" | "id" | "hasBeenAnsweredCorrectly"> & {
   onAnswer: (answer: string) => void;
-  correctAnswer: string;
 };
 
 export const Quiz = ({
   answerOptions,
   question,
-  onAnswer,
   correctAnswer,
+  selectedAnswer,
+  onAnswer,
 }: Props) => {
   return (
     <>
@@ -21,11 +21,21 @@ export const Quiz = ({
         {answerOptions.map((option) => (
           <Button
             key={option}
-            className="quiz-answers__option"
+            className={clsx("quiz-answers__option", {
+              correct: selectedAnswer != null && correctAnswer === option,
+              wrong: selectedAnswer === option && correctAnswer !== option,
+            })}
             variant="outline"
             text={option}
-            iconEnd="check_circle"
+            iconEnd={(() => {
+              if (selectedAnswer != null && correctAnswer === option)
+                return "check_circle";
+
+              if (selectedAnswer === option && correctAnswer !== option)
+                return "cancel";
+            })()}
             iconVariant="outlined"
+            disabled={selectedAnswer != null}
             onClick={() => onAnswer(option)}
           />
         ))}
