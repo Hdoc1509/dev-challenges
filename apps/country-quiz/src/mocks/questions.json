@@ -1,0 +1,23 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "category": "countryOfCapital",
+      "question": "Kuala Lumpur is the capital of",
+      "correctAnswer": "Malaysia",
+      "answerOptions": ["Vietnam", "Malaysia", "Sweden", "Austria"],
+      "selectedAnswer": null,
+      "hasBeenAnsweredCorrectly": null
+    },
+    {
+      "id": 2,
+      "category": "flagOfCountry",
+      "question": "Which country does this flag belong to?",
+      "correctAnswer": "Finland",
+      "answerOptions": ["Vietnam", "Finland", "Sweden", "Austria"],
+      "selectedAnswer": null,
+      "hasBeenAnsweredCorrectly": null,
+      "flagUrl": "https://flagcdn.com/fi.svg"
+    }
+  ]
+}
