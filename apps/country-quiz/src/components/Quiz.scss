@@ -1,15 +1,15 @@
 .quiz-question {
-  margin-bottom: 0;
+  margin: 0;
 
   color: #2f527b;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
-  font-size: 24px;
+  font-size: var(--question-font-size, 24px);
 }
 
 .quiz-answers {
   display: grid;
-  gap: 32px;
+  gap: var(--answers-gap, 32px);
 
   &__option {
     gap: 40px;
@@ -23,7 +23,7 @@
     --button-radius: 12px;
 
     --button-font-family: "Poppins";
-    font-size: 18px;
+    font-size: var(--answer-font-size, 18px);
 
     &:hover:not(:disabled) {
       --button-color: #fff;
@@ -44,7 +44,7 @@
     }
 
     &::before {
-      font-size: 24px;
+      font-size: 1.33em;
     }
     &:nth-child(1)::before {
       content: "A";
