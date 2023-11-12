@@ -47,12 +47,9 @@ function App() {
             selectedAnswer={question.selectedAnswer}
             onAnswer={onAnswer}
           />
-          <Button
-            className="quiz-next"
-            text="Next"
-            color="warning"
-            disabled={question.selectedAnswer == null}
-          />
+          {question.selectedAnswer && (
+            <Button className="quiz-next" text="Next" color="warning" />
+          )}
         </div>
       </main>
       <Footer />
