@@ -1,5 +1,6 @@
 import { Button } from "@hdoc/react-button";
 import { clsx } from "clsx";
+import { getAnswerClassName, getAnswerIconEnd } from "../utils";
 import type { Question } from "../types";
 import "./Quiz.scss";
 
@@ -21,19 +22,17 @@ export const Quiz = ({
         {answerOptions.map((option) => (
           <Button
             key={option}
-            className={clsx("quiz-answers__option", {
-              correct: selectedAnswer != null && correctAnswer === option,
-              wrong: selectedAnswer === option && correctAnswer !== option,
-            })}
+            className={clsx(
+              "quiz-answers__option",
+              getAnswerClassName({ option, selectedAnswer, correctAnswer }),
+            )}
             variant="outline"
             text={option}
-            iconEnd={(() => {
-              if (selectedAnswer != null && correctAnswer === option)
-                return "check_circle";
-
-              if (selectedAnswer === option && correctAnswer !== option)
-                return "cancel";
-            })()}
+            iconEnd={getAnswerIconEnd({
+              option,
+              selectedAnswer,
+              correctAnswer,
+            })}
             iconVariant="outlined"
             disabled={selectedAnswer != null}
             onClick={() => onAnswer(option)}
