@@ -41,6 +41,10 @@ h1 {
   background-color: #fff;
   padding: var(--quiz-card-padding, 68px 32px);
 }
+.quiz-container[data-answer] {
+  padding-bottom: 32px;
+}
+
 .quiz-container__character {
   position: absolute;
 
