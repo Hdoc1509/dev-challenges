@@ -11,6 +11,7 @@ function App() {
   const currentQuestionIndex = useQuestionStore((s) => s.currentQuestionIndex);
   const getQuestions = useQuestionStore((s) => s.getQuestions);
   const selectAnswer = useQuestionStore((s) => s.selectAnswer);
+  const goNextQuestion = useQuestionStore((s) => s.goNextQuestion);
 
   const question = questions[currentQuestionIndex];
 
@@ -37,8 +38,13 @@ function App() {
               onAnswer={onAnswer}
             />
           )}
-          {question?.selectedAnswer && (
-            <Button className="quiz-next" text="Next" color="warning" />
+          {question?.selectedAnswer && question?.hasBeenAnsweredCorrectly && (
+            <Button
+              className="quiz-next"
+              text="Next"
+              color="warning"
+              onClick={goNextQuestion}
+            />
           )}
         </div>
       </main>

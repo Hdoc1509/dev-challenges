@@ -23,7 +23,7 @@
 - [x] User story: I can see at least 2 types of questions: a city is the capital of.. or a flag belong to country..
 - [x] User story: I can see select an answer
 - [x] User story: I can see if my answer is correct or incorrect
-- [ ] User story: When I answer correctly, I can move on to the next question
+- [x] User story: When I answer correctly, I can move on to the next question
 - [ ] User story: When I answer incorrectly, I can see my results and try again
 - [ ] User story: I can try again
 
