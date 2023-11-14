@@ -3,6 +3,7 @@ import { useQuestionStore } from "./store/questions";
 import { Button } from "@hdoc/react-button";
 import { Footer } from "@internal/components";
 import { Quiz } from "./components/Quiz";
+import { QuizCard } from "./components/QuizCard";
 import characterUrl from "./assets/character.svg";
 import "./App.css";
 
@@ -23,10 +24,10 @@ function App() {
     <>
       <main>
         <h1>Country Quiz</h1>
-        <div className="quiz-container" data-answer={question?.selectedAnswer}>
+        <QuizCard selectedAnswer={question?.selectedAnswer}>
           <img
             src={characterUrl}
-            className="quiz-container__character"
+            className="quiz-card__character"
             alt="character"
           />
           {question && (
@@ -48,7 +49,7 @@ function App() {
               onClick={goNextQuestion}
             />
           )}
-        </div>
+        </QuizCard>
       </main>
       <Footer />
     </>

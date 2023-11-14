@@ -1,0 +1,21 @@
+.quiz-card {
+  position: relative;
+  display: grid;
+  gap: var(--quiz-card-gap, 32px);
+
+  border-radius: 24px;
+  background-color: #fff;
+  padding: var(--quiz-card-padding, 68px 32px);
+
+  &[data-answer] {
+    padding-bottom: 32px;
+  }
+
+  &__character {
+    position: absolute;
+
+    top: -75px;
+    right: 0;
+    height: var(--character-height, auto);
+  }
+}
