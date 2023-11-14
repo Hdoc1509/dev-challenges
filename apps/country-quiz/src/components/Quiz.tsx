@@ -1,4 +1,5 @@
 import { clsx } from "clsx";
+import { useQuestionStore } from "../store/questions";
 import { getAnswerClassName, getAnswerIconEnd } from "../utils";
 import { Button } from "@hdoc/react-button";
 import type { Question } from "../types";
@@ -11,6 +12,8 @@ type Props = {
 };
 
 export const Quiz = ({ quiz, onAnswer }: Props) => {
+  const goNextQuestion = useQuestionStore((s) => s.goNextQuestion);
+
   const {
     category,
     flagUrl,
@@ -18,6 +21,7 @@ export const Quiz = ({ quiz, onAnswer }: Props) => {
     answerOptions,
     selectedAnswer,
     correctAnswer,
+    hasBeenAnsweredCorrectly,
   } = quiz;
 
   return (
@@ -48,6 +52,14 @@ export const Quiz = ({ quiz, onAnswer }: Props) => {
           />
         ))}
       </div>
+      {hasBeenAnsweredCorrectly && (
+        <Button
+          className="quiz-next"
+          text="Next"
+          color="warning"
+          onClick={goNextQuestion}
+        />
+      )}
     </>
   );
 };

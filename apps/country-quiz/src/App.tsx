@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useQuestionStore } from "./store/questions";
-import { Button } from "@hdoc/react-button";
 import { Footer } from "@internal/components";
 import { Quiz } from "./components/Quiz";
 import { QuizCard } from "./components/QuizCard";
@@ -11,7 +10,6 @@ function App() {
   const currentQuestionIndex = useQuestionStore((s) => s.currentQuestionIndex);
   const getQuestions = useQuestionStore((s) => s.getQuestions);
   const selectAnswer = useQuestionStore((s) => s.selectAnswer);
-  const goNextQuestion = useQuestionStore((s) => s.goNextQuestion);
 
   const question = questions[currentQuestionIndex];
 
@@ -25,14 +23,6 @@ function App() {
         <h1>Country Quiz</h1>
         <QuizCard selectedAnswer={question?.selectedAnswer}>
           {question && <Quiz quiz={question} onAnswer={onAnswer} />}
-          {question?.selectedAnswer && question?.hasBeenAnsweredCorrectly && (
-            <Button
-              className="quiz-next"
-              text="Next"
-              color="warning"
-              onClick={goNextQuestion}
-            />
-          )}
         </QuizCard>
       </main>
       <Footer />

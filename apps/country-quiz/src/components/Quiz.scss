@@ -78,3 +78,13 @@
     }
   }
 }
+
+.quiz-next {
+  margin-left: auto;
+
+  --button-radius: 12px;
+  --button-padding: 14px 36px;
+  --button-font-family: "Poppins";
+  --button-font-weight: 700;
+  font-size: var(--answer-font-size, 18px);
+}
