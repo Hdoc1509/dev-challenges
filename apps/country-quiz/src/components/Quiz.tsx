@@ -4,19 +4,24 @@ import { getAnswerClassName, getAnswerIconEnd } from "../utils";
 import type { Question } from "../types";
 import "./Quiz.scss";
 
-type Props = Omit<Question, "category" | "id" | "hasBeenAnsweredCorrectly"> & {
+type Props = Omit<Question, "id" | "hasBeenAnsweredCorrectly"> & {
   onAnswer: (answer: string) => void;
 };
 
 export const Quiz = ({
   answerOptions,
   question,
+  category,
+  flagUrl,
   correctAnswer,
   selectedAnswer,
   onAnswer,
 }: Props) => {
   return (
     <>
+      {category === "flagOfCountry" && (
+        <img src={flagUrl} className="quiz-flag" alt="flag" />
+      )}
       <p className="quiz-question">{question}</p>
       <div className="quiz-answers">
         {answerOptions.map((option) => (

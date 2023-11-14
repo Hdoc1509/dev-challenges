@@ -32,6 +32,8 @@ function App() {
           {question && (
             <Quiz
               question={question.question}
+              category={question.category}
+              flagUrl={question.flagUrl}
               correctAnswer={question.correctAnswer}
               answerOptions={question.answerOptions}
               selectedAnswer={question.selectedAnswer}

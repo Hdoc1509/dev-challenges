@@ -7,6 +7,11 @@
   font-size: var(--question-font-size, 24px);
 }
 
+.quiz-flag {
+  height: 54px;
+  border-radius: 4px;
+}
+
 .quiz-answers {
   display: grid;
   gap: var(--answers-gap, 32px);
