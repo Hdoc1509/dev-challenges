@@ -1,22 +1,24 @@
-import { Button } from "@hdoc/react-button";
 import { clsx } from "clsx";
 import { getAnswerClassName, getAnswerIconEnd } from "../utils";
+import { Button } from "@hdoc/react-button";
 import type { Question } from "../types";
 import "./Quiz.scss";
 
-type Props = Omit<Question, "id" | "hasBeenAnsweredCorrectly"> & {
+type Props = {
+  quiz: Question;
   onAnswer: (answer: string) => void;
 };
 
-export const Quiz = ({
-  answerOptions,
-  question,
-  category,
-  flagUrl,
-  correctAnswer,
-  selectedAnswer,
-  onAnswer,
-}: Props) => {
+export const Quiz = ({ quiz, onAnswer }: Props) => {
+  const {
+    category,
+    flagUrl,
+    question,
+    answerOptions,
+    selectedAnswer,
+    correctAnswer,
+  } = quiz;
+
   return (
     <>
       {category === "flagOfCountry" && (

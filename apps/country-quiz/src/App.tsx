@@ -30,17 +30,7 @@ function App() {
             className="quiz-card__character"
             alt="character"
           />
-          {question && (
-            <Quiz
-              question={question.question}
-              category={question.category}
-              flagUrl={question.flagUrl}
-              correctAnswer={question.correctAnswer}
-              answerOptions={question.answerOptions}
-              selectedAnswer={question.selectedAnswer}
-              onAnswer={onAnswer}
-            />
-          )}
+          {question && <Quiz quiz={question} onAnswer={onAnswer} />}
           {question?.selectedAnswer && question?.hasBeenAnsweredCorrectly && (
             <Button
               className="quiz-next"
