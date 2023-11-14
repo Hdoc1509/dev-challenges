@@ -4,7 +4,6 @@ import { Button } from "@hdoc/react-button";
 import { Footer } from "@internal/components";
 import { Quiz } from "./components/Quiz";
 import { QuizCard } from "./components/QuizCard";
-import characterUrl from "./assets/character.svg";
 import "./App.css";
 
 function App() {
@@ -25,11 +24,6 @@ function App() {
       <main>
         <h1>Country Quiz</h1>
         <QuizCard selectedAnswer={question?.selectedAnswer}>
-          <img
-            src={characterUrl}
-            className="quiz-card__character"
-            alt="character"
-          />
           {question && <Quiz quiz={question} onAnswer={onAnswer} />}
           {question?.selectedAnswer && question?.hasBeenAnsweredCorrectly && (
             <Button

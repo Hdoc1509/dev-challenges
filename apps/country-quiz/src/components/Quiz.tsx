@@ -2,6 +2,7 @@ import { clsx } from "clsx";
 import { getAnswerClassName, getAnswerIconEnd } from "../utils";
 import { Button } from "@hdoc/react-button";
 import type { Question } from "../types";
+import characterUrl from "../assets/character.svg";
 import "./Quiz.scss";
 
 type Props = {
@@ -21,6 +22,7 @@ export const Quiz = ({ quiz, onAnswer }: Props) => {
 
   return (
     <>
+      <img src={characterUrl} className="quiz-character" alt="character" />
       {category === "flagOfCountry" && (
         <img src={flagUrl} className="quiz-flag" alt="flag" />
       )}

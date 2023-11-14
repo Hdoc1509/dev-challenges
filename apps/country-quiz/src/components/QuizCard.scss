@@ -10,12 +10,4 @@
   &[data-answer] {
     padding-bottom: 32px;
   }
-
-  &__character {
-    position: absolute;
-
-    top: -75px;
-    right: 0;
-    height: var(--character-height, auto);
-  }
 }
