@@ -6,13 +6,11 @@ import type { Question } from "../types";
 import characterUrl from "../assets/character.svg";
 import "./Quiz.scss";
 
-type Props = {
-  quiz: Question;
-  onAnswer: (answer: string) => void;
-};
-
-export const Quiz = ({ quiz, onAnswer }: Props) => {
+export const Quiz = ({ quiz }: { quiz: Question }) => {
   const goNextQuestion = useQuestionStore((s) => s.goNextQuestion);
+  const selectAnswer = useQuestionStore((s) => s.selectAnswer);
+
+  const handleAnswer = (answer: string) => selectAnswer(quiz.id, answer);
 
   const {
     category,
@@ -48,7 +46,7 @@ export const Quiz = ({ quiz, onAnswer }: Props) => {
             })}
             iconVariant="outlined"
             disabled={selectedAnswer != null}
-            onClick={() => onAnswer(option)}
+            onClick={() => handleAnswer(option)}
           />
         ))}
       </div>

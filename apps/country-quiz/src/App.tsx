@@ -9,11 +9,8 @@ function App() {
   const questions = useQuestionStore((s) => s.questions);
   const currentQuestionIndex = useQuestionStore((s) => s.currentQuestionIndex);
   const getQuestions = useQuestionStore((s) => s.getQuestions);
-  const selectAnswer = useQuestionStore((s) => s.selectAnswer);
 
   const question = questions[currentQuestionIndex];
-
-  const onAnswer = (answer: string) => selectAnswer(question.id, answer);
 
   useEffect(() => void getQuestions(), [getQuestions]);
 
@@ -22,7 +19,7 @@ function App() {
       <main>
         <h1>Country Quiz</h1>
         <QuizCard selectedAnswer={question?.selectedAnswer}>
-          {question && <Quiz quiz={question} onAnswer={onAnswer} />}
+          {question && <Quiz quiz={question} />}
         </QuizCard>
       </main>
       <Footer />
