@@ -6,7 +6,7 @@ type State = {
   questions: Question[];
   currentQuestionIndex: number;
   correctAnswers: number;
-  unansweredQuestions: number;
+  answeredQuestions: number;
 };
 
 type Action = {
@@ -20,7 +20,7 @@ const initialState: State = {
   questions: [],
   currentQuestionIndex: 0,
   correctAnswers: 0,
-  unansweredQuestions: 0,
+  answeredQuestions: 0,
 };
 
 export const useQuestionStore = create<State & Action>()((set, get) => {
