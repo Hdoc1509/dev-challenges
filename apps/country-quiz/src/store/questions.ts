@@ -6,16 +6,13 @@ type State = {
   questions: Question[];
   currentQuestionIndex: number;
   correctAnswers: number;
-  incorrectAnswers: number;
   unansweredQuestions: number;
-  totalQuestions: number;
 };
 
 type Action = {
   getQuestions: (limit?: number) => Promise<void>;
   selectAnswer: (questionId: number, answer: string) => void;
   goNextQuestion: () => void;
-  goPrevQuestion: () => void;
   reset: () => void;
 };
 
@@ -23,9 +20,7 @@ const initialState: State = {
   questions: [],
   currentQuestionIndex: 0,
   correctAnswers: 0,
-  incorrectAnswers: 0,
   unansweredQuestions: 0,
-  totalQuestions: 0,
 };
 
 export const useQuestionStore = create<State & Action>()((set, get) => {
@@ -61,7 +56,6 @@ export const useQuestionStore = create<State & Action>()((set, get) => {
         set({ currentQuestionIndex: newQuestionIndex });
       }
     },
-    goPrevQuestion: () => {},
     reset: () => set(initialState),
   };
 });
