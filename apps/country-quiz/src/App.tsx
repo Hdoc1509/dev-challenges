@@ -11,10 +11,12 @@ function App() {
   const questions = useQuestionStore((s) => s.questions);
   const currentQuestionIndex = useQuestionStore((s) => s.currentQuestionIndex);
   const getQuestions = useQuestionStore((s) => s.getQuestions);
+  const reset = useQuestionStore((s) => s.reset);
 
   const question = questions[currentQuestionIndex];
 
   const tryAgain = () => {
+    reset();
     setIsQuizOver(false);
     void getQuestions();
   };
