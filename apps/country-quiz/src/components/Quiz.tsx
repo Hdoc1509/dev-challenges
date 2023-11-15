@@ -15,7 +15,10 @@ export const Quiz = ({ quiz, showResults }: Props) => {
   const goNextQuestion = useQuestionStore((s) => s.goNextQuestion);
   const selectAnswer = useQuestionStore((s) => s.selectAnswer);
 
-  const handleAnswer = (answer: string) => selectAnswer(quiz.id, answer);
+  const handleAnswer = (answer: string) => {
+    selectAnswer(quiz.id, answer);
+    window.scrollTo({ top: document.documentElement.scrollHeight });
+  };
 
   if (quiz == null) {
     return <p>Loading questions</p>;
