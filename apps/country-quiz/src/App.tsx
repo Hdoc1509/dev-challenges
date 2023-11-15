@@ -29,10 +29,11 @@ function App() {
           isAnswered={question?.selectedAnswer != null}
           isOver={isQuizOver}
         >
-          {question && !isQuizOver && (
+          {!isQuizOver ? (
             <Quiz quiz={question} showResults={() => setIsQuizOver(true)} />
+          ) : (
+            <Results tryAgain={tryAgain} />
           )}
-          {isQuizOver && <Results tryAgain={tryAgain} />}
         </QuizCard>
       </main>
       <Footer />

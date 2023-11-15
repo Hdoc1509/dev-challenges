@@ -17,6 +17,10 @@ export const Quiz = ({ quiz, showResults }: Props) => {
 
   const handleAnswer = (answer: string) => selectAnswer(quiz.id, answer);
 
+  if (quiz == null) {
+    return <p>Loading questions</p>;
+  }
+
   const {
     category,
     flagUrl,
