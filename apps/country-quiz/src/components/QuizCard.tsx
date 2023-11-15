@@ -1,18 +1,21 @@
+import { clsx } from "clsx";
 import type { PropsWithChildren } from "react";
-import type { Question } from "../types";
 import "./QuizCard.scss";
 
 type Props = {
-  selectedAnswer: Question["selectedAnswer"];
+  isAnswered: boolean;
+  isOver: boolean;
 };
 
 export const QuizCard = ({
+  isAnswered,
+  isOver,
   children,
-  selectedAnswer,
 }: PropsWithChildren<Props>) => {
-  return (
-    <div className="quiz-card" data-answer={selectedAnswer}>
-      {children}
-    </div>
-  );
+  const className = clsx("quiz-card", {
+    "quiz-card--answered": isAnswered,
+    "quiz-card--over": isOver
+  });
+
+  return <div className={className}>{children}</div>;
 };

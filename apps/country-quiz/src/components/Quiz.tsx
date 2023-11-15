@@ -6,7 +6,12 @@ import type { Question } from "../types";
 import characterUrl from "../assets/character.svg";
 import "./Quiz.scss";
 
-export const Quiz = ({ quiz }: { quiz: Question }) => {
+type Props = {
+  quiz: Question;
+  showResults: () => void;
+};
+
+export const Quiz = ({ quiz, showResults }: Props) => {
   const goNextQuestion = useQuestionStore((s) => s.goNextQuestion);
   const selectAnswer = useQuestionStore((s) => s.selectAnswer);
 
@@ -52,10 +57,18 @@ export const Quiz = ({ quiz }: { quiz: Question }) => {
       </div>
       {hasBeenAnsweredCorrectly && (
         <Button
-          className="quiz-next"
+          className="quiz-button quiz-button--next"
           text="Next"
           color="warning"
           onClick={goNextQuestion}
+        />
+      )}
+      {hasBeenAnsweredCorrectly === false && (
+        <Button
+          className="quiz-button quiz-button--end"
+          text="Show results"
+          color="warning"
+          onClick={showResults}
         />
       )}
     </>

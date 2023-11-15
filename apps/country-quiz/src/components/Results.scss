@@ -1,0 +1,42 @@
+.quiz-results-header {
+  margin: 0;
+
+  color: #1d355d;
+  font-family: "Poppins";
+  font-weight: 700;
+  font-size: 48px;
+}
+
+.quiz-results-winner {
+  margin-inline: auto;
+}
+
+.quiz-results-description {
+  color: #1d355d;
+  font-family: "Poppins";
+  font-size: 18px;
+  font-weight: 400;
+
+  &__points {
+    color: var(--success-light);
+    font-size: 36px;
+    font-weight: 700;
+  }
+}
+
+.quiz-results-try-again {
+  margin-inline: auto;
+
+  --button-bg-hover: #1d355d;
+  --button-outline-color: #1d355d;
+  --button-radius: 12px;
+  --button-padding: 18px 60px;
+  --button-font-family: "Poppins";
+  --button-font-weight: 600;
+  outline: solid 2px;
+  font-size: 18px;
+
+  &:hover {
+    --button-color: #fff;
+  }
+}
