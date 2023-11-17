@@ -1,8 +1,16 @@
 import type { Question } from "./types";
 
+export const QuestionCategories = Object.freeze({
+  CountryOfCapital: "CountryOfCapital",
+  FlagOfCountry: "FlagOfCountry",
+  Region: "Region",
+});
+
 export const QUESTION = {
-  countryOfCapital: (capital: string) => `${capital} is the capital of...`,
-  flagOfCountry: () => "Which country does this flag belong to?",
+  [QuestionCategories.CountryOfCapital]: (capital: string) =>
+    `${capital} is the capital of...`,
+  [QuestionCategories.FlagOfCountry]: () => "Which country does this flag belong to?",
+  [QuestionCategories.Region]: () => "Which region does this country belong to?",
 };
 
 export type QuestionCategory = keyof typeof QUESTION;

@@ -2,7 +2,7 @@
   "questions": [
     {
       "id": 1,
-      "category": "countryOfCapital",
+      "category": "CountryOfCapital",
       "question": "Kuala Lumpur is the capital of",
       "correctAnswer": "Malaysia",
       "answerOptions": ["Vietnam", "Malaysia", "Sweden", "Austria"],
@@ -11,7 +11,7 @@
     },
     {
       "id": 2,
-      "category": "flagOfCountry",
+      "category": "FlagOfCountry",
       "question": "Which country does this flag belong to?",
       "correctAnswer": "Finland",
       "answerOptions": ["Vietnam", "Finland", "Sweden", "Austria"],

@@ -1,6 +1,10 @@
 import { clsx } from "clsx";
 import { useQuestionStore } from "../store/questions";
-import { getAnswerClassName, getAnswerIconEnd } from "../utils";
+import {
+  QuestionCategories,
+  getAnswerClassName,
+  getAnswerIconEnd,
+} from "../utils";
 import { Button } from "@hdoc/react-button";
 import type { Question } from "../types";
 import characterUrl from "../assets/character.svg";
@@ -37,7 +41,7 @@ export const Quiz = ({ quiz, showResults }: Props) => {
   return (
     <>
       <img src={characterUrl} className="quiz-character" alt="character" />
-      {category === "flagOfCountry" && (
+      {category === QuestionCategories.FlagOfCountry && (
         <img src={flagUrl} className="quiz-flag" alt="flag" />
       )}
       <p className="quiz-question">{question}</p>
@@ -62,6 +66,8 @@ export const Quiz = ({ quiz, showResults }: Props) => {
           />
         ))}
       </div>
+      {/* TODO: Show current / total questions */}
+      {/* TODO: Always show next button */}
       {hasBeenAnsweredCorrectly && (
         <Button
           className="quiz-button quiz-button--next"
@@ -70,6 +76,7 @@ export const Quiz = ({ quiz, showResults }: Props) => {
           onClick={goNextQuestion}
         />
       )}
+      {/* TODO: Show results button when quiz is over, i.e. there are no more questions */}
       {hasBeenAnsweredCorrectly === false && (
         <Button
           className="quiz-button quiz-button--end"
