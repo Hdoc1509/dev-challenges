@@ -7,8 +7,10 @@ export const QuestionCategories = Object.freeze({
 export const QUESTION = {
   [QuestionCategories.CountryOfCapital]: (capital: string) =>
     `${capital} is the capital of...`,
-  [QuestionCategories.FlagOfCountry]: () => "Which country does this flag belong to?",
-  [QuestionCategories.Region]: () => "Which region does this country belong to?",
+  [QuestionCategories.FlagOfCountry]: () =>
+    "Which country does this flag belong to?",
+  [QuestionCategories.Region]: (country: string) =>
+    `Which region does ${country} belong to?`,
 };
 
 export type QuestionCategory = keyof typeof QUESTION;
