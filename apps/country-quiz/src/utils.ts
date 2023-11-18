@@ -14,6 +14,3 @@ export const QUESTION = {
 };
 
 export type QuestionCategory = keyof typeof QUESTION;
-
-export const randomSort = <T>(arr: T[]): T[] =>
-  structuredClone(arr).sort(() => Math.random() - 0.5);

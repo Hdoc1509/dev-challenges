@@ -1,5 +1,5 @@
 import { CountryResponseSchema, type Country } from "../schemas/country";
-import { randomSort } from "../utils";
+import { randomSort } from "../utils/helpers";
 
 const API_URL = "https://restcountries.com/v3.1";
 const LS_KEY = "countries";
