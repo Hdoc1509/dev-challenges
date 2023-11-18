@@ -1,6 +1,6 @@
-import { QuestionCategories } from "./constants";
+import { QuestionCategories } from "../constants";
 
-export const QUESTION = {
+const QUESTION = {
   [QuestionCategories.CountryOfCapital]: (capital: string) =>
     `${capital} is the capital of...`,
   [QuestionCategories.FlagOfCountry]: () =>
