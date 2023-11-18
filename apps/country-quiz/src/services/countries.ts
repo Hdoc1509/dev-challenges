@@ -9,7 +9,7 @@ export const getCountries = async (limit = 10): Promise<Country[]> => {
   const storedCountries = localStorage.getItem(LS_KEY);
 
   if (storedCountries) {
-    return (JSON.parse(storedCountries) as Country[]).slice(0, limit);
+    return randomSort(JSON.parse(storedCountries) as Country[]).slice(0, limit);
   }
 
   const controller = new AbortController();
