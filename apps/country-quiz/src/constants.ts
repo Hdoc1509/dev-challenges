@@ -6,10 +6,10 @@ export const QuestionCategories = Object.freeze({
 export type QuestionCategory =
   (typeof QuestionCategories)[keyof typeof QuestionCategories];
 
-// NOTE: Only 5 regions will be used
 export const REGIONS = [
   "africa",
   "americas",
+  "antarctic",
   "asia",
   "europe",
   "oceania",
