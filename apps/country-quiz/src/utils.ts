@@ -1,8 +1,4 @@
-export const QuestionCategories = Object.freeze({
-  CountryOfCapital: "CountryOfCapital",
-  FlagOfCountry: "FlagOfCountry",
-  Region: "Region",
-});
+import { QuestionCategories } from "./constants";
 
 export const QUESTION = {
   [QuestionCategories.CountryOfCapital]: (capital: string) =>
@@ -12,5 +8,3 @@ export const QUESTION = {
   [QuestionCategories.Region]: (country: string) =>
     `Which region does ${country} belong to?`,
 };
-
-export type QuestionCategory = keyof typeof QUESTION;

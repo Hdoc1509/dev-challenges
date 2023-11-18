@@ -1,7 +1,7 @@
 import { clsx } from "clsx";
 import { useQuestionStore } from "../store/questions";
 import { getAnswerClassName, getAnswerIconEnd } from "./Quiz.utils";
-import { QuestionCategories } from "../utils";
+import { QuestionCategories } from "../constants";
 import { Button } from "@hdoc/react-button";
 import type { Question } from "../types";
 import characterUrl from "../assets/character.svg";

@@ -1,4 +1,4 @@
-import type { QuestionCategory } from "./utils";
+import type { QuestionCategory } from "./constants";
 
 export type Question = {
   id: number;

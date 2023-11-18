@@ -1,17 +1,9 @@
-import { CountryResponseSchema, type Country } from "../schemas/country";
 import { randomSort } from "../utils/helpers";
+import { REGIONS, type Region } from "../constants";
+import { CountryResponseSchema, type Country } from "../schemas/country";
 
 const API_URL = "https://restcountries.com/v3.1";
 const LS_KEY = "countries";
-
-// NOTE: Only 5 regions will be used
-export const REGIONS = [
-  "africa",
-  "americas",
-  "asia",
-  "europe",
-  "oceania",
-] as const;
 
 export const getCountries = async (limit = 10): Promise<Country[]> => {
   const storedCountries = localStorage.getItem(LS_KEY);
@@ -36,7 +28,7 @@ export const getCountries = async (limit = 10): Promise<Country[]> => {
   const data = CountryResponseSchema.parse(await res.json());
 
   const countries = data.filter((c) =>
-    REGIONS.includes(c.region.toLowerCase() as (typeof REGIONS)[number]),
+    REGIONS.includes(c.region.toLowerCase() as Region),
   );
 
   localStorage.setItem(LS_KEY, JSON.stringify(countries));
