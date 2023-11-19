@@ -82,4 +82,22 @@ describe("questions generator", () => {
     expect(regionAnswers.filter((a) => a === country.region)).toHaveLength(1);
     expect(regionAnswers.length).toBeGreaterThanOrEqual(4);
   });
+
+  it("questions should have a correct answer", () => {
+    const country = countries.find((c) => c.capital.length === 1)!;
+    const questions = generateQuestions([country]);
+
+    expect(
+      questions.find((q) => q.category === QuestionCategories.CountryOfCapital)!
+        .correctAnswer,
+    ).toBe(country.name);
+    expect(
+      questions.find((q) => q.category === QuestionCategories.FlagOfCountry)!
+        .correctAnswer,
+    ).toBe(country.name);
+    expect(
+      questions.find((q) => q.category === QuestionCategories.Region)!
+        .correctAnswer,
+    ).toBe(country.region);
+  });
 });

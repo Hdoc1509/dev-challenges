@@ -26,6 +26,7 @@ export const generateQuestions = (countries: Country[]): Question[] => {
         category: category as QuestionCategory,
         question: "",
         answerOptions: [],
+        correctAnswer: "",
       };
 
       if (category === QuestionCategories.CountryOfCapital) {
@@ -38,6 +39,7 @@ export const generateQuestions = (countries: Country[]): Question[] => {
 
         quiz.question = QUESTION[category](country.capital[0]);
         quiz.answerOptions = options.concat(country.name);
+        quiz.correctAnswer = country.name;
       } else if (category === QuestionCategories.FlagOfCountry) {
         const options = countries
           .map((c) => c.name)
@@ -46,6 +48,7 @@ export const generateQuestions = (countries: Country[]): Question[] => {
 
         quiz.question = QUESTION[category]();
         quiz.answerOptions = options.concat(country.name);
+        quiz.correctAnswer = country.name;
       } else if (category === QuestionCategories.Region) {
         const options = REGIONS.map(toTitleCase)
           .filter((r) => r !== country.region)
@@ -53,6 +56,7 @@ export const generateQuestions = (countries: Country[]): Question[] => {
 
         quiz.question = QUESTION[category](country.name);
         quiz.answerOptions = options.concat(country.region);
+        quiz.correctAnswer = country.region;
       }
 
       questions.push(quiz);
