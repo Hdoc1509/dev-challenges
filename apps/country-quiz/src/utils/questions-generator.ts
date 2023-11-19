@@ -1,4 +1,4 @@
-import { QuestionCategories } from "../constants";
+import { QuestionCategories, type QuestionCategory } from "../constants";
 import type { Country } from "../schemas/country";
 import type { Question } from "../types";
 
@@ -12,7 +12,18 @@ export const QUESTION = {
 };
 
 export const generateQuestions = (countries: Country[]): Question[] => {
-  return countries.map(() => ({
-    id: crypto.getRandomValues(new Uint32Array(1))[0],
-  }));
+  return countries.flatMap((country) => {
+    const questions = [];
+
+    for (const category in QuestionCategories) {
+      const quiz: Question = {
+        id: crypto.getRandomValues(new Uint32Array(1))[0],
+        category: category as QuestionCategory,
+      };
+
+      questions.push(quiz);
+    }
+
+    return questions;
+  });
 };
