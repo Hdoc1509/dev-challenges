@@ -31,12 +31,12 @@ describe("questions generator", () => {
       (c) => c.capital.length === 0,
     )!;
     const questions = generateQuestions([countryWithoutCapital]);
-    const capitalQuestion = questions.filter(
+    const capitalQuestion = questions.find(
       (q) => q.category === QuestionCategories.CountryOfCapital,
     );
 
     expect(questions.length).toBe(Object.values(QuestionCategories).length - 1);
-    expect(capitalQuestion.length).toBe(0);
+    expect(capitalQuestion).toBeUndefined();
   });
 
   it("should generate valid questions", () => {
