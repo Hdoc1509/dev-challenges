@@ -25,4 +25,17 @@ describe("questions generator", () => {
 
     expect(categories).toEqual(validCategories);
   });
+
+  it("country without capital should not have question about capital", () => {
+    const countryWithoutCapital = countries.find(
+      (c) => c.capital.length === 0,
+    )!;
+    const questions = generateQuestions([countryWithoutCapital]);
+    const capitalQuestion = questions.filter(
+      (q) => q.category === QuestionCategories.CountryOfCapital,
+    );
+
+    expect(questions.length).toBe(Object.values(QuestionCategories).length - 1);
+    expect(capitalQuestion.length).toBe(0);
+  });
 });

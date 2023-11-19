@@ -21,6 +21,10 @@ export const generateQuestions = (countries: Country[]): Question[] => {
         category: category as QuestionCategory,
       };
 
+      if (category === QuestionCategories.CountryOfCapital) {
+        if (country.capital.length === 0) continue;
+      }
+
       questions.push(quiz);
     }
 
