@@ -12,5 +12,7 @@ export const QUESTION = {
 };
 
 export const generateQuestions = (countries: Country[]): Question[] => {
-  return [];
+  return countries.map(() => ({
+    id: crypto.getRandomValues(new Uint32Array(1))[0],
+  }));
 };
