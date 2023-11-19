@@ -56,4 +56,30 @@ describe("questions generator", () => {
       questions.find((q) => q.category === QuestionCategories.Region)!.question,
     ).toBe(QUESTION[QuestionCategories.Region](country.name));
   });
+
+  it("questions should have valid answer options", () => {
+    const country = countries.find((c) => c.capital.length === 1)!;
+    const questions = generateQuestions(countries);
+    const { answerOptions: capitalAnswers } = questions.find(
+      (q) => q.category === QuestionCategories.CountryOfCapital,
+    )!;
+    const { answerOptions: flagAnswers } = questions.find(
+      (q) => q.category === QuestionCategories.FlagOfCountry,
+    )!;
+    const { answerOptions: regionAnswers } = questions.find(
+      (q) => q.category === QuestionCategories.Region,
+    )!;
+
+    expect(capitalAnswers).toContain(country.name);
+    expect(capitalAnswers.filter((a) => a === country.name)).toHaveLength(1);
+    expect(capitalAnswers.length).toBeGreaterThanOrEqual(4);
+
+    expect(flagAnswers).toContain(country.name);
+    expect(flagAnswers.filter((a) => a === country.name)).toHaveLength(1);
+    expect(flagAnswers.length).toBeGreaterThanOrEqual(4);
+
+    expect(regionAnswers).toContain(country.region);
+    expect(regionAnswers.filter((a) => a === country.region)).toHaveLength(1);
+    expect(regionAnswers.length).toBeGreaterThanOrEqual(4);
+  });
 });
