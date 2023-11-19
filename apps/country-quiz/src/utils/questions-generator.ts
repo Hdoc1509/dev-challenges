@@ -19,10 +19,17 @@ export const generateQuestions = (countries: Country[]): Question[] => {
       const quiz: Question = {
         id: crypto.getRandomValues(new Uint32Array(1))[0],
         category: category as QuestionCategory,
+        question: "",
       };
 
       if (category === QuestionCategories.CountryOfCapital) {
         if (country.capital.length === 0) continue;
+
+        quiz.question = QUESTION[category](country.capital[0]);
+      } else if (category === QuestionCategories.FlagOfCountry) {
+        quiz.question = QUESTION[category]();
+      } else if (category === QuestionCategories.Region) {
+        quiz.question = QUESTION[category](country.name);
       }
 
       questions.push(quiz);

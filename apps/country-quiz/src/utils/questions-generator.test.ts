@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from "vitest";
-import { generateQuestions } from "./questions-generator";
+import { QUESTION, generateQuestions } from "./questions-generator";
 import { countries } from "../mocks/countries";
 import { getRandomValues } from "crypto";
 import { QuestionCategories } from "../constants";
@@ -37,5 +37,23 @@ describe("questions generator", () => {
 
     expect(questions.length).toBe(Object.values(QuestionCategories).length - 1);
     expect(capitalQuestion.length).toBe(0);
+  });
+
+  it("should generate valid questions", () => {
+    const country = countries.find((c) => c.capital.length === 1)!;
+    const questions = generateQuestions([country]);
+
+    expect(questions.length).toBe(Object.values(QuestionCategories).length);
+    expect(
+      questions.find((q) => q.category === QuestionCategories.CountryOfCapital)!
+        .question,
+    ).toBe(QUESTION[QuestionCategories.CountryOfCapital](country.capital[0]));
+    expect(
+      questions.find((q) => q.category === QuestionCategories.FlagOfCountry)!
+        .question,
+    ).toBe(QUESTION[QuestionCategories.FlagOfCountry]());
+    expect(
+      questions.find((q) => q.category === QuestionCategories.Region)!.question,
+    ).toBe(QUESTION[QuestionCategories.Region](country.name));
   });
 });
