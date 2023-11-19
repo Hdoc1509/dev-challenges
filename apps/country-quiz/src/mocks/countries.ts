@@ -25,4 +25,15 @@ export const countries: Country[] = [
     flagUrl: "https://flagcdn.com/ag.svg",
     region: "Americas",
   },
+  {
+    name: "Bouvet Island",
+    capital: [],
+    flagUrl: "https://flagcdn.com/bv.svg",
+    region: "Antarctic",
+  },{
+    name: "South Africa",
+    capital: ["Pretoria", "Bloemfontein", "Cape Town"],
+    flagUrl: "https://flagcdn.com/za.svg",
+    region: "Africa",
+  }
 ];
