@@ -69,8 +69,10 @@ describe("questions generator", () => {
   });
 
   it("questions should have valid answer options", () => {
-    const country = countries.find((c) => c.capital.length === 1)!;
-    const questions = generateQuestions(countries);
+    const idx = countries.findIndex((c) => c.capital.length === 1);
+    const country = countries[idx];
+    const questions = generateQuestions(countries.slice(idx));
+    // NOTE: Found questions will be from country variable
     const { answerOptions: capitalAnswers } = getCapitalQuestion(questions)!;
     const { answerOptions: flagAnswers } = getFlagQuestion(questions)!;
     const { answerOptions: regionAnswers } = getRegionQuestion(questions)!;
