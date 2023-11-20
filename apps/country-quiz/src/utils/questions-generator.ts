@@ -1,4 +1,4 @@
-import { toTitleCase } from "./generateQuestions";
+import { toTitleCase } from "./helpers";
 import {
   REGIONS,
   QuestionCategories,
