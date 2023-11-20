@@ -16,6 +16,19 @@ export const QUESTION = {
     `Which region does ${country} belong to?`,
 };
 
+type AnswerOptions<T> = {
+  source: T[];
+  correct: string;
+  mapBy: (country: T) => string;
+};
+
+const generateAnswers = <T>({ source, correct, mapBy }: AnswerOptions<T>) =>
+  source
+    .map(mapBy)
+    .filter((c) => c !== correct)
+    .slice(0, 3)
+    .concat(correct);
+
 export const generateQuestions = (countries: Country[]): Question[] => {
   return countries.flatMap((country) => {
     const questions = [];
@@ -32,30 +45,28 @@ export const generateQuestions = (countries: Country[]): Question[] => {
       if (category === QuestionCategories.CountryOfCapital) {
         if (country.capital.length === 0) continue;
 
-        const options = countries
-          .map((c) => c.name)
-          .filter((c) => c !== country.name)
-          .slice(0, 3);
-
         quiz.question = QUESTION[category](country.capital[0]);
-        quiz.answerOptions = options.concat(country.name);
+        quiz.answerOptions = generateAnswers({
+          source: countries,
+          correct: country.name,
+          mapBy: (c) => c.name,
+        });
         quiz.correctAnswer = country.name;
       } else if (category === QuestionCategories.FlagOfCountry) {
-        const options = countries
-          .map((c) => c.name)
-          .filter((c) => c !== country.name)
-          .slice(0, 3);
-
         quiz.question = QUESTION[category]();
-        quiz.answerOptions = options.concat(country.name);
+        quiz.answerOptions = generateAnswers({
+          source: countries,
+          correct: country.name,
+          mapBy: (c) => c.name,
+        });
         quiz.correctAnswer = country.name;
       } else if (category === QuestionCategories.Region) {
-        const options = REGIONS.map(toTitleCase)
-          .filter((r) => r !== country.region)
-          .slice(0, 3);
-
         quiz.question = QUESTION[category](country.name);
-        quiz.answerOptions = options.concat(country.region);
+        quiz.answerOptions = generateAnswers({
+          source: REGIONS.map(toTitleCase),
+          correct: country.region,
+          mapBy: (r) => r,
+        });
         quiz.correctAnswer = country.region;
       }
 
