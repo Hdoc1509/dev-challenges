@@ -1,4 +1,4 @@
-import { randomSort, toTitleCase } from "./helpers";
+import { randomElement, randomSort, toTitleCase } from "./helpers";
 import {
   REGIONS,
   QuestionCategories,
@@ -43,9 +43,15 @@ export const generateQuestions = (countries: Country[]): Question[] => {
       };
 
       if (category === QuestionCategories.CountryOfCapital) {
-        if (country.capital.length === 0) continue;
+        const capitals = country.capital;
+        const hasCapital = capitals.length > 0;
 
-        quiz.question = QUESTION[category](country.capital[0]);
+        if (!hasCapital) continue;
+
+        const capital =
+          capitals.length === 1 ? capitals[0] : randomElement(capitals);
+
+        quiz.question = QUESTION[category](capital);
         quiz.answerOptions = generateAnswers({
           source: countries,
           correct: country.name,
