@@ -1,4 +1,4 @@
-import { toTitleCase } from "./helpers";
+import { randomSort, toTitleCase } from "./helpers";
 import {
   REGIONS,
   QuestionCategories,
@@ -70,6 +70,7 @@ export const generateQuestions = (countries: Country[]): Question[] => {
         quiz.correctAnswer = country.region;
       }
 
+      quiz.answerOptions = randomSort(quiz.answerOptions);
       questions.push(quiz);
     }
 
