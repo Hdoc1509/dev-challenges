@@ -23,9 +23,7 @@ type AnswerOptions<T> = {
 };
 
 const generateAnswers = <T>({ source, correct, mapBy }: AnswerOptions<T>) =>
-  source
-    .map(mapBy)
-    .filter((c) => c !== correct)
+  randomSort(source.map(mapBy).filter((c) => c !== correct))
     .slice(0, 3)
     .concat(correct);
 
