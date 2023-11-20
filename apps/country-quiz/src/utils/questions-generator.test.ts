@@ -39,6 +39,15 @@ describe("questions generator", () => {
     expect(capitalQuestion).toBeUndefined();
   });
 
+  it("question about flag should have flagUrl", () => {
+    const country = countries.find((c) => c.capital.length === 1)!;
+    const question = generateQuestions([country]).find(
+      (q) => q.category === QuestionCategories.FlagOfCountry,
+    )!;
+
+    expect(question).toHaveProperty("flagUrl");
+  });
+
   it("should generate valid questions", () => {
     const country = countries.find((c) => c.capital.length === 1)!;
     const questions = generateQuestions([country]);

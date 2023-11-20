@@ -58,6 +58,7 @@ export const generateQuestions = (countries: Country[]): Question[] => {
           mapBy: (c) => c.name,
         });
         quiz.correctAnswer = country.name;
+        quiz.flagUrl = country.flagUrl;
       } else if (category === QuestionCategories.Region) {
         quiz.question = QUESTION[category](country.name);
         quiz.answerOptions = generateAnswers({
