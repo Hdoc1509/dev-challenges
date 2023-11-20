@@ -109,4 +109,11 @@ describe("questions generator", () => {
         .correctAnswer,
     ).toBe(country.region);
   });
+
+  it("questions should have properties about selected answer", () => {
+    const question = generateQuestions(countries)[0];
+
+    expect(question.selectedAnswer).toBeNull();
+    expect(question.hasBeenAnsweredCorrectly).toBeNull();
+  });
 });

@@ -38,6 +38,8 @@ export const generateQuestions = (countries: Country[]): Question[] => {
         question: "",
         answerOptions: [],
         correctAnswer: "",
+        selectedAnswer: null,
+        hasBeenAnsweredCorrectly: null,
       };
 
       if (category === QuestionCategories.CountryOfCapital) {
