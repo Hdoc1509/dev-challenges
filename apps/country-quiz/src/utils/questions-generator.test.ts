@@ -3,11 +3,19 @@ import { QUESTION, generateQuestions } from "./questions-generator";
 import { countries } from "../mocks/countries";
 import { getRandomValues } from "crypto";
 import { QuestionCategories } from "../constants";
+import type { Question } from "../types";
 
 const cryptoMock = { getRandomValues };
 vi.stubGlobal("crypto", cryptoMock);
 
 describe("questions generator", () => {
+  const getCapitalQuestion = (questions: Question[]) =>
+    questions.find((q) => q.category === QuestionCategories.CountryOfCapital);
+  const getFlagQuestion = (questions: Question[]) =>
+    questions.find((q) => q.category === QuestionCategories.FlagOfCountry);
+  const getRegionQuestion = (questions: Question[]) =>
+    questions.find((q) => q.category === QuestionCategories.Region);
+
   it("list without countries does not return questions", () => {
     expect(generateQuestions([])).toEqual([]);
   });
@@ -31,9 +39,7 @@ describe("questions generator", () => {
       (c) => c.capital.length === 0,
     )!;
     const questions = generateQuestions([countryWithoutCapital]);
-    const capitalQuestion = questions.find(
-      (q) => q.category === QuestionCategories.CountryOfCapital,
-    );
+    const capitalQuestion = getCapitalQuestion(questions);
 
     expect(questions.length).toBe(Object.values(QuestionCategories).length - 1);
     expect(capitalQuestion).toBeUndefined();
@@ -41,9 +47,7 @@ describe("questions generator", () => {
 
   it("question about flag should have flagUrl", () => {
     const country = countries.find((c) => c.capital.length === 1)!;
-    const question = generateQuestions([country]).find(
-      (q) => q.category === QuestionCategories.FlagOfCountry,
-    )!;
+    const question = getFlagQuestion(generateQuestions([country]))!;
 
     expect(question).toHaveProperty("flagUrl");
   });
@@ -53,31 +57,23 @@ describe("questions generator", () => {
     const questions = generateQuestions([country]);
 
     expect(questions.length).toBe(Object.values(QuestionCategories).length);
-    expect(
-      questions.find((q) => q.category === QuestionCategories.CountryOfCapital)!
-        .question,
-    ).toBe(QUESTION[QuestionCategories.CountryOfCapital](country.capital[0]));
-    expect(
-      questions.find((q) => q.category === QuestionCategories.FlagOfCountry)!
-        .question,
-    ).toBe(QUESTION[QuestionCategories.FlagOfCountry]());
-    expect(
-      questions.find((q) => q.category === QuestionCategories.Region)!.question,
-    ).toBe(QUESTION[QuestionCategories.Region](country.name));
+    expect(getCapitalQuestion(questions)!.question).toBe(
+      QUESTION[QuestionCategories.CountryOfCapital](country.capital[0]),
+    );
+    expect(getFlagQuestion(questions)!.question).toBe(
+      QUESTION[QuestionCategories.FlagOfCountry](),
+    );
+    expect(getRegionQuestion(questions)!.question).toBe(
+      QUESTION[QuestionCategories.Region](country.name),
+    );
   });
 
   it("questions should have valid answer options", () => {
     const country = countries.find((c) => c.capital.length === 1)!;
     const questions = generateQuestions(countries);
-    const { answerOptions: capitalAnswers } = questions.find(
-      (q) => q.category === QuestionCategories.CountryOfCapital,
-    )!;
-    const { answerOptions: flagAnswers } = questions.find(
-      (q) => q.category === QuestionCategories.FlagOfCountry,
-    )!;
-    const { answerOptions: regionAnswers } = questions.find(
-      (q) => q.category === QuestionCategories.Region,
-    )!;
+    const { answerOptions: capitalAnswers } = getCapitalQuestion(questions)!;
+    const { answerOptions: flagAnswers } = getFlagQuestion(questions)!;
+    const { answerOptions: regionAnswers } = getRegionQuestion(questions)!;
 
     expect(capitalAnswers).toContain(country.name);
     expect(capitalAnswers.filter((a) => a === country.name)).toHaveLength(1);
@@ -96,18 +92,9 @@ describe("questions generator", () => {
     const country = countries.find((c) => c.capital.length === 1)!;
     const questions = generateQuestions([country]);
 
-    expect(
-      questions.find((q) => q.category === QuestionCategories.CountryOfCapital)!
-        .correctAnswer,
-    ).toBe(country.name);
-    expect(
-      questions.find((q) => q.category === QuestionCategories.FlagOfCountry)!
-        .correctAnswer,
-    ).toBe(country.name);
-    expect(
-      questions.find((q) => q.category === QuestionCategories.Region)!
-        .correctAnswer,
-    ).toBe(country.region);
+    expect(getCapitalQuestion(questions)!.correctAnswer).toBe(country.name);
+    expect(getFlagQuestion(questions)!.correctAnswer).toBe(country.name);
+    expect(getRegionQuestion(questions)!.correctAnswer).toBe(country.region);
   });
 
   it("questions should have properties about selected answer", () => {
