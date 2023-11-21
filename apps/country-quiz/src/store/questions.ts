@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { getMockQuestions } from "../services/questions";
+import { getQuestions } from "../services/questions";
 import type { Question } from "../types";
 
 type State = {
@@ -28,11 +28,10 @@ export const useQuestionStore = create<State & Action>()((set, get) => {
     ...initialState,
 
     getQuestions: async (limit?: number) => {
-      const questions = await getMockQuestions(limit);
+      const questions = await getQuestions(limit);
+      await new Promise((resolve) => setTimeout(resolve, 1000));
 
-      set({
-        questions: structuredClone(questions).sort(() => Math.random() - 0.5),
-      });
+      set({ questions });
     },
     selectAnswer: (questionId: number, answer: string) => {
       const { questions } = get();
@@ -46,6 +45,7 @@ export const useQuestionStore = create<State & Action>()((set, get) => {
         hasBeenAnsweredCorrectly: answer === question.correctAnswer,
       };
 
+      // TODO: Update correctAnswers
       set({ questions: newQuestions });
     },
     goNextQuestion: () => {
