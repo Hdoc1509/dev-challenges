@@ -14,7 +14,8 @@
     padding-inline: 1rem;
     --character-height: 100px;
     --header-font-size: 26px;
-    --quiz-card-padding: 40px 20px;
+    --quiz-card-padding: 40px 20px 20px;
+    --quiz-card-padding__flag: 20px;
     --quiz-card-gap: 20px;
     --quiz-card-gap__over: 20px;
     --question-font-size: 20px;

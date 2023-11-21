@@ -27,12 +27,14 @@ function App() {
     <>
       <main>
         <h1>Country Quiz</h1>
-        <QuizCard
-          isAnswered={question?.selectedAnswer != null}
-          isOver={isQuizOver}
-        >
+        <QuizCard isOver={isQuizOver} category={question?.category}>
           {!isQuizOver ? (
-            <Quiz quiz={question} showResults={() => setIsQuizOver(true)} />
+            <Quiz
+              quiz={question}
+              totalQuestions={questions.length}
+              currentQuestionIndex={currentQuestionIndex}
+              showResults={() => setIsQuizOver(true)}
+            />
           ) : (
             <Results tryAgain={tryAgain} />
           )}

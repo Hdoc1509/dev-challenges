@@ -9,10 +9,17 @@ import "./Quiz.scss";
 
 type Props = {
   quiz: Question;
+  currentQuestionIndex: number;
+  totalQuestions: number;
   showResults: () => void;
 };
 
-export const Quiz = ({ quiz, showResults }: Props) => {
+export const Quiz = ({
+  quiz,
+  currentQuestionIndex,
+  totalQuestions,
+  showResults,
+}: Props) => {
   const goNextQuestion = useQuestionStore((s) => s.goNextQuestion);
   const selectAnswer = useQuestionStore((s) => s.selectAnswer);
 
@@ -25,6 +32,8 @@ export const Quiz = ({ quiz, showResults }: Props) => {
     return <p>Loading questions</p>;
   }
 
+  const isLastQuestion = currentQuestionIndex === totalQuestions - 1;
+
   const {
     category,
     flagUrl,
@@ -32,7 +41,6 @@ export const Quiz = ({ quiz, showResults }: Props) => {
     answerOptions,
     selectedAnswer,
     correctAnswer,
-    hasBeenAnsweredCorrectly,
   } = quiz;
 
   return (
@@ -63,25 +71,19 @@ export const Quiz = ({ quiz, showResults }: Props) => {
           />
         ))}
       </div>
-      {/* TODO: Show current / total questions */}
-      {/* TODO: Always show next button */}
-      {hasBeenAnsweredCorrectly && (
+      {/* NOTE: Can it be move to QuizCard? */}
+      <footer className="quiz-footer">
+        <p className="quiz-current-question">
+          {currentQuestionIndex + 1} / {totalQuestions}
+        </p>
         <Button
-          className="quiz-button quiz-button--next"
-          text="Next"
+          className="quiz-button"
+          text={isLastQuestion ? "Show results" : "Next"}
           color="warning"
-          onClick={goNextQuestion}
+          onClick={isLastQuestion ? showResults : goNextQuestion}
+          disabled={selectedAnswer == null}
         />
-      )}
-      {/* TODO: Show results button when quiz is over, i.e. there are no more questions */}
-      {hasBeenAnsweredCorrectly === false && (
-        <Button
-          className="quiz-button quiz-button--end"
-          text="Show results"
-          color="warning"
-          onClick={showResults}
-        />
-      )}
+      </footer>
     </>
   );
 };
