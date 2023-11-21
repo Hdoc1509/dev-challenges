@@ -25,11 +25,7 @@ export const getCountries = async (limit = 10): Promise<Country[]> => {
 
   if (!res.ok) throw new Error("Failed to get countries data");
 
-  const data = CountryResponseSchema.parse(await res.json());
-
-  const countries = data.filter((c) =>
-    REGIONS.includes(c.region.toLowerCase() as Region),
-  );
+  const countries = CountryResponseSchema.parse(await res.json());
 
   localStorage.setItem(LS_KEY, JSON.stringify(countries));
 
