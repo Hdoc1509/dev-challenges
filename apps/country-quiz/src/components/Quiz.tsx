@@ -1,4 +1,5 @@
 import { clsx } from "clsx";
+import { useRef } from "react";
 import { useQuestionStore } from "../store/questions";
 import { getAnswerClassName, getAnswerIconEnd } from "./Quiz.utils";
 import { QuestionCategories } from "../constants";
@@ -22,10 +23,19 @@ export const Quiz = ({
 }: Props) => {
   const goNextQuestion = useQuestionStore((s) => s.goNextQuestion);
   const selectAnswer = useQuestionStore((s) => s.selectAnswer);
+  const actionRef = useRef<HTMLElement>(null);
+  const quesionRef = useRef<HTMLParagraphElement>(null);
+  const flagRef = useRef<HTMLImageElement>(null);
 
   const handleAnswer = (answer: string) => {
     selectAnswer(quiz.id, answer);
-    window.scrollTo({ top: document.documentElement.scrollHeight });
+    actionRef.current?.scrollIntoView(false);
+  };
+
+  const handleAction = () => {
+    isLastQuestion ? showResults() : goNextQuestion();
+    quesionRef.current?.scrollIntoView(true);
+    flagRef.current?.scrollIntoView(true);
   };
 
   if (quiz == null) {
@@ -45,11 +55,18 @@ export const Quiz = ({
 
   return (
     <>
-      <img src={characterUrl} className="quiz-character" alt="character" />
+      <img
+        ref={flagRef}
+        src={characterUrl}
+        className="quiz-character"
+        alt="character"
+      />
       {category === QuestionCategories.FlagOfCountry && (
         <img src={flagUrl} className="quiz-flag" alt="flag" />
       )}
-      <p className="quiz-question">{question}</p>
+      <p className="quiz-question" ref={quesionRef}>
+        {question}
+      </p>
       <div className="quiz-answers">
         {answerOptions.map((option) => (
           <Button
@@ -72,7 +89,7 @@ export const Quiz = ({
         ))}
       </div>
       {/* NOTE: Can it be move to QuizCard? */}
-      <footer className="quiz-footer">
+      <footer className="quiz-footer" ref={actionRef}>
         <p className="quiz-current-question">
           {currentQuestionIndex + 1} / {totalQuestions}
         </p>
@@ -80,7 +97,7 @@ export const Quiz = ({
           className="quiz-button"
           text={isLastQuestion ? "Show results" : "Next"}
           color="warning"
-          onClick={isLastQuestion ? showResults : goNextQuestion}
+          onClick={handleAction}
           disabled={selectedAnswer == null}
         />
       </footer>
