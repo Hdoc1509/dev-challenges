@@ -22,15 +22,15 @@ type AnswerOptions<T> = {
   mapBy: (country: T) => string;
 };
 
-const generateAnswers = <T>({ source, correct, mapBy }: AnswerOptions<T>) =>
+const generateAnswers = <T,>({ source, correct, mapBy }: AnswerOptions<T>) =>
   randomSort(source.map(mapBy).filter((c) => c !== correct))
     .slice(0, 3)
     .concat(correct);
 
 export const generateQuestions = (countries: Country[]): Question[] => {
-  return countries.flatMap((country) => {
-    const questions = [];
+  const questions: Question[] = [];
 
+  countries.forEach((country) => {
     for (const category in QuestionCategories) {
       const quiz: Question = {
         id: crypto.getRandomValues(new Uint32Array(1))[0],
@@ -80,7 +80,7 @@ export const generateQuestions = (countries: Country[]): Question[] => {
       quiz.answerOptions = randomSort(quiz.answerOptions);
       questions.push(quiz);
     }
-
-    return questions;
   });
+
+  return randomSort(questions);
 };
