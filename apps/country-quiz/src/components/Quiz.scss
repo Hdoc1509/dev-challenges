@@ -1,7 +1,7 @@
 .quiz-character {
   position: absolute;
 
-  top: -75px;
+  top: var(--character-top-offset, -75px);
   right: 0;
   height: var(--character-height, auto);
 }

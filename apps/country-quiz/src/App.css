@@ -12,8 +12,10 @@
 @media (max-width: 767px) {
   #root {
     padding-inline: 1rem;
-    --character-height: 100px;
+    --character-height: 90px;
+    --character-top-offset: -65px;
     --header-font-size: 26px;
+    --header-margin-block: 16px 24px;
     --quiz-card-padding: 40px 20px 20px;
     --quiz-card-padding__flag: 20px;
     --quiz-card-gap: 20px;
@@ -27,7 +29,7 @@
 
 h1 {
   width: 60%;
-  margin-block: 24px;
+  margin-block: var(--header-margin-block, 24px);
 
   color: #fff;
   font-family: "Poppins", sans-serif;
