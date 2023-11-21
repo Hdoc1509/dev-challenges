@@ -18,6 +18,7 @@
     --header-margin-block: 16px 24px;
     --quiz-card-padding: 40px 20px 20px;
     --quiz-card-padding__flag: 20px;
+    --quiz-card-padding__loading: 20px;
     --quiz-card-gap: 20px;
     --quiz-card-gap__over: 20px;
     --question-font-size: 20px;

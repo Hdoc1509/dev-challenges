@@ -27,7 +27,11 @@ function App() {
     <>
       <main>
         <h1>Country Quiz</h1>
-        <QuizCard isOver={isQuizOver} category={question?.category}>
+        <QuizCard
+          isOver={isQuizOver}
+          isLoading={question == null}
+          category={question?.category}
+        >
           {!isQuizOver ? (
             <Quiz
               quiz={question}

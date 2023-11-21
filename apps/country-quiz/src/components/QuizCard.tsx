@@ -5,17 +5,20 @@ import "./QuizCard.scss";
 
 type Props = {
   isOver: boolean;
+  isLoading: boolean;
   category?: QuestionCategory;
 };
 
 export const QuizCard = ({
   isOver,
+  isLoading,
   category,
   children,
 }: PropsWithChildren<Props>) => {
   const className = clsx("quiz-card", {
     "quiz-card--over": isOver,
     "quiz-card--flag": category === QuestionCategories.FlagOfCountry,
+    "quiz-card--loading": isLoading,
   });
 
   return <div className={className}>{children}</div>;

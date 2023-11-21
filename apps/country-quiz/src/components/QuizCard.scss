@@ -17,4 +17,7 @@
   &--flag {
     padding: var(--quiz-card-padding__flag, 32px)
   }
+  &--loading {
+    padding: var(--quiz-card-padding__loading, 32px);
+  }
 }
