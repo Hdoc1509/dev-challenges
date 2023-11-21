@@ -5,8 +5,6 @@ import type { Question } from "../types";
 type State = {
   questions: Question[];
   currentQuestionIndex: number;
-  correctAnswers: number;
-  answeredQuestions: number;
 };
 
 type Action = {
@@ -19,8 +17,6 @@ type Action = {
 const initialState: State = {
   questions: [],
   currentQuestionIndex: 0,
-  correctAnswers: 0,
-  answeredQuestions: 0,
 };
 
 export const useQuestionStore = create<State & Action>()((set, get) => {
@@ -45,7 +41,6 @@ export const useQuestionStore = create<State & Action>()((set, get) => {
         hasBeenAnsweredCorrectly: answer === question.correctAnswer,
       };
 
-      // TODO: Update correctAnswers
       set({ questions: newQuestions });
     },
     goNextQuestion: () => {
