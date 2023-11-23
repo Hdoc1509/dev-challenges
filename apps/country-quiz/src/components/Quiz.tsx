@@ -1,9 +1,8 @@
-import { clsx } from "clsx";
 import { useRef } from "react";
 import { useQuestionStore } from "../store/questions";
-import { getAnswerClassName, getAnswerIconEnd } from "./Quiz.utils";
-import { QuestionCategories } from "../constants";
 import { Button } from "@hdoc/react-button";
+import { QuestionCategories } from "../constants";
+import { QuizOptions } from "./QuizOptions";
 import type { Question } from "../types";
 import characterUrl from "../assets/character.svg";
 import "./Quiz.scss";
@@ -44,14 +43,7 @@ export const Quiz = ({
 
   const isLastQuestion = currentQuestionIndex === totalQuestions - 1;
 
-  const {
-    category,
-    flagUrl,
-    question,
-    answerOptions,
-    selectedAnswer,
-    correctAnswer,
-  } = quiz;
+  const { category, flagUrl, question, selectedAnswer } = quiz;
 
   return (
     <>
@@ -67,27 +59,7 @@ export const Quiz = ({
       <p className="quiz-question" ref={quesionRef}>
         {question}
       </p>
-      <div className="quiz-answers">
-        {answerOptions.map((option) => (
-          <Button
-            key={option}
-            className={clsx(
-              "quiz-answers__option",
-              getAnswerClassName({ option, selectedAnswer, correctAnswer }),
-            )}
-            variant="outline"
-            text={option}
-            iconEnd={getAnswerIconEnd({
-              option,
-              selectedAnswer,
-              correctAnswer,
-            })}
-            iconVariant="outlined"
-            disabled={selectedAnswer != null}
-            onClick={() => handleAnswer(option)}
-          />
-        ))}
-      </div>
+      <QuizOptions quiz={quiz} handleAnswer={handleAnswer} />
       {/* NOTE: Can it be move to QuizCard? */}
       <footer className="quiz-footer" ref={actionRef}>
         <p className="quiz-current-question">
