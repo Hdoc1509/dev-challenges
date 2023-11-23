@@ -24,6 +24,7 @@
     --question-font-size: 20px;
     --answer-font-size: 14px;
     --answers-gap: 20px;
+    --option-gap: 20px;
     --results-header-font-size: 36px;
   }
 }

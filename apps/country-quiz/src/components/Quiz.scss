@@ -46,7 +46,7 @@
   gap: var(--answers-gap, 32px);
 
   &__option {
-    gap: 40px;
+    gap: var(--option-gap, 40px);
     justify-content: flex-start;
 
     --button-bg-hover: var(--warning);
@@ -58,6 +58,7 @@
 
     --button-font-family: "Poppins";
     font-size: var(--answer-font-size, 18px);
+    text-align: left;
 
     &:hover:not(:disabled) {
       --button-color: #fff;
