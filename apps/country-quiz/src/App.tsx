@@ -40,7 +40,7 @@ function App() {
               showResults={() => setIsQuizOver(true)}
             />
           ) : (
-            <Results tryAgain={tryAgain} />
+            <Results questions={questions} tryAgain={tryAgain} />
           )}
         </QuizCard>
       </main>
