@@ -72,19 +72,34 @@ describe("questions generator", () => {
     const idx = countries.findIndex((c) => c.capital.length === 1);
     const country = countries[idx];
     const questions = generateQuestions(countries.slice(idx));
-    // NOTE: Found questions will be from country variable
-    const { answerOptions: capitalAnswers } = getCapitalQuestion(questions)!;
-    const { answerOptions: flagAnswers } = getFlagQuestion(questions)!;
-    const { answerOptions: regionAnswers } = getRegionQuestion(questions)!;
+    // NOTE: it need more specific conditions because of random sorting
+    const { answerOptions: capitalAnswers } = questions.find(
+      (q) =>
+        q.category === QuestionCategories.CountryOfCapital &&
+        q.correctAnswer === country.name,
+    )!;
+    const { answerOptions: flagAnswers } = questions.find(
+      (q) =>
+        q.category === QuestionCategories.FlagOfCountry &&
+        q.correctAnswer === country.name,
+    )!;
+    const { answerOptions: regionAnswers } = questions.find(
+      (q) =>
+        q.category === QuestionCategories.Region &&
+        q.correctAnswer === country.region,
+    )!;
 
+    expect(capitalAnswers).toBeInstanceOf(Array);
     expect(capitalAnswers).toContain(country.name);
     expect(capitalAnswers.filter((a) => a === country.name)).toHaveLength(1);
     expect(capitalAnswers.length).toBeGreaterThanOrEqual(4);
 
+    expect(flagAnswers).toBeInstanceOf(Array);
     expect(flagAnswers).toContain(country.name);
     expect(flagAnswers.filter((a) => a === country.name)).toHaveLength(1);
     expect(flagAnswers.length).toBeGreaterThanOrEqual(4);
 
+    expect(regionAnswers).toBeInstanceOf(Array);
     expect(regionAnswers).toContain(country.region);
     expect(regionAnswers.filter((a) => a === country.region)).toHaveLength(1);
     expect(regionAnswers.length).toBeGreaterThanOrEqual(4);
