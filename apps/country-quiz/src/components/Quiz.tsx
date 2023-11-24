@@ -37,10 +37,6 @@ export const Quiz = ({
     flagRef.current?.scrollIntoView(true);
   };
 
-  if (quiz == null) {
-    return <p>Loading questions</p>;
-  }
-
   const isLastQuestion = currentQuestionIndex === totalQuestions - 1;
 
   const { category, flagUrl, question, selectedAnswer } = quiz;
@@ -60,7 +56,7 @@ export const Quiz = ({
         {question}
       </p>
       <QuizOptions quiz={quiz} handleAnswer={handleAnswer} />
-      {/* NOTE: Can it be move to QuizCard? */}
+      {/* NOTE: Can it be moved to QuizCard? */}
       <footer className="quiz-footer" ref={actionRef}>
         <p className="quiz-current-question">
           {currentQuestionIndex + 1} / {totalQuestions}

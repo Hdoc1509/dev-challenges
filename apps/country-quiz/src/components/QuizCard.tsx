@@ -1,4 +1,5 @@
 import { clsx } from "clsx";
+import { Loader } from "./Loader";
 import type { PropsWithChildren } from "react";
 import { QuestionCategories, type QuestionCategory } from "../constants";
 import "./QuizCard.scss";
@@ -21,5 +22,5 @@ export const QuizCard = ({
     "quiz-card--loading": isLoading,
   });
 
-  return <div className={className}>{children}</div>;
+  return <div className={className}>{isLoading ? <Loader /> : children}</div>;
 };
