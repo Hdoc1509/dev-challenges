@@ -10,8 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@hdoc/react-material-icons": "1.1.1",
-    "@hdoc/react-toggle-theme": "2.0.1",
+    "@hdoc/react-material-icons": "1.6.0",
+    "@hdoc/react-toggle-theme": "2.1.1",
     "@internal/components": "workspace:3.0.0",
     "clsx": "2.0.0",
     "react": "18.2.0",
@@ -19,11 +19,11 @@
   },
   "devDependencies": {
     "@material-design-icons/font": "^0.14.10",
-    "@vitejs/plugin-react": "^4.0.1",
+    "@vitejs/plugin-react": "^4.2.0",
     "sass": "1.65.0",
     "type-fest": "4.3.1",
-    "typescript": "5.1.6",
-    "vite": "4.4.5"
+    "typescript": "5.3.2",
+    "vite": "4.5.0"
   },
   "engines": {
     "node": ">=18",
