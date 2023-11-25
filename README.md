@@ -9,7 +9,7 @@ Monorepo that hosts my [solutions](#challenges) for [Front-end Developer path](h
 - [x] [Windbnb](/apps/windbnb/)
 - [x] [Todo app](/apps/todo-app/)
 - [x] [Random quote generator](/apps/random-quote-generator/)
-- [ ] [Country quiz](/apps/country-quiz/)
+- [x] [Country quiz](/apps/country-quiz/)
 - [ ] [Weather app](/apps/weather-app/)
 - [ ] [Github Jobs](/apps/github-jobs/)
 
