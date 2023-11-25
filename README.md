@@ -1,6 +1,10 @@
 # dev-challenges
 
-Monorepo that hosts my [solutions](#challenges) for [Front-end Developer path](https://devchallenges.io/paths/front-end-developer) of [DevChallenges](http://devchallenges.io/) and some [packages](#packages) I created while completing them.
+Monorepo that hosts my [solutions](#challenges) for [Front-end Developer
+path](https://legacy.devchallenges.io/paths/front-end-developer) of [Legacy
+DevChallenges](https://legacy.devchallenges.io/).
+
+There are some [packages](#packages) I created while completing them.
 
 ## Challenges
 
