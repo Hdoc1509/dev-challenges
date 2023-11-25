@@ -27,7 +27,7 @@ to: apps/<%= name %>/package.json
     "@vitejs/plugin-react": "^4.2.0",
     "sass": "1.65.0",
     "typescript": "5.3.2",
-    "vite": "4.5.0"
+    "vite": "5.0.2"
   },
   "engines": {
     "node": ">=18",
