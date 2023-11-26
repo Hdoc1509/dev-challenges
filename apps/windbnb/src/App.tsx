@@ -8,9 +8,7 @@ import "./App.css";
 function App() {
   const { stays, getStays, isLoading } = useStays();
 
-  useEffect(() => {
-    void getStays();
-  }, [getStays]);
+  useEffect(() => void getStays(), [getStays]);
 
   return (
     <>

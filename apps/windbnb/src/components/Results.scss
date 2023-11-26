@@ -30,17 +30,7 @@
 
   &__cards {
     display: grid;
-    grid-template-columns: var(
-      --grid-columns,
-      repeat(auto-fit, minmax(290px, 1fr))
-    );
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
     gap: 32px;
-
-    @include large-screen {
-      --grid-columns: repeat(3, 1fr);
-    }
-    @include extra-large-screen {
-      --grid-columns: repeat(4, 1fr);
-    }
   }
 }
