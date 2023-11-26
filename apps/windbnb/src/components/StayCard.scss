@@ -1,8 +1,6 @@
 @use "../scss/mixins" as *;
 
 .stay-card {
-  // NOTE: Smallest supported screen size is 360px
-  // WARNING: Screens less than 360px can affect display of internal elements
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -27,9 +25,9 @@
   }
 
   &__super-host {
-    // WARNING: In resolutions less than 340px, text can be wrapped
+    flex-shrink: 0;
     border-radius: 12px;
-    border: 1px solid #4f4f4f;
+    border: 1px solid;
     padding: 6px 10px;
 
     color: #4f4f4f;
@@ -73,7 +71,6 @@
   }
 
   &__description {
-    // WARNING: In resolutions less than 340px, some descriptions are line wrapped
     margin: 0;
 
     color: #333;
