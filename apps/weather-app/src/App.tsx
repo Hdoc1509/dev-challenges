@@ -1,8 +1,8 @@
-import { Button } from "@hdoc/react-button";
 import { Footer } from "@internal/components";
 import { CityWeather } from "./components/CityWeather";
 import { Forecast } from "./components/Forecast";
 import { Highlights } from "./components/Highlights";
+import { TemperatureConverter } from "./components/TemperatureConverter";
 import "./App.scss";
 
 const OPEN_WEATHER_MAP_API = "https://openweathermap.org/api";
@@ -15,10 +15,7 @@ function App() {
     <div className="App">
       <CityWeather />
       <main>
-        <section className="temperature-unit">
-          <Button text="°C" />
-          <Button text="°F" />
-        </section>
+        <TemperatureConverter />
         <Forecast />
         <Highlights />
       </main>
