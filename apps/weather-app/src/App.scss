@@ -27,37 +27,6 @@
     right: 150px;
   }
 
-  .forecast {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 26px;
-
-    color: #fff;
-  }
-  .forecast-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-
-    background-color: #1e213a;
-    padding: 18px 20px;
-
-    &__icon {
-      position: relative;
-      width: 45%;
-    }
-
-    &__degrees {
-      display: flex;
-      gap: 16px;
-
-      margin: 0;
-      margin-top: 30px;
-    }
-  }
-
   .highlights {
     display: grid;
     grid-template-columns: 1fr 1fr;
