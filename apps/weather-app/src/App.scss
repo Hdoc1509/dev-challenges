@@ -1,0 +1,138 @@
+.App {
+  position: relative;
+  display: grid;
+  grid-template-columns: 460px 1fr;
+  grid-template-rows: 1fr auto;
+  grid-template-areas:
+    "aside main"
+    "aside footer";
+  row-gap: 36px;
+
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.App > .city-weather {
+  grid-area: aside;
+
+  background-color: #1e213a;
+  background-image: url("/cloud-background.png");
+  background-repeat: no-repeat;
+  background-position-y: top 100px;
+  background-position-x: center;
+
+  padding: 42px;
+  color: #fff;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 88px;
+  }
+
+  footer {
+    margin: 0;
+  }
+}
+
+.App > main {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 72px;
+  grid-area: main;
+
+  padding: 150px 150px 0;
+
+  .temperature-unit {
+    position: absolute;
+    top: 42px;
+    right: 150px;
+  }
+
+  .forecast {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 26px;
+
+    color: #fff;
+  }
+  .forecast-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    background-color: #1e213a;
+    padding: 18px 20px;
+
+    &__icon {
+      position: relative;
+      width: 45%;
+    }
+
+    &__degrees {
+      display: flex;
+      gap: 16px;
+
+      margin: 0;
+      margin-top: 30px;
+    }
+  }
+
+  .highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr;
+    grid-template-areas:
+      "header     header"
+      "wind       humidity"
+      "visibility air-pressure";
+    gap: 48px;
+
+    color: #fff;
+
+    h2 {
+      grid-area: header;
+    }
+
+    section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+
+      background-color: #1e213a;
+      padding: 20px 50px;
+    }
+
+    .humidity {
+      &__range {
+        width: 100%;
+        height: 8px;
+        background-color: #fff;
+        border-radius: 80px;
+
+        &::after {
+          content: "";
+          display: block;
+          width: 84%;
+          height: 100%;
+          background-color: #ffec65;
+          border-radius: inherit;
+        }
+      }
+    }
+  }
+}
+
+.App > footer {
+  grid-area: footer;
+}
