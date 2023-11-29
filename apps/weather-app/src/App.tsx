@@ -1,6 +1,7 @@
-import { Button, ButtonIcon } from "@hdoc/react-button";
+import { Button } from "@hdoc/react-button";
 import { Icon } from "@hdoc/react-material-icons";
 import { Footer } from "@internal/components";
+import { CityWeather } from "./components/CityWeather";
 import "./App.scss";
 
 const OPEN_WEATHER_MAP_API = "https://openweathermap.org/api";
@@ -11,24 +12,7 @@ const VISUAL_CROSSING_API = "https://www.visualcrossing.com/weather-api";
 function App() {
   return (
     <div className="App">
-      <aside className="city-weather">
-        <header>
-          <Button text="Search for places" />
-          <ButtonIcon icon="gps_fixed" />
-        </header>
-        <section>
-          <img src="/shower.png" alt="shower" />
-          <p className="weather-degree">15 °C</p>
-          <p className="weather-description">Shower</p>
-          <footer>
-            <p className="weather-date">Today · Fri, 5 Jun</p>
-            <p className="weather-location">
-              <Icon name="location_on" />
-              Helsinki
-            </p>
-          </footer>
-        </section>
-      </aside>
+      <CityWeather />
       <main>
         <section className="temperature-unit">
           <Button text="°C" />

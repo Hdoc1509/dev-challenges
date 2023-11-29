@@ -1,0 +1,28 @@
+.App > .city-weather {
+  grid-area: aside;
+
+  background-color: #1e213a;
+  background-image: url("/cloud-background.png");
+  background-repeat: no-repeat;
+  background-position-y: top 100px;
+  background-position-x: center;
+
+  padding: 42px;
+  color: #fff;
+
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 88px;
+  }
+
+  footer {
+    margin: 0;
+  }
+}
