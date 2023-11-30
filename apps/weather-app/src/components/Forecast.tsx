@@ -7,16 +7,16 @@ export const Forecast = () => {
         <h2 className="forecast-item__day">Tomorrow</h2>
         <img src="/sleet.png" alt="sleet" className="forecast-item__icon" />
         <footer className="forecast-item__degrees">
-          <span>16 °C</span>
-          <span>11 °C</span>
+          <span>16 ℃</span>
+          <span>11 ℃</span>
         </footer>
       </article>
       <article className="forecast-item">
         <h2 className="forecast-item__day">Sun, 7 Jun</h2>
         <img src="/snow.png" alt="snow" className="forecast-item__icon" />
         <footer className="forecast-item__degrees">
-          <span>16 °C</span>
-          <span>11 °C</span>
+          <span>16 ℃</span>
+          <span>11 ℃</span>
         </footer>
       </article>
       <article className="forecast-item">
@@ -27,8 +27,8 @@ export const Forecast = () => {
           className="forecast-item__icon"
         />
         <footer className="forecast-item__degrees">
-          <span>16 °C</span>
-          <span>11 °C</span>
+          <span>16 ℃</span>
+          <span>11 ℃</span>
         </footer>
       </article>
       <article className="forecast-item">
@@ -39,8 +39,8 @@ export const Forecast = () => {
           className="forecast-item__icon"
         />
         <footer className="forecast-item__degrees">
-          <span>16 °C</span>
-          <span>11 °C</span>
+          <span>16 ℃</span>
+          <span>11 ℃</span>
         </footer>
       </article>
       <article className="forecast-item">
@@ -51,8 +51,8 @@ export const Forecast = () => {
           className="forecast-item__icon"
         />
         <footer className="forecast-item__degrees">
-          <span>16 °C</span>
-          <span>11 °C</span>
+          <span>16 ℃</span>
+          <span>11 ℃</span>
         </footer>
       </article>
     </article>

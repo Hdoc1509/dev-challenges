@@ -15,6 +15,11 @@
   background-color: var(--blue-dark);
   padding: 18px 20px;
 
+  &__day {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
   &__icon {
     position: relative;
     width: 45%;
@@ -26,5 +31,12 @@
 
     margin: 0;
     margin-top: 30px;
+
+    font-size: 16px;
+    font-weight: 500;
+
+    :last-child {
+      color: var(--gray);
+    }
   }
 }
