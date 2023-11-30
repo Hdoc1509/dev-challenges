@@ -4,7 +4,7 @@
   grid-template-rows: auto 2fr 2fr 1fr;
   align-items: center;
 
-  background-color: #1e213a;
+  background-color: var(--blue-dark);
   background-image: url("/cloud-background.png");
   background-repeat: no-repeat;
   background-position-y: top 10%;
@@ -36,18 +36,18 @@
     font-weight: 500;
   }
   &__degree-unit {
-    color: #a09fb1;
+    color: var(--gray);
     font-size: 48px;
   }
 
   &__description {
-    color: #a09fb1;
+    color: var(--gray);
     font-size: 36px;
     font-weight: 600;
   }
 
   &__date {
-    color: #88869d;
+    color: var(--gray-dark);
     font-size: 18px;
     font-weight: 500;
   }
@@ -65,7 +65,7 @@
 
     margin-top: 32px;
 
-    color: #88869d;
+    color: var(--gray-dark);
     font-weight: 600;
     font-size: 18px;
   }
