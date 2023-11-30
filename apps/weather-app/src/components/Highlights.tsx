@@ -8,7 +8,7 @@ export const Highlights = () => {
       <section className="wind">
         <h3>Wind Status</h3>
         <p>7 mph</p>
-        <p className="wind_direction">
+        <p className="wind__direction">
           <Icon name="near_me" />
           WSW
         </p>
@@ -16,7 +16,12 @@ export const Highlights = () => {
       <section className="humidity">
         <h3>Humidity</h3>
         <p>84%</p>
-        <div className="humidity__range" data-range="84"></div>
+        <div className="humidity-slider">
+          <div
+            className="humidity-slider__value"
+            style={{ width: "84%" }}
+          ></div>
+        </div>
       </section>
       <section className="visibility">
         <h3>Visibility</h3>
