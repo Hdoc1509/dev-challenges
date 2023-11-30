@@ -1,28 +1,72 @@
-.App > .city-weather {
+.weather {
   grid-area: aside;
+  display: grid;
+  grid-template-rows: auto 2fr 2fr 1fr;
+  align-items: center;
 
   background-color: #1e213a;
   background-image: url("/cloud-background.png");
   background-repeat: no-repeat;
-  background-position-y: top 100px;
+  background-position-y: top 10%;
   background-position-x: center;
-
   padding: 42px;
+
   color: #fff;
+  text-align: center;
 
   header {
     display: flex;
     justify-content: space-between;
   }
 
-  section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 88px;
+  --button-bg: #6e707a;
+  --button-bg-hover: #56575f;
+  --button-color: #fff;
+  &__search {
+    --button-radius: 0;
+    --button-font-family: "Raleway", sans-serif;
+    font-size: 16px;
+  }
+  &__current {
+    --button-radius: 50%;
   }
 
-  footer {
-    margin: 0;
+  &__degree {
+    font-size: 144px;
+    font-weight: 500;
+  }
+  &__degree-unit {
+    color: #a09fb1;
+    font-size: 48px;
+  }
+
+  &__description {
+    color: #a09fb1;
+    font-size: 36px;
+    font-weight: 600;
+  }
+
+  &__date {
+    color: #88869d;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  &__icon {
+    margin-top: 10%;
+    margin-inline: auto;
+  }
+
+  &__location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    margin-top: 32px;
+
+    color: #88869d;
+    font-weight: 600;
+    font-size: 18px;
   }
 }
