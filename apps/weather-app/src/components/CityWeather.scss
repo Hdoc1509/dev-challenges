@@ -1,5 +1,4 @@
 .weather {
-  grid-area: aside;
   display: grid;
   grid-template-rows: auto 2fr 2fr 1fr;
   align-items: center;
@@ -9,10 +8,14 @@
   background-repeat: no-repeat;
   background-position-y: top 10%;
   background-position-x: center;
-  padding: 42px;
+  padding: var(--weather-padding, 42px);
 
   color: #fff;
   text-align: center;
+
+  @media (max-width: 767px) {
+    background-size: 150%;
+  }
 
   header {
     display: flex;
@@ -55,6 +58,7 @@
   &__icon {
     margin-top: 10%;
     margin-inline: auto;
+    width: 150px;
   }
 
   &__location {

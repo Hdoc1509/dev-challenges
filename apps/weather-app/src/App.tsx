@@ -18,8 +18,8 @@ function App() {
         <TemperatureConverter />
         <Forecast />
         <Highlights />
+        <Footer />
       </main>
-      <Footer />
     </div>
   );
 }

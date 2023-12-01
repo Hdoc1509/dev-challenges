@@ -1,18 +1,18 @@
 .highlights {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-    "header     header"
-    "wind       humidity"
-    "visibility air-pressure";
+  grid-template-columns: var(--highlights-grid-columns, 1fr 1fr);
   gap: 48px;
 
   color: #fff;
 
   h2 {
-    grid-area: header;
+    grid-column: span 2;
     font-size: 24px;
     font-weight: 700;
+
+    @media (max-width: 767px) {
+      grid-column: span 1;
+    }
   }
 
   section {
@@ -22,7 +22,7 @@
     gap: 16px;
 
     background-color: var(--blue-dark);
-    padding: 22px 50px;
+    padding-block: 22px;
 
     h3 {
       font-size: 16px;
@@ -30,6 +30,7 @@
     }
   }
 
+  // TODO: Add classes for highlights__value, highlights__unit
   .wind {
     &__speed {
       font-size: 64px;
@@ -61,6 +62,7 @@
   }
 
   .humidity {
+    padding-inline: 50px;
     &__percentage {
       font-size: 64px;
       font-weight: 700;
