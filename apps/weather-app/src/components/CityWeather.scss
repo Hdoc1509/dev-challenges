@@ -58,7 +58,10 @@
   &__icon {
     margin-top: 10%;
     margin-inline: auto;
-    width: 150px;
+
+    @media (max-width: 767px) {
+      width: 150px;
+    }
   }
 
   &__location {

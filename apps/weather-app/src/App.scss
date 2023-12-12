@@ -2,11 +2,8 @@
   position: relative;
   display: grid;
   grid-template-columns: 1fr 2.1fr;
-  grid-template-rows: 1fr;
+  grid-template-rows: 100lvh;
 
-  min-height: 100vh;
-  min-height: 100dvh;
-  max-height: 100vh;
   font-family: "Raleway", sans-serif;
 
   @media (max-width: 767px) {
@@ -15,11 +12,11 @@
     --converter-right-offset: 24px;
     --converter-top-offset: 18px;
     --weather-padding: 12px;
+    --highlights-grid-columns: 1fr;
   }
   @media (max-width: 1440px) {
     grid-template-columns: 1fr;
     --forecast-grid-columns: 1fr 1fr;
-    --highlights-grid-columns: 1fr;
   }
   @media (min-width: 1440px) {
     --main-padding: 120px;
