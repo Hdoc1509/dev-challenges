@@ -4,11 +4,7 @@
   align-items: center;
 
   background-color: var(--blue-dark);
-  background-image: url("/cloud-background.png");
-  background-repeat: no-repeat;
-  background-position-y: top 10%;
-  background-position-x: center;
-  padding: var(--weather-padding, 42px);
+  padding-block: var(--weather-padding, 42px);
 
   color: #fff;
   text-align: center;
@@ -20,6 +16,7 @@
   header {
     display: flex;
     justify-content: space-between;
+    padding-inline: var(--weather-padding, 42px);
   }
 
   --button-bg: #6e707a;
@@ -55,12 +52,22 @@
     font-weight: 500;
   }
 
-  &__icon {
-    margin-top: 10%;
-    margin-inline: auto;
+  .weather-image {
+    position: relative;
 
-    @media (max-width: 767px) {
-      width: 150px;
+    &__background {
+      width: 100%;
+      margin-inline: auto;
+      opacity: 0.1;
+    }
+    &__icon {
+      position: absolute;
+      inset: 0;
+      margin: auto;
+
+      @media (max-width: 767px) {
+        width: 150px;
+      }
     }
   }
 

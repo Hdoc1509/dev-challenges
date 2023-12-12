@@ -9,7 +9,14 @@ export const CityWeather = () => {
         <Button text="Search for places" className="weather__search" />
         <ButtonIcon icon="gps_fixed" className="weather__current" />
       </header>
-      <img src="/shower.png" alt="shower" className="weather__icon" />
+      <picture className="weather-image">
+        <img
+          src="/cloud-background.png"
+          alt="clouds"
+          className="weather-image__background"
+        />
+        <img src="/shower.png" alt="shower" className="weather-image__icon" />
+      </picture>
       <p className="weather__degree">
         15<span className="weather__degree-unit">℃</span>
       </p>
