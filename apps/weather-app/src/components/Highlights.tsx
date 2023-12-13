@@ -24,6 +24,8 @@ export const Highlights = () => {
             <span>50</span>
             <span>100</span>
           </div>
+          {/* TODO: Use progress element */}
+          <progress value="84" max="100" style={{ width: "100%" }}></progress>
           <div className="humidity-slider__bar-wrapper">
             <div className="humidity-slider__bar"></div>
             <div

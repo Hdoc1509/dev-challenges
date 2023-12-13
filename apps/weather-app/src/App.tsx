@@ -3,6 +3,7 @@ import { CityWeather } from "./components/CityWeather";
 import { Forecast } from "./components/Forecast";
 import { Highlights } from "./components/Highlights";
 import { TemperatureConverter } from "./components/TemperatureConverter";
+import { SearchDrawer } from "./components/SearchDrawer";
 import "./App.scss";
 
 const OPEN_WEATHER_MAP_API = "https://openweathermap.org/api";
@@ -14,6 +15,7 @@ function App() {
   return (
     <div className="App">
       <CityWeather />
+      <SearchDrawer />
       <main>
         <TemperatureConverter />
         <Forecast />
