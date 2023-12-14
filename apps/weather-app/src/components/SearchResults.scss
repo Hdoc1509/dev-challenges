@@ -1,0 +1,26 @@
+.search-drawer__results {
+  display: grid;
+  gap: 12px;
+
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 22px 12px;
+    color: #e7e7eb;
+    font-size: 16px;
+    font-weight: 500;
+    --icon-color: transparent;
+
+    cursor: pointer;
+
+    &:hover {
+      outline: solid 1px #616475;
+      --icon-color: #616475;
+    }
+  }
+}

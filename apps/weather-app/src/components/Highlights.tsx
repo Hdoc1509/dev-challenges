@@ -9,9 +9,9 @@ export const Highlights = () => {
         <h3>Wind Status</h3>
         <p className="wind__speed">7</p>
         <p className="wind__direction">
-          <div className="wind__direction-icon-wrapper">
+          <span className="wind__direction-icon-wrapper">
             <Icon name="near_me" />
-          </div>
+          </span>
           WSW
         </p>
       </section>

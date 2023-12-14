@@ -1,3 +1,4 @@
+// TODO: Add responsive styles
 .search-drawer {
   display: flex;
   flex-direction: column;
@@ -24,7 +25,7 @@
     --icon-color: #e7e7eb;
   }
 
-  &__search {
+  &__form {
     display: flex;
     justify-content: space-between;
 
@@ -57,31 +58,5 @@
 
     --button-radius: 0;
     --button-font-weight: 600;
-  }
-
-  &__results {
-    display: grid;
-    gap: 12px;
-
-    padding: 0;
-    list-style: none;
-
-    li {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      border: solid 1px #616475;
-      padding: 22px 12px;
-      color: #e7e7eb;
-      font-size: 16px;
-      font-weight: 500;
-
-      --icon-color: var(--blue-dark);
-
-      &:hover {
-        --icon-color: #616475;
-      }
-    }
   }
 }

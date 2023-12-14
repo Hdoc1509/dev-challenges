@@ -1,29 +1,48 @@
+import { useRef, useState } from "react";
+import { clsx } from "clsx";
+import { getLocations } from "../services/location";
 import { Button } from "@hdoc/react-button";
 import { Icon } from "@hdoc/react-material-icons";
+import { SearchResults } from "./SearchResults";
 import "./SearchDrawer.scss";
 
-export const SearchDrawer = () => {
+type Props = {
+  isOpen?: boolean;
+};
+
+export const SearchDrawer = ({ isOpen }: Props) => {
+  const [results, setResults] = useState<string[]>([]);
+  const lastSearch = useRef("");
+
+  const className = clsx("search-drawer", {
+    "search-drawer--open": isOpen,
+  });
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const target = e.target as typeof e.target & {
+      location: { value: string };
+    };
+    const search = target.location.value;
+
+    if (search === lastSearch.current) return;
+
+    lastSearch.current = search;
+    void getLocations(search).then((locations) => setResults(locations));
+  };
+
   return (
-    <div className="search-drawer">
+    <div className={className}>
       <Icon name="close" className="search-drawer__close" />
-      <nav className="search-drawer__search">
+      <form className="search-drawer__form" onSubmit={handleSubmit}>
         <div className="input-wrapper">
           <Icon name="search" />
-          <input type="text" placeholder="search location" />
+          <input name="location" placeholder="search location" required />
         </div>
         <Button text="Search" color="primary" />
-      </nav>
-      <ul className="search-drawer__results">
-        <li>
-          London <Icon name="keyboard_arrow_right" />
-        </li>
-        <li>
-          Barcelona <Icon name="keyboard_arrow_right" />
-        </li>
-        <li>
-          Long Beach <Icon name="keyboard_arrow_right" />
-        </li>
-      </ul>
+      </form>
+      <SearchResults results={results} />
     </div>
   );
 };

@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <CityWeather />
-      <SearchDrawer />
+      <SearchDrawer isOpen />
       <main>
         <TemperatureConverter />
         <Forecast />
