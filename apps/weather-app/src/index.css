@@ -27,3 +27,7 @@ body {
   min-width: 320px;
   background-color: var(--blue-very-dark);
 }
+
+.no-scroll {
+  overflow: hidden;
+}

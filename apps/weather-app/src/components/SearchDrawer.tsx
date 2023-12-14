@@ -8,9 +8,10 @@ import "./SearchDrawer.scss";
 
 type Props = {
   isOpen?: boolean;
+  onClose?: () => void;
 };
 
-export const SearchDrawer = ({ isOpen }: Props) => {
+export const SearchDrawer = ({ isOpen, onClose }: Props) => {
   const [results, setResults] = useState<string[]>([]);
   const lastSearch = useRef("");
 
@@ -34,7 +35,9 @@ export const SearchDrawer = ({ isOpen }: Props) => {
 
   return (
     <div className={className}>
-      <Icon name="close" className="search-drawer__close" />
+      <div className="search-drawer__close" onClick={onClose}>
+        <Icon name="close" />
+      </div>
       <form className="search-drawer__form" onSubmit={handleSubmit}>
         <div className="input-wrapper">
           <Icon name="search" />

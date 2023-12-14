@@ -2,11 +2,19 @@ import { Button, ButtonIcon } from "@hdoc/react-button";
 import { Icon } from "@hdoc/react-material-icons";
 import "./CityWeather.scss";
 
-export const CityWeather = () => {
+type Props = {
+  openDrawer: () => void;
+};
+
+export const CityWeather = ({ openDrawer }: Props) => {
   return (
     <aside className="weather">
       <header>
-        <Button text="Search for places" className="weather__search" />
+        <Button
+          text="Search for places"
+          className="weather__search"
+          onClick={openDrawer}
+        />
         <ButtonIcon icon="gps_fixed" className="weather__current" />
       </header>
       <picture className="weather-image">
