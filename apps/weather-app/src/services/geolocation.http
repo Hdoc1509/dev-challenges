@@ -1,0 +1,2 @@
+# NOTE: Be sure to read env from .env.local
+GET http://api.openweathermap.org/geo/1.0/direct?q=london&limit=1&appid={{VITE_OPEN_WEATHER_MAP_API_KEY}}

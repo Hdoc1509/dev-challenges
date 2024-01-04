@@ -15,4 +15,4 @@ export const LocationPositionSchema = z
 
 export type LocationPosition = z.infer<typeof LocationPositionSchema>;
 
-export const ApiResponseSchema = z.array(LocationPositionSchema);
+export const LocationResponseSchema = z.array(LocationPositionSchema);
