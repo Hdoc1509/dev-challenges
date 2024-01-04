@@ -1,19 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useWeatherStore } from "./store/weather";
+import { getCurrentPosition } from "./services/geolocation";
 import { Footer } from "@internal/components";
 import { CityWeather } from "./components/CityWeather";
 import { Forecast } from "./components/Forecast";
 import { Highlights } from "./components/Highlights";
 import { TemperatureConverter } from "./components/TemperatureConverter";
 import { SearchDrawer } from "./components/SearchDrawer";
+import { getWeather } from "./services/weather";
 import "./App.scss";
-
-const OPEN_WEATHER_MAP_API = "https://openweathermap.org/api";
-const WEATHER_API = "https://www.weatherapi.com/";
-const OPEN_METEO_API = "https://open-meteo.com/en/docs";
-const VISUAL_CROSSING_API = "https://www.visualcrossing.com/weather-api";
 
 function App() {
   const [showSearchDrawer, setShowSearchDrawer] = useState(false);
+  const setLocation = useWeatherStore((s) => s.setLocation);
+  const setWeather = useWeatherStore(s => s.setWeather)
 
   const openDrawer = () => {
     setShowSearchDrawer(true);
@@ -24,6 +24,15 @@ function App() {
     document.body.classList.remove("no-scroll");
   };
 
+  useEffect(() => {
+    // TODO: Improve legibility
+    void getCurrentPosition().then(currentPosition => {
+      setLocation(currentPosition)
+      void getWeather({ coords: currentPosition }).then(setWeather)
+    });
+  }, [setLocation, setWeather]);
+
+  // TODO: Use weather from store
   return (
     <div className="App">
       <CityWeather openDrawer={openDrawer} />

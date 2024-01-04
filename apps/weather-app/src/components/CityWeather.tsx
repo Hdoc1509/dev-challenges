@@ -1,12 +1,38 @@
 import { Button, ButtonIcon } from "@hdoc/react-button";
 import { Icon } from "@hdoc/react-material-icons";
+import { useWeatherStore } from "../store/weather";
+import { getCurrentDate } from "../utils/date";
+import type { Weather } from "../schemas/weather";
 import "./CityWeather.scss";
 
 type Props = {
   openDrawer: () => void;
 };
 
+const WeatherDetails = ({ weather }: { weather: Weather }) => {
+  const { location, current } = weather;
+  const { temperature, condition } = current;
+
+  return (
+    <>
+      <p className="weather__degree">
+        {temperature.celsius}
+        <span className="weather__degree-unit">℃</span>
+      </p>
+      <p className="weather__description">{condition}</p>
+      <p className="weather__date">Today • {getCurrentDate()}</p>
+      <p className="weather__location">
+        <Icon name="location_on" />
+        {location}
+      </p>
+    </>
+  );
+};
+
 export const CityWeather = ({ openDrawer }: Props) => {
+  const weather = useWeatherStore((s) => s.weather);
+  const isLoading = weather == null;
+
   return (
     <aside className="weather">
       <header>
@@ -23,17 +49,17 @@ export const CityWeather = ({ openDrawer }: Props) => {
           alt="clouds"
           className="weather-image__background"
         />
-        <img src="/shower.png" alt="shower" className="weather-image__icon" />
+        {isLoading ? (
+          <div className="weather-image__loading">Loading...</div>
+        ) : (
+          <img src="/shower.png" alt="shower" className="weather-image__icon" />
+        )}
       </picture>
-      <p className="weather__degree">
-        15<span className="weather__degree-unit">℃</span>
-      </p>
-      <p className="weather__description">Shower</p>
-      <p className="weather__date">Today • Fri, 5 Jun</p>
-      <p className="weather__location">
-        <Icon name="location_on" />
-        Helsinki
-      </p>
+      {isLoading ? (
+        <p className="weather__loading">Loading weather data...</p>
+      ) : (
+        <WeatherDetails weather={weather} />
+      )}
     </aside>
   );
 };

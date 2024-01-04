@@ -69,6 +69,12 @@
         width: 150px;
       }
     }
+    &__loading {
+      position: absolute;
+      display: grid;
+      inset: 0;
+      place-items: center;
+    }
   }
 
   &__location {

@@ -30,6 +30,7 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
     if (search === lastSearch.current) return;
 
     lastSearch.current = search;
+    // TODO: Use city API from https://api-ninjas.com/api/city
     void getLocations(search).then((locations) => setResults(locations));
   };
 

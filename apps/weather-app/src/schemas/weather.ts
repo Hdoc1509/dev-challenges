@@ -75,10 +75,8 @@ const CurrentSchema = z
     }),
   );
 
-export const WeatherResponseSchema = z
-  .object({
-    location: LocationSchema,
-    current: CurrentSchema,
-  })
-  .transform(({ location, current }) => ({ location, weather: current }));
+export const WeatherResponseSchema = z.object({
+  location: LocationSchema,
+  current: CurrentSchema,
+});
 export type Weather = z.infer<typeof WeatherResponseSchema>;
