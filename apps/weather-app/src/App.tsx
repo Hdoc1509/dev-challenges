@@ -1,19 +1,18 @@
 import { useEffect, useState } from "react";
 import { useWeatherStore } from "./store/weather";
 import { getCurrentPosition } from "./services/geolocation";
+import { getWeather } from "./services/weather";
 import { Footer } from "@internal/components";
 import { CityWeather } from "./components/CityWeather";
 import { Forecast } from "./components/Forecast";
 import { Highlights } from "./components/Highlights";
 import { TemperatureConverter } from "./components/TemperatureConverter";
 import { SearchDrawer } from "./components/SearchDrawer";
-import { getWeather } from "./services/weather";
 import "./App.scss";
 
 function App() {
   const [showSearchDrawer, setShowSearchDrawer] = useState(false);
-  const setLocation = useWeatherStore((s) => s.setLocation);
-  const setWeather = useWeatherStore(s => s.setWeather)
+  const setWeather = useWeatherStore((s) => s.setWeather);
 
   const openDrawer = () => {
     setShowSearchDrawer(true);
@@ -25,12 +24,10 @@ function App() {
   };
 
   useEffect(() => {
-    // TODO: Improve legibility
-    void getCurrentPosition().then(currentPosition => {
-      setLocation(currentPosition)
-      void getWeather({ coords: currentPosition }).then(setWeather)
+    void getCurrentPosition().then((currentPosition) => {
+      void getWeather({ coords: currentPosition }).then(setWeather);
     });
-  }, [setLocation, setWeather]);
+  }, [setWeather]);
 
   // TODO: Use weather from store
   return (

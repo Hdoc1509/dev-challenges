@@ -23,6 +23,7 @@ const WeatherDetails = ({ weather }: { weather: Weather }) => {
       <p className="weather__date">Today • {getCurrentDate()}</p>
       <p className="weather__location">
         <Icon name="location_on" />
+        {/* TODO: Show City, Country */}
         {location}
       </p>
     </>
@@ -49,6 +50,7 @@ export const CityWeather = ({ openDrawer }: Props) => {
           alt="clouds"
           className="weather-image__background"
         />
+        {/* TODO: show icon based on weather.condition */}
         {isLoading ? (
           <div className="weather-image__loading">Loading...</div>
         ) : (

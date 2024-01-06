@@ -1,12 +1,19 @@
 import { Icon } from "@hdoc/react-material-icons";
+import type { SearchCityResponse } from "../schemas/search-city";
 import "./SearchResults.scss";
 
-export const SearchResults = ({ results }: { results: string[] }) => {
+type Props = {
+  results: SearchCityResponse;
+  handleSelect: (option: SearchCityResponse[number]) => void;
+};
+
+export const SearchResults = ({ results, handleSelect }: Props) => {
   return (
     <ul className="search-drawer__results">
       {results.map((result) => (
-        <li key={result}>
-          {result} <Icon name="keyboard_arrow_right" />
+        <li key={result.id} onClick={() => handleSelect(result)}>
+          {result.name} - {result.country}
+          <Icon name="keyboard_arrow_right" />
         </li>
       ))}
     </ul>

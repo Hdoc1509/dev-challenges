@@ -1,18 +1,22 @@
 import { useRef, useState } from "react";
 import { clsx } from "clsx";
-import { getLocations } from "../services/location";
+import { searchCity } from "../services/search-city";
+import { getWeather } from "../services/weather";
+import { useWeatherStore } from "../store/weather";
 import { Button } from "@hdoc/react-button";
 import { Icon } from "@hdoc/react-material-icons";
 import { SearchResults } from "./SearchResults";
+import type { SearchCityResponse } from "../schemas/search-city";
 import "./SearchDrawer.scss";
 
 type Props = {
   isOpen?: boolean;
-  onClose?: () => void;
+  onClose: () => void;
 };
 
 export const SearchDrawer = ({ isOpen, onClose }: Props) => {
-  const [results, setResults] = useState<string[]>([]);
+  const setWeather = useWeatherStore((s) => s.setWeather);
+  const [results, setResults] = useState<SearchCityResponse>([]);
   const lastSearch = useRef("");
 
   const className = clsx("search-drawer", {
@@ -30,8 +34,16 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
     if (search === lastSearch.current) return;
 
     lastSearch.current = search;
-    // TODO: Use city API from https://api-ninjas.com/api/city
-    void getLocations(search).then((locations) => setResults(locations));
+    void searchCity(search).then((locations) => setResults(locations));
+  };
+
+  const handleSelect = (option: SearchCityResponse[number]) => {
+    const coords = { latitude: option.lat, longitude: option.lon };
+
+    void getWeather({ coords }).then((location) => {
+      setWeather(location);
+      onClose();
+    });
   };
 
   return (
@@ -46,7 +58,7 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
         </div>
         <Button text="Search" color="primary" />
       </form>
-      <SearchResults results={results} />
+      <SearchResults results={results} handleSelect={handleSelect} />
     </div>
   );
 };
