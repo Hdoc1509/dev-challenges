@@ -18,6 +18,9 @@
   @media (max-width: 767px) {
     padding: 12px;
   }
+  @media (max-width: 1440px) {
+    align-items: center;
+  }
 
   &--open {
     transform: translateX(0);
@@ -32,6 +35,8 @@
   &__form {
     display: flex;
     justify-content: space-between;
+    max-width: 372px;
+    gap: 16px;
 
     .input-wrapper {
       display: flex;
