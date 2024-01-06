@@ -15,9 +15,10 @@ type Props = {
 };
 
 export const SearchDrawer = ({ isOpen, onClose }: Props) => {
-  const setWeather = useWeatherStore((s) => s.setWeather);
   const [results, setResults] = useState<SearchCityResponse>([]);
   const lastSearch = useRef("");
+  const inputRef = useRef<HTMLInputElement>(null);
+  const setWeather = useWeatherStore((s) => s.setWeather);
 
   const className = clsx("search-drawer", {
     "search-drawer--open": isOpen,
@@ -26,10 +27,7 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const target = e.target as typeof e.target & {
-      location: { value: string };
-    };
-    const search = target.location.value;
+    const search = inputRef.current?.value ?? "";
 
     if (search === lastSearch.current) return;
 
@@ -43,8 +41,13 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
     void getWeather({ coords }).then((location) => {
       setWeather(location);
       onClose();
+      setResults([]);
+      if (inputRef.current) inputRef.current.value = "";
+      lastSearch.current = "";
     });
   };
+
+  if (isOpen) inputRef.current?.focus();
 
   return (
     <div className={className}>
@@ -54,7 +57,12 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
       <form className="search-drawer__form" onSubmit={handleSubmit}>
         <div className="input-wrapper">
           <Icon name="search" />
-          <input name="location" placeholder="search location" required />
+          <input
+            name="location"
+            placeholder="search location"
+            ref={inputRef}
+            required
+          />
         </div>
         <Button text="Search" color="primary" />
       </form>
