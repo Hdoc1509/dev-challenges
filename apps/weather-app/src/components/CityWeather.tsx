@@ -23,8 +23,7 @@ const WeatherDetails = ({ weather }: { weather: Weather }) => {
       <p className="weather__date">Today • {getCurrentDate()}</p>
       <p className="weather__location">
         <Icon name="location_on" />
-        {/* TODO: Show City, Country */}
-        {location}
+        {location.name}, {location.country}
       </p>
     </>
   );

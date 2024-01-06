@@ -11,7 +11,7 @@ const LocationSchema = z
     localtime_epoch: z.number(),
     localtime: z.string(),
   })
-  .transform(({ name }) => name);
+  .transform(({ name, country }) => ({ name, country }));
 
 const ConditionSchema = z
   .object({
