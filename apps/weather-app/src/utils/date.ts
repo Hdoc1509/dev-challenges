@@ -1,5 +1,5 @@
-export const getCurrentDate = () => {
-  const [weekday, month, day] = new Date()
+export const formatDate = (date: Date) => {
+  const [weekday, month, day] = date
     .toLocaleDateString("en-US", {
       weekday: "short",
       month: "short",
@@ -8,4 +8,8 @@ export const getCurrentDate = () => {
     .split(" ");
 
   return `${weekday} ${day} ${month}`;
+};
+
+export const getCurrentDate = () => {
+  return formatDate(new Date());
 };
