@@ -28,8 +28,8 @@ function App() {
   useEffect(() => {
     if (!didInit) {
       didInit = true;
-      void getCurrentPosition().then((currentPosition) => {
-        void getWeather({ coords: currentPosition }).then(setWeather);
+      void getCurrentPosition().then((positionCoords) => {
+        void getWeather(positionCoords).then(setWeather);
       });
     }
   }, [setWeather]);

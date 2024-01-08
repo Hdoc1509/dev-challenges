@@ -38,7 +38,7 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
   const handleSelect = (option: SearchCityResponse[number]) => {
     const coords = { latitude: option.lat, longitude: option.lon };
 
-    void getWeather({ coords }).then((location) => {
+    void getWeather(coords).then((location) => {
       setWeather(location);
       onClose();
       setResults([]);
