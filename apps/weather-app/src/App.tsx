@@ -10,6 +10,8 @@ import { TemperatureConverter } from "./components/TemperatureConverter";
 import { SearchDrawer } from "./components/SearchDrawer";
 import "./App.scss";
 
+let didInit = false;
+
 function App() {
   const [showSearchDrawer, setShowSearchDrawer] = useState(false);
   const setWeather = useWeatherStore((s) => s.setWeather);
@@ -24,9 +26,12 @@ function App() {
   };
 
   useEffect(() => {
-    void getCurrentPosition().then((currentPosition) => {
-      void getWeather({ coords: currentPosition }).then(setWeather);
-    });
+    if (!didInit) {
+      didInit = true;
+      void getCurrentPosition().then((currentPosition) => {
+        void getWeather({ coords: currentPosition }).then(setWeather);
+      });
+    }
   }, [setWeather]);
 
   // TODO: Use weather from store
