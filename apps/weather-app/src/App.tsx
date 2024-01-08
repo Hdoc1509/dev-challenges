@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useWeatherStore } from "./store/weather";
-import { getCurrentPosition } from "./services/geolocation";
+import { getCurrentPosition } from "./utils/geolocation";
 import { getWeather } from "./services/weather";
 import { Footer } from "@internal/components";
 import { CityWeather } from "./components/CityWeather";
