@@ -1,2 +1,0 @@
-# NOTE: Be sure to read env from .env.local
-GET http://api.weatherapi.com/v1/search.json?q=lon&key={{VITE_WEATHER_API_KEY}}

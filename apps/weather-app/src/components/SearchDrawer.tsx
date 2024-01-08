@@ -1,12 +1,12 @@
 import { useRef, useState } from "react";
 import { clsx } from "clsx";
-import { searchCity } from "../services/search-city";
+import { searchCity } from "../services/geolocation";
 import { getWeather } from "../services/weather";
 import { useWeatherStore } from "../store/weather";
 import { Button } from "@hdoc/react-button";
 import { Icon } from "@hdoc/react-material-icons";
 import { SearchResults } from "./SearchResults";
-import type { SearchCityResponse } from "../schemas/search-city";
+import type { SearchCityResponse } from "../schemas/geolocation";
 import "./SearchDrawer.scss";
 
 type Props = {
