@@ -1,6 +1,6 @@
 import { WEATHER_API } from "../config";
 import { WeatherResponseSchema, type Weather } from "../schemas/weather";
-import type { LocationPosition } from "../schemas/location";
+import type { LocationPosition } from "../utils/geolocation";
 
 export const getWeather = async (
   coords: LocationPosition,
