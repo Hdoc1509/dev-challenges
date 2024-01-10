@@ -53,7 +53,11 @@ export const CityWeather = ({ openDrawer }: Props) => {
         {isLoading ? (
           <div className="weather-image__loading">Loading...</div>
         ) : (
-          <img src="/shower.png" alt="shower" className="weather-image__icon" />
+          <img
+            src="/weather/shower.png"
+            alt="shower"
+            className="weather-image__icon"
+          />
         )}
       </picture>
       {isLoading ? (
