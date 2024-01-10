@@ -15,7 +15,7 @@ export const Forecast = () => {
         <article key={day} className="forecast-item">
           <h2 className="forecast-item__day">{day}</h2>
           <img
-            src={`/weather/${getWeatherIcon(condition.code)}`}
+            src={`/weather/${getWeatherIcon(condition.code)}.png`}
             alt={condition.name}
             className="forecast-item__icon"
           />
