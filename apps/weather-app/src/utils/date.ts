@@ -10,6 +10,11 @@ export const formatDate = (date: Date) => {
   return `${weekday} ${day} ${month}`;
 };
 
+export const parseDate = (date: string) => {
+  const [year, month, day] = date.split("-");
+  return new Date(Number(year), Number(month) - 1, Number(day));
+};
+
 export const getCurrentDate = () => {
   return formatDate(new Date());
 };
