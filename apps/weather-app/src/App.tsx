@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useWeatherStore } from "./store/weather";
 import { getCurrentPosition } from "./utils/geolocation";
 import { getWeather } from "./services/weather";
+import { getForecast } from "./services/forecast";
 import { Footer } from "@internal/components";
 import { CityWeather } from "./components/CityWeather";
 import { Forecast } from "./components/Forecast";
@@ -15,6 +16,7 @@ let didInit = false;
 function App() {
   const [showSearchDrawer, setShowSearchDrawer] = useState(false);
   const setWeather = useWeatherStore((s) => s.setWeather);
+  const setForecast = useWeatherStore((s) => s.setForecast);
 
   const openDrawer = () => {
     setShowSearchDrawer(true);
@@ -30,9 +32,10 @@ function App() {
       didInit = true;
       void getCurrentPosition().then((positionCoords) => {
         void getWeather(positionCoords).then(setWeather);
+        void getForecast(positionCoords).then(setForecast);
       });
     }
-  }, [setWeather]);
+  }, [setForecast, setWeather]);
 
   // TODO: Use weather from store
   return (

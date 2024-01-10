@@ -1,60 +1,30 @@
+import { useWeatherStore } from "../store/weather";
+import { getWeatherIcon } from "../utils/icons";
 import "./Forecast.scss";
 
 export const Forecast = () => {
+  const forecast = useWeatherStore((s) => s.forecast);
+
+  if (forecast == null) {
+    return <div className="forecast__loading">Loading forecast...</div>;
+  }
+
   return (
     <article className="forecast">
-      <article className="forecast-item">
-        <h2 className="forecast-item__day">Tomorrow</h2>
-        <img src="/sleet.png" alt="sleet" className="forecast-item__icon" />
-        <footer className="forecast-item__degrees">
-          <span>16℃</span>
-          <span>11℃</span>
-        </footer>
-      </article>
-      <article className="forecast-item">
-        <h2 className="forecast-item__day">Sun, 7 Jun</h2>
-        <img src="/snow.png" alt="snow" className="forecast-item__icon" />
-        <footer className="forecast-item__degrees">
-          <span>16℃</span>
-          <span>11℃</span>
-        </footer>
-      </article>
-      <article className="forecast-item">
-        <h2 className="forecast-item__day">Mon, 8 Jun</h2>
-        <img
-          src="/thunderstorm.png"
-          alt="thunderstorm"
-          className="forecast-item__icon"
-        />
-        <footer className="forecast-item__degrees">
-          <span>16℃</span>
-          <span>11℃</span>
-        </footer>
-      </article>
-      <article className="forecast-item">
-        <h2 className="forecast-item__day">Tue, 9 Jun</h2>
-        <img
-          src="/light-cloud.png"
-          alt="light-cloud"
-          className="forecast-item__icon"
-        />
-        <footer className="forecast-item__degrees">
-          <span>16℃</span>
-          <span>11℃</span>
-        </footer>
-      </article>
-      <article className="forecast-item">
-        <h2 className="forecast-item__day">Wed, 10 Jun</h2>
-        <img
-          src="/heavy-rain.png"
-          alt="heavy-rain"
-          className="forecast-item__icon"
-        />
-        <footer className="forecast-item__degrees">
-          <span>16℃</span>
-          <span>11℃</span>
-        </footer>
-      </article>
+      {forecast.map(({ day, condition, temperature }) => (
+        <article key={day} className="forecast-item">
+          <h2 className="forecast-item__day">{day}</h2>
+          <img
+            src={`/weather/${getWeatherIcon(condition)}`}
+            alt={condition}
+            className="forecast-item__icon"
+          />
+          <p className="forecast-item__degrees">
+            <span>{temperature.max}℃</span>
+            <span>{temperature.min}℃</span>
+          </p>
+        </article>
+      ))}
     </article>
   );
 };
