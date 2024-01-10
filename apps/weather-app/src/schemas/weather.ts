@@ -19,7 +19,7 @@ const ConditionSchema = z
     icon: z.string(),
     code: z.number(),
   })
-  .transform(({ text }) => text);
+  .transform(({ text, code }) => ({ name: text, code }));
 
 const CurrentSchema = z
   .object({

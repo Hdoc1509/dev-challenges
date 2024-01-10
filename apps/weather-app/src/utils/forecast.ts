@@ -15,8 +15,10 @@ export const parseForecast = (data: ForecastResponse): Forecast[] => {
         min: temperature_2m_min[index],
         max: temperature_2m_max[index],
       },
-      condition:
-        FORECAST_CODES[weather_code[index] as keyof typeof FORECAST_CODES],
+      condition: {
+        code: weather_code[index],
+        name: FORECAST_CODES[weather_code[index] as keyof typeof FORECAST_CODES],
+      }
     });
   });
 

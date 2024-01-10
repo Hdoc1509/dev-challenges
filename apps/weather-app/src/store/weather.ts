@@ -7,7 +7,10 @@ export type Forecast = {
     min: number;
     max: number;
   };
-  condition: string;
+  condition: {
+    code: number;
+    name: string;
+  };
 };
 
 type State = {

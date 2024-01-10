@@ -2,6 +2,7 @@ import { Button, ButtonIcon } from "@hdoc/react-button";
 import { Icon } from "@hdoc/react-material-icons";
 import { useWeatherStore } from "../store/weather";
 import { getCurrentDate } from "../utils/date";
+import { getWeatherIcon } from "../utils/icons";
 import type { Weather } from "../schemas/weather";
 import "./CityWeather.scss";
 
@@ -19,7 +20,7 @@ const WeatherDetails = ({ weather }: { weather: Weather }) => {
         {temperature.celsius}
         <span className="weather__degree-unit">℃</span>
       </p>
-      <p className="weather__description">{condition}</p>
+      <p className="weather__description">{condition.name}</p>
       <p className="weather__date">Today • {getCurrentDate()}</p>
       <p className="weather__location">
         <Icon name="location_on" />
@@ -49,12 +50,11 @@ export const CityWeather = ({ openDrawer }: Props) => {
           alt="clouds"
           className="weather-image__background"
         />
-        {/* TODO: show icon based on weather.condition */}
         {isLoading ? (
           <div className="weather-image__loading">Loading...</div>
         ) : (
           <img
-            src="/weather/shower.png"
+            src={`/weather/${getWeatherIcon(weather.current.condition.code)}`}
             alt="shower"
             className="weather-image__icon"
           />
