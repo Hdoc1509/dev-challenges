@@ -8,6 +8,7 @@ import { Icon } from "@hdoc/react-material-icons";
 import { SearchResults } from "./SearchResults";
 import type { SearchCityResponse } from "../schemas/geolocation";
 import "./SearchDrawer.scss";
+import { getForecast } from "../services/forecast";
 
 type Props = {
   isOpen?: boolean;
@@ -19,6 +20,7 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
   const lastSearch = useRef("");
   const inputRef = useRef<HTMLInputElement>(null);
   const setWeather = useWeatherStore((s) => s.setWeather);
+  const setForecast = useWeatherStore((s) => s.setForecast);
 
   const className = clsx("search-drawer", {
     "search-drawer--open": isOpen,
@@ -45,6 +47,7 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
       if (inputRef.current) inputRef.current.value = "";
       lastSearch.current = "";
     });
+    void getForecast(coords).then(setForecast);
   };
 
   if (isOpen) inputRef.current?.focus();

@@ -1,5 +1,5 @@
 import { Icon } from "@hdoc/react-material-icons";
-import type { SearchCityResponse } from "../schemas/search-city";
+import type { SearchCityResponse } from "../schemas/geolocation";
 import "./SearchResults.scss";
 
 type Props = {
