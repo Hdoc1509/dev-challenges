@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useWeatherStore } from "./store/weather";
 import { getCurrentPosition } from "./utils/geolocation";
 import { getWeather } from "./services/weather";
@@ -27,19 +27,26 @@ function App() {
     document.body.classList.remove("no-scroll");
   };
 
+  const getCurrentLocationWeather = useCallback(() => {
+    void getCurrentPosition().then((coords) => {
+      void getWeather(coords).then(setWeather);
+      void getForecast(coords).then(setForecast);
+    });
+  }, [setForecast, setWeather]);
+
   useEffect(() => {
     if (!didInit) {
       didInit = true;
-      void getCurrentPosition().then((positionCoords) => {
-        void getWeather(positionCoords).then(setWeather);
-        void getForecast(positionCoords).then(setForecast);
-      });
+      getCurrentLocationWeather();
     }
-  }, [setForecast, setWeather]);
+  }, [getCurrentLocationWeather]);
 
   return (
     <div className="App">
-      <CityWeather openDrawer={openDrawer} />
+      <CityWeather
+        openDrawer={openDrawer}
+        getCurrentLocationWeather={getCurrentLocationWeather}
+      />
       <SearchDrawer onClose={closeDrawer} isOpen={showSearchDrawer} />
       <main>
         <TemperatureConverter />

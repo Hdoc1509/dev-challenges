@@ -6,10 +6,6 @@ import { getWeatherIcon } from "../utils/icons";
 import type { Weather } from "../schemas/weather";
 import "./CityWeather.scss";
 
-type Props = {
-  openDrawer: () => void;
-};
-
 const WeatherDetails = ({ weather }: { weather: Weather }) => {
   const { location, current } = weather;
   const { temperature, condition } = current;
@@ -30,7 +26,15 @@ const WeatherDetails = ({ weather }: { weather: Weather }) => {
   );
 };
 
-export const CityWeather = ({ openDrawer }: Props) => {
+type Props = {
+  getCurrentLocationWeather: () => void;
+  openDrawer: () => void;
+};
+
+export const CityWeather = ({
+  openDrawer,
+  getCurrentLocationWeather,
+}: Props) => {
   const weather = useWeatherStore((s) => s.weather);
   const isLoading = weather == null;
 
@@ -42,7 +46,11 @@ export const CityWeather = ({ openDrawer }: Props) => {
           className="weather__search"
           onClick={openDrawer}
         />
-        <ButtonIcon icon="gps_fixed" className="weather__current" />
+        <ButtonIcon
+          icon="gps_fixed"
+          className="weather__current"
+          onClick={getCurrentLocationWeather}
+        />
       </header>
       <picture className="weather-image">
         <img
