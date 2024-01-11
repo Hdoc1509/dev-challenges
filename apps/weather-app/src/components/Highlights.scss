@@ -31,59 +31,6 @@
   }
 
   // TODO: Add classes for highlights__value, highlights__unit
-  .humidity {
-    padding-inline: 50px;
-    &__percentage {
-      font-size: 64px;
-      font-weight: 700;
-
-      &::after {
-        content: "%";
-        font-size: 36px;
-        font-weight: 400;
-      }
-    }
-  }
-  .humidity-slider {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    width: 100%;
-
-    color: var(--gray);
-    font-size: 12px;
-    font-weight: 700;
-
-    &__legend {
-      display: flex;
-      justify-content: space-between;
-    }
-
-    &__bar-wrapper {
-      position: relative;
-      height: 8px;
-      width: 100%;
-      border-radius: 80px;
-    }
-    &__bar {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-color: #fff;
-      border-radius: inherit;
-    }
-    &__value {
-      position: absolute;
-      display: block;
-      height: 100%;
-      background-color: #ffec65;
-      border-radius: inherit;
-    }
-    &__symbol {
-      margin-left: auto;
-    }
-  }
-
   .visibility {
     &__distance {
       font-size: 64px;
