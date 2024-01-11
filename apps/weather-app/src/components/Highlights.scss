@@ -31,36 +31,6 @@
   }
 
   // TODO: Add classes for highlights__value, highlights__unit
-  .wind {
-    &__speed {
-      font-size: 64px;
-      font-weight: 700;
-
-      &::after {
-        content: "mph";
-        font-size: 36px;
-        font-weight: 500;
-      }
-    }
-
-    &__direction {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-
-      font-size: 14px;
-      font-weight: 500;
-    }
-    &__direction-icon-wrapper {
-      display: flex;
-      align-items: center;
-
-      background-color: #6e707a;
-      padding: 8px;
-      border-radius: 50%;
-    }
-  }
-
   .humidity {
     padding-inline: 50px;
     &__percentage {

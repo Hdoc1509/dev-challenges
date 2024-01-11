@@ -79,4 +79,6 @@ export const WeatherResponseSchema = z.object({
   location: LocationSchema,
   current: CurrentSchema,
 });
+
 export type Weather = z.infer<typeof WeatherResponseSchema>;
+export type WeatherWind = Weather["current"]["wind"];

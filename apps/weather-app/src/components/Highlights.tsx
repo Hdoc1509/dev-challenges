@@ -1,20 +1,14 @@
-import { Icon } from "@hdoc/react-material-icons";
+import { useWeatherStore } from "../store/weather";
+import { Wind } from "./Wind";
 import "./Highlights.scss";
 
 export const Highlights = () => {
+  const weather = useWeatherStore((s) => s.weather);
+
   return (
     <article className="highlights">
       <h2>{`Today's Highlights`}</h2>
-      <section className="wind">
-        <h3>Wind Status</h3>
-        <p className="wind__speed">7</p>
-        <p className="wind__direction">
-          <span className="wind__direction-icon-wrapper">
-            <Icon name="near_me" />
-          </span>
-          WSW
-        </p>
-      </section>
+      <Wind wind={weather?.current.wind} />
       <section className="humidity">
         <h3>Humidity</h3>
         <p className="humidity__percentage">84</p>
