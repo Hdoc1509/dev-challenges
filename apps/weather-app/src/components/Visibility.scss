@@ -1,0 +1,12 @@
+.visibility {
+  &__distance {
+    font-size: 64px;
+    font-weight: 700;
+
+    &::after {
+      content: " miles";
+      font-size: 36px;
+      font-weight: 500;
+    }
+  }
+}

@@ -31,19 +31,6 @@
   }
 
   // TODO: Add classes for highlights__value, highlights__unit
-  .visibility {
-    &__distance {
-      font-size: 64px;
-      font-weight: 700;
-
-      &::after {
-        content: " miles";
-        font-size: 36px;
-        font-weight: 500;
-      }
-    }
-  }
-
   .air-pressure {
     &__pressure {
       font-size: 64px;
