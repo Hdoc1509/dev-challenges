@@ -29,18 +29,5 @@
       font-weight: 500;
     }
   }
-
   // TODO: Add classes for highlights__value, highlights__unit
-  .air-pressure {
-    &__pressure {
-      font-size: 64px;
-      font-weight: 700;
-
-      &::after {
-        content: " mb";
-        font-size: 36px;
-        font-weight: 500;
-      }
-    }
-  }
 }

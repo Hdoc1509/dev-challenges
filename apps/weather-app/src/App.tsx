@@ -37,7 +37,6 @@ function App() {
     }
   }, [setForecast, setWeather]);
 
-  // TODO: Use weather from store
   return (
     <div className="App">
       <CityWeather openDrawer={openDrawer} />
