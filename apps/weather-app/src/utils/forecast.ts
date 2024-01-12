@@ -3,7 +3,10 @@ import { FORECAST_CODES } from "../consts";
 import type { ForecastResponse } from "../schemas/forecast";
 import type { Forecast } from "../store/weather";
 
-const celsiusToFahrenheit = (celsius: number) => (celsius * 9) / 5 + 32;
+const celsiusToFahrenheit = (celsius: number) => {
+  const result = (celsius * 9) / 5 + 32;
+  return Number(result.toFixed(2));
+};
 
 export const parseForecast = (data: ForecastResponse): Forecast[] => {
   const { daily } = data;
