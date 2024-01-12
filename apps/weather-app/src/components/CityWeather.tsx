@@ -7,14 +7,17 @@ import type { Weather } from "../schemas/weather";
 import "./CityWeather.scss";
 
 const WeatherDetails = ({ weather }: { weather: Weather }) => {
+  const temperatureUnit = useWeatherStore((s) => s.temperatureUnit);
   const { location, current } = weather;
   const { temperature, condition } = current;
 
   return (
     <>
       <p className="weather__degree">
-        {temperature.celsius}
-        <span className="weather__degree-unit">℃</span>
+        {temperature[temperatureUnit]}
+        <span className="weather__degree-unit">
+          °{temperatureUnit[0].toUpperCase()}
+        </span>
       </p>
       <p className="weather__description">{condition.name}</p>
       <p className="weather__date">Today • {getCurrentDate()}</p>

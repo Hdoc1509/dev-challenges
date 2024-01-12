@@ -31,7 +31,7 @@
 - [x] User story: I can see a visibility indicator
 - [x] User story: I can see the air pressure number
 - [x] User story(optional): I can request my current location weather
-- [ ] User story(optional): I can convert temperature in Celcius to Fahrenheit and vice versa
+- [x] User story(optional): I can convert temperature in Celcius to Fahrenheit and vice versa
 
 ### Built With
 

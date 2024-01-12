@@ -4,8 +4,8 @@ import type { Weather } from "../schemas/weather";
 export type Forecast = {
   day: string;
   temperature: {
-    min: number;
-    max: number;
+    min: Weather["current"]["temperature"];
+    max: Weather["current"]["temperature"];
   };
   condition: {
     code: number;
