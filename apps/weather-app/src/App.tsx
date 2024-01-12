@@ -15,6 +15,7 @@ let didInit = false;
 
 function App() {
   const [showSearchDrawer, setShowSearchDrawer] = useState(false);
+  const temperatureUnit = useWeatherStore((s) => s.temperatureUnit);
   const setWeather = useWeatherStore((s) => s.setWeather);
   const setForecast = useWeatherStore((s) => s.setForecast);
 
@@ -49,7 +50,7 @@ function App() {
       />
       <SearchDrawer onClose={closeDrawer} isOpen={showSearchDrawer} />
       <main>
-        <TemperatureConverter />
+        <TemperatureConverter unit={temperatureUnit} />
         <Forecast />
         <Highlights />
         <Footer />
