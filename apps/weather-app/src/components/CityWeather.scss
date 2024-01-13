@@ -33,39 +33,6 @@
     --button-radius: 50%;
   }
 
-  &__degree {
-    font-size: 144px;
-    font-weight: 500;
-
-    @include mixins.skeleton {
-      width: 300px;
-      border-radius: 10px;
-    }
-  }
-  &__degree-unit {
-    color: var(--gray);
-    font-size: 48px;
-  }
-
-  &__description {
-    color: var(--gray);
-    font-size: 36px;
-    font-weight: 600;
-
-    @include mixins.skeleton {
-      width: 180px;
-    }
-  }
-
-  &__date {
-    color: var(--gray-dark);
-    font-size: 18px;
-    font-weight: 500;
-
-    @include mixins.skeleton {
-      width: 240px;
-    }
-  }
 
   .weather-image {
     position: relative;
