@@ -1,3 +1,4 @@
+import Skeleton from "react-loading-skeleton";
 import { Icon } from "@hdoc/react-material-icons";
 import type { CSSProperties } from "react";
 import type { WeatherWind } from "../schemas/weather";
@@ -8,17 +9,24 @@ interface CustomCSS extends CSSProperties {
 }
 
 export const Wind = ({ wind }: { wind?: WeatherWind }) => {
-  const isLoading = wind == null;
-
   return (
     <section className="wind">
       <h3>Wind Status</h3>
-      {isLoading ? (
-        <div className="wind__loading">Loading...</div>
-      ) : (
-        <>
-          <p className="wind__speed">{wind.speed}</p>
-          <p className="wind__direction">
+      <p className="wind__speed">
+        {wind == null ? (
+          <Skeleton />
+        ) : (
+          <>
+            {wind.speed}
+            <span className="wind__speed-unit">mph</span>
+          </>
+        )}
+      </p>
+      <p className="wind__direction">
+        {wind == null ? (
+          <Skeleton />
+        ) : (
+          <>
             <span
               className="wind__direction-icon-wrapper"
               style={
@@ -30,9 +38,9 @@ export const Wind = ({ wind }: { wind?: WeatherWind }) => {
               <Icon name="near_me" />
             </span>
             {wind.direction}
-          </p>
-        </>
-      )}
+          </>
+        )}
+      </p>
     </section>
   );
 };

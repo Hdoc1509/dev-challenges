@@ -1,13 +1,17 @@
+@use "../scss/mixins";
+
 .wind {
   &__speed {
     font-size: 64px;
     font-weight: 700;
 
-    &::after {
-      content: "mph";
-      font-size: 36px;
-      font-weight: 500;
+    @include mixins.skeleton {
+      width: 200px;
     }
+  }
+  &__speed-unit {
+    font-size: 36px;
+    font-weight: 500;
   }
 
   &__direction {
@@ -17,6 +21,10 @@
 
     font-size: 14px;
     font-weight: 500;
+
+    @include mixins.skeleton {
+      width: 60px;
+    }
   }
   &__direction-icon-wrapper {
     display: flex;
