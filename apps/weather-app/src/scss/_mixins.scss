@@ -1,0 +1,5 @@
+@mixin skeleton {
+  .react-loading-skeleton {
+    @content;
+  }
+}

@@ -1,3 +1,5 @@
+@use "../scss/mixins";
+
 .weather {
   display: grid;
   grid-template-rows: auto 2fr 2fr 1fr;
@@ -34,6 +36,11 @@
   &__degree {
     font-size: 144px;
     font-weight: 500;
+
+    @include mixins.skeleton {
+      width: 300px;
+      border-radius: 10px;
+    }
   }
   &__degree-unit {
     color: var(--gray);
@@ -44,12 +51,20 @@
     color: var(--gray);
     font-size: 36px;
     font-weight: 600;
+
+    @include mixins.skeleton {
+      width: 180px;
+    }
   }
 
   &__date {
     color: var(--gray-dark);
     font-size: 18px;
     font-weight: 500;
+
+    @include mixins.skeleton {
+      width: 240px;
+    }
   }
 
   .weather-image {
@@ -74,6 +89,11 @@
       display: grid;
       inset: 0;
       place-items: center;
+
+      @include mixins.skeleton {
+        aspect-ratio: 1 / 1;
+        width: 180px;
+      }
     }
   }
 
@@ -88,5 +108,9 @@
     color: var(--gray-dark);
     font-weight: 600;
     font-size: 18px;
+
+    @include mixins.skeleton {
+      width: 100px;
+    }
   }
 }

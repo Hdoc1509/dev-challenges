@@ -1,3 +1,4 @@
+import Skeleton from "react-loading-skeleton";
 import { Button, ButtonIcon } from "@hdoc/react-button";
 import { Icon } from "@hdoc/react-material-icons";
 import { useWeatherStore } from "../store/weather";
@@ -6,24 +7,40 @@ import { getWeatherIcon } from "../utils/icons";
 import type { Weather } from "../schemas/weather";
 import "./CityWeather.scss";
 
-const WeatherDetails = ({ weather }: { weather: Weather }) => {
+const WeatherDetails = ({ weather }: { weather: Weather | null }) => {
   const temperatureUnit = useWeatherStore((s) => s.temperatureUnit);
-  const { location, current } = weather;
-  const { temperature, condition } = current;
+  const current = weather?.current;
+  const location = weather?.location;
 
   return (
     <>
       <p className="weather__degree">
-        {temperature[temperatureUnit]}
-        <span className="weather__degree-unit">
-          °{temperatureUnit[0].toUpperCase()}
-        </span>
+        {current == null ? (
+          <Skeleton />
+        ) : (
+          <>
+            {current.temperature[temperatureUnit]}
+            <span className="weather__degree-unit">
+              °{temperatureUnit[0].toUpperCase()}
+            </span>
+          </>
+        )}
       </p>
-      <p className="weather__description">{condition.name}</p>
-      <p className="weather__date">Today • {getCurrentDate()}</p>
+      <p className="weather__description">
+        {current?.condition.name ?? <Skeleton />}
+      </p>
+      <p className="weather__date">
+        {current == null ? <Skeleton /> : `Today • ${getCurrentDate()}`}
+      </p>
       <p className="weather__location">
-        <Icon name="location_on" />
-        {location.name}, {location.country}
+        {location == null ? (
+          <Skeleton />
+        ) : (
+          <>
+            <Icon name="location_on" />
+            {location.name}, {location.country}
+          </>
+        )}
       </p>
     </>
   );
@@ -62,7 +79,9 @@ export const CityWeather = ({
           className="weather-image__background"
         />
         {isLoading ? (
-          <div className="weather-image__loading">Loading...</div>
+          <div className="weather-image__loading">
+            <Skeleton circle />
+          </div>
         ) : (
           <img
             src={`/weather/${getWeatherIcon(
@@ -73,11 +92,7 @@ export const CityWeather = ({
           />
         )}
       </picture>
-      {isLoading ? (
-        <p className="weather__loading">Loading weather data...</p>
-      ) : (
-        <WeatherDetails weather={weather} />
-      )}
+      <WeatherDetails weather={weather} />
     </aside>
   );
 };

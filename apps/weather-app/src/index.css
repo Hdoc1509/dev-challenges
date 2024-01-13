@@ -33,3 +33,8 @@ body {
 .no-scroll {
   overflow: hidden;
 }
+
+.react-loading-skeleton {
+  --base-color: var(--gray) !important;
+  --highlight-color: var(--gray-light) !important;
+}
