@@ -1,3 +1,5 @@
+@use "../scss/mixins";
+
 .humidity {
   padding-inline: 50px;
 
@@ -5,11 +7,13 @@
     font-size: 64px;
     font-weight: 700;
 
-    &::after {
-      content: "%";
-      font-size: 36px;
-      font-weight: 400;
+    @include mixins.skeleton {
+      width: 100px;
     }
+  }
+  &__percentage-symbol {
+    font-size: 36px;
+    font-weight: 400;
   }
 }
 .humidity-slider {
