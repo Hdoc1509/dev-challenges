@@ -1,37 +1,60 @@
-import { useWeatherStore } from "../store/weather";
+import Skeleton from "react-loading-skeleton";
+import {
+  useWeatherStore,
+  type Forecast as ForecastType,
+} from "../store/weather";
 import { getWeatherIcon } from "../utils/icons";
 import "./Forecast.scss";
 
-export const Forecast = () => {
-  const forecast = useWeatherStore((s) => s.forecast);
+const ForecastDay = ({ day }: { day?: ForecastType }) => {
   const temperatureUnit = useWeatherStore((s) => s.temperatureUnit);
-
-  if (forecast == null) {
-    return <div className="forecast__loading">Loading forecast...</div>;
-  }
-
   const temperatureUnitLetter = temperatureUnit[0].toUpperCase();
+  const condition = day?.condition;
+  const temperature = day?.temperature;
 
   return (
-    <article className="forecast">
-      {forecast.map(({ day, condition, temperature }) => (
-        <article key={day} className="forecast-item">
-          <h2 className="forecast-item__day">{day}</h2>
+    <article className="forecast-item">
+      <h2 className="forecast-item__day">{day?.day ?? <Skeleton />}</h2>
+      <picture className="forecast-item__icon">
+        {condition == null ? (
+          <Skeleton />
+        ) : (
           <img
             src={`/weather/${getWeatherIcon(condition.code)}.png`}
             alt={condition.name}
-            className="forecast-item__icon"
           />
-          <p className="forecast-item__degrees">
-            <span>
-              {temperature.max[temperatureUnit]}°{temperatureUnitLetter}
-            </span>
-            <span>
-              {temperature.min[temperatureUnit]}°{temperatureUnitLetter}
-            </span>
-          </p>
-        </article>
-      ))}
+        )}
+      </picture>
+      <p className="forecast-item__degrees">
+        <span>
+          {temperature == null ? (
+            <Skeleton />
+          ) : (
+            `${temperature.max[temperatureUnit]}°${temperatureUnitLetter}`
+          )}
+        </span>
+        <span>
+          {temperature == null ? (
+            <Skeleton />
+          ) : (
+            `${temperature.min[temperatureUnit]}°${temperatureUnitLetter}`
+          )}
+        </span>
+      </p>
+    </article>
+  );
+};
+
+export const Forecast = () => {
+  const forecast = useWeatherStore((s) => s.forecast);
+
+  return (
+    <article className="forecast">
+      <ForecastDay day={forecast?.[0]} />
+      <ForecastDay day={forecast?.[1]} />
+      <ForecastDay day={forecast?.[2]} />
+      <ForecastDay day={forecast?.[3]} />
+      <ForecastDay day={forecast?.[4]} />
     </article>
   );
 };

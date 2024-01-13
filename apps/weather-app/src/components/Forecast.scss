@@ -1,3 +1,5 @@
+@use "../scss/mixins";
+
 .forecast {
   display: grid;
   grid-template-columns: var(--forecast-grid-columns, repeat(5, 1fr));
@@ -18,11 +20,24 @@
   &__day {
     font-size: 16px;
     font-weight: 500;
+
+    @include mixins.skeleton {
+      width: 90px;
+    }
   }
 
   &__icon {
-    position: relative;
-    width: 45%;
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 45%;
+    }
+
+    @include mixins.skeleton {
+      width: 90px;
+      height: 72px;
+    }
   }
 
   &__degrees {
@@ -37,6 +52,10 @@
 
     :last-child {
       color: var(--gray);
+    }
+
+    @include mixins.skeleton {
+      width: 48px;
     }
   }
 }
