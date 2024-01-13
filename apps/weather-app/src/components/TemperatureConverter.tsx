@@ -1,5 +1,5 @@
 import { clsx } from "clsx";
-import { useWeatherStore, type TemperatureUnit } from "../store/weather";
+import { useWeatherStore } from "../store/weather";
 import { Button } from "@hdoc/react-button";
 import "./TemperatureConverter.scss";
 
@@ -8,7 +8,8 @@ const buttonClasses = {
   active: "temperature-converter__button--active",
 };
 
-export const TemperatureConverter = ({ unit }: { unit: TemperatureUnit }) => {
+export const TemperatureConverter = () => {
+  const unit = useWeatherStore((s) => s.temperatureUnit);
   const setUnit = useWeatherStore((s) => s.setTemperatureUnit);
 
   return (
