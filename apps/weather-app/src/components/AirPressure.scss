@@ -1,12 +1,16 @@
+@use "../scss/mixins";
+
 .air-pressure {
   &__pressure {
     font-size: 64px;
     font-weight: 700;
 
-    &::after {
-      content: " mb";
-      font-size: 36px;
-      font-weight: 500;
+    @include mixins.skeleton {
+      width: 200px;
     }
+  }
+  &__pressure-unit {
+    font-size: 36px;
+    font-weight: 500;
   }
 }
