@@ -3,17 +3,10 @@
 .humidity {
   padding-inline: 50px;
 
-  &__percentage {
-    font-size: 64px;
-    font-weight: 700;
-
+  .highlights__value {
     @include mixins.skeleton {
       width: 100px;
     }
-  }
-  &__percentage-symbol {
-    font-size: 36px;
-    font-weight: 400;
   }
 }
 .humidity-slider {

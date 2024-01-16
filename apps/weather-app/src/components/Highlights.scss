@@ -29,5 +29,13 @@
       font-weight: 500;
     }
   }
-  // TODO: Add classes for highlights__value, highlights__unit
+
+  &__value {
+    font-size: 64px;
+    font-weight: 700;
+  }
+  &__unit {
+    font-size: 36px;
+    font-weight: 500;
+  }
 }

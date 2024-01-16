@@ -1,5 +1,6 @@
 import Skeleton from "react-loading-skeleton";
 import { Icon } from "@hdoc/react-material-icons";
+import { Highlights } from "./Highlights";
 import type { CSSProperties } from "react";
 import type { WeatherWind } from "../schemas/weather";
 import "./Wind.scss";
@@ -12,16 +13,7 @@ export const Wind = ({ wind }: { wind?: WeatherWind }) => {
   return (
     <section className="wind">
       <h3>Wind Status</h3>
-      <p className="wind__speed">
-        {wind == null ? (
-          <Skeleton />
-        ) : (
-          <>
-            {wind.speed}
-            <span className="wind__speed-unit">mph</span>
-          </>
-        )}
-      </p>
+      <Highlights.Value value={wind?.speed} unit="mph" />
       <p className="wind__direction">
         {wind == null ? (
           <Skeleton />

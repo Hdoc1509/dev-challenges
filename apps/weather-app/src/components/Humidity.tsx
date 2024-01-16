@@ -1,20 +1,11 @@
-import Skeleton from "react-loading-skeleton";
+import { Highlights } from "./Highlights";
 import "./Humidity.scss";
 
 export const Humidity = ({ humidity }: { humidity?: number }) => {
   return (
     <section className="humidity">
       <h3>Humidity</h3>
-      <p className="humidity__percentage">
-        {humidity == null ? (
-          <Skeleton />
-        ) : (
-          <>
-            {humidity}
-            <span className="humidity__percentage-symbol">%</span>
-          </>
-        )}
-      </p>
+      <Highlights.Value value={humidity} unit="%" />
       <div className="humidity-slider">
         <div className="humidity-slider__legend">
           <span>0</span>

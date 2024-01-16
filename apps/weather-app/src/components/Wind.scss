@@ -1,10 +1,7 @@
 @use "../scss/mixins";
 
 .wind {
-  &__speed {
-    font-size: 64px;
-    font-weight: 700;
-
+  .highlights__value {
     @include mixins.skeleton {
       width: 200px;
     }
