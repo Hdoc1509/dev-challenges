@@ -25,6 +25,7 @@ type Action = {
   setTemperatureUnit: (temperatureUnit: State["temperatureUnit"]) => void;
   setWeather: (weather: Weather) => void;
   setForecast: (forecast: Forecast[]) => void;
+  clearData: () => void;
 };
 
 export const useWeatherStore = create<State & Action>()((set) => ({
@@ -35,4 +36,5 @@ export const useWeatherStore = create<State & Action>()((set) => ({
     set({ temperatureUnit }),
   setWeather: (weather: Weather) => set({ weather }),
   setForecast: (forecast: Forecast[]) => set({ forecast }),
+  clearData: () => set({ weather: null, forecast: null }),
 }));

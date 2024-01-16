@@ -17,6 +17,7 @@ function App() {
   const [showSearchDrawer, setShowSearchDrawer] = useState(false);
   const setWeather = useWeatherStore((s) => s.setWeather);
   const setForecast = useWeatherStore((s) => s.setForecast);
+  const clearData = useWeatherStore((s) => s.clearData);
 
   const openDrawer = () => {
     setShowSearchDrawer(true);
@@ -28,11 +29,12 @@ function App() {
   };
 
   const getCurrentLocationWeather = useCallback(() => {
+    clearData();
     void getCurrentPosition().then((coords) => {
       void getWeather(coords).then(setWeather);
       void getForecast(coords).then(setForecast);
     });
-  }, [setForecast, setWeather]);
+  }, [setForecast, setWeather, clearData]);
 
   useEffect(() => {
     if (!didInit) {

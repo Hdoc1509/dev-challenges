@@ -21,6 +21,7 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const setWeather = useWeatherStore((s) => s.setWeather);
   const setForecast = useWeatherStore((s) => s.setForecast);
+  const clearData = useWeatherStore((s) => s.clearData);
 
   const className = clsx("search-drawer", {
     "search-drawer--open": isOpen,
@@ -40,9 +41,10 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
   const handleSelect = (option: SearchCityResponse[number]) => {
     const coords = { latitude: option.lat, longitude: option.lon };
 
+    clearData();
+    onClose();
     void getWeather(coords).then((location) => {
       setWeather(location);
-      onClose();
       setResults([]);
       if (inputRef.current) inputRef.current.value = "";
       lastSearch.current = "";
