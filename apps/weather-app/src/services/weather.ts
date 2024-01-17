@@ -9,6 +9,8 @@ export const getWeather = async (
 
   const params = new URLSearchParams({
     q: `${latitude},${longitude}`,
+    // WARNING: You shold not build a production app with this API key.
+    //   This is only for learning purposes.
     key: WEATHER_API.KEY,
   });
 
