@@ -1,6 +1,7 @@
 .temperature-converter {
   display: flex;
   gap: 12px;
+  margin-left: auto;
 
   &__button {
     aspect-ratio: 1 / 1;
