@@ -68,4 +68,10 @@
     --button-radius: 0;
     --button-font-weight: 600;
   }
+
+  .loader-ring {
+    margin-inline: auto;
+    --loader-color: #e7e7eb;
+    --loader-speed: 0.75s;
+  }
 }

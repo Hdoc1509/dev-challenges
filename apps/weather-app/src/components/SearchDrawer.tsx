@@ -9,6 +9,7 @@ import { SearchResults } from "./SearchResults";
 import type { SearchCityResponse } from "../schemas/geolocation";
 import "./SearchDrawer.scss";
 import { getForecast } from "../services/forecast";
+import { LoaderRing } from "./LoaderRing";
 
 type Props = {
   isOpen?: boolean;
@@ -17,6 +18,7 @@ type Props = {
 
 export const SearchDrawer = ({ isOpen, onClose }: Props) => {
   const [results, setResults] = useState<SearchCityResponse>([]);
+  const [isLoading, setIsLoading] = useState(false);
   const lastSearch = useRef("");
   const inputRef = useRef<HTMLInputElement>(null);
   const setWeather = useWeatherStore((s) => s.setWeather);
@@ -35,7 +37,10 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
     if (search === lastSearch.current) return;
 
     lastSearch.current = search;
-    void searchCity(search).then((locations) => setResults(locations));
+    setIsLoading(true);
+    void searchCity(search)
+      .then((locations) => setResults(locations))
+      .then(() => setIsLoading(false));
   };
 
   const handleSelect = (option: SearchCityResponse[number]) => {
@@ -71,8 +76,11 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
         </div>
         <Button text="Search" color="primary" />
       </form>
-      {/* TODO: Add loader spinner */}
-      <SearchResults results={results} handleSelect={handleSelect} />
+      {isLoading ? (
+        <LoaderRing />
+      ) : (
+        <SearchResults results={results} handleSelect={handleSelect} />
+      )}
     </div>
   );
 };
