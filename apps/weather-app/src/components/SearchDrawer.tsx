@@ -65,7 +65,7 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
         <Icon name="close" />
       </div>
       <form className="search-drawer__form" onSubmit={handleSubmit}>
-        <div className="input-wrapper">
+        <label className="input-wrapper">
           <Icon name="search" />
           <input
             name="location"
@@ -73,7 +73,7 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
             ref={inputRef}
             required
           />
-        </div>
+        </label>
         <Button text="Search" color="primary" />
       </form>
       {isLoading ? (
