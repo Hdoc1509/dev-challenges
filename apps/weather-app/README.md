@@ -14,9 +14,7 @@
 
 ## Overview
 
-<!-- TODO: Update screenshot once project has completed -->
-
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![screenshot](https://github.com/Hdoc1509/dev-challenges/assets/72316111/fdadff8d-c42a-41ac-ad47-c1d9cb6efdbe)
 
 **Challenge**: Create a weather app using an API. Use Front-end libraries like React or Vue. Don’t look at the existing solution. Fulfill user stories below:
 
@@ -41,13 +39,23 @@
 - [Sass](https://sass-lang.com/)
 - [clsx](https://github.com/lukeed/clsx#readme)
 - [BEM](https://getbem.com/)
+- [zod](https://zod.dev)
+- [zustand](https://docs.pmnd.rs/zustand/getting-started/introduction)
 - [@hdoc/react-button](https://www.npmjs.com/package/@hdoc/react-button)
 - [@hdoc/react-material-icons](https://www.npmjs.com/package/@hdoc/react-material-icons)
-- [@hdoc/react-toggle-theme](https://www.npmjs.com/package/@hdoc/react-toggle-theme)
+- [react-loading-skeleton](https://www.npmjs.com/package/react-loading-skeleton)
+
+### Extra Features
+
+- Custom loading spinner for Search Drawer
+- Skeleton loaders
+- More icons
 
 ### What I learned
 
-WIP
+- Retrieve current location with Geolocation API
+- Geolocation API can only be used in a secure context (HTTPS)
+- Compound components for a better code structure
 
 ## How To Use
 
