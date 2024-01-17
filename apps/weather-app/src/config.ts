@@ -1,7 +1,7 @@
 // NOTE: See docs at https://www.weatherapi.com/docs/
 export const WEATHER_API = {
   KEY: import.meta.env.VITE_WEATHER_API_KEY,
-  URL: "http://api.weatherapi.com/v1",
+  URL: "https://api.weatherapi.com/v1",
 };
 
 // NOTE: See docs at https://open-meteo.com/en/docs
