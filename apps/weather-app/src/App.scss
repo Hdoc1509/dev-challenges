@@ -26,10 +26,16 @@
 
 .App > main {
   position: relative;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 36px;
 
   padding: var(--main-padding, 150px);
-  padding-bottom: 0;
+  padding-block: 42px;
   overflow: hidden auto;
+
+  & > footer {
+    margin: 0;
+    margin-top: auto;
+  }
 }

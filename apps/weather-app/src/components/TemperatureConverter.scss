@@ -1,8 +1,4 @@
 .temperature-converter {
-  position: absolute;
-  top: var(--converter-top-offset, 42px);
-  right: var(--converter-right-offset, 150px);
-
   display: flex;
   gap: 12px;
 
