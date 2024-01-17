@@ -18,7 +18,7 @@
   padding: 18px 15px;
 
   &__day {
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 500;
 
     @include mixins.skeleton {
@@ -44,7 +44,7 @@
     display: flex;
     gap: 16px;
 
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 500;
 
     :last-child {

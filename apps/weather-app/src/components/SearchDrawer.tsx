@@ -71,6 +71,7 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
         </div>
         <Button text="Search" color="primary" />
       </form>
+      {/* TODO: Add loader spinner */}
       <SearchResults results={results} handleSelect={handleSelect} />
     </div>
   );

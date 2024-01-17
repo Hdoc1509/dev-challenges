@@ -27,7 +27,7 @@
   &__search {
     --button-radius: 0;
     --button-font-family: "Raleway", sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
   }
   &__current {
     --button-radius: 50%;
@@ -74,7 +74,7 @@
 
     color: var(--gray-dark);
     font-weight: 600;
-    font-size: 18px;
+    font-size: 1.125rem;
 
     @include mixins.skeleton {
       width: 100px;

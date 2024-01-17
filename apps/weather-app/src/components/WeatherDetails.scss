@@ -2,7 +2,7 @@
 
 .weather {
   &__degree {
-    font-size: clamp(100px, 10vw, 144px);
+    font-size: clamp(6.25rem, 10vw, 9rem);
     font-weight: 500;
 
     @include mixins.skeleton {
@@ -12,12 +12,12 @@
   }
   &__degree-unit {
     color: var(--gray);
-    font-size: 48px;
+    font-size: 3rem;
   }
 
   &__description {
     color: var(--gray);
-    font-size: clamp(24px, 3vw, 36px);
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
     font-weight: 600;
 
     @include mixins.skeleton {
@@ -27,7 +27,7 @@
 
   &__date {
     color: var(--gray-dark);
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 500;
 
     @include mixins.skeleton {

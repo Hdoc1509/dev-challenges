@@ -7,7 +7,7 @@
 
   h2 {
     grid-column: span 2;
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 700;
 
     @media (max-width: 767px) {
@@ -25,17 +25,17 @@
     padding-block: 22px;
 
     h3 {
-      font-size: 16px;
+      font-size: 1rem;
       font-weight: 500;
     }
   }
 
   &__value {
-    font-size: 64px;
+    font-size: 4rem;
     font-weight: 700;
   }
   &__unit {
-    font-size: 36px;
+    font-size: 2.25rem;
     font-weight: 500;
   }
 }
