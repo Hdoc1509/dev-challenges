@@ -2,7 +2,7 @@
 
 .weather {
   &__degree {
-    font-size: 144px;
+    font-size: clamp(100px, 10vw, 144px);
     font-weight: 500;
 
     @include mixins.skeleton {
@@ -17,7 +17,7 @@
 
   &__description {
     color: var(--gray);
-    font-size: 36px;
+    font-size: clamp(24px, 3vw, 36px);
     font-weight: 600;
 
     @include mixins.skeleton {
