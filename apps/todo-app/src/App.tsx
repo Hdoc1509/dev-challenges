@@ -15,7 +15,7 @@ function App() {
     setTodos([
       ...todos,
       {
-        id: Math.max(...todos.map((t) => t.id)) + 1,
+        id: crypto.getRandomValues(new Uint32Array(1))[0],
         title,
         completed: false,
       },
