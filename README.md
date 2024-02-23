@@ -19,6 +19,14 @@ There are some [packages](#packages) I created while completing them.
 
 ## Packages
 
+- [@hdoc-react/button](https://www.npmjs.com/package/@hdoc-react/button)
+- [@hdoc-react/input](https://www.npmjs.com/package/@hdoc-react/input)
+- [@hdoc-react/material-icons](https://www.npmjs.com/package/@hdoc-react/material-icons)
+- [@hdoc-react/spinner](https://www.npmjs.com/package/@hdoc-react/spinner)
+- [@hdoc-react/toggle-theme](https://www.npmjs.com/package/@hdoc-react/toggle-theme)
+
+### Deprecated
+
 - [@hdoc/react-button](https://www.npmjs.com/package/@hdoc/react-button)
 - [@hdoc/react-input](https://www.npmjs.com/package/@hdoc/react-input)
 - [@hdoc/react-material-icons](https://www.npmjs.com/package/@hdoc/react-material-icons)
