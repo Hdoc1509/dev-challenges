@@ -61,7 +61,7 @@ git clone https://github.com/Hdoc1509/dev-challenges
 # install all workspace dependencies
 cd dev-challenges && pnpm install
 
-# Run <%= name %> in dev-mode
+# Run github-jobs in dev-mode
 cd apps/github-jobs
 pnpm run dev --open
 ```
