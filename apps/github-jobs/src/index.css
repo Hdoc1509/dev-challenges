@@ -1,0 +1,22 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+[data-theme="dark"] {
+  --color-bg: #242424;
+  --color-text: #fff;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background-color: var(--color-bg, #fff);
+
+  color: var(--color-text, #000);
+}

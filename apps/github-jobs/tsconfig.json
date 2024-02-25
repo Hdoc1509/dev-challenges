@@ -1,3 +1,5 @@
 {
-  "extends": "astro/tsconfigs/strict"
+  "extends": "../../tsconfig.json",
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

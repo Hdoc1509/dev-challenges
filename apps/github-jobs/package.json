@@ -1,24 +1,36 @@
 {
   "name": "github-jobs",
+  "private": true,
+  "version": "0.0.0",
   "type": "module",
-  "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.5",
-    "astro": "^4.4.3",
-    "typescript": "^5.3.3"
+    "@fontsource-variable/montserrat": "5.0.17",
+    "@fontsource/poppins": "5.0.8",
+    "@fontsource/roboto": "5.0.8",
+    "@hdoc-react/button": "2.3.0",
+    "@hdoc-react/input": "0.7.0",
+    "@hdoc-react/material-icons": "2.1.0",
+    "@hdoc-react/toggle-theme": "2.1.5",
+    "@internal/components": "workspace:*",
+    "@material-design-icons/font": "^0.14.10",
+    "clsx": "2.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@typescript-eslint/parser": "^6.0.0",
-    "eslint": "^8.45.0",
-    "eslint-plugin-astro": "^0.31.4",
-    "prettier": "^3.0.1",
-    "prettier-plugin-astro": "^0.13.0"
+    "@vitejs/plugin-react": "^4.2.0",
+    "sass": "1.65.0",
+    "typescript": "5.3.2",
+    "vite": "5.0.2"
+  },
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=8"
   }
 }

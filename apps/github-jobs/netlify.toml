@@ -1,4 +1,4 @@
 [build]
-  command = "pnpm --filter github-jobs build"
-  publish = "apps/github-jobs/dist"
-  ignore = "bash ./scripts/docs-check.sh apps/github-jobs"
+  command = 'pnpm --filter github-jobs build'
+  publish = 'apps/github-jobs/dist'
+  ignore = 'bash ./scripts/docs-check.sh apps/github-jobs'

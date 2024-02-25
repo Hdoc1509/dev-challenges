@@ -1,0 +1,47 @@
+.radio-group {
+  display: grid;
+  gap: 8px;
+}
+
+.radio-group label {
+  display: inline-flex;
+  gap: 4px;
+
+  font-size: 1rem;
+}
+
+.radio-wrapper {
+  display: grid;
+  place-items: center;
+
+  font-size: 1rem;
+
+  input {
+    grid-area: 1 / 1;
+    opacity: 0;
+
+    &:checked + .radio {
+      --__icon-display: none;
+      --__icon-checked-display: inline;
+    }
+  }
+
+  .radio {
+    grid-area: 1 / 1;
+
+    > :first-child {
+      display: var(--__icon-display, inline);
+    }
+    > :last-child {
+      display: var(--__icon-checked-display, none);
+    }
+
+    > svg {
+      font-size: 1.25em;
+
+      fill: currentColor;
+      width: 1em;
+      height: 1em;
+    }
+  }
+}
