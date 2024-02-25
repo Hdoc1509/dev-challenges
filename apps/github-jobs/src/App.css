@@ -1,13 +1,18 @@
 #root {
   position: relative;
-  /* display: grid; */
-  /* grid-template-rows: auto 1fr auto; */
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "search-form search-form"
+    "search-options main"
+    "footer footer";
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-columns: 1fr 2fr;
+  gap: 16px;
 
   min-height: 100vh;
   min-height: 100dvh;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding-inline: 2rem;
+  padding: 2rem 7.5rem;
 }
 
 .theme-button {
@@ -19,7 +24,17 @@
 }
 
 .main-header {
+  grid-area: header;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+h1 {
+  margin: 0;
+}
+
+footer {
+  grid-area: footer;
+  margin: 0;
 }

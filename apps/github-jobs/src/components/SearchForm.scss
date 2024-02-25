@@ -1,0 +1,42 @@
+.search-form-wrapper {
+  grid-area: search-form;
+
+  background-image: url("/background.png");
+  background-position: center;
+  padding-block: 42px;
+  border-radius: 8px;
+}
+
+#search-form {
+  display: flex;
+  gap: 4px;
+
+  background: #fff;
+  margin-inline: auto;
+  border-radius: 4px;
+  width: 75%;
+
+  --button-padding: 14px 48px;
+  --button-radius: 4px;
+
+  --input-gap: 8px;
+  --input-padding: 4px 4px 4px 16px;
+  --input-radius: 4px;
+  --input-border-color: transparent;
+  --input-border-color-hover: transparent;
+  --input-border-color-focus: var(--primary);
+
+  --icon-color: var(--text-secondary);
+
+  .input-wrapper {
+    align-items: center;
+
+    input {
+      width: 100%;
+    }
+
+    &:focus-within {
+      --icon-color: var(--primary);
+    }
+  }
+}

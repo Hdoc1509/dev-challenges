@@ -18,10 +18,12 @@ export const SearchOptions = () => {
         placeholder="City, state, zip code or country"
         form="search-form"
         name="location"
+        fullWidth
       />
       <RadioGroup
         name="city"
         options={["London", "Amsterdam", "New York", "Berlin"]}
+        defaultValue="New York"
       />
     </aside>
   );
