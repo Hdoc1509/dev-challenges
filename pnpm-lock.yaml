@@ -149,11 +149,11 @@ importers:
         specifier: 5.0.8
         version: 5.0.8
       '@hdoc-react/button':
-        specifier: 2.3.0
-        version: 2.3.0(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
+        specifier: 2.3.1
+        version: 2.3.1(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
       '@hdoc-react/input':
-        specifier: 0.7.0
-        version: 0.7.0(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
+        specifier: 0.7.1
+        version: 0.7.1(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
       '@hdoc-react/material-icons':
         specifier: 2.1.0
         version: 2.1.0(@material-design-icons/font@0.14.13)(react-dom@18.2.0)(react@18.2.0)
@@ -899,13 +899,13 @@ packages:
     resolution: {integrity: sha512-XxPltXs5R31D6UZeLIV1td3wTXU3jzd3f2DLsXI8tytMGBkIsGcc9sIyiupRtA8y73HAhuSCeweOoBqf6DbWCA==}
     dev: false
 
-  /@hdoc-react/button@2.3.0(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2):
-    resolution: {integrity: sha512-odPWR0B5cItccDt2kfmAIzeKKEgnSzv7bMZEas4pZ++2E9ghdBYTYziBtwputmcuzd96UvbhLcj9fgfPvpJlug==}
+  /@hdoc-react/button@2.3.1(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2):
+    resolution: {integrity: sha512-U5j29OBstNOnZJG5fTl0aYoAoBJkes3V9YHyk8bpSXal12279JMWx3z1D4QLcBPP/yTkD32AghFDVyvDnJtFDg==}
     peerDependencies:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
     dependencies:
-      '@hdoc-react/type-utils': 1.0.0(typescript@5.3.2)
+      '@hdoc-react/type-utils': 1.0.1(typescript@5.3.2)
       clsx: 2.0.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -913,13 +913,13 @@ packages:
       - typescript
     dev: false
 
-  /@hdoc-react/input@0.7.0(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2):
-    resolution: {integrity: sha512-PcoInA7Evg6H1+/HhsphJGA7bR0nrgYgb/6zSMsIHdrtEiRO9Ypa/tAHXPhH9y2L4FhqorNKumy6tRIyMcbCRg==}
+  /@hdoc-react/input@0.7.1(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2):
+    resolution: {integrity: sha512-y4n/aFEJVgnfM8UG+IUv2iOLPx0QADWiOFz6hMvcU7Z+yUaRKSfYA99woh0Z0oDwvZjVv6Z7HbIqwMZ1bLNNbw==}
     peerDependencies:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
     dependencies:
-      '@hdoc-react/type-utils': 1.0.0(typescript@5.3.2)
+      '@hdoc-react/type-utils': 1.0.1(typescript@5.3.2)
       clsx: 2.0.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -951,8 +951,8 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@hdoc-react/type-utils@1.0.0(typescript@5.3.2):
-    resolution: {integrity: sha512-NAxagI062846ZtW/9K1j8lEME0Qaler/xXhVhUbLp2cZcY15d1TdsIK3FSJUyDFuZhI9ZY7+mjFaZbjx3Cjmhg==}
+  /@hdoc-react/type-utils@1.0.1(typescript@5.3.2):
+    resolution: {integrity: sha512-9SrmzcllfM+7catJfSRxom5GowsA1rldbwV1SVHwBF35IzmgqwiEET5CGfnuqIim+dMi1OhNXsK46tBE2vtCpg==}
     peerDependencies:
       typescript: '*'
     dependencies:
