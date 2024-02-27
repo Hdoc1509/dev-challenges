@@ -4,10 +4,10 @@ import { Icon } from "@hdoc-react/material-icons";
 import "./SearchForm.scss";
 
 type SearchFormInputs = {
-  search: { value: string };
-  "full-time"?: { value: "on" };
-  location: { value: string };
-  city: { value: string };
+  search: string;
+  "full-time"?: "on";
+  location: string;
+  city: string;
 };
 
 export const SearchForm = () => {
@@ -15,7 +15,14 @@ export const SearchForm = () => {
     e.preventDefault();
 
     const target = e.target as HTMLFormElement & SearchFormInputs;
-    console.log(Object.fromEntries(new FormData(target)));
+    const {
+      search,
+      "full-time": fullTime,
+      location,
+      city,
+    } = Object.fromEntries(new FormData(target)) as unknown as SearchFormInputs;
+
+    console.log({ search, fullTime, location, city });
   };
 
   return (
