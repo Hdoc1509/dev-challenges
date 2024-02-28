@@ -12,31 +12,32 @@
   gap: 4px;
 
   background: #fff;
-  margin-inline: auto;
   border-radius: 4px;
+  padding: 4px;
+  margin-inline: auto;
   width: 75%;
+
+  &:focus-within {
+    outline: 2px solid var(--primary);
+    --icon-color: var(--primary);
+  }
 
   --button-padding: 14px 48px;
   --button-radius: 4px;
 
   --input-gap: 8px;
-  --input-padding: 4px 4px 4px 16px;
-  --input-radius: 4px;
+  --input-padding: 10px;
   --input-border-color: transparent;
   --input-border-color-hover: transparent;
-  --input-border-color-focus: var(--primary);
+  --input-border-color-focus: transparent;
 
   --icon-color: var(--text-secondary);
 
   .input-wrapper {
-    align-items: center;
-
+    // TODO: Update @hdoc-react/input
+    //  this will be included in the next release
     input {
       width: 100%;
-    }
-
-    &:focus-within {
-      --icon-color: var(--primary);
     }
   }
 }

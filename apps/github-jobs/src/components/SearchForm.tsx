@@ -30,11 +30,12 @@ export const SearchForm = () => {
       <form id="search-form" onSubmit={handleSubmit}>
         <Input
           iconStart={<Icon name="work_outline" />}
-          iconEnd={<Button color="primary">Search</Button>}
           placeholder="Title, companies, expertise or benefits"
           name="search"
+          required
           fullWidth
         />
+        <Button color="primary">Search</Button>
       </form>
     </section>
   );
