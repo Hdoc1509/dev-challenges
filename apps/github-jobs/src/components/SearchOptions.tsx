@@ -26,7 +26,6 @@ export const SearchOptions = () => {
         name="city"
         form={form}
         options={["London", "Amsterdam", "New York", "Berlin"]}
-        defaultValue="New York"
       />
     </aside>
   );
