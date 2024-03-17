@@ -4,13 +4,13 @@ import { Header } from "./components/Header";
 import { SearchForm } from "./components/SearchForm";
 import { SearchOptions } from "./components/SearchOptions";
 import { Results } from "./components/Results";
-import { getMockedJobs, type JobsResults } from "./services/jobs";
+import { getMockedJobs, type Job } from "./services/jobs";
 import "./App.css";
 
 let didInit = false;
 
 function App() {
-  const [results, setResults] = useState<JobsResults>([]);
+  const [results, setResults] = useState<Job[]>([]);
 
   useEffect(() => {
     if (!didInit) {

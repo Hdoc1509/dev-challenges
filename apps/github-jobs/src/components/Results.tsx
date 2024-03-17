@@ -1,16 +1,16 @@
-import { type JobsResults } from "../services/jobs";
+import { type Job } from "../services/jobs";
 import "./Results.scss";
 
 type Props = {
-  jobs: JobsResults;
+  jobs: Job[];
 };
 
 export const Results = ({ jobs }: Props) => {
   return (
     <main>
       {jobs.map((job, idx) => (
-        <p key={job.job_id}>
-          {idx + 1} - {job.extensions.toString()}
+        <p key={job.id}>
+          {idx + 1} - {job.isFullTime ? "Full Time" : "Part Time"}
         </p>
       ))}
     </main>
