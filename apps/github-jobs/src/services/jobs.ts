@@ -9,8 +9,8 @@ export type Job = {
   location: string;
   description: string;
   id: string;
-  createdAt: string;
-  thumbnail: string;
+  createdAt?: string;
+  thumbnail?: string;
   isFullTime: boolean;
 };
 

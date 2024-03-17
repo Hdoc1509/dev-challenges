@@ -7,8 +7,8 @@ export const parseJobs = (results: JobsResults): Job[] => {
     location: job.location,
     description: job.description,
     id: job.job_id,
-    createdAt: job.detected_extensions.posted_at ?? "Unknown date",
-    thumbnail: job.thumbnail ?? "Not found",
+    createdAt: job.detected_extensions.posted_at,
+    thumbnail: job.thumbnail,
     isFullTime:
       job.detected_extensions.schedule_type.toLowerCase() === "full-time",
     scheduleType: job.detected_extensions.schedule_type,
