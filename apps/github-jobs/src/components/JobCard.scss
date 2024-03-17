@@ -1,0 +1,58 @@
+.debug {
+  border: 1px solid red;
+}
+
+.job-card {
+  display: grid;
+  align-items: center;
+  grid-template-areas:
+    "image company . ."
+    "image title . ."
+    "image schedule location create-at";
+  grid-template-columns: 60px 1fr auto auto;
+  gap: 10px 16px;
+  padding: 12px;
+
+  * {
+    margin: 0;
+  }
+
+  &__image {
+    grid-area: image;
+
+    img {
+      height: 60px;
+      border-radius: 4px;
+      aspect-ratio: 1 / 1;
+    }
+  }
+  &__no-image {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    background-color: #f2f2f2;
+    color: #bdbdbd;
+    border-radius: 4px;
+    aspect-ratio: 1 / 1;
+  }
+
+  &__company {
+    grid-area: company;
+  }
+
+  &__title {
+    grid-area: title;
+  }
+
+  &__schedule-type {
+    grid-area: schedule;
+  }
+
+  &__location {
+    grid-area: location;
+  }
+
+  &__created {
+    grid-area: create-at;
+  }
+}
