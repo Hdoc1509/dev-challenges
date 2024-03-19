@@ -2,7 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "@material-design-icons/font";
-import "@fontsource/roboto";
+import "@fontsource/roboto/latin-400.css";
+import "@fontsource/roboto/latin-500.css";
+import "@fontsource/roboto/latin-700.css";
 import "@fontsource-variable/montserrat"; // Supports weights 100-900
 import "@fontsource/poppins";
 import "./index.css";
