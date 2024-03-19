@@ -21,6 +21,10 @@
 
   cursor: pointer;
 
+  &:hover &__title {
+    text-decoration: underline;
+  }
+
   * {
     margin: 0;
   }
