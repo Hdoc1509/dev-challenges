@@ -25,17 +25,6 @@
   }
 }
 
-.main-header {
-  grid-area: header;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-h1 {
-  margin: 0;
-}
-
 footer {
   grid-area: footer;
   margin: 0;

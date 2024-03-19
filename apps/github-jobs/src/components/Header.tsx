@@ -1,5 +1,6 @@
 import { Icon } from "@hdoc-react/material-icons";
 import { ThemeButton } from "@hdoc-react/toggle-theme";
+import './Header.scss'
 
 export const Header = () => {
   return (
