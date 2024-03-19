@@ -1,21 +1,34 @@
 .search-options {
+  --_ff: "Poppins", sans-serif;
+
   grid-area: search-options;
   display: flex;
   flex-direction: column;
   gap: 24px;
 
+  font-family: var(--_ff);
+
   --label-text: var(--text-secondary);
   --label-text-focus: var(--primary);
+  --label-font-family: var(--_ff);
+  --label-font-weight: 700;
+
   .label--checkbox {
     --label-text: var(--text);
+    --label-font-size: 0.875rem;
+    --label-font-weight: 500;
   }
   --checkbox-color: var(--text-secondary);
 
   --input-border-color: transparent;
   --input-border-color-hover: transparent;
   --input-border-color-focus: var(--primary);
+  --input-font-weight: 400;
+  --input-font-size: 0.75rem;
   --icon-color: var(--text-secondary);
+  --icon-size: 1.5em;
   .input-wrapper {
+    align-items: center;
     box-shadow: var(--box-shadow);
 
     // TODO: Update @hdoc-react/input
@@ -26,5 +39,10 @@
   }
   .input-wrapper:focus-within {
     --icon-color: var(--primary);
+  }
+
+  .radio-group label {
+    font-size: 0.875rem;
+    font-weight: 500;
   }
 }
