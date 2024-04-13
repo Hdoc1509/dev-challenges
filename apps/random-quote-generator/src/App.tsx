@@ -36,7 +36,7 @@ function App() {
           disableShadow
         />
         <ThemeButton
-          lightElement={<Icon name="light_mode" />}
+          lightElement={<Icon name="light_mode" color="warning" />}
           darkElement={<Icon name="dark_mode" />}
           fullRounded
         />
