@@ -25,19 +25,15 @@
   --input-border-color-focus: var(--primary);
   --input-font-weight: 400;
   --input-font-size: 0.75rem;
+  // TODO: Remove --icon-color. it inherits color from .label
   --icon-color: var(--text-secondary);
   --icon-size: 1.5em;
-  .input-wrapper {
+  .input {
     align-items: center;
     box-shadow: var(--box-shadow);
-
-    // TODO: Update @hdoc-react/input
-    //  this will be included in the next release
-    input {
-      width: 100%;
-    }
   }
-  .input-wrapper:focus-within {
+  // TODO: Remove --icon-color. it inherits color from .label
+  .input:focus-within {
     --icon-color: var(--primary);
   }
 

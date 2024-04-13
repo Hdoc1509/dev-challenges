@@ -1,8 +1,8 @@
 import ReactPaginate from "react-paginate";
-import { type Job } from "../services/jobs";
+import { Icon } from "@hrc/material-icons";
 import { JobCard } from "./JobCard";
+import { type Job } from "../services/jobs";
 import "./Results.scss";
-import { Icon } from "@hdoc-react/material-icons";
 
 type Props = {
   jobs: Job[];

@@ -1,5 +1,5 @@
-import { Checkbox, Input } from "@hdoc-react/input";
-import { Icon } from "@hdoc-react/material-icons";
+import { Checkbox, Input } from "@hrc/input";
+import { Icon } from "@hrc/material-icons";
 import { RadioGroup } from "./RadioGroup";
 import "./SearchOptions.scss";
 

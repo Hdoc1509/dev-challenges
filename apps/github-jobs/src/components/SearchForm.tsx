@@ -1,6 +1,6 @@
-import { Button } from "@hdoc-react/button";
-import { Input } from "@hdoc-react/input";
-import { Icon } from "@hdoc-react/material-icons";
+import { Button } from "@hrc/button";
+import { Input } from "@hrc/input";
+import { Icon } from "@hrc/material-icons";
 import "./SearchForm.scss";
 
 type SearchFormInputs = {

@@ -18,26 +18,25 @@
   width: 75%;
 
   &:focus-within {
+    // outline: 2px solid;
     outline: 2px solid var(--primary);
+    // color: var(--primary);
+    // TODO: Remove --icon-color. it inherits color from .label
     --icon-color: var(--primary);
   }
 
   --button-padding: 14px 48px;
   --button-radius: 4px;
+  // --button-font-family: "Roboto", sans-serif;
 
+  --label-text: var(--text-secondary);
+  --label-text-focus: var(--primary);
   --input-gap: 8px;
   --input-padding: 10px;
   --input-border-color: transparent;
   --input-border-color-hover: transparent;
   --input-border-color-focus: transparent;
 
+  // TODO: Remove --icon-color. it inherits color from .label
   --icon-color: var(--text-secondary);
-
-  .input-wrapper {
-    // TODO: Update @hdoc-react/input
-    //  this will be included in the next release
-    input {
-      width: 100%;
-    }
-  }
 }

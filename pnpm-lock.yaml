@@ -148,18 +148,18 @@ importers:
       '@fontsource/roboto':
         specifier: 5.0.8
         version: 5.0.8
-      '@hdoc-react/button':
-        specifier: 2.3.1
-        version: 2.3.1(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
-      '@hdoc-react/input':
-        specifier: 0.7.1
-        version: 0.7.1(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
-      '@hdoc-react/material-icons':
-        specifier: 2.1.0
-        version: 2.1.0(@material-design-icons/font@0.14.13)(react-dom@18.2.0)(react@18.2.0)
-      '@hdoc-react/toggle-theme':
-        specifier: 2.1.5
-        version: 2.1.5(react-dom@18.2.0)(react@18.2.0)
+      '@hrc/button':
+        specifier: 2.6.0
+        version: 2.6.0(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
+      '@hrc/input':
+        specifier: 0.9.0
+        version: 0.9.0(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
+      '@hrc/material-icons':
+        specifier: 2.3.0
+        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)
+      '@hrc/toggle-theme':
+        specifier: 2.2.0
+        version: 2.2.0(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)
       '@internal/components':
         specifier: workspace:*
         version: link:../../libs/components
@@ -902,66 +902,6 @@ packages:
     resolution: {integrity: sha512-XxPltXs5R31D6UZeLIV1td3wTXU3jzd3f2DLsXI8tytMGBkIsGcc9sIyiupRtA8y73HAhuSCeweOoBqf6DbWCA==}
     dev: false
 
-  /@hdoc-react/button@2.3.1(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2):
-    resolution: {integrity: sha512-U5j29OBstNOnZJG5fTl0aYoAoBJkes3V9YHyk8bpSXal12279JMWx3z1D4QLcBPP/yTkD32AghFDVyvDnJtFDg==}
-    peerDependencies:
-      react: ^17.0.0 || ^18.0.0
-      react-dom: ^17.0.0 || ^18.0.0
-    dependencies:
-      '@hdoc-react/type-utils': 1.0.1(typescript@5.3.2)
-      clsx: 2.0.0
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-    transitivePeerDependencies:
-      - typescript
-    dev: false
-
-  /@hdoc-react/input@0.7.1(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2):
-    resolution: {integrity: sha512-y4n/aFEJVgnfM8UG+IUv2iOLPx0QADWiOFz6hMvcU7Z+yUaRKSfYA99woh0Z0oDwvZjVv6Z7HbIqwMZ1bLNNbw==}
-    peerDependencies:
-      react: ^17.0.0 || ^18.0.0
-      react-dom: ^17.0.0 || ^18.0.0
-    dependencies:
-      '@hdoc-react/type-utils': 1.0.1(typescript@5.3.2)
-      clsx: 2.0.0
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-    transitivePeerDependencies:
-      - typescript
-    dev: false
-
-  /@hdoc-react/material-icons@2.1.0(@material-design-icons/font@0.14.13)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-1W9T8421+7gwbn3bhypGO5UJjySHr7i7bT9LOjEwv/h83yAfX4f29EktuMsR+TtFXWcNoPvYzyGiSpKZMmjfIw==}
-    peerDependencies:
-      '@material-design-icons/font': ^0.14.0
-      react: ^17.0.0 || ^18.0.0
-      react-dom: ^17.0.0 || ^18.0.0
-    dependencies:
-      '@material-design-icons/font': 0.14.13
-      clsx: 2.0.0
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-    dev: false
-
-  /@hdoc-react/toggle-theme@2.1.5(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-+PSQ7DUHcX6XcBptjf/jtMVeFWyIPgGGRpoHNiMOmj3Mo0qNa3cNUKU+AJYJi1sOLQg10kjVDvXW54kN1dt47g==}
-    engines: {node: '>=13.2.0'}
-    peerDependencies:
-      react: ^17.0.0 || ^18.0.0
-      react-dom: ^17.0.0 || ^18.0.0
-    dependencies:
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-    dev: false
-
-  /@hdoc-react/type-utils@1.0.1(typescript@5.3.2):
-    resolution: {integrity: sha512-9SrmzcllfM+7catJfSRxom5GowsA1rldbwV1SVHwBF35IzmgqwiEET5CGfnuqIim+dMi1OhNXsK46tBE2vtCpg==}
-    peerDependencies:
-      typescript: '*'
-    dependencies:
-      typescript: 5.3.2
-    dev: false
-
   /@hdoc/react-button@1.2.0(@hdoc/react-material-icons@1.6.0)(@material-design-icons/font@0.14.11)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-dEK2SmX1hj270Km6YQdj9nsIJiUzMKI2VFM1IPvKLU3VSDHGCYYWd3f3YU0FFeJkxDGL1vvYv2JRC/bNlxoZgw==}
     peerDependencies:
@@ -1029,6 +969,74 @@ packages:
     dependencies:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@hrc/button@2.6.0(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2):
+    resolution: {integrity: sha512-G1Po7YyobMOYqj3pvSVoWFulXLCy8fvt2JCQquN2YRfy2nMXGPhavvumI8BrNJXfVA/n0QtJMqeU8vgd08VONw==}
+    peerDependencies:
+      '@types/react': ^17.0.0 || ^18.0.0
+      react: ^17.0.0 || ^18.0.0
+      react-dom: ^17.0.0 || ^18.0.0
+    dependencies:
+      '@hrc/type-utils': 1.1.2(typescript@5.3.2)
+      '@types/react': 18.2.20
+      clsx: 2.0.0
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    transitivePeerDependencies:
+      - typescript
+    dev: false
+
+  /@hrc/input@0.9.0(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2):
+    resolution: {integrity: sha512-xbUVmIq7lsMiYXl51GAdQDj1g766IkWFxFLMW3dy9ViG12it7oX4D9giLLWYQ/bkhTyh5pJZ/b10uqhK6i3JTA==}
+    peerDependencies:
+      '@types/react': ^17.0.0 || ^18.0.0
+      react: ^17.0.0 || ^18.0.0
+      react-dom: ^17.0.0 || ^18.0.0
+    dependencies:
+      '@hrc/type-utils': 1.1.2(typescript@5.3.2)
+      '@types/react': 18.2.20
+      clsx: 2.0.0
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    transitivePeerDependencies:
+      - typescript
+    dev: false
+
+  /@hrc/material-icons@2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-fQLt587Uh9DKI6M2/6FKe+S7zKoiUjpaSC1Wu/KCwcvN+ji1yOt44ez4duwLRbBvvLX4gnYnsJMTtndRTsEZlg==}
+    peerDependencies:
+      '@material-design-icons/font': ^0.14.0
+      '@types/react': ^17.0.0 || ^18.0.0
+      react: ^17.0.0 || ^18.0.0
+      react-dom: ^17.0.0 || ^18.0.0
+    dependencies:
+      '@material-design-icons/font': 0.14.13
+      '@types/react': 18.2.20
+      clsx: 2.0.0
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@hrc/toggle-theme@2.2.0(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-jE7K7MFv9uFEWKEAaWcu7pRUgH3cVdCDcjwdgdJ5ucxjxZQFR+BAvzAUEwOAFWykuEtclTsd5V6s4vP7H2xpOw==}
+    engines: {node: '>=13.2.0'}
+    peerDependencies:
+      '@types/react': ^17.0.0 || ^18.0.0
+      react: ^17.0.0 || ^18.0.0
+      react-dom: ^17.0.0 || ^18.0.0
+    dependencies:
+      '@types/react': 18.2.20
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@hrc/type-utils@1.1.2(typescript@5.3.2):
+    resolution: {integrity: sha512-A2kQM+QloOLSfiVn6zqq4y3/r5LlE1DvP11uNlwAX+4NXlEtWKXc0Fan0Nnil6zFK3CXCxZyOjtn47v7Rz7R0A==}
+    peerDependencies:
+      typescript: '*'
+    dependencies:
+      typescript: 5.3.2
     dev: false
 
   /@humanwhocodes/config-array@0.11.11:
