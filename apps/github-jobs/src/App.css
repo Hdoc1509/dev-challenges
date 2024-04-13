@@ -17,12 +17,8 @@
   margin-inline: auto;
 }
 
-.theme-button {
-  --button-bg-hover: #e0e0e0;
-
-  [data-theme="dark"] & {
-    --icon-color: #87ceeb;
-  }
+[data-theme="dark"] .theme-button {
+  --icon-color: #87ceeb;
 }
 
 footer {

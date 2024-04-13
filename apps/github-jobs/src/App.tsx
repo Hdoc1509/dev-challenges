@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Footer } from "@internal/components";
+import { Footer } from "@internal/components/src/Footer";
 import { Header } from "./components/Header";
 import { SearchForm } from "./components/SearchForm";
 import { SearchOptions } from "./components/SearchOptions";
