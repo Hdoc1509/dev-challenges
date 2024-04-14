@@ -26,8 +26,12 @@ export const SearchForm = () => {
   };
 
   return (
-    <section className="search-form-wrapper">
-      <form id="search-form" onSubmit={handleSubmit}>
+    <section className="search-form">
+      <form
+        id="search-form"
+        className="search-form__inner"
+        onSubmit={handleSubmit}
+      >
         <Input
           iconStart={<Icon name="work_outline" />}
           placeholder="Title, companies, expertise or benefits"

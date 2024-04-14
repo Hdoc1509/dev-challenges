@@ -1,4 +1,4 @@
-.search-form-wrapper {
+.search-form {
   grid-area: search-form;
 
   background-image: url("/background.png");
@@ -7,7 +7,7 @@
   border-radius: 8px;
 }
 
-#search-form {
+.search-form__inner {
   display: flex;
   gap: 4px;
 
