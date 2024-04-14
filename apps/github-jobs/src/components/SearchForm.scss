@@ -18,11 +18,7 @@
   width: 75%;
 
   &:focus-within {
-    // outline: 2px solid;
     outline: 2px solid var(--primary);
-    // color: var(--primary);
-    // TODO: Remove --icon-color. it inherits color from .label
-    --icon-color: var(--primary);
   }
 
   --button-padding: 14px 48px;
@@ -36,7 +32,4 @@
   --input-border-color: transparent;
   --input-border-color-hover: transparent;
   --input-border-color-focus: transparent;
-
-  // TODO: Remove --icon-color. it inherits color from .label
-  --icon-color: var(--text-secondary);
 }

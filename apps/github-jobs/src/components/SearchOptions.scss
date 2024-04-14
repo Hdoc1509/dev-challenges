@@ -25,16 +25,10 @@
   --input-border-color-focus: var(--primary);
   --input-font-weight: 400;
   --input-font-size: 0.75rem;
-  // TODO: Remove --icon-color. it inherits color from .label
-  --icon-color: var(--text-secondary);
   --icon-size: 1.5em;
   .input {
     align-items: center;
     box-shadow: var(--box-shadow);
-  }
-  // TODO: Remove --icon-color. it inherits color from .label
-  .input:focus-within {
-    --icon-color: var(--primary);
   }
 
   .radio-group label {
