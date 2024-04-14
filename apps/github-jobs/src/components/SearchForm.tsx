@@ -6,8 +6,8 @@ import "./SearchForm.scss";
 type SearchFormInputs = {
   search: string;
   "full-time"?: "on";
-  location: string;
-  city: string;
+  location?: string;
+  city?: string;
 };
 
 export const SearchForm = () => {
