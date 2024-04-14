@@ -14,14 +14,16 @@ export const Results = ({ jobs }: Props) => {
       {jobs.map((job) => (
         <JobCard key={job.id} job={job} />
       ))}
-      <ReactPaginate
-        className="jobs-pagination"
-        breakLabel="..."
-        nextLabel={<Icon name="keyboard_arrow_right" />}
-        previousLabel={<Icon name="keyboard_arrow_left" />}
-        pageCount={10}
-        marginPagesDisplayed={1}
-      />
+      <nav aria-label="Search results pages">
+        <ReactPaginate
+          className="jobs-pagination"
+          breakLabel="..."
+          nextLabel={<Icon name="keyboard_arrow_right" />}
+          previousLabel={<Icon name="keyboard_arrow_left" />}
+          pageCount={10}
+          marginPagesDisplayed={1}
+        />
+      </nav>
     </main>
   );
 };
