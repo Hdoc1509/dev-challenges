@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
 
   margin-bottom: 32px;
 
@@ -18,4 +19,8 @@
       align-self: flex-start;
     }
   }
+}
+
+[data-theme="dark"] .theme-button {
+  --icon-color: #87ceeb;
 }
