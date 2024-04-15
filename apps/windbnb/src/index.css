@@ -9,6 +9,7 @@
 
   --text: #333;
   --text-light: #4f4f4f;
+  --text-secondary: #828282;
 }
 
 *,
@@ -39,14 +40,11 @@ a:hover {
   --filter-input-bg-hover: #444;
   --filter-location-bg-hover: #444;
   --filter-guests-button-bg: #d4d4d4;
-  --filter-guests-button-outline: #d4d4d4;
   --filter-guests-button-outline-hover: #d4d4d4;
 
   --searchbar-text: #bbb;
   --searchbar-bg-hover: rgba(200, 200, 200, 0.1);
   --searchbar-divider-color: rgba(225, 225, 225, 0.5);
-
-  --stay-type-text: #c9c9c9;
 }
 
 body {
