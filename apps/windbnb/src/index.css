@@ -36,6 +36,10 @@ a:hover {
   --color-bg: #222;
   --color-text: #fff;
 
+  --text: #fff;
+  --text-light: #d4d4d4;
+  --text-secondary: #c9c9c9;
+
   --filter-input-bg-hover: #444;
   --filter-location-bg-hover: #444;
   --filter-guests-button-bg: #d4d4d4;
