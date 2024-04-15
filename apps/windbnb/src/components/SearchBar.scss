@@ -34,7 +34,7 @@
 
   &__location.with-value,
   &__guests.with-value {
-    --button-color: #333;
+    --button-color: var(--searchbar-text-with-value, #333);
   }
 
   &__search {

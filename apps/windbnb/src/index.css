@@ -32,7 +32,8 @@ a:hover {
   --color-bg: #242424;
   --color-text: #fff;
 
-  --searchbar-text: #fff;
+  --searchbar-text: #bbb;
+  --searchbar-text-with-value: #fff;
   --searchbar-bg-hover: rgba(200, 200, 200, 0.1);
   --searchbar-divider-color: rgba(225, 225, 225, 0.5);
 
