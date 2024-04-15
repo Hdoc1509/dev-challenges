@@ -29,7 +29,7 @@ a:hover {
 }
 
 [data-theme="dark"] {
-  --color-bg: #242424;
+  --color-bg: #222;
   --color-text: #fff;
 
   --searchbar-text: #bbb;
