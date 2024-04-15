@@ -1,26 +1,29 @@
 @use "../scss/mixins" as *;
 
 .main-header {
-  display: flex;
+  display: grid;
+  grid-template-areas: "logo searchbar theme-button";
+  grid-template-columns: auto 1fr auto;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
 
   margin-bottom: 32px;
 
+  &__logo {
+    grid-area: logo;
+  }
+
   @include extra-small-screen {
-    flex-direction: column;
-    justify-content: unset;
-    gap: 30px;
-
+    gap: 0;
+    grid-template-areas: "logo . theme-button" "searchbar searchbar searchbar";
     margin-bottom: 12px;
-
-    &__logo {
-      align-self: flex-start;
-    }
   }
 }
 
+.theme-button {
+  grid-area: theme-button;
+}
 [data-theme="dark"] .theme-button {
   --icon-color: #87ceeb;
 }
