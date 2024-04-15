@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Footer } from "@internal/components";
+import { Footer } from "@internal/components/src/Footer";
 import { SearchResults } from "./components/Results";
 import { Header } from "./components/Header.tsx";
 import { useStays } from "./hooks/useStays.ts";
