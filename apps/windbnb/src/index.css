@@ -35,6 +35,14 @@ a:hover {
   --searchbar-text: #fff;
   --searchbar-bg-hover: rgba(200, 200, 200, 0.1);
   --searchbar-divider-color: rgba(225, 225, 225, 0.5);
+
+  --results-city-text: #ddd;
+  --results-count-text: #ccc;
+
+  --stay-type-text: #c9c9c9;
+  --stay-rating-text: #d4d4d4;
+  --stay-description-text: #ddd;
+  --stay-host-text: #d4d4d4;
 }
 
 body {

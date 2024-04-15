@@ -12,7 +12,7 @@
   &__city {
     margin-block: 32px;
 
-    color: #333;
+    color: var(--results-city-text, #333);
     font-size: 24px;
     font-weight: 700;
 
@@ -23,7 +23,7 @@
   }
 
   &__count {
-    color: #4f4f4f;
+    color: var(--results-count-text, #4f4f4f);
     font-size: 14px;
     font-weight: 500;
   }

@@ -30,7 +30,7 @@
     border: 1px solid;
     padding: 6px 10px;
 
-    color: #4f4f4f;
+    color: var(--stay-host-text, #4f4f4f);
     font-size: 12px;
     font-weight: 700;
 
@@ -41,7 +41,7 @@
   }
 
   &__type {
-    color: #828282;
+    color: var(--stay-type-text, #828282);
     font-size: 14px;
     font-weight: 500;
 
@@ -60,7 +60,7 @@
 
     margin-left: auto;
 
-    color: #4f4f4f;
+    color: var(--stay-rating-text, #4f4f4f);
     font-size: 14px;
     font-weight: 500;
 
@@ -73,7 +73,7 @@
   &__description {
     margin: 0;
 
-    color: #333;
+    color: var(--stay-description-text, #333);
     font-size: 16px;
     font-weight: 600;
 
