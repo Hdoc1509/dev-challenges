@@ -15,8 +15,6 @@
   }
 
   &__option {
-    --icon-color: #4f4f4f;
-
     display: flex;
     align-items: center;
     gap: 10px;
@@ -24,12 +22,12 @@
     border-radius: 16px;
     padding: 10px;
 
-    color: #4f4f4f;
+    color: var(--filter-location-text, #4f4f4f);
 
     cursor: pointer;
 
     &:hover {
-      background-color: #efefef;
+      background-color: var(--filter-location-bg-hover, #efefef);
     }
   }
 }

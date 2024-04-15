@@ -32,6 +32,17 @@ a:hover {
   --color-bg: #222;
   --color-text: #fff;
 
+  --drawer-bg: #222;
+  --filter-label-text: #fff;
+  --filter-input-text: #fff;
+  --filter-input-border: #bbb;
+  --filter-input-bg-hover: #444;
+  --filter-location-text: #d4d4d4;
+  --filter-location-bg-hover: #444;
+  --filter-guests-button-bg: #d4d4d4;
+  --filter-guests-button-outline: #d4d4d4;
+  --filter-guests-button-outline-hover: #d4d4d4;
+
   --searchbar-text: #bbb;
   --searchbar-text-with-value: #fff;
   --searchbar-bg-hover: rgba(200, 200, 200, 0.1);

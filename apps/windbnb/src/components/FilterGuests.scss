@@ -9,7 +9,7 @@
   font-size: 14px;
 
   &__label {
-    color: #333;
+    color: var(--filter-label-text, #333);
     font-weight: 700;
   }
 
@@ -23,9 +23,14 @@
   display: flex;
   gap: 16px;
 
+  [data-theme="dark"] & {
+    --button-outline-bg-hover: #444;
+    --button-outline-color-disabled: #4f4f4f;
+  }
+
   &__button {
     --button-bg: transparent;
-    --button-outline-color: #828282;
+    --button-outline-color: var(--filter-guests-button-outline, #828282);
     --icon-size: 16px;
 
     padding: 2px;
@@ -34,6 +39,7 @@
 
     &:hover:not(:disabled) {
       --button-outline-color: #222;
+      --button-outline-color: var(--filter-guests-button-outline-hover, #222);
     }
 
     &:disabled {

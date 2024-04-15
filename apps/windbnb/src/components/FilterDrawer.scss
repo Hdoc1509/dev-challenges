@@ -9,7 +9,7 @@
   justify-content: center;
 
   width: 100%;
-  background-color: #fff;
+  background-color: var(--drawer-bg, #fff);
 
   transform: translateY(-100%);
   transition: transform 0.3s ease-in-out;
