@@ -29,23 +29,18 @@
     padding: 6px 10px;
 
     color: var(--text-light);
-    font-size: 12px;
+    font-size: clamp(10px, 1.5vw, 12px);
     font-weight: 700;
 
     @include extra-small-screen {
       padding-inline: 8px;
-      font-size: 10px;
     }
   }
 
   &__type {
     color: var(--text-secondary);
-    font-size: 14px;
+    font-size: clamp(12px, 1.5vw, 14px);
     font-weight: 500;
-
-    @include extra-small-screen {
-      font-size: 12px;
-    }
   }
 
   &__rating {
@@ -58,23 +53,15 @@
     margin-left: auto;
 
     color: var(--text-light);
-    font-size: 14px;
+    font-size: clamp(12px, 1.5vw, 14px);
     font-weight: 500;
-
-    @include extra-small-screen {
-      font-size: 12px;
-    }
   }
 
   &__description {
     margin: 0;
 
     color: var(--text);
-    font-size: 16px;
+    font-size: clamp(14px, 1.75vw, 16px);
     font-weight: 600;
-
-    @include extra-small-screen {
-      font-size: 14px;
-    }
   }
 }

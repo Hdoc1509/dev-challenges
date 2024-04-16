@@ -13,12 +13,11 @@
     margin-block: 32px;
 
     color: var(--text);
-    font-size: 24px;
+    font-size: clamp(18px, 2vw, 24px);
     font-weight: 700;
 
     @include extra-small-screen {
       margin-block: 24px;
-      font-size: 18px;
     }
   }
 
