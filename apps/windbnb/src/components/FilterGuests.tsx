@@ -4,22 +4,21 @@ import { FilterInput } from "./FilterInput";
 import { type GuestType, useFilterStore, FILTER } from "../store/filter";
 import "./FilterGuests.scss";
 
-export const FilterGuestsCriteria = ({
-  criteria,
-  criteriaHint,
-}: {
-  criteria: Capitalize<GuestType>;
-  criteriaHint: string;
-}) => {
+type CriteriaProps = {
+  label: Capitalize<GuestType>;
+  hint: string;
+};
+
+export const Criteria = ({ label, hint }: CriteriaProps) => {
   const guests = useFilterStore((state) => state.guests);
-  const criteriaLower = criteria.toLowerCase() as GuestType;
+  const criteriaLower = label.toLowerCase() as GuestType;
   const addGuest = useFilterStore((state) => state.addGuest);
   const removeGuest = useFilterStore((state) => state.removeGuest);
 
   return (
     <div className="filter-guests-criteria">
-      <span className="filter-guests-criteria__label">{criteria}</span>
-      <span className="filter-guests-criteria__hint">{criteriaHint}</span>
+      <span className="filter-guests-criteria__label">{label}</span>
+      <span className="filter-guests-criteria__hint">{hint}</span>
       <div className="filter-guests-counter">
         <ButtonIcon
           variant="outline"
@@ -63,11 +62,8 @@ export const FilterGuests = ({ isSelected }: { isSelected?: boolean }) => {
       />
       {isSelected && (
         <div className="filter-guests-menu">
-          <FilterGuestsCriteria
-            criteria="Adults"
-            criteriaHint="Ages 13 or above"
-          />
-          <FilterGuestsCriteria criteria="Children" criteriaHint="Ages 2-12" />
+          <Criteria label="Adults" hint="Ages 13 or above" />
+          <Criteria label="Children" hint="Ages 2-12" />
         </div>
       )}
     </>
