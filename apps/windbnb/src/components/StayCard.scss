@@ -49,7 +49,7 @@
   }
 
   &__rating {
-    --icon-size: 18px;
+    --icon-size: 1.25em;
 
     display: inline-flex;
     align-items: center;
@@ -62,7 +62,6 @@
     font-weight: 500;
 
     @include extra-small-screen {
-      --icon-size: 16px;
       font-size: 12px;
     }
   }
