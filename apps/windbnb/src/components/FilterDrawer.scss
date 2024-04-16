@@ -44,7 +44,7 @@
 .filter-drawer {
   display: grid;
   grid-template-columns: var(--grid-columns, repeat(3, 1fr));
-  grid-template-rows: var(--grid-rows,  min-content 180px);
+  grid-template-rows: var(--grid-rows, min-content 180px);
   grid-template-areas:
     "location-input  guests-input  search-button"
     "location-menu   guests-menu   .";
@@ -80,12 +80,8 @@
     grid-area: header;
     display: none;
 
-    font-family: 'Mulish', sans-serif;
+    @include font-variable("Mulish", sans-serif);
     font-weight: 700;
-
-    @supports (font-variation-settings: normal) {
-      font-family: "Mulish Variable", sans-serif;
-    }
 
     @include extra-small-screen {
       display: flex;

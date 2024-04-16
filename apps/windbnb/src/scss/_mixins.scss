@@ -36,3 +36,11 @@
 }
 
 // TODO: Create mixin for default box-shadow
+
+@mixin font-variable($font, $fallback) {
+  font-family: $font, $fallback;
+
+  @supports (font-variation-settings: normal) {
+    font-family: "#{$font} Variable", $fallback;
+  }
+}

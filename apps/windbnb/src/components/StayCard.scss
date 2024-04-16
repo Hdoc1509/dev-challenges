@@ -5,11 +5,8 @@
   flex-direction: column;
   gap: 12px;
 
-  font-family: "Montserrat", sans-serif;
-
-  @supports (font-variation-settings: normal) {
-    font-family: "Montserrat Variable", sans-serif;
-  }
+  // TODO: Remove this, it's inherited from .search-results
+  @include font-variable("Montserrat", sans-serif);
 
   &__image {
     object-fit: cover;
