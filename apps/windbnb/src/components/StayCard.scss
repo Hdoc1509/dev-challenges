@@ -7,6 +7,10 @@
 
   font-family: "Montserrat", sans-serif;
 
+  @supports (font-variation-settings: normal) {
+    font-family: "Montserrat Variable", sans-serif;
+  }
+
   &__image {
     object-fit: cover;
     border-radius: 24px;

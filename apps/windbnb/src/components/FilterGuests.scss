@@ -6,6 +6,10 @@
   gap: 12px;
 
   font-family: "Mulish", sans-serif;
+
+  @supports (font-variation-settings: normal) {
+    font-family: "Mulish Variable", sans-serif;
+  }
   font-size: 14px;
 
   &__label {

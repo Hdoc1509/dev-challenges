@@ -83,6 +83,10 @@
     font-family: 'Mulish', sans-serif;
     font-weight: 700;
 
+    @supports (font-variation-settings: normal) {
+      font-family: "Mulish Variable", sans-serif;
+    }
+
     @include extra-small-screen {
       display: flex;
       justify-content: space-between;
