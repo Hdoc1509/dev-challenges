@@ -1,4 +1,4 @@
-import { Button, ButtonIcon } from "@hrc/button";
+import { Button, ButtonGroup, ButtonIcon } from "@hrc/button";
 import { Icon } from "@hrc/material-icons";
 import { FILTER, useFilterStore } from "../store/filter";
 import { stringifyLocation } from "../utils";
@@ -13,7 +13,7 @@ export const SearchBar = () => {
   const guestsClass = clsx("searchbar__guests", { "with-value": guests > 0 });
 
   return (
-    <div className="searchbar">
+    <ButtonGroup className="searchbar">
       <Button
         className={locationClass}
         onClick={() => setFilter(FILTER.LOCATION)}
@@ -29,6 +29,6 @@ export const SearchBar = () => {
       >
         <Icon name="search" />
       </ButtonIcon>
-    </div>
+    </ButtonGroup>
   );
 };

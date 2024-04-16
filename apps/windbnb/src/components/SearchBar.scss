@@ -3,16 +3,15 @@
 .searchbar {
   --button-bg: transparent;
   --button-bg-hover: var(--searchbar-bg-hover, #efefef);
-  --button-shadow: none;
+  --button-divider-color: var(--searchbar-divider-color, #e5e5e5);
+  --button-shadow: 0px 4px 6px 0px var(--shadow-color, rgb(0 0 0 / 10%));
+  --button-radius: 16px;
+  --button-padding: 18px 16px;
   --button-text: var(--searchbar-text, #bdbdbd);
+  --button-font-weight: 400;
 
-  display: flex;
   grid-area: searchbar;
-
-  border-radius: 16px;
-  box-shadow: 0px 4px 6px 0px var(--shadow-color, rgb(0 0 0 / 10%));
   margin-inline: auto 0;
-
   @include font-variable("Mulish", sans-serif);
 
   &:hover {
@@ -23,20 +22,6 @@
     margin-inline: auto;
   }
 
-  &__location {
-    @include border-left-rounded(16px);
-    padding: 18px 16px;
-    font-weight: 400;
-  }
-
-  &__guests {
-    border-inline: 1px solid var(--searchbar-divider-color, #e5e5e5);
-    padding: 18px 16px;
-    border-radius: 0;
-
-    font-weight: 400;
-  }
-
   &__location.with-value,
   &__guests.with-value {
     --button-text: var(--text);
@@ -44,7 +29,6 @@
 
   &__search {
     --icon-color: #eb5757;
-    @include border-right-rounded(16px);
     --button-padding: 18px;
   }
 }
