@@ -14,7 +14,7 @@
 
 ## Overview
 
-![screenshot](screenshots/windbnb.png)
+![screenshot](https://github.com/Hdoc1509/dev-challenges/assets/72316111/f210689f-25ba-4266-9664-dcba6d19f243)
 
 **Challenge**: Create a small version of Airbnb - Windbnb with given data. Use Front-end libraries like React or Vue. Don’t look at the existing solution. Fulfill user stories below:
 
