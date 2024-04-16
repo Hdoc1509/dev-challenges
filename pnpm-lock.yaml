@@ -372,15 +372,15 @@ importers:
       '@fontsource/mulish':
         specifier: 5.0.17
         version: 5.0.17
-      '@hdoc/react-button':
-        specifier: 1.2.0
-        version: 1.2.0(@hdoc/react-material-icons@1.6.0)(@material-design-icons/font@0.14.11)(react-dom@18.2.0)(react@18.2.0)
-      '@hdoc/react-material-icons':
-        specifier: 1.6.0
-        version: 1.6.0(@material-design-icons/font@0.14.11)(react-dom@18.2.0)(react@18.2.0)
-      '@hdoc/react-toggle-theme':
-        specifier: 2.1.1
-        version: 2.1.1(react-dom@18.2.0)(react@18.2.0)
+      '@hrc/button':
+        specifier: 2.6.0
+        version: 2.6.0(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
+      '@hrc/material-icons':
+        specifier: 2.3.0
+        version: 2.3.0(@material-design-icons/font@0.14.11)(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)
+      '@hrc/toggle-theme':
+        specifier: 2.2.0
+        version: 2.2.0(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)
       '@internal/components':
         specifier: workspace:3.0.0
         version: link:../../libs/components
@@ -1025,6 +1025,21 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     transitivePeerDependencies:
       - typescript
+    dev: false
+
+  /@hrc/material-icons@2.3.0(@material-design-icons/font@0.14.11)(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-fQLt587Uh9DKI6M2/6FKe+S7zKoiUjpaSC1Wu/KCwcvN+ji1yOt44ez4duwLRbBvvLX4gnYnsJMTtndRTsEZlg==}
+    peerDependencies:
+      '@material-design-icons/font': ^0.14.0
+      '@types/react': ^17.0.0 || ^18.0.0
+      react: ^17.0.0 || ^18.0.0
+      react-dom: ^17.0.0 || ^18.0.0
+    dependencies:
+      '@material-design-icons/font': 0.14.11
+      '@types/react': 18.2.20
+      clsx: 2.0.0
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /@hrc/material-icons@2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0):

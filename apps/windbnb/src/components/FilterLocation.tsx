@@ -1,6 +1,6 @@
 import { useEffect, useMemo } from "react";
 import { FilterInput } from "./FilterInput";
-import { Icon } from "@hdoc/react-material-icons";
+import { Icon } from "@hrc/material-icons";
 import { FILTER, useFilterStore } from "../store/filter";
 import { useStays } from "../hooks/useStays";
 import type { RequiredSearchLocation } from "../types";

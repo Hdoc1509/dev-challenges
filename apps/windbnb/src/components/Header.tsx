@@ -1,5 +1,5 @@
-import { ThemeButton } from "@hdoc/react-toggle-theme";
-import { Icon } from "@hdoc/react-material-icons";
+import { ThemeButton } from "@hrc/toggle-theme";
+import { Icon } from "@hrc/material-icons";
 import { SearchBar } from "./SearchBar";
 import { FilterDrawer } from "./FilterDrawer";
 import { useFilterStore } from "../store/filter";

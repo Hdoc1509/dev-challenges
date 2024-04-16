@@ -1,4 +1,4 @@
-import { Icon } from "@hdoc/react-material-icons";
+import { Icon } from "@hrc/material-icons";
 import type { Simplify } from "type-fest";
 import type { Stay } from "../types";
 import "./StayCard.scss";

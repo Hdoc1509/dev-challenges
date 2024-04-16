@@ -1,4 +1,5 @@
-import { Button, ButtonIcon } from "@hdoc/react-button";
+import { Button, ButtonIcon } from "@hrc/button";
+import { Icon } from "@hrc/material-icons";
 import { FilterGuests } from "./FilterGuests";
 import { FilterLocation } from "./FilterLocation";
 import { FILTER, useFilterStore } from "../store/filter";
@@ -40,17 +41,20 @@ export const FilterDrawer = ({ isOpen, onSearch }: Props) => {
             <>
               <header className="filter-drawer__header">
                 <span>Edit your search</span>
-                <ButtonIcon icon="close" onClick={() => setFilter(null)} />
+                <ButtonIcon onClick={() => setFilter(null)}>
+                  <Icon name="close" />
+                </ButtonIcon>
               </header>
               <FilterLocation isSelected={filter === FILTER.LOCATION} />
               <FilterGuests isSelected={filter === FILTER.GUESTS} />
               <div className="filter-drawer__search-button-wrapper">
                 <Button
-                  text="Search"
-                  iconStart="search"
+                  iconStart={<Icon name="search" />}
                   className="filter-drawer__search-button"
-                  color="danger"
-                />
+                  color="error"
+                >
+                  Search
+                </Button>
               </div>
             </>
           )}

@@ -1,5 +1,6 @@
+import { ButtonIcon } from "@hrc/button";
+import { Icon } from "@hrc/material-icons";
 import { FilterInput } from "./FilterInput";
-import { ButtonIcon } from "@hdoc/react-button";
 import { type GuestType, useFilterStore, FILTER } from "../store/filter";
 import "./FilterGuests.scss";
 
@@ -21,23 +22,25 @@ export const FilterGuestsCriteria = ({
       <span className="filter-guests-criteria__hint">{criteriaHint}</span>
       <div className="filter-guests-counter">
         <ButtonIcon
-          icon="remove"
           variant="outline"
           className="filter-guests-counter__button"
           type="button"
           onClick={() => removeGuest(criteriaLower)}
           disabled={guests[criteriaLower] === 0}
-        />
+        >
+          <Icon name="remove" />
+        </ButtonIcon>
         <span className="filter-guests-counter__count">
           {guests[criteriaLower]}
         </span>
         <ButtonIcon
           className="filter-guests-counter__button"
-          icon="add"
           variant="outline"
           type="button"
           onClick={() => addGuest(criteriaLower)}
-        />
+        >
+          <Icon name="add" />
+        </ButtonIcon>
       </div>
     </div>
   );

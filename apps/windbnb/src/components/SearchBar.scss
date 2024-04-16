@@ -4,7 +4,7 @@
   --button-bg: transparent;
   --button-bg-hover: var(--searchbar-bg-hover, #efefef);
   --button-shadow: none;
-  --button-color: var(--searchbar-text, #bdbdbd);
+  --button-text: var(--searchbar-text, #bdbdbd);
 
   display: flex;
   grid-area: searchbar;
@@ -39,12 +39,12 @@
 
   &__location.with-value,
   &__guests.with-value {
-    --button-color: var(--text);
+    --button-text: var(--text);
   }
 
   &__search {
     --icon-color: #eb5757;
     @include border-right-rounded(16px);
-    padding: 18px;
+    --button-padding: 18px;
   }
 }

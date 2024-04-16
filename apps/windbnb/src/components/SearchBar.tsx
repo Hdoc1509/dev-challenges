@@ -1,4 +1,5 @@
-import { Button, ButtonIcon } from "@hdoc/react-button";
+import { Button, ButtonIcon } from "@hrc/button";
+import { Icon } from "@hrc/material-icons";
 import { FILTER, useFilterStore } from "../store/filter";
 import { stringifyLocation } from "../utils";
 import clsx from "clsx";
@@ -15,19 +16,19 @@ export const SearchBar = () => {
     <div className="searchbar">
       <Button
         className={locationClass}
-        text={location ? `${stringifyLocation(location)}` : "Add location"}
         onClick={() => setFilter(FILTER.LOCATION)}
-      />
-      <Button
-        className={guestsClass}
-        text={guests ? `${guests} guests` : "Add guests"}
-        onClick={() => setFilter(FILTER.GUESTS)}
-      />
+      >
+        {location ? `${stringifyLocation(location)}` : "Add location"}
+      </Button>
+      <Button className={guestsClass} onClick={() => setFilter(FILTER.GUESTS)}>
+        {guests ? `${guests} guests` : "Add guests"}
+      </Button>
       <ButtonIcon
-        icon="search"
         className="searchbar__search"
         onClick={() => setFilter(FILTER.LOCATION)}
-      />
+      >
+        <Icon name="search" />
+      </ButtonIcon>
     </div>
   );
 };
