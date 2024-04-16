@@ -28,7 +28,7 @@
   }
 
   &__search {
-    --icon-color: #eb5757;
+    --icon-color: var(--error);
     --button-padding: 18px;
   }
 }

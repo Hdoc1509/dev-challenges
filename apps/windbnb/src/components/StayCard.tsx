@@ -26,7 +26,7 @@ export function StayCard({ stay }: Props) {
           {type} {beds && `. ${beds} beds`}
         </span>
         <span className="stay-card__rating">
-          <Icon name="star" variant="round" />
+          <Icon name="star" color="error" variant="round" />
           {rating}
         </span>
       </div>

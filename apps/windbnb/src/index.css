@@ -10,6 +10,9 @@
   --text: #333;
   --text-light: #4f4f4f;
   --text-secondary: #828282;
+
+  --error: #eb5757;
+  --error-hover: #e73434;
 }
 
 *,
