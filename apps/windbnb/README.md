@@ -39,6 +39,10 @@
 - [@hrc/material-icons](https://www.npmjs.com/package/@hrc/material-icons)
 - [@hrc/toggle-theme](https://www.npmjs.com/package/@hrc/toggle-theme)
 
+## Extra Features
+
+- Dark mode
+
 ### What I learned
 
 - Display data following a given design
