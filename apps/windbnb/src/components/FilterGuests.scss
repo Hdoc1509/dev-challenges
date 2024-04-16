@@ -1,4 +1,4 @@
-@use '../scss/mixins' as *;
+@use "../scss/mixins" as *;
 
 .filter-guests-criteria {
   display: flex;
@@ -31,11 +31,11 @@
   &__button {
     --button-bg: transparent;
     --button-outline-color: var(--text-secondary);
+    --button-padding: 2px;
+    --button-radius: 4px;
     --icon-size: 16px;
 
-    padding: 2px;
     cursor: pointer;
-    border-radius: 4px;
 
     &:hover:not(:disabled) {
       --button-outline-color: #222;
