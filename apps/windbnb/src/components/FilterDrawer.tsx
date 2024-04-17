@@ -22,15 +22,18 @@ export const FilterDrawer = ({ isOpen, onSearch }: Props) => {
     "filter-container--open": isOpen,
   });
 
+  const clearFilter = () => setFilter(null);
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     void onSearch({ guests, location });
-    setFilter(null);
+    clearFilter();
   };
 
   return (
     <>
+      {/* TODO: Create Drawer component */}
       <div className={containerClass}>
         <form
           className="filter-drawer"
@@ -41,7 +44,7 @@ export const FilterDrawer = ({ isOpen, onSearch }: Props) => {
             <>
               <header className="filter-drawer__header">
                 <span>Edit your search</span>
-                <ButtonIcon onClick={() => setFilter(null)}>
+                <ButtonIcon onClick={clearFilter}>
                   <Icon name="close" />
                 </ButtonIcon>
               </header>
@@ -60,9 +63,7 @@ export const FilterDrawer = ({ isOpen, onSearch }: Props) => {
           )}
         </form>
       </div>
-      {isOpen && (
-        <div className="filter-backdrop" onClick={() => setFilter(null)}></div>
-      )}
+      {isOpen && <div className="filter-backdrop" onClick={clearFilter}></div>}
     </>
   );
 };
