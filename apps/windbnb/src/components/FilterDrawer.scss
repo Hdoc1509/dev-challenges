@@ -1,5 +1,18 @@
 @use "../scss/mixins" as *;
 
+.drawer {
+  padding: 3rem;
+
+  @include extra-small-screen {
+    padding-block: 6px 24px;
+    padding-inline: 12px;
+  }
+
+  @include large-screen {
+    padding-inline: 6rem;
+  }
+}
+
 @mixin drawer-wildcard-area($area) {
   grid-template-areas:
     "location-input"
@@ -18,7 +31,6 @@
   row-gap: 30px;
 
   width: 100%;
-  padding: 3rem;
   overflow: hidden;
 
   transition: grid-template-rows 0.3s ease;
@@ -28,7 +40,6 @@
     --grid-rows: auto auto 250px auto;
 
     row-gap: 0;
-    padding: 6px 12px 24px 12px;
 
     &[data-filter="LOCATION"] {
       @include drawer-wildcard-area("location-menu");
@@ -36,10 +47,6 @@
     &[data-filter="GUESTS"] {
       @include drawer-wildcard-area("guests-menu");
     }
-  }
-
-  @include large-screen {
-    padding-inline: 6rem;
   }
 
   &__header {
