@@ -12,6 +12,17 @@
     padding-inline: 6rem;
   }
 }
+.drawer__header {
+  color: var(--text);
+  padding-block: 8px;
+
+  @include font-variable("Mulish", sans-serif);
+  font-weight: 700;
+
+  @include small-screen {
+    --drawer-header-display: none;
+  }
+}
 
 @mixin drawer-wildcard-area($area) {
   grid-template-areas:
@@ -45,27 +56,6 @@
     }
     &[data-filter="GUESTS"] {
       @include drawer-wildcard-area("guests-menu");
-    }
-  }
-
-  &__header {
-    --button-bg: none;
-    --button-bg-hover: none;
-    --button-padding: 0;
-    --button-shadow: none;
-    --button-text: var(--text);
-
-    grid-area: header;
-    display: none;
-    padding-block: 8px;
-
-    @include font-variable("Mulish", sans-serif);
-    font-weight: 700;
-
-    @include extra-small-screen {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
     }
   }
 

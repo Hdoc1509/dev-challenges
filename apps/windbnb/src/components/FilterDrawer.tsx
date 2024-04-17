@@ -1,4 +1,4 @@
-import { Button, ButtonIcon } from "@hrc/button";
+import { Button } from "@hrc/button";
 import { Icon } from "@hrc/material-icons";
 import { FilterGuests } from "./FilterGuests";
 import { FilterLocation } from "./FilterLocation";
@@ -26,13 +26,7 @@ export const FilterDrawer = ({ isOpen, onSearch }: Props) => {
   };
 
   return (
-    <Drawer open={isOpen} onClose={clearFilter}>
-      <header className="filter-drawer__header">
-        <span>Edit your search</span>
-        <ButtonIcon onClick={clearFilter}>
-          <Icon name="close" />
-        </ButtonIcon>
-      </header>
+    <Drawer header="Edit your search" open={isOpen} onClose={clearFilter}>
       <form
         className="filter-drawer"
         data-filter={filter}

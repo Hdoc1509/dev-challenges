@@ -13,6 +13,29 @@
     --_content-transform: translateY(0);
   }
 
+  &__header {
+    display: none;
+  }
+  &__header[data-drawer-header] {
+    display: var(--drawer-header-display, flex);
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__close {
+    padding: var(--drawer-close-padding, 0);
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: currentColor;
+    cursor: pointer;
+  }
+  &__close > svg {
+    fill: currentColor;
+    width: 1.7em;
+    height: 1.7em;
+  }
+
   &__content {
     background-color: var(--color-bg);
 
