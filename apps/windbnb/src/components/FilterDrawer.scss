@@ -2,7 +2,6 @@
 
 @mixin drawer-wildcard-area($area) {
   grid-template-areas:
-    "header"
     "location-input"
     "guests-input"
     $area
@@ -26,7 +25,7 @@
 
   @include extra-small-screen {
     --grid-columns: 1fr;
-    --grid-rows: auto auto auto 250px auto;
+    --grid-rows: auto auto 250px auto;
 
     row-gap: 0;
     padding: 6px 12px 24px 12px;
