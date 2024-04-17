@@ -32,27 +32,23 @@ export const FilterDrawer = ({ isOpen, onSearch }: Props) => {
         data-filter={filter}
         onSubmit={handleSubmit}
       >
-        {isOpen && (
-          <>
-            <header className="filter-drawer__header">
-              <span>Edit your search</span>
-              <ButtonIcon onClick={clearFilter}>
-                <Icon name="close" />
-              </ButtonIcon>
-            </header>
-            <FilterLocation isSelected={filter === FILTER.LOCATION} />
-            <FilterGuests isSelected={filter === FILTER.GUESTS} />
-            <div className="filter-drawer__search-button-wrapper">
-              <Button
-                iconStart={<Icon name="search" />}
-                className="filter-drawer__search-button"
-                color="error"
-              >
-                Search
-              </Button>
-            </div>
-          </>
-        )}
+        <header className="filter-drawer__header">
+          <span>Edit your search</span>
+          <ButtonIcon onClick={clearFilter}>
+            <Icon name="close" />
+          </ButtonIcon>
+        </header>
+        <FilterLocation isSelected={filter === FILTER.LOCATION} />
+        <FilterGuests isSelected={filter === FILTER.GUESTS} />
+        <div className="filter-drawer__search-button-wrapper">
+          <Button
+            iconStart={<Icon name="search" />}
+            className="filter-drawer__search-button"
+            color="error"
+          >
+            Search
+          </Button>
+        </div>
       </form>
     </Drawer>
   );
