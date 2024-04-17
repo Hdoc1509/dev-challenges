@@ -1,6 +1,6 @@
 @use "../scss/mixins" as *;
 
-.drawer {
+.drawer__content {
   padding: 3rem;
 
   @include extra-small-screen {

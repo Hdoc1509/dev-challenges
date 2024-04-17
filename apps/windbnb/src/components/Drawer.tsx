@@ -20,8 +20,10 @@ export const Drawer = ({ className, children, open, onClose }: Props) => {
 
   return (
     <>
-      <div className={drawerClass}>{children}</div>
-      {open && <div className="drawer__backdrop" onClick={onClose}></div>}
+      <div className={drawerClass}>
+        <div className="drawer__content">{children}</div>
+        <div className="drawer__backdrop" onClick={onClose}></div>
+      </div>
     </>
   );
 };
