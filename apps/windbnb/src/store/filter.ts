@@ -13,6 +13,7 @@ export type GuestType = "adults" | "children";
 type FilterStore = {
   filter: TFilter | null;
   setFilter: (filter: TFilter | null) => void;
+  clearFilter: () => void;
   location: SearchOptions["location"];
   setLocation: (location: RequiredSearchLocation) => void;
   guests: {
@@ -27,6 +28,7 @@ type FilterStore = {
 export const useFilterStore = create<FilterStore>((set) => ({
   filter: null,
   setFilter: (filter) => set({ filter }),
+  clearFilter: () => set({ filter: null }),
   location: undefined,
   setLocation: (location) => set({ location }),
   guests: {

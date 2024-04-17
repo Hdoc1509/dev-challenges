@@ -16,13 +16,11 @@ export const FilterDrawer = ({ isOpen, onSearch }: Props) => {
   const filter = useFilterStore((state) => state.filter);
   const guests = useFilterStore((state) => state.guests.total);
   const location = useFilterStore((state) => state.location);
-  const setFilter = useFilterStore((state) => state.setFilter);
+  const clearFilter = useFilterStore((state) => state.clearFilter);
 
   const containerClass = clsx("filter-container", {
     "filter-container--open": isOpen,
   });
-
-  const clearFilter = () => setFilter(null);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
