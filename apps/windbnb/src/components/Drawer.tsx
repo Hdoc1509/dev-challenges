@@ -35,6 +35,7 @@ export const Drawer = ({
 
   return (
     <div className={drawerClass}>
+      <div className="drawer__backdrop" onClick={onClose}></div>
       <div className="drawer__content">
         <header className="drawer__header" data-drawer-header={header}>
           {header}
@@ -44,7 +45,6 @@ export const Drawer = ({
         </header>
         {children}
       </div>
-      <div className="drawer__backdrop" onClick={onClose}></div>
     </div>
   );
 };
