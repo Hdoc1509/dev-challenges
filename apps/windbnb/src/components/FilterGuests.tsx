@@ -16,24 +16,22 @@ export const Criteria = ({ label, hint }: CriteriaProps) => {
   const removeGuest = useFilterStore((state) => state.removeGuest);
 
   return (
-    <div className="filter-guests-criteria">
-      <span className="filter-guests-criteria__label">{label}</span>
-      <span className="filter-guests-criteria__hint">{hint}</span>
-      <div className="filter-guests-counter">
+    <div className="guests-criteria">
+      <span className="guests-criteria__label">{label}</span>
+      <span className="guests-criteria__hint">{hint}</span>
+      <div className="guests-counter">
         <ButtonIcon
           variant="outline"
-          className="filter-guests-counter__button"
+          className="guests-counter__button"
           type="button"
           onClick={() => removeGuest(criteriaLower)}
           disabled={guests[criteriaLower] === 0}
         >
           <Icon name="remove" />
         </ButtonIcon>
-        <span className="filter-guests-counter__count">
-          {guests[criteriaLower]}
-        </span>
+        <span className="guests-counter__count">{guests[criteriaLower]}</span>
         <ButtonIcon
-          className="filter-guests-counter__button"
+          className="guests-counter__button"
           variant="outline"
           type="button"
           onClick={() => addGuest(criteriaLower)}
@@ -52,7 +50,7 @@ export const FilterGuests = ({ isSelected }: { isSelected?: boolean }) => {
   return (
     <>
       <FilterInput
-        className="filter-guests-input"
+        className="guests-input"
         label="Guests"
         value={guests === 0 ? "" : `${guests} guests`}
         name="guests"
@@ -61,7 +59,7 @@ export const FilterGuests = ({ isSelected }: { isSelected?: boolean }) => {
         onClick={() => setFilter(FILTER.GUESTS)}
       />
       {isSelected && (
-        <div className="filter-guests-menu">
+        <div className="guests-menu">
           <Criteria label="Adults" hint="Ages 13 or above" />
           <Criteria label="Children" hint="Ages 2-12" />
         </div>

@@ -32,7 +32,7 @@
     "search-button";
 }
 
-.filter-drawer {
+.filter-form {
   display: grid;
   grid-template-columns: var(--grid-columns, repeat(3, 1fr));
   grid-template-rows: var(--grid-rows, min-content 180px);

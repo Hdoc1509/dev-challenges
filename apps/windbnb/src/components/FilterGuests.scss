@@ -1,6 +1,6 @@
 @use "../scss/mixins" as *;
 
-.filter-guests-criteria {
+.guests-criteria {
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -19,7 +19,7 @@
   }
 }
 
-.filter-guests-counter {
+.guests-counter {
   display: flex;
   gap: 16px;
 
@@ -53,7 +53,7 @@
   }
 }
 
-.filter-guests-menu {
+.guests-menu {
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -65,7 +65,7 @@
   }
 }
 
-.filter-guests-input {
+.guests-input {
   grid-area: guests-input;
   border-inline: 1px solid #e5e5e5;
 

@@ -15,10 +15,7 @@ export const LocationOption = ({
   const setLocation = useFilterStore((state) => state.setLocation);
 
   return (
-    <li
-      className="filter-location-menu__option"
-      onClick={() => setLocation(location)}
-    >
+    <li className="location-menu__option" onClick={() => setLocation(location)}>
       <Icon name="location_on" />
       <span>{stringifyLocation(location)}</span>
     </li>
@@ -45,7 +42,7 @@ export const FilterLocation = ({ isSelected }: { isSelected?: boolean }) => {
         value={location ? `${stringifyLocation(location)}` : ""}
         name="location"
         placeholder="Add location"
-        className="filter-location-input"
+        className="location-input"
         isSelected={isSelected}
         onClick={() => setFilter(FILTER.LOCATION)}
       />
@@ -54,7 +51,7 @@ export const FilterLocation = ({ isSelected }: { isSelected?: boolean }) => {
           {isLoading ? (
             <span>Loading...</span>
           ) : (
-            <ul className="filter-location-menu">
+            <ul className="location-menu">
               {locationOptions.map((location) => (
                 <LocationOption
                   key={stringifyLocation(location)}

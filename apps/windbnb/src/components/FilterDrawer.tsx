@@ -28,16 +28,16 @@ export const FilterDrawer = ({ isOpen, onSearch }: Props) => {
   return (
     <Drawer header="Edit your search" open={isOpen} onClose={clearFilter}>
       <form
-        className="filter-drawer"
+        className="filter-form"
         data-filter={filter}
         onSubmit={handleSubmit}
       >
         <FilterLocation isSelected={filter === FILTER.LOCATION} />
         <FilterGuests isSelected={filter === FILTER.GUESTS} />
-        <div className="filter-drawer__search-button-wrapper">
+        <div className="filter-form__search-button-wrapper">
           <Button
             iconStart={<Icon name="search" />}
-            className="filter-drawer__search-button"
+            className="filter-form__search-button"
             color="error"
           >
             Search
