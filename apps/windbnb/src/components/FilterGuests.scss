@@ -35,15 +35,9 @@
     --button-radius: 4px;
     --icon-size: 16px;
 
-    cursor: pointer;
-
     &:hover:not(:disabled) {
       --button-outline-color: #222;
       --button-outline-color: var(--filter-guests-button-outline-hover, #222);
-    }
-
-    &:disabled {
-      cursor: not-allowed;
     }
   }
 
