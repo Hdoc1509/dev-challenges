@@ -26,6 +26,7 @@ export const SearchBar = () => {
       <ButtonIcon
         className="searchbar__search"
         onClick={() => setFilter(FILTER.LOCATION)}
+        aria-label="Open filter drawer"
       >
         <Icon name="search" />
       </ButtonIcon>
