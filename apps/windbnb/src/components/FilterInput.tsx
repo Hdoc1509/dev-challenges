@@ -1,4 +1,3 @@
-import type { ComponentProps } from "react";
 import clsx from "clsx";
 import "./FilterInput.scss";
 
@@ -6,7 +5,7 @@ type Props = {
   label: string;
   isSelected?: boolean;
 } & Pick<
-  ComponentProps<"input">,
+  React.ComponentProps<"input">,
   "value" | "name" | "placeholder" | "onClick" | "className"
 >;
 
@@ -20,7 +19,7 @@ export const FilterInput = ({
   onClick,
 }: Props) => {
   const containerClass = clsx("filter-input", className);
-  const wrapperClass = clsx('input-wrapper', { selected: isSelected });
+  const wrapperClass = clsx("input-wrapper", { selected: isSelected });
 
   return (
     <div className={containerClass} onClick={onClick}>
