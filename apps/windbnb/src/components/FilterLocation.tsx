@@ -7,11 +7,9 @@ import type { RequiredSearchLocation } from "../types";
 import { splitStringLocation, stringifyLocation } from "../utils";
 import "./FilterLocation.scss";
 
-export const LocationOption = ({
-  location,
-}: {
-  location: RequiredSearchLocation;
-}) => {
+type Location = RequiredSearchLocation;
+
+export const LocationOption = ({ location }: { location: Location }) => {
   const setLocation = useFilterStore((state) => state.setLocation);
 
   return (
@@ -23,7 +21,7 @@ export const LocationOption = ({
 };
 
 type MenuProps = {
-  options: RequiredSearchLocation[];
+  options: Location[];
   isLoading: boolean;
 };
 
