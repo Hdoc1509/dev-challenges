@@ -37,8 +37,7 @@
   [data-theme="dark"] & {
     --button-outline-hover: #d4d4d4;
     --button-outline-bg-hover: #444;
-    // FIX: Use --button-text-disabled
-    --button-outline-color-disabled: #4f4f4f;
+    --button-text-disabled: #4f4f4f;
   }
 }
 
