@@ -9,6 +9,8 @@
   font-size: 18px;
 
   &[data-filter="completed"] {
+    --form-display: none;
+    --delete-all-display: inline-flex;
     grid-template-areas:
       "list list"
       ". delete-all";
@@ -16,6 +18,7 @@
   }
 
   &__delete-all {
+    display: var(--delete-all-display, none);
     grid-area: delete-all;
     padding: 12px 24px;
     font-family: 'Montserrat', sans-serif;
@@ -25,7 +28,7 @@
 
 .todo-form {
   grid-area: form;
-  display: grid;
+  display: var(--form-display, grid);
   grid-template-columns: 1fr auto;
   gap: 24px;
 

@@ -24,8 +24,6 @@ export const TodoList = ({
   toggleCompleted,
   filter,
 }: Props) => {
-  const isCompletedTab = filter === "completed";
-
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -37,12 +35,10 @@ export const TodoList = ({
 
   return (
     <div className="todo-container" data-filter={filter}>
-      {!isCompletedTab && (
-        <form className="todo-form" onSubmit={handleSubmit}>
-          <input type="text" placeholder="Add a todo" name="todo" required />
-          <Button text="Add" color="primary" />
-        </form>
-      )}
+      <form className="todo-form" onSubmit={handleSubmit}>
+        <input type="text" placeholder="Add a todo" name="todo" required />
+        <Button text="Add" color="primary" />
+      </form>
       <ul className="todo-list" data-filter={filter}>
         {todos.length === 0 ? (
           <span>No todos. ¯\_(ツ)_/¯</span>
@@ -57,16 +53,14 @@ export const TodoList = ({
           ))
         )}
       </ul>
-      {isCompletedTab && (
-        <Button
-          className="todo-container__delete-all"
-          text="Delete all"
-          color="danger"
-          iconStart="delete"
-          iconVariant="outlined"
-          onClick={() => removeCompleted()}
-        />
-      )}
+      <Button
+        className="todo-container__delete-all"
+        text="Delete all"
+        color="danger"
+        iconStart="delete"
+        iconVariant="outlined"
+        onClick={() => removeCompleted()}
+      />
     </div>
   );
 };
