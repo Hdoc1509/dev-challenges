@@ -1,10 +1,11 @@
 import { useEffect, useMemo } from "react";
-import { FilterInput } from "./FilterInput";
+import { Button } from "@hrc/button";
 import { Icon } from "@hrc/material-icons";
+import { FilterInput } from "./FilterInput";
 import { FILTER, useFilterStore } from "../store/filter";
 import { useStays } from "../hooks/useStays";
-import type { RequiredSearchLocation } from "../types";
 import { splitStringLocation, stringifyLocation } from "../utils";
+import type { RequiredSearchLocation } from "../types";
 import "./FilterLocation.scss";
 
 type Location = RequiredSearchLocation;
@@ -13,10 +14,12 @@ export const LocationOption = ({ location }: { location: Location }) => {
   const setLocation = useFilterStore((state) => state.setLocation);
 
   return (
-    <li className="location-menu__option" onClick={() => setLocation(location)}>
-      <Icon name="location_on" />
-      <span>{stringifyLocation(location)}</span>
-    </li>
+    <Button
+      iconStart={<Icon name="location_on" />}
+      onClick={() => setLocation(location)}
+    >
+      {stringifyLocation(location)}
+    </Button>
   );
 };
 
@@ -29,11 +32,11 @@ const LocationMenu = ({ options, isLoading }: MenuProps) => {
   if (isLoading) return <span>Loading...</span>;
 
   return (
-    <ul className="location-menu">
+    <div className="location-menu" role="group">
       {options.map((location) => (
         <LocationOption key={stringifyLocation(location)} location={location} />
       ))}
-    </ul>
+    </div>
   );
 };
 

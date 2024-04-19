@@ -14,22 +14,14 @@
     margin-block: 30px;
   }
 
-  &__option {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    border-radius: 16px;
-    padding: 10px;
-
-    color: var(--text-light);
-
-    cursor: pointer;
-
-    &:hover {
-      background-color: var(--filter-location-bg-hover, #efefef);
-    }
-  }
+  --button-gap: 10px;
+  --button-justify-content: flex-start;
+  --button-bg: transparent;
+  --button-bg-hover: var(--filter-location-bg-hover, #efefef);
+  --button-radius: 16px;
+  --button-shadow: none;
+  --button-padding: 10px;
+  --button-text: var(--text-light);
 }
 
 .location-input {
