@@ -34,12 +34,8 @@ export const FilterDrawer = ({ isOpen, onSearch }: Props) => {
       >
         <FilterLocation isSelected={filter === FILTER.LOCATION} />
         <FilterGuests isSelected={filter === FILTER.GUESTS} />
-        <div className="filter-form__search-button-wrapper">
-          <Button
-            iconStart={<Icon name="search" />}
-            className="filter-form__search-button"
-            color="error"
-          >
+        <div className="filter-form__search">
+          <Button iconStart={<Icon name="search" />} color="error">
             Search
           </Button>
         </div>
