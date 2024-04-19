@@ -10,13 +10,11 @@ type Props = {
 export const HeaderWithTheme = ({ title, nav }: Props) => (
   <header className="main-header">
     <h1>{title}</h1>
-    <div className="theme-switcher">
-      <ThemeButton
-        lightElement={<Icon name="light_mode" color="warning" />}
-        darkElement={<Icon name="dark_mode" />}
-        fullRounded
-      />
-    </div>
+    <ThemeButton
+      lightElement={<Icon name="light_mode" color="warning" />}
+      darkElement={<Icon name="dark_mode" />}
+      fullRounded
+    />
     {nav}
   </header>
 );
