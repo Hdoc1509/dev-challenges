@@ -22,16 +22,14 @@ export const Criteria = ({ label, hint }: CriteriaProps) => {
       <div className="guests-counter">
         <ButtonIcon
           variant="outline"
-          className="guests-counter__button"
           type="button"
           onClick={() => removeGuest(criteriaLower)}
           disabled={guests[criteriaLower] === 0}
         >
           <Icon name="remove" />
         </ButtonIcon>
-        <span className="guests-counter__count">{guests[criteriaLower]}</span>
+        <span>{guests[criteriaLower]}</span>
         <ButtonIcon
-          className="guests-counter__button"
           variant="outline"
           type="button"
           onClick={() => addGuest(criteriaLower)}

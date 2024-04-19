@@ -22,28 +22,23 @@
 .guests-counter {
   display: flex;
   gap: 16px;
+  font-size: 14px;
+  font-weight: 700;
+
+  --button-outline-color: var(--text-secondary);
+  --button-padding: 2px;
+  --button-radius: 4px;
+  --icon-size: 1.15em;
+
+  .button:hover:enabled {
+    --button-outline-color: var(--button-outline-hover, #222);
+  }
 
   [data-theme="dark"] & {
+    --button-outline-hover: #d4d4d4;
     --button-outline-bg-hover: #444;
+    // FIX: Use --button-text-disabled
     --button-outline-color-disabled: #4f4f4f;
-  }
-
-  &__button {
-    --button-bg: transparent;
-    --button-outline-color: var(--text-secondary);
-    --button-padding: 2px;
-    --button-radius: 4px;
-    --icon-size: 16px;
-
-    &:hover:not(:disabled) {
-      --button-outline-color: #222;
-      --button-outline-color: var(--filter-guests-button-outline-hover, #222);
-    }
-  }
-
-  &__count {
-    font-size: 14px;
-    font-weight: 700;
   }
 }
 
