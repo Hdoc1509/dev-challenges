@@ -22,6 +22,23 @@ export const LocationOption = ({
   );
 };
 
+type MenuProps = {
+  options: RequiredSearchLocation[];
+  isLoading: boolean;
+};
+
+const LocationMenu = ({ options, isLoading }: MenuProps) => {
+  if (isLoading) return <span>Loading...</span>;
+
+  return (
+    <ul className="location-menu">
+      {options.map((location) => (
+        <LocationOption key={stringifyLocation(location)} location={location} />
+      ))}
+    </ul>
+  );
+};
+
 export const FilterLocation = ({ isSelected }: { isSelected?: boolean }) => {
   const { stays, isLoading, getStays } = useStays();
   const location = useFilterStore((state) => state.location);
@@ -47,20 +64,7 @@ export const FilterLocation = ({ isSelected }: { isSelected?: boolean }) => {
         onClick={() => setFilter(FILTER.LOCATION)}
       />
       {isSelected && (
-        <>
-          {isLoading ? (
-            <span>Loading...</span>
-          ) : (
-            <ul className="location-menu">
-              {locationOptions.map((location) => (
-                <LocationOption
-                  key={stringifyLocation(location)}
-                  location={location}
-                />
-              ))}
-            </ul>
-          )}
-        </>
+        <LocationMenu options={locationOptions} isLoading={isLoading} />
       )}
     </>
   );
