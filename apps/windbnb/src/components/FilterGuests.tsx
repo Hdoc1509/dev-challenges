@@ -25,6 +25,7 @@ export const Criteria = ({ label, hint }: CriteriaProps) => {
           type="button"
           onClick={() => removeGuest(criteriaLower)}
           disabled={guests[criteriaLower] === 0}
+          aria-label={`Decrease ${criteriaLower} count`}
         >
           <Icon name="remove" />
         </ButtonIcon>
@@ -33,6 +34,7 @@ export const Criteria = ({ label, hint }: CriteriaProps) => {
           variant="outline"
           type="button"
           onClick={() => addGuest(criteriaLower)}
+          aria-label={`Increase ${criteriaLower} count`}
         >
           <Icon name="add" />
         </ButtonIcon>
