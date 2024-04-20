@@ -7,12 +7,12 @@
 }
 
 .todo-form {
-  display: var(--form-display, grid);
-  grid-template-columns: 1fr auto;
+  display: var(--form-display, flex);
   gap: 24px;
 
   input {
     min-width: 180px;
+    width: 100%;
     padding: 12px;
     border-radius: 12px;
     border: 1px solid var(--border-color, #bdbdbd);
