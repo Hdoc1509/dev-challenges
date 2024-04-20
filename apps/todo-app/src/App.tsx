@@ -23,7 +23,6 @@ function App() {
           removeTodo={removeTodo}
           removeCompleted={removeCompletedTodos}
           toggleCompleted={toggleCompleted}
-          filter={filter}
         />
       </main>
       <Footer />

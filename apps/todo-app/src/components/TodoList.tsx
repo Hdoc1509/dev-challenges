@@ -1,7 +1,6 @@
 import { TodoItem } from "./TodoItem";
 import { Button } from "@hdoc/react-button";
 import type { Todo } from "../types";
-import type { Filter } from "../utils";
 import "./TodoList.scss";
 
 type Props = {
@@ -10,7 +9,6 @@ type Props = {
   removeTodo: (id: number) => void;
   removeCompleted: () => void;
   toggleCompleted: (id: number) => void;
-  filter: Filter;
 };
 type TodoForm = {
   todo: { value: string };
@@ -22,7 +20,6 @@ export const TodoList = ({
   removeTodo,
   removeCompleted,
   toggleCompleted,
-  filter,
 }: Props) => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
