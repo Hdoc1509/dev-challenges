@@ -39,7 +39,7 @@ export const TodoList = ({
         <input type="text" placeholder="Add a todo" name="todo" required />
         <Button text="Add" color="primary" />
       </form>
-      <ul className="todo-list" data-filter={filter}>
+      <ul className="todo-list">
         {todos.length === 0 ? (
           <span>No todos. ¯\_(ツ)_/¯</span>
         ) : (
