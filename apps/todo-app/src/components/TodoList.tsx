@@ -34,7 +34,7 @@ export const TodoList = ({
   };
 
   return (
-    <div className="todo-container" data-filter={filter}>
+    <>
       <form className="todo-form" onSubmit={handleSubmit}>
         <input type="text" placeholder="Add a todo" name="todo" required />
         <Button text="Add" color="primary" />
@@ -54,13 +54,13 @@ export const TodoList = ({
         )}
       </ul>
       <Button
-        className="todo-container__delete-all"
+        className="todo-delete-all"
         text="Delete all"
         color="danger"
         iconStart="delete"
         iconVariant="outlined"
         onClick={() => removeCompleted()}
       />
-    </div>
+    </>
   );
 };

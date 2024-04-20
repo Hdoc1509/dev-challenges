@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <Header title="#todo" nav={<Nav setPath={setFilter} path={filter} />} />
-      <main>
+      <main data-filter={filter}>
         <TodoList
           todos={filteredTodos}
           addTodo={addTodo}

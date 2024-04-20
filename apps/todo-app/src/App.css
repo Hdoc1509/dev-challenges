@@ -22,3 +22,24 @@ h1 {
   font-size: 36px;
   text-align: center;
 }
+
+main {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    "form form"
+    "list .";
+  gap: 32px;
+
+  margin-bottom: auto;
+  font-size: 18px;
+
+  &[data-filter="completed"] {
+    --form-display: none;
+    --delete-all-display: inline-flex;
+    grid-template-areas:
+      "list list"
+      ". delete-all";
+    grid-template-columns: 1fr auto;
+  }
+}
