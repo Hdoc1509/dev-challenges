@@ -1,13 +1,12 @@
 .todo-delete-all {
   display: var(--delete-all-display, none);
-  grid-area: delete-all;
   padding: 12px 24px;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
+  margin-left: auto;
 }
 
 .todo-form {
-  grid-area: form;
   display: var(--form-display, grid);
   grid-template-columns: 1fr auto;
   gap: 24px;
