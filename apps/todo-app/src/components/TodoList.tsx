@@ -11,7 +11,7 @@ type Props = {
 };
 
 export const TodoList = ({
-  todos = [],
+  todos,
   removeTodo,
   removeCompleted,
   toggleCompleted,
