@@ -12,7 +12,7 @@ type Props = {
 export const TodoItem = ({ todo, onToggle, onRemove }: Props) => {
   const { title, completed } = todo;
 
-  const className = clsx("todo-item", {
+  const itemClassName = clsx("todo-item", {
     "todo-item--completed": completed,
   });
   const checkboxClassName = clsx("todo-item__checkbox", {
@@ -20,8 +20,8 @@ export const TodoItem = ({ todo, onToggle, onRemove }: Props) => {
   });
 
   return (
-    <div style={{ display: "flex" }}>
-      <label className={className}>
+    <li className={itemClassName}>
+      <label>
         <input
           type="checkbox"
           defaultChecked={completed}
@@ -37,6 +37,6 @@ export const TodoItem = ({ todo, onToggle, onRemove }: Props) => {
           <Icon name="delete" variant="outlined" />
         </span>
       )}
-    </div>
+    </li>
   );
 };

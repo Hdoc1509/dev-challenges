@@ -1,25 +1,30 @@
 .todo-item {
   display: flex;
-  align-items: center;
-  gap: 10px;
+  justify-content: space-between;
 
   list-style: none;
-  font-family: "Montserrat", sans-serif;
-  font-size: 18px;
 
-  &:hover {
-    --checkbox-bg: #ededed;
-    --checkbox-border-color: #343434;
-  }
+  label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 
-  &--completed {
-    text-decoration: line-through;
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
 
     &:hover {
-      --checkbox-bg__checked: var(--primary-hover);
+      --checkbox-bg: #ededed;
+      --checkbox-border-color: #343434;
+    }
+
+    &--completed {
+      text-decoration: line-through;
+
+      &:hover {
+        --checkbox-bg__checked: var(--primary-hover);
+      }
     }
   }
-
   &__checkbox {
     --icon-color: transparent;
 
@@ -43,7 +48,6 @@
   &__delete {
     --icon-color: #bdbdbd;
     display: none;
-    margin-left: auto;
     cursor: default;
 
     &:hover {
