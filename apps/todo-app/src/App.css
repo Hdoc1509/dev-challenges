@@ -5,7 +5,7 @@
 
   min-height: 100vh;
   min-height: 100dvh;
-  max-width: 1280px;
+  max-width: 720px;
   margin: 0 auto;
   padding-inline: 2rem;
 }
