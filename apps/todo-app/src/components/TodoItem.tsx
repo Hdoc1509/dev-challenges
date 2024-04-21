@@ -22,7 +22,7 @@ export const TodoItem = ({ todo, onToggle, onRemove }: Props) => {
   return (
     <li className={itemClassName}>
       <label>
-        <input type="checkbox" defaultChecked={completed} onClick={onToggle} />
+        <input type="checkbox" checked={completed} onChange={onToggle} />
         <span className={checkboxClassName}>
           <Icon name="check" variant="round" />
         </span>
