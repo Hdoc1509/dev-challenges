@@ -7,12 +7,12 @@
   label {
     display: flex;
     align-items: center;
-    gap: 10px;
 
     font-family: "Montserrat", sans-serif;
     font-size: 18px;
 
-    &:hover {
+    &:hover,
+    &:focus-within {
       --checkbox-bg: #ededed;
       --checkbox-border-color: #343434;
     }
@@ -30,6 +30,7 @@
 
     width: 26px;
     height: 26px;
+    margin-right: 10px;
     background-color: var(--checkbox-bg, transparent);
     border: 1px solid var(--checkbox-border-color, #828282);
     border-radius: 4px;
@@ -60,6 +61,8 @@
   }
 
   input[type="checkbox"] {
-    display: none;
+    appearance: none;
+    margin: 0;
+    outline: none;
   }
 }
