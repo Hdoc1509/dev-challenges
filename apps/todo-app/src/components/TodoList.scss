@@ -6,42 +6,6 @@
   margin-left: auto;
 }
 
-.todo-form {
-  display: var(--form-display, flex);
-  gap: 24px;
-  font-family: "Montserrat", sans-serif;
-
-  input {
-    min-width: 180px;
-    width: 100%;
-    padding: 12px;
-    border-radius: 12px;
-    border: 1px solid var(--border-color, #bdbdbd);
-    outline: none;
-
-    font-family: inherit;
-    font-size: 14px;
-    font-weight: 400;
-
-    &:focus {
-      --border-color: var(--primary);
-    }
-
-    &::placeholder {
-      color: #828282;
-    }
-  }
-
-  .button {
-    padding: 20px 40px;
-    border-radius: 12px;
-
-    font-family: inherit;
-    font-weight: 600;
-    font-size: 14px;
-  }
-}
-
 .todo-list {
   display: grid;
   gap: 25px;

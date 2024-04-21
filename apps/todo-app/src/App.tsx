@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Footer, HeaderWithTheme as Header } from "@internal/components";
 import { Nav } from "./components/Nav";
 import { TodoList } from "./components/TodoList";
+import { TodoForm } from "./components/TodoForm";
 import { FILTERS, type Filter } from "./utils";
 import { useTodos } from "./hooks/useTodos";
 import "./App.css";
@@ -17,9 +18,9 @@ function App() {
     <>
       <Header title="#todo" nav={<Nav setPath={setFilter} path={filter} />} />
       <main data-filter={filter}>
+        <TodoForm addTodo={addTodo} />
         <TodoList
           todos={filteredTodos}
-          addTodo={addTodo}
           removeTodo={removeTodo}
           removeCompleted={removeCompletedTodos}
           toggleCompleted={toggleCompleted}

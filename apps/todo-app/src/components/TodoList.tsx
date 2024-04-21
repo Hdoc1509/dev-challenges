@@ -5,37 +5,19 @@ import "./TodoList.scss";
 
 type Props = {
   todos: Todo[];
-  addTodo: (title: string) => void;
   removeTodo: (id: number) => void;
   removeCompleted: () => void;
   toggleCompleted: (id: number) => void;
 };
-type TodoForm = {
-  todo: { value: string };
-};
 
 export const TodoList = ({
   todos = [],
-  addTodo,
   removeTodo,
   removeCompleted,
   toggleCompleted,
 }: Props) => {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    const target = e.target as HTMLFormElement & TodoForm;
-
-    addTodo(target.todo.value);
-    target.reset();
-  };
-
   return (
     <>
-      <form className="todo-form" onSubmit={handleSubmit}>
-        <input type="text" placeholder="Add a todo" name="todo" required />
-        <Button text="Add" color="primary" />
-      </form>
       <ul className="todo-list">
         {todos.length === 0 ? (
           <span>No todos. ¯\_(ツ)_/¯</span>
