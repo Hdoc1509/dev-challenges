@@ -9,20 +9,18 @@ type Props = {
 };
 
 export const TodoList = ({ todos, removeTodo, toggleCompleted }: Props) => {
+  if (todos.length === 0) return <span>No todos. ¯\_(ツ)_/¯</span>;
+
   return (
     <ul className="todo-list">
-      {todos.length === 0 ? (
-        <span>No todos. ¯\_(ツ)_/¯</span>
-      ) : (
-        todos.map((todo) => (
-          <TodoItem
-            key={todo.id}
-            todo={todo}
-            onToggle={() => toggleCompleted(todo.id)}
-            onRemove={() => removeTodo(todo.id)}
-          />
-        ))
-      )}
+      {todos.map((todo) => (
+        <TodoItem
+          key={todo.id}
+          todo={todo}
+          onToggle={() => toggleCompleted(todo.id)}
+          onRemove={() => removeTodo(todo.id)}
+        />
+      ))}
     </ul>
   );
 };
