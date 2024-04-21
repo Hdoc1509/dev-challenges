@@ -3,6 +3,7 @@ import { Footer, HeaderWithTheme as Header } from "@internal/components";
 import { Nav } from "./components/Nav";
 import { TodoList } from "./components/TodoList";
 import { TodoForm } from "./components/TodoForm";
+import { GeneralActions } from "./components/GeneralActions";
 import { FILTERS, type Filter } from "./utils";
 import { useTodos } from "./hooks/useTodos";
 import "./App.css";
@@ -22,9 +23,9 @@ function App() {
         <TodoList
           todos={filteredTodos}
           removeTodo={removeTodo}
-          removeCompleted={removeCompletedTodos}
           toggleCompleted={toggleCompleted}
         />
+        <GeneralActions removeCompleted={removeCompletedTodos} />
       </main>
       <Footer />
     </>
