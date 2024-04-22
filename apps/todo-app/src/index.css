@@ -9,8 +9,6 @@
 
   --primary: #2f80ed;
   --primary-hover: #1366d6;
-  --error: #eb5757;
-  --error-hover: #db1a1a;
 }
 
 *,
@@ -22,6 +20,8 @@
 [data-theme="light"] {
   --color-bg: #fff;
   --color-text: #000;
+  --error: #eb5757;
+  --error-hover: #db1a1a;
 }
 
 [data-theme="dark"] {
