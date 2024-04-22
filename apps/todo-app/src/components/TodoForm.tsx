@@ -1,5 +1,5 @@
-import { Button } from "@hdoc/react-button";
-import './TodoForm.scss';
+import { Button } from "@hrc/button";
+import "./TodoForm.scss";
 
 type FormFields = {
   todo: { value: string };
@@ -22,7 +22,7 @@ export const TodoForm = ({ addTodo }: Props) => {
   return (
     <form className="todo-form" onSubmit={handleSubmit}>
       <input type="text" placeholder="Add a todo" name="todo" required />
-      <Button text="Add" color="primary" />
+      <Button color="primary">Add</Button>
     </form>
   );
 };

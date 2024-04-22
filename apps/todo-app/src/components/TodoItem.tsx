@@ -1,5 +1,5 @@
 import { clsx } from "clsx";
-import { Icon } from "@hdoc/react-material-icons";
+import { Icon } from "@hrc/material-icons";
 import type { Todo } from "../types";
 import "./TodoItem.scss";
 

@@ -1,4 +1,5 @@
-import { Button } from "@hdoc/react-button";
+import { Button } from "@hrc/button";
+import { Icon } from "@hrc/material-icons";
 import "./GeneralActions.scss";
 
 type Props = {
@@ -9,11 +10,11 @@ export const GeneralActions = ({ removeCompleted }: Props) => {
   return (
     <Button
       className="todo-delete-all"
-      text="Delete all"
-      color="danger"
-      iconStart="delete"
-      iconVariant="outlined"
+      color="error"
+      iconStart={<Icon name="delete" variant="outlined" />}
       onClick={removeCompleted}
-    />
+    >
+      Delete all
+    </Button>
   );
 };
