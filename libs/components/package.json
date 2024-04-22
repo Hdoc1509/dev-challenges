@@ -5,7 +5,7 @@
   "main": "./src/main.tsx",
   "type": "module",
   "dependencies": {
-    "@hdoc/react-material-icons": "^1.6.0",
-    "@hdoc/react-toggle-theme": "^2.1.1"
+    "@hrc/material-icons": "2.3.0",
+    "@hrc/toggle-theme": "2.2.0"
   }
 }

@@ -421,12 +421,12 @@ importers:
 
   libs/components:
     dependencies:
-      '@hdoc/react-material-icons':
-        specifier: ^1.6.0
-        version: 1.6.0(@material-design-icons/font@0.14.13)(react-dom@18.2.0)(react@18.2.0)
-      '@hdoc/react-toggle-theme':
-        specifier: ^2.1.1
-        version: 2.1.1(react-dom@18.2.0)(react@18.2.0)
+      '@hrc/material-icons':
+        specifier: 2.3.0
+        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)
+      '@hrc/toggle-theme':
+        specifier: 2.2.0
+        version: 2.2.0(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)
 
 packages:
 
