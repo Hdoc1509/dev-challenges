@@ -1,6 +1,7 @@
 .todo-item {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   list-style: none;
 
@@ -16,17 +17,17 @@
   --checkbox-color: #343434;
   --checkbox-size: 24px;
 
-  &__delete {
-    --icon-color: #bdbdbd;
+  --button-padding: 0.5rem;
+  .button {
     display: none;
-    cursor: default;
+    --button-text: #bdbdbd;
 
     &:hover {
-      --icon-color: #696969;
+      --button-text: #696969;
     }
 
     [data-filter="completed"] & {
-      display: inline;
+      display: inline-flex;
     }
   }
 }
