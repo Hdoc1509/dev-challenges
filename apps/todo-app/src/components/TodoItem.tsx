@@ -1,5 +1,6 @@
 import { clsx } from "clsx";
 import { Icon } from "@hrc/material-icons";
+import { Checkbox } from "@hrc/input";
 import type { Todo } from "../types";
 import "./TodoItem.scss";
 
@@ -15,19 +16,19 @@ export const TodoItem = ({ todo, onToggle, onRemove }: Props) => {
   const itemClassName = clsx("todo-item", {
     "todo-item--completed": completed,
   });
-  const checkboxClassName = clsx("todo-item__checkbox", {
-    "todo-item__checkbox--checked": completed,
+  const labelClassName = clsx({
+    "label--checked": completed,
   });
 
   return (
     <li className={itemClassName}>
-      <label>
-        <input type="checkbox" checked={completed} onChange={onToggle} />
-        <span className={checkboxClassName}>
-          <Icon name="check" variant="round" />
-        </span>
-        {title}
-      </label>
+      <Checkbox
+        label={title}
+        labelClassName={labelClassName}
+        checked={completed}
+        onChange={onToggle}
+        color="primary"
+      />
       {completed && (
         <span className="todo-item__delete" onClick={onRemove}>
           <Icon name="delete" variant="outlined" />
