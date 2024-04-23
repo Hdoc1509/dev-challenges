@@ -1,4 +1,5 @@
 import { Button } from "@hrc/button";
+import { Input } from "@hrc/input";
 import "./TodoForm.scss";
 
 type FormFields = {
@@ -21,7 +22,7 @@ export const TodoForm = ({ addTodo }: Props) => {
 
   return (
     <form className="todo-form" onSubmit={handleSubmit}>
-      <input type="text" placeholder="Add a todo" name="todo" required />
+      <Input placeholder="Add a todo" name="todo" fullWidth required />
       <Button color="primary">Add</Button>
     </form>
   );
