@@ -1,7 +1,7 @@
 .todo-form {
+  --_ff: "Montserrat", sans-serif;
   display: var(--form-display, flex);
   gap: 24px;
-  font-family: "Montserrat", sans-serif;
 
   --input-border-color: #bdbdbd;
   --input-border-color-focus: var(--primary);
@@ -10,7 +10,7 @@
   --input-font-weight: 400;
   .input {
     flex-grow: 1;
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--_ff);
 
     &__inner::placeholder {
       opacity: 1;
@@ -19,7 +19,7 @@
 
   --button-padding: 20px 40px;
   --button-radius: 12px;
-  --button-font-family: "Montserrat", sans-serif;
+  --button-font-family: var(--_ff);
   --button-font-size: 14px;
   --button-font-weight: 600;
 
