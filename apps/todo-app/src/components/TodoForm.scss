@@ -3,7 +3,6 @@
   gap: 24px;
   font-family: "Montserrat", sans-serif;
 
-  --input-bg: #fff;
   --input-border-color: #bdbdbd;
   --input-border-color-focus: var(--primary);
   --input-padding: 12px;
@@ -12,6 +11,10 @@
   .input {
     flex-grow: 1;
     font-family: "Montserrat", sans-serif;
+
+    &__inner::placeholder {
+      opacity: 1;
+    }
   }
 
   .button {
@@ -24,6 +27,8 @@
   }
 
   [data-theme="dark"] & {
+    --input-text: #fff;
     --input-border-color-hover: #fff;
+    --placeholder-color: #bbb;
   }
 }
