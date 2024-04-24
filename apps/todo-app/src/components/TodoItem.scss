@@ -23,6 +23,7 @@
   .button {
     display: none;
     --button-text: var(--text-light);
+    --button-bg-hover: var(--_bg-hover, rgb(0 0 0 / 10%));
 
     &:hover {
       --button-text: var(--text);
@@ -31,5 +32,8 @@
     [data-filter="completed"] & {
       display: inline-flex;
     }
+  }
+  [data-theme="dark"] & {
+    --_bg-hover: rgb(0 0 0 / 20%);
   }
 }
