@@ -9,6 +9,9 @@
 
   --bg: #fff;
   --text: #333;
+  --text-secondary: #828282;
+  --text-dark: #000;
+  --text-light: #bdbdbd;
 
   --primary: #2f80ed;
   --primary-hover: #1366d6;
@@ -28,6 +31,8 @@
 [data-theme="dark"] {
   --bg: #222;
   --text: #ccc;
+  --text-dark: #fff;
+  --text-light: #888;
 }
 
 body {
