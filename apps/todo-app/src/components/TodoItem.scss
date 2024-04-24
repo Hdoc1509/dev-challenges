@@ -5,25 +5,27 @@
 
   list-style: none;
 
+  --label-text: var(--text-dark);
   --label-font-family: "Montserrat", sans-serif;
   --label-font-weight: 500;
   .label {
     --label-font-size: 18px;
 
     &--checked {
+      --label-text: var(--text);
       text-decoration: line-through;
     }
   }
-  --checkbox-color: #343434;
+  --checkbox-color: var(--text-secondary);
   --checkbox-size: 24px;
 
   --button-padding: 0.5rem;
   .button {
     display: none;
-    --button-text: #bdbdbd;
+    --button-text: var(--text-light);
 
     &:hover {
-      --button-text: #696969;
+      --button-text: var(--text);
     }
 
     [data-filter="completed"] & {

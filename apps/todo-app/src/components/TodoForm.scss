@@ -3,11 +3,14 @@
   display: var(--form-display, flex);
   gap: 24px;
 
-  --input-border-color: #bdbdbd;
+  --input-border-color: var(--text-light);
+  --input-border-color-hover: var(--text);
   --input-border-color-focus: var(--primary);
   --input-padding: 12px;
   --input-radius: 12px;
+  --input-text: var(--text-dark);
   --input-font-weight: 400;
+  --placeholder-color: var(--text-secondary);
   .input {
     flex-grow: 1;
     font-family: var(--_ff);
@@ -22,10 +25,4 @@
   --button-font-family: var(--_ff);
   --button-font-size: 14px;
   --button-font-weight: 600;
-
-  [data-theme="dark"] & {
-    --input-text: #fff;
-    --input-border-color-hover: #fff;
-    --placeholder-color: #bbb;
-  }
 }
