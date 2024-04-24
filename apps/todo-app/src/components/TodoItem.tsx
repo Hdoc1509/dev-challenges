@@ -1,5 +1,5 @@
 import { clsx } from "clsx";
-import { Button } from "@hrc/button";
+import { ButtonIcon } from "@hrc/button";
 import { Icon } from "@hrc/material-icons";
 import { Checkbox } from "@hrc/input";
 import type { Todo } from "../types";
@@ -31,9 +31,9 @@ export const TodoItem = ({ todo, onToggle, onRemove }: Props) => {
         color="primary"
       />
       {completed && (
-        <Button variant="text" onClick={onRemove} fullRounded>
+        <ButtonIcon variant="text" onClick={onRemove} fullRounded>
           <Icon name="delete" variant="outlined" />
-        </Button>
+        </ButtonIcon>
       )}
     </li>
   );
