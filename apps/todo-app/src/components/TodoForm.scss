@@ -1,5 +1,7 @@
+@use "../scss/mixins" as *;
+
 .todo-form {
-  --_ff: "Montserrat", sans-serif;
+  @include font-variable("Montserrat", sans-serif, --_ff);
   display: var(--form-display, flex);
   gap: 24px;
 

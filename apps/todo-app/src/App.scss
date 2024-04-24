@@ -1,3 +1,5 @@
+@use "scss/mixins" as *;
+
 #root {
   position: relative;
   display: grid;
@@ -18,7 +20,7 @@
 h1 {
   line-height: 42.26px;
 
-  font-family: "Raleway", sans-serif;
+  @include font-variable("Raleway", sans-serif);
   font-weight: 700;
   font-size: 36px;
   text-align: center;

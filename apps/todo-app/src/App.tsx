@@ -6,7 +6,7 @@ import { TodoForm } from "./components/TodoForm";
 import { GeneralActions } from "./components/GeneralActions";
 import { FILTERS, type Filter } from "./utils";
 import { useTodos } from "./hooks/useTodos";
-import "./App.css";
+import "./App.scss";
 
 function App() {
   const { todos, addTodo, removeTodo, removeCompletedTodos, toggleCompleted } =

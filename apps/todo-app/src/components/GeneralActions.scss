@@ -1,7 +1,9 @@
+@use "../scss/mixins" as *;
+
 .todo-delete-all {
   display: var(--delete-all-display, none);
   padding: 12px 24px;
-  font-family: "Montserrat", sans-serif;
+  @include font-variable("Montserrat", sans-serif);
   font-weight: 600;
   margin-left: auto;
 }
