@@ -8,7 +8,7 @@
   -webkit-text-size-adjust: 100%;
 
   --bg: #fff;
-  --text: #000;
+  --text: #333;
 
   --primary: #2f80ed;
   --primary-hover: #1366d6;
@@ -27,7 +27,7 @@
 
 [data-theme="dark"] {
   --bg: #222;
-  --text: #fff;
+  --text: #ccc;
 }
 
 body {
