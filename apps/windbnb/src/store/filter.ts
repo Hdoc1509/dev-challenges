@@ -10,22 +10,25 @@ export const FILTER = Object.freeze({
 type TFilter = ValueOf<typeof FILTER>;
 export type GuestType = "adults" | "children";
 
-type FilterStore = {
+type State = {
   filter: TFilter | null;
-  setFilter: (filter: TFilter | null) => void;
-  clearFilter: () => void;
   location: SearchOptions["location"];
-  setLocation: (location: RequiredSearchLocation) => void;
   guests: {
     adults: number;
     children: number;
     total: number;
   };
+};
+
+type Action = {
+  setFilter: (filter: TFilter | null) => void;
+  clearFilter: () => void;
+  setLocation: (location: RequiredSearchLocation) => void;
   addGuest: (type: GuestType) => void;
   removeGuest: (type: GuestType) => void;
 };
 
-export const useFilterStore = create<FilterStore>((set) => ({
+export const useFilterStore = create<State & Action>((set) => ({
   filter: null,
   setFilter: (filter) => set({ filter }),
   clearFilter: () => set({ filter: null }),
