@@ -1,14 +1,6 @@
 import results from "../mocks/stays.json";
 import { parseResults } from "../utils";
-import type { Stay } from "../types";
-
-type SearchOptions = {
-  location?: {
-    city: string;
-    country: string;
-  };
-  guests?: number;
-};
+import type { SearchOptions, Stay } from "../types";
 
 export const searchStays = async ({
   location,
