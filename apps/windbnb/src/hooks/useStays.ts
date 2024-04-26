@@ -1,14 +1,8 @@
 import { useCallback, useState } from "react";
 import { searchStays } from "../services/stays";
-import type { FnSearchOptions, SearchOptions, Stay } from "../types";
+import type { SearchOptions, Stay } from "../types";
 
-type Result = {
-  isLoading: boolean;
-  stays: Stay[];
-  getStays: FnSearchOptions;
-};
-
-export const useStays = (): Result => {
+export const useStays = () => {
   const [stays, setStays] = useState<Stay[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
