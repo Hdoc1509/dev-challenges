@@ -1,13 +1,8 @@
 import { Icon } from "@hrc/material-icons";
-import type { Simplify } from "type-fest";
 import type { Stay } from "../types";
 import "./StayCard.scss";
 
-type Props = {
-  stay: Simplify<Omit<Stay, "city" | "country" | "maxGuests">>;
-};
-
-export function StayCard({ stay }: Props) {
+export function StayCard({ stay }: { stay: Stay }) {
   const { imageUrl, isSuperHost, type, rating, title, beds } = stay;
 
   return (
