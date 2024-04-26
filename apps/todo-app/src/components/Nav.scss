@@ -1,9 +1,5 @@
 @use "../scss/mixins" as *;
 
-@mixin border-top-rounded($radius) {
-  border-radius: $radius $radius 0 0;
-}
-
 .main-nav {
   grid-area: nav;
   display: grid;
@@ -34,7 +30,7 @@
       height: 4px;
       width: 90px;
       margin: 0 auto;
-      @include border-top-rounded(4px);
+      border-radius: 4px 4px 0 0;
 
       background-color: var(--primary);
 
