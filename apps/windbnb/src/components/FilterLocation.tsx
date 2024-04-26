@@ -17,6 +17,7 @@ export const LocationOption = ({ location }: { location: Location }) => {
     <Button
       iconStart={<Icon name="location_on" />}
       onClick={() => setLocation(location)}
+      type="button"
     >
       {stringifyLocation(location)}
     </Button>
