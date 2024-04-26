@@ -7,11 +7,11 @@ export const FILTERS = Object.freeze({
   GUESTS: "GUESTS",
 });
 
-type Filter = ValueOf<typeof FILTERS>;
+type Filter = ValueOf<typeof FILTERS> | null;
 export type GuestType = "adults" | "children";
 
 type State = {
-  filter: Filter | null;
+  filter: Filter;
   location: SearchOptions["location"];
   guests: {
     adults: number;
@@ -21,7 +21,7 @@ type State = {
 };
 
 type Action = {
-  setFilter: (filter: Filter | null) => void;
+  setFilter: (filter: Filter) => void;
   clearFilter: () => void;
   setLocation: (location: RequiredSearchLocation) => void;
   addGuest: (type: GuestType) => void;
