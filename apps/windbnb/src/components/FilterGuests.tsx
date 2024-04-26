@@ -1,7 +1,7 @@
 import { ButtonIcon } from "@hrc/button";
 import { Icon } from "@hrc/material-icons";
 import { FilterInput } from "./FilterInput";
-import { type GuestType, useFilterStore, FILTER } from "../store/filter";
+import { type GuestType, useFilterStore, FILTERS } from "../store/filter";
 import "./FilterGuests.scss";
 
 type CriteriaProps = {
@@ -56,7 +56,7 @@ export const FilterGuests = ({ isSelected }: { isSelected?: boolean }) => {
         name="guests"
         placeholder="Add guests"
         isSelected={isSelected}
-        onClick={() => setFilter(FILTER.GUESTS)}
+        onClick={() => setFilter(FILTERS.GUESTS)}
       />
       {isSelected && (
         <div className="guests-menu">

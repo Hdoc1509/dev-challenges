@@ -3,7 +3,7 @@ import { Icon } from "@hrc/material-icons";
 import { FilterGuests } from "./FilterGuests";
 import { FilterLocation } from "./FilterLocation";
 import { Drawer } from "./Drawer";
-import { FILTER, useFilterStore } from "../store/filter";
+import { FILTERS, useFilterStore } from "../store/filter";
 import type { FnSearchOptions } from "../types";
 import "./FilterDrawer.scss";
 
@@ -32,8 +32,8 @@ export const FilterDrawer = ({ isOpen, onSearch }: Props) => {
         data-filter={filter}
         onSubmit={handleSubmit}
       >
-        <FilterLocation isSelected={filter === FILTER.LOCATION} />
-        <FilterGuests isSelected={filter === FILTER.GUESTS} />
+        <FilterLocation isSelected={filter === FILTERS.LOCATION} />
+        <FilterGuests isSelected={filter === FILTERS.GUESTS} />
         <div className="filter-form__search">
           <Button iconStart={<Icon name="search" />} color="error">
             Search

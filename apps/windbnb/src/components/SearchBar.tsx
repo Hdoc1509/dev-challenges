@@ -1,6 +1,6 @@
 import { Button, ButtonGroup, ButtonIcon } from "@hrc/button";
 import { Icon } from "@hrc/material-icons";
-import { FILTER, useFilterStore } from "../store/filter";
+import { FILTERS, useFilterStore } from "../store/filter";
 import { stringifyLocation } from "../utils";
 import clsx from "clsx";
 import "./SearchBar.scss";
@@ -16,16 +16,16 @@ export const SearchBar = () => {
     <ButtonGroup className="searchbar">
       <Button
         className={locationClass}
-        onClick={() => setFilter(FILTER.LOCATION)}
+        onClick={() => setFilter(FILTERS.LOCATION)}
       >
         {location ? `${stringifyLocation(location)}` : "Add location"}
       </Button>
-      <Button className={guestsClass} onClick={() => setFilter(FILTER.GUESTS)}>
+      <Button className={guestsClass} onClick={() => setFilter(FILTERS.GUESTS)}>
         {guests ? `${guests} guests` : "Add guests"}
       </Button>
       <ButtonIcon
         className="searchbar__search"
-        onClick={() => setFilter(FILTER.LOCATION)}
+        onClick={() => setFilter(FILTERS.LOCATION)}
         aria-label="Open filter drawer"
       >
         <Icon name="search" />

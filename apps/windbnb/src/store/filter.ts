@@ -2,12 +2,12 @@ import type { ValueOf } from "type-fest";
 import type { RequiredSearchLocation, SearchOptions } from "../types";
 import { create } from "zustand";
 
-export const FILTER = Object.freeze({
+export const FILTERS = Object.freeze({
   LOCATION: "LOCATION",
   GUESTS: "GUESTS",
 });
 
-type TFilter = ValueOf<typeof FILTER>;
+type TFilter = ValueOf<typeof FILTERS>;
 export type GuestType = "adults" | "children";
 
 type State = {

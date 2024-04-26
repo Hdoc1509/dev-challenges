@@ -2,7 +2,7 @@ import { useEffect, useMemo } from "react";
 import { Button } from "@hrc/button";
 import { Icon } from "@hrc/material-icons";
 import { FilterInput } from "./FilterInput";
-import { FILTER, useFilterStore } from "../store/filter";
+import { FILTERS, useFilterStore } from "../store/filter";
 import { useStays } from "../hooks/useStays";
 import { splitStringLocation, stringifyLocation } from "../utils";
 import type { RequiredSearchLocation } from "../types";
@@ -63,7 +63,7 @@ export const FilterLocation = ({ isSelected }: { isSelected?: boolean }) => {
         placeholder="Add location"
         className="location-input"
         isSelected={isSelected}
-        onClick={() => setFilter(FILTER.LOCATION)}
+        onClick={() => setFilter(FILTERS.LOCATION)}
       />
       {isSelected && (
         <LocationMenu options={locationOptions} isLoading={isLoading} />
