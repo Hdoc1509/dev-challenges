@@ -1,10 +1,8 @@
 import clsx from "clsx";
 import { type ComponentProps } from "react";
-import { Icon } from "@hrc/material-icons";
+import { Icon, type IconProps } from "@hrc/material-icons";
 import type { Simplify } from "@hrc/type-utils";
 import "./css/styles.scss";
-
-type IconProps = ComponentProps<typeof Icon>;
 
 type Props = Simplify<
   {
