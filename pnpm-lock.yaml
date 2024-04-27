@@ -50,12 +50,12 @@ importers:
 
   apps/button-component:
     dependencies:
-      '@hdoc/react-material-icons':
-        specifier: 1.6.0
-        version: 1.6.0(@material-design-icons/font@0.14.11)(react-dom@18.2.0)(react@18.2.0)
-      '@hdoc/react-toggle-theme':
-        specifier: 2.1.1
-        version: 2.1.1(react-dom@18.2.0)(react@18.2.0)
+      '@hrc/material-icons':
+        specifier: 2.3.0
+        version: 2.3.0(@material-design-icons/font@0.14.11)(@types/react@18.3.0)(react-dom@18.2.0)(react@18.2.0)
+      '@hrc/toggle-theme':
+        specifier: 2.2.0
+        version: 2.2.0(@types/react@18.3.0)(react-dom@18.2.0)(react@18.2.0)
       '@internal/components':
         specifier: workspace:3.0.0
         version: link:../../libs/components
