@@ -14,7 +14,7 @@
 
 ## Overview
 
-![screenshot](https://github.com/Hdoc1509/dev-challenges/assets/72316111/e05c90cb-a4c8-4fdf-9fae-8e7dbd84d58f))
+![screenshot](https://github.com/Hdoc1509/dev-challenges/assets/72316111/e05c90cb-a4c8-4fdf-9fae-8e7dbd84d58f)
 
 **Challenge**: Create a todo app following given designs. Use Front-end libraries like React or Vue. Don’t look at the existing solution. Fulfill user stories below:
 
