@@ -47,7 +47,8 @@
   gap: 40px;
   margin: auto;
 
-  .loader-ring {
+  .ring-spinner {
+    --spinner-size: 60px;
     margin-inline: auto;
   }
 }

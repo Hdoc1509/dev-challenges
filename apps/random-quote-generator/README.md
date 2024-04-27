@@ -33,6 +33,7 @@
 - [zod](https://zod.dev/)
 - [@hrc/button](https://www.npmjs.com/package/@hrc/button)
 - [@hrc/material-icons](https://www.npmjs.com/package/@hrc/material-icons)
+- [@hrc/spinner](https://www.npmjs.com/package/@hrc/spinner)
 - [@hrc/toggle-theme](https://www.npmjs.com/package/@hrc/toggle-theme)
 
 ### Extra Features

@@ -3,9 +3,9 @@ import { useQuotes } from "./hooks/useQuotes";
 import { ThemeButton } from "@hrc/toggle-theme";
 import { Icon } from "@hrc/material-icons";
 import { Button } from "@hrc/button";
+import { RingSpinner } from "@hrc/spinner";
 import { Footer } from "@internal/components/src/Footer";
 import { BlockQuote } from "./components/BlockQuote";
-import { LoaderRing } from "./components/LoaderRing";
 import { ErrorMessage } from "./components/ErrorMessage";
 import "./App.scss";
 
@@ -43,7 +43,7 @@ function App() {
         />
       </header>
       <main className="content">
-        {isLoading && <LoaderRing />}
+        {isLoading && <RingSpinner />}
         {error && <ErrorMessage message={error.message} />}
         {showAuthorQuotes && (
           <h2 className="quotes-author">{quotes[0]?.author}</h2>
