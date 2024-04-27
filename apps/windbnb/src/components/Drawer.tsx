@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import type { Simplify } from "type-fest";
+import type { Simplify } from "@hrc/type-utils";
 import "./Drawer.scss";
 
 const CloseIcon = () => {
