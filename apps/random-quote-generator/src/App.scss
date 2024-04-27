@@ -20,6 +20,10 @@
 
   font-family: "Raleway", sans-serif;
 
+  @supports (font-variation-settings: normal) {
+    font-family: "Raleway Variable", sans-serif;
+  }
+
   &__random-button {
     --button-bg: transparent;
     --button-bg-hover: #333;
@@ -59,4 +63,14 @@
   font-size: clamp(20px, 3vw, 36px);
   font-weight: 700;
   padding-left: 2.45em;
+
+  @supports (font-variation-settings: normal) {
+    font-family: "Raleway Variable", sans-serif;
+  }
+}
+
+.credits {
+  @supports (font-variation-settings: normal) {
+    font-family: "Montserrat Variable", sans-serif;
+  }
 }

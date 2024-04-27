@@ -10,6 +10,10 @@
   font-size: clamp(20px, 3vw, 36px);
   font-weight: 500;
 
+  @supports (font-variation-settings: normal) {
+    font-family: "Raleway Variable", sans-serif;
+  }
+
   p {
     width: 100%;
     margin: 0;
