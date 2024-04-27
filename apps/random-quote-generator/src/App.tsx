@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
 import { useQuotes } from "./hooks/useQuotes";
-import { ThemeButton } from "@hdoc/react-toggle-theme";
-import { Icon } from "@hdoc/react-material-icons";
-import { Button } from "@hdoc/react-button";
+import { ThemeButton } from "@hrc/toggle-theme";
+import { Icon } from "@hrc/material-icons";
+import { Button } from "@hrc/button";
 import { Footer } from "@internal/components";
 import { BlockQuote } from "./components/BlockQuote";
 import { LoaderRing } from "./components/LoaderRing";
@@ -30,11 +30,12 @@ function App() {
       <header className="main-header">
         <Button
           className="main-header__random-button"
-          text="random"
-          iconEnd="autorenew"
+          iconEnd={<Icon name="autorenew" />}
           onClick={handleRandomQuote}
           disableShadow
-        />
+        >
+          random
+        </Button>
         <ThemeButton
           lightElement={<Icon name="light_mode" color="warning" />}
           darkElement={<Icon name="dark_mode" />}

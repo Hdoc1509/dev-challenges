@@ -234,15 +234,15 @@ importers:
 
   apps/random-quote-generator:
     dependencies:
-      '@hdoc/react-button':
-        specifier: 1.2.0
-        version: 1.2.0(@hdoc/react-material-icons@1.6.0)(@material-design-icons/font@0.14.13)(react-dom@18.2.0)(react@18.2.0)
-      '@hdoc/react-material-icons':
-        specifier: 1.6.0
-        version: 1.6.0(@material-design-icons/font@0.14.13)(react-dom@18.2.0)(react@18.2.0)
-      '@hdoc/react-toggle-theme':
-        specifier: 2.1.1
-        version: 2.1.1(react-dom@18.2.0)(react@18.2.0)
+      '@hrc/button':
+        specifier: 2.6.1
+        version: 2.6.1(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
+      '@hrc/material-icons':
+        specifier: 2.3.0
+        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)
+      '@hrc/toggle-theme':
+        specifier: 2.2.0
+        version: 2.2.0(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)
       '@internal/components':
         specifier: workspace:3.0.0
         version: link:../../libs/components
@@ -1003,17 +1003,6 @@ packages:
     dependencies:
       '@material-design-icons/font': 0.14.13
       clsx: 2.0.0
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-    dev: false
-
-  /@hdoc/react-toggle-theme@2.1.1(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-IBE7Dot+dvRvfZMR4/HR7GiD4eYvhbmSxAjPDS/c34aZseNZQPBnBo5Csv5I55OA/M2uTxOJnEJtKBErxyChFA==}
-    engines: {node: '>=13.2.0'}
-    peerDependencies:
-      react: ^17.0.0 || ^18.0.0
-      react-dom: ^17.0.0 || ^18.0.0
-    dependencies:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
