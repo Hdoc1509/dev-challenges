@@ -1,4 +1,3 @@
-import type { ValueOf } from "type-fest";
 import type { RequiredSearchLocation, SearchOptions } from "../types";
 import { create } from "zustand";
 
@@ -7,7 +6,7 @@ export const FILTERS = Object.freeze({
   GUESTS: "GUESTS",
 });
 
-type Filter = ValueOf<typeof FILTERS> | null;
+type Filter = (typeof FILTERS)[keyof typeof FILTERS] | null;
 export type GuestType = "adults" | "children";
 
 type State = {
