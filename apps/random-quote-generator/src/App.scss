@@ -21,14 +21,13 @@
   &__random-button {
     --button-bg: transparent;
     --button-bg-hover: #333;
-    --button-text: #4f4f4f;
+    --button-text: var(--text-light);
     font-family: inherit;
     font-weight: 500;
 
     &:hover,
-    &:focus,
-    [data-theme="dark"] & {
-      --button-text: #fff;
+    &:focus {
+      --text-light: #fff;
     }
   }
 

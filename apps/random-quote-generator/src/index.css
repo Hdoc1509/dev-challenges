@@ -9,6 +9,9 @@
 
   --bg: #fff;
   --text: #000;
+  --text-secondary: #828282;
+  --text-light: #4f4f4f;
+  --text-dark: #333;
 }
 @supports (font-variation-settings: normal) {
   :root {
@@ -25,6 +28,8 @@
 [data-theme="dark"] {
   --bg: #242424;
   --text: #fff;
+  --text-secondary: #bdbdbd;
+  --text-light: #fff;
 }
 
 body {
