@@ -15,13 +15,11 @@ export const Results = ({ questions, tryAgain }: Props) => {
   return (
     <>
       <img className="quiz-results-winner" src={winnerSVG} alt="winner" />
-      <div className="quiz-results-header">
+      <div className="quiz-results-message">
         <h2>{getResultMessage({ correct, total: questions.length })}</h2>
-        <p className="quiz-results-description">
+        <p className="quiz-results-points">
           You got
-          <span className="quiz-results-description__points">
-            {` ${correct} `}
-          </span>
+          <span className="quiz-results-points__correct">{` ${correct} `}</span>
           correct answers
         </p>
       </div>

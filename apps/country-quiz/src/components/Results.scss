@@ -2,7 +2,7 @@
   margin-inline: auto;
 }
 
-.quiz-results-header {
+.quiz-results-message {
   color: var(--primary-darkest);
 
   h2 {
@@ -12,12 +12,12 @@
   }
 }
 
-.quiz-results-description {
+.quiz-results-points {
   margin: 0;
   font-size: var(--font-size-2);
   font-weight: 400;
 
-  &__points {
+  &__correct {
     color: var(--success-light);
     font-size: var(--font-size-6);
     font-weight: 700;
