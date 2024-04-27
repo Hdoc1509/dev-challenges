@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useQuestionStore } from "./store/questions";
-import { Footer } from "@internal/components";
+import { Footer } from "@internal/components/src/Footer";
 import { Quiz } from "./components/Quiz";
 import { QuizCard } from "./components/QuizCard";
 import { Results } from "./components/Results";
