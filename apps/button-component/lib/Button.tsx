@@ -21,7 +21,7 @@ type Props = Simplify<
 
 export const Button = ({
   variant,
-  disableShadow = false,
+  disableShadow,
   startIcon,
   endIcon,
   iconStyle,
