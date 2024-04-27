@@ -38,8 +38,9 @@
 - [Sass](https://sass-lang.com/)
 - [clsx](https://github.com/lukeed/clsx#readme)
 - [BEM](https://getbem.com/)
-- [@hdoc/react-material-icons](https://www.npmjs.com/package/@hdoc/react-material-icons)
-- [@hdoc/react-toggle-theme](https://www.npmjs.com/package/@hdoc/react-toggle-theme)
+- [@hrc/material-icons](https://www.npmjs.com/package/@hrc/material-icons)
+- [@hrc/toggle-theme](https://www.npmjs.com/package/@hrc/toggle-theme)
+- [@hrc/type-utils](https://www.npmjs.com/package/@hrc/type-utils)
 
 ### What I learned
 
