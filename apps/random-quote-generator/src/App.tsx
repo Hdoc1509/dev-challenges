@@ -3,7 +3,7 @@ import { useQuotes } from "./hooks/useQuotes";
 import { ThemeButton } from "@hrc/toggle-theme";
 import { Icon } from "@hrc/material-icons";
 import { Button } from "@hrc/button";
-import { Footer } from "@internal/components";
+import { Footer } from "@internal/components/src/Footer";
 import { BlockQuote } from "./components/BlockQuote";
 import { LoaderRing } from "./components/LoaderRing";
 import { ErrorMessage } from "./components/ErrorMessage";
