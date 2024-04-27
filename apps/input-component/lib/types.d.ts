@@ -1,5 +1,5 @@
 import type { ComponentProps } from "react";
-import type { Simplify } from "type-fest";
+import type { Simplify } from "@hrc/type-utils";
 import type { Icon } from "@hdoc/react-material-icons";
 
 type IconProps = ComponentProps<typeof Icon>;
