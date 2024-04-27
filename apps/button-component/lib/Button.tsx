@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import { type ComponentProps } from "react";
 import { Icon, type IconProps } from "@hrc/material-icons";
 import type { Simplify } from "@hrc/type-utils";
 import "./css/styles.scss";
@@ -14,7 +13,7 @@ type Props = Simplify<
     iconStyle?: IconProps["variant"];
     size?: "sm" | "md" | "lg";
     color?: "default" | "primary" | "secondary" | "danger";
-  } & ComponentProps<"button">
+  } & React.ComponentProps<"button">
 >;
 
 export const Button = ({
