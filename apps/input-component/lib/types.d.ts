@@ -1,4 +1,3 @@
-import type { ComponentProps } from "react";
 import type { Simplify } from "@hrc/type-utils";
 import type { IconProps } from "@hrc/material-icons";
 
@@ -17,5 +16,5 @@ export type InputProps = Simplify<
     size?: "sm" | "md";
     fullWidth?: boolean;
   } & (InputNotMultiline | InputMultiline) &
-    Omit<ComponentProps<"input">, "size" | "className">
+    Omit<React.ComponentProps<"input">, "size" | "className">
 >;

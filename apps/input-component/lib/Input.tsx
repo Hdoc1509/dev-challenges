@@ -1,7 +1,6 @@
 import clsx from "clsx";
 import { Icon } from "@hrc/material-icons";
 import type { InputProps as Props } from "./types";
-import type { ComponentProps } from "react";
 import "./css/styles.scss";
 
 export const Input = ({
@@ -46,7 +45,7 @@ export const Input = ({
         {multiline ? (
           // NOTE: You should use a different component that wraps a textarea, not this
           <textarea
-            {...(sharedAttributes as ComponentProps<"textarea">)}
+            {...(sharedAttributes as React.ComponentProps<"textarea">)}
             rows={rows}
           ></textarea>
         ) : (
