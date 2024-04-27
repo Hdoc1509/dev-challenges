@@ -14,7 +14,7 @@
 
 ## Overview
 
-![screenshot](screenshots/random-quote-generator.png)
+![screenshot](https://github.com/Hdoc1509/dev-challenges/assets/72316111/1eb8fd1b-7a1f-4d84-8997-e7ba092ac217)
 
 **Challenge**: Create a quote generator app. Use Front-end libraries like React or Vue. Don’t look at the existing solution. Fulfill user stories below:
 
