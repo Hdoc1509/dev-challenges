@@ -37,7 +37,7 @@ h1 {
 .credits {
   color: #f2f2f2;
   /* TODO: Add this to Footer from @internal/components */
-  font-size: 14px;
+  font-size: 0.875rem;
 
   /* TODO: Add this to Footer from @internal/components */
   @supports (font-variation-settings: normal) {
