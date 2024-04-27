@@ -93,6 +93,15 @@ importers:
 
   apps/country-quiz:
     dependencies:
+      '@fontsource-variable/montserrat':
+        specifier: 5.0.17
+        version: 5.0.17
+      '@fontsource/montserrat':
+        specifier: 5.0.17
+        version: 5.0.17
+      '@fontsource/poppins':
+        specifier: 5.0.8
+        version: 5.0.8
       '@hdoc/react-button':
         specifier: 1.2.0
         version: 1.2.0(@hdoc/react-material-icons@1.6.0)(@material-design-icons/font@0.14.11)(react-dom@18.2.0)(react@18.2.0)
