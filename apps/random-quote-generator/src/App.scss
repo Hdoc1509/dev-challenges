@@ -20,7 +20,7 @@
 
   &__random-button {
     --button-bg: transparent;
-    --button-bg-hover: #333;
+    --button-bg-hover: var(--bg-hover);
     --button-bg-disabled: rgb(180 180 180 / 0.75);
     --button-text: var(--text-light);
     --button-text-disabled: rgb(36 36 36 / 0.5);
