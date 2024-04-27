@@ -15,10 +15,8 @@ export const Results = ({ questions, tryAgain }: Props) => {
   return (
     <>
       <img className="quiz-results-winner" src={winnerSVG} alt="winner" />
-      <div>
-        <h2 className="quiz-results-header">
-          {getResultMessage({ correct, total: questions.length })}
-        </h2>
+      <div className="quiz-results-header">
+        <h2>{getResultMessage({ correct, total: questions.length })}</h2>
         <p className="quiz-results-description">
           You got
           <span className="quiz-results-description__points">
