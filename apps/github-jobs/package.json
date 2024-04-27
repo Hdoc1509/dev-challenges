@@ -13,7 +13,7 @@
     "@fontsource-variable/montserrat": "5.0.17",
     "@fontsource/poppins": "5.0.8",
     "@fontsource/roboto": "5.0.8",
-    "@hrc/button": "2.6.0",
+    "@hrc/button": "2.6.1",
     "@hrc/input": "0.9.0",
     "@hrc/material-icons": "2.3.0",
     "@hrc/toggle-theme": "2.2.0",
