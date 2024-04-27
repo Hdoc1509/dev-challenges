@@ -30,10 +30,10 @@ export const Button = ({
   ...restProps
 }: Props) => {
   const btnClass = clsx("btn", {
-    [`btn--${variant}`]: variant !== undefined,
+    [`btn--${variant}`]: variant,
     ["btn--no-shadow"]: disableShadow,
-    [`btn--${size}`]: size !== undefined,
-    [`btn--${color}`]: color !== undefined && color !== "default",
+    [`btn--${size}`]: size,
+    [`btn--${color}`]: color && color !== "default",
   });
 
   return (
