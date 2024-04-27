@@ -1,8 +1,7 @@
 import type { ComponentProps } from "react";
 import type { Simplify } from "@hrc/type-utils";
-import type { Icon } from "@hrc/material-icons";
+import type { IconProps } from "@hrc/material-icons";
 
-type IconProps = ComponentProps<typeof Icon>;
 type InputMultiline = { multiline: true; rows?: number };
 type InputNotMultiline = { multiline?: never; rows?: never };
 
