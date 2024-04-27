@@ -10,7 +10,7 @@
   --loader-color: currentColor;
   --loader-speed: 1s;
   font-weight: 700;
-  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-size: var(--font-size-fluid-2);
 
   p {
     margin: 0;

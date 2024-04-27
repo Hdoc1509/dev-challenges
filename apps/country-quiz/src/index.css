@@ -12,6 +12,21 @@
   --success-light: #6fcf97;
   --warning: #f9a826;
   --warning-hover: #e69006;
+
+  --font-size-0: 0.875rem;
+  --font-size-1: 1rem;
+  --font-size-2: 1.125rem;
+  --font-size-3: 1.25rem;
+  --font-size-4: 1.5rem;
+  --font-size-5: 2rem;
+  --font-size-6: 2.25rem;
+  --font-size-7: 2.5rem;
+  --font-size-8: 3rem;
+
+  --font-size-fluid-0: clamp(0.875rem, 1.5vw, 1.125rem);
+  --font-size-fluid-2: clamp(1.25rem, 2vw, 1.5rem);
+  --font-size-fluid-3: clamp(1.5rem, 3vw, 2.25rem);
+  --font-size-fluid-4: clamp(2.25rem, 4vw, 3rem);
 }
 
 /* TODO: Add this to app template */
