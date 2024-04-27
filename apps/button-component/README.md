@@ -14,7 +14,7 @@
 
 ## Overview
 
-![screenshot](screenshots/button-component.png)
+![screenshot](https://github.com/Hdoc1509/dev-challenges/assets/72316111/38a739cf-32a3-4cb5-81de-248a3c6373ff)
 
 **Challenge**: Create a reusable button with all the states in the design and a page displaying all the states. You can work on the same project with other design system challenges. Use Front-end libraries like React or Vue. Don’t look at the existing solution. Fulfill user stories below:
 
