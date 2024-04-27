@@ -6,6 +6,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --bg: #fff;
+  --text: #000;
 }
 @supports (font-variation-settings: normal) {
   :root {
@@ -19,21 +22,16 @@
   box-sizing: border-box;
 }
 
-[data-theme="light"] {
-  --color-bg: #fff;
-  --color-text: #000;
-}
-
 [data-theme="dark"] {
-  --color-bg: #242424;
-  --color-text: #fff;
+  --bg: #242424;
+  --text: #fff;
 }
 
 body {
   margin: 0;
   min-width: 320px;
 
-  background-color: var(--color-bg);
+  background-color: var(--bg);
 
-  color: var(--color-text);
+  color: var(--text);
 }
