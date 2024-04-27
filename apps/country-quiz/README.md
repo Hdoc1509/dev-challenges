@@ -14,7 +14,7 @@
 
 ## Overview
 
-![screenshot](screenshots/country-quiz.png)
+![screenshot](https://github.com/Hdoc1509/dev-challenges/assets/72316111/75381dba-c873-419d-90b1-bbd9755447b5)
 
 **Challenge**: Create a country quiz app using an API. Use Front-end libraries like React or Vue. Don’t look at the existing solution. Fulfill user stories below:
 
