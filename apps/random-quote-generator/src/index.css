@@ -32,11 +32,3 @@ body {
 
   color: var(--color-text);
 }
-
-h1 {
-  line-height: 1.1;
-
-  font-family: "Poppins", sans-serif;
-  text-align: center;
-}
-
