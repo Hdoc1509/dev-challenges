@@ -14,7 +14,7 @@
 
 ## Overview
 
-![screenshot](screenshots/input-component.png)
+![screenshot](https://github.com/Hdoc1509/dev-challenges/assets/72316111/0690045c-df76-4a8c-9e8d-7f69dcf63360)
 
 **Challenge**: Create a reusable input with all the states in the design and a page displaying all the states. You can work on the same project with other design system challenges. Use Front-end libraries like React or Vue. Don’t look at the existing solution. Fulfill user stories below:
 
