@@ -6,13 +6,8 @@
 
   margin: 0;
 
-  font-family: "Raleway", sans-serif;
   font-size: clamp(20px, 3vw, 36px);
   font-weight: 500;
-
-  @supports (font-variation-settings: normal) {
-    font-family: "Raleway Variable", sans-serif;
-  }
 
   p {
     width: 100%;
@@ -32,10 +27,6 @@
     width: 85%;
     margin: 0;
   }
-
-  & * {
-    font-family: "Raleway", sans-serif;
-  }
 }
 
 .quote-credits {
@@ -51,6 +42,7 @@
   --icon-color: #4f4f4f;
   text-align: left;
   font-size: 1em;
+  font-family: inherit;
 
   cursor: pointer;
   transition: background-color 0.3s ease;
