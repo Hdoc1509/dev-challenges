@@ -28,17 +28,21 @@ type Action = {
   removeGuest: (type: GuestType) => void;
 };
 
-export const useFilterStore = create<State & Action>((set) => ({
+const initialState: State = {
   filter: null,
-  setFilter: (filter) => set({ filter }),
-  clearFilter: () => set({ filter: null }),
   location: undefined,
-  setLocation: (location) => set({ location }),
   guests: {
     adults: 0,
     children: 0,
     total: 0,
   },
+};
+
+export const useFilterStore = create<State & Action>((set) => ({
+  ...initialState,
+  setFilter: (filter) => set({ filter }),
+  clearFilter: () => set({ filter: null }),
+  setLocation: (location) => set({ location }),
   addGuest: (type) => {
     set((state) => ({
       guests: {
