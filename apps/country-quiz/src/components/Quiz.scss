@@ -9,7 +9,7 @@
 .quiz-question {
   margin: 0;
 
-  color: #2f527b;
+  color: var(--primary-dark);
   font-weight: 700;
   font-size: var(--font-size-fluid-2);
 }
@@ -27,7 +27,7 @@
 .quiz-current-question {
   margin: 0 auto;
 
-  color: #2f527b;
+  color: var(--primary-dark);
   font-size: var(--font-size-2);
   font-weight: 700;
   letter-spacing: 4px;
@@ -36,7 +36,7 @@
 .quiz-flag {
   height: 54px;
   border-radius: 4px;
-  box-shadow: 0 0 0 1px #6066d0b2;
+  box-shadow: 0 0 0 1px var(--primary);
 }
 
 .quiz-answers {
@@ -48,9 +48,9 @@
     justify-content: flex-start;
 
     --button-bg-hover: var(--warning);
-    --button-color-disabled: #6066d0b2;
-    --button-outline-color: #6066d0b2;
-    --button-outline-color-disabled: #6066d0b2;
+    --button-color-disabled: var(--primary);
+    --button-outline-color: var(--primary);
+    --button-outline-color-disabled: var(--primary);
     --button-padding-y: 10px;
     --button-radius: 12px;
 
