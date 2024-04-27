@@ -14,18 +14,14 @@
     padding-inline: 1rem;
     --character-height: 90px;
     --character-top-offset: -65px;
-    --header-font-size: 26px;
     --header-margin-block: 16px 24px;
     --quiz-card-padding: 40px 20px 20px;
     --quiz-card-padding__flag: 20px;
     --quiz-card-padding__loading: 20px;
     --quiz-card-gap: 20px;
     --quiz-card-gap__over: 20px;
-    --question-font-size: 20px;
-    --answer-font-size: 14px;
     --answers-gap: 20px;
     --option-gap: 20px;
-    --results-header-font-size: 36px;
   }
 }
 
@@ -35,7 +31,7 @@ h1 {
 
   color: #fff;
   font-weight: 700;
-  font-size: var(--header-font-size, 36px);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
 }
 
 .credits {

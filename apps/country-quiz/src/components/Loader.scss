@@ -10,7 +10,7 @@
   --loader-color: currentColor;
   --loader-speed: 1s;
   font-weight: 700;
-  font-size: var(--question-font-size, 24px);
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
 
   p {
     margin: 0;

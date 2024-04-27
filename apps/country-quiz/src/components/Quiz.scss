@@ -11,7 +11,7 @@
 
   color: #2f527b;
   font-weight: 700;
-  font-size: var(--question-font-size, 24px);
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
 }
 
 .quiz-footer {
@@ -55,7 +55,7 @@
     --button-radius: 12px;
 
     font-family: inherit;
-    font-size: var(--answer-font-size, 18px);
+    font-size: clamp(0.875rem, 1.5vw, 1.125rem);
     text-align: left;
 
     &:hover:not(:disabled) {
@@ -104,5 +104,5 @@
   --button-padding: 14px 36px;
   --button-font-weight: 700;
   font-family: inherit;
-  font-size: var(--answer-font-size, 18px);
+  font-size: clamp(0.875rem, 1.5vw, 1.125rem);
 }

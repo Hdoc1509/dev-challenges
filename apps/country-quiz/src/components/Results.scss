@@ -3,7 +3,7 @@
 
   color: #1d355d;
   font-weight: 700;
-  font-size: var(--results-header-font-size, 48px);
+  font-size: clamp(2.25rem, 4vw, 3rem);
 }
 
 .quiz-results-winner {
