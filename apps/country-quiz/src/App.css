@@ -34,7 +34,6 @@ h1 {
   margin-block: var(--header-margin-block, 24px);
 
   color: #fff;
-  font-family: "Poppins", sans-serif;
   font-weight: 700;
   font-size: var(--header-font-size, 36px);
 }

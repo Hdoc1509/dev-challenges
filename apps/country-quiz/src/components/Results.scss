@@ -2,7 +2,6 @@
   margin: 0;
 
   color: #1d355d;
-  font-family: "Poppins";
   font-weight: 700;
   font-size: var(--results-header-font-size, 48px);
 }
@@ -14,7 +13,6 @@
 .quiz-results-description {
   margin: 0;
   color: #1d355d;
-  font-family: "Poppins";
   font-size: 18px;
   font-weight: 400;
 
@@ -32,9 +30,9 @@
   --button-outline-color: #1d355d;
   --button-radius: 12px;
   --button-padding: 18px 60px;
-  --button-font-family: "Poppins";
   --button-font-weight: 600;
   outline: solid 2px;
+  font-family: inherit;
   font-size: 18px;
 
   &:hover {
