@@ -14,7 +14,7 @@ type Props = Simplify<
     iconStyle?: IconProps["variant"];
     size?: "sm" | "md" | "lg";
     color?: "default" | "primary" | "secondary" | "danger";
-  } & Omit<ComponentProps<"button">, "className">
+  } & ComponentProps<"button">
 >;
 
 export const Button = ({
@@ -25,14 +25,19 @@ export const Button = ({
   iconStyle,
   size = "md",
   color,
+  className,
   ...restProps
 }: Props) => {
-  const btnClass = clsx("btn", {
-    [`btn--${variant}`]: variant,
-    ["btn--no-shadow"]: disableShadow,
-    [`btn--${size}`]: size,
-    [`btn--${color}`]: color && color !== "default",
-  });
+  const btnClass = clsx(
+    "btn",
+    {
+      [`btn--${variant}`]: variant,
+      ["btn--no-shadow"]: disableShadow,
+      [`btn--${size}`]: size,
+      [`btn--${color}`]: color && color !== "default",
+    },
+    className,
+  );
 
   return (
     <button {...restProps} className={btnClass}>
