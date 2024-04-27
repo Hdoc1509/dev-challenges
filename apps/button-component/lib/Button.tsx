@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import clsx from "clsx";
 import { type ComponentProps } from "react";
 import { Icon } from "@hrc/material-icons";
 import type { Simplify } from "type-fest";
@@ -29,7 +29,7 @@ export const Button = ({
   color,
   ...restProps
 }: Props) => {
-  const btnClass = classNames("btn", {
+  const btnClass = clsx("btn", {
     [`btn--${variant}`]: variant !== undefined,
     ["btn--no-shadow"]: disableShadow,
     [`btn--${size}`]: size !== undefined,

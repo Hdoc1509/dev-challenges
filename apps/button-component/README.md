@@ -34,7 +34,7 @@
 - [TypeScript](https://www.typescriptlang.org/)
 - [Vite](https://vitejs.dev/)
 - [Sass](https://sass-lang.com/)
-- [classnames](https://github.com/JedWatson/classnames)
+- [clsx](https://github.com/lukeed/clsx)
 - [BEM](https://getbem.com/)
 - [@hdoc/react-material-icons](https://www.npmjs.com/package/@hdoc/react-material-icons)
 - [@hdoc/react-toggle-theme](https://www.npmjs.com/package/@hdoc/react-toggle-theme)
@@ -43,7 +43,7 @@
 
 In this challenge I learned:
 
-- Integrate easily `BEM` and `React.js` with `classnames`
+- Integrate easily `BEM` and `React.js` with `clsx`
 - Use `Material Icons` for a web project
 - Use CSS `custom properties` for re-calculate easily properties values
 - Use `ComponentProps` utility for extend component props
