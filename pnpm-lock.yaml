@@ -236,16 +236,19 @@ importers:
     dependencies:
       '@hdoc/react-button':
         specifier: 1.2.0
-        version: 1.2.0(@hdoc/react-material-icons@1.6.0)(@material-design-icons/font@0.14.11)(react-dom@18.2.0)(react@18.2.0)
+        version: 1.2.0(@hdoc/react-material-icons@1.6.0)(@material-design-icons/font@0.14.13)(react-dom@18.2.0)(react@18.2.0)
       '@hdoc/react-material-icons':
         specifier: 1.6.0
-        version: 1.6.0(@material-design-icons/font@0.14.11)(react-dom@18.2.0)(react@18.2.0)
+        version: 1.6.0(@material-design-icons/font@0.14.13)(react-dom@18.2.0)(react@18.2.0)
       '@hdoc/react-toggle-theme':
         specifier: 2.1.1
         version: 2.1.1(react-dom@18.2.0)(react@18.2.0)
       '@internal/components':
         specifier: workspace:3.0.0
         version: link:../../libs/components
+      '@material-design-icons/font':
+        specifier: 0.14.13
+        version: 0.14.13
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -256,9 +259,6 @@ importers:
         specifier: 3.22.4
         version: 3.22.4
     devDependencies:
-      '@material-design-icons/font':
-        specifier: ^0.14.10
-        version: 0.14.11
       '@vitejs/plugin-react':
         specifier: ^4.2.0
         version: 4.2.0(vite@5.0.2)
@@ -1160,6 +1160,7 @@ packages:
 
   /@material-design-icons/font@0.14.11:
     resolution: {integrity: sha512-s9L+2pgNPSNlmvVf17ST7A5D9QnU2bikHfL/08Huf4Q0haw+DkaZCyiLLXyaECnD1Kyzl66a6WqPeqfGtgj4sQ==}
+    dev: false
 
   /@material-design-icons/font@0.14.13:
     resolution: {integrity: sha512-qU5Zms9VUdxxq4oC7lY+Eibz+O6YjmctGZKToUfqQOC4qVkbUNksu+0UizFBdbtx8euERZ3GGcFoN6F9LeXSMw==}
