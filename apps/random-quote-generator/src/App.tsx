@@ -33,6 +33,7 @@ function App() {
           iconEnd={<Icon name="autorenew" />}
           onClick={handleRandomQuote}
           disableShadow
+          disabled={isLoading}
         >
           random
         </Button>
