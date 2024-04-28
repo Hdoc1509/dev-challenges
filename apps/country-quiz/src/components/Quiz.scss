@@ -35,8 +35,21 @@
 
 .quiz-flag {
   height: 54px;
+  aspect-ratio: 1.55 / 1;
+  object-fit: cover;
   border-radius: 4px;
   box-shadow: 0 0 0 1px var(--primary);
+
+  animation: skeleton 1.25s linear infinite alternate;
+}
+
+@keyframes skeleton {
+  0% {
+    background-color: var(--primary);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
 }
 
 .quiz-answers {
