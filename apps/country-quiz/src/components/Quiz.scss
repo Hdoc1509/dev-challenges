@@ -48,9 +48,9 @@
     justify-content: flex-start;
 
     --button-bg-hover: var(--warning);
-    --button-color-disabled: var(--primary);
+    --button-text-disabled: var(--primary);
     --button-outline-color: var(--primary);
-    --button-outline-color-disabled: var(--primary);
+    --button-outline-text-disabled: var(--primary);
     --button-padding-y: 10px;
     --button-radius: 12px;
 
@@ -59,7 +59,7 @@
     text-align: left;
 
     &:hover:not(:disabled) {
-      --button-color: #fff;
+      --button-text: #fff;
       --button-outline-color: var(--warning);
     }
 
@@ -73,7 +73,7 @@
     }
     &.correct,
     &.wrong {
-      --button-color: #fff;
+      --button-text: #fff;
     }
 
     &::before {

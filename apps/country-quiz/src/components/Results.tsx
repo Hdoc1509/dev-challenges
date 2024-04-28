@@ -1,5 +1,5 @@
 import { getResultMessage } from "../utils/helpers";
-import { Button } from "@hdoc/react-button";
+import { Button } from "@hrc/button";
 import winnerSVG from "../assets/winner.svg";
 import type { Question } from "../types";
 import "./Results.scss";
@@ -25,10 +25,11 @@ export const Results = ({ questions, tryAgain }: Props) => {
       </div>
       <Button
         className="quiz-results-try-again"
-        text="Try again"
         variant="outline"
         onClick={tryAgain}
-      />
+      >
+        Try again
+      </Button>
     </>
   );
 };

@@ -102,12 +102,12 @@ importers:
       '@fontsource/poppins':
         specifier: 5.0.8
         version: 5.0.8
-      '@hdoc/react-button':
-        specifier: 1.2.0
-        version: 1.2.0(@hdoc/react-material-icons@1.6.0)(@material-design-icons/font@0.14.11)(react-dom@18.2.0)(react@18.2.0)
-      '@hdoc/react-material-icons':
-        specifier: 1.6.0
-        version: 1.6.0(@material-design-icons/font@0.14.11)(react-dom@18.2.0)(react@18.2.0)
+      '@hrc/button':
+        specifier: 2.6.1
+        version: 2.6.1(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
+      '@hrc/material-icons':
+        specifier: 2.3.0
+        version: 2.3.0(@material-design-icons/font@0.14.11)(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)
       '@internal/components':
         specifier: workspace:3.0.0
         version: link:../../libs/components
@@ -128,7 +128,7 @@ importers:
         version: 3.22.4
       zustand:
         specifier: 4.4.3
-        version: 4.4.3(@types/react@18.2.20)(react@18.2.0)
+        version: 4.4.3(@types/react@18.3.1)(react@18.2.0)
     devDependencies:
       '@vitejs/plugin-react':
         specifier: ^4.2.0
@@ -973,22 +973,6 @@ packages:
     resolution: {integrity: sha512-XxPltXs5R31D6UZeLIV1td3wTXU3jzd3f2DLsXI8tytMGBkIsGcc9sIyiupRtA8y73HAhuSCeweOoBqf6DbWCA==}
     dev: false
 
-  /@hdoc/react-button@1.2.0(@hdoc/react-material-icons@1.6.0)(@material-design-icons/font@0.14.11)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-dEK2SmX1hj270Km6YQdj9nsIJiUzMKI2VFM1IPvKLU3VSDHGCYYWd3f3YU0FFeJkxDGL1vvYv2JRC/bNlxoZgw==}
-    peerDependencies:
-      '@hdoc/react-material-icons': ^1.6.0
-      '@material-design-icons/font': ^0.14.10
-      react: ^18.2.0
-      react-dom: ^18.2.0
-    dependencies:
-      '@hdoc/react-material-icons': 1.6.0(@material-design-icons/font@0.14.11)(react-dom@18.2.0)(react@18.2.0)
-      '@material-design-icons/font': 0.14.11
-      clsx: 2.0.0
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      type-fest: 4.3.1
-    dev: false
-
   /@hdoc/react-button@1.2.0(@hdoc/react-material-icons@1.6.0)(@material-design-icons/font@0.14.13)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-dEK2SmX1hj270Km6YQdj9nsIJiUzMKI2VFM1IPvKLU3VSDHGCYYWd3f3YU0FFeJkxDGL1vvYv2JRC/bNlxoZgw==}
     peerDependencies:
@@ -1003,19 +987,6 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       type-fest: 4.3.1
-    dev: false
-
-  /@hdoc/react-material-icons@1.6.0(@material-design-icons/font@0.14.11)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-vCfxOjYK+M8KN2TusuJ7bww7fucE7/B+cODTu3w/GScVahu0AdfL7heiavq1hKfQ/BgrMNLzbYxjtk9QZ6c8FQ==}
-    peerDependencies:
-      '@material-design-icons/font': ^0.14.0
-      react: ^17.0.0 || ^18.0.0
-      react-dom: ^17.0.0 || ^18.0.0
-    dependencies:
-      '@material-design-icons/font': 0.14.11
-      clsx: 2.0.0
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /@hdoc/react-material-icons@1.6.0(@material-design-icons/font@0.14.13)(react-dom@18.2.0)(react@18.2.0):
@@ -1077,6 +1048,21 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     transitivePeerDependencies:
       - typescript
+    dev: false
+
+  /@hrc/material-icons@2.3.0(@material-design-icons/font@0.14.11)(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-fQLt587Uh9DKI6M2/6FKe+S7zKoiUjpaSC1Wu/KCwcvN+ji1yOt44ez4duwLRbBvvLX4gnYnsJMTtndRTsEZlg==}
+    peerDependencies:
+      '@material-design-icons/font': ^0.14.0
+      '@types/react': ^17.0.0 || ^18.0.0
+      react: ^17.0.0 || ^18.0.0
+      react-dom: ^17.0.0 || ^18.0.0
+    dependencies:
+      '@material-design-icons/font': 0.14.11
+      '@types/react': 18.3.1
+      clsx: 2.0.0
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /@hrc/material-icons@2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0):

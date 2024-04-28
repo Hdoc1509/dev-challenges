@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { useQuestionStore } from "../store/questions";
-import { Button } from "@hdoc/react-button";
+import { Button } from "@hrc/button";
 import { QuestionCategories } from "../constants";
 import { QuizOptions } from "./QuizOptions";
 import type { Question } from "../types";
@@ -63,11 +63,12 @@ export const Quiz = ({
         </p>
         <Button
           className="quiz-button"
-          text={isLastQuestion ? "Show results" : "Next"}
           color="warning"
           onClick={handleAction}
           disabled={selectedAnswer == null}
-        />
+        >
+          {isLastQuestion ? "Show results" : "Next"}
+        </Button>
       </footer>
     </>
   );
