@@ -4,6 +4,35 @@ import { Button } from "@hrc/button";
 import { Icon } from "@hrc/material-icons";
 import type { Question } from "../types";
 
+type OptionProps = {
+  option: string;
+  onAnswer: () => void;
+} & Pick<Question, "selectedAnswer" | "correctAnswer">;
+
+const Option = ({
+  option,
+  selectedAnswer,
+  correctAnswer,
+  onAnswer,
+}: OptionProps) => {
+  const icon = getAnswerIcon({ option, selectedAnswer, correctAnswer });
+
+  return (
+    <Button
+      className={clsx(
+        "quiz-answers__option",
+        getAnswerClassName({ option, selectedAnswer, correctAnswer }),
+      )}
+      variant="outline"
+      iconEnd={icon && <Icon name={icon} variant="outlined" />}
+      disabled={selectedAnswer != null}
+      onClick={onAnswer}
+    >
+      {option}
+    </Button>
+  );
+};
+
 type Props = {
   quiz: Question;
   handleAnswer: (answer: string) => void;
@@ -14,25 +43,15 @@ export const QuizOptions = ({ quiz, handleAnswer }: Props) => {
 
   return (
     <div className="quiz-answers">
-      {answerOptions.map((option) => {
-        const icon = getAnswerIcon({ option, selectedAnswer, correctAnswer });
-
-        return (
-          <Button
-            key={option}
-            className={clsx(
-              "quiz-answers__option",
-              getAnswerClassName({ option, selectedAnswer, correctAnswer }),
-            )}
-            variant="outline"
-            iconEnd={icon && <Icon name={icon} variant="outlined" />}
-            disabled={selectedAnswer != null}
-            onClick={() => handleAnswer(option)}
-          >
-            {option}
-          </Button>
-        );
-      })}
+      {answerOptions.map((option) => (
+        <Option
+          key={option}
+          option={option}
+          selectedAnswer={selectedAnswer}
+          correctAnswer={correctAnswer}
+          onAnswer={() => handleAnswer(option)}
+        />
+      ))}
     </div>
   );
 };
