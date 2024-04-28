@@ -14,7 +14,7 @@ export const getAnswerClassName = ({
   if (selectedAnswer === option && correctAnswer !== option) return "wrong";
 };
 
-export const getAnswerIconEnd = ({
+export const getAnswerIcon = ({
   option,
   selectedAnswer,
   correctAnswer,

@@ -1,5 +1,5 @@
 import { clsx } from "clsx";
-import { getAnswerClassName, getAnswerIconEnd } from "./Quiz.utils";
+import { getAnswerClassName, getAnswerIcon } from "./Quiz.utils";
 import { Button } from "@hrc/button";
 import { Icon } from "@hrc/material-icons";
 import type { Question } from "../types";
@@ -15,11 +15,7 @@ export const QuizOptions = ({ quiz, handleAnswer }: Props) => {
   return (
     <div className="quiz-answers">
       {answerOptions.map((option) => {
-        const icon = getAnswerIconEnd({
-          option,
-          selectedAnswer,
-          correctAnswer,
-        });
+        const icon = getAnswerIcon({ option, selectedAnswer, correctAnswer });
 
         return (
           <Button
