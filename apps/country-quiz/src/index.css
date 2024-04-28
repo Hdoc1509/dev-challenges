@@ -43,6 +43,7 @@ body {
   margin: 0;
   min-width: 320px;
   background-image: url("/background.png");
+  background-color: #5256a1;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
