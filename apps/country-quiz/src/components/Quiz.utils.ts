@@ -1,10 +1,8 @@
 import type { Question } from "../types";
 
 type CheckOptions = {
-  option: Question["answerOptions"][number];
-  selectedAnswer: Question["selectedAnswer"];
-  correctAnswer: Question["correctAnswer"];
-};
+  option: string;
+} & Pick<Question, "selectedAnswer" | "correctAnswer">;
 
 export const getAnswerClassName = ({
   option,
