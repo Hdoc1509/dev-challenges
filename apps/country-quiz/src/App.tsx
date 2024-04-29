@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { getQuestions } from "./services/questions";
 import { useQuestionStore } from "./store/questions";
 import { Footer } from "@internal/components/src/Footer";
 import { Quiz } from "./components/Quiz";
@@ -10,18 +11,26 @@ function App() {
   const [isQuizOver, setIsQuizOver] = useState(false);
   const questions = useQuestionStore((s) => s.questions);
   const currentQuestionIndex = useQuestionStore((s) => s.currentQuestionIndex);
-  const getQuestions = useQuestionStore((s) => s.getQuestions);
+  const setQuestions = useQuestionStore((s) => s.setQuestions);
   const reset = useQuestionStore((s) => s.reset);
 
   const question = questions[currentQuestionIndex];
 
+  const loadQuestions = useCallback(
+    async (limit?: number) => {
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      void getQuestions(limit).then(setQuestions);
+    },
+    [setQuestions],
+  );
+
   const tryAgain = () => {
     reset();
     setIsQuizOver(false);
-    void getQuestions();
+    void loadQuestions();
   };
 
-  useEffect(() => void getQuestions(), [getQuestions]);
+  useEffect(() => void loadQuestions(), [loadQuestions]);
 
   return (
     <>

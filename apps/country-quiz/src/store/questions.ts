@@ -1,5 +1,4 @@
 import { create } from "zustand";
-import { getQuestions } from "../services/questions";
 import type { Question } from "../types";
 
 type State = {
@@ -8,7 +7,7 @@ type State = {
 };
 
 type Action = {
-  getQuestions: (limit?: number) => Promise<void>;
+  setQuestions: (questions: Question[]) => void;
   selectAnswer: (questionId: number, answer: string) => void;
   goNextQuestion: () => void;
   reset: () => void;
@@ -23,12 +22,7 @@ export const useQuestionStore = create<State & Action>()((set, get) => {
   return {
     ...initialState,
 
-    getQuestions: async (limit?: number) => {
-      const questions = await getQuestions(limit);
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-
-      set({ questions });
-    },
+    setQuestions: (questions: Question[]) => set({ questions }),
     selectAnswer: (questionId: number, answer: string) => {
       const { questions } = get();
       const newQuestions = structuredClone(questions);
