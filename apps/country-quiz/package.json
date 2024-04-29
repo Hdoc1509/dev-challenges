@@ -16,6 +16,7 @@
     "@fontsource/poppins": "5.0.8",
     "@hrc/button": "2.6.1",
     "@hrc/material-icons": "2.3.0",
+    "@hrc/spinner": "0.3.2",
     "@internal/components": "workspace:3.0.0",
     "@material-design-icons/font": "0.14.13",
     "clsx": "2.0.0",
