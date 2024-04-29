@@ -6,7 +6,7 @@
   gap: 12px;
 
   @include font-variable("Mulish", sans-serif);
-  font-size: 14px;
+  font-size: var(--fs-0);
 
   &__label {
     color: var(--text);
@@ -22,7 +22,7 @@
 .guests-counter {
   display: flex;
   gap: 16px;
-  font-size: 14px;
+  font-size: var(--fs-0);
   font-weight: 700;
 
   --button-outline-color: var(--text-secondary);

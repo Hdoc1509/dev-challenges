@@ -13,7 +13,7 @@
     margin-block: 32px;
 
     color: var(--text);
-    font-size: clamp(18px, 2vw, 24px);
+    font-size: var(--fs-fluid-2-4);
     font-weight: 700;
 
     @include extra-small-screen {
@@ -23,7 +23,7 @@
 
   &__count {
     color: var(--text-light);
-    font-size: 14px;
+    font-size: var(--fs-0);
     font-weight: 500;
   }
 
