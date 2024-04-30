@@ -8,4 +8,6 @@
   --fs-fluid-4: clamp(1.5rem, 3vw, 1.75rem);
   --fs-fluid-5: clamp(2rem, 4vw, 2.25rem);
   --fs-fluid-6: clamp(2.25rem, 4vw, 2.5rem);
+  --fs-fluid-7: clamp(2.5rem, 4vw, 3rem);
+  --fs-fluid-8: clamp(3rem, 5vw, 3.5rem);
 }
