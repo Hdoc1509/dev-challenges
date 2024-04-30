@@ -36,11 +36,4 @@ h1 {
 
 .credits {
   color: #f2f2f2;
-  /* TODO: Add this to Footer from @internal/components */
-  font-size: var(--fs-0);
-
-  /* TODO: Add this to Footer from @internal/components */
-  @supports (font-variation-settings: normal) {
-    font-family: "Montserrat Variable", sans-serif;
-  }
 }
