@@ -475,6 +475,9 @@ importers:
       '@hrc/toggle-theme':
         specifier: 2.2.0
         version: 2.2.0(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)
+      '@lib/sass-utils':
+        specifier: workspace:*
+        version: link:../sass-utils
 
   libs/css-props:
     dependencies:
