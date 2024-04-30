@@ -16,4 +16,4 @@ const resultsSchema = z.array(
 
 export const validateResults = (results: unknown) => {
   return resultsSchema.safeParse(results);
-}
+};
