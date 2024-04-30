@@ -16,8 +16,6 @@
 .drawer__header {
   color: var(--text);
   padding-block: 8px;
-
-  @include font-variable("Mulish", sans-serif);
   font-weight: 700;
 
   @include small-screen {

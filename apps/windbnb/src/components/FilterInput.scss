@@ -2,10 +2,7 @@
 
 .filter-input {
   box-shadow: var(--shadow);
-
   color: var(--text);
-
-  @include font-variable("Mulish", sans-serif);
 
   .input-wrapper {
     display: flex;
