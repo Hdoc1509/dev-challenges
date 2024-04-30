@@ -325,9 +325,9 @@ importers:
       '@internal/components':
         specifier: workspace:3.0.0
         version: link:../../libs/components
-      '@lib/css-props':
+      '@lib/sass-utils':
         specifier: workspace:*
-        version: link:../../libs/css-props
+        version: link:../../libs/sass-utils
       '@material-design-icons/font':
         specifier: 0.14.13
         version: 0.14.13
@@ -426,9 +426,9 @@ importers:
       '@internal/components':
         specifier: workspace:3.0.0
         version: link:../../libs/components
-      '@lib/css-props':
+      '@lib/sass-utils':
         specifier: workspace:*
-        version: link:../../libs/css-props
+        version: link:../../libs/sass-utils
       '@material-design-icons/font':
         specifier: ^0.14.13
         version: 0.14.13
@@ -474,6 +474,12 @@ importers:
         version: 2.2.0(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)
 
   libs/css-props:
+    dependencies:
+      sass:
+        specifier: '*'
+        version: 1.65.0
+
+  libs/sass-utils:
     dependencies:
       sass:
         specifier: '*'
