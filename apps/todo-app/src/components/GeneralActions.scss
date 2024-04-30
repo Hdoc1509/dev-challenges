@@ -1,9 +1,7 @@
-@use "@lib/sass-utils/font/mixins" as *;
-
 .todo-delete-all {
   display: var(--delete-all-display, none);
   padding: 12px 24px;
-  @include font-variable("Montserrat", sans-serif);
+  font-family: inherit;
   font-weight: 600;
   margin-left: auto;
 }

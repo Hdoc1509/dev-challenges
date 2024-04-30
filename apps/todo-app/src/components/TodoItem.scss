@@ -1,8 +1,5 @@
-@use "@lib/sass-utils/font/mixins" as *;
-
 .todo-item {
   --_bg-hover: rgb(0 0 0 / 10%);
-  @include font-variable("Montserrat", sans-serif, --_ff);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,10 +7,10 @@
   list-style: none;
 
   --label-text: var(--text-dark);
-  --label-font-family: var(--_ff);
   --label-font-weight: 500;
   .label {
     --label-font-size: var(--fs-2);
+    font-family: inherit;
 
     &--checked {
       --label-text: var(--text);

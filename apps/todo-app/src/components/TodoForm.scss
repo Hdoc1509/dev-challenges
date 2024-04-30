@@ -1,7 +1,4 @@
-@use "@lib/sass-utils/font/mixins" as *;
-
 .todo-form {
-  @include font-variable("Montserrat", sans-serif, --_ff);
   display: var(--form-display, flex);
   gap: 24px;
 
@@ -16,7 +13,7 @@
   --placeholder-color: var(--text-secondary);
   .input {
     flex-grow: 1;
-    font-family: var(--_ff);
+    font-family: inherit;
 
     &__inner::placeholder {
       opacity: 1;
@@ -25,7 +22,9 @@
 
   --button-padding: 20px 40px;
   --button-radius: 12px;
-  --button-font-family: var(--_ff);
   --button-font-size: var(--fs-0);
   --button-font-weight: 600;
+  .button {
+    font-family: inherit;
+  }
 }

@@ -1,7 +1,8 @@
+@use "@lib/sass-utils/font/mixins" as *;
 @use "@lib/sass-utils/font/sizes/static";
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  @include font-variable("Montserrat", sans-serif);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
