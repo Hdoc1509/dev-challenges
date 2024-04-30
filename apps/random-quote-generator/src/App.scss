@@ -18,12 +18,16 @@
 
   padding-block: 1rem;
 
+  --icon-size: var(--fs-4);
+
   &__random-button {
     --button-bg: transparent;
     --button-bg-hover: var(--bg-hover);
     --button-bg-disabled: rgb(180 180 180 / 0.75);
     --button-text: var(--text-light);
     --button-text-disabled: rgb(36 36 36 / 0.5);
+    // NOTE: Rem units will be used from next version of @hrc/button
+    --button-font-size: var(--fs-0);
     font-family: inherit;
     font-weight: 500;
 
@@ -54,12 +58,13 @@
 
 .quotes-author {
   margin: 0;
-  font-size: clamp(20px, 3vw, 36px);
+  font-size: var(--fs-fluid-3-6);
   font-weight: 700;
   padding-left: 2.45em;
 }
 
 .credits {
+  // TODO: add this to @internal/components/src/Footer
   @supports (font-variation-settings: normal) {
     font-family: "Montserrat Variable", sans-serif;
   }

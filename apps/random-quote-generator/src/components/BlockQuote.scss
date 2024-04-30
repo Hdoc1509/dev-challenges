@@ -6,7 +6,7 @@
 
   margin: 0;
 
-  font-size: clamp(20px, 3vw, 36px);
+  font-size: var(--fs-fluid-3-6);
   font-weight: 500;
 
   p {
@@ -60,24 +60,26 @@
   }
 
   &__author {
-    font-size: 24px;
+    font-size: var(--fs-4);
     font-weight: 700;
     color: var(--author-text, var(--text-light));
   }
 
   &__genre {
-    font-size: 14px;
+    font-size: var(--fs-0);
     font-weight: 500;
     color: var(--text-secondary);
   }
 
   &__arrow {
     margin-left: auto;
+    // NOTE: Rem units will be used from next version of @hrc/material-icons
+    --icon-size: var(--fs-6);
   }
 
   &__more-quotes {
     margin-right: 4px;
-    font-size: 14px;
+    font-size: var(--fs-0);
     font-weight: 500;
     text-align: right;
     color: var(--text-secondary);
