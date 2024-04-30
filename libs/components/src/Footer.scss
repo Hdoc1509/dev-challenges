@@ -3,6 +3,8 @@
 .credits {
   color: #a9a9a9;
   @include font-variable("Montserrat", sans-serif);
+  // NOTE: it will use --fs-0 from @lib/sass-utils if it is imported
+  font-size: var(--fs-0, 0.875rem);
   font-weight: 500;
   text-align: center;
 }
