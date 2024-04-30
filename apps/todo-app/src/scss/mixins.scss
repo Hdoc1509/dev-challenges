@@ -1,7 +1,0 @@
-@mixin font-variable($font, $fallback, $property: font-family) {
-  #{$property}: $font, $fallback;
-
-  @supports (font-variation-settings: normal) {
-    #{$property}: "#{$font} Variable", $fallback;
-  }
-}
