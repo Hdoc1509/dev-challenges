@@ -325,6 +325,9 @@ importers:
       '@internal/components':
         specifier: workspace:3.0.0
         version: link:../../libs/components
+      '@lib/css-props':
+        specifier: workspace:*
+        version: link:../../libs/css-props
       '@material-design-icons/font':
         specifier: 0.14.13
         version: 0.14.13

@@ -14,7 +14,7 @@
 
     color: var(--text);
     @include font-variable("Montserrat", sans-serif);
-    font-size: 14px;
+    font-size: var(--fs-0);
     font-weight: 600;
     text-align: center;
     text-decoration: none;

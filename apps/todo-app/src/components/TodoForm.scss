@@ -11,6 +11,7 @@
   --input-padding: 12px;
   --input-radius: 12px;
   --input-text: var(--text-dark);
+  --input-font-size: var(--fs-0);
   --input-font-weight: 400;
   --placeholder-color: var(--text-secondary);
   .input {
@@ -25,6 +26,6 @@
   --button-padding: 20px 40px;
   --button-radius: 12px;
   --button-font-family: var(--_ff);
-  --button-font-size: 14px;
+  --button-font-size: var(--fs-0);
   --button-font-weight: 600;
 }

@@ -21,7 +21,7 @@
 h1 {
   @include font-variable("Raleway", sans-serif);
   font-weight: 700;
-  font-size: 36px;
+  font-size: var(--fs-6);
   text-align: center;
 }
 
@@ -30,7 +30,7 @@ main {
   flex-direction: column;
   gap: 20px;
 
-  font-size: 18px;
+  font-size: var(--fs-2);
 
   &[data-filter="completed"] {
     --form-display: none;

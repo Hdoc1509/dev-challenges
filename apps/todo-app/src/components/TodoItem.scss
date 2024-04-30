@@ -13,7 +13,7 @@
   --label-font-family: var(--_ff);
   --label-font-weight: 500;
   .label {
-    --label-font-size: 18px;
+    --label-font-size: var(--fs-2);
 
     &--checked {
       --label-text: var(--text);
@@ -22,7 +22,7 @@
   }
   --checkbox-color: var(--text-secondary);
   --checkbox-bg-hover: var(--_bg-hover);
-  --checkbox-size: 24px;
+  --checkbox-size: var(--fs-4);
 
   --button-padding: 0.5rem;
   .button {
