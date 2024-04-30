@@ -2,5 +2,7 @@
   "name": "@lib/css-props",
   "private": true,
   "version": "0.0.0",
-  "style": "index.css"
+  "peerDependencies": {
+    "sass": "*"
+  }
 }
