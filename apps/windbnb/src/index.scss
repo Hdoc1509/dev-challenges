@@ -21,6 +21,8 @@
 
   /* custom fluid font sizes */
   --fs-fluid-2-4: clamp(var(--fs-2), 2vw, var(--fs-4));
+
+  --icon-size: var(--fs-4);
 }
 
 *,
