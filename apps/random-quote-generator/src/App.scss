@@ -62,10 +62,3 @@
   font-weight: 700;
   padding-left: 2.45em;
 }
-
-.credits {
-  // TODO: add this to @internal/components/src/Footer
-  @supports (font-variation-settings: normal) {
-    font-family: "Montserrat Variable", sans-serif;
-  }
-}
