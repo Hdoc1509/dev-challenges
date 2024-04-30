@@ -1,5 +1,5 @@
 @use "@lib/sass-utils";
-@use "scss/mixins" as *;
+@use "@lib/sass-utils/font/mixins" as *;
 
 :root {
   @include font-variable("Mulish", sans-serif);

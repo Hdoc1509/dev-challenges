@@ -1,4 +1,5 @@
 @use "../scss/mixins" as *;
+@use "@lib/sass-utils/font/mixins" as *;
 
 .search-results {
   @include font-variable("Montserrat", sans-serif);
