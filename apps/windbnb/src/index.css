@@ -1,3 +1,5 @@
+@import "@lib/css-props";
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
@@ -16,26 +18,8 @@
 
   --shadow: 0px 4px 6px 0px rgb(0 0 0 / 10%);
 
-  /* TODO: Add this to internal global styles lib */
-  --fs-000: 0.625rem; /* 10px */
-  --fs-00: 0.75rem; /* 12px */
-  --fs-0: 0.875rem; /* 14px */
-  --fs-1: 1rem; /* 16px */
-  --fs-2: 1.125rem; /* 18px */
-  --fs-3: 1.25rem; /* 20px */
-  --fs-4: 1.5rem; /* 24px */
-
-  /* TODO: Add this to internal global styles lib */
-  --fs-fluid-000: clamp(0.625rem, 1.5vw, 0.75rem);
-  --fs-fluid-00: clamp(0.75rem, 1.5vw, 0.875rem);
-  --fs-fluid-0: clamp(0.875rem, 1.5vw, 1rem);
-  --fs-fluid-1: clamp(1rem, 2vw, 1.125rem);
-  --fs-fluid-2: clamp(1.125rem, 2vw, 1.25rem);
-  --fs-fluid-3: clamp(1.25rem, 3vw, 1.5rem);
-  --fs-fluid-4: clamp(1.5rem, 3vw, 1.75rem);
-
   /* custom fluid font sizes */
-  --fs-fluid-2-4: clamp(1.125rem, 2vw, 1.5rem);
+  --fs-fluid-2-4: clamp(var(--fs-2), 2vw, var(--fs-4));
 }
 
 *,
