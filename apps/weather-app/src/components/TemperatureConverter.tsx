@@ -1,6 +1,6 @@
 import { clsx } from "clsx";
 import { useWeatherStore } from "../store/weather";
-import { Button } from "@hdoc/react-button";
+import { Button } from "@hrc/button";
 import "./TemperatureConverter.scss";
 
 const buttonClasses = {
@@ -15,19 +15,21 @@ export const TemperatureConverter = () => {
   return (
     <section className="temperature-converter">
       <Button
-        text="°C"
         className={clsx(buttonClasses.base, {
           [buttonClasses.active]: unit === "celsius",
         })}
         onClick={() => setUnit("celsius")}
-      />
+      >
+        °C
+      </Button>
       <Button
-        text="°F"
         className={clsx(buttonClasses.base, {
           [buttonClasses.active]: unit === "fahrenheit",
         })}
         onClick={() => setUnit("fahrenheit")}
-      />
+      >
+        °F
+      </Button>
     </section>
   );
 };

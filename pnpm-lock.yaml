@@ -362,12 +362,12 @@ importers:
 
   apps/weather-app:
     dependencies:
-      '@hdoc/react-button':
-        specifier: 1.2.0
-        version: 1.2.0(@hdoc/react-material-icons@1.6.0)(@material-design-icons/font@0.14.13)(react-dom@18.2.0)(react@18.2.0)
-      '@hdoc/react-material-icons':
-        specifier: 1.6.0
-        version: 1.6.0(@material-design-icons/font@0.14.13)(react-dom@18.2.0)(react@18.2.0)
+      '@hrc/button':
+        specifier: 2.6.1
+        version: 2.6.1(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
+      '@hrc/material-icons':
+        specifier: 2.3.0
+        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)
       '@internal/components':
         specifier: workspace:3.0.0
         version: link:../../libs/components
@@ -387,14 +387,14 @@ importers:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
       react-loading-skeleton:
-        specifier: 3.3.1
-        version: 3.3.1(react@18.2.0)
+        specifier: 3.4.0
+        version: 3.4.0(react@18.2.0)
       zod:
         specifier: 3.22.4
         version: 3.22.4
       zustand:
         specifier: 4.4.3
-        version: 4.4.3(@types/react@18.2.20)(react@18.2.0)
+        version: 4.4.3(@types/react@18.3.1)(react@18.2.0)
     devDependencies:
       '@vitejs/plugin-react':
         specifier: ^4.2.0
@@ -477,10 +477,10 @@ importers:
     dependencies:
       '@hrc/material-icons':
         specifier: 2.3.0
-        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.3.1)(react-dom@18.3.1)(react@18.3.1)
       '@hrc/toggle-theme':
         specifier: 2.2.0
-        version: 2.2.0(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.2.0(@types/react@18.3.1)(react-dom@18.3.1)(react@18.3.1)
       '@lib/sass-utils':
         specifier: workspace:*
         version: link:../sass-utils
@@ -995,35 +995,6 @@ packages:
     resolution: {integrity: sha512-XxPltXs5R31D6UZeLIV1td3wTXU3jzd3f2DLsXI8tytMGBkIsGcc9sIyiupRtA8y73HAhuSCeweOoBqf6DbWCA==}
     dev: false
 
-  /@hdoc/react-button@1.2.0(@hdoc/react-material-icons@1.6.0)(@material-design-icons/font@0.14.13)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-dEK2SmX1hj270Km6YQdj9nsIJiUzMKI2VFM1IPvKLU3VSDHGCYYWd3f3YU0FFeJkxDGL1vvYv2JRC/bNlxoZgw==}
-    peerDependencies:
-      '@hdoc/react-material-icons': ^1.6.0
-      '@material-design-icons/font': ^0.14.10
-      react: ^18.2.0
-      react-dom: ^18.2.0
-    dependencies:
-      '@hdoc/react-material-icons': 1.6.0(@material-design-icons/font@0.14.13)(react-dom@18.2.0)(react@18.2.0)
-      '@material-design-icons/font': 0.14.13
-      clsx: 2.0.0
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-      type-fest: 4.3.1
-    dev: false
-
-  /@hdoc/react-material-icons@1.6.0(@material-design-icons/font@0.14.13)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-vCfxOjYK+M8KN2TusuJ7bww7fucE7/B+cODTu3w/GScVahu0AdfL7heiavq1hKfQ/BgrMNLzbYxjtk9QZ6c8FQ==}
-    peerDependencies:
-      '@material-design-icons/font': ^0.14.0
-      react: ^17.0.0 || ^18.0.0
-      react-dom: ^17.0.0 || ^18.0.0
-    dependencies:
-      '@material-design-icons/font': 0.14.13
-      clsx: 2.0.0
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-    dev: false
-
   /@hrc/button@2.6.1(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2):
     resolution: {integrity: sha512-19KI5DrEdAqjCWnwEVVQiOkDYRrMmXcuyDrmBj8Nb49ht48QI0CT2SCJd4p1yrjWhTMb4rGL9Lz8bknqCbgXjg==}
     peerDependencies:
@@ -1087,6 +1058,21 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
+  /@hrc/material-icons@2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.3.1)(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-fQLt587Uh9DKI6M2/6FKe+S7zKoiUjpaSC1Wu/KCwcvN+ji1yOt44ez4duwLRbBvvLX4gnYnsJMTtndRTsEZlg==}
+    peerDependencies:
+      '@material-design-icons/font': ^0.14.0
+      '@types/react': ^17.0.0 || ^18.0.0
+      react: ^17.0.0 || ^18.0.0
+      react-dom: ^17.0.0 || ^18.0.0
+    dependencies:
+      '@material-design-icons/font': 0.14.13
+      '@types/react': 18.3.1
+      clsx: 2.0.0
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+    dev: false
+
   /@hrc/spinner@0.3.2(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-iO6AULTmn451hmKFm5dCgP3UZPTzxKEGiRx9lhimxf+GuF5v4WxZ59Ck6iGaG+f7SWffsRor/6ZBCbk2cUtUTw==}
     peerDependencies:
@@ -1111,6 +1097,19 @@ packages:
       '@types/react': 18.3.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
+  /@hrc/toggle-theme@2.2.0(@types/react@18.3.1)(react-dom@18.3.1)(react@18.3.1):
+    resolution: {integrity: sha512-jE7K7MFv9uFEWKEAaWcu7pRUgH3cVdCDcjwdgdJ5ucxjxZQFR+BAvzAUEwOAFWykuEtclTsd5V6s4vP7H2xpOw==}
+    engines: {node: '>=13.2.0'}
+    peerDependencies:
+      '@types/react': ^17.0.0 || ^18.0.0
+      react: ^17.0.0 || ^18.0.0
+      react-dom: ^17.0.0 || ^18.0.0
+    dependencies:
+      '@types/react': 18.3.1
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
     dev: false
 
   /@hrc/type-utils@1.1.2(typescript@5.3.2):
@@ -1359,6 +1358,7 @@ packages:
 
   /@types/prop-types@15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
+    dev: true
 
   /@types/react-dom@18.2.7:
     resolution: {integrity: sha512-GRaAEriuT4zp9N4p1i8BDBYmEyfo+xQ3yHjJU4eiK5NDa1RmUZG+unZABUTK4/Ox/M+GaHwb6Ow8rUITrtjszA==}
@@ -1372,6 +1372,7 @@ packages:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.3
       csstype: 3.1.2
+    dev: true
 
   /@types/react@18.3.1:
     resolution: {integrity: sha512-V0kuGBX3+prX+DQ/7r2qsv1NsdfnCLnTgnRJ1pYnxykBhGMz+qj+box5lq7XsO5mtZsBqpjwwTu/7wszPfMBcw==}
@@ -1382,6 +1383,7 @@ packages:
 
   /@types/scheduler@0.16.3:
     resolution: {integrity: sha512-5cJ8CB4yAx7BH1oMvdU0Jh9lrEXyPkar6F9G/ERswkCuvP4KQZfZkSjcMbAICCpQTN4OuZn8tz0HiKv9TGZgrQ==}
+    dev: true
 
   /@types/semver@7.5.1:
     resolution: {integrity: sha512-cJRQXpObxfNKkFAZbJl2yjWtJCqELQIdShsogr1d2MilP8dKD9TE/nEKHkJgUNHdGKCQaf9HbIynuV2csLGVLg==}
@@ -1973,6 +1975,7 @@ packages:
 
   /csstype@3.1.2:
     resolution: {integrity: sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==}
+    dev: true
 
   /csstype@3.1.3:
     resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
@@ -3384,6 +3387,16 @@ packages:
       scheduler: 0.23.0
     dev: false
 
+  /react-dom@18.3.1(react@18.3.1):
+    resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
+    peerDependencies:
+      react: ^18.3.1
+    dependencies:
+      loose-envify: 1.4.0
+      react: 18.3.1
+      scheduler: 0.23.2
+    dev: false
+
   /react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
@@ -3391,8 +3404,8 @@ packages:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
     dev: true
 
-  /react-loading-skeleton@3.3.1(react@18.2.0):
-    resolution: {integrity: sha512-NilqqwMh2v9omN7LteiDloEVpFyMIa0VGqF+ukqp0ncVlYu1sKYbYGX9JEl+GtOT9TKsh04zCHAbavnQ2USldA==}
+  /react-loading-skeleton@3.4.0(react@18.2.0):
+    resolution: {integrity: sha512-1oJEBc9+wn7BbkQQk7YodlYEIjgeR+GrRjD+QXkVjwZN7LGIcAFHrx4NhT7UHGBxNY1+zax3c+Fo6XQM4R7CgA==}
     peerDependencies:
       react: '>=16.8.0'
     dependencies:
@@ -3415,6 +3428,13 @@ packages:
 
   /react@18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      loose-envify: 1.4.0
+    dev: false
+
+  /react@18.3.1:
+    resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
     engines: {node: '>=0.10.0'}
     dependencies:
       loose-envify: 1.4.0
@@ -3543,6 +3563,12 @@ packages:
 
   /scheduler@0.23.0:
     resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}
+    dependencies:
+      loose-envify: 1.4.0
+    dev: false
+
+  /scheduler@0.23.2:
+    resolution: {integrity: sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==}
     dependencies:
       loose-envify: 1.4.0
     dev: false
@@ -3789,11 +3815,6 @@ packages:
     resolution: {integrity: sha512-tLq3bSNx+xSpwvAJnzrK0Ep5CLNWjvFTOp71URMaAEWBfRb9nnJiBoUe0tF8bI4ZFO3omgBR6NvnbzVUT3Ly4g==}
     engines: {node: '>=14.16'}
     dev: true
-
-  /type-fest@4.3.1:
-    resolution: {integrity: sha512-pphNW/msgOUSkJbH58x8sqpq8uQj6b0ZKGxEsLKMUnGorRcDjrUaLS+39+/ub41JNTwrrMyJcUB8+YZs3mbwqw==}
-    engines: {node: '>=16'}
-    dev: false
 
   /typed-array-buffer@1.0.0:
     resolution: {integrity: sha512-Y8KTSIglk9OZEr8zywiIHG/kmQ7KWyjseXs1CbSo8vC42w7hg2HgYTxSWwP0+is7bWDc1H+Fo026CpHFwm8tkw==}
@@ -4092,26 +4113,6 @@ packages:
 
   /zod@3.22.4:
     resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
-    dev: false
-
-  /zustand@4.4.3(@types/react@18.2.20)(react@18.2.0):
-    resolution: {integrity: sha512-oRy+X3ZazZvLfmv6viIaQmtLOMeij1noakIsK/Y47PWYhT8glfXzQ4j0YcP5i0P0qI1A4rIB//SGROGyZhx91A==}
-    engines: {node: '>=12.7.0'}
-    peerDependencies:
-      '@types/react': '>=16.8'
-      immer: '>=9.0'
-      react: '>=16.8'
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-      immer:
-        optional: true
-      react:
-        optional: true
-    dependencies:
-      '@types/react': 18.2.20
-      react: 18.2.0
-      use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
 
   /zustand@4.4.3(@types/react@18.3.1)(react@18.2.0):

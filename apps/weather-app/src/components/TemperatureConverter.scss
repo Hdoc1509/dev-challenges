@@ -11,13 +11,13 @@
     --button-bg-hover: #37364a;
     --button-padding: 10px;
     --button-radius: 40px;
-    --button-color: var(--text);
+    --button-text: var(--text);
     font-family: inherit;
     --button-font-weight: 700;
     font-size: var(--fs-2);
 
     &--active {
-      --button-color: var(--blue-dark);
+      --button-text: var(--blue-dark);
       --button-bg: var(--text);
       --button-bg-hover: var(--text);
     }

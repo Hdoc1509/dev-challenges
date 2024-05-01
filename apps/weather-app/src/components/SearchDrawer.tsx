@@ -3,8 +3,8 @@ import { clsx } from "clsx";
 import { searchCity } from "../services/geolocation";
 import { getWeather } from "../services/weather";
 import { useWeatherStore } from "../store/weather";
-import { Button } from "@hdoc/react-button";
-import { Icon } from "@hdoc/react-material-icons";
+import { Button } from "@hrc/button";
+import { Icon } from "@hrc/material-icons";
 import { SearchResults } from "./SearchResults";
 import type { SearchCityResponse } from "../schemas/geolocation";
 import "./SearchDrawer.scss";
@@ -74,7 +74,7 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
             required
           />
         </label>
-        <Button text="Search" color="primary" />
+        <Button color="primary">Search</Button>
       </form>
       {isLoading ? (
         <LoaderRing />

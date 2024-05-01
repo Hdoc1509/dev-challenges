@@ -1,7 +1,7 @@
 import { useWeatherStore } from "../store/weather";
 import { getCurrentDate } from "../utils/date";
 import Skeleton from "react-loading-skeleton";
-import { Icon } from "@hdoc/react-material-icons";
+import { Icon } from "@hrc/material-icons";
 import type { Weather } from "../schemas/weather";
 import "./WeatherDetails.scss";
 

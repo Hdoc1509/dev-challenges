@@ -1,4 +1,4 @@
-import { Icon } from "@hdoc/react-material-icons";
+import { Icon } from "@hrc/material-icons";
 import type { SearchCityResponse } from "../schemas/geolocation";
 import "./SearchResults.scss";
 

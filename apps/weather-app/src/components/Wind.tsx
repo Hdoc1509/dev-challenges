@@ -1,5 +1,5 @@
 import Skeleton from "react-loading-skeleton";
-import { Icon } from "@hdoc/react-material-icons";
+import { Icon } from "@hrc/material-icons";
 import { Highlights } from "./Highlights";
 import type { CSSProperties } from "react";
 import type { WeatherWind } from "../schemas/weather";

@@ -20,7 +20,7 @@
     padding-inline: var(--weather-padding, 42px);
   }
 
-  --button-color: var(--text);
+  --button-text: var(--text);
   &__search {
     --button-radius: 0;
     font-family: inherit;

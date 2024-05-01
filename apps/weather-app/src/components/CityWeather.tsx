@@ -1,7 +1,8 @@
 import Skeleton from "react-loading-skeleton";
 import { useWeatherStore } from "../store/weather";
 import { getWeatherIcon } from "../utils/icons";
-import { Button, ButtonIcon } from "@hdoc/react-button";
+import { Button, ButtonIcon } from "@hrc/button";
+import { Icon } from "@hrc/material-icons";
 import { WeatherDetails } from "./WeatherDetails";
 import "./CityWeather.scss";
 
@@ -21,17 +22,19 @@ export const CityWeather = ({
     <aside className="weather">
       <header>
         <Button
-          text="Search for places"
           className="weather__search"
           color="secondary"
           onClick={openDrawer}
-        />
+        >
+          Search for places
+        </Button>
         <ButtonIcon
-          icon="gps_fixed"
           className="weather__current"
           color="secondary"
           onClick={getCurrentLocationWeather}
-        />
+        >
+          <Icon name="gps_fixed" />
+        </ButtonIcon>
       </header>
       <picture className="weather-image">
         <img
