@@ -1,3 +1,5 @@
+@use "@lib/sass-utils";
+
 :root {
   font-family: "Raleway", sans-serif;
 
@@ -15,6 +17,8 @@
   --blue-darkest: #100e1d;
   --primary: #3c47e9;
   --primary-hover: #1925d9;
+
+  --icon-size: var(--fs-4);
 }
 
 *,

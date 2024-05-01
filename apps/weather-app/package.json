@@ -13,6 +13,7 @@
     "@hdoc/react-button": "1.2.0",
     "@hdoc/react-material-icons": "1.6.0",
     "@internal/components": "workspace:3.0.0",
+    "@lib/sass-utils": "workspace:*",
     "@material-design-icons/font": "^0.14.10",
     "clsx": "2.0.0",
     "react": "18.2.0",

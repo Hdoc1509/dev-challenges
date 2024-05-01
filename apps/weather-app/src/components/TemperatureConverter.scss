@@ -14,7 +14,7 @@
     --button-color: var(--gray-light);
     font-family: inherit;
     --button-font-weight: 700;
-    font-size: 1.125rem;
+    font-size: var(--fs-2);
 
     &--active {
       --button-color: var(--blue-dark);

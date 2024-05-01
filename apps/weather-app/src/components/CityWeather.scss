@@ -27,7 +27,7 @@
   &__search {
     --button-radius: 0;
     font-family: inherit;
-    font-size: 1rem;
+    font-size: var(--fs-1);
   }
   &__current {
     --button-radius: 50%;
@@ -74,7 +74,7 @@
 
     color: var(--gray-dark);
     font-weight: 600;
-    font-size: 1.125rem;
+    font-size: var(--fs-2);
 
     @include mixins.skeleton {
       width: 100px;
