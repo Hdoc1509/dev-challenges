@@ -5,7 +5,6 @@ import { getWeather } from "../services/weather";
 import { useWeatherStore } from "../store/weather";
 import { Button } from "@hrc/button";
 import { Icon } from "@hrc/material-icons";
-import { RingSpinner } from "@hrc/spinner";
 import { SearchResults } from "./SearchResults";
 import type { SearchCityResponse } from "../schemas/geolocation";
 import "./SearchDrawer.scss";
@@ -76,11 +75,11 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
         </label>
         <Button color="primary">Search</Button>
       </form>
-      {isLoading ? (
-        <RingSpinner />
-      ) : (
-        <SearchResults results={results} handleSelect={handleSelect} />
-      )}
+      <SearchResults
+        isLoading={isLoading}
+        results={results}
+        handleSelect={handleSelect}
+      />
     </div>
   );
 };

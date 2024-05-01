@@ -1,13 +1,17 @@
 import { Icon } from "@hrc/material-icons";
+import { RingSpinner } from "@hrc/spinner";
 import type { SearchCityResponse } from "../schemas/geolocation";
 import "./SearchResults.scss";
 
 type Props = {
+  isLoading: boolean;
   results: SearchCityResponse;
   handleSelect: (option: SearchCityResponse[number]) => void;
 };
 
-export const SearchResults = ({ results, handleSelect }: Props) => {
+export const SearchResults = ({ isLoading, results, handleSelect }: Props) => {
+  if (isLoading) return <RingSpinner />;
+
   return (
     <ul className="search-drawer__results">
       {results.map((result) => (
