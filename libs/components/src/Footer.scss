@@ -1,7 +1,7 @@
 @use '@lib/sass-utils/mixins' as *;
 
 .credits {
-  color: #a9a9a9;
+  color: var(--credits-text, #a9a9a9);
   @include font-variable("Montserrat", sans-serif);
   // NOTE: it will use --fs-0 from @lib/sass-utils if it is imported
   font-size: var(--fs-0, 0.875rem);
