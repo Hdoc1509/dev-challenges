@@ -60,7 +60,7 @@
         padding: 0;
 
         color: inherit;
-        font-family: "Raleway", sans-serif;
+        font-family: inherit;
         font-weight: 500;
         font-size: 1rem;
       }
@@ -68,6 +68,9 @@
 
     --button-radius: 0;
     --button-font-weight: 600;
+    .button {
+      font-family: inherit;
+    }
   }
 
   .loader-ring {

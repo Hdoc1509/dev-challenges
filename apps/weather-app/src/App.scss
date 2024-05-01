@@ -4,8 +4,6 @@
   grid-template-columns: 460px 1fr;
   grid-template-rows: 100svh;
 
-  font-family: "Raleway", sans-serif;
-
   @media (max-width: 767px) {
     --main-padding: 72px 24px;
     --weather-padding: 12px;
