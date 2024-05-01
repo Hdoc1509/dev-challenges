@@ -1,6 +1,6 @@
 import { clsx } from "clsx";
 import { useWeatherStore } from "../store/weather";
-import { Button } from "@hrc/button";
+import { Button } from "@hrc/button/dist/Button";
 import "./TemperatureConverter.scss";
 
 export const TemperatureConverter = () => {

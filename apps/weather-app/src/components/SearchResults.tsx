@@ -1,5 +1,5 @@
 import { Icon } from "@hrc/material-icons";
-import { RingSpinner } from "@hrc/spinner";
+import { RingSpinner } from "@hrc/spinner/dist/RingSpinner";
 import type { SearchCityResponse } from "../schemas/geolocation";
 import "./SearchResults.scss";
 
