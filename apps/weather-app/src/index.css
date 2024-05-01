@@ -10,9 +10,9 @@
   --gray: #a09fb1;
   --gray-light: #e7e7eb;
   --gray-dark: #88869d;
-  --blue-dark: #1e213a;
-  --blue-very-dark: #110e3c;
-  --blue-almost-black: #100e1d;
+  --blue: #1e213a;
+  --blue-dark: #110e3c;
+  --blue-darkest: #100e1d;
   --primary: #3c47e9;
   --primary-hover: #1925d9;
 }
@@ -27,7 +27,7 @@
 body {
   margin: 0;
   min-width: 320px;
-  background-color: var(--blue-almost-black);
+  background-color: var(--blue-darkest);
 }
 
 .no-scroll {
