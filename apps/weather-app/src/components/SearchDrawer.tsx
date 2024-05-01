@@ -5,6 +5,7 @@ import { getWeather } from "../services/weather";
 import { useWeatherStore } from "../store/weather";
 import { Button } from "@hrc/button";
 import { Icon } from "@hrc/material-icons";
+import { Input } from "@hrc/input";
 import { SearchResults } from "./SearchResults";
 import type { SearchCityResponse } from "../schemas/geolocation";
 import "./SearchDrawer.scss";
@@ -60,16 +61,14 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
         <Icon name="close" />
       </div>
       <form className="search-drawer__form" onSubmit={handleSubmit}>
-        <label className="input-wrapper">
-          <Icon name="search" />
-          <input
-            name="location"
-            placeholder="search location"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            required
-          />
-        </label>
+        <Input
+          iconStart={<Icon name="search" />}
+          placeholder="search location"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          fullWidth
+          required
+        />
         <Button color="primary">Search</Button>
       </form>
       <SearchResults

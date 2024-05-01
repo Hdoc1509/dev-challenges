@@ -44,34 +44,19 @@
     max-width: 372px;
     gap: 16px;
 
-    .input-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-
-      max-width: 270px;
-      border: 1px solid;
-      padding: 12px;
-
-      --icon-color: var(--secondary-dark);
-
-      input {
-        width: 100%;
-        background-color: transparent;
-        border: none;
-        outline: none;
-        padding: 0;
-
-        color: inherit;
-        font-family: inherit;
-        font-weight: 500;
-        font-size: var(--fs-1);
-
-        &::placeholder {
-          opacity: 1;
-          color: var(--secondary-dark);
-        }
-      }
+    --label-text: var(--secondary-dark);
+    --label-text-focus: var(--text);
+    --input-gap: 16px;
+    --input-border-color: var(--text-secondary);
+    --input-border-color-hover: var(--text);
+    --input-border-color-focus: var(--text);
+    --input-padding: 12px;
+    --input-radius: 0;
+    --input-text: var(--text);
+    --input-font-size: var(--fs-1);
+    .input__inner::placeholder {
+      opacity: 1;
+      color: var(--secondary-dark);
     }
 
     --button-radius: 0;
