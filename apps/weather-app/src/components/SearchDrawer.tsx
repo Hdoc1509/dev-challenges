@@ -5,11 +5,11 @@ import { getWeather } from "../services/weather";
 import { useWeatherStore } from "../store/weather";
 import { Button } from "@hrc/button";
 import { Icon } from "@hrc/material-icons";
+import { RingSpinner } from "@hrc/spinner";
 import { SearchResults } from "./SearchResults";
 import type { SearchCityResponse } from "../schemas/geolocation";
 import "./SearchDrawer.scss";
 import { getForecast } from "../services/forecast";
-import { LoaderRing } from "./LoaderRing";
 
 type Props = {
   isOpen?: boolean;
@@ -77,7 +77,7 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
         <Button color="primary">Search</Button>
       </form>
       {isLoading ? (
-        <LoaderRing />
+        <RingSpinner />
       ) : (
         <SearchResults results={results} handleSelect={handleSelect} />
       )}

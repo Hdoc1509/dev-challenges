@@ -32,6 +32,12 @@
     cursor: pointer;
   }
 
+  --spinner-size: 60px;
+  --spinner-animation-duration: 0.75s;
+  .spinner {
+    margin-inline: auto;
+  }
+
   &__form {
     display: flex;
     justify-content: space-between;
@@ -73,11 +79,5 @@
     .button {
       font-family: inherit;
     }
-  }
-
-  .loader-ring {
-    margin-inline: auto;
-    --loader-color: var(--text);
-    --loader-speed: 0.75s;
   }
 }
