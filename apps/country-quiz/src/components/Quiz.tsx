@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { useQuestionStore } from "../store/questions";
-import { Button } from "@hrc/button";
+import { Button } from "@hrc/button/dist/Button";
 import { QuestionCategories } from "../constants";
 import { QuizOptions } from "./QuizOptions";
 import type { Question } from "../types";

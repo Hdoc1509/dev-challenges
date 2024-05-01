@@ -1,5 +1,5 @@
 import { getResultMessage } from "../utils/helpers";
-import { Button } from "@hrc/button";
+import { Button } from "@hrc/button/dist/Button";
 import winnerSVG from "../assets/winner.svg";
 import type { Question } from "../types";
 import "./Results.scss";
