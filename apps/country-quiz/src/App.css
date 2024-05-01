@@ -31,13 +31,13 @@ h1 {
 
   color: #fff;
   font-weight: 700;
-  font-size: var(--font-size-fluid-3);
+  font-size: var(--fs-fluid-4-6);
 }
 
 .credits {
   color: #f2f2f2;
   /* TODO: Add this to Footer from @internal/components */
-  font-size: var(--font-size-0);
+  font-size: var(--fs-0);
 
   /* TODO: Add this to Footer from @internal/components */
   @supports (font-variation-settings: normal) {

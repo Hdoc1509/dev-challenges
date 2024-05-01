@@ -11,7 +11,7 @@
 
   color: var(--primary-dark);
   font-weight: 700;
-  font-size: var(--font-size-fluid-2);
+  font-size: var(--fs-fluid-3);
 }
 
 .quiz-footer {
@@ -28,7 +28,7 @@
   margin: 0 auto;
 
   color: var(--primary-dark);
-  font-size: var(--font-size-2);
+  font-size: var(--fs-fluid-3);
   font-weight: 700;
   letter-spacing: 4px;
 }
@@ -67,7 +67,7 @@
     --button-radius: 12px;
 
     font-family: inherit;
-    font-size: var(--font-size-fluid-0);
+    font-size: var(--fs-fluid-0-2);
     text-align: left;
 
     &:hover:enabled {
@@ -116,5 +116,5 @@
   --button-padding: 14px 36px;
   --button-font-weight: 700;
   font-family: inherit;
-  font-size: var(--font-size-fluid-0);
+  font-size: var(--fs-fluid-0-2);
 }

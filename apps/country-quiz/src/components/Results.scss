@@ -8,18 +8,18 @@
   h2 {
     margin: 0;
     font-weight: 700;
-    font-size: var(--font-size-fluid-4);
+    font-size: var(--fs-fluid-6-8);
   }
 }
 
 .quiz-results-points {
   margin: 0;
-  font-size: var(--font-size-2);
+  font-size: var(--fs-2);
   font-weight: 400;
 
   &__correct {
     color: var(--success-light);
-    font-size: var(--font-size-6);
+    font-size: var(--fs-6);
     font-weight: 700;
   }
 }
@@ -34,7 +34,7 @@
   --button-font-weight: 600;
   outline: solid 2px;
   font-family: inherit;
-  font-size: var(--font-size-2);
+  font-size: var(--fs-2);
 
   &:hover {
     --button-text: #fff;
