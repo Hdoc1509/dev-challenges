@@ -41,13 +41,15 @@
 - [BEM](https://getbem.com/)
 - [zod](https://zod.dev)
 - [zustand](https://docs.pmnd.rs/zustand/getting-started/introduction)
-- [@hdoc/react-button](https://www.npmjs.com/package/@hdoc/react-button)
-- [@hdoc/react-material-icons](https://www.npmjs.com/package/@hdoc/react-material-icons)
+- [@hrc/button](https://www.npmjs.com/package/@hrc/button)
+- [@hrc/input](https://www.npmjs.com/package/@hrc/input)
+- [@hrc/material-icons](https://www.npmjs.com/package/@hrc/material-icons)
+- [@hrc/spinner](https://www.npmjs.com/package/@hrc/spinner)
 - [react-loading-skeleton](https://www.npmjs.com/package/react-loading-skeleton)
 
 ### Extra Features
 
-- Custom loading spinner for Search Drawer
+- Loading spinner for Search Drawer
 - Skeleton loaders
 - More icons
 
