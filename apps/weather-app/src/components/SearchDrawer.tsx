@@ -18,8 +18,8 @@ type Props = {
 export const SearchDrawer = ({ isOpen, onClose }: Props) => {
   const [results, setResults] = useState<SearchCityResponse>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [search, setSearch] = useState("");
   const lastSearch = useRef("");
-  const inputRef = useRef<HTMLInputElement>(null);
   const setWeather = useWeatherStore((s) => s.setWeather);
   const setForecast = useWeatherStore((s) => s.setForecast);
   const clearData = useWeatherStore((s) => s.clearData);
@@ -30,8 +30,6 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    const search = inputRef.current?.value ?? "";
 
     if (search === lastSearch.current) return;
 
@@ -50,13 +48,11 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
     void getWeather(coords).then((location) => {
       setWeather(location);
       setResults([]);
-      if (inputRef.current) inputRef.current.value = "";
       lastSearch.current = "";
     });
     void getForecast(coords).then(setForecast);
+    setSearch("");
   };
-
-  if (isOpen) inputRef.current?.focus();
 
   return (
     <div className={className}>
@@ -69,7 +65,8 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
           <input
             name="location"
             placeholder="search location"
-            ref={inputRef}
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
             required
           />
         </label>
