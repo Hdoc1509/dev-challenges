@@ -23,11 +23,13 @@ export const CityWeather = ({
         <Button
           text="Search for places"
           className="weather__search"
+          color="secondary"
           onClick={openDrawer}
         />
         <ButtonIcon
           icon="gps_fixed"
           className="weather__current"
+          color="secondary"
           onClick={getCurrentLocationWeather}
         />
       </header>

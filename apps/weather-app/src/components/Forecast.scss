@@ -4,8 +4,6 @@
   display: grid;
   grid-template-columns: var(--forecast-grid-columns, repeat(5, 1fr));
   gap: 26px;
-
-  color: #fff;
 }
 .forecast-item {
   display: flex;
@@ -48,7 +46,7 @@
     font-weight: 500;
 
     :last-child {
-      color: var(--gray);
+      color: var(--text-secondary);
     }
 
     @include mixins.skeleton {

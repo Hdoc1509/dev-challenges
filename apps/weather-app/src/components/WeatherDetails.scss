@@ -11,12 +11,12 @@
     }
   }
   &__degree-unit {
-    color: var(--gray);
+    color: var(--text-secondary);
     font-size: var(--fs-8);
   }
 
   &__description {
-    color: var(--gray);
+    color: var(--text-secondary);
     font-size: var(--fs-fluid-4-6);
     font-weight: 600;
 
@@ -26,7 +26,7 @@
   }
 
   &__date {
-    color: var(--gray-dark);
+    color: var(--text-dark);
     font-size: var(--fs-2);
     font-weight: 500;
 

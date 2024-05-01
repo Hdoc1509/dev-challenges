@@ -12,7 +12,6 @@
     justify-content: space-between;
 
     padding: 22px 12px;
-    color: #e7e7eb;
     font-size: var(--fs-1);
     font-weight: 500;
     --icon-color: transparent;
@@ -20,8 +19,8 @@
     cursor: pointer;
 
     &:hover {
-      outline: solid 1px #616475;
-      --icon-color: #616475;
+      outline: solid 1px var(--secondary-dark);
+      --icon-color: var(--secondary-dark);
     }
   }
 }

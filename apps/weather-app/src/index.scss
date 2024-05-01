@@ -9,16 +9,23 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --gray: #a09fb1;
-  --gray-light: #e7e7eb;
-  --gray-dark: #88869d;
   --blue: #1e213a;
   --blue-dark: #110e3c;
   --blue-darkest: #100e1d;
   --primary: #3c47e9;
   --primary-hover: #1925d9;
+  --primary-text: var(--text);
+  --secondary: #6e707a;
+  --secondary-hover: #56575f;
+  --secondary-dark: #616475;
+
+  --text: #e7e7eb;
+  --text-secondary: #a09fb1;
+  --text-dark: #88869d;
 
   --icon-size: var(--fs-4);
+
+  --credits-text: var(--text-secondary);
 }
 
 *,
@@ -32,6 +39,7 @@ body {
   margin: 0;
   min-width: 320px;
   background-color: var(--blue-darkest);
+  color: var(--text);
 }
 
 .no-scroll {
@@ -40,5 +48,5 @@ body {
 
 .react-loading-skeleton {
   --base-color: var(--gray) !important;
-  --highlight-color: var(--gray-light) !important;
+  --highlight-color: var(--text) !important;
 }
