@@ -2,24 +2,24 @@
   display: flex;
   gap: 12px;
   margin-left: auto;
+}
 
-  &__button {
-    aspect-ratio: 1 / 1;
+.converter-button {
+  aspect-ratio: 1 / 1;
 
-    width: 40px;
-    --button-bg: #585676;
-    --button-bg-hover: #37364a;
-    --button-padding: 10px;
-    --button-radius: 40px;
-    --button-text: var(--text);
-    font-family: inherit;
-    --button-font-weight: 700;
-    font-size: var(--fs-2);
+  width: 40px;
+  --button-bg: #585676;
+  --button-bg-hover: #37364a;
+  --button-padding: 10px;
+  --button-radius: 40px;
+  --button-text: var(--text);
+  font-family: inherit;
+  --button-font-weight: 700;
+  font-size: var(--fs-2);
 
-    &--active {
-      --button-text: var(--blue-dark);
-      --button-bg: var(--text);
-      --button-bg-hover: var(--text);
-    }
+  &.active {
+    --button-text: var(--blue-dark);
+    --button-bg: var(--text);
+    --button-bg-hover: var(--text);
   }
 }
