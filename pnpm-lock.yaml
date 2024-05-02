@@ -393,7 +393,7 @@ importers:
         specifier: workspace:*
         version: link:../../libs/sass-utils
       '@material-design-icons/font':
-        specifier: ^0.14.10
+        specifier: ^0.14.13
         version: 0.14.13
       clsx:
         specifier: 2.0.0
