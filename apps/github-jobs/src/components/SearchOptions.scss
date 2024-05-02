@@ -34,7 +34,4 @@
     box-shadow: var(--box-shadow);
     font-family: "Roboto", sans-serif;
   }
-  [data-theme="dark"] & {
-    --placeholder-color: var(--text-secondary);
-  }
 }
