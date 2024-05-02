@@ -14,6 +14,7 @@ import "./App.scss";
 let didInit = false;
 
 function App() {
+  const [error, setError] = useState<string | undefined>();
   const [showSearchDrawer, setShowSearchDrawer] = useState(false);
   const setWeather = useWeatherStore((s) => s.setWeather);
   const setForecast = useWeatherStore((s) => s.setForecast);
@@ -30,10 +31,12 @@ function App() {
 
   const getCurrentLocationWeather = useCallback(() => {
     clearData();
-    void getCurrentPosition().then((coords) => {
-      void getWeather(coords).then(setWeather);
-      void getForecast(coords).then(setForecast);
-    });
+    void getCurrentPosition()
+      .then((coords) => {
+        void getWeather(coords).then(setWeather);
+        void getForecast(coords).then(setForecast);
+      })
+      .catch((error) => setError(error as string));
   }, [setForecast, setWeather, clearData]);
 
   useEffect(() => {
@@ -44,18 +47,24 @@ function App() {
   }, [getCurrentLocationWeather]);
 
   return (
-    <div className="App">
-      <CityWeather
-        openDrawer={openDrawer}
-        getCurrentLocationWeather={getCurrentLocationWeather}
-      />
-      <SearchDrawer onClose={closeDrawer} isOpen={showSearchDrawer} />
-      <main>
-        <TemperatureConverter />
-        <Forecast />
-        <Highlights />
-        <Footer />
-      </main>
+    <div className="App" data-error={error}>
+      {error ? (
+        <h2 className="App__error">{error}</h2>
+      ) : (
+        <>
+          <CityWeather
+            openDrawer={openDrawer}
+            getCurrentLocationWeather={getCurrentLocationWeather}
+          />
+          <SearchDrawer onClose={closeDrawer} isOpen={showSearchDrawer} />
+          <main>
+            <TemperatureConverter />
+            <Forecast />
+            <Highlights />
+            <Footer />
+          </main>
+        </>
+      )}
     </div>
   );
 }

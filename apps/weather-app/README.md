@@ -52,6 +52,7 @@
 - Loading spinner for Search Drawer
 - Skeleton loaders
 - More icons
+- Error handling for Geolocation API
 
 ### What I learned
 
