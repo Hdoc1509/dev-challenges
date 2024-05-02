@@ -26,6 +26,9 @@ footer {
   margin: 0;
 }
 
+.label, .button {
+  font-family: inherit;
+}
 .input__inner::placeholder {
   opacity: 1;
 }

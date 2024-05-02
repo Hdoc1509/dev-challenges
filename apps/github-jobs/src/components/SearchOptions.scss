@@ -1,19 +1,17 @@
 .search-options {
-  --_ff: "Poppins", sans-serif;
-
   grid-area: search-options;
   display: flex;
   flex-direction: column;
   gap: 24px;
 
-  font-family: var(--_ff);
+  font-family: "Poppins", sans-serif;
 
   --label-text: var(--text-secondary);
   --label-text-focus: var(--primary);
-  --label-font-family: var(--_ff);
   --label-font-weight: 700;
 
-  .label--checkbox, .label--radio {
+  .label--checkbox,
+  .label--radio {
     --label-text: var(--text);
     --label-font-size: 0.875rem;
     --label-font-weight: 500;
@@ -34,6 +32,7 @@
   .input {
     align-items: center;
     box-shadow: var(--box-shadow);
+    font-family: "Roboto", sans-serif;
   }
   [data-theme="dark"] & {
     --placeholder-color: var(--text-secondary);
