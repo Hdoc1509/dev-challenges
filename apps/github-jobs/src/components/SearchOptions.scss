@@ -13,12 +13,17 @@
   --label-font-family: var(--_ff);
   --label-font-weight: 700;
 
-  .label--checkbox {
+  .label--checkbox, .label--radio {
     --label-text: var(--text);
     --label-font-size: 0.875rem;
     --label-font-weight: 500;
   }
   --checkbox-color: var(--text-secondary);
+  --radio-color: var(--text-secondary);
+  --radio-checked-color: var(--primary);
+  .label--radio:focus-within {
+    --label-text: var(--text);
+  }
 
   --input-border-color: transparent;
   --input-border-color-hover: transparent;
@@ -29,10 +34,5 @@
   .input {
     align-items: center;
     box-shadow: var(--box-shadow);
-  }
-
-  .radio-group label {
-    font-size: 0.875rem;
-    font-weight: 500;
   }
 }
