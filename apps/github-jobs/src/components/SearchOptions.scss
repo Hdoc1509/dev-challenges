@@ -35,4 +35,7 @@
     align-items: center;
     box-shadow: var(--box-shadow);
   }
+  [data-theme="dark"] & {
+    --placeholder-color: var(--text-secondary);
+  }
 }

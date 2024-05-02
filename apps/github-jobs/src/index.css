@@ -23,6 +23,7 @@
 [data-theme="dark"] {
   --bg-color: #222;
   --text-color: #fff;
+  --text: #b0c8ff;
 }
 
 body {

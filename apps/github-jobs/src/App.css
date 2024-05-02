@@ -25,3 +25,7 @@ footer {
   grid-area: footer;
   margin: 0;
 }
+
+.input__inner::placeholder {
+  opacity: 1;
+}
