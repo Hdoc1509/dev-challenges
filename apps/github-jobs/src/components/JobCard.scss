@@ -68,11 +68,10 @@
     font-size: 0.75rem;
     font-weight: 700;
 
-    span {
-      border: 1px solid var(--text-secondary);
-      border-radius: 4px;
-      padding: 6px 8px;
-    }
+    border: 1px solid var(--text-secondary);
+    border-radius: 4px;
+    padding: 6px 8px;
+    margin-right: auto;
   }
 
   &__location {

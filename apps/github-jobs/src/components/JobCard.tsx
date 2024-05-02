@@ -14,11 +14,7 @@ export const JobCard = ({ job }: { job: Job }) => {
       </div>
       <p className="job-card__company">{job.company}</p>
       <p className="job-card__title">{job.title}</p>
-      {job.isFullTime && (
-        <p className="job-card__schedule-type">
-          <span>Full time</span>
-        </p>
-      )}
+      {job.isFullTime && <p className="job-card__schedule-type">Full time</p>}
       <p className="job-card__location">
         <Icon name="public" /> {job.location}
       </p>
