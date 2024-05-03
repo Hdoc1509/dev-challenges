@@ -7,7 +7,7 @@
   align-items: center;
   grid-template-areas:
     "image company . ."
-    "image title . ."
+    "image title title title"
     "image schedule location created-at";
   grid-template-columns: 60px 1fr auto auto;
   gap: 10px 16px;
