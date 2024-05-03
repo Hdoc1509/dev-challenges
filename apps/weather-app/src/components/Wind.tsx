@@ -5,9 +5,8 @@ import { useRef, type CSSProperties } from "react";
 import type { WeatherWind } from "../schemas/weather";
 import "./Wind.scss";
 
-interface CustomCSS extends CSSProperties {
-  "--wind-degree": `${number}deg`;
-}
+const getWindDegree = (degree: number) =>
+  ({ "--wind-degree": `${degree}deg` }) as CSSProperties;
 
 export const Wind = ({ wind }: { wind?: WeatherWind }) => {
   const { speed, directionDegree } = wind ?? {};
@@ -22,11 +21,7 @@ export const Wind = ({ wind }: { wind?: WeatherWind }) => {
       <p className="wind__direction">
         <span
           className="wind__direction-icon-wrapper"
-          style={
-            {
-              "--wind-degree": `${lastDegree.current}deg`,
-            } as CustomCSS
-          }
+          style={getWindDegree(lastDegree.current)}
         >
           <Icon name="near_me" />
         </span>
