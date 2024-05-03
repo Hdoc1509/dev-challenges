@@ -24,7 +24,7 @@
   }
 
   --input-border-color: transparent;
-  --input-border-color-hover: transparent;
+  --input-border-color-hover: var(--text-secondary);
   --input-border-color-focus: var(--primary);
   --input-font-weight: 400;
   --input-font-size: 0.75rem;
