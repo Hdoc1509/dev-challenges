@@ -1,11 +1,5 @@
-@use "../scss/mixins";
-
 .wind {
-  .highlights__value {
-    @include mixins.skeleton {
-      width: 200px;
-    }
-  }
+  --skeleton-width: 2.5ch;
 
   &__direction {
     display: flex;
@@ -14,10 +8,6 @@
 
     font-size: var(--fs-0);
     font-weight: 500;
-
-    @include mixins.skeleton {
-      width: 60px;
-    }
   }
   &__direction-icon-wrapper {
     display: flex;

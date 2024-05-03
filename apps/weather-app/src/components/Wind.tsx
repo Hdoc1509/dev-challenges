@@ -15,23 +15,17 @@ export const Wind = ({ wind }: { wind?: WeatherWind }) => {
       <h3>Wind Status</h3>
       <Highlights.Value value={wind?.speed} unit="mph" />
       <p className="wind__direction">
-        {wind == null ? (
-          <Skeleton />
-        ) : (
-          <>
-            <span
-              className="wind__direction-icon-wrapper"
-              style={
-                {
-                  "--wind-degree": `${wind.directionDegree}deg`,
-                } as CustomCSS
-              }
-            >
-              <Icon name="near_me" />
-            </span>
-            {wind.direction}
-          </>
-        )}
+        <span
+          className="wind__direction-icon-wrapper"
+          style={
+            {
+              "--wind-degree": `${wind?.directionDegree ?? 0}deg`,
+            } as CustomCSS
+          }
+        >
+          <Icon name="near_me" />
+        </span>
+        {wind == null ? <Skeleton /> : wind.direction}
       </p>
     </section>
   );

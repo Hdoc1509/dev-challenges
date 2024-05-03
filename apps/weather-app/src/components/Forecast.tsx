@@ -11,6 +11,8 @@ const ForecastDay = ({ day }: { day?: ForecastType }) => {
   const temperatureUnitLetter = temperatureUnit[0].toUpperCase();
   const condition = day?.condition;
   const temperature = day?.temperature;
+  const maxTemp = `${temperature?.max[temperatureUnit]}°${temperatureUnitLetter}`;
+  const minTemp = `${temperature?.min[temperatureUnit]}°${temperatureUnitLetter}`;
 
   return (
     <article className="forecast-item">
@@ -26,20 +28,8 @@ const ForecastDay = ({ day }: { day?: ForecastType }) => {
         )}
       </picture>
       <p className="forecast-item__degrees">
-        <span>
-          {temperature == null ? (
-            <Skeleton />
-          ) : (
-            `${temperature.max[temperatureUnit]}°${temperatureUnitLetter}`
-          )}
-        </span>
-        <span>
-          {temperature == null ? (
-            <Skeleton />
-          ) : (
-            `${temperature.min[temperatureUnit]}°${temperatureUnitLetter}`
-          )}
-        </span>
+        <span>{temperature == null ? <Skeleton /> : maxTemp}</span>
+        <span>{temperature == null ? <Skeleton /> : minTemp}</span>
       </p>
     </article>
   );

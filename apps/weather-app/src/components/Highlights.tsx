@@ -9,14 +9,8 @@ import "./Highlights.scss";
 const Value = ({ value, unit }: { value?: number; unit: string }) => {
   return (
     <p className="highlights__value">
-      {value == null ? (
-        <Skeleton />
-      ) : (
-        <>
-          {value}
-          <span className="highlights__unit"> {unit}</span>
-        </>
-      )}
+      {value ?? <Skeleton inline/>}
+      <span className="highlights__unit"> {unit}</span>
     </p>
   );
 };

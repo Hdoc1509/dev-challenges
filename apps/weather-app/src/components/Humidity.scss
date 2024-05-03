@@ -1,13 +1,6 @@
-@use "../scss/mixins";
-
 .humidity {
   padding-inline: 50px;
-
-  .highlights__value {
-    @include mixins.skeleton {
-      width: 100px;
-    }
-  }
+  --skeleton-width: 2ch;
 }
 .humidity-slider {
   display: flex;

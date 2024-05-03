@@ -1,9 +1,3 @@
-@use "../scss/mixins";
-
 .air-pressure {
-  .highlights__value {
-    @include mixins.skeleton {
-      width: 200px;
-    }
-  }
+  --skeleton-width: 4ch;
 }

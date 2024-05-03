@@ -50,4 +50,8 @@ body {
 .react-loading-skeleton {
   --base-color: var(--text-secondary) !important;
   --highlight-color: var(--text) !important;
+  width: var(--skeleton-width, 100%);
+  height: var(--skeleton-height);
+  border-radius: var(--skeleton-radius, 0.25rem);
+  aspect-ratio: var(--skeleton-aspect-ratio);
 }

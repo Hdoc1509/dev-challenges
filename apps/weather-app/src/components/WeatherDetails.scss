@@ -1,14 +1,8 @@
-@use "../scss/mixins";
-
 .weather {
   &__degree {
     font-size: clamp(6.25rem, 10vw, 9rem);
     font-weight: 500;
-
-    @include mixins.skeleton {
-      width: 300px;
-      border-radius: 10px;
-    }
+    --skeleton-width: 3ch;
   }
   &__degree-unit {
     color: var(--text-secondary);
@@ -19,19 +13,28 @@
     color: var(--text-secondary);
     font-size: var(--fs-fluid-4-6);
     font-weight: 600;
-
-    @include mixins.skeleton {
-      width: 180px;
-    }
+    --skeleton-width: 12ch;
   }
 
   &__date {
     color: var(--text-dark);
     font-size: var(--fs-2);
     font-weight: 500;
+    --skeleton-width: 16ch;
+  }
 
-    @include mixins.skeleton {
-      width: 240px;
-    }
+  &__location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+
+    margin-top: 32px;
+
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: var(--fs-2);
+
+    --skeleton-width: 10ch;
   }
 }

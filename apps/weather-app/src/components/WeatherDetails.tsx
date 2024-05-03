@@ -9,21 +9,16 @@ export const WeatherDetails = ({ weather }: { weather: Weather | null }) => {
   const temperatureUnit = useWeatherStore((s) => s.temperatureUnit);
   const current = weather?.current;
   const location = weather?.location;
+  const locationName = `${location?.name}, ${location?.country}`;
 
   return (
     <>
-      <p className="weather__degree">
-        {current == null ? (
-          <Skeleton />
-        ) : (
-          <>
-            {current.temperature[temperatureUnit]}
-            <span className="weather__degree-unit">
-              °{temperatureUnit[0].toUpperCase()}
-            </span>
-          </>
-        )}
-      </p>
+      <span className="weather__degree">
+        {current?.temperature[temperatureUnit] ?? <Skeleton inline />}
+        <span className="weather__degree-unit">
+          °{temperatureUnit[0].toUpperCase()}
+        </span>
+      </span>
       <p className="weather__description">
         {current?.condition.name ?? <Skeleton />}
       </p>
@@ -31,14 +26,8 @@ export const WeatherDetails = ({ weather }: { weather: Weather | null }) => {
         {current == null ? <Skeleton /> : `Today • ${getCurrentDate()}`}
       </p>
       <p className="weather__location">
-        {location == null ? (
-          <Skeleton />
-        ) : (
-          <>
-            <Icon name="location_on" />
-            {location.name}, {location.country}
-          </>
-        )}
+        <Icon name="location_on" />
+        {location == null ? <Skeleton /> : locationName}
       </p>
     </>
   );
