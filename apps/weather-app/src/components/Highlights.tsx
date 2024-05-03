@@ -1,9 +1,7 @@
 import { useWeatherStore } from "../store/weather";
 import Skeleton from "react-loading-skeleton";
-import { AirPressure } from "./AirPressure";
 import { Humidity } from "./Humidity";
 import { Wind } from "./Wind";
-import { Visibility } from "./Visibility";
 import "./Highlights.scss";
 
 const Value = ({ value, unit }: { value?: number; unit: string }) => {
@@ -24,8 +22,14 @@ export const Highlights = () => {
       <h2>{`Today's Highlights`}</h2>
       <Wind wind={wind} />
       <Humidity humidity={humidity} />
-      <Visibility visibility={visibility} />
-      <AirPressure airPressure={airPressure} />
+      <section className="visibility">
+        <h3>Visibility</h3>
+        <Value value={visibility} unit="miles" />
+      </section>
+      <section className="air-pressure">
+        <h3>Air Pressure</h3>
+        <Value value={airPressure} unit="mb" />
+      </section>
     </article>
   );
 };
