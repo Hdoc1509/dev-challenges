@@ -15,7 +15,7 @@ export const SearchResults = ({ isLoading, results, handleSelect }: Props) => {
   return (
     <ul className="search-drawer__results">
       {results.map((result) => (
-        <li key={result.id} onClick={() => handleSelect(result)}>
+        <li key={result.id} onClick={() => handleSelect(result)} tabIndex={0}>
           {result.name} - {result.country}
           <Icon name="keyboard_arrow_right" />
         </li>

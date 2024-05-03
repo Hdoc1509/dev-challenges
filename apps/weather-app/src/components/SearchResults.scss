@@ -18,7 +18,7 @@
 
     cursor: pointer;
 
-    &:hover {
+    &:hover, &:focus-visible {
       outline: solid 1px var(--secondary-dark);
       --icon-color: var(--secondary-dark);
     }
