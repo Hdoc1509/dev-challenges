@@ -7,8 +7,7 @@ import "./WeatherDetails.scss";
 
 export const WeatherDetails = ({ weather }: { weather: Weather | null }) => {
   const temperatureUnit = useWeatherStore((s) => s.temperatureUnit);
-  const current = weather?.current;
-  const location = weather?.location;
+  const { current, location } = weather ?? {};
   const locationName = `${location?.name}, ${location?.country}`;
 
   return (

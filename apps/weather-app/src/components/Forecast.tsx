@@ -9,8 +9,7 @@ import "./Forecast.scss";
 const ForecastDay = ({ day }: { day?: ForecastType }) => {
   const temperatureUnit = useWeatherStore((s) => s.temperatureUnit);
   const temperatureUnitLetter = temperatureUnit[0].toUpperCase();
-  const condition = day?.condition;
-  const temperature = day?.temperature;
+  const { condition, temperature } = day ?? {};
   const maxTemp = `${temperature?.max[temperatureUnit]}°${temperatureUnitLetter}`;
   const minTemp = `${temperature?.min[temperatureUnit]}°${temperatureUnitLetter}`;
 

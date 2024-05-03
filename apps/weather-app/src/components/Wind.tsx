@@ -10,16 +10,18 @@ interface CustomCSS extends CSSProperties {
 }
 
 export const Wind = ({ wind }: { wind?: WeatherWind }) => {
+  const { speed, directionDegree } = wind ?? {};
+
   return (
     <section className="wind">
       <h3>Wind Status</h3>
-      <Highlights.Value value={wind?.speed} unit="mph" />
+      <Highlights.Value value={speed} unit="mph" />
       <p className="wind__direction">
         <span
           className="wind__direction-icon-wrapper"
           style={
             {
-              "--wind-degree": `${wind?.directionDegree ?? 0}deg`,
+              "--wind-degree": `${directionDegree ?? 0}deg`,
             } as CustomCSS
           }
         >

@@ -9,7 +9,7 @@ import "./Highlights.scss";
 const Value = ({ value, unit }: { value?: number; unit: string }) => {
   return (
     <p className="highlights__value">
-      {value ?? <Skeleton inline/>}
+      {value ?? <Skeleton inline />}
       <span className="highlights__unit"> {unit}</span>
     </p>
   );
@@ -17,14 +17,15 @@ const Value = ({ value, unit }: { value?: number; unit: string }) => {
 
 export const Highlights = () => {
   const weather = useWeatherStore((s) => s.weather);
+  const { wind, humidity, visibility, airPressure } = weather?.current ?? {};
 
   return (
     <article className="highlights">
       <h2>{`Today's Highlights`}</h2>
-      <Wind wind={weather?.current.wind} />
-      <Humidity humidity={weather?.current.humidity} />
-      <Visibility visibility={weather?.current.visibility} />
-      <AirPressure airPressure={weather?.current.airPressure} />
+      <Wind wind={wind} />
+      <Humidity humidity={humidity} />
+      <Visibility visibility={visibility} />
+      <AirPressure airPressure={airPressure} />
     </article>
   );
 };
