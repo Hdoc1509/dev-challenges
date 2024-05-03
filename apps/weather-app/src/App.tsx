@@ -46,25 +46,27 @@ function App() {
     }
   }, [getCurrentLocationWeather]);
 
+  if (error) {
+    return (
+      <div className="App" data-error>
+        <h2 className="App__error">{error}</h2>
+      </div>
+    );
+  }
+
   return (
     <div className="App" data-error={error}>
-      {error ? (
-        <h2 className="App__error">{error}</h2>
-      ) : (
-        <>
-          <CityWeather
-            openDrawer={openDrawer}
-            getCurrentLocationWeather={getCurrentLocationWeather}
-          />
-          <SearchDrawer onClose={closeDrawer} isOpen={showSearchDrawer} />
-          <main>
-            <TemperatureConverter />
-            <Forecast />
-            <Highlights />
-            <Footer />
-          </main>
-        </>
-      )}
+      <CityWeather
+        openDrawer={openDrawer}
+        getCurrentLocationWeather={getCurrentLocationWeather}
+      />
+      <SearchDrawer onClose={closeDrawer} isOpen={showSearchDrawer} />
+      <main>
+        <TemperatureConverter />
+        <Forecast />
+        <Highlights />
+        <Footer />
+      </main>
     </div>
   );
 }
