@@ -25,6 +25,9 @@
   --bg-color: #222;
   --text-color: #fff;
   --text: #b0c8ff;
+
+  --checkbox-bg-hover: rgb(0 0 0 / .2);
+  --radio-bg-hover: rgb(0 0 0 / .2);
 }
 
 body {
