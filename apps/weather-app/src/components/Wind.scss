@@ -19,5 +19,7 @@
 
     rotate: -45deg;
     transform: rotate(var(--wind-degree));
+
+    transition: transform 0.5s ease;
   }
 }
