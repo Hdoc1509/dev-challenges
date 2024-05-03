@@ -18,11 +18,8 @@ export const Wind = ({ wind }: { wind?: WeatherWind }) => {
     <section className="wind">
       <h3>Wind Status</h3>
       <Highlights.Value value={speed} unit="mph" />
-      <p className="wind__direction">
-        <span
-          className="wind__direction-icon-wrapper"
-          style={getWindDegree(lastDegree.current)}
-        >
+      <p className="wind__direction" style={getWindDegree(lastDegree.current)}>
+        <span className="wind__direction-icon-wrapper">
           <Icon name="near_me" />
         </span>
         {wind == null ? <Skeleton /> : wind.direction}
