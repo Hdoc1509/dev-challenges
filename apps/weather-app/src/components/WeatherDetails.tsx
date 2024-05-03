@@ -15,7 +15,7 @@ export const WeatherDetails = ({ weather }: { weather: Weather | null }) => {
       <span className="weather__degree">
         {current?.temperature[temperatureUnit] ?? <Skeleton inline />}
         <span className="weather__degree-unit">
-          °{temperatureUnit[0].toUpperCase()}
+          {` °${temperatureUnit[0].toUpperCase()}`}
         </span>
       </span>
       <p className="weather__description">
