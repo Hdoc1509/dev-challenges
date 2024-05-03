@@ -31,7 +31,7 @@ function App() {
 
   const getCurrentLocationWeather = useCallback(() => {
     clearData();
-    void getCurrentPosition()
+    getCurrentPosition()
       .then((coords) => {
         void getWeather(coords).then(setWeather);
         void getForecast(coords).then(setForecast);
