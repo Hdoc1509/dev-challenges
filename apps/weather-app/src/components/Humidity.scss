@@ -16,14 +16,13 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 
-    span {
-      text-align: center;
-      &:first-child {
-        text-align: left;
-      }
-      &:last-child {
-        text-align: right;
-      }
+    text-align: center;
+
+    > :first-child {
+      text-align: left;
+    }
+    > :last-child {
+      text-align: right;
     }
   }
 
