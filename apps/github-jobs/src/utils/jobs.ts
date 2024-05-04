@@ -1,5 +1,5 @@
-import type { ApiResponse } from "./schemas/jobs";
-import type { Job } from "./services/jobs";
+import type { ApiResponse } from "../schemas/jobs";
+import type { Job } from "../services/jobs";
 
 export const parseJobs = (data: ApiResponse): Job[] => {
   return data.jobs_results.map((job) => ({

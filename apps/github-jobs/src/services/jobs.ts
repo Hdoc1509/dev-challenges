@@ -1,4 +1,4 @@
-import { parseJobs } from "../utils";
+import { parseJobs } from "../utils/jobs";
 import { ApiResponseSchema } from "../schemas/jobs";
 import { JobsResponseError } from "../errors";
 import { API_KEY, API_URL } from "../config";
