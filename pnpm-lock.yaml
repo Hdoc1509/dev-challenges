@@ -12,10 +12,10 @@ importers:
         specifier: ^20.5.0
         version: 20.5.0
       '@types/react':
-        specifier: ^18.2.20
+        specifier: ~18.2.20
         version: 18.2.20
       '@types/react-dom':
-        specifier: ^18.2.7
+        specifier: ~18.2.7
         version: 18.2.7
       '@typescript-eslint/eslint-plugin':
         specifier: ^6.0.0
@@ -52,10 +52,10 @@ importers:
     dependencies:
       '@hrc/material-icons':
         specifier: 2.3.0
-        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)
       '@hrc/toggle-theme':
         specifier: 2.2.0
-        version: 2.2.0(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.2.0(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)
       '@internal/components':
         specifier: workspace:3.0.0
         version: link:../../libs/components
@@ -101,13 +101,13 @@ importers:
         version: 5.0.8
       '@hrc/button':
         specifier: 2.6.1
-        version: 2.6.1(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
+        version: 2.6.1(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
       '@hrc/material-icons':
         specifier: 2.3.0
-        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)
       '@hrc/spinner':
         specifier: 0.3.2
-        version: 0.3.2(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)
+        version: 0.3.2(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)
       '@internal/components':
         specifier: workspace:3.0.0
         version: link:../../libs/components
@@ -131,7 +131,7 @@ importers:
         version: 3.22.4
       zustand:
         specifier: 4.4.3
-        version: 4.4.3(@types/react@18.3.1)(react@18.2.0)
+        version: 4.4.3(@types/react@18.2.20)(react@18.2.0)
     devDependencies:
       '@vitejs/plugin-react':
         specifier: ^4.2.0
@@ -162,16 +162,16 @@ importers:
         version: 5.0.8
       '@hrc/button':
         specifier: 2.6.1
-        version: 2.6.1(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
+        version: 2.6.1(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
       '@hrc/input':
         specifier: 0.9.0
-        version: 0.9.0(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
+        version: 0.9.0(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
       '@hrc/material-icons':
         specifier: 2.3.0
-        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)
       '@hrc/toggle-theme':
         specifier: 2.2.0
-        version: 2.2.0(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.2.0(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)
       '@internal/components':
         specifier: workspace:*
         version: link:../../libs/components
@@ -211,10 +211,10 @@ importers:
     dependencies:
       '@hrc/material-icons':
         specifier: 2.3.0
-        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)
       '@hrc/toggle-theme':
         specifier: 2.2.0
-        version: 2.2.0(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.2.0(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)
       '@internal/components':
         specifier: workspace:3.0.0
         version: link:../../libs/components
@@ -263,16 +263,16 @@ importers:
         version: 5.0.18
       '@hrc/button':
         specifier: 2.6.1
-        version: 2.6.1(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
+        version: 2.6.1(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
       '@hrc/material-icons':
         specifier: 2.3.0
-        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)
       '@hrc/spinner':
         specifier: 0.3.2
-        version: 0.3.2(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)
+        version: 0.3.2(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)
       '@hrc/toggle-theme':
         specifier: 2.2.0
-        version: 2.2.0(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.2.0(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)
       '@internal/components':
         specifier: workspace:3.0.0
         version: link:../../libs/components
@@ -321,16 +321,16 @@ importers:
         version: 5.0.18
       '@hrc/button':
         specifier: 2.6.1
-        version: 2.6.1(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
+        version: 2.6.1(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
       '@hrc/input':
         specifier: 0.9.1
-        version: 0.9.1(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
+        version: 0.9.1(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
       '@hrc/material-icons':
         specifier: 2.3.0
-        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)
       '@hrc/toggle-theme':
         specifier: 2.2.0
-        version: 2.2.0(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.2.0(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)
       '@internal/components':
         specifier: workspace:3.0.0
         version: link:../../libs/components
@@ -379,16 +379,16 @@ importers:
         version: 5.0.18
       '@hrc/button':
         specifier: 2.6.1
-        version: 2.6.1(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
+        version: 2.6.1(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
       '@hrc/input':
         specifier: 0.9.1
-        version: 0.9.1(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
+        version: 0.9.1(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
       '@hrc/material-icons':
         specifier: 2.3.0
-        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)
       '@hrc/spinner':
         specifier: 0.3.2
-        version: 0.3.2(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)
+        version: 0.3.2(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)
       '@internal/components':
         specifier: workspace:3.0.0
         version: link:../../libs/components
@@ -415,7 +415,7 @@ importers:
         version: 3.22.4
       zustand:
         specifier: 4.4.3
-        version: 4.4.3(@types/react@18.3.1)(react@18.2.0)
+        version: 4.4.3(@types/react@18.2.20)(react@18.2.0)
     devDependencies:
       '@vitejs/plugin-react':
         specifier: ^4.2.0
@@ -446,13 +446,13 @@ importers:
         version: 5.0.17
       '@hrc/button':
         specifier: 2.6.1
-        version: 2.6.1(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
+        version: 2.6.1(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
       '@hrc/material-icons':
         specifier: 2.3.0
-        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)
       '@hrc/toggle-theme':
         specifier: 2.2.0
-        version: 2.2.0(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.2.0(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)
       '@internal/components':
         specifier: workspace:3.0.0
         version: link:../../libs/components
@@ -476,7 +476,7 @@ importers:
         version: 3.22.4
       zustand:
         specifier: 4.4.3
-        version: 4.4.3(@types/react@18.3.1)(react@18.2.0)
+        version: 4.4.3(@types/react@18.2.20)(react@18.2.0)
     devDependencies:
       '@hrc/type-utils':
         specifier: 1.1.2
@@ -498,19 +498,13 @@ importers:
     dependencies:
       '@hrc/material-icons':
         specifier: 2.3.0
-        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)
       '@hrc/toggle-theme':
         specifier: 2.2.0
-        version: 2.2.0(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.2.0(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)
       '@lib/sass-utils':
         specifier: workspace:*
         version: link:../sass-utils
-
-  libs/css-props:
-    dependencies:
-      sass:
-        specifier: '*'
-        version: 1.65.0
 
   libs/sass-utils:
     dependencies:
@@ -1016,7 +1010,7 @@ packages:
     resolution: {integrity: sha512-XxPltXs5R31D6UZeLIV1td3wTXU3jzd3f2DLsXI8tytMGBkIsGcc9sIyiupRtA8y73HAhuSCeweOoBqf6DbWCA==}
     dev: false
 
-  /@hrc/button@2.6.1(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2):
+  /@hrc/button@2.6.1(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2):
     resolution: {integrity: sha512-19KI5DrEdAqjCWnwEVVQiOkDYRrMmXcuyDrmBj8Nb49ht48QI0CT2SCJd4p1yrjWhTMb4rGL9Lz8bknqCbgXjg==}
     peerDependencies:
       '@types/react': ^17.0.0 || ^18.0.0
@@ -1024,7 +1018,7 @@ packages:
       react-dom: ^17.0.0 || ^18.0.0
     dependencies:
       '@hrc/type-utils': 1.1.2(typescript@5.3.2)
-      '@types/react': 18.3.1
+      '@types/react': 18.2.20
       clsx: 2.0.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -1032,7 +1026,7 @@ packages:
       - typescript
     dev: false
 
-  /@hrc/input@0.9.0(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2):
+  /@hrc/input@0.9.0(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2):
     resolution: {integrity: sha512-xbUVmIq7lsMiYXl51GAdQDj1g766IkWFxFLMW3dy9ViG12it7oX4D9giLLWYQ/bkhTyh5pJZ/b10uqhK6i3JTA==}
     peerDependencies:
       '@types/react': ^17.0.0 || ^18.0.0
@@ -1040,7 +1034,7 @@ packages:
       react-dom: ^17.0.0 || ^18.0.0
     dependencies:
       '@hrc/type-utils': 1.1.2(typescript@5.3.2)
-      '@types/react': 18.3.1
+      '@types/react': 18.2.20
       clsx: 2.0.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -1048,7 +1042,7 @@ packages:
       - typescript
     dev: false
 
-  /@hrc/input@0.9.1(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2):
+  /@hrc/input@0.9.1(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2):
     resolution: {integrity: sha512-HgNnOrwcNgxACm9ckliI60ww6itiazaAZZfzRCHhG7OC3JSAg8fsX8jOTbxCTYk4uBHyxyKc8kmIdmTmTNBCJQ==}
     peerDependencies:
       '@types/react': ^17.0.0 || ^18.0.0
@@ -1056,7 +1050,7 @@ packages:
       react-dom: ^17.0.0 || ^18.0.0
     dependencies:
       '@hrc/type-utils': 1.1.2(typescript@5.3.2)
-      '@types/react': 18.3.1
+      '@types/react': 18.2.20
       clsx: 2.0.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -1064,7 +1058,7 @@ packages:
       - typescript
     dev: false
 
-  /@hrc/material-icons@2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0):
+  /@hrc/material-icons@2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-fQLt587Uh9DKI6M2/6FKe+S7zKoiUjpaSC1Wu/KCwcvN+ji1yOt44ez4duwLRbBvvLX4gnYnsJMTtndRTsEZlg==}
     peerDependencies:
       '@material-design-icons/font': ^0.14.0
@@ -1073,26 +1067,26 @@ packages:
       react-dom: ^17.0.0 || ^18.0.0
     dependencies:
       '@material-design-icons/font': 0.14.13
-      '@types/react': 18.3.1
+      '@types/react': 18.2.20
       clsx: 2.0.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@hrc/spinner@0.3.2(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0):
+  /@hrc/spinner@0.3.2(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-iO6AULTmn451hmKFm5dCgP3UZPTzxKEGiRx9lhimxf+GuF5v4WxZ59Ck6iGaG+f7SWffsRor/6ZBCbk2cUtUTw==}
     peerDependencies:
       '@types/react': ^17.0.0 || ^18.0.0
       react: ^18.2.0
       react-dom: ^18.2.0
     dependencies:
-      '@types/react': 18.3.1
+      '@types/react': 18.2.20
       clsx: 2.0.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@hrc/toggle-theme@2.2.0(@types/react@18.3.1)(react-dom@18.2.0)(react@18.2.0):
+  /@hrc/toggle-theme@2.2.0(@types/react@18.2.20)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-jE7K7MFv9uFEWKEAaWcu7pRUgH3cVdCDcjwdgdJ5ucxjxZQFR+BAvzAUEwOAFWykuEtclTsd5V6s4vP7H2xpOw==}
     engines: {node: '>=13.2.0'}
     peerDependencies:
@@ -1100,7 +1094,7 @@ packages:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
     dependencies:
-      '@types/react': 18.3.1
+      '@types/react': 18.2.20
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
@@ -1347,11 +1341,6 @@ packages:
 
   /@types/prop-types@15.7.12:
     resolution: {integrity: sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q==}
-    dev: false
-
-  /@types/prop-types@15.7.5:
-    resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
-    dev: true
 
   /@types/react-dom@18.2.7:
     resolution: {integrity: sha512-GRaAEriuT4zp9N4p1i8BDBYmEyfo+xQ3yHjJU4eiK5NDa1RmUZG+unZABUTK4/Ox/M+GaHwb6Ow8rUITrtjszA==}
@@ -1362,21 +1351,12 @@ packages:
   /@types/react@18.2.20:
     resolution: {integrity: sha512-WKNtmsLWJM/3D5mG4U84cysVY31ivmyw85dE84fOCk5Hx78wezB/XEjVPWl2JTZ5FkEeaTJf+VgUAUn3PE7Isw==}
     dependencies:
-      '@types/prop-types': 15.7.5
-      '@types/scheduler': 0.16.3
-      csstype: 3.1.2
-    dev: true
-
-  /@types/react@18.3.1:
-    resolution: {integrity: sha512-V0kuGBX3+prX+DQ/7r2qsv1NsdfnCLnTgnRJ1pYnxykBhGMz+qj+box5lq7XsO5mtZsBqpjwwTu/7wszPfMBcw==}
-    dependencies:
       '@types/prop-types': 15.7.12
+      '@types/scheduler': 0.16.3
       csstype: 3.1.3
-    dev: false
 
   /@types/scheduler@0.16.3:
     resolution: {integrity: sha512-5cJ8CB4yAx7BH1oMvdU0Jh9lrEXyPkar6F9G/ERswkCuvP4KQZfZkSjcMbAICCpQTN4OuZn8tz0HiKv9TGZgrQ==}
-    dev: true
 
   /@types/semver@7.5.1:
     resolution: {integrity: sha512-cJRQXpObxfNKkFAZbJl2yjWtJCqELQIdShsogr1d2MilP8dKD9TE/nEKHkJgUNHdGKCQaf9HbIynuV2csLGVLg==}
@@ -1966,13 +1946,8 @@ packages:
       which: 2.0.2
     dev: true
 
-  /csstype@3.1.2:
-    resolution: {integrity: sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==}
-    dev: true
-
   /csstype@3.1.3:
     resolution: {integrity: sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw==}
-    dev: false
 
   /debug@4.3.4:
     resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
@@ -4085,7 +4060,7 @@ packages:
     resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
     dev: false
 
-  /zustand@4.4.3(@types/react@18.3.1)(react@18.2.0):
+  /zustand@4.4.3(@types/react@18.2.20)(react@18.2.0):
     resolution: {integrity: sha512-oRy+X3ZazZvLfmv6viIaQmtLOMeij1noakIsK/Y47PWYhT8glfXzQ4j0YcP5i0P0qI1A4rIB//SGROGyZhx91A==}
     engines: {node: '>=12.7.0'}
     peerDependencies:
@@ -4100,7 +4075,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@types/react': 18.3.1
+      '@types/react': 18.2.20
       react: 18.2.0
       use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
