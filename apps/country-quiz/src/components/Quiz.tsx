@@ -22,6 +22,9 @@ export const Quiz = ({
   const goNextQuestion = useQuestionStore((s) => s.goNextQuestion);
   const selectAnswer = useQuestionStore((s) => s.selectAnswer);
 
+  const isLastQuestion = currentQuestion === totalQuestions;
+  const { category, flagUrl, question, selectedAnswer } = quiz;
+
   const handleAnswer = (answer: string) => {
     selectAnswer(quiz.id, answer);
   };
@@ -29,10 +32,6 @@ export const Quiz = ({
   const handleAction = () => {
     isLastQuestion ? showResults() : goNextQuestion();
   };
-
-  const isLastQuestion = currentQuestion === totalQuestions;
-
-  const { category, flagUrl, question, selectedAnswer } = quiz;
 
   return (
     <>
