@@ -3,7 +3,6 @@ import { Button } from "@hrc/button/dist/Button";
 import { QuestionCategories } from "../constants";
 import { QuizOptions } from "./QuizOptions";
 import type { Question } from "../types";
-import characterUrl from "../assets/character.svg";
 import "./Quiz.scss";
 
 type Props = {
@@ -35,7 +34,7 @@ export const Quiz = ({
 
   return (
     <>
-      <img src={characterUrl} className="quiz-character" alt="character" />
+      <img src="/character.svg" className="quiz-character" alt="character" />
       {category === QuestionCategories.FlagOfCountry && (
         <img src={flagUrl} className="quiz-flag" alt="flag" />
       )}
