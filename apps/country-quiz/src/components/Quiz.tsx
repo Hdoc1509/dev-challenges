@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import { useQuestionStore } from "../store/questions";
 import { Button } from "@hrc/button/dist/Button";
 import { QuestionCategories } from "../constants";
@@ -22,19 +21,13 @@ export const Quiz = ({
 }: Props) => {
   const goNextQuestion = useQuestionStore((s) => s.goNextQuestion);
   const selectAnswer = useQuestionStore((s) => s.selectAnswer);
-  const actionRef = useRef<HTMLElement>(null);
-  const quesionRef = useRef<HTMLParagraphElement>(null);
-  const flagRef = useRef<HTMLImageElement>(null);
 
   const handleAnswer = (answer: string) => {
     selectAnswer(quiz.id, answer);
-    actionRef.current?.scrollIntoView(false);
   };
 
   const handleAction = () => {
     isLastQuestion ? showResults() : goNextQuestion();
-    quesionRef.current?.scrollIntoView(true);
-    flagRef.current?.scrollIntoView(true);
   };
 
   const isLastQuestion = currentQuestionIndex === totalQuestions - 1;
@@ -43,21 +36,14 @@ export const Quiz = ({
 
   return (
     <>
-      <img
-        ref={flagRef}
-        src={characterUrl}
-        className="quiz-character"
-        alt="character"
-      />
+      <img src={characterUrl} className="quiz-character" alt="character" />
       {category === QuestionCategories.FlagOfCountry && (
         <img src={flagUrl} className="quiz-flag" alt="flag" />
       )}
-      <p className="quiz-question" ref={quesionRef}>
-        {question}
-      </p>
+      <p className="quiz-question">{question}</p>
       <QuizOptions quiz={quiz} handleAnswer={handleAnswer} />
       {/* NOTE: Can it be moved to QuizCard? */}
-      <footer className="quiz-footer" ref={actionRef}>
+      <footer className="quiz-footer">
         <p className="quiz-current-question">
           {currentQuestionIndex + 1} / {totalQuestions}
         </p>
