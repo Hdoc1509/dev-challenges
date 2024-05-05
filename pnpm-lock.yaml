@@ -164,8 +164,8 @@ importers:
         specifier: 2.6.1
         version: 2.6.1(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
       '@hrc/input':
-        specifier: 0.9.0
-        version: 0.9.0(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
+        specifier: 0.9.1
+        version: 0.9.1(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
       '@hrc/material-icons':
         specifier: 2.3.0
         version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
@@ -1012,22 +1012,6 @@ packages:
 
   /@hrc/button@2.6.1(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2):
     resolution: {integrity: sha512-19KI5DrEdAqjCWnwEVVQiOkDYRrMmXcuyDrmBj8Nb49ht48QI0CT2SCJd4p1yrjWhTMb4rGL9Lz8bknqCbgXjg==}
-    peerDependencies:
-      '@types/react': ^17.0.0 || ^18.0.0
-      react: ^17.0.0 || ^18.0.0
-      react-dom: ^17.0.0 || ^18.0.0
-    dependencies:
-      '@hrc/type-utils': 1.1.2(typescript@5.3.2)
-      '@types/react': 18.2.79
-      clsx: 2.0.0
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-    transitivePeerDependencies:
-      - typescript
-    dev: false
-
-  /@hrc/input@0.9.0(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2):
-    resolution: {integrity: sha512-xbUVmIq7lsMiYXl51GAdQDj1g766IkWFxFLMW3dy9ViG12it7oX4D9giLLWYQ/bkhTyh5pJZ/b10uqhK6i3JTA==}
     peerDependencies:
       '@types/react': ^17.0.0 || ^18.0.0
       react: ^17.0.0 || ^18.0.0
