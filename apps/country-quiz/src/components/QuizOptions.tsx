@@ -15,12 +15,12 @@ const Option = ({
   correctAnswer,
   onAnswer,
 }: OptionProps) => {
-  const data = getAnswerData({ option, selectedAnswer, correctAnswer });
-  const icon = data?.icon;
+  const { icon, className } =
+    getAnswerData({ option, selectedAnswer, correctAnswer }) ?? {};
 
   return (
     <Button
-      className={clsx("quiz-answers__option", data?.className)}
+      className={clsx("quiz-answers__option", className)}
       variant="outline"
       iconEnd={icon && <Icon name={icon} variant="outlined" />}
       disabled={selectedAnswer != null}
