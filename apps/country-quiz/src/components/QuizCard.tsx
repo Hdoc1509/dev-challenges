@@ -1,6 +1,5 @@
 import { clsx } from "clsx";
 import { Loader } from "./Loader";
-import type { PropsWithChildren } from "react";
 import { QuestionCategories, type QuestionCategory } from "../constants";
 import "./QuizCard.scss";
 
@@ -15,7 +14,7 @@ export const QuizCard = ({
   isLoading,
   category,
   children,
-}: PropsWithChildren<Props>) => {
+}: React.PropsWithChildren<Props>) => {
   const className = clsx("quiz-card", {
     "quiz-card--over": isOver,
     "quiz-card--flag": category === QuestionCategories.FlagOfCountry,
