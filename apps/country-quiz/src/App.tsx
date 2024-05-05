@@ -40,17 +40,14 @@ function App() {
           isOver={isQuizOver}
           isLoading={question == null}
           category={question?.category}
+          resultsElement={<Results questions={questions} tryAgain={tryAgain} />}
         >
-          {!isQuizOver ? (
-            <Quiz
-              quiz={question}
-              totalQuestions={questions.length}
-              currentQuestion={currentQuestionIndex + 1}
-              showResults={() => setIsQuizOver(true)}
-            />
-          ) : (
-            <Results questions={questions} tryAgain={tryAgain} />
-          )}
+          <Quiz
+            quiz={question}
+            totalQuestions={questions.length}
+            currentQuestion={currentQuestionIndex + 1}
+            showResults={() => setIsQuizOver(true)}
+          />
         </QuizCard>
       </main>
       <Footer />
