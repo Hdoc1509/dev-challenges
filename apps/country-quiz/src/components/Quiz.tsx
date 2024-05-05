@@ -8,14 +8,14 @@ import "./Quiz.scss";
 
 type Props = {
   quiz: Question;
-  currentQuestionIndex: number;
+  currentQuestion: number;
   totalQuestions: number;
   showResults: () => void;
 };
 
 export const Quiz = ({
   quiz,
-  currentQuestionIndex,
+  currentQuestion,
   totalQuestions,
   showResults,
 }: Props) => {
@@ -30,7 +30,7 @@ export const Quiz = ({
     isLastQuestion ? showResults() : goNextQuestion();
   };
 
-  const isLastQuestion = currentQuestionIndex === totalQuestions - 1;
+  const isLastQuestion = currentQuestion === totalQuestions;
 
   const { category, flagUrl, question, selectedAnswer } = quiz;
 
@@ -45,7 +45,7 @@ export const Quiz = ({
       {/* NOTE: Can it be moved to QuizCard? */}
       <footer className="quiz-footer">
         <p className="quiz-current-question">
-          {currentQuestionIndex + 1} / {totalQuestions}
+          {currentQuestion} / {totalQuestions}
         </p>
         <Button
           className="quiz-button"

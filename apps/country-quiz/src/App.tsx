@@ -45,7 +45,7 @@ function App() {
             <Quiz
               quiz={question}
               totalQuestions={questions.length}
-              currentQuestionIndex={currentQuestionIndex}
+              currentQuestion={currentQuestionIndex + 1}
               showResults={() => setIsQuizOver(true)}
             />
           ) : (
