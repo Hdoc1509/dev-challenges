@@ -16,7 +16,9 @@ function App() {
   useEffect(() => {
     if (!didInit) {
       didInit = true;
-      void getMockedJobs().then(setResults);
+      void getMockedJobs().then(([, jobs]) => {
+        if (jobs) setResults(jobs);
+      });
     }
   }, []);
 

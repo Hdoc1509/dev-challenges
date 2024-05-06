@@ -6,13 +6,15 @@ import jobsResponse from "../mocks/jobs.json";
 import locationsMock from "../mocks/locations.json";
 import type { Job } from "../types";
 
-export const getMockedJobs = (): Promise<Job[]> => {
+type JobServiceReturn = Promise<[Error] | [null, Job[]]>;
+
+export const getMockedJobs = (): JobServiceReturn => {
   const jobs = parseJobs(jobsResponse);
   const filtered = jobs.filter(
     (job) => job.location.match(/new york|\sny/i) != null,
   );
 
-  return Promise.resolve(filtered);
+  return Promise.resolve([null, filtered]);
 };
 
 type JobOptions = {
@@ -22,7 +24,7 @@ type JobOptions = {
 export const getJobs = async (
   query?: string,
   options: JobOptions = {},
-): Promise<Job[]> => {
+): JobServiceReturn => {
   const { location } = options;
   const params = new URLSearchParams({
     engine: "google_jobs",
@@ -33,9 +35,13 @@ export const getJobs = async (
 
   const res = await fetch(`${API_URL}/search.json?${params.toString()}`);
 
-  if (!res.ok) throw new JobsResponseError("Jobs response error", res);
+  if (!res.ok)
+    return [new JobsResponseError("Jobs service response error", res)];
 
-  const data = ApiResponseSchema.parse(await res.json());
+  const parsedData = ApiResponseSchema.safeParse(await res.json());
 
-  return parseJobs(data);
+  if (!parsedData.success)
+    return [new Error("Jobs service data error. Invalid data")];
+
+  return [null, parseJobs(parsedData.data)];
 };
