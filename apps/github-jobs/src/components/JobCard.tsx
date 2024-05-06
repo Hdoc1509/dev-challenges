@@ -1,5 +1,5 @@
 import { Icon } from "@hrc/material-icons";
-import type { Job } from "../services/jobs";
+import type { Job } from "../types";
 import "./JobCard.scss";
 
 export const JobCard = ({ job }: { job: Job }) => {

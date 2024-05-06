@@ -4,17 +4,7 @@ import { JobsResponseError } from "../errors";
 import { API_KEY, API_URL } from "../config";
 import jobsResponse from "../mocks/jobs.json";
 import locationsMock from "../mocks/locations.json";
-
-export type Job = {
-  title: string;
-  company: string;
-  location: string;
-  description: string;
-  id: string;
-  createdAt?: string;
-  thumbnail?: string;
-  isFullTime: boolean;
-};
+import type { Job } from "../types";
 
 export const getMockedJobs = (): Job[] => {
   const jobs = parseJobs(jobsResponse);
