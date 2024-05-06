@@ -16,8 +16,14 @@ function App() {
   useEffect(() => {
     if (!didInit) {
       didInit = true;
-      void getMockedJobs().then(([, jobs]) => {
-        if (jobs) setResults(jobs);
+      // void getJobs().then(([error, jobs]) => {
+      void getMockedJobs().then(([error, jobs]) => {
+        if (error) {
+          console.error(error);
+          return;
+        }
+
+        setResults(jobs);
       });
     }
   }, []);
