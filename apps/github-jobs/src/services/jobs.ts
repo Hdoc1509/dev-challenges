@@ -3,6 +3,7 @@ import { ApiResponseSchema } from "../schemas/jobs";
 import { JobsResponseError } from "../errors";
 import { API_KEY, API_URL } from "../config";
 import jobsResponse from "../mocks/jobs.json";
+import locationsMock from "../mocks/locations.json";
 
 export type Job = {
   title: string;
@@ -16,14 +17,25 @@ export type Job = {
 };
 
 export const getMockedJobs = (): Job[] => {
-  return parseJobs(jobsResponse);
+  const jobs = parseJobs(jobsResponse);
+
+  return jobs.filter((job) => job.location.match(/new york|\sny/i) != null);
 };
 
-export const getJobs = async (query: string): Promise<Job[]> => {
+type JobOptions = {
+  location?: string;
+};
+
+export const getJobs = async (
+  query?: string,
+  options: JobOptions = {},
+): Promise<Job[]> => {
+  const { location } = options;
   const params = new URLSearchParams({
     engine: "google_jobs",
-    q: query,
+    q: query ?? "frontend web",
     api_key: API_KEY,
+    location: location ?? locationsMock[0].canonical_name,
   });
 
   const res = await fetch(`${API_URL}/search.json?${params.toString()}`);
