@@ -26,22 +26,15 @@
     }
   }
 
-  &__bar-wrapper {
-    position: relative;
-    height: 8px;
-    width: 100%;
-    border-radius: 80px;
-  }
   &__bar {
-    position: absolute;
+    position: relative;
     width: 100%;
-    height: 100%;
+    height: 8px;
     background-color: var(--text);
-    border-radius: inherit;
+    border-radius: 80px;
   }
   &__value {
     position: absolute;
-    display: block;
     height: 100%;
     background-color: #ffec65;
     border-radius: inherit;

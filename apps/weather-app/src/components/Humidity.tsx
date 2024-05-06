@@ -12,8 +12,7 @@ export const Humidity = ({ humidity }: { humidity?: number }) => {
           <span>50</span>
           <span>100</span>
         </div>
-        <div className="humidity-slider__bar-wrapper">
-          <div className="humidity-slider__bar"></div>
+        <div className="humidity-slider__bar">
           <div
             className="humidity-slider__value"
             style={{ width: `${humidity}%` }}
