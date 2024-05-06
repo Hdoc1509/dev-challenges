@@ -55,3 +55,7 @@ body {
   border-radius: var(--skeleton-radius, 0.25rem);
   aspect-ratio: var(--skeleton-aspect-ratio);
 }
+
+.flex-1 {
+  flex: 1;
+}
