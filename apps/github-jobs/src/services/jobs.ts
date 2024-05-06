@@ -6,10 +6,13 @@ import jobsResponse from "../mocks/jobs.json";
 import locationsMock from "../mocks/locations.json";
 import type { Job } from "../types";
 
-export const getMockedJobs = (): Job[] => {
+export const getMockedJobs = (): Promise<Job[]> => {
   const jobs = parseJobs(jobsResponse);
+  const filtered = jobs.filter(
+    (job) => job.location.match(/new york|\sny/i) != null,
+  );
 
-  return jobs.filter((job) => job.location.match(/new york|\sny/i) != null);
+  return Promise.resolve(filtered);
 };
 
 type JobOptions = {
