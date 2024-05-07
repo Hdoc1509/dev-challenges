@@ -1,4 +1,5 @@
 import { getMockedJobs } from "../services/jobs";
+import { useJobsStore } from "../store/jobs";
 import { Button } from "@hrc/button";
 import { Input } from "@hrc/input";
 import { Icon } from "@hrc/material-icons";
@@ -13,6 +14,8 @@ type FormFields = {
 };
 
 export const SearchForm = () => {
+  const setJobs = useJobsStore((s) => s.setJobs);
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -32,8 +35,7 @@ export const SearchForm = () => {
         return;
       }
 
-      // TODO: Update state created by zustand
-      console.log(jobs);
+      setJobs(jobs);
     });
   };
 

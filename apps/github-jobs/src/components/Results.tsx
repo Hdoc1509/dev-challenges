@@ -1,14 +1,12 @@
+import { useJobsStore } from "../store/jobs";
 import ReactPaginate from "react-paginate";
 import { Icon } from "@hrc/material-icons";
 import { JobCard } from "./JobCard";
-import type { Job } from "../types";
 import "./Results.scss";
 
-type Props = {
-  jobs: Job[];
-};
+export const Results = () => {
+  const jobs = useJobsStore((s) => s.jobs);
 
-export const Results = ({ jobs }: Props) => {
   return (
     <main>
       {jobs.map((job) => (
