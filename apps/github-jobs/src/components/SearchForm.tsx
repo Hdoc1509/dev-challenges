@@ -3,7 +3,7 @@ import { Input } from "@hrc/input";
 import { Icon } from "@hrc/material-icons";
 import "./SearchForm.scss";
 
-type SearchFormInputs = {
+type FormFields = {
   search: string;
   "full-time"?: "on";
   location?: string;
@@ -14,13 +14,13 @@ export const SearchForm = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const target = e.target as HTMLFormElement & SearchFormInputs;
+    const target = e.currentTarget;
     const {
       search,
       "full-time": fullTime,
       location,
       city,
-    } = Object.fromEntries(new FormData(target)) as unknown as SearchFormInputs;
+    } = Object.fromEntries(new FormData(target)) as FormFields;
 
     console.log({ search, fullTime, location, city });
   };
