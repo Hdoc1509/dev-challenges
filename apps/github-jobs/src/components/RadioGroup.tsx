@@ -44,6 +44,7 @@ export const RadioGroup = <T extends string>({
           name={name}
           form={form}
           defaultChecked={label === defaultValue}
+          value={label}
         />
       ))}
     </div>
