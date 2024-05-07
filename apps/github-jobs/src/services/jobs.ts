@@ -8,11 +8,18 @@ import type { Job } from "../types";
 
 type JobServiceReturn = Promise<[Error] | [null, Job[]]>;
 
-export const getMockedJobs = (): JobServiceReturn => {
+export const getMockedJobs = (query?: string): JobServiceReturn => {
   const jobs = parseJobs(jobsResponse);
-  const filtered = jobs.filter(
-    (job) => job.location.match(/new york|\sny/i) != null,
-  );
+  const filtered = jobs.filter((job) => {
+    let match = false;
+
+    match = job.location.match(/new york|\sny/i) != null;
+
+    if (query != null)
+      match = job.title.toLowerCase().includes(query.toLowerCase());
+
+    return match;
+  });
 
   return Promise.resolve([null, filtered]);
 };

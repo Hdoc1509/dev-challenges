@@ -21,7 +21,7 @@
 Challenge: Create a job search using an API. Use Front-end libraries like React or Vue. Don’t look at the existing solution. Fulfill user stories below:
 
 - [x] User story: I can see a list of jobs in a city by default
-- [ ] User story: I can search for jobs with a given keyword
+- [x] User story: I can search for jobs with a given keyword
 - [ ] User story: I can search for jobs with a city name, zip code, or other location
 - [ ] User story: I can select one option from at least 4 pre-defined options
 - [ ] User story: I can search for a full-time job only

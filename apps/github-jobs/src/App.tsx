@@ -11,6 +11,7 @@ import "./App.css";
 let didInit = false;
 
 function App() {
+  // TODO: Use zustand for state
   const [results, setResults] = useState<Job[]>([]);
 
   useEffect(() => {

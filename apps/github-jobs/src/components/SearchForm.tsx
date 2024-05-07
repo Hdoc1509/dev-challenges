@@ -1,3 +1,4 @@
+import { getMockedJobs } from "../services/jobs";
 import { Button } from "@hrc/button";
 import { Input } from "@hrc/input";
 import { Icon } from "@hrc/material-icons";
@@ -24,6 +25,16 @@ export const SearchForm = () => {
     } = Object.fromEntries(new FormData(target)) as FormFields;
 
     console.log({ search, fullTime, location, city });
+
+    void getMockedJobs(search).then(([error, jobs]) => {
+      if (error) {
+        console.error(error);
+        return;
+      }
+
+      // TODO: Update state created by zustand
+      console.log(jobs);
+    });
   };
 
   return (
