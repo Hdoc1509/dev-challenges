@@ -19,10 +19,7 @@ export const Header = ({ getStays }: { getStays: FnSearchOptions }) => {
         darkElement={<Icon name="dark_mode" />}
         fullRounded
       />
-      <FilterDrawer
-        isOpen={filter !== null}
-        onSearch={({ guests, location } = {}) => getStays({ guests, location })}
-      />
+      <FilterDrawer isOpen={filter !== null} onSearch={getStays} />
     </header>
   );
 };
