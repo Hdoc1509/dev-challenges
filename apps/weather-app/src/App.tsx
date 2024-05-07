@@ -55,7 +55,7 @@ function App() {
   }
 
   return (
-    <div className="App" data-error={error}>
+    <div className="App">
       <CityWeather
         openDrawer={openDrawer}
         getCurrentLocationWeather={getCurrentLocationWeather}
