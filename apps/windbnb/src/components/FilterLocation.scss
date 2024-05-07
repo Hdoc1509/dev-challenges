@@ -14,6 +14,15 @@
     margin-block: 30px;
   }
 
+  li {
+    list-style: none;
+    display: flex;
+
+    .button {
+      flex-grow: 1;
+    }
+  }
+
   --button-gap: 10px;
   --button-justify-content: flex-start;
   --button-bg: transparent;

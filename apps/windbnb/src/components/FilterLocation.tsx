@@ -14,13 +14,15 @@ export const LocationOption = ({ location }: { location: Location }) => {
   const setLocation = useFilterStore((state) => state.setLocation);
 
   return (
-    <Button
-      iconStart={<Icon name="location_on" />}
-      onClick={() => setLocation(location)}
-      type="button"
-    >
-      {stringifyLocation(location)}
-    </Button>
+    <li>
+      <Button
+        iconStart={<Icon name="location_on" />}
+        onClick={() => setLocation(location)}
+        type="button"
+      >
+        {stringifyLocation(location)}
+      </Button>
+    </li>
   );
 };
 
@@ -33,11 +35,11 @@ const LocationMenu = ({ options, isLoading }: MenuProps) => {
   if (isLoading) return <span>Loading...</span>;
 
   return (
-    <div className="location-menu" role="group">
+    <menu className="location-menu">
       {options.map((location) => (
         <LocationOption key={stringifyLocation(location)} location={location} />
       ))}
-    </div>
+    </menu>
   );
 };
 
