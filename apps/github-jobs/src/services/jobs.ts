@@ -33,15 +33,20 @@ export const getJobs = async (
     location: location ?? locationsMock[0].canonical_name,
   });
 
-  const res = await fetch(`${API_URL}/search.json?${params.toString()}`);
+  try {
+    const res = await fetch(`${API_URL}/search.json?${params.toString()}`);
+    if (!res.ok)
+      return [new JobsResponseError("Jobs service response error", res)];
 
-  if (!res.ok)
-    return [new JobsResponseError("Jobs service response error", res)];
+    const parsedData = ApiResponseSchema.safeParse(await res.json());
 
-  const parsedData = ApiResponseSchema.safeParse(await res.json());
+    if (!parsedData.success)
+      return [new Error("Jobs service data error. Invalid data")];
 
-  if (!parsedData.success)
-    return [new Error("Jobs service data error. Invalid data")];
+    return [null, parseJobs(parsedData.data)];
+  } catch (error) {
+    if (error instanceof Error) return [error];
+  }
 
-  return [null, parseJobs(parsedData.data)];
+  return [new Error("An unknown error occurred while trying to get jobs")];
 };
