@@ -1,12 +1,14 @@
 import { parseJobs } from "../utils/jobs";
 import { ApiResponseSchema } from "../schemas/jobs";
 import { JobsResponseError } from "../errors";
-import { API_KEY, API_URL } from "../config";
+import { SERPAPI } from "../config";
 import jobsResponse from "../mocks/jobs.json";
 import locationsMock from "../mocks/locations.json";
 import type { Job } from "../types";
 
 type JobServiceReturn = Promise<[Error] | [null, Job[]]>;
+
+// TODO: search by city name, zip code, or other location
 
 export const getMockedJobs = (query?: string): JobServiceReturn => {
   const jobs = parseJobs(jobsResponse);
@@ -36,12 +38,12 @@ export const getJobs = async (
   const params = new URLSearchParams({
     engine: "google_jobs",
     q: query ?? "frontend web",
-    api_key: API_KEY,
+    api_key: SERPAPI.KEY,
     location: location ?? locationsMock[0].canonical_name,
   });
 
   try {
-    const res = await fetch(`${API_URL}/search.json?${params.toString()}`);
+    const res = await fetch(`${SERPAPI.URL}/search.json?${params.toString()}`);
     if (!res.ok)
       return [new JobsResponseError("Jobs service response error", res)];
 
