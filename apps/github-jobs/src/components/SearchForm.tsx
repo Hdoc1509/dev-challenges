@@ -6,7 +6,8 @@ import "./SearchForm.scss";
 type FormFields = {
   search: string;
   "full-time"?: "on";
-  location?: string;
+  /** it can be an empty string */
+  location: string;
   city?: string;
 };
 
