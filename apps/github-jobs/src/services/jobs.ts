@@ -6,11 +6,18 @@ import jobsResponse from "../mocks/jobs.json";
 import locationsMock from "../mocks/locations.json";
 import type { Job, PromiseWithError } from "../types";
 
-type JobServiceReturn = PromiseWithError<Job[]>;
+type JobOptions = {
+  location?: string;
+};
+
+type JobService = (
+  query?: string,
+  options?: JobOptions,
+) => PromiseWithError<Job[]>;
 
 // TODO: search by city name, zip code, or other location
 
-export const getMockedJobs = (query?: string): JobServiceReturn => {
+export const getMockedJobs: JobService = (query) => {
   const jobs = parseJobs(jobsResponse);
   const filtered = jobs.filter((job) => {
     let match = false;
@@ -26,14 +33,7 @@ export const getMockedJobs = (query?: string): JobServiceReturn => {
   return Promise.resolve([null, filtered]);
 };
 
-type JobOptions = {
-  location?: string;
-};
-
-export const getJobs = async (
-  query?: string,
-  options: JobOptions = {},
-): JobServiceReturn => {
+export const getJobs: JobService = async (query, options = {}) => {
   const { location } = options;
   const params = new URLSearchParams({
     engine: "google_jobs",
