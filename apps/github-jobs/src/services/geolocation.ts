@@ -6,14 +6,14 @@ import {
 } from "../schemas/geolocation";
 import type { PromiseWithError } from "../types";
 
-type LocationOptions = { location: string } | { zipCode: number };
+type LocationOptions = { zipCode: number };
 
 export const searchLocation = async (
   options: LocationOptions,
 ): PromiseWithError<LocationResponse[number]> => {
   const params = new URLSearchParams({
-    q: "zipCode" in options ? `${options.zipCode}` : options.location,
-    limit: "zipCode" in options ? "1" : "5",
+    q: `${options.zipCode}`,
+    limit: "1",
     key: WEATHERAPI.KEY,
   });
 
