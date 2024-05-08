@@ -8,3 +8,5 @@ export type Job = {
   thumbnail?: string;
   isFullTime: boolean;
 };
+
+export type PromiseWithError<T> = Promise<[Error] | [null, T]>;

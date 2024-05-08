@@ -4,9 +4,9 @@ import { JobsResponseError } from "../errors";
 import { SERPAPI } from "../config";
 import jobsResponse from "../mocks/jobs.json";
 import locationsMock from "../mocks/locations.json";
-import type { Job } from "../types";
+import type { Job, PromiseWithError } from "../types";
 
-type JobServiceReturn = Promise<[Error] | [null, Job[]]>;
+type JobServiceReturn = PromiseWithError<Job[]>;
 
 // TODO: search by city name, zip code, or other location
 
