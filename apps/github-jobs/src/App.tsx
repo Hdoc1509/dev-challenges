@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import { getMockedJobs } from "./services/jobs";
+// import { getJobs } from "./services/jobs";
+import { getJobs } from "./services/jobs-mock";
 import { useJobsStore } from "./store/jobs";
 import { Footer } from "@internal/components/src/Footer";
 import { Header } from "./components/Header";
@@ -16,8 +17,7 @@ function App() {
   useEffect(() => {
     if (!didInit) {
       didInit = true;
-      // void getJobs().then(([error, jobs]) => {
-      void getMockedJobs().then(([error, jobs]) => {
+      void getJobs().then(([error, jobs]) => {
         if (error) {
           console.error(error);
           return;

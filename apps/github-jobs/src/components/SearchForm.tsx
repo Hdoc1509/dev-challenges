@@ -1,4 +1,5 @@
-import { getMockedJobs } from "../services/jobs";
+// import { getJobs } from "../services/jobs";
+import { getJobs } from "../services/jobs-mock";
 import { useJobsStore } from "../store/jobs";
 import { Button } from "@hrc/button";
 import { Input } from "@hrc/input";
@@ -29,7 +30,7 @@ export const SearchForm = () => {
 
     console.log({ search, fullTime, location, city });
 
-    void getMockedJobs(search).then(([error, jobs]) => {
+    void getJobs(search).then(([error, jobs]) => {
       if (error) {
         console.error(error);
         return;

@@ -3,7 +3,6 @@ import { searchLocation } from "./geolocation";
 import { ApiResponseSchema } from "../schemas/jobs";
 import { JobsResponseError } from "../errors";
 import { SERPAPI } from "../config";
-import jobsResponse from "../mocks/jobs.json";
 import locationsMock from "../mocks/locations.json";
 import type { Job, PromiseWithError } from "../types";
 
@@ -12,33 +11,10 @@ type JobOptions = {
   zipCode?: number;
 };
 
-type JobService = (
+export type JobService = (
   query?: string,
   options?: JobOptions,
 ) => PromiseWithError<Job[]>;
-
-export const getMockedJobs: JobService = (query, options = {}) => {
-  // NOTE: zip code will be omitted here as it's not available in mock
-  const { location } = options;
-
-  const jobs = parseJobs(jobsResponse);
-  const filtered = jobs.filter((job) => {
-    let match = false;
-
-    if (location != null) {
-      match = job.location.toLowerCase().includes(location.toLowerCase());
-    } else {
-      match = job.location.match(/new york|\sny/i) != null;
-    }
-
-    if (query != null)
-      match = job.title.toLowerCase().includes(query.toLowerCase());
-
-    return match;
-  });
-
-  return Promise.resolve([null, filtered]);
-};
 
 export const getJobs: JobService = async (query, options = {}) => {
   // NOTE: zip code has a higher priority
