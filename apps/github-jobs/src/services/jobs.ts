@@ -1,4 +1,5 @@
 import { parseJobs } from "../utils/jobs";
+import { searchLocation } from "./geolocation";
 import { ApiResponseSchema } from "../schemas/jobs";
 import { JobsResponseError } from "../errors";
 import { SERPAPI } from "../config";
@@ -8,6 +9,7 @@ import type { Job, PromiseWithError } from "../types";
 
 type JobOptions = {
   location?: string;
+  zipCode?: number;
 };
 
 type JobService = (
@@ -15,14 +17,19 @@ type JobService = (
   options?: JobOptions,
 ) => PromiseWithError<Job[]>;
 
-// TODO: search by city name, zip code, or other location
+export const getMockedJobs: JobService = (query, options = {}) => {
+  // NOTE: zip code will be omitted here as it's not available in mock
+  const { location } = options;
 
-export const getMockedJobs: JobService = (query) => {
   const jobs = parseJobs(jobsResponse);
   const filtered = jobs.filter((job) => {
     let match = false;
 
-    match = job.location.match(/new york|\sny/i) != null;
+    if (location != null) {
+      match = job.location.toLowerCase().includes(location.toLowerCase());
+    } else {
+      match = job.location.match(/new york|\sny/i) != null;
+    }
 
     if (query != null)
       match = job.title.toLowerCase().includes(query.toLowerCase());
@@ -34,16 +41,27 @@ export const getMockedJobs: JobService = (query) => {
 };
 
 export const getJobs: JobService = async (query, options = {}) => {
-  const { location } = options;
+  // NOTE: zip code has a higher priority
+  const { location, zipCode } = options;
   const params = new URLSearchParams({
     engine: "google_jobs",
     q: query ?? "frontend web",
     api_key: SERPAPI.KEY,
-    location: location ?? locationsMock[0].canonical_name,
   });
+
+  if (zipCode != null) {
+    const [locationError, location] = await searchLocation({ zipCode });
+
+    if (locationError) return [locationError];
+
+    params.append("location", location.name);
+  } else {
+    params.append("location", location ?? locationsMock[0].canonical_name);
+  }
 
   try {
     const res = await fetch(`${SERPAPI.URL}/search.json?${params.toString()}`);
+
     if (!res.ok)
       return [new JobsResponseError("Jobs service response error", res)];
 
