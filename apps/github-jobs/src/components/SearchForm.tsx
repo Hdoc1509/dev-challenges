@@ -27,10 +27,11 @@ export const SearchForm = () => {
       location,
       city,
     } = Object.fromEntries(new FormData(target)) as FormFields;
+    const parsedLocation = location === "" ? undefined : location;
 
     console.log({ search, fullTime, location, city });
 
-    void getJobs(search).then(([error, jobs]) => {
+    void getJobs(search, { location: parsedLocation }).then(([error, jobs]) => {
       if (error) {
         console.error(error);
         return;
