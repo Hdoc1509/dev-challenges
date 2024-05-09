@@ -4,18 +4,24 @@ import {
   LocationResponseSchema,
   type LocationResponse,
 } from "../schemas/geolocation";
-import type { PromiseWithError } from "../types";
+import type { LocationCoords, PromiseWithError } from "../types";
 
-type LocationOptions = { zipCode: number };
+type LocationOptions = { zipCode: number } | { coords: LocationCoords };
 
 export const searchLocation = async (
   options: LocationOptions,
 ): PromiseWithError<LocationResponse[number]> => {
   const params = new URLSearchParams({
-    q: `${options.zipCode}`,
     limit: "1",
     key: WEATHERAPI.KEY,
   });
+
+  if ("coords" in options) {
+    const { latitude, longitude } = options.coords;
+    params.append("q", `${latitude},${longitude}`);
+  } else {
+    params.append("q", `${options.zipCode}`);
+  }
 
   try {
     const res = await fetch(

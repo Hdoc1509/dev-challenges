@@ -22,8 +22,13 @@ export const getJobs: JobService = async (query, options = {}) => {
   if (typeof location === "string" || location == null) {
     params.append("location", location ?? locationsMock[0].canonical_name);
   } else {
-    // TODO: call searchLocation({ coords: location })
-    params.append("location", `${location.latitude},${location.longitude}`);
+    const [locationError, coordsLocation] = await searchLocation({
+      coords: location,
+    });
+
+    if (locationError) return [locationError];
+
+    params.append("location", coordsLocation.name);
   }
 
   // NOTE: zip code has a higher priority
