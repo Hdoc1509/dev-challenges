@@ -20,6 +20,7 @@ export const getJobs: JobService = async (query, options = {}) => {
     api_key: SERPAPI.KEY,
   });
 
+  // TODO: Set location first. If zipCode is provided, then location will be overriden
   if (zipCode != null) {
     const [locationError, location] = await searchLocation({ zipCode });
 
@@ -27,7 +28,11 @@ export const getJobs: JobService = async (query, options = {}) => {
 
     params.append("location", location.name);
   } else {
-    params.append("location", location ?? locationsMock[0].canonical_name);
+    if (typeof location === "string" || location == null) {
+      params.append("location", location ?? locationsMock[0].canonical_name);
+    } else if (location != null) {
+      params.append("location", `${location.latitude},${location.longitude}`);
+    }
   }
 
   if (fullTime === "on") {

@@ -9,9 +9,14 @@ export type Job = {
   isFullTime: boolean;
 };
 
+type LocationCoords = {
+  latitude: number;
+  longitude: number;
+}
+
 export type SearchOptions = {
   fullTime?: "on";
-  location?: string;
+  location?: LocationCoords | string;
   zipCode?: number;
 };
 
