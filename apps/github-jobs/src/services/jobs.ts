@@ -12,7 +12,6 @@ export type JobService = (
 ) => PromiseWithError<Job[]>;
 
 export const getJobs: JobService = async (query, options = {}) => {
-  // NOTE: zip code has a higher priority
   const { location, zipCode, fullTime } = options;
   const params = new URLSearchParams({
     engine: "google_jobs",
@@ -20,19 +19,20 @@ export const getJobs: JobService = async (query, options = {}) => {
     api_key: SERPAPI.KEY,
   });
 
-  // TODO: Set location first. If zipCode is provided, then location will be overriden
+  if (typeof location === "string" || location == null) {
+    params.append("location", location ?? locationsMock[0].canonical_name);
+  } else {
+    // TODO: call searchLocation({ coords: location })
+    params.append("location", `${location.latitude},${location.longitude}`);
+  }
+
+  // NOTE: zip code has a higher priority
   if (zipCode != null) {
     const [locationError, location] = await searchLocation({ zipCode });
 
     if (locationError) return [locationError];
 
-    params.append("location", location.name);
-  } else {
-    if (typeof location === "string" || location == null) {
-      params.append("location", location ?? locationsMock[0].canonical_name);
-    } else if (location != null) {
-      params.append("location", `${location.latitude},${location.longitude}`);
-    }
+    params.set("location", location.name);
   }
 
   if (fullTime === "on") {
