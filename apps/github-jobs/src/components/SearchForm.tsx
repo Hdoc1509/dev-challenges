@@ -1,18 +1,11 @@
 // import { getJobs } from "../services/jobs";
 import { getJobs } from "../services/jobs-mock";
 import { useJobsStore } from "../store/jobs";
+import { getFormSearch } from "../utils/search";
 import { Button } from "@hrc/button";
 import { Input } from "@hrc/input";
 import { Icon } from "@hrc/material-icons";
 import "./SearchForm.scss";
-
-type FormFields = {
-  search: string;
-  "full-time"?: "on";
-  /** it can be an empty string */
-  location: string;
-  city?: string;
-};
 
 export const SearchForm = () => {
   const setJobs = useJobsStore((s) => s.setJobs);
@@ -20,18 +13,9 @@ export const SearchForm = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const target = e.currentTarget;
-    const {
-      search,
-      "full-time": fullTime,
-      location,
-      city,
-    } = Object.fromEntries(new FormData(target)) as FormFields;
-    const parsedLocation = location === "" ? undefined : location;
+    const [search, options] = getFormSearch(e.currentTarget);
 
-    console.log({ search, fullTime, location, city });
-
-    void getJobs(search, { location: parsedLocation }).then(([error, jobs]) => {
+    void getJobs(search, { ...options }).then(([error, jobs]) => {
       if (error) {
         console.error(error);
         return;
