@@ -16,7 +16,7 @@ export const getJobs: JobService = (query, options = {}) => {
       if (location != null) {
         // NOTE: location coords will be omitted as it's not available in mock
         return typeof location === "string"
-          ? job.location.toLowerCase().includes(location.toLowerCase())
+          ? job.location.match(new RegExp(location, "i")) != null
           : true;
       }
 
