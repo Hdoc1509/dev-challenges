@@ -4,7 +4,7 @@ import type { JobService } from "./jobs";
 
 export const getJobs: JobService = (query, options = {}) => {
   // NOTE: zip code will be omitted here as it's not available in mock
-  const { location } = options;
+  const { location, fullTime } = options;
   const jobs = parseJobs(jobsMock);
 
   const filtered = jobs.filter((job) => {
@@ -16,8 +16,9 @@ export const getJobs: JobService = (query, options = {}) => {
       location != null
         ? job.location.toLowerCase().includes(location.toLowerCase())
         : job.location.match(/new york|\sny/i) != null;
+    const fullTimeMatch = fullTime === "on" ? job.isFullTime : true;
 
-    return queryMatch && locationMatch;
+    return queryMatch && locationMatch && fullTimeMatch;
   });
 
   return Promise.resolve([null, filtered]);

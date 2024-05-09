@@ -13,14 +13,11 @@ export type JobService = (
 
 export const getJobs: JobService = async (query, options = {}) => {
   // NOTE: zip code has a higher priority
-  const { location, zipCode } = options;
+  const { location, zipCode, fullTime } = options;
   const params = new URLSearchParams({
     engine: "google_jobs",
     q: query ?? "frontend web",
     api_key: SERPAPI.KEY,
-    // NOTE: Use this for search by full-time jobs
-    // Based employment_type chip from mock
-    // chips: "employment_type:FULLTIME",
   });
 
   if (zipCode != null) {
@@ -31,6 +28,11 @@ export const getJobs: JobService = async (query, options = {}) => {
     params.append("location", location.name);
   } else {
     params.append("location", location ?? locationsMock[0].canonical_name);
+  }
+
+  if (fullTime === "on") {
+    //NOTE: Based on employment_type chip from jobs mock. Line 707
+    params.append("chips", "employment_type:FULLTIME");
   }
 
   try {
