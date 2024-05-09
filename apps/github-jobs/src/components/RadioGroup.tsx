@@ -23,7 +23,7 @@ const Radio = ({ label, icon, iconChecked, ...restProps }: RadioProps) => {
 };
 
 type Props<T> = {
-  options: T[];
+  options: readonly T[];
   name: string;
   defaultValue?: T;
   form?: string;
