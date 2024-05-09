@@ -1,6 +1,7 @@
 import { Checkbox, Input } from "@hrc/input";
 import { Icon } from "@hrc/material-icons";
 import { RadioGroup } from "./RadioGroup";
+import { predefinedCities } from "../constants";
 import "./SearchOptions.scss";
 
 const form = "search-form";
@@ -22,11 +23,7 @@ export const SearchOptions = () => {
         name="location"
         fullWidth
       />
-      <RadioGroup
-        name="city"
-        form={form}
-        options={["London", "Amsterdam", "New York", "Berlin"]}
-      />
+      <RadioGroup name="city" form={form} options={predefinedCities} />
     </aside>
   );
 };
