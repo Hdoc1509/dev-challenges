@@ -9,7 +9,7 @@ export type Job = {
   isFullTime: boolean;
 };
 
-type LocationCoords = {
+export type LocationCoords = {
   latitude: number;
   longitude: number;
 }
