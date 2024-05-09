@@ -22,22 +22,20 @@ export const getJobs: JobService = async (query, options = {}) => {
   if (typeof location === "string" || location == null) {
     params.append("location", location ?? locationsMock[0].canonical_name);
   } else {
-    const [locationError, coordsLocation] = await searchLocation({
-      coords: location,
-    });
+    const [error, coordsLocation] = await searchLocation({ coords: location });
 
-    if (locationError) return [locationError];
+    if (error) return [error];
 
     params.append("location", coordsLocation.name);
   }
 
   // NOTE: zip code has a higher priority
   if (zipCode != null) {
-    const [locationError, location] = await searchLocation({ zipCode });
+    const [error, zipLocation] = await searchLocation({ zipCode });
 
-    if (locationError) return [locationError];
+    if (error) return [error];
 
-    params.set("location", location.name);
+    params.set("location", zipLocation.name);
   }
 
   if (fullTime === "on") {
