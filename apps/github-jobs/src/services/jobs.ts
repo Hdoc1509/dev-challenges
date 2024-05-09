@@ -4,16 +4,11 @@ import { ApiResponseSchema } from "../schemas/jobs";
 import { JobsResponseError } from "../errors";
 import { SERPAPI } from "../config";
 import locationsMock from "../mocks/locations.json";
-import type { Job, PromiseWithError } from "../types";
-
-type JobOptions = {
-  location?: string;
-  zipCode?: number;
-};
+import type { Job, PromiseWithError, SearchOptions } from "../types";
 
 export type JobService = (
   query?: string,
-  options?: JobOptions,
+  options?: SearchOptions,
 ) => PromiseWithError<Job[]>;
 
 export const getJobs: JobService = async (query, options = {}) => {
@@ -23,6 +18,9 @@ export const getJobs: JobService = async (query, options = {}) => {
     engine: "google_jobs",
     q: query ?? "frontend web",
     api_key: SERPAPI.KEY,
+    // NOTE: Use this for search by full-time jobs
+    // Based employment_type chip from mock
+    // chips: "employment_type:FULLTIME",
   });
 
   if (zipCode != null) {

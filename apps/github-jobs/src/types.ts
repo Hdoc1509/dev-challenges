@@ -9,4 +9,10 @@ export type Job = {
   isFullTime: boolean;
 };
 
+export type SearchOptions = {
+  fullTime?: "on";
+  location?: string;
+  zipCode?: number;
+};
+
 export type PromiseWithError<T> = Promise<[Error] | [null, T]>;

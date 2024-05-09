@@ -1,10 +1,5 @@
 import { FormFieldsSchema } from "../schemas/form";
-
-type SearchOptions = {
-  fullTime?: "on";
-  location?: string;
-  zipCode?: number;
-};
+import type { SearchOptions } from "../types";
 
 type FormSearch = [string, SearchOptions];
 
