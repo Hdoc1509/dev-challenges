@@ -27,14 +27,14 @@ export const SearchForm = () => {
       options.location = coords;
     }
 
-    void getJobs(search, { ...options }).then(([error, jobs]) => {
-      if (error) {
-        console.error(error);
-        return;
-      }
+    const [error, jobs] = await getJobs(search, { ...options });
 
-      setJobs(jobs);
-    });
+    if (error) {
+      console.error(error);
+      return;
+    }
+
+    setJobs(jobs);
   };
 
   return (
