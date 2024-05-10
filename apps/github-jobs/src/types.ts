@@ -12,12 +12,11 @@ export type Job = {
 export type LocationCoords = {
   latitude: number;
   longitude: number;
-}
+};
 
 export type SearchOptions = {
   fullTime?: "on";
-  location?: LocationCoords | string;
-  zipCode?: number;
+  location?: string;
 };
 
 export type PromiseWithError<T> = Promise<[Error] | [null, T]>;

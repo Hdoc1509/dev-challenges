@@ -1,5 +1,6 @@
 // import { getJobs } from "../services/jobs";
 import { getJobs } from "../services/jobs-mock";
+import { searchLocation } from "../services/geolocation";
 import { useJobsStore } from "../store/jobs";
 import { getFormSearch } from "../utils/search";
 import { getCurrentCoords } from "../utils/geolocation";
@@ -16,7 +17,7 @@ export const SearchForm = () => {
 
     const [search, options] = getFormSearch(e.currentTarget);
 
-    if (options.location === "") {
+    if (options.location === "" || options.location == null) {
       const [cordsError, coords] = await getCurrentCoords();
 
       if (cordsError) {
@@ -24,7 +25,29 @@ export const SearchForm = () => {
         return;
       }
 
-      options.location = coords;
+      const [locationError, coordsLocation] = await searchLocation({ coords });
+
+      if (locationError) {
+        console.error(locationError);
+        return;
+      }
+
+      options.location = coordsLocation.name;
+    }
+
+    const parsedLocation = parseInt(options.location);
+
+    if (!isNaN(parsedLocation)) {
+      // INFO: about zipcode
+      // - https://en.wikipedia.org/wiki/ZIP_Code
+      // - https://tools.usps.com/zip-code-lookup.htm
+      const [locationError, zipLocation] = await searchLocation({
+        zipCode: parsedLocation,
+      });
+
+      if (locationError) return locationError;
+
+      options.location = zipLocation.name;
     }
 
     const [error, jobs] = await getJobs(search, { ...options });

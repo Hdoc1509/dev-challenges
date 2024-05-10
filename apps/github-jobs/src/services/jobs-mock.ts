@@ -2,8 +2,9 @@ import { parseJobs } from "../utils/jobs";
 import jobsMock from "../mocks/jobs.json";
 import type { JobService } from "./jobs";
 
+const mockLocations = jobsMock.jobs_results.map(({ location }) => location);
+
 export const getJobs: JobService = (query, options = {}) => {
-  // NOTE: zip code will be omitted as it's not available in mock
   const { location, fullTime } = options;
   const jobs = parseJobs(jobsMock);
 
@@ -14,10 +15,13 @@ export const getJobs: JobService = (query, options = {}) => {
         : true;
     const locationMatch = ((location) => {
       if (location != null) {
-        // NOTE: location coords will be omitted as it's not available in mock
-        return typeof location === "string"
+        const isLocationInMocks = mockLocations.some((mockLocation) =>
+          mockLocation.match(new RegExp(location, "i")),
+        );
+
+        return isLocationInMocks
           ? job.location.match(new RegExp(location, "i")) != null
-          : true;
+          : job.location.match(/new york|\sny/i) != null;
       }
 
       return job.location.match(/new york|\sny/i) != null;
