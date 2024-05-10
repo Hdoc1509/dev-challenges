@@ -1,9 +1,8 @@
 import { useCallback, useEffect } from "react";
 // import { getJobs } from "./services/jobs";
 import { getJobs } from "./services/jobs-mock";
-import { searchLocation } from "./services/geolocation";
 import { useJobsStore } from "./store/jobs";
-import { getCurrentCoords } from "./utils/geolocation";
+import { getLocationOption } from "./utils/jobs";
 import { Footer } from "@internal/components/src/Footer";
 import { Header } from "./components/Header";
 import { SearchForm } from "./components/SearchForm";
@@ -17,21 +16,12 @@ function App() {
   const setJobs = useJobsStore((s) => s.setJobs);
 
   const getInitialJobs = useCallback(async () => {
-    const [coordsError, coords] = await getCurrentCoords();
-
-    if (coordsError) {
-      console.error(coordsError);
-      return;
-    }
-
-    const [locationError, coordsLocation] = await searchLocation({ coords });
+    const [locationError, location] = await getLocationOption();
 
     if (locationError) {
       console.error(locationError);
       return;
     }
-
-    const { name: location } = coordsLocation;
 
     const [jobsError, jobs] = await getJobs(undefined, { location });
 
