@@ -3,11 +3,10 @@ import { useCallback, useEffect } from "react";
 import { getJobs } from "./services/jobs-mock";
 import { useJobsStore } from "./store/jobs";
 import { getLocationOption } from "./utils/jobs";
+import { Route, Routes } from "react-router-dom";
 import { Footer } from "@internal/components/src/Footer";
 import { Header } from "./components/Header";
-import { SearchForm } from "./components/SearchForm";
-import { SearchOptions } from "./components/SearchOptions";
-import { Results } from "./components/Results";
+import { Home } from "./pages/Home";
 import "./App.css";
 
 let didInit = false;
@@ -43,9 +42,9 @@ function App() {
   return (
     <>
       <Header />
-      <SearchForm />
-      <SearchOptions />
-      <Results />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
       <Footer />
     </>
   );
