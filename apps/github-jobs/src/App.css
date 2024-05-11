@@ -1,3 +1,7 @@
+/* TODO:  */
+/* - Remove grid-template-areas and grid-template-columns */
+/* - Set grid-template-rows to auto 1fr auto */
+/* - Home and Jobs pages should handle its own layout */
 #root {
   position: relative;
   display: grid;

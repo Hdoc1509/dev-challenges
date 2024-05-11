@@ -1,5 +1,6 @@
 import * as z from "zod";
 
+// TODO: use z.string().trim()
 const OptionSchema = z.object({
   text: z.string(),
   value: z.string().optional(),

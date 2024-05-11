@@ -7,6 +7,7 @@ import { Route, Routes } from "react-router-dom";
 import { Footer } from "@internal/components/src/Footer";
 import { Header } from "./components/Header";
 import { Home } from "./pages/Home";
+import { JobPage } from "./pages/JobPage";
 import "./App.css";
 
 let didInit = false;
@@ -44,6 +45,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/job/:name" element={<JobPage />} />
       </Routes>
       <Footer />
     </>
