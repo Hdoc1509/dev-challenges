@@ -2,10 +2,6 @@
 .job-details {
   margin-bottom: auto;
 
-  * {
-    margin: 0;
-  }
-
   &__header {
     display: grid;
     grid-template-areas: "title schedule" "created .";

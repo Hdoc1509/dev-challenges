@@ -15,7 +15,7 @@
   --icon-color: #87ceeb;
 }
 
-footer {
+* {
   margin: 0;
 }
 
@@ -57,9 +57,9 @@ footer {
   text-decoration: none;
 }
 .job-page__apply h3 {
-  margin-top: 0;
   text-transform: uppercase;
   color: var(--text-secondary);
+  margin-bottom: 16px;
 }
 .job-page__apply p {
   color: var(--text);
