@@ -9,6 +9,8 @@ import { Icon } from "@hrc/material-icons";
 import "./SearchForm.scss";
 
 export const SearchForm = () => {
+  // TODO: Use a controlled form
+  // this will allow to easily get jobs on page change
   const setJobs = useJobsStore((s) => s.setJobs);
   const setLoading = useJobsStore((s) => s.setLoading);
 

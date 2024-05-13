@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import { useJobsStore } from "../store/jobs";
 import ReactPaginate from "react-paginate";
 import { Icon } from "@hrc/material-icons";
@@ -8,6 +9,11 @@ import "./Results.scss";
 export const Results = () => {
   const jobs = useJobsStore((s) => s.jobs);
   const isLoading = useJobsStore((s) => s.isLoading);
+
+  const handlePageChange = useCallback((newPage: number) => {
+    // TODO: Get jobs on page change
+    console.log({ newPage });
+  }, []);
 
   if (isLoading) {
     return (
@@ -23,7 +29,6 @@ export const Results = () => {
         <JobCard key={job.id} job={job} />
       ))}
       <nav aria-label="Search results pages">
-        {/* TODO: Add pagination logic */}
         <ReactPaginate
           className="jobs-pagination"
           breakLabel="..."
@@ -31,6 +36,7 @@ export const Results = () => {
           previousLabel={<Icon name="keyboard_arrow_left" />}
           pageCount={10}
           marginPagesDisplayed={1}
+          onPageChange={({ selected }) => void handlePageChange(selected)}
         />
       </nav>
     </main>
