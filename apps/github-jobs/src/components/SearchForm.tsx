@@ -27,9 +27,7 @@ export const SearchForm = () => {
       return;
     }
 
-    options.location = location;
-
-    const [error, jobs] = await getJobs(search, { ...options });
+    const [error, jobs] = await getJobs(search, { ...options, location });
 
     if (error) {
       console.error(error);
