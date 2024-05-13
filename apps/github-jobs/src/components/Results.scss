@@ -1,10 +1,19 @@
 main {
   display: grid;
   gap: 32px;
+  grid-template-rows: auto 1fr;
 
-  margin-bottom: auto;
+  nav {
+    margin-top: auto;
+  }
 
   .spinner {
     margin-inline: auto;
   }
+}
+
+.job-results {
+  display: grid;
+  gap: 32px;
+
 }

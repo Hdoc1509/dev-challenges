@@ -17,10 +17,10 @@ export const Results = () => {
   }
 
   return (
-    <>
+    <div className="job-results">
       {jobs.map((job) => (
         <JobCard key={job.id} job={job} />
       ))}
-    </>
+    </div>
   );
 };
