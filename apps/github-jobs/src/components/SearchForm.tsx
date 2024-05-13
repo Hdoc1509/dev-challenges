@@ -14,6 +14,8 @@ export const SearchForm = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    setJobs([]);
+
     const [search, options] = getFormSearch(e.currentTarget);
     const [locationError, location] = await getLocationOption(options.location);
 

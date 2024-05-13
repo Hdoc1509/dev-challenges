@@ -1,11 +1,22 @@
 import { useJobsStore } from "../store/jobs";
 import ReactPaginate from "react-paginate";
 import { Icon } from "@hrc/material-icons";
+import { RingSpinner } from "@hrc/spinner";
 import { JobCard } from "./JobCard";
 import "./Results.scss";
 
 export const Results = () => {
   const jobs = useJobsStore((s) => s.jobs);
+
+  const isLoading = jobs.length === 0;
+
+  if (isLoading) {
+    return (
+      <main>
+        <RingSpinner size="large" />
+      </main>
+    );
+  }
 
   return (
     <main>

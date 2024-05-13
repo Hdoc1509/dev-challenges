@@ -1,6 +1,10 @@
 main {
   display: grid;
   gap: 32px;
+
+  .spinner {
+    margin-inline: auto;
+  }
 }
 
 .jobs-pagination {

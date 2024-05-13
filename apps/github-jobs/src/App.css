@@ -32,6 +32,8 @@ footer {
   grid-template-areas:
     "search-form    search-form"
     "search-options main";
+  grid-template-rows: auto 1fr;
+  grid-template-columns: max(300px) 1fr;
   gap: inherit;
 }
 

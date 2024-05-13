@@ -16,6 +16,7 @@
     "@hrc/button": "2.6.1",
     "@hrc/input": "0.9.1",
     "@hrc/material-icons": "2.3.0",
+    "@hrc/spinner": "0.3.2",
     "@hrc/toggle-theme": "2.2.0",
     "@internal/components": "workspace:*",
     "@material-design-icons/font": "^0.14.13",
