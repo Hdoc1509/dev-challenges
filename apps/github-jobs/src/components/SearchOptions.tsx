@@ -18,10 +18,8 @@ export const SearchOptions = () => {
         name="full-time"
         form={form}
         color="primary"
-        onChange={(e) =>
-          setOptions({ fullTime: e.target.checked ? "on" : undefined })
-        }
-        checked={options.fullTime === "on"}
+        onChange={(e) => setOptions({ fullTime: e.target.checked })}
+        checked={options.fullTime ?? false}
       />
       <Input
         label="LOCATION"
@@ -30,7 +28,7 @@ export const SearchOptions = () => {
         form={form}
         name="location"
         onChange={(e) => setOptions({ location: e.target.value })}
-        value={options.location}
+        value={options.location ?? ""}
         fullWidth
       />
       <RadioGroup
@@ -38,7 +36,7 @@ export const SearchOptions = () => {
         form={form}
         options={predefinedCities}
         onChange={(e) => setOptions({ location: e.target.value })}
-        value={options.location}
+        value={options.location ?? ""}
         defaultValue="London"
       />
     </aside>

@@ -26,7 +26,7 @@ export const getJobs: JobService = (query, options = {}) => {
 
       return job.location.match(/new york|\sny/i) != null;
     })(location);
-    const fullTimeMatch = fullTime === "on" ? job.isFullTime : true;
+    const fullTimeMatch = fullTime ? job.isFullTime : true;
 
     return queryMatch && locationMatch && fullTimeMatch;
   });

@@ -18,8 +18,7 @@ export type LocationCoords = {
 };
 
 export type SearchOptions = {
-  // TODO: Use boolean
-  fullTime?: "on";
+  fullTime?: boolean;
   location?: string;
   page?: number;
 };
