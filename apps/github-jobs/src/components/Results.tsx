@@ -13,6 +13,7 @@ export const Results = () => {
         <JobCard key={job.id} job={job} />
       ))}
       <nav aria-label="Search results pages">
+        {/* TODO: Add pagination logic */}
         <ReactPaginate
           className="jobs-pagination"
           breakLabel="..."

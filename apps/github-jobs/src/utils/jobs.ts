@@ -7,7 +7,10 @@ import type { Job, PromiseWithError } from "../types";
 export const parseJobs = (data: ApiResponse): Job[] => {
   return data.jobs_results.map((job) => ({
     title: job.title,
-    company: job.company_name,
+    company: {
+      name: job.company_name,
+      url: job.related_links[0].link,
+    },
     // NOTE: job location has extra spaces in it. You can check it in jobs mock
     location: job.location.trim(),
     description: job.description,
@@ -61,7 +64,7 @@ export const createJobLink = (job: Job) => {
   const { title, company, location } = job;
 
   const link = `${sanitizeString(title)}-${sanitizeString(
-    company,
+    company.name,
   )}-${sanitizeString(location)}`;
 
   return link.replace(/\s/g, "-");

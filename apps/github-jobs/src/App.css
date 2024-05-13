@@ -1,5 +1,3 @@
-/* TODO:  */
-/* - Home and Jobs pages should handle its own layout */
 #root {
   position: relative;
   display: grid;
@@ -35,4 +33,35 @@ footer {
     "search-form    search-form"
     "search-options main";
   gap: inherit;
+}
+
+.job-page {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+}
+.job-page__aside {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+.back-to-search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  width: fit-content;
+  color: var(--primary);
+  text-decoration: none;
+}
+.job-page__apply h3 {
+  margin-top: 0;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+.job-page__apply p {
+  color: var(--text);
+}
+.company-website {
+  color: var(--primary);
+  text-decoration: none;
 }

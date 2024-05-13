@@ -15,12 +15,12 @@ export const JobCard = ({ job }: { job: Job }) => {
     >
       <div className="job-card__image">
         {thumbnail ? (
-          <img src={thumbnail} alt={`${company} logo`} />
+          <img src={thumbnail} alt={`${company.name} logo`} />
         ) : (
           <p className="job-card__no-image">not found</p>
         )}
       </div>
-      <p className="job-card__company">{company}</p>
+      <p className="job-card__company">{company.name}</p>
       <p className="job-card__title">{title}</p>
       {isFullTime && <p className="job-card__schedule-type">Full time</p>}
       <p className="job-card__location">
