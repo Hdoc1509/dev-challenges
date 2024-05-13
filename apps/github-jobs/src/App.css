@@ -40,6 +40,7 @@ footer {
 .job-page {
   display: grid;
   grid-template-columns: 280px 1fr;
+  gap: 32px;
 }
 .job-page__aside {
   display: flex;
