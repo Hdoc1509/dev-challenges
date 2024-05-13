@@ -14,8 +14,11 @@ let didInit = false;
 
 function App() {
   const setJobs = useJobsStore((s) => s.setJobs);
+  const setLoading = useJobsStore((s) => s.setLoading);
 
   const getInitialJobs = useCallback(async () => {
+    setLoading(true);
+
     const [locationError, location] = await getLocationOption();
 
     if (locationError) {
@@ -23,6 +26,7 @@ function App() {
       return;
     }
 
+    // TODO: Pass frontend as query
     const [jobsError, jobs] = await getJobs(undefined, { location });
 
     if (jobsError) {
@@ -31,7 +35,8 @@ function App() {
     }
 
     setJobs(jobs);
-  }, [setJobs]);
+    setLoading(false);
+  }, [setJobs, setLoading]);
 
   useEffect(() => {
     if (!didInit) {

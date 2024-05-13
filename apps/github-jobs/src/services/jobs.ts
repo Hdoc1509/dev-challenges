@@ -6,6 +6,7 @@ import locationsMock from "../mocks/locations.json";
 import type { Job, PromiseWithError, SearchOptions } from "../types";
 
 export type JobService = (
+  // TODO: Set query as required
   query?: string,
   options?: SearchOptions,
 ) => PromiseWithError<Job[]>;

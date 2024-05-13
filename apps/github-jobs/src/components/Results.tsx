@@ -7,8 +7,7 @@ import "./Results.scss";
 
 export const Results = () => {
   const jobs = useJobsStore((s) => s.jobs);
-
-  const isLoading = jobs.length === 0;
+  const isLoading = useJobsStore((s) => s.isLoading);
 
   if (isLoading) {
     return (

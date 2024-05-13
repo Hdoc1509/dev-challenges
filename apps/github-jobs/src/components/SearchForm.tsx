@@ -10,10 +10,12 @@ import "./SearchForm.scss";
 
 export const SearchForm = () => {
   const setJobs = useJobsStore((s) => s.setJobs);
+  const setLoading = useJobsStore((s) => s.setLoading);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    setLoading(true);
     setJobs([]);
 
     const [search, options] = getFormSearch(e.currentTarget);
@@ -34,6 +36,7 @@ export const SearchForm = () => {
     }
 
     setJobs(jobs);
+    setLoading(false);
   };
 
   return (
