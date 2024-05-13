@@ -1,3 +1,4 @@
+import { useJobsStore } from "../store/jobs";
 import { Checkbox, Input } from "@hrc/input";
 import { Icon } from "@hrc/material-icons";
 import { RadioGroup } from "./RadioGroup";
@@ -7,6 +8,9 @@ import "./SearchOptions.scss";
 const form = "search-form";
 
 export const SearchOptions = () => {
+  const options = useJobsStore((s) => s.searchOptions);
+  const setOptions = useJobsStore((s) => s.setSearchOptions);
+
   return (
     <aside className="search-options">
       <Checkbox
@@ -14,6 +18,10 @@ export const SearchOptions = () => {
         name="full-time"
         form={form}
         color="primary"
+        onChange={(e) =>
+          setOptions({ fullTime: e.target.checked ? "on" : undefined })
+        }
+        checked={options.fullTime === "on"}
       />
       <Input
         label="LOCATION"
@@ -21,9 +29,18 @@ export const SearchOptions = () => {
         placeholder="City, state, zip code or country"
         form={form}
         name="location"
+        onChange={(e) => setOptions({ location: e.target.value })}
+        value={options.location}
         fullWidth
       />
-      <RadioGroup name="city" form={form} options={predefinedCities} />
+      <RadioGroup
+        name="city"
+        form={form}
+        options={predefinedCities}
+        onChange={(e) => setOptions({ location: e.target.value })}
+        value={options.location}
+        defaultValue="London"
+      />
     </aside>
   );
 };

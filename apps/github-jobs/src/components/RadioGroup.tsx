@@ -24,16 +24,14 @@ const Radio = ({ label, icon, iconChecked, ...restProps }: RadioProps) => {
 
 type Props<T> = {
   options: readonly T[];
-  name: string;
-  defaultValue?: T;
-  form?: string;
-};
+} & React.ComponentProps<"input">;
 
 export const RadioGroup = <T extends string>({
   options,
   name,
   form,
-  defaultValue,
+  value,
+  onChange,
 }: Props<T>) => {
   return (
     <div className="radio-group">
@@ -43,8 +41,9 @@ export const RadioGroup = <T extends string>({
           label={label}
           name={name}
           form={form}
-          defaultChecked={label === defaultValue}
+          checked={label === value}
           value={label}
+          onChange={onChange}
         />
       ))}
     </div>

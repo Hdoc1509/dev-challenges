@@ -2,17 +2,17 @@
 import { getJobs } from "../services/jobs-mock";
 import { useJobsStore } from "../store/jobs";
 import { getLocationOption } from "../utils/jobs";
-import { getFormSearch } from "../utils/search";
 import { Button } from "@hrc/button";
 import { Input } from "@hrc/input";
 import { Icon } from "@hrc/material-icons";
 import "./SearchForm.scss";
 
 export const SearchForm = () => {
-  // TODO: Use a controlled form
-  // this will allow to easily get jobs on page change
+  const search = useJobsStore((s) => s.searchQuery);
+  const options = useJobsStore((s) => s.searchOptions);
   const setJobs = useJobsStore((s) => s.setJobs);
   const setLoading = useJobsStore((s) => s.setLoading);
+  const setQuery = useJobsStore((s) => s.setSearchQuery);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -20,7 +20,6 @@ export const SearchForm = () => {
     setLoading(true);
     setJobs([]);
 
-    const [search, options] = getFormSearch(e.currentTarget);
     const [locationError, location] = await getLocationOption(options.location);
 
     if (locationError) {
@@ -52,6 +51,8 @@ export const SearchForm = () => {
           iconStart={<Icon name="work_outline" />}
           placeholder="Title, companies, expertise or benefits"
           name="search"
+          onChange={(e) => setQuery(e.target.value)}
+          value={search}
           required
           fullWidth
         />
