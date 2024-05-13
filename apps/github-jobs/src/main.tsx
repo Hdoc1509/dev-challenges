@@ -1,6 +1,6 @@
-import { BrowserRouter } from "react-router-dom";
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App.tsx";
 import "@material-design-icons/font";
 import "@fontsource/roboto/latin-400.css";
