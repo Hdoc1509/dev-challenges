@@ -13,6 +13,23 @@
 
   list-style: none;
 
+  li {
+    color: var(--text-secondary);
+
+    &:hover {
+      color: var(--primary);
+    }
+
+    &.disabled,
+    &.selected {
+      pointer-events: none;
+    }
+
+    &.disabled {
+      color: rgb(255 255 255 / 30%);
+    }
+  }
+
   a {
     display: grid;
     place-items: center;
@@ -21,18 +38,13 @@
     border-radius: 4px;
     height: 100%;
 
-    color: var(--text-secondary);
     font-size: 0.75rem;
 
     cursor: pointer;
 
     --icon-size: 2em;
-
-    &:hover {
-      color: var(--primary);
-    }
   }
-  .selected a {
+  li.selected a {
     background-color: var(--primary);
     border-color: var(--primary);
     color: #fff;
