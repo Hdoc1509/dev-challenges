@@ -6,8 +6,7 @@ import locationsMock from "../mocks/locations.json";
 import type { Job, PromiseWithError, SearchOptions } from "../types";
 
 export type JobService = (
-  // TODO: Set query as required
-  query?: string,
+  query: string,
   options?: SearchOptions,
 ) => PromiseWithError<Job[]>;
 
@@ -15,7 +14,7 @@ export const getJobs: JobService = async (query, options = {}) => {
   const { location, fullTime } = options;
   const params = new URLSearchParams({
     engine: "google_jobs",
-    q: query ?? "frontend web",
+    q: query,
     api_key: SERPAPI.KEY,
   });
 

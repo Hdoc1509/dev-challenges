@@ -26,8 +26,7 @@ function App() {
       return;
     }
 
-    // TODO: Pass frontend as query
-    const [jobsError, jobs] = await getJobs(undefined, { location });
+    const [jobsError, jobs] = await getJobs("front", { location });
 
     if (jobsError) {
       console.error(jobsError);

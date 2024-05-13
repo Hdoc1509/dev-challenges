@@ -10,7 +10,7 @@ export const getJobs: JobService = (query, options = {}) => {
 
   const filtered = jobs.filter((job) => {
     const queryMatch =
-      query != null
+      query !== ""
         ? job.title.toLowerCase().includes(query.toLowerCase())
         : true;
     const locationMatch = ((location) => {
