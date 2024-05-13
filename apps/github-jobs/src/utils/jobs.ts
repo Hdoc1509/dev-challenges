@@ -8,7 +8,8 @@ export const parseJobs = (data: ApiResponse): Job[] => {
   return data.jobs_results.map((job) => ({
     title: job.title,
     company: job.company_name,
-    location: job.location,
+    // NOTE: job location has extra spaces in it. You can check it in jobs mock
+    location: job.location.trim(),
     description: job.description,
     id: job.job_id,
     createdAt: job.detected_extensions.posted_at,
