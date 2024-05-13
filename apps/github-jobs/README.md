@@ -29,7 +29,9 @@ Challenge: Create a job search using an API. Use Front-end libraries like React 
 - [x] User story: When I select a job, I can see job descriptions and how to apply like the given design.
 - [x] User story: When I am on the job details page, I can go back to the search page
 - [x] User story (optional): I can see a list of jobs in the closest city from my location by default
-- [ ] User story (optional): I can see jobs on different pages, 5 items on each page
+- [x] User story (optional): I can see jobs on different pages, 5 items on each page
+
+  **NOTE: The used API paginates by 10 items per page**
 
 ### Built With
 
