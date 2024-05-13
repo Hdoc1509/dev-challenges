@@ -1,17 +1,9 @@
 /* TODO:  */
-/* - Remove grid-template-areas and grid-template-columns */
-/* - Set grid-template-rows to auto 1fr auto */
 /* - Home and Jobs pages should handle its own layout */
 #root {
   position: relative;
   display: grid;
-  grid-template-areas:
-    "header header"
-    "search-form search-form"
-    "search-options main"
-    "footer footer";
-  grid-template-rows: auto auto 1fr auto;
-  grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto 1fr auto;
   gap: 16px;
 
   max-width: 1200px;
@@ -26,13 +18,21 @@
 }
 
 footer {
-  grid-area: footer;
   margin: 0;
 }
 
-.label, .button {
+.label,
+.button {
   font-family: inherit;
 }
 .input__inner::placeholder {
   opacity: 1;
+}
+
+.home {
+  display: grid;
+  grid-template-areas:
+    "search-form    search-form"
+    "search-options main";
+  gap: inherit;
 }
