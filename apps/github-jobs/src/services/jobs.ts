@@ -1,4 +1,4 @@
-import { parseJobs } from "../utils/jobs";
+import { getPageOption, parseJobs } from "../utils/jobs";
 import { ApiResponseSchema } from "../schemas/jobs";
 import { JobsResponseError } from "../errors";
 import { SERPAPI } from "../config";
@@ -11,11 +11,12 @@ export type JobService = (
 ) => PromiseWithError<Job[]>;
 
 export const getJobs: JobService = async (query, options = {}) => {
-  const { location, fullTime } = options;
+  const { location, fullTime, page } = options;
   const params = new URLSearchParams({
     engine: "google_jobs",
     q: query,
     api_key: SERPAPI.KEY,
+    start: getPageOption(page),
   });
 
   params.append("location", location ?? locationsMock[0].canonical_name);

@@ -20,6 +20,7 @@ export type LocationCoords = {
 export type SearchOptions = {
   fullTime?: "on";
   location?: string;
+  page?: number;
 };
 
 export type PromiseWithError<T> = Promise<[Error] | [null, T]>;

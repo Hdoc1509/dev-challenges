@@ -60,6 +60,11 @@ export const getLocationOption = async (
   return [null, location];
 };
 
+export const getPageOption = (page?: number) => {
+  // INFO: https://serpapi.com/google-jobs-api#api-parameters-pagination
+  return (page ? (page - 1) * 10 : 0).toString();
+};
+
 export const createJobLink = (job: Job) => {
   const { title, company, location } = job;
 
