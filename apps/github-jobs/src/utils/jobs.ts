@@ -1,5 +1,6 @@
 import { searchLocation } from "../services/geolocation";
 import { getCurrentCoords } from "./geolocation";
+import { sanitizeString } from "./string";
 import type { ApiResponse } from "../schemas/jobs";
 import type { Job, PromiseWithError } from "../types";
 
@@ -53,4 +54,14 @@ export const getLocationOption = async (
   }
 
   return [null, location];
+};
+
+export const createJobLink = (job: Job) => {
+  const { title, company, location } = job;
+
+  const link = `${sanitizeString(title)}-${sanitizeString(
+    company,
+  )}-${sanitizeString(location)}`;
+
+  return link.replace(/\s/g, "-");
 };

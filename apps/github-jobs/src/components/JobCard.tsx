@@ -1,16 +1,15 @@
+import { createJobLink } from "../utils/jobs";
 import { Link } from "react-router-dom";
 import { Icon } from "@hrc/material-icons";
 import type { Job } from "../types";
 import "./JobCard.scss";
-
-// TODO: Create util to create friendly job link
 
 export const JobCard = ({ job }: { job: Job }) => {
   const { thumbnail, company, title, isFullTime, location, createdAt } = job;
 
   return (
     <Link
-      to={`/job/${title}-${company}-${location}`}
+      to={`/job/${createJobLink(job)}`}
       state={{ job }}
       className="job-card"
     >
