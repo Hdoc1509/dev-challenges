@@ -14,28 +14,29 @@ let didInit = false;
 
 function App() {
   const setJobs = useJobsStore((s) => s.setJobs);
-  const setLoading = useJobsStore((s) => s.setLoading);
+  const setStatus = useJobsStore((s) => s.setStatus);
+  const setError = useJobsStore((s) => s.setError);
 
   const getInitialJobs = useCallback(async () => {
-    setLoading(true);
+    setStatus("loading");
 
-    const [locationError, location] = await getLocationOption();
+    try {
+      const [locationError, location] = await getLocationOption();
 
-    if (locationError) {
-      console.error(locationError);
-      return;
+      if (locationError) throw locationError;
+
+      const [jobsError, jobs] = await getJobs("front", { location });
+
+      if (jobsError) throw jobsError;
+
+      setJobs(jobs);
+      setStatus("success");
+    } catch (error) {
+      // NOTE: All errors are thrown and handled manually
+      setError(error as Error);
+      setStatus("error");
     }
-
-    const [jobsError, jobs] = await getJobs("front", { location });
-
-    if (jobsError) {
-      console.error(jobsError);
-      return;
-    }
-
-    setJobs(jobs);
-    setLoading(false);
-  }, [setJobs, setLoading]);
+  }, [setError, setJobs, setStatus]);
 
   useEffect(() => {
     if (!didInit) {

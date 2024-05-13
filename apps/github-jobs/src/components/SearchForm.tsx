@@ -11,31 +11,33 @@ export const SearchForm = () => {
   const search = useJobsStore((s) => s.searchQuery);
   const options = useJobsStore((s) => s.searchOptions);
   const setJobs = useJobsStore((s) => s.setJobs);
-  const setLoading = useJobsStore((s) => s.setLoading);
+  const setStatus = useJobsStore((s) => s.setStatus);
+  const setError = useJobsStore((s) => s.setError);
   const setQuery = useJobsStore((s) => s.setSearchQuery);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    setLoading(true);
-    setJobs([]);
+    setStatus("loading");
 
-    const [locationError, location] = await getLocationOption(options.location);
+    try {
+      const [locationError, location] = await getLocationOption(
+        options.location,
+      );
 
-    if (locationError) {
-      console.error(locationError);
-      return;
+      if (locationError) throw locationError;
+
+      const [error, jobs] = await getJobs(search, { ...options, location });
+
+      if (error) throw error;
+
+      setJobs(jobs);
+      setStatus("success");
+    } catch (error) {
+      // NOTE: All errors are thrown and handled manually
+      setError(error as Error);
+      setStatus("error");
     }
-
-    const [error, jobs] = await getJobs(search, { ...options, location });
-
-    if (error) {
-      console.error(error);
-      return;
-    }
-
-    setJobs(jobs);
-    setLoading(false);
   };
 
   return (

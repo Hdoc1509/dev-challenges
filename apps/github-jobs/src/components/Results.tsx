@@ -8,17 +8,26 @@ import "./Results.scss";
 
 export const Results = () => {
   const jobs = useJobsStore((s) => s.jobs);
-  const isLoading = useJobsStore((s) => s.isLoading);
+  const status = useJobsStore((s) => s.status);
+  const error = useJobsStore((s) => s.error);
 
   const handlePageChange = useCallback((newPage: number) => {
     // TODO: Get jobs on page change
     console.log({ newPage });
   }, []);
 
-  if (isLoading) {
+  if (status === "loading") {
     return (
       <main>
         <RingSpinner size="large" />
+      </main>
+    );
+  }
+
+  if (status === "error") {
+    return (
+      <main>
+        <h3>{error?.message}</h3>
       </main>
     );
   }

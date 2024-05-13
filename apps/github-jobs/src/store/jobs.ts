@@ -1,23 +1,28 @@
 import { create } from "zustand";
 import type { Job, SearchOptions } from "../types";
 
+type Status = "idle" | "error" | "success" | "loading";
+
 type State = {
   jobs: Job[];
-  isLoading: boolean;
+  status: Status;
+  error?: Error;
   searchQuery: string;
   searchOptions: SearchOptions;
 };
 
 type Action = {
   setJobs: (jobs: Job[]) => void;
-  setLoading: (isLoading: boolean) => void;
+  setStatus: (status: Status) => void;
+  setError: (error: Error) => void;
   setSearchQuery: (query: string) => void;
   setSearchOptions: (options: SearchOptions) => void;
 };
 
 const initialState: State = {
   jobs: [],
-  isLoading: false,
+  status: "idle",
+  error: undefined,
   searchQuery: "",
   searchOptions: {
     fullTime: undefined,
@@ -30,7 +35,8 @@ export const useJobsStore = create<State & Action>()((set) => ({
   ...initialState,
 
   setJobs: (jobs: Job[]) => set({ jobs }),
-  setLoading: (isLoading: boolean) => set({ isLoading }),
+  setStatus: (status: Status) => set({ status }),
+  setError: (error: Error) => set({ error }),
   setSearchQuery: (query: string) => set({ searchQuery: query }),
   setSearchOptions: (options: SearchOptions) => set({ searchOptions: options }),
 }));
