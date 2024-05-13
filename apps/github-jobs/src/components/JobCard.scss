@@ -15,14 +15,17 @@
   padding: 12px;
   box-shadow: var(--box-shadow);
   border-radius: 4px;
+  outline: none;
 
   color: var(--text);
   text-decoration: none;
 
   cursor: pointer;
 
-  &:hover &__title {
-    text-decoration: underline;
+  &:hover,
+  &:focus-visible {
+    outline: 1px solid var(--text);
+    --job-title-decoration: underline;
   }
 
   * {
@@ -60,6 +63,7 @@
 
   &__title {
     grid-area: title;
+    text-decoration: var(--job-title-decoration);
     font-size: 1.125rem;
   }
 
