@@ -50,7 +50,6 @@ export const SearchForm = () => {
         <Input
           iconStart={<Icon name="work_outline" />}
           placeholder="Title, companies, expertise or benefits"
-          name="search"
           onChange={(e) => setQuery(e.target.value)}
           value={search}
           required

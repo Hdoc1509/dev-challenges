@@ -15,7 +15,6 @@ export const SearchOptions = () => {
     <aside className="search-options">
       <Checkbox
         label="Full time"
-        name="full-time"
         form={form}
         color="primary"
         onChange={(e) => setOptions({ fullTime: e.target.checked })}
@@ -26,13 +25,11 @@ export const SearchOptions = () => {
         iconStart={<Icon name="public" />}
         placeholder="City, state, zip code or country"
         form={form}
-        name="location"
         onChange={(e) => setOptions({ location: e.target.value })}
         value={options.location ?? ""}
         fullWidth
       />
       <RadioGroup
-        name="city"
         form={form}
         options={predefinedCities}
         onChange={(e) => setOptions({ location: e.target.value })}
