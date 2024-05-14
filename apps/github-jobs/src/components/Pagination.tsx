@@ -24,11 +24,10 @@ export const Pagination = () => {
 
         if (locationError) throw locationError;
 
-        const [jobsError, jobs] = await getJobs(search, {
-          ...options,
-          location,
-          page: newPage + 1,
-        });
+        const [jobsError, jobs] = await getJobs(
+          search === "" ? "front" : search,
+          { ...options, location, page: newPage + 1 },
+        );
 
         if (jobsError) throw jobsError;
 
