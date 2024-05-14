@@ -34,7 +34,6 @@ export const SearchOptions = () => {
         options={predefinedCities}
         onChange={(e) => setOptions({ location: e.target.value })}
         value={options.location ?? ""}
-        defaultValue="London"
       />
     </aside>
   );
