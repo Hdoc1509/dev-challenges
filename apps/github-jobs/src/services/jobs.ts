@@ -1,4 +1,4 @@
-import { getPageOption, parseJobs } from "../utils/jobs";
+import { parseJobs } from "../utils/jobs";
 import { ApiResponseSchema } from "../schemas/jobs";
 import { JobsResponseError } from "../errors";
 import { SERPAPI } from "../config";
@@ -16,8 +16,10 @@ export const getJobs: JobService = async (query, options = {}) => {
     engine: "google_jobs",
     q: query,
     api_key: SERPAPI.KEY,
-    start: getPageOption(page),
   });
+
+  // INFO: https://serpapi.com/google-jobs-api#api-parameters-pagination
+  params.append("start", (page ? (page - 1) * 10 : 0).toString());
 
   params.append("location", location ?? locationsMock[0].canonical_name);
 
