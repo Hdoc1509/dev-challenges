@@ -29,15 +29,11 @@ export const getLocationOption = async (
   if (location === "" || location == null) {
     const [coordsError, coords] = await getCurrentCoords();
 
-    if (coordsError) {
-      return [coordsError];
-    }
+    if (coordsError) return [coordsError];
 
     const [locationError, coordsLocation] = await searchLocation({ coords });
 
-    if (locationError) {
-      return [locationError];
-    }
+    if (locationError) return [locationError];
 
     return [null, coordsLocation.name];
   }
@@ -50,9 +46,7 @@ export const getLocationOption = async (
   if (!isNaN(zipCode)) {
     const [locationError, zipLocation] = await searchLocation({ zipCode });
 
-    if (locationError) {
-      return [locationError];
-    }
+    if (locationError) return [locationError];
 
     return [null, zipLocation.name];
   }
