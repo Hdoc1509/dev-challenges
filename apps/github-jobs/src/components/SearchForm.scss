@@ -32,4 +32,8 @@
   --input-border-color: transparent;
   --input-border-color-hover: transparent;
   --input-border-color-focus: transparent;
+
+  @media (max-width: 767px) {
+    width: 90%;
+  }
 }

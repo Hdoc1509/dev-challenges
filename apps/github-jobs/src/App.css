@@ -10,6 +10,11 @@
   padding: 2rem 7.5rem;
   margin-inline: auto;
 }
+@media (max-width: 767px) {
+  #root {
+    padding-inline: 1rem;
+  }
+}
 
 [data-theme="dark"] .theme-button {
   --icon-color: #87ceeb;
@@ -35,6 +40,16 @@
   grid-template-rows: auto 1fr;
   grid-template-columns: max(300px) 1fr;
   gap: inherit;
+}
+@media (max-width: 767px) {
+  .home {
+    grid-template-areas:
+      "search-form"
+      "search-options"
+      "main";
+    grid-template-rows: unset;
+    grid-template-columns: unset;
+  }
 }
 
 .job-page {
