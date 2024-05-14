@@ -28,6 +28,14 @@
     --job-title-decoration: underline;
   }
 
+  @media (max-width: 767px) {
+    grid-template-areas:
+      "image company  company"
+      "image title    title"
+      "image schedule ."
+      ".     location created-at";
+  }
+
   &__image {
     grid-area: image;
 
@@ -61,6 +69,10 @@
     grid-area: title;
     text-decoration: var(--job-title-decoration);
     font-size: 1.125rem;
+
+    @media (max-width: 767px) {
+      font-size: 1rem;
+    }
   }
 
   &__schedule-type {
@@ -76,6 +88,7 @@
 
   &__location {
     grid-area: location;
+    margin-left: auto;
   }
 
   &__created {
