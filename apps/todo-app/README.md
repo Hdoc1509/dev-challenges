@@ -32,10 +32,12 @@
 - [Sass](https://sass-lang.com/)
 - [clsx](https://github.com/lukeed/clsx)
 - [BEM](https://getbem.com/)
-- [@hrc/button](https://www.npmjs.com/package/@hrc/button)
-- [@hrc/input](https://www.npmjs.com/package/@hrc/input)
-- [@hrc/material-icons](https://www.npmjs.com/package/@hrc/material-icons)
-- [@hrc/toggle-theme](https://www.npmjs.com/package/@hrc/toggle-theme)
+- [@hrc/button](https://hdoc1509.github.io/hrc/packages/button/)
+- [@hrc/input](https://hdoc1509.github.io/hrc/packages/input/)
+- [@hrc/material-icons](https://hdoc1509.github.io/hrc/packages/material-icons/)
+- [@hrc/toggle-theme](https://hdoc1509.github.io/hrc/packages/toggle-theme/)
+- [fontsource](https://fontsource.org/)
+- [@material-design-icons/font](https://marella.me/material-design-icons/demo/font/)
 
 ### What I learned
 
