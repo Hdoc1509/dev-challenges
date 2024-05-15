@@ -31,5 +31,9 @@ export const getMockedJobs: JobService = (query, options = {}) => {
     return queryMatch && locationMatch && fullTimeMatch;
   });
 
+  if (filtered.length === 0) {
+    return Promise.resolve([new Error(`No jobs found for: ${query}`)]);
+  }
+
   return Promise.resolve([null, filtered]);
 };

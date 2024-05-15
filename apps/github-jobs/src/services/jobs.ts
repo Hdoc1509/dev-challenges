@@ -44,7 +44,7 @@ export const getJobs: JobService = async (query, options = {}) => {
     // NOTE:
     // based on https://serpapi.com/searches/245e315c7524f950/6644d67d7690dc208bd21e49.json
     if (data.search_information?.jobs_results_state === "Fully empty")
-      return [null, []];
+      return [new Error(`No jobs found for: ${query}`)];
 
     return [null, parseJobs(data)];
   } catch (error) {
