@@ -1,9 +1,11 @@
 import { useCallback } from "react";
 import { useJobsStore } from "../store/jobs";
+import { getJobs } from "../services/jobs";
 import { getMockedJobs } from "../services/jobs-mock";
 import { getLocationOption } from "../utils/jobs";
 import ReactPaginate from "react-paginate";
 import { Icon } from "@hrc/material-icons";
+import { isDev } from "../config";
 import "./Pagination.scss";
 
 export const Pagination = () => {
@@ -24,10 +26,13 @@ export const Pagination = () => {
 
         if (locationError) throw locationError;
 
-        const [jobsError, jobs] = await getMockedJobs(
+        const searchArgs = [
           search === "" ? "front" : search,
           { ...options, location, page: newPage + 1 },
-        );
+        ] as const;
+        const [jobsError, jobs] = await (isDev
+          ? getMockedJobs(...searchArgs)
+          : getJobs(...searchArgs));
 
         if (jobsError) throw jobsError;
 

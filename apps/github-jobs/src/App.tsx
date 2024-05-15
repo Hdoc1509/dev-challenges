@@ -1,5 +1,5 @@
 import { useCallback, useEffect } from "react";
-// import { getJobs } from "./services/jobs";
+import { getJobs } from "./services/jobs";
 import { getMockedJobs } from "./services/jobs-mock";
 import { useJobsStore } from "./store/jobs";
 import { getLocationOption } from "./utils/jobs";
@@ -8,6 +8,7 @@ import { Footer } from "@internal/components/src/Footer";
 import { Header } from "./components/Header";
 import { Home } from "./pages/Home";
 import { JobPage } from "./pages/JobPage";
+import { isDev } from "./config";
 import "./App.css";
 
 let didInit = false;
@@ -25,7 +26,10 @@ function App() {
 
       if (locationError) throw locationError;
 
-      const [jobsError, jobs] = await getMockedJobs("front", { location });
+      const searchArgs = ["front", { location }] as const;
+      const [jobsError, jobs] = await (isDev
+        ? getMockedJobs(...searchArgs)
+        : getJobs(...searchArgs));
 
       if (jobsError) throw jobsError;
 

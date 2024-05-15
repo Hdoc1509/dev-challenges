@@ -1,4 +1,4 @@
-const { VITE_SERPAPI_API_KEY, VITE_WEATHERAPI_API_KEY } = import.meta.env;
+const { VITE_SERPAPI_API_KEY, VITE_WEATHERAPI_API_KEY, DEV } = import.meta.env;
 
 // Documentation
 // - https://serpapi.com/google-jobs-api
@@ -13,3 +13,6 @@ export const WEATHERAPI = {
   KEY: VITE_WEATHERAPI_API_KEY,
   URL: "https://api.weatherapi.com/v1",
 };
+
+// https://vitejs.dev/guide/env-and-mode#env-variables
+export const isDev = DEV;

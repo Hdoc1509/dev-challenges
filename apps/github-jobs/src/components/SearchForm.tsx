@@ -1,10 +1,11 @@
-// import { getJobs } from "../services/jobs";
+import { getJobs } from "../services/jobs";
 import { getMockedJobs } from "../services/jobs-mock";
 import { useJobsStore } from "../store/jobs";
 import { getLocationOption } from "../utils/jobs";
 import { Button } from "@hrc/button";
 import { Input } from "@hrc/input";
 import { Icon } from "@hrc/material-icons";
+import { isDev } from "../config";
 import "./SearchForm.scss";
 
 export const SearchForm = () => {
@@ -27,7 +28,10 @@ export const SearchForm = () => {
 
       if (locationError) throw locationError;
 
-      const [error, jobs] = await getMockedJobs(search, { ...options, location });
+      const searchArgs = [search, { ...options, location }] as const;
+      const [error, jobs] = await (isDev
+        ? getMockedJobs(...searchArgs)
+        : getJobs(...searchArgs));
 
       if (error) throw error;
 
