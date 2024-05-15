@@ -19,15 +19,15 @@ There are some [packages](#packages) I created while completing them.
 
 ## Packages
 
-- [@hdoc-react/button](https://www.npmjs.com/package/@hdoc-react/button)
-- [@hdoc-react/input](https://www.npmjs.com/package/@hdoc-react/input)
-- [@hdoc-react/material-icons](https://www.npmjs.com/package/@hdoc-react/material-icons)
-- [@hdoc-react/spinner](https://www.npmjs.com/package/@hdoc-react/spinner)
-- [@hdoc-react/toggle-theme](https://www.npmjs.com/package/@hdoc-react/toggle-theme)
+[`<hrc />`](https://hdoc1509.github.io/hrc/) is a set of libraries that I
+created while completing challenges.
 
-### Deprecated
+It contains the following packages:
 
-- [@hdoc/react-button](https://www.npmjs.com/package/@hdoc/react-button)
-- [@hdoc/react-input](https://www.npmjs.com/package/@hdoc/react-input)
-- [@hdoc/react-material-icons](https://www.npmjs.com/package/@hdoc/react-material-icons)
-- [@hdoc/react-toggle-theme](https://www.npmjs.com/package/@hdoc/react-toggle-theme)
+- [@hrc/babel-config](https://hdoc1509.github.io/hrc/packages/babel-config/)
+- [@hrc/button](https://hdoc1509.github.io/hrc/packages/button/)
+- [@hrc/input](https://hdoc1509.github.io/hrc/packages/input/)
+- [@hrc/material-icons](https://hdoc1509.github.io/hrc/packages/material-icons/)
+- [@hrc/spinner](https://hdoc1509.github.io/hrc/packages/spinner/)
+- [@hrc/toggle-theme](https://hdoc1509.github.io/hrc/packages/toggle-theme/)
+- [@hrc/type-utils](https://hdoc1509.github.io/hrc/packages/type-utils/)
