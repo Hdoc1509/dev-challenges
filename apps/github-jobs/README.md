@@ -14,9 +14,7 @@
 
 ## Overview
 
-<!-- TODO: Update screenshot once project has completed -->
-
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![screenshot](https://github.com/Hdoc1509/dev-challenges/assets/72316111/0867cd5e-2883-4af0-b9a4-e4557bd69d0c)
 
 Challenge: Create a job search using an API. Use Front-end libraries like React or Vue. Don’t look at the existing solution. Fulfill user stories below:
 
