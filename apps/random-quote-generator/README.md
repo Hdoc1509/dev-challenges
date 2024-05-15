@@ -37,6 +37,7 @@
 - [@hrc/toggle-theme](https://hdoc1509.github.io/hrc/packages/toggle-theme/)
 - [fontsource](https://fontsource.org/)
 - [@material-design-icons/font](https://marella.me/material-design-icons/demo/font/)
+- [QuoteGarden API](https://prathameshmore.online/QuoteGarden/)
 
 ### Extra Features
 
