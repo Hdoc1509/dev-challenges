@@ -39,7 +39,14 @@ export const getJobs: JobService = async (query, options = {}) => {
     if (!parsedData.success)
       return [new Error("Jobs service data error. Invalid data")];
 
-    return [null, parseJobs(parsedData.data)];
+    const { data } = parsedData;
+
+    // NOTE:
+    // based on https://serpapi.com/searches/245e315c7524f950/6644d67d7690dc208bd21e49.json
+    if (data.search_information?.jobs_results_state === "Fully empty")
+      return [null, []];
+
+    return [null, parseJobs(data)];
   } catch (error) {
     if (error instanceof Error) return [error];
   }

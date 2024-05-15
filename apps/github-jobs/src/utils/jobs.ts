@@ -5,7 +5,7 @@ import type { ApiResponse } from "../schemas/jobs";
 import type { Job, PromiseWithError } from "../types";
 
 export const parseJobs = (data: ApiResponse): Job[] => {
-  return data.jobs_results.map((job) => ({
+  return data.jobs_results!.map((job) => ({
     title: job.title,
     company: {
       name: job.company_name,

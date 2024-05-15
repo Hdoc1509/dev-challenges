@@ -22,6 +22,10 @@ const RelatedLinkSchema = z.object({
   text: z.string(),
 });
 
+const SearchInformationSchema = z.object({
+  jobs_results_state: z.string(),
+});
+
 const SearchMetadataSchema = z.object({
   id: z.string(),
   status: z.string(),
@@ -64,7 +68,9 @@ export type JobsResult = z.infer<typeof JobsResultSchema>;
 export const ApiResponseSchema = z.object({
   search_metadata: SearchMetadataSchema,
   search_parameters: SearchParametersSchema,
-  jobs_results: z.array(JobsResultSchema),
-  chips: z.array(ChipSchema),
+  jobs_results: z.array(JobsResultSchema).optional(),
+  chips: z.array(ChipSchema).optional(),
+  search_information: SearchInformationSchema.optional(),
+  error: z.string().optional(),
 });
 export type ApiResponse = z.infer<typeof ApiResponseSchema>;
