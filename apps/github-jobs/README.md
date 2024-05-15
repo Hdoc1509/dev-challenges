@@ -50,9 +50,17 @@ Challenge: Create a job search using an API. Use Front-end libraries like React 
 - [react-router](https://reactrouter.com/en/main)
 - [fontsource](https://fontsource.org/)
 
+### Extra features
+
+- Dark mode
+- Loading and Error states
+
 ### What I learned
 
-WIP
+- Use `react-router` to navigate between pages
+- Handle pagination
+- Handle errors and its data as a tuple. It reduces the usage of
+  try-catch/then-catch
 
 ## How To Use
 
