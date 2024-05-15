@@ -60,6 +60,7 @@
 @media (max-width: 767px) {
   .job-page {
     grid-template-columns: unset;
+    grid-template-rows: auto 1fr;
   }
 }
 .job-page__aside {
