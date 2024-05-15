@@ -47,7 +47,7 @@
       "search-form"
       "search-options"
       "main";
-    grid-template-rows: unset;
+    grid-template-rows: auto auto 1fr;
     grid-template-columns: unset;
   }
 }
