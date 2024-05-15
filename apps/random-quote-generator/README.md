@@ -31,10 +31,12 @@
 - [Sass](https://sass-lang.com/)
 - [BEM](https://getbem.com/)
 - [zod](https://zod.dev/)
-- [@hrc/button](https://www.npmjs.com/package/@hrc/button)
-- [@hrc/material-icons](https://www.npmjs.com/package/@hrc/material-icons)
-- [@hrc/spinner](https://www.npmjs.com/package/@hrc/spinner)
-- [@hrc/toggle-theme](https://www.npmjs.com/package/@hrc/toggle-theme)
+- [@hrc/button](https://hdoc1509.github.io/hrc/packages/button/)
+- [@hrc/material-icons](https://hdoc1509.github.io/hrc/packages/material-icons/)
+- [@hrc/spinner](https://hdoc1509.github.io/hrc/packages/spinner/)
+- [@hrc/toggle-theme](https://hdoc1509.github.io/hrc/packages/toggle-theme/)
+- [fontsource](https://fontsource.org/)
+- [@material-design-icons/font](https://marella.me/material-design-icons/demo/font/)
 
 ### Extra Features
 

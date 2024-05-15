@@ -4,6 +4,7 @@ import { parseError } from "../utils/error";
 import type { Quote } from "../schemas/quotes";
 
 export const useQuotes = () => {
+  // TODO: Use status logic from github-jobs
   const [isLoading, setIsLoading] = useState(false);
   const [quotes, setQuotes] = useState<Quote[]>([]);
   const [error, setError] = useState<Error | null>(null);

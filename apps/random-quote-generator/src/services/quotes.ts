@@ -2,6 +2,7 @@ import { quoteResponseSchema, type Quote } from "../schemas/quotes";
 
 const API_URL = "https://quote-garden.onrender.com/api/v3/quotes";
 
+// TODO: use error handling method from github-jobs
 export const getRandomQuote = async (): Promise<Quote> => {
   const controller = new AbortController();
   setTimeout(() => controller.abort(), 5000);
