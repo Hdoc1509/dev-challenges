@@ -31,14 +31,16 @@
 - [TypeScript](https://www.typescriptlang.org/)
 - [Vite](https://vitejs.dev/)
 - [Sass](https://sass-lang.com/)
-- [clsx](https://github.com/lukeed/clsx#readme)
 - [BEM](https://getbem.com/)
+- [clsx](https://github.com/lukeed/clsx#readme)
 - [zod](https://zod.dev/)
 - [zustand](https://docs.pmnd.rs/zustand/getting-started/introduction)
-- [@hrc/button](https://www.npmjs.com/package/@hrc/button)
-- [@hrc/material-icons](https://www.npmjs.com/package/@hrc/material-icons)
-- [@hrc/spinner](https://www.npmjs.com/package/@hrc/spinner)
-- [@hrc/toggle-theme](https://www.npmjs.com/package/@hrc/toggle-theme)
+- [@hrc/button](https://hdoc1509.github.io/hrc/packages/button/)
+- [@hrc/material-icons](https://hdoc1509.github.io/hrc/packages/material-icons/)
+- [@hrc/spinner](https://hdoc1509.github.io/hrc/packages/spinner/)
+- [@hrc/toggle-theme](https://hdoc1509.github.io/hrc/packages/toggle-theme/)
+- [fontsource](https://fontsource.org/)
+- [@material-design-icons/font](https://marella.me/material-design-icons/demo/font/)
 
 ### Extra Features
 
