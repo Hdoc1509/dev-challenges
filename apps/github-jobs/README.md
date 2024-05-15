@@ -41,14 +41,15 @@ Challenge: Create a job search using an API. Use Front-end libraries like React 
 - [clsx](https://github.com/lukeed/clsx#readme)
 - [zod](https://zod.dev/)
 - [zustand](https://docs.pmnd.rs/zustand/getting-started/introduction)
-- [@hrc/button](https://www.npmjs.com/package/@hrc/button)
-- [@hrc/input](https://www.npmjs.com/package/@hrc/input)
-- [@hrc/material-icons](https://www.npmjs.com/package/@hrc/material-icons)
-- [@hrc/spinner](https://www.npmjs.com/package/@hrc/spinner)
-- [@hrc/toggle-theme](https://www.npmjs.com/package/@hrc/toggle-theme)
+- [@hrc/button](https://hdoc1509.github.io/hrc/packages/button/)
+- [@hrc/input](https://hdoc1509.github.io/hrc/packages/input/)
+- [@hrc/material-icons](https://hdoc1509.github.io/hrc/packages/material-icons/)
+- [@hrc/spinner](https://hdoc1509.github.io/hrc/packages/spinner/)
+- [@hrc/toggle-theme](https://hdoc1509.github.io/hrc/packages/toggle-theme/)
 - [react-paginate](https://github.com/AdeleD/react-paginate)
 - [react-router](https://reactrouter.com/en/main)
 - [fontsource](https://fontsource.org/)
+- [@material-design-icons/font](https://marella.me/material-design-icons/demo/font/)
 
 ### Extra features
 
