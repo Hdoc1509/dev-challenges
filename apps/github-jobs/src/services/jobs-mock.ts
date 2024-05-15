@@ -4,7 +4,7 @@ import type { JobService } from "./jobs";
 
 const mockLocations = jobsMock.jobs_results.map(({ location }) => location);
 
-export const getJobs: JobService = (query, options = {}) => {
+export const getMockedJobs: JobService = (query, options = {}) => {
   const { location, fullTime } = options;
   const jobs = parseJobs(jobsMock);
 

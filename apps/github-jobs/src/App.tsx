@@ -1,6 +1,6 @@
 import { useCallback, useEffect } from "react";
 // import { getJobs } from "./services/jobs";
-import { getJobs } from "./services/jobs-mock";
+import { getMockedJobs } from "./services/jobs-mock";
 import { useJobsStore } from "./store/jobs";
 import { getLocationOption } from "./utils/jobs";
 import { Route, Routes } from "react-router-dom";
@@ -25,7 +25,7 @@ function App() {
 
       if (locationError) throw locationError;
 
-      const [jobsError, jobs] = await getJobs("front", { location });
+      const [jobsError, jobs] = await getMockedJobs("front", { location });
 
       if (jobsError) throw jobsError;
 

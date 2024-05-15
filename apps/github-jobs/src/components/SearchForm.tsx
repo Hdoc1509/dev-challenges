@@ -1,5 +1,5 @@
 // import { getJobs } from "../services/jobs";
-import { getJobs } from "../services/jobs-mock";
+import { getMockedJobs } from "../services/jobs-mock";
 import { useJobsStore } from "../store/jobs";
 import { getLocationOption } from "../utils/jobs";
 import { Button } from "@hrc/button";
@@ -27,7 +27,7 @@ export const SearchForm = () => {
 
       if (locationError) throw locationError;
 
-      const [error, jobs] = await getJobs(search, { ...options, location });
+      const [error, jobs] = await getMockedJobs(search, { ...options, location });
 
       if (error) throw error;
 
