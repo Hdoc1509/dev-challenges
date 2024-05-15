@@ -1,7 +1,7 @@
 // TODO: Reuse styles from JobCard in better way
 .job-details {
   margin-bottom: auto;
-  font-size: 0.75rem;
+  font-size: var(--fs-00);
   color: var(--text);
 
   &__header {
@@ -18,7 +18,7 @@
   }
   &__title {
     grid-area: title;
-    font-size: 1.5rem;
+    font-size: var(--fs-4);
   }
   &__created {
     grid-area: created;
@@ -64,7 +64,7 @@
     font-weight: 500;
   }
   &__company {
-    font-size: 1.125rem;
+    font-size: var(--fs-2);
     font-weight: 700;
   }
 

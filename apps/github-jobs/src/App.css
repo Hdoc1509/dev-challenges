@@ -68,7 +68,7 @@
   flex-direction: column;
   gap: 36px;
 
-  font-size: 0.875rem;
+  font-size: var(--fs-0);
 }
 .back-to-search {
   display: flex;

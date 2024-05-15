@@ -19,6 +19,7 @@
     "@hrc/spinner": "0.3.2",
     "@hrc/toggle-theme": "2.2.0",
     "@internal/components": "workspace:*",
+    "@lib/sass-utils": "workspace:*",
     "@material-design-icons/font": "^0.14.13",
     "clsx": "2.0.0",
     "react": "18.2.0",

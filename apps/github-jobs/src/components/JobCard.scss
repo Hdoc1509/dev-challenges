@@ -18,7 +18,7 @@
   outline: none;
 
   color: var(--text);
-  font-size: 0.75rem;
+  font-size: var(--fs-00);
   text-decoration: none;
 
   cursor: pointer;
@@ -67,11 +67,7 @@
   &__title {
     grid-area: title;
     text-decoration: var(--job-title-decoration);
-    font-size: 1.125rem;
-
-    @media (max-width: 767px) {
-      font-size: 1rem;
-    }
+    font-size: clamp(1rem, 2vw, var(--fs-2));
   }
 
   &__schedule-type {
