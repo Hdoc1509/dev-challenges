@@ -48,6 +48,8 @@
 - [react-loading-skeleton](https://www.npmjs.com/package/react-loading-skeleton)
 - [fontsource](https://fontsource.org/)
 - [@material-design-icons/font](https://marella.me/material-design-icons/demo/font/)
+- [Weather API](https://www.weatherapi.com/)
+- [Open-Meteo Weather Forecast API](https://open-meteo.com/en/docs)
 
 ### Extra Features
 
