@@ -50,6 +50,8 @@ Challenge: Create a job search using an API. Use Front-end libraries like React 
 - [react-router](https://reactrouter.com/en/main)
 - [fontsource](https://fontsource.org/)
 - [@material-design-icons/font](https://marella.me/material-design-icons/demo/font/)
+- [SerpApi Goggle Jobs API](https://serpapi.com/google-jobs-api)
+- [Weather API](https://www.weatherapi.com/)
 
 ### Extra features
 
