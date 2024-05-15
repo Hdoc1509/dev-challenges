@@ -34,6 +34,10 @@
     align-items: center;
     box-shadow: var(--box-shadow);
     font-family: "Roboto", sans-serif;
+
+    &__inner:placeholder-shown {
+      text-overflow: ellipsis;
+    }
   }
 
   [data-theme="dark"] & {

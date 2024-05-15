@@ -39,6 +39,9 @@
   --input-border-color-focus: transparent;
   --input-font-size: 0.75rem;
   --icon-size: 1.5em;
+  .input__inner:placeholder-shown {
+    text-overflow: ellipsis;
+  }
 
   @media (max-width: 767px) {
     width: 90%;
