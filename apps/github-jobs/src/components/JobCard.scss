@@ -18,6 +18,7 @@
   outline: none;
 
   color: var(--text);
+  font-size: 0.75rem;
   text-decoration: none;
 
   cursor: pointer;
@@ -55,13 +56,11 @@
 
     color: #bdbdbd;
     text-align: center;
-    font-size: 0.75rem;
     font-weight: 500;
   }
 
   &__company {
     grid-area: company;
-    font-size: 0.75rem;
     font-weight: 700;
   }
 
@@ -77,7 +76,6 @@
 
   &__schedule-type {
     grid-area: schedule;
-    font-size: 0.75rem;
     font-weight: 700;
 
     border: 1px solid var(--text-secondary);
@@ -102,7 +100,6 @@
     gap: 6px;
 
     color: var(--text-secondary);
-    font-size: 0.75rem;
     font-weight: 500;
     --icon-size: 1.5em;
   }
