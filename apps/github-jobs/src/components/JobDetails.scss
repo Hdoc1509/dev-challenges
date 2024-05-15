@@ -9,6 +9,10 @@
     column-gap: 16px;
     row-gap: 10px;
     margin-right: auto;
+
+    @media (max-width: 767px) {
+      grid-template-areas: "title" "schedule" "created";
+    }
   }
   &__title {
     grid-area: title;
@@ -23,6 +27,7 @@
     border: 1px solid var(--text-secondary);
     border-radius: 4px;
     padding: 6px 8px;
+    margin-right: auto;
 
     color: var(--text);
     font-size: 0.75rem;

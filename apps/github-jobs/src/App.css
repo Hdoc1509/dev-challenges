@@ -57,6 +57,11 @@
   grid-template-columns: 280px 1fr;
   gap: 32px;
 }
+@media (max-width: 767px) {
+  .job-page {
+    grid-template-columns: unset;
+  }
+}
 .job-page__aside {
   display: flex;
   flex-direction: column;
