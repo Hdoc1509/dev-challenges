@@ -13,6 +13,7 @@ const dailyParams = [
 export const getForecast = async (
   coords: LocationPosition,
 ): Promise<Forecast[]> => {
+  // TODO: Use error handling method from github-jobs
   const { latitude, longitude } = coords;
   const params = new URLSearchParams({
     latitude: latitude.toString(),

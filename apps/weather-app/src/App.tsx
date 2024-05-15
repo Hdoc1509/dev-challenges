@@ -14,6 +14,7 @@ import "./App.scss";
 let didInit = false;
 
 function App() {
+  // TODO: Use status logic from github-jobs
   const [error, setError] = useState<string | undefined>();
   const [showSearchDrawer, setShowSearchDrawer] = useState(false);
   const setWeather = useWeatherStore((s) => s.setWeather);

@@ -2,6 +2,7 @@ import { WEATHER_API } from "../config";
 import { SearchCityResponseSchema } from "../schemas/geolocation";
 
 export const searchCity = async (search: string) => {
+  // TODO: Use error handling method from github-jobs
   const params = new URLSearchParams({
     q: search,
     limit: "5",

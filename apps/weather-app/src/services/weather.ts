@@ -5,6 +5,7 @@ import type { LocationPosition } from "../utils/geolocation";
 export const getWeather = async (
   coords: LocationPosition,
 ): Promise<Weather> => {
+  // TODO: Use error handling method from github-jobs
   const { latitude, longitude } = coords;
 
   const params = new URLSearchParams({
