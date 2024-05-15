@@ -11,7 +11,7 @@ export const Results = ({ jobs }: { jobs: Job[] }) => {
           <JobCard key={job.id} job={job} />
         ))}
       </div>
-      <Pagination />
+      {jobs.length === 10 && <Pagination />}
     </>
   );
 };
