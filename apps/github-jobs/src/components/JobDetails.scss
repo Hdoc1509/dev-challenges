@@ -1,6 +1,7 @@
 // TODO: Reuse styles from JobCard in better way
 .job-details {
   margin-bottom: auto;
+  font-size: 0.75rem;
 
   &__header {
     display: grid;
@@ -30,7 +31,6 @@
     margin-right: auto;
 
     color: var(--text);
-    font-size: 0.75rem;
     font-weight: 700;
   }
 
@@ -62,7 +62,6 @@
 
     color: #bdbdbd;
     text-align: center;
-    font-size: 0.75rem;
     font-weight: 500;
   }
   &__company {
@@ -78,7 +77,6 @@
     gap: 8px;
 
     color: var(--text-secondary);
-    font-size: 0.75rem;
     font-weight: 500;
     --icon-size: 1.5em;
   }
