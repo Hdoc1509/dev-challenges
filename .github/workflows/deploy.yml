@@ -2,7 +2,7 @@ name: Deploy challenges
 
 on:
   push:
-    branches: [deploy-gh-pages]
+    branches: [master]
 
   workflow_dispatch:
 
