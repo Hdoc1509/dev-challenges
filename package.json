@@ -2,7 +2,7 @@
   "name": "@hdoc/dev-challenges",
   "private": true,
   "scripts": {
-    "ci": "bash ./scripts/ci.sh",
+    "build": "bash ./scripts/build.sh",
     "clean": "npkill",
     "lint": "eslint --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "gen:app": "hygen app new"
