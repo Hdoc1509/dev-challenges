@@ -11,6 +11,10 @@
   }
 }
 
+main {
+  font-size: 0.75rem;
+}
+
 .inputs-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
