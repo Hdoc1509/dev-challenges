@@ -1,3 +1,5 @@
+@use '@lib/sass-utils/mixins' as *;
+
 .input-wrapper {
   position: relative;
   --icon-size: 1.7em;
@@ -17,7 +19,7 @@
   margin: 2px 0;
   resize: none;
 
-  font-family: "Noto Sans JP", sans-serif;
+  @include font-variable("Noto Sans JP", sans-serif);
   font-size: 0.875rem;
 
   &::placeholder {

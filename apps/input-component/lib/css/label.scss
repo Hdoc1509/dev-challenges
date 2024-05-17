@@ -1,9 +1,11 @@
+@use '@lib/sass-utils/mixins' as *;
+
 .input-label {
   --text-color: #333;
   --error-color: #d32f2f;
   --focus-color: #2962ff;
 
-  font-family: "Noto Sans JP", sans-serif;
+  @include font-variable("Noto Sans JP", sans-serif);
   font-size: 0.75rem;
   font-weight: 400;
   color: var(--label-text, var(--text-color));
