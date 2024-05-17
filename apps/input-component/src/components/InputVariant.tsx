@@ -1,4 +1,3 @@
-import type { PropsWithChildren } from "react";
 import "./InputVariant.scss";
 
 type Props = {
@@ -8,7 +7,7 @@ type Props = {
 export const InputVariant = ({
   children,
   legend,
-}: PropsWithChildren<Props>) => {
+}: React.PropsWithChildren<Props>) => {
   return (
     <div className="input-variant">
       <p>{legend}</p>
