@@ -11,7 +11,7 @@ export const InputVariant = ({
 }: PropsWithChildren<Props>) => {
   return (
     <div className="input-variant">
-      <p className="input-variant__legend">{legend}</p>
+      <p>{legend}</p>
       {children}
     </div>
   );
