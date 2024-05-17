@@ -50,6 +50,24 @@ importers:
 
   apps/button-component:
     dependencies:
+      '@fontsource-variable/montserrat':
+        specifier: 5.0.17
+        version: 5.0.17
+      '@fontsource-variable/noto-sans-jp':
+        specifier: 5.0.19
+        version: 5.0.19
+      '@fontsource/montserrat':
+        specifier: 5.0.17
+        version: 5.0.17
+      '@fontsource/noto-sans-jp':
+        specifier: 5.0.19
+        version: 5.0.19
+      '@fontsource/poppins':
+        specifier: 5.0.8
+        version: 5.0.8
+      '@fontsource/ubuntu-mono':
+        specifier: 5.0.20
+        version: 5.0.20
       '@hrc/material-icons':
         specifier: 2.3.0
         version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
@@ -998,6 +1016,10 @@ packages:
     resolution: {integrity: sha512-1dBxFBTS2gOEtLqyMqy2zco4Gs7GyDs39cVOkIqp5ds8xJCfeB2HxlsabwMap9/8EfW66g51c5gCc6N+3rTKtg==}
     dev: false
 
+  /@fontsource-variable/noto-sans-jp@5.0.19:
+    resolution: {integrity: sha512-fAhvax6qyagBBf5x8WoIMxNsofgytN4e0cBn1eGgYHhbr4snWA+NxCHkaH+jlOv7nSv9ZzzsSusslkcsRJwGYg==}
+    dev: false
+
   /@fontsource-variable/raleway@5.0.19:
     resolution: {integrity: sha512-HR6JDmRqrjjkZnk0HhVR0vHCkDUuQdEwTaRz1nToWvej0gpC0riEdi7zmaQjaH12O7PBsO+bewqQFSUrA7tDhA==}
     dev: false
@@ -1010,6 +1032,10 @@ packages:
     resolution: {integrity: sha512-PAJc/7O0aR9qMLDKTwi3TpTUNzOEDs6p7TA/diakl309qaug/fWfv4LUPfx5uG0CvTMMfX2pGD54AwumFuaujg==}
     dev: false
 
+  /@fontsource/noto-sans-jp@5.0.19:
+    resolution: {integrity: sha512-N0KUmSqX6tlAlnqFQnDywj9e+4RithtLgFGlcRt/85EI8rmDYJFYQCZVhc+xTIk5Kgr1gLtNToHZzK61BTsWqw==}
+    dev: false
+
   /@fontsource/poppins@5.0.8:
     resolution: {integrity: sha512-P8owfYWluoUY5Nyzk4gT/L6LmLmseP6ezFWhj6VBUa5pRIdnCvNJpoQ6i/vhekjtJOfqX6nKlB+LCttoUl2GQQ==}
     dev: false
@@ -1020,6 +1046,10 @@ packages:
 
   /@fontsource/roboto@5.0.8:
     resolution: {integrity: sha512-XxPltXs5R31D6UZeLIV1td3wTXU3jzd3f2DLsXI8tytMGBkIsGcc9sIyiupRtA8y73HAhuSCeweOoBqf6DbWCA==}
+    dev: false
+
+  /@fontsource/ubuntu-mono@5.0.20:
+    resolution: {integrity: sha512-DR//BlexvmRZIV+j4AQLKIAEso5McT+3CiDqyJkuRAwUK6QzCnTt8fAB5+TKj3R/ww92nYDZpnb3KTjoozmgXg==}
     dev: false
 
   /@hrc/button@2.6.1(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2):

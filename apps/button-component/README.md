@@ -34,11 +34,12 @@
 - [TypeScript](https://www.typescriptlang.org/)
 - [Vite](https://vitejs.dev/)
 - [Sass](https://sass-lang.com/)
-- [clsx](https://github.com/lukeed/clsx)
 - [BEM](https://getbem.com/)
+- [clsx](https://github.com/lukeed/clsx)
 - [@hrc/material-icons](https://hdoc1509.github.io/hrc/packages/material-icons/)
 - [@hrc/toggle-theme](https://hdoc1509.github.io/hrc/packages/toggle-theme/)
 - [@hrc/type-utils](https://hdoc1509.github.io/hrc/packages/type-utils/)
+- [fontsource](https://fontsource.org/)
 - [@material-design-icons/font](https://marella.me/material-design-icons/demo/font/)
 
 ### What I learned
