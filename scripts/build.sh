@@ -1,5 +1,5 @@
 mkdir dist
-pnpm --filter button-component build
+pnpm --filter "*-component" build
 # pnpm run -r build
 
 for dist in apps/*/dist; do

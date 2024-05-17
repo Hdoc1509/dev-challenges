@@ -2,7 +2,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://hdoc-input-component.netlify.app">
+    <a href="https://hdoc1509.github.io/dev-challenges/input-component/">
       Solution
     </a>
     <span> | </span>
