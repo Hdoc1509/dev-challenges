@@ -1,4 +1,0 @@
-[build]
-	command = 'pnpm --filter button-component build'
-	publish = 'apps/button-component/dist'
-	ignore = 'bash ./scripts/docs-check.sh apps/button-component'
