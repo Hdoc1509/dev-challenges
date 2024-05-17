@@ -242,6 +242,24 @@ importers:
 
   apps/input-component:
     dependencies:
+      '@fontsource-variable/montserrat':
+        specifier: 5.0.17
+        version: 5.0.17
+      '@fontsource-variable/noto-sans-jp':
+        specifier: 5.0.19
+        version: 5.0.19
+      '@fontsource/montserrat':
+        specifier: 5.0.17
+        version: 5.0.17
+      '@fontsource/noto-sans-jp':
+        specifier: 5.0.19
+        version: 5.0.19
+      '@fontsource/poppins':
+        specifier: 5.0.8
+        version: 5.0.8
+      '@fontsource/ubuntu-mono':
+        specifier: 5.0.20
+        version: 5.0.20
       '@hrc/material-icons':
         specifier: 2.3.0
         version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)

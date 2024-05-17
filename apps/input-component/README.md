@@ -41,6 +41,7 @@
 - [@hrc/material-icons](https://hdoc1509.github.io/hrc/packages/material-icons/)
 - [@hrc/toggle-theme](https://hdoc1509.github.io/hrc/packages/toggle-theme/)
 - [@hrc/type-utils](https://hdoc1509.github.io/hrc/packages/type-utils/)
+- [fontsource](https://fontsource.org/)
 - [@material-design-icons/font](https://marella.me/material-design-icons/demo/font/)
 
 ### What I learned
