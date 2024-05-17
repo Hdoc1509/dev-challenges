@@ -40,9 +40,9 @@ export const Button = ({
 
   return (
     <button {...restProps} className={btnClass}>
-      {startIcon && <Icon name={startIcon} variant={iconStyle} size="small" />}
+      {startIcon && <Icon name={startIcon} variant={iconStyle} />}
       Default
-      {endIcon && <Icon name={endIcon} variant={iconStyle} size="small" />}
+      {endIcon && <Icon name={endIcon} variant={iconStyle} />}
     </button>
   );
 };

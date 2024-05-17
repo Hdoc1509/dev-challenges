@@ -36,4 +36,6 @@ $default-shadow: 0 2px 3px 0 #33333333;
   &--no-shadow {
     --button-shadow: none;
   }
+
+  --icon-size: 1.15em;
 }
