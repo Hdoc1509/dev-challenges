@@ -7,9 +7,9 @@ export const ButtonVariant = ({
   children,
 }: React.PropsWithChildren<Props>) => {
   return (
-    <span className="button-variant">
-      <p className="button-variant__name">{name}</p>
+    <div>
+      <p>{name}</p>
       {children}
-    </span>
+    </div>
   );
 };
