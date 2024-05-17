@@ -1,6 +1,6 @@
 import { Footer, HeaderWithTheme as Header } from "@internal/components";
 import { Input } from "../lib/Input";
-import { InputVariant } from "./components/InputVariant";
+import { InputVariant } from "./InputVariant";
 import "./App.css";
 
 function App() {
