@@ -8,8 +8,7 @@ for dist in apps/*/dist; do
   echo "Checking $dist"
   echo "App dirname: $app_name"
 
-  echo "Moving $dist to dist/$app_name"
-  # mv "$dist" dist
+  mv --verbose "$dist" dist
 
   echo
 done
