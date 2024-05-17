@@ -1,5 +1,3 @@
-import "./InputVariant.scss";
-
 type Props = {
   legend: string;
 };

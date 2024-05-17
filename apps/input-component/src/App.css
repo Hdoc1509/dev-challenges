@@ -20,3 +20,9 @@ main {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 16px;
 }
+
+.input-variant {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
