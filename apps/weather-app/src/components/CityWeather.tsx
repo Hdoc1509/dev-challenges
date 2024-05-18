@@ -34,6 +34,7 @@ export const CityWeather = ({
           className="weather__current"
           color="secondary"
           onClick={getCurrentLocationWeather}
+          aria-label="Get current location weather"
         >
           <Icon name="gps_fixed" />
         </ButtonIcon>

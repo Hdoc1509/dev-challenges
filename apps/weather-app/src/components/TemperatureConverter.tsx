@@ -13,6 +13,8 @@ export const TemperatureConverter = () => {
         <Button
           className={clsx("converter-button", { active: unit === "celsius" })}
           onClick={() => setUnit("celsius")}
+          aria-label="Change temperature unit to fahrenheit"
+          disabled={unit === "celsius"}
         >
           °C
         </Button>
@@ -23,6 +25,8 @@ export const TemperatureConverter = () => {
             active: unit === "fahrenheit",
           })}
           onClick={() => setUnit("fahrenheit")}
+          aria-label="Change temperature unit to celsius"
+          disabled={unit === "fahrenheit"}
         >
           °F
         </Button>
