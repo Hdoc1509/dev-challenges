@@ -1,4 +1,0 @@
-[build]
-  command = 'pnpm --filter random-quote-generator build'
-  publish = 'apps/random-quote-generator/dist'
-  ignore = 'bash ./scripts/docs-check.sh apps/random-quote-generator'
