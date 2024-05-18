@@ -18,7 +18,6 @@ export const CityWeather = ({
   getCurrentLocationWeather,
 }: Props) => {
   const weather = useWeatherStore((s) => s.weather);
-  const isLoading = weather == null;
 
   return (
     <aside className="weather">
@@ -45,7 +44,7 @@ export const CityWeather = ({
           alt="clouds"
           className="weather-image__background"
         />
-        {isLoading ? (
+        {weather == null ? (
           <div className="weather-image__loading">
             <Skeleton circle />
           </div>
