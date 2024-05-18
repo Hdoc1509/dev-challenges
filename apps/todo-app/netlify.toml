@@ -1,4 +1,0 @@
-[build]
-  command = 'pnpm --filter todo-app build'
-  publish = 'apps/todo-app/dist'
-  ignore = 'bash ./scripts/docs-check.sh apps/todo-app'

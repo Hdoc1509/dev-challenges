@@ -1,5 +1,5 @@
 mkdir dist
-pnpm --filter "*-component" --filter windbnb build
+pnpm --filter "*-component" --filter windbnb --filter todo-app build
 # pnpm run -r build
 
 for dist in apps/*/dist; do
