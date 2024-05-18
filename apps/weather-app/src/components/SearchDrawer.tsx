@@ -69,8 +69,11 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
           onChange={(e) => setSearch(e.target.value)}
           fullWidth
           required
+          disabled={!isOpen}
         />
-        <Button color="primary">Search</Button>
+        <Button color="primary" disabled={!isOpen}>
+          Search
+        </Button>
       </form>
       {isLoading ? (
         <RingSpinner />
