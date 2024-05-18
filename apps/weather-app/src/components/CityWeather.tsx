@@ -58,7 +58,7 @@ export const CityWeather = ({
           />
         )}
       </picture>
-      <WeatherDetails weather={weather} />
+      <WeatherDetails />
     </aside>
   );
 };

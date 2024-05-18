@@ -2,10 +2,10 @@ import { useWeatherStore } from "../store/weather";
 import { getCurrentDate } from "../utils/date";
 import Skeleton from "react-loading-skeleton";
 import { Icon } from "@hrc/material-icons";
-import type { Weather } from "../schemas/weather";
 import "./WeatherDetails.scss";
 
-export const WeatherDetails = ({ weather }: { weather: Weather | null }) => {
+export const WeatherDetails = () => {
+  const weather = useWeatherStore((s) => s.weather);
   const temperatureUnit = useWeatherStore((s) => s.temperatureUnit);
   const { current, location } = weather ?? {};
   const locationName = `${location?.name}, ${location?.country}`;
