@@ -2,7 +2,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://hdoc-windbnb.netlify.app">
+    <a href="https://hdoc1509.github.io/dev-challenges/windbnb/">
       Solution
     </a>
     <span> | </span>

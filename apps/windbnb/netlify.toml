@@ -1,4 +1,0 @@
-[build]
-  command = 'pnpm --filter windbnb build'
-  publish = 'apps/windbnb/dist'
-  ignore = 'bash ./scripts/docs-check.sh apps/windbnb'
