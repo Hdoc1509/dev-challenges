@@ -1,3 +1,4 @@
+import { Button } from "@hrc/button/dist/Button";
 import { Icon } from "@hrc/material-icons";
 import { RingSpinner } from "@hrc/spinner/dist/RingSpinner";
 import type { SearchCityResponse } from "../schemas/geolocation";
@@ -15,9 +16,11 @@ export const SearchResults = ({ isLoading, results, handleSelect }: Props) => {
   return (
     <ul className="search-drawer__results">
       {results.map((result) => (
-        <li key={result.id} onClick={() => handleSelect(result)} tabIndex={0}>
-          {result.name} - {result.country}
-          <Icon name="keyboard_arrow_right" />
+        <li key={result.id}>
+          <Button onClick={() => handleSelect(result)} disableShadow>
+            {result.name} - {result.country}
+            <Icon name="keyboard_arrow_right" />
+          </Button>
         </li>
       ))}
     </ul>

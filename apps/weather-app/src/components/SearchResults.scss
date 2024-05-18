@@ -6,21 +6,22 @@
   padding: 0;
   list-style: none;
 
-  li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 22px 12px;
-    font-size: var(--fs-1);
-    font-weight: 500;
-    --icon-color: transparent;
-
+  --button-justify-content: space-between;
+  --button-bg: transparent;
+  --button-bg-hover: transparent;
+  --button-padding: 22px 12px;
+  --button-radius: 0;
+  --button-text: currentcolor;
+  --button-font-size: var(--fs-1);
+  --button-font-weight: 500;
+  --icon-color: transparent;
+  .button {
     cursor: pointer;
 
-    &:hover, &:focus-visible {
-      outline: solid 1px var(--secondary-dark);
+    &:hover,
+    &:focus-visible {
       --icon-color: var(--secondary-dark);
+      outline: solid 1px var(--secondary-dark);
     }
   }
 }
