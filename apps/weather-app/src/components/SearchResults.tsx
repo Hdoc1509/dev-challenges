@@ -14,7 +14,7 @@ export const SearchResults = ({ isLoading, results, handleSelect }: Props) => {
   if (isLoading) return <RingSpinner />;
 
   return (
-    <ul className="search-drawer__results">
+    <menu className="search-drawer__results">
       {results.map((result) => (
         <li key={result.id}>
           <Button onClick={() => handleSelect(result)} disableShadow>
@@ -23,6 +23,6 @@ export const SearchResults = ({ isLoading, results, handleSelect }: Props) => {
           </Button>
         </li>
       ))}
-    </ul>
+    </menu>
   );
 };
