@@ -1,10 +1,7 @@
 mkdir dist
 
 # https://pnpm.io/cli/run#--aggregate-output
-pnpm --aggregate-output \
-  --filter "*-component" --filter windbnb --filter todo-app \
-  --filter "*-generator" \
-  build
+pnpm --aggregate-output --filter=\!weather-app --filter=\!github-jobs build
 # pnpm run -r build
 
 for dist in apps/*/dist; do

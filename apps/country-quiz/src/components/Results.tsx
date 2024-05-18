@@ -1,6 +1,7 @@
 import { getResultMessage } from "../utils/helpers";
 import { Button } from "@hrc/button/dist/Button";
 import type { Question } from "../types";
+import winnerUrl from "/winner.svg";
 import "./Results.scss";
 
 type Props = {
@@ -13,7 +14,7 @@ export const Results = ({ questions, tryAgain }: Props) => {
 
   return (
     <>
-      <img className="quiz-results-winner" src="/winner.svg" alt="winner" />
+      <img className="quiz-results-winner" src={winnerUrl} alt="winner" />
       <div className="quiz-results-message">
         <h2>{getResultMessage({ correct, total: questions.length })}</h2>
         <p className="quiz-results-points">

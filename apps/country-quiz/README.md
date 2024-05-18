@@ -2,7 +2,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://hdoc-country-quiz.netlify.app">
+    <a href="https://hdoc1509.github.io/dev-challenges/country-quiz/">
       Solution
     </a>
     <span> | </span>
