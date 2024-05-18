@@ -8,19 +8,25 @@ export const TemperatureConverter = () => {
   const setUnit = useWeatherStore((s) => s.setTemperatureUnit);
 
   return (
-    <section className="temperature-converter">
-      <Button
-        className={clsx("converter-button", { active: unit === "celsius" })}
-        onClick={() => setUnit("celsius")}
-      >
-        °C
-      </Button>
-      <Button
-        className={clsx("converter-button", { active: unit === "fahrenheit" })}
-        onClick={() => setUnit("fahrenheit")}
-      >
-        °F
-      </Button>
-    </section>
+    <menu className="temperature-converter">
+      <li>
+        <Button
+          className={clsx("converter-button", { active: unit === "celsius" })}
+          onClick={() => setUnit("celsius")}
+        >
+          °C
+        </Button>
+      </li>
+      <li>
+        <Button
+          className={clsx("converter-button", {
+            active: unit === "fahrenheit",
+          })}
+          onClick={() => setUnit("fahrenheit")}
+        >
+          °F
+        </Button>
+      </li>
+    </menu>
   );
 };
