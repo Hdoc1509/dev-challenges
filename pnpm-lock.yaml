@@ -301,7 +301,7 @@ importers:
         specifier: 5.0.2
         version: 5.0.2(@types/node@20.5.0)(sass@1.65.0)
 
-  apps/random-quote-generator:
+  apps/quote-generator:
     dependencies:
       '@fontsource-variable/montserrat':
         specifier: 5.0.17

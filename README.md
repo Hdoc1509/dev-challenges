@@ -12,7 +12,7 @@ There are some [packages](#packages) I created while completing them.
 - [x] [Input component](/apps/input-component/)
 - [x] [Windbnb](/apps/windbnb/)
 - [x] [Todo app](/apps/todo-app/)
-- [x] [Random quote generator](/apps/random-quote-generator/)
+- [x] [Random quote generator](/apps/quote-generator/)
 - [x] [Country quiz](/apps/country-quiz/)
 - [x] [Weather app](/apps/weather-app/)
 - [ ] [Github Jobs](/apps/github-jobs/)
