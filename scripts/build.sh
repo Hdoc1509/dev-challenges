@@ -1,7 +1,6 @@
 mkdir dist
 
-# https://pnpm.io/cli/run#--aggregate-output
-pnpm --aggregate-output --filter=\!github-jobs build
+pnpm --filter=\!github-jobs build
 # pnpm run -r build
 
 for dist in apps/*/dist; do
