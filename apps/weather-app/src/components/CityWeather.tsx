@@ -5,6 +5,7 @@ import { Button } from "@hrc/button/dist/Button";
 import { ButtonIcon } from "@hrc/button/dist/ButtonIcon";
 import { Icon } from "@hrc/material-icons";
 import { WeatherDetails } from "./WeatherDetails";
+import cloudBgUrl from "/cloud-background.png";
 import "./CityWeather.scss";
 
 type Props = {
@@ -39,7 +40,7 @@ export const CityWeather = ({
       </header>
       <picture className="weather-image">
         <img
-          src="/cloud-background.png"
+          src={cloudBgUrl}
           alt="clouds"
           className="weather-image__background"
         />
@@ -49,7 +50,7 @@ export const CityWeather = ({
           </div>
         ) : (
           <img
-            src={`/weather/${getWeatherIcon(
+            src={`/dev-challenges/weather-app/weather/${getWeatherIcon(
               weather.current.condition.code,
             )}.png`}
             alt="shower"

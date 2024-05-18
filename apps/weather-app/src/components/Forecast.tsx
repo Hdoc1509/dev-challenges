@@ -21,7 +21,9 @@ const ForecastDay = ({ day }: { day?: ForecastType }) => {
           <Skeleton />
         ) : (
           <img
-            src={`/weather/${getWeatherIcon(condition.code)}.png`}
+            src={`/dev-challenges/weather-app/weather/${getWeatherIcon(
+              condition.code,
+            )}.png`}
             alt={condition.name}
           />
         )}
