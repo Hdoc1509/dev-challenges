@@ -18,6 +18,7 @@
   font-size: var(--fs-2);
 
   &.active {
+    pointer-events: none;
     --button-text: var(--blue-dark);
     --button-bg: var(--text);
   }
