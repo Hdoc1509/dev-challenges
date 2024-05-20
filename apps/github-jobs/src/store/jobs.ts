@@ -9,6 +9,7 @@ type State = {
   error?: Error;
   searchQuery: string;
   searchOptions: SearchOptions;
+  pages: number;
 };
 
 type Action = {
@@ -17,6 +18,7 @@ type Action = {
   setError: (error: Error) => void;
   setSearchQuery: (query: string) => void;
   setSearchOptions: (options: SearchOptions) => void;
+  setPages: (pages: number) => void;
 };
 
 const initialState: State = {
@@ -29,6 +31,7 @@ const initialState: State = {
     location: undefined,
     page: 0,
   },
+  pages: 10,
 };
 
 export const useJobsStore = create<State & Action>()((set) => ({
@@ -39,4 +42,5 @@ export const useJobsStore = create<State & Action>()((set) => ({
   setError: (error: Error) => set({ error }),
   setSearchQuery: (query: string) => set({ searchQuery: query }),
   setSearchOptions: (options: SearchOptions) => set({ searchOptions: options }),
+  setPages: (pages: number) => set({ pages }),
 }));

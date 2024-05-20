@@ -15,6 +15,7 @@ export const SearchForm = () => {
   const setStatus = useJobsStore((s) => s.setStatus);
   const setError = useJobsStore((s) => s.setError);
   const setQuery = useJobsStore((s) => s.setSearchQuery);
+  const setPages = useJobsStore((s) => s.setPages);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -37,6 +38,7 @@ export const SearchForm = () => {
 
       setJobs(jobs);
       setStatus("success");
+      setPages(jobs.length < 10 ? 1 : 10);
     } catch (error) {
       // NOTE: All errors are thrown and handled manually
       setError(error as Error);

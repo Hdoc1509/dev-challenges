@@ -17,6 +17,7 @@ function App() {
   const setJobs = useJobsStore((s) => s.setJobs);
   const setStatus = useJobsStore((s) => s.setStatus);
   const setError = useJobsStore((s) => s.setError);
+  const setPages = useJobsStore((s) => s.setPages);
 
   const getInitialJobs = useCallback(async () => {
     setStatus("loading");
@@ -35,12 +36,13 @@ function App() {
 
       setJobs(jobs);
       setStatus("success");
+      if (jobs.length < 10) setPages(1);
     } catch (error) {
       // NOTE: All errors are thrown and handled manually
       setError(error as Error);
       setStatus("error");
     }
-  }, [setError, setJobs, setStatus]);
+  }, [setError, setJobs, setPages, setStatus]);
 
   useEffect(() => {
     if (!didInit) {

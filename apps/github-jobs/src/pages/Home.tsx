@@ -18,7 +18,7 @@ export const Home = () => {
         {status === "loading" && <RingSpinner size="large" />}
         {status === "error" && <h3>{error?.message}</h3>}
         {status === "success" && <Results jobs={jobs} />}
-        {jobs.length === 10 && <Pagination />}
+        <Pagination />
       </main>
     </div>
   );

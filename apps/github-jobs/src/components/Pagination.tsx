@@ -11,9 +11,11 @@ import "./Pagination.scss";
 export const Pagination = () => {
   const search = useJobsStore((s) => s.searchQuery);
   const options = useJobsStore((s) => s.searchOptions);
+  const pages = useJobsStore((s) => s.pages);
   const setJobs = useJobsStore((s) => s.setJobs);
   const setError = useJobsStore((s) => s.setError);
   const setStatus = useJobsStore((s) => s.setStatus);
+  const setPages = useJobsStore((s) => s.setPages);
 
   const handlePageChange = useCallback(
     async (newPage: number) => {
@@ -38,13 +40,14 @@ export const Pagination = () => {
 
         setJobs(jobs);
         setStatus("success");
+        if (jobs.length < 10) setPages(newPage + 1);
       } catch (error) {
         // NOTE: All errors are thrown and handled manually
         setError(error as Error);
         setStatus("error");
       }
     },
-    [options, search, setError, setJobs, setStatus],
+    [options, search, setError, setJobs, setPages, setStatus],
   );
 
   return (
@@ -54,7 +57,7 @@ export const Pagination = () => {
         breakLabel="..."
         nextLabel={<Icon name="keyboard_arrow_right" />}
         previousLabel={<Icon name="keyboard_arrow_left" />}
-        pageCount={10}
+        pageCount={pages}
         marginPagesDisplayed={1}
         onPageChange={({ selected }) => void handlePageChange(selected)}
       />
