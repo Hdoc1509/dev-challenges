@@ -1,5 +1,6 @@
 import { parseJobs } from "../utils/jobs";
 import jobsMock from "../mocks/jobs.json";
+import { randomInt } from "../utils/number";
 import type { JobService } from "./jobs";
 
 const mockLocations = jobsMock.jobs_results.map(({ location }) => location);
@@ -7,6 +8,7 @@ const mockLocations = jobsMock.jobs_results.map(({ location }) => location);
 export const getMockedJobs: JobService = (query, options = {}) => {
   const { location, fullTime } = options;
   const jobs = parseJobs(jobsMock);
+  const endIndexSlice = randomInt(7, 10);
 
   const filtered = jobs.filter((job) => {
     const queryMatch =
@@ -35,5 +37,8 @@ export const getMockedJobs: JobService = (query, options = {}) => {
     return Promise.resolve([new Error(`No jobs found for: ${query}`)]);
   }
 
-  return Promise.resolve([null, filtered.sort(() => Math.random() - 0.5)]);
+  const sorted = filtered.sort(() => Math.random() - 0.5);
+  const sliced = sorted.slice(0, endIndexSlice);
+
+  return Promise.resolve([null, sliced]);
 };
