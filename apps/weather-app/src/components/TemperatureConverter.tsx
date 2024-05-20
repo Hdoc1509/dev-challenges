@@ -1,4 +1,3 @@
-import { clsx } from "clsx";
 import { useWeatherStore } from "../store/weather";
 import { Button } from "@hrc/button/dist/Button";
 import "./TemperatureConverter.scss";
@@ -11,7 +10,7 @@ export const TemperatureConverter = () => {
     <menu className="temperature-converter">
       <li>
         <Button
-          className={clsx("converter-button", { active: unit === "celsius" })}
+          className="converter-button"
           onClick={() => setUnit("celsius")}
           aria-label="Change temperature unit to fahrenheit"
           disabled={unit === "celsius"}
@@ -21,9 +20,7 @@ export const TemperatureConverter = () => {
       </li>
       <li>
         <Button
-          className={clsx("converter-button", {
-            active: unit === "fahrenheit",
-          })}
+          className="converter-button"
           onClick={() => setUnit("fahrenheit")}
           aria-label="Change temperature unit to celsius"
           disabled={unit === "fahrenheit"}
