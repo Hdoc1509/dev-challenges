@@ -35,5 +35,5 @@ export const getMockedJobs: JobService = (query, options = {}) => {
     return Promise.resolve([new Error(`No jobs found for: ${query}`)]);
   }
 
-  return Promise.resolve([null, filtered]);
+  return Promise.resolve([null, filtered.sort(() => Math.random() - 0.5)]);
 };
