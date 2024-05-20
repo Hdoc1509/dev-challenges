@@ -10,7 +10,6 @@ export const TemperatureConverter = () => {
     <menu className="temperature-converter">
       <li>
         <Button
-          className="converter-button"
           onClick={() => setUnit("celsius")}
           aria-label="Change temperature unit to fahrenheit"
           disabled={unit === "celsius"}
@@ -20,7 +19,6 @@ export const TemperatureConverter = () => {
       </li>
       <li>
         <Button
-          className="converter-button"
           onClick={() => setUnit("fahrenheit")}
           aria-label="Change temperature unit to celsius"
           disabled={unit === "fahrenheit"}

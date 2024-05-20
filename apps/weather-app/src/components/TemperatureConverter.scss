@@ -4,12 +4,7 @@
   margin-left: auto;
 
   list-style: none;
-}
 
-.converter-button {
-  aspect-ratio: 1 / 1;
-
-  width: 40px;
   --button-bg: #585676;
   --button-bg-hover: #37364a;
   --button-bg-disabled: var(--text);
@@ -17,7 +12,11 @@
   --button-radius: 40px;
   --button-text: var(--text);
   --button-text-disabled: var(--blue-dark);
-  font-family: inherit;
   --button-font-weight: 700;
-  font-size: var(--fs-2);
+  .button {
+    aspect-ratio: 1 / 1;
+    width: 40px;
+    font-family: inherit;
+    font-size: var(--fs-2);
+  }
 }
