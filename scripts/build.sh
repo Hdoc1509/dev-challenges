@@ -1,6 +1,6 @@
 mkdir dist
 
-pnpm --filter=\!github-jobs build
+pnpm --filter=\!weather-app --filter=\!github-jobs build
 # pnpm run -r build
 
 for dist in apps/*/dist; do
