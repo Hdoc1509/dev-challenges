@@ -11,7 +11,7 @@ export const TemperatureConverter = () => {
       <li>
         <Button
           onClick={() => setUnit("celsius")}
-          aria-label="Change temperature unit to fahrenheit"
+          aria-label="Change temperature unit to celsius"
           disabled={unit === "celsius"}
         >
           °C
@@ -20,7 +20,7 @@ export const TemperatureConverter = () => {
       <li>
         <Button
           onClick={() => setUnit("fahrenheit")}
-          aria-label="Change temperature unit to celsius"
+          aria-label="Change temperature unit to fahrenheit"
           disabled={unit === "fahrenheit"}
         >
           °F
