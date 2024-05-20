@@ -3,6 +3,7 @@ import { RingSpinner } from "@hrc/spinner/dist/RingSpinner";
 import { SearchForm } from "../components/SearchForm";
 import { SearchOptions } from "../components/SearchOptions";
 import { Results } from "../components/Results";
+import { Pagination } from "../components/Pagination";
 
 export const Home = () => {
   const status = useJobsStore((s) => s.status);
@@ -17,6 +18,7 @@ export const Home = () => {
         {status === "loading" && <RingSpinner size="large" />}
         {status === "error" && <h3>{error?.message}</h3>}
         {status === "success" && <Results jobs={jobs} />}
+        {jobs.length === 10 && <Pagination />}
       </main>
     </div>
   );
