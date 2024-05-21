@@ -1,0 +1,56 @@
+body {
+  position: relative;
+  display: grid;
+  grid-template-columns: 460px 1fr;
+  grid-template-rows: 100svh;
+
+  @media (max-width: 767px) {
+    --main-padding: 72px 24px;
+    --weather-padding: 12px;
+    --highlights-grid-columns: 1fr;
+  }
+  @media (max-width: 1440px) {
+    grid-template-columns: 1fr;
+    --forecast-grid-columns: 1fr 1fr;
+  }
+  @media (min-width: 1440px) {
+    --main-padding: 120px;
+  }
+
+  &[data-error] {
+    grid-template-columns: unset;
+  }
+
+  &[data-error]::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('/cloud-background.png');
+    background-repeat: space;
+    background-position: center;
+    opacity: 0.1;
+  }
+}
+
+.App__error {
+  margin-block: auto;
+  text-align: center;
+  font-size: var(--fs-fluid-7);
+  text-wrap: balance;
+}
+
+.App > main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 54px;
+
+  padding: var(--main-padding, 150px);
+  padding-block: 42px;
+  overflow: hidden auto;
+
+  & > footer {
+    margin: 0;
+    margin-top: auto;
+  }
+}
