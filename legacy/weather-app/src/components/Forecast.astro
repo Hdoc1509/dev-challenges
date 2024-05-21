@@ -1,1 +1,17 @@
-<div class="forecast">forecast</div>
+---
+import ForecastItem from "./ForecastItem.astro";
+
+const days = [1, 2, 3, 4, 5];
+---
+
+<section>
+  {days.map(() => <ForecastItem />)}
+</section>
+
+<style>
+  section {
+    display: grid;
+    grid-template-columns: var(--forecast-grid-columns, repeat(5, 1fr));
+    gap: 26px;
+  }
+</style>
