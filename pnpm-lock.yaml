@@ -565,9 +565,15 @@ importers:
       '@fontsource/raleway':
         specifier: 5.0.18
         version: 5.0.18
+      '@lib/sass-utils':
+        specifier: workspace:*
+        version: link:../../libs/sass-utils
       astro:
         specifier: ^4.8.6
-        version: 4.8.6(typescript@5.4.5)
+        version: 4.8.6(@types/node@20.5.0)(sass@1.77.2)(typescript@5.4.5)
+      sass:
+        specifier: 1.77.2
+        version: 1.77.2
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
@@ -2624,7 +2630,6 @@ packages:
 
   /@types/node@20.5.0:
     resolution: {integrity: sha512-Mgq7eCtoTjT89FqNoTzzXg2XvCi5VMhRV6+I2aYanc6kQCBImeNaAYRs/DyoVqk1YEUJK5gN9VO7HRIdz4Wo3Q==}
-    dev: true
 
   /@types/prop-types@15.7.12:
     resolution: {integrity: sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q==}
@@ -3280,7 +3285,7 @@ packages:
       - typescript
     dev: true
 
-  /astro@4.8.6(typescript@5.4.5):
+  /astro@4.8.6(@types/node@20.5.0)(sass@1.77.2)(typescript@5.4.5):
     resolution: {integrity: sha512-psHIfK+e+bMPhRwghV9yCGH/uc1jvY4DHmDZdoEepax9yA7kzYH0wt3dpkqlcrO2zxl5jzSC3DmqZfkD6wnW9A==}
     engines: {node: ^18.17.1 || ^20.3.0 || >=21.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
@@ -3342,7 +3347,7 @@ packages:
       tsconfck: 3.0.3(typescript@5.4.5)
       unist-util-visit: 5.0.0
       vfile: 6.0.1
-      vite: 5.2.11
+      vite: 5.2.11(@types/node@20.5.0)(sass@1.77.2)
       vitefu: 0.2.5(vite@5.2.11)
       which-pm: 2.2.0
       yargs-parser: 21.1.1
@@ -6690,6 +6695,16 @@ packages:
       immutable: 4.3.4
       source-map-js: 1.0.2
 
+  /sass@1.77.2:
+    resolution: {integrity: sha512-eb4GZt1C3avsX3heBNlrc7I09nyT00IUuo4eFhAbeXWU2fvA7oXI53SxODVAA+zgZCk9aunAZgO+losjR3fAwA==}
+    engines: {node: '>=14.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.6.0
+      immutable: 4.3.4
+      source-map-js: 1.2.0
+    dev: false
+
   /scheduler@0.23.0:
     resolution: {integrity: sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==}
     dependencies:
@@ -7468,7 +7483,7 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vite@5.2.11:
+  /vite@5.2.11(@types/node@20.5.0)(sass@1.77.2):
     resolution: {integrity: sha512-HndV31LWW05i1BLPMUCE1B9E9GFbOu1MbenhS58FuK6owSO5qHm7GiCotrNY1YE5rMeQSFBGmT5ZaLEjFizgiQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -7496,9 +7511,11 @@ packages:
       terser:
         optional: true
     dependencies:
+      '@types/node': 20.5.0
       esbuild: 0.20.2
       postcss: 8.4.38
       rollup: 4.17.2
+      sass: 1.77.2
     optionalDependencies:
       fsevents: 2.3.3
     dev: false
@@ -7511,7 +7528,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 5.2.11
+      vite: 5.2.11(@types/node@20.5.0)(sass@1.77.2)
     dev: false
 
   /vitest@0.34.6(sass@1.65.0):

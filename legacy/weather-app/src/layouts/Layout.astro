@@ -30,8 +30,10 @@ const { title } = Astro.props;
   </body>
 </html>
 <style lang="scss" is:global>
+  @use "@lib/sass-utils/mixins" as *;
+
   :root {
-    font-family: 'Raleway', sans-serif;
+    @include font-variable("Raleway", sans-serif);
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;

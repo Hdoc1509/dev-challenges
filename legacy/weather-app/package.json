@@ -15,7 +15,9 @@
     "@fontsource-variable/raleway": "5.0.19",
     "@fontsource/montserrat": "5.0.17",
     "@fontsource/raleway": "5.0.18",
+    "@lib/sass-utils": "workspace:*",
     "astro": "^4.8.6",
+    "sass": "1.77.2",
     "typescript": "^5.4.5"
   },
   "devDependencies": {
