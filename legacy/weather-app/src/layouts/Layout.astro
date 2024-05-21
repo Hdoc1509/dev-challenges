@@ -20,32 +20,65 @@ const { title } = Astro.props;
     <slot />
   </body>
 </html>
-<style is:global>
+<style lang="scss" is:global>
   :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
-    );
+    font-family: 'Raleway', sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+
+    --blue: #1e213a;
+    --blue-dark: #110e3c;
+    --blue-darkest: #100e1d;
+    --primary: #3c47e9;
+    --primary-hover: #1925d9;
+    --primary-text: var(--text);
+    --secondary: #6e707a;
+    --secondary-hover: #56575f;
+    --secondary-dark: #616475;
+
+    --text: #e7e7eb;
+    --text-secondary: #a09fb1;
+    --text-dark: #88869d;
+
+    --icon-size: var(--fs-4);
+
+    --credits-text: var(--text-secondary);
   }
-  html {
-    font-family: system-ui, sans-serif;
-    background: #13151a;
-    background-size: 224px;
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
   }
-  code {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      Liberation Mono,
-      DejaVu Sans Mono,
-      Bitstream Vera Sans Mono,
-      Courier New,
-      monospace;
+
+  body {
+    min-width: 320px;
+    background-color: var(--blue-darkest);
+    color: var(--text);
+  }
+
+  .no-scroll {
+    overflow: hidden;
+  }
+
+  .react-loading-skeleton {
+    --base-color: var(--text-secondary) !important;
+    --highlight-color: var(--text) !important;
+    width: var(--skeleton-width, 100%);
+    height: var(--skeleton-height);
+    border-radius: var(--skeleton-radius, 0.25rem);
+    aspect-ratio: var(--skeleton-aspect-ratio);
+  }
+
+  .flex-1 {
+    flex: 1;
+  }
+
+  .button {
+    cursor: pointer;
   }
 </style>
