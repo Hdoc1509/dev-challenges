@@ -1,15 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import CityWeather from "@/components/CityWeather.astro";
+import Forecast from "@/components/Forecast.astro";
+import Highlights from "@/components/Highlights.astro";
+import SearchDrawer from "@/components/SearchDrawer.astro";
+import TemperatureConverter from "@/components/TemperatureConverter.astro";
 import "../styles/index.scss";
 ---
 
 <Layout title="Weather App - DevChallenges">
-  <div class="city-weather">city weather</div>
-  <div class="search-drawer">search drawer</div>
+  <CityWeather />
+  <SearchDrawer />
   <main>
-    <div class="temperature-converter">temperature converter</div>
-    <div class="forecast">forecast</div>
-    <div class="highlights">highlights</div>
+    <TemperatureConverter />
+    <Forecast />
+    <Highlights />
     <footer>footer</footer>
   </main>
 </Layout>
