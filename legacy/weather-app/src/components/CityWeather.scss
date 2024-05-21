@@ -1,0 +1,58 @@
+.weather {
+  display: grid;
+  grid-template-rows: auto 2fr 2fr 1fr;
+  align-items: center;
+
+  background-color: var(--blue);
+  padding-block: var(--weather-padding, 42px);
+
+  text-align: center;
+
+  @media (max-width: 767px) {
+    background-size: 150%;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: var(--weather-padding, 42px);
+  }
+
+  --button-text: var(--text);
+  &__search {
+    --button-radius: 0;
+    font-family: inherit;
+    font-size: var(--fs-1);
+  }
+  &__current {
+    --button-radius: 50%;
+  }
+
+  .weather-image {
+    position: relative;
+
+    &__background {
+      width: 100%;
+      margin-inline: auto;
+      opacity: 0.1;
+    }
+    &__icon {
+      position: absolute;
+      inset: 0;
+      margin: auto;
+
+      @media (max-width: 767px) {
+        width: 150px;
+      }
+    }
+    &__loading {
+      position: absolute;
+      display: grid;
+      inset: 0;
+      place-items: center;
+
+      --skeleton-aspect-ratio: 1 / 1;
+      --skeleton-width: 180px;
+    }
+  }
+}
