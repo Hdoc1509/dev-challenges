@@ -11,6 +11,10 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.7.0",
+    "@fontsource-variable/montserrat": "5.0.17",
+    "@fontsource-variable/raleway": "5.0.19",
+    "@fontsource/montserrat": "5.0.17",
+    "@fontsource/raleway": "5.0.18",
     "astro": "^4.8.6",
     "typescript": "^5.4.5"
   },
