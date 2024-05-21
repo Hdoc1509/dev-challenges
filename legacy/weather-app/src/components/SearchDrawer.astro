@@ -1,1 +1,12 @@
-<div class="search-drawer">search drawer</div>
+---
+import "./SearchDrawer.scss";
+---
+
+<div class="search-drawer">
+  <button class="search-drawer__close">x</button>
+  <form class="search-drawer__form">
+    <input placeholder="search location" required />
+    <button>Search</button>
+  </form>
+  <div class="search-drawer__results">Results</div>
+</div>
