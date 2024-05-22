@@ -28,4 +28,6 @@ export type Wind = Weather["current"]["wind"];
 export type LocationCoords = {
   latitude: number;
   longitude: number;
-}
+};
+
+export type PromiseWithError<T> = Promise<[Error] | [null, T]>;
