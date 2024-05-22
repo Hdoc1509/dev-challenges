@@ -1,4 +1,5 @@
 ---
+import SearchResults from "./SearchResults.astro";
 import "./SearchDrawer.scss";
 ---
 
@@ -8,5 +9,5 @@ import "./SearchDrawer.scss";
     <input placeholder="search location" required />
     <button>Search</button>
   </form>
-  <div class="search-drawer__results">Results</div>
+  <SearchResults />
 </div>
