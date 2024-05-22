@@ -1,1 +1,33 @@
-<div class="highlights">highlights</div>
+---
+import HighlightValue from "./HighlightValue.astro";
+import "./Highlights.scss";
+
+const highlights = {
+  wind: {
+    speed: 11.9,
+  },
+  humidity: 74,
+  visibility: 6,
+  airPressure: 995,
+};
+---
+
+<section class="highlights">
+  <h2>{`Today's Highlights`}</h2>
+  <section class="wind">
+    <h3>Wind</h3>
+    <HighlightValue value={highlights.wind.speed} unit="mph" />
+  </section>
+  <section class="humidity">
+    <h3>Humidity</h3>
+    <HighlightValue value={highlights.humidity} unit="%" />
+  </section>
+  <section class="visibility">
+    <h3>Visibility</h3>
+    <HighlightValue value={highlights.visibility} unit="miles" />
+  </section>
+  <section class="air-pressure">
+    <h3>Air Pressure</h3>
+    <HighlightValue value={highlights.airPressure} unit="mb" />
+  </section>
+</section>
