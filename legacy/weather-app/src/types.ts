@@ -24,3 +24,8 @@ export type Weather = {
 };
 
 export type Wind = Weather["current"]["wind"];
+
+export type LocationCoords = {
+  latitude: number;
+  longitude: number;
+}
