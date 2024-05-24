@@ -7,8 +7,8 @@ export const getWeather = async (
 ): PromiseWithError<Weather> => {
   const { latitude, longitude } = coords;
   const params = new URLSearchParams({
-    lat: `${latitude}`,
-    lon: `${longitude}`,
+    latitude: `${latitude}`,
+    longitude: `${longitude}`,
   });
 
   try {

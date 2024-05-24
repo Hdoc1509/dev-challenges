@@ -3,8 +3,8 @@ import type { APIRoute } from "astro";
 
 export const GET: APIRoute = async ({ request }) => {
   const params = new URL(request.url).searchParams;
-  const latitude = params.get("lat");
-  const longitude = params.get("lon");
+  const latitude = params.get("latitude");
+  const longitude = params.get("longitude");
 
   if (!latitude || !longitude)
     return new Response(
