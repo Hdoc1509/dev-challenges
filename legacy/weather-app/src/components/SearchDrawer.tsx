@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { clsx } from "clsx";
 import { searchCity } from "../services/geolocation";
-import { getWeather } from "../services/weather";
+import { getWeather } from "@/services/client/weather";
 import { useWeatherStore } from "@/store/weather";
 import { Button } from "@hrc/button/dist/Button";
 import { Icon } from "@hrc/material-icons";

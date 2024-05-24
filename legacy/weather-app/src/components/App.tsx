@@ -1,9 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
 import { useWeatherStore } from "@/store/weather";
 import { getCurrentPosition } from "@/utils/geolocation";
-import { getWeather } from "@/services/weather";
+import { getWeather } from "@/services/client/weather";
 import { getForecast } from "@/services/forecast";
-import { parseWeather } from "@/utils/weather";
 import { Footer } from "@internal/components";
 import { CityWeather } from "./CityWeather";
 import { Forecast } from "./Forecast";
@@ -39,7 +38,7 @@ function App() {
 
         if (weatherError) return Promise.reject(weatherError.message);
 
-        setWeather(parseWeather(weather))
+        setWeather(weather)
 
         void getForecast(coords).then(setForecast);
       })
