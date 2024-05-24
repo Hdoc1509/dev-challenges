@@ -1,25 +1,21 @@
 import * as z from "zod";
 
-const LocationSchema = z
-  .object({
-    name: z.string(),
-    region: z.string(),
-    country: z.string(),
-    lat: z.number(),
-    lon: z.number(),
-    tz_id: z.string(),
-    localtime_epoch: z.number(),
-    localtime: z.string(),
-  })
-  .transform(({ name, country }) => ({ name, country }));
+const LocationSchema = z.object({
+  name: z.string(),
+  region: z.string(),
+  country: z.string(),
+  lat: z.number(),
+  lon: z.number(),
+  tz_id: z.string(),
+  localtime_epoch: z.number(),
+  localtime: z.string(),
+});
 
-const ConditionSchema = z
-  .object({
-    text: z.string(),
-    icon: z.string(),
-    code: z.number(),
-  })
-  .transform(({ text, code }) => ({ name: text, code }));
+const ConditionSchema = z.object({
+  text: z.string(),
+  icon: z.string(),
+  code: z.number(),
+});
 
 const CurrentSchema = z.object({
   last_updated_epoch: z.number(),

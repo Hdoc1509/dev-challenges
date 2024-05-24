@@ -7,7 +7,10 @@ export const parseWeather = (weather: WeatherResponse): Weather => {
   return {
     location,
     current: {
-      condition: current.condition,
+      condition: {
+        name: current.condition.text,
+        code: current.condition.code,
+      },
       temperature: {
         celsius: current.temp_c,
         fahrenheit: current.temp_f,
