@@ -1,3 +1,5 @@
+import type { LocationCoords } from "@/types";
+
 const ERROR = {
   PERMISSION_DENIED: 1,
   POSITION_UNAVAILABLE: 2,
@@ -15,13 +17,7 @@ const getErrorMessage = (code: number) => {
     return "The request to get user location timed out, please try again";
 };
 
-// TODO: Use LocationCoords from @/types
-export type LocationPosition = {
-  latitude: number;
-  longitude: number;
-};
-
-export const getCurrentPosition = async (): Promise<LocationPosition> => {
+export const getCurrentPosition = async (): Promise<LocationCoords> => {
   return new Promise((resolve, reject) => {
     navigator.geolocation.getCurrentPosition(
       ({ coords }) => {
