@@ -10,7 +10,7 @@ import { RingSpinner } from "@hrc/spinner/dist/RingSpinner";
 import { SearchResults } from "./SearchResults";
 import type { SearchCityResponse } from "@/schemas/geolocation";
 import "./SearchDrawer.scss";
-import { getForecast } from "../services/forecast";
+import { getForecast } from "@/services/forecast/client";
 
 type Props = {
   isOpen?: boolean;
