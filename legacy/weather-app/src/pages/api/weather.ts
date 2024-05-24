@@ -1,5 +1,4 @@
 import { getWeather } from "@/services/server/weather";
-import { parseWeather } from "@/utils/weather";
 import type { APIRoute } from "astro";
 
 export const GET: APIRoute = async ({ request }) => {
@@ -34,7 +33,7 @@ export const GET: APIRoute = async ({ request }) => {
       status: 500,
     });
 
-  return new Response(JSON.stringify(parseWeather(weather)), {
+  return new Response(JSON.stringify(weather), {
     status: 200,
     headers: {
       "Content-Type": "application/json",
