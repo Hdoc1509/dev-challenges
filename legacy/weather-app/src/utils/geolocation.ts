@@ -17,20 +17,19 @@ const getErrorMessage = (code: number) => {
     return "The request to get user location timed out, please try again";
 };
 
-export const getCurrentPosition =
-  async (): PromiseWithError<LocationCoords> => {
-    return new Promise((resolve) => {
-      navigator.geolocation.getCurrentPosition(
-        ({ coords }) => {
-          const { latitude, longitude } = coords;
+export const getCurrentCoords = async (): PromiseWithError<LocationCoords> => {
+  return new Promise((resolve) => {
+    navigator.geolocation.getCurrentPosition(
+      ({ coords }) => {
+        const { latitude, longitude } = coords;
 
-          resolve([null, { latitude, longitude }]);
-        },
-        (error) => {
-          const { code } = error;
+        resolve([null, { latitude, longitude }]);
+      },
+      (error) => {
+        const { code } = error;
 
-          resolve([new Error(getErrorMessage(code))]);
-        },
-      );
-    });
-  };
+        resolve([new Error(getErrorMessage(code))]);
+      },
+    );
+  });
+};

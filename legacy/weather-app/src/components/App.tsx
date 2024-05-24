@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { useWeatherStore } from "@/store/weather";
-import { getCurrentPosition } from "@/utils/geolocation";
+import { getCurrentCoords } from "@/utils/geolocation";
 import { getWeather } from "@/services/weather/client";
 import { getForecast } from "@/services/forecast/client";
 import { Footer } from "@internal/components";
@@ -34,7 +34,7 @@ function App() {
     clearData();
 
     try {
-      const [coordsError, coords] = await getCurrentPosition();
+      const [coordsError, coords] = await getCurrentCoords();
 
       if (coordsError) throw coordsError;
 
