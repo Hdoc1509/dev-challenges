@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { clsx } from "clsx";
 import { searchCity } from "@/services/geolocation/client";
 import { getWeather } from "@/services/weather/client";
+import { getForecast } from "@/services/forecast/client";
 import { useWeatherStore } from "@/store/weather";
 import { Button } from "@hrc/button/dist/Button";
 import { Icon } from "@hrc/material-icons";
@@ -10,7 +11,6 @@ import { RingSpinner } from "@hrc/spinner/dist/RingSpinner";
 import { SearchResults } from "./SearchResults";
 import type { SearchCityResponse } from "@/schemas/geolocation";
 import "./SearchDrawer.scss";
-import { getForecast } from "@/services/forecast/client";
 
 type Props = {
   isOpen?: boolean;
