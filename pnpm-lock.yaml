@@ -571,12 +571,27 @@ importers:
       '@fontsource/raleway':
         specifier: 5.0.18
         version: 5.0.18
+      '@hrc/button':
+        specifier: 2.6.1
+        version: 2.6.1(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(typescript@5.4.5)
+      '@hrc/input':
+        specifier: 0.9.1
+        version: 0.9.1(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(typescript@5.4.5)
+      '@hrc/material-icons':
+        specifier: 2.3.0
+        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
+      '@hrc/spinner':
+        specifier: 0.3.2
+        version: 0.3.2(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
       '@internal/components':
         specifier: workspace:*
         version: link:../../libs/components
       '@lib/sass-utils':
         specifier: workspace:*
         version: link:../../libs/sass-utils
+      '@material-design-icons/font':
+        specifier: 0.14.13
+        version: 0.14.13
       '@types/react':
         specifier: ^18.2.79
         version: 18.2.79
@@ -586,12 +601,18 @@ importers:
       astro:
         specifier: ^4.8.6
         version: 4.8.6(@types/node@20.5.0)(sass@1.77.2)(typescript@5.4.5)
+      clsx:
+        specifier: 2.0.0
+        version: 2.0.0
       react:
         specifier: ^18.2.0
         version: 18.2.0
       react-dom:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
+      react-loading-skeleton:
+        specifier: 3.4.0
+        version: 3.4.0(react@18.2.0)
       sass:
         specifier: 1.77.2
         version: 1.77.2
@@ -601,6 +622,9 @@ importers:
       zod:
         specifier: 3.22.4
         version: 3.22.4
+      zustand:
+        specifier: 4.4.3
+        version: 4.4.3(@types/react@18.2.79)(react@18.2.0)
     devDependencies:
       '@typescript-eslint/eslint-plugin':
         specifier: ^6.0.0
@@ -1995,6 +2019,22 @@ packages:
       - typescript
     dev: false
 
+  /@hrc/button@2.6.1(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(typescript@5.4.5):
+    resolution: {integrity: sha512-19KI5DrEdAqjCWnwEVVQiOkDYRrMmXcuyDrmBj8Nb49ht48QI0CT2SCJd4p1yrjWhTMb4rGL9Lz8bknqCbgXjg==}
+    peerDependencies:
+      '@types/react': ^17.0.0 || ^18.0.0
+      react: ^17.0.0 || ^18.0.0
+      react-dom: ^17.0.0 || ^18.0.0
+    dependencies:
+      '@hrc/type-utils': 1.1.2(typescript@5.4.5)
+      '@types/react': 18.2.79
+      clsx: 2.0.0
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    transitivePeerDependencies:
+      - typescript
+    dev: false
+
   /@hrc/input@0.9.1(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2):
     resolution: {integrity: sha512-HgNnOrwcNgxACm9ckliI60ww6itiazaAZZfzRCHhG7OC3JSAg8fsX8jOTbxCTYk4uBHyxyKc8kmIdmTmTNBCJQ==}
     peerDependencies:
@@ -2003,6 +2043,22 @@ packages:
       react-dom: ^17.0.0 || ^18.0.0
     dependencies:
       '@hrc/type-utils': 1.1.2(typescript@5.3.2)
+      '@types/react': 18.2.79
+      clsx: 2.0.0
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    transitivePeerDependencies:
+      - typescript
+    dev: false
+
+  /@hrc/input@0.9.1(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(typescript@5.4.5):
+    resolution: {integrity: sha512-HgNnOrwcNgxACm9ckliI60ww6itiazaAZZfzRCHhG7OC3JSAg8fsX8jOTbxCTYk4uBHyxyKc8kmIdmTmTNBCJQ==}
+    peerDependencies:
+      '@types/react': ^17.0.0 || ^18.0.0
+      react: ^17.0.0 || ^18.0.0
+      react-dom: ^17.0.0 || ^18.0.0
+    dependencies:
+      '@hrc/type-utils': 1.1.2(typescript@5.4.5)
       '@types/react': 18.2.79
       clsx: 2.0.0
       react: 18.2.0
@@ -2058,6 +2114,14 @@ packages:
       typescript: '*'
     dependencies:
       typescript: 5.3.2
+
+  /@hrc/type-utils@1.1.2(typescript@5.4.5):
+    resolution: {integrity: sha512-A2kQM+QloOLSfiVn6zqq4y3/r5LlE1DvP11uNlwAX+4NXlEtWKXc0Fan0Nnil6zFK3CXCxZyOjtn47v7Rz7R0A==}
+    peerDependencies:
+      typescript: '*'
+    dependencies:
+      typescript: 5.4.5
+    dev: false
 
   /@humanwhocodes/config-array@0.11.11:
     resolution: {integrity: sha512-N2brEuAadi0CcdeMXUkhbZB84eskAc8MEX1By6qEchoVywSgXPIjou4rYsl0V3Hj0ZnuGycGCjdNgockbzeWNA==}

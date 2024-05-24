@@ -1,21 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import CityWeather from "@/components/CityWeather.astro";
-import Forecast from "@/components/Forecast.astro";
-import Highlights from "@/components/Highlights.astro";
-import SearchDrawer from "@/components/SearchDrawer.astro";
-import TemperatureConverter from "@/components/TemperatureConverter.astro";
-import { Footer } from "@internal/components/src/Footer.tsx";
-import "../styles/index.scss";
+import App from "@/components/App.tsx";
 ---
 
 <Layout title="Weather App - DevChallenges">
-  <CityWeather />
-  <SearchDrawer />
-  <main>
-    <TemperatureConverter />
-    <Forecast />
-    <Highlights />
-    <Footer />
-  </main>
+  <App client:load />
 </Layout>

@@ -1,3 +1,8 @@
+.forecast {
+  display: grid;
+  grid-template-columns: var(--forecast-grid-columns, repeat(5, 1fr));
+  gap: 26px;
+}
 .forecast-item {
   display: flex;
   flex-direction: column;

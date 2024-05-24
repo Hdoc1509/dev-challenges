@@ -1,0 +1,25 @@
+.wind {
+  --skeleton-width: 2.5ch;
+
+  &__direction {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: var(--fs-0);
+    font-weight: 500;
+  }
+  &__direction-icon-wrapper {
+    display: flex;
+    align-items: center;
+
+    background-color: var(--secondary);
+    padding: 8px;
+    border-radius: 50%;
+
+    rotate: -45deg;
+    transform: rotate(var(--wind-degree));
+
+    transition: transform 0.5s ease;
+  }
+}
