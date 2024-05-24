@@ -1,4 +1,4 @@
-import { getWeather } from "@/services/weather";
+import { getWeather } from "@/services/server/weather";
 import { parseWeather } from "@/utils/weather";
 import type { APIRoute } from "astro";
 
