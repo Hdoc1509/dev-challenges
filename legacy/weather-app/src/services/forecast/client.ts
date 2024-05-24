@@ -2,7 +2,7 @@ import { OPEN_METEO_API_URL } from "@/config";
 import { ForecastSchema } from "@/schemas/forecast";
 import type { Forecast } from "@/types";
 import { parseForecast } from "@/utils/forecast";
-import type { LocationPosition } from "@/utils/geolocation";
+import type { LocationCoords } from "@/types";
 
 const dailyParams = [
   "temperature_2m_max",
@@ -11,7 +11,7 @@ const dailyParams = [
 ];
 
 export const getForecast = async (
-  coords: LocationPosition,
+  coords: LocationCoords,
 ): Promise<Forecast[]> => {
   // TODO: Use error handling method from github-jobs
   const { latitude, longitude } = coords;
