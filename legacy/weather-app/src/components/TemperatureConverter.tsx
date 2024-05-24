@@ -1,4 +1,4 @@
-import { useWeatherStore } from "../store/weather";
+import { useWeatherStore } from "@/store/weather";
 import { Button } from "@hrc/button/dist/Button";
 import "./TemperatureConverter.scss";
 

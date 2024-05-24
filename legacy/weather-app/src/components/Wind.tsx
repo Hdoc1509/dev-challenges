@@ -2,13 +2,13 @@ import { useRef } from "react";
 import Skeleton from "react-loading-skeleton";
 import { Icon } from "@hrc/material-icons";
 import { Highlights } from "./Highlights";
-import type { WeatherWind } from "../schemas/weather";
+import type { Wind as WindType } from "@/types";
 import "./Wind.scss";
 
 const getWindDegree = (degree: number) =>
   ({ "--wind-degree": `${degree}deg` }) as React.CSSProperties;
 
-export const Wind = ({ wind }: { wind?: WeatherWind }) => {
+export const Wind = ({ wind }: { wind?: WindType }) => {
   const { speed, directionDegree } = wind ?? {};
   const lastDegree = useRef(0);
 

@@ -1,6 +1,6 @@
 import Skeleton from "react-loading-skeleton";
-import { useWeatherStore } from "../store/weather";
-import { getWeatherIcon } from "../utils/icons";
+import { useWeatherStore } from "@/store/weather";
+import { getWeatherIcon } from "@/utils/icons";
 import { Button } from "@hrc/button/dist/Button";
 import { ButtonIcon } from "@hrc/button/dist/ButtonIcon";
 import { Icon } from "@hrc/material-icons";

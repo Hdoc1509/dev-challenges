@@ -2,13 +2,13 @@ import { useRef, useState } from "react";
 import { clsx } from "clsx";
 import { searchCity } from "../services/geolocation";
 import { getWeather } from "../services/weather";
-import { useWeatherStore } from "../store/weather";
+import { useWeatherStore } from "@/store/weather";
 import { Button } from "@hrc/button/dist/Button";
 import { Icon } from "@hrc/material-icons";
 import { Input } from "@hrc/input/dist/Input";
 import { RingSpinner } from "@hrc/spinner/dist/RingSpinner";
 import { SearchResults } from "./SearchResults";
-import type { SearchCityResponse } from "../schemas/geolocation";
+import type { SearchCityResponse } from "@/schemas/geolocation";
 import "./SearchDrawer.scss";
 import { getForecast } from "../services/forecast";
 

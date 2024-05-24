@@ -2,8 +2,8 @@ import Skeleton from "react-loading-skeleton";
 import {
   useWeatherStore,
   type Forecast as ForecastType,
-} from "../store/weather";
-import { getWeatherIcon } from "../utils/icons";
+} from "@/store/weather";
+import { getWeatherIcon } from "@/utils/icons";
 import "./Forecast.scss";
 
 const ForecastDay = ({ day }: { day?: ForecastType }) => {

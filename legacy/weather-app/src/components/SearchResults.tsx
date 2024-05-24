@@ -1,6 +1,6 @@
 import { Button } from "@hrc/button/dist/Button";
 import { Icon } from "@hrc/material-icons";
-import type { SearchCityResponse } from "../schemas/geolocation";
+import type { SearchCityResponse } from "@/schemas/geolocation";
 import "./SearchResults.scss";
 
 type Props = {

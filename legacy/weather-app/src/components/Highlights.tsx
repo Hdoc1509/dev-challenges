@@ -1,4 +1,4 @@
-import { useWeatherStore } from "../store/weather";
+import { useWeatherStore } from "@/store/weather";
 import Skeleton from "react-loading-skeleton";
 import { Humidity } from "./Humidity";
 import { Wind } from "./Wind";
