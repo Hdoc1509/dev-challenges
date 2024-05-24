@@ -30,19 +30,23 @@ function App() {
     document.body.classList.remove("no-scroll");
   };
 
-  const getCurrentLocationWeather = useCallback(() => {
+  const getCurrentLocationWeather = useCallback(async () => {
     clearData();
-    getCurrentPosition()
-      .then(async (coords) => {
-        const [weatherError, weather] = await getWeather(coords);
 
-        if (weatherError) return Promise.reject(weatherError.message);
+    try {
+      const [coordsError, coords] = await getCurrentPosition();
 
-        setWeather(weather)
+      if (coordsError) throw coordsError;
 
-        void getForecast(coords).then(setForecast);
-      })
-      .catch((error) => setError(error as string));
+      const [weatherError, weather] = await getWeather(coords);
+
+      if (weatherError) throw weatherError;
+
+      setWeather(weather);
+      void getForecast(coords).then(setForecast);
+    } catch (error) {
+      setError((error as Error).message);
+    }
   }, [setForecast, setWeather, clearData]);
 
   useEffect(() => {
