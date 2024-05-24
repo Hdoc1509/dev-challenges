@@ -1,4 +1,4 @@
-import { searchCity } from "@/services/server/geolocation";
+import { searchCity } from "@/services/geolocation/server";
 import type { APIRoute } from "astro";
 
 export const GET: APIRoute = async ({ request }) => {
