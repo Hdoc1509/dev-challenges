@@ -46,17 +46,20 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
     setIsLoading(false);
   };
 
-  const handleSelect = (option: SearchCityResponse[number]) => {
+  const handleSelect = async (option: SearchCityResponse[number]) => {
     const coords = { latitude: option.lat, longitude: option.lon };
 
     clearData();
     onClose();
-    void getWeather(coords).then((location) => {
-      setWeather(location);
-      setResults([]);
-      lastSearch.current = "";
-    });
+
+    const [locationError, location] = await getWeather(coords);
+
+    if (locationError) return;
+
     void getForecast(coords).then(setForecast);
+    setWeather(location);
+    setResults([]);
+    lastSearch.current = "";
     setSearch("");
   };
 
