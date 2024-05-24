@@ -49,9 +49,7 @@ export const CityWeather = ({
           </div>
         ) : (
           <img
-            src={`/dev-challenges/weather-app/weather/${getWeatherIcon(
-              weather.current.condition.code,
-            )}.png`}
+            src={`/icons/${getWeatherIcon(weather.current.condition.code)}.png`}
             alt="shower"
             className="weather-image__icon"
           />
