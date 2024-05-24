@@ -30,17 +30,20 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
     "search-drawer--open": isOpen,
   });
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (search === lastSearch.current) return;
 
     lastSearch.current = search;
     setIsLoading(true);
-    // TODO: Handle errors as in github-jobs
-    void searchCity(search)
-      .then((locations) => setResults(locations))
-      .then(() => setIsLoading(false));
+
+    const [locationsError, locations] = await searchCity(search);
+
+    if (locationsError) return setIsLoading(false);
+
+    setResults(locations);
+    setIsLoading(false);
   };
 
   const handleSelect = (option: SearchCityResponse[number]) => {
