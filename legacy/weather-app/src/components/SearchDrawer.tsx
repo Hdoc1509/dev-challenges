@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import { clsx } from "clsx";
-import { searchCity } from "../services/geolocation";
+import { searchCity } from "@/services/client/geolocation";
 import { getWeather } from "@/services/client/weather";
 import { useWeatherStore } from "@/store/weather";
 import { Button } from "@hrc/button/dist/Button";
@@ -37,6 +37,7 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
 
     lastSearch.current = search;
     setIsLoading(true);
+    // TODO: Handle errors as in github-jobs
     void searchCity(search)
       .then((locations) => setResults(locations))
       .then(() => setIsLoading(false));
