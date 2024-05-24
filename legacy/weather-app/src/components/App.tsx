@@ -5,11 +5,11 @@ import { getWeather } from "@/services/weather";
 import { getForecast } from "@/services/forecast";
 import { parseWeather } from "@/utils/weather";
 import { Footer } from "@internal/components";
-import { CityWeather } from "@/components/CityWeather";
-import { Forecast } from "@/components/Forecast";
-import { Highlights } from "@/components/Highlights";
-import { TemperatureConverter } from "@/components/TemperatureConverter";
-import { SearchDrawer } from "@/components/SearchDrawer";
+import { CityWeather } from "./CityWeather";
+import { Forecast } from "./Forecast";
+import { Highlights } from "./Highlights";
+import { TemperatureConverter } from "./TemperatureConverter";
+import { SearchDrawer } from "./SearchDrawer";
 import "./App.scss";
 
 let didInit = false;
