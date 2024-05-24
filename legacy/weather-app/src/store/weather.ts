@@ -1,17 +1,5 @@
 import { create } from "zustand";
-import type { Weather } from "@/types";
-
-export type Forecast = {
-  day: string;
-  temperature: {
-    min: Weather["current"]["temperature"];
-    max: Weather["current"]["temperature"];
-  };
-  condition: {
-    code: number;
-    name: string;
-  };
-};
+import type { Forecast, Weather } from "@/types";
 
 export type TemperatureUnit = "fahrenheit" | "celsius";
 

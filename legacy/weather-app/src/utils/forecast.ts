@@ -1,7 +1,7 @@
 import { formatDate, parseDate } from "./date";
 import { FORECAST_CODES } from "../consts";
 import type { ForecastResponse } from "../schemas/forecast";
-import type { Forecast } from "../store/weather";
+import type { Forecast } from "@/types";
 
 const celsiusToFahrenheit = (celsius: number) => {
   const result = (celsius * 9) / 5 + 32;

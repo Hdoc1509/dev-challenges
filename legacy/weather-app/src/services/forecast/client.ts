@@ -1,6 +1,6 @@
 import { OPEN_METEO_API_URL } from "@/config";
 import { ForecastSchema } from "@/schemas/forecast";
-import type { Forecast } from "@/store/weather";
+import type { Forecast } from "@/types";
 import { parseForecast } from "@/utils/forecast";
 import type { LocationPosition } from "@/utils/geolocation";
 

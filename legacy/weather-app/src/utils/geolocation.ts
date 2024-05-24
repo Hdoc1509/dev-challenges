@@ -15,6 +15,7 @@ const getErrorMessage = (code: number) => {
     return "The request to get user location timed out, please try again";
 };
 
+// TODO: Use LocationCoords from @/types
 export type LocationPosition = {
   latitude: number;
   longitude: number;

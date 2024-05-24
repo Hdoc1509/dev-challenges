@@ -25,6 +25,18 @@ export type Weather = {
 
 export type Wind = Weather["current"]["wind"];
 
+export type Forecast = {
+  day: string;
+  temperature: {
+    min: Weather["current"]["temperature"];
+    max: Weather["current"]["temperature"];
+  };
+  condition: {
+    code: number;
+    name: string;
+  };
+};
+
 export type LocationCoords = {
   latitude: number;
   longitude: number;
