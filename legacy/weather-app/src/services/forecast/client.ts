@@ -1,6 +1,6 @@
 import { OPEN_METEO_API_URL } from "@/config";
 import { ForecastSchema } from "@/schemas/forecast";
-import type { Forecast } from "@/types";
+import type { Forecast, PromiseWithError } from "@/types";
 import { parseForecast } from "@/utils/forecast";
 import type { LocationCoords } from "@/types";
 
@@ -12,21 +12,36 @@ const dailyParams = [
 
 export const getForecast = async (
   coords: LocationCoords,
-): Promise<Forecast[]> => {
-  // TODO: Use error handling method from github-jobs
+): PromiseWithError<Forecast[]> => {
   const { latitude, longitude } = coords;
   const params = new URLSearchParams({
-    latitude: latitude.toString(),
-    longitude: longitude.toString(),
+    latitude: `${latitude}`,
+    longitude: `${longitude}`,
     daily: dailyParams.join(","),
     forecast_days: "6",
     timezone: "auto",
   });
 
-  const res = await fetch(
-    `${OPEN_METEO_API_URL}/forecast?${params.toString()}`,
-  );
-  const data = ForecastSchema.parse(await res.json());
+  try {
+    const res = await fetch(
+      `${OPEN_METEO_API_URL}/forecast?${params.toString()}`,
+    );
 
-  return parseForecast(data);
+    if (!res.ok) return [new Error("Forecast service error. Response error.")];
+
+    const parsedData = ForecastSchema.safeParse(await res.json());
+
+    if (!parsedData.success)
+      return [new Error("Forecast service error. Invalid data")];
+
+    return [null, parseForecast(parsedData.data)];
+  } catch (error) {
+    if (error instanceof Error) return [error];
+  }
+
+  return [
+    new Error(
+      "Forecast service error. Something went wrong. Please try again later.",
+    ),
+  ];
 };

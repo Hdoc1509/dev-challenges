@@ -42,8 +42,12 @@ function App() {
 
       if (weatherError) throw weatherError;
 
+      const [forecastError, forecast] = await getForecast(coords);
+
+      if (forecastError) throw forecastError;
+
       setWeather(weather);
-      void getForecast(coords).then(setForecast);
+      setForecast(forecast);
     } catch (error) {
       setError((error as Error).message);
     }

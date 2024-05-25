@@ -56,10 +56,14 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
 
     if (locationError) return;
 
-    void getForecast(coords).then(setForecast);
+    const [forecastError, forecast] = await getForecast(coords);
+
+    if (forecastError) return;
+
+    lastSearch.current = "";
+    setForecast(forecast);
     setWeather(location);
     setResults([]);
-    lastSearch.current = "";
     setSearch("");
   };
 
