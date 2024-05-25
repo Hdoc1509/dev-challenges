@@ -52,9 +52,9 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
     clearData();
     onClose();
 
-    const [locationError, location] = await getWeather(coords);
+    const [weatherError, weather] = await getWeather(coords);
 
-    if (locationError) return;
+    if (weatherError) return;
 
     const [forecastError, forecast] = await getForecast(coords);
 
@@ -62,7 +62,7 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
 
     lastSearch.current = "";
     setForecast(forecast);
-    setWeather(location);
+    setWeather(weather);
     setResults([]);
     setSearch("");
   };
