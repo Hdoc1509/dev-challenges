@@ -1,6 +1,6 @@
 import { parseForecast } from "@/utils/forecast";
 import { ForecastSchema } from "@/schemas/forecast";
-import { OPEN_METEO_API_URL } from "@/config";
+import { OPEN_METEO_API } from "@/config";
 import type { Forecast, LocationCoords, PromiseWithError } from "@/types";
 
 const dailyParams = [
@@ -23,7 +23,7 @@ export const getForecast = async (
 
   try {
     const res = await fetch(
-      `${OPEN_METEO_API_URL}/forecast?${params.toString()}`,
+      `${OPEN_METEO_API.URL}/forecast?${params.toString()}`,
     );
 
     if (!res.ok) return [new Error("Forecast service error. Response error.")];
