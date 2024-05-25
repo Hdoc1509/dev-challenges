@@ -1,14 +1,10 @@
-import {
-  SearchCityResponseSchema,
-  type SearchCityResponse,
-} from "@/schemas/geolocation";
-import type { PromiseWithError } from "@/types";
+import { parseCities } from "@/utils/geolocation";
+import { SearchCityResponseSchema } from "@/schemas/geolocation";
+import type { City, PromiseWithError } from "@/types";
 
 const errorPrefix = "Search city service error";
 
-export const searchCity = async (
-  city: string,
-): PromiseWithError<SearchCityResponse> => {
+export const searchCity = async (city: string): PromiseWithError<City[]> => {
   try {
     const res = await fetch(`/api/geolocation?city=${city}`);
 
@@ -18,7 +14,7 @@ export const searchCity = async (
 
     if (!parsedData.success) return [new Error(`${errorPrefix}. Invalid data`)];
 
-    return [null, parsedData.data];
+    return [null, parseCities(parsedData.data)];
   } catch (error) {
     if (error instanceof Error) return [error];
   }

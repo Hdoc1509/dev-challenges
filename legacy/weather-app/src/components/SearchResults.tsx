@@ -1,11 +1,11 @@
 import { Button } from "@hrc/button/dist/Button";
 import { Icon } from "@hrc/material-icons";
-import type { SearchCityResponse } from "@/schemas/geolocation";
+import type { City } from "@/types";
 import "./SearchResults.scss";
 
 type Props = {
-  results: SearchCityResponse;
-  handleSelect: (option: SearchCityResponse[number]) => void;
+  results: City[];
+  handleSelect: (option: City) => void;
 };
 
 export const SearchResults = ({ results, handleSelect }: Props) => {

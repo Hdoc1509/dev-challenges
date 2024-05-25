@@ -9,7 +9,7 @@ import { Icon } from "@hrc/material-icons";
 import { Input } from "@hrc/input/dist/Input";
 import { RingSpinner } from "@hrc/spinner/dist/RingSpinner";
 import { SearchResults } from "./SearchResults";
-import type { SearchCityResponse } from "@/schemas/geolocation";
+import type { City } from "@/types";
 import "./SearchDrawer.scss";
 
 type Props = {
@@ -18,7 +18,7 @@ type Props = {
 };
 
 export const SearchDrawer = ({ isOpen, onClose }: Props) => {
-  const [results, setResults] = useState<SearchCityResponse>([]);
+  const [results, setResults] = useState<City[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [search, setSearch] = useState("");
   const lastSearch = useRef("");
@@ -46,8 +46,8 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
     setIsLoading(false);
   };
 
-  const handleSelect = async (option: SearchCityResponse[number]) => {
-    const coords = { latitude: option.lat, longitude: option.lon };
+  const handleSelect = async ({ latitude, longitude }: City) => {
+    const coords = { latitude, longitude };
 
     clearData();
     onClose();
