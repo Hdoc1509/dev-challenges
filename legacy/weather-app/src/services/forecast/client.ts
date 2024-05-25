@@ -1,8 +1,7 @@
-import { OPEN_METEO_API_URL } from "@/config";
-import { ForecastSchema } from "@/schemas/forecast";
-import type { Forecast, PromiseWithError } from "@/types";
 import { parseForecast } from "@/utils/forecast";
-import type { LocationCoords } from "@/types";
+import { ForecastSchema } from "@/schemas/forecast";
+import { OPEN_METEO_API_URL } from "@/config";
+import type { Forecast, LocationCoords, PromiseWithError } from "@/types";
 
 const dailyParams = [
   "temperature_2m_max",

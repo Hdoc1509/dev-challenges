@@ -1,6 +1,6 @@
+import { parseWeather } from "@/utils/weather";
 import { WeatherResponseSchema } from "@/schemas/weather";
 import type { LocationCoords, PromiseWithError, Weather } from "@/types";
-import { parseWeather } from "@/utils/weather";
 
 export const getWeather = async (
   coords: LocationCoords,
