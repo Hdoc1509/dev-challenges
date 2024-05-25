@@ -1,3 +1,5 @@
+import type { SearchCityResponse } from "./schemas/geolocation";
+
 export type Weather = {
   location: {
     name: string;
@@ -38,6 +40,14 @@ export type Forecast = {
 };
 
 export type LocationCoords = {
+  latitude: number;
+  longitude: number;
+};
+
+export type City = Omit<
+  SearchCityResponse[number],
+  "url" | "region" | "lat" | "lon"
+> & {
   latitude: number;
   longitude: number;
 };
