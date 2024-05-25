@@ -52,12 +52,10 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
     clearData();
     onClose();
 
-    const [weatherError, weather] = await getWeather(coords);
+    const [[weatherError, weather], [forecastError, forecast]] =
+      await Promise.all([getWeather(coords), getForecast(coords)]);
 
     if (weatherError) return;
-
-    const [forecastError, forecast] = await getForecast(coords);
-
     if (forecastError) return;
 
     lastSearch.current = "";
