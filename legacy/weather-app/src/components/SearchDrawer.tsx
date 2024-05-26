@@ -4,10 +4,9 @@ import { searchCity } from "@/services/geolocation/client";
 import { getWeather } from "@/services/weather/client";
 import { getForecast } from "@/services/forecast/client";
 import { useWeatherStore } from "@/store/weather";
-import { Button } from "@hrc/button/dist/Button";
 import { Icon } from "@hrc/material-icons";
-import { Input } from "@hrc/input/dist/Input";
 import { RingSpinner } from "@hrc/spinner/dist/RingSpinner";
+import { SearchForm } from "./SearchForm";
 import { SearchResults } from "./SearchResults";
 import type { City, Status } from "@/types";
 import "./SearchDrawer.scss";
@@ -17,7 +16,6 @@ type Props = {
   onClose: () => void;
 };
 
-// TODO: Add component SearchForm
 export const SearchDrawer = ({ isOpen, onClose }: Props) => {
   const [results, setResults] = useState<City[]>([]);
   const [searchStatus, setSearchStatus] = useState<Status>("idle");
@@ -52,6 +50,7 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
     setSearchStatus("success");
   };
 
+  // NOTE: Can it be moved to SearchResults?
   const handleSelect = async ({ latitude, longitude }: City) => {
     const coords = { latitude, longitude };
 
@@ -76,20 +75,12 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
       <div className="search-drawer__close" onClick={onClose}>
         <Icon name="close" />
       </div>
-      <form className="search-drawer__form" onSubmit={handleSubmit}>
-        <Input
-          iconStart={<Icon name="search" />}
-          placeholder="search location"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          fullWidth
-          required
-          disabled={!isOpen}
-        />
-        <Button color="primary" disabled={!isOpen}>
-          Search
-        </Button>
-      </form>
+      <SearchForm
+        search={search}
+        setSearch={setSearch}
+        handleSubmit={handleSubmit}
+        disabled={!isOpen}
+      />
       {searchStatus === "loading" && <RingSpinner />}
       {searchStatus === "error" && <p>{searchError?.message}</p>}
       {searchStatus === "success" && (
