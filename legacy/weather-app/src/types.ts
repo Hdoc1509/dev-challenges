@@ -53,3 +53,5 @@ export type City = Omit<
 };
 
 export type PromiseWithError<T> = Promise<[Error] | [null, T]>;
+
+export type Status = "idle" | "loading" | "success" | "error";
