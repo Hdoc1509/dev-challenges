@@ -9,7 +9,7 @@ import { Icon } from "@hrc/material-icons";
 import { Input } from "@hrc/input/dist/Input";
 import { RingSpinner } from "@hrc/spinner/dist/RingSpinner";
 import { SearchResults } from "./SearchResults";
-import type { City } from "@/types";
+import type { City, Status } from "@/types";
 import "./SearchDrawer.scss";
 
 type Props = {
@@ -17,10 +17,12 @@ type Props = {
   onClose: () => void;
 };
 
+// TODO: Add component SearchForm
 export const SearchDrawer = ({ isOpen, onClose }: Props) => {
   const [results, setResults] = useState<City[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [searchStatus, setSearchStatus] = useState<Status>("idle");
   const [search, setSearch] = useState("");
+  const [searchError, setSearchError] = useState<Error | null>(null);
   const lastSearch = useRef("");
   const setWeather = useWeatherStore((s) => s.setWeather);
   const setForecast = useWeatherStore((s) => s.setForecast);
@@ -36,14 +38,18 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
     if (search === lastSearch.current) return;
 
     lastSearch.current = search;
-    setIsLoading(true);
+    setSearchStatus("loading");
 
-    const [locationsError, locations] = await searchCity(search);
+    const [citiesError, cities] = await searchCity(search);
 
-    if (locationsError) return setIsLoading(false);
+    if (citiesError) {
+      setSearchError(citiesError);
+      setSearchStatus("error");
+      return;
+    }
 
-    setResults(locations);
-    setIsLoading(false);
+    setResults(cities);
+    setSearchStatus("success");
   };
 
   const handleSelect = async ({ latitude, longitude }: City) => {
@@ -84,9 +90,9 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
           Search
         </Button>
       </form>
-      {isLoading ? (
-        <RingSpinner />
-      ) : (
+      {searchStatus === "loading" && <RingSpinner />}
+      {searchStatus === "error" && <p>{searchError?.message}</p>}
+      {searchStatus === "success" && (
         <SearchResults results={results} handleSelect={handleSelect} />
       )}
     </div>
