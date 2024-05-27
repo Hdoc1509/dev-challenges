@@ -82,6 +82,6 @@ git clone https://github.com/Hdoc1509/dev-challenges
 cd dev-challenges && pnpm install
 
 # Run weather-app in dev-mode
-cd apps/weather-app
+cd legacy/weather-app
 pnpm run dev --open
 ```
