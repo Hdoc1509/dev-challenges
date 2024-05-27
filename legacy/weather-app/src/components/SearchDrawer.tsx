@@ -27,9 +27,7 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
   const setForecast = useWeatherStore((s) => s.setForecast);
   const clearData = useWeatherStore((s) => s.clearData);
 
-  const className = clsx("search-drawer", {
-    "search-drawer--open": isOpen,
-  });
+  const className = clsx("search-drawer", { open: isOpen });
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
