@@ -22,6 +22,7 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
   const [search, setSearch] = useState("");
   const [searchError, setSearchError] = useState<Error | null>(null);
   const lastSearch = useRef("");
+  const setWeatherError = useWeatherStore((s) => s.setError);
   const setWeather = useWeatherStore((s) => s.setWeather);
   const setForecast = useWeatherStore((s) => s.setForecast);
   const clearData = useWeatherStore((s) => s.clearData);
@@ -60,8 +61,8 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
     const [[weatherError, weather], [forecastError, forecast]] =
       await Promise.all([getWeather(coords), getForecast(coords)]);
 
-    if (weatherError) return;
-    if (forecastError) return;
+    if (weatherError) return setWeatherError(weatherError);
+    if (forecastError) return setWeatherError(forecastError);
 
     lastSearch.current = "";
     setForecast(forecast);

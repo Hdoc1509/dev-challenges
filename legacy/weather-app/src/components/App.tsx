@@ -14,9 +14,9 @@ import "./App.scss";
 let didInit = false;
 
 function App() {
-  // TODO: Use status logic from github-jobs
-  const [error, setError] = useState<string | undefined>();
   const [showSearchDrawer, setShowSearchDrawer] = useState(false);
+  const error = useWeatherStore((s) => s.error);
+  const setError = useWeatherStore((s) => s.setError);
   const setWeather = useWeatherStore((s) => s.setWeather);
   const setForecast = useWeatherStore((s) => s.setForecast);
   const clearData = useWeatherStore((s) => s.clearData);
@@ -47,7 +47,8 @@ function App() {
       setWeather(weather);
       setForecast(forecast);
     } catch (error) {
-      setError((error as Error).message);
+      // NOTE: All errors are thrown and handled manually
+      setError(error as Error);
     }
   }, [setForecast, setWeather, clearData]);
 
@@ -61,7 +62,7 @@ function App() {
   if (error) {
     return (
       <div className="App" data-error>
-        <h2 className="App__error">{error}</h2>
+        <h2 className="App__error">{error.message}</h2>
       </div>
     );
   }
