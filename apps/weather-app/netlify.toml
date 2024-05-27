@@ -1,4 +1,0 @@
-[build]
-  command = 'pnpm --filter weather-app build'
-  publish = 'apps/weather-app/dist'
-  ignore = 'bash ./scripts/docs-check.sh apps/weather-app'

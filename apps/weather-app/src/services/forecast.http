@@ -1,1 +1,0 @@
-GET https://api.open-meteo.com/v1/forecast?latitude=-12.0464&longitude=-77.0428&daily=temperature_2m_max,temperature_2m_min,weather_code&forecast_days=6&timezone=auto
