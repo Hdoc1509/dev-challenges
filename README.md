@@ -14,7 +14,7 @@ There are some [packages](#packages) I created while completing them.
 - [x] [Todo app](/apps/todo-app/)
 - [x] [Random quote generator](/apps/quote-generator/)
 - [x] [Country quiz](/apps/country-quiz/)
-- [x] [Weather app](/apps/weather-app/)
+- [x] [Weather app](/legacy/weather-app/)
 - [ ] [Github Jobs](/apps/github-jobs/)
 
 ## Packages
