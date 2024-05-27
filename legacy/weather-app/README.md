@@ -12,6 +12,10 @@
   </h3>
 </div>
 
+## Deploy Status
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a7b3c53a-a32b-47fe-a375-86c6a59230e6/deploy-status)](https://app.netlify.com/sites/hdoc-weather-app/deploys)
+
 ## Overview
 
 ![screenshot](https://github.com/Hdoc1509/dev-challenges/assets/72316111/fdadff8d-c42a-41ac-ad47-c1d9cb6efdbe)
