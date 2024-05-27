@@ -1,21 +1,39 @@
+import { useSearchStore } from "@/store/search";
+import { searchCity } from "@/services/geolocation/client";
 import { Button } from "@hrc/button/dist/Button";
 import { Input } from "@hrc/input/dist/Input";
 import { Icon } from "@hrc/material-icons";
-import './SearchForm.scss';
+import "./SearchForm.scss";
 
-type Props = {
-  search: string;
-  setSearch: (search: string) => void;
-  disabled: boolean;
-  handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
-};
+export const SearchForm = ({ disabled }: { disabled: boolean }) => {
+  const search = useSearchStore((s) => s.search);
+  const lastSearch = useSearchStore((s) => s.lastSearch);
+  const setSearch = useSearchStore((s) => s.setSearch);
+  const setLastSearch = useSearchStore((s) => s.setLastSearch);
+  const setError = useSearchStore((s) => s.setError);
+  const setStatus = useSearchStore((s) => s.setStatus);
+  const setResults = useSearchStore((s) => s.setResults);
 
-export const SearchForm = ({
-  search,
-  setSearch,
-  disabled,
-  handleSubmit,
-}: Props) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (search === lastSearch) return;
+
+    setLastSearch(search);
+    setStatus("loading");
+
+    const [citiesError, cities] = await searchCity(search);
+
+    if (citiesError) {
+      setError(citiesError);
+      setStatus("error");
+      return;
+    }
+
+    setResults(cities);
+    setStatus("success");
+  };
+
   return (
     <form className="search-drawer__form" onSubmit={handleSubmit}>
       <Input
