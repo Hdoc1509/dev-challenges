@@ -1,14 +1,41 @@
+import { useSearchStore } from "@/store/search";
+import { useWeatherStore } from "@/store/weather";
+import { getWeather } from "@/services/weather/client";
+import { getForecast } from "@/services/forecast/client";
 import { Button } from "@hrc/button/dist/Button";
 import { Icon } from "@hrc/material-icons";
 import type { City } from "@/types";
 import "./SearchResults.scss";
 
-type Props = {
-  results: City[];
-  handleSelect: (option: City) => void;
-};
+export const SearchResults = ({ onClose }: { onClose: () => void }) => {
+  const results = useSearchStore((s) => s.results);
+  const setSearch = useSearchStore((s) => s.setSearch);
+  const setLastSearch = useSearchStore((s) => s.setLastSearch);
+  const setResults = useSearchStore((s) => s.setResults);
+  const setWeatherError = useWeatherStore((s) => s.setError);
+  const setWeather = useWeatherStore((s) => s.setWeather);
+  const setForecast = useWeatherStore((s) => s.setForecast);
+  const clearData = useWeatherStore((s) => s.clearData);
 
-export const SearchResults = ({ results, handleSelect }: Props) => {
+  const handleSelect = async ({ latitude, longitude }: City) => {
+    const coords = { latitude, longitude };
+
+    clearData();
+    onClose();
+
+    const [[weatherError, weather], [forecastError, forecast]] =
+      await Promise.all([getWeather(coords), getForecast(coords)]);
+
+    if (weatherError) return setWeatherError(weatherError);
+    if (forecastError) return setWeatherError(forecastError);
+
+    setLastSearch("");
+    setForecast(forecast);
+    setWeather(weather);
+    setResults([]);
+    setSearch("");
+  };
+
   return (
     <menu className="search-drawer__results">
       {results.map((result) => (
