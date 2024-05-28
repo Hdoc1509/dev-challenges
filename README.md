@@ -13,7 +13,7 @@ There are some [packages](#packages) I created while completing them.
 - [x] [Windbnb](/legacy/windbnb/)
 - [x] [Todo app](/legacy/todo-app/)
 - [x] [Random quote generator](/legacy/quote-generator/)
-- [x] [Country quiz](/apps/country-quiz/)
+- [x] [Country quiz](/legacy/country-quiz/)
 - [x] [Weather app](/legacy/weather-app/)
 - [ ] [Github Jobs](/apps/github-jobs/)
 
