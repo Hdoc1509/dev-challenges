@@ -8,7 +8,7 @@ There are some [packages](#packages) I created while completing them.
 
 ## Challenges
 
-- [x] [Button component](/apps/button-component/)
+- [x] [Button component](/legacy/button-component/)
 - [x] [Input component](/apps/input-component/)
 - [x] [Windbnb](/apps/windbnb/)
 - [x] [Todo app](/apps/todo-app/)
