@@ -11,7 +11,7 @@ There are some [packages](#packages) I created while completing them.
 - [x] [Button component](/legacy/button-component/)
 - [x] [Input component](/legacy/input-component/)
 - [x] [Windbnb](/legacy/windbnb/)
-- [x] [Todo app](/apps/todo-app/)
+- [x] [Todo app](/legacy/todo-app/)
 - [x] [Random quote generator](/apps/quote-generator/)
 - [x] [Country quiz](/apps/country-quiz/)
 - [x] [Weather app](/legacy/weather-app/)
