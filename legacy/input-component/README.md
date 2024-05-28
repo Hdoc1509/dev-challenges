@@ -2,7 +2,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://hdoc1509.github.io/dev-challenges/input-component/">
+    <a href="https://hdoc1509.github.io/dev-challenges/legacy/input-component/">
       Solution
     </a>
     <span> | </span>

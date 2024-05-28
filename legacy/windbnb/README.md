@@ -2,7 +2,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://hdoc1509.github.io/dev-challenges/windbnb/">
+    <a href="https://hdoc1509.github.io/dev-challenges/legacy/windbnb/">
       Solution
     </a>
     <span> | </span>

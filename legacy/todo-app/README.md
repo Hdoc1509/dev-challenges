@@ -2,7 +2,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://hdoc1509.github.io/dev-challenges/todo-app/">
+    <a href="https://hdoc1509.github.io/dev-challenges/legacy/todo-app/">
       Solution
     </a>
     <span> | </span>

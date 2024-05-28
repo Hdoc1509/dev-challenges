@@ -2,7 +2,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://hdoc1509.github.io/dev-challenges/country-quiz/">
+    <a href="https://hdoc1509.github.io/dev-challenges/legacy/country-quiz/">
       Solution
     </a>
     <span> | </span>

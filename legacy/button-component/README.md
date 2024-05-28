@@ -2,7 +2,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://hdoc1509.github.io/dev-challenges/button-component/">
+    <a href="https://hdoc1509.github.io/dev-challenges/legacy/button-component/">
       Solution
     </a>
     <span> | </span>

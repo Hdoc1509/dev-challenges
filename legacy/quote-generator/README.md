@@ -2,7 +2,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://hdoc1509.github.io/dev-challenges/quote-generator/">
+    <a href="https://hdoc1509.github.io/dev-challenges/legacy/quote-generator/">
       Solution
     </a>
     <span> | </span>
