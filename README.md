@@ -10,7 +10,7 @@ There are some [packages](#packages) I created while completing them.
 
 - [x] [Button component](/legacy/button-component/)
 - [x] [Input component](/legacy/input-component/)
-- [x] [Windbnb](/apps/windbnb/)
+- [x] [Windbnb](/legacy/windbnb/)
 - [x] [Todo app](/apps/todo-app/)
 - [x] [Random quote generator](/apps/quote-generator/)
 - [x] [Country quiz](/apps/country-quiz/)
