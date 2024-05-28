@@ -12,6 +12,10 @@
   </h3>
 </div>
 
+## Deploy status
+
+[![Deploy challenges](https://github.com/Hdoc1509/dev-challenges/actions/workflows/deploy.yml/badge.svg)](https://github.com/Hdoc1509/dev-challenges/actions/workflows/deploy.yml)
+
 ## Overview
 
 ![screenshot](https://github.com/Hdoc1509/dev-challenges/assets/72316111/1eb8fd1b-7a1f-4d84-8997-e7ba092ac217)
