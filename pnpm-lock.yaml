@@ -179,67 +179,6 @@ importers:
         specifier: 5.0.2
         version: 5.0.2(@types/node@20.5.0)(sass@1.65.0)
 
-  apps/input-component:
-    dependencies:
-      '@fontsource-variable/montserrat':
-        specifier: 5.0.17
-        version: 5.0.17
-      '@fontsource-variable/noto-sans-jp':
-        specifier: 5.0.19
-        version: 5.0.19
-      '@fontsource/montserrat':
-        specifier: 5.0.17
-        version: 5.0.17
-      '@fontsource/noto-sans-jp':
-        specifier: 5.0.19
-        version: 5.0.19
-      '@fontsource/poppins':
-        specifier: 5.0.8
-        version: 5.0.8
-      '@fontsource/ubuntu-mono':
-        specifier: 5.0.20
-        version: 5.0.20
-      '@hrc/material-icons':
-        specifier: 2.3.0
-        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
-      '@hrc/toggle-theme':
-        specifier: 2.2.0
-        version: 2.2.0(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
-      '@internal/components':
-        specifier: workspace:3.0.0
-        version: link:../../libs/components
-      '@lib/sass-utils':
-        specifier: workspace:*
-        version: link:../../libs/sass-utils
-      '@material-design-icons/font':
-        specifier: 0.14.13
-        version: 0.14.13
-      clsx:
-        specifier: 2.0.0
-        version: 2.0.0
-      react:
-        specifier: 18.2.0
-        version: 18.2.0
-      react-dom:
-        specifier: 18.2.0
-        version: 18.2.0(react@18.2.0)
-    devDependencies:
-      '@hrc/type-utils':
-        specifier: 1.1.2
-        version: 1.1.2(typescript@5.3.2)
-      '@vitejs/plugin-react':
-        specifier: ^4.2.0
-        version: 4.2.0(vite@5.0.2)
-      sass:
-        specifier: 1.65.0
-        version: 1.65.0
-      typescript:
-        specifier: 5.3.2
-        version: 5.3.2
-      vite:
-        specifier: 5.0.2
-        version: 5.0.2(@types/node@20.5.0)(sass@1.65.0)
-
   apps/quote-generator:
     dependencies:
       '@fontsource-variable/montserrat':
@@ -480,6 +419,67 @@ importers:
       vite:
         specifier: ^5.0.2
         version: 5.0.2(@types/node@20.5.0)(sass@1.77.2)
+
+  legacy/input-component:
+    dependencies:
+      '@fontsource-variable/montserrat':
+        specifier: 5.0.17
+        version: 5.0.17
+      '@fontsource-variable/noto-sans-jp':
+        specifier: 5.0.19
+        version: 5.0.19
+      '@fontsource/montserrat':
+        specifier: 5.0.17
+        version: 5.0.17
+      '@fontsource/noto-sans-jp':
+        specifier: 5.0.19
+        version: 5.0.19
+      '@fontsource/poppins':
+        specifier: 5.0.8
+        version: 5.0.8
+      '@fontsource/ubuntu-mono':
+        specifier: 5.0.20
+        version: 5.0.20
+      '@hrc/material-icons':
+        specifier: 2.3.0
+        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
+      '@hrc/toggle-theme':
+        specifier: 2.2.0
+        version: 2.2.0(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
+      '@internal/components':
+        specifier: workspace:3.0.0
+        version: link:../../libs/components
+      '@lib/sass-utils':
+        specifier: workspace:*
+        version: link:../../libs/sass-utils
+      '@material-design-icons/font':
+        specifier: 0.14.13
+        version: 0.14.13
+      clsx:
+        specifier: 2.0.0
+        version: 2.0.0
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: 18.2.0
+        version: 18.2.0(react@18.2.0)
+    devDependencies:
+      '@hrc/type-utils':
+        specifier: 1.1.2
+        version: 1.1.2(typescript@5.3.2)
+      '@vitejs/plugin-react':
+        specifier: ^4.2.0
+        version: 4.2.1(vite@5.0.2)
+      sass:
+        specifier: 1.65.0
+        version: 1.65.0
+      typescript:
+        specifier: 5.3.2
+        version: 5.3.2
+      vite:
+        specifier: 5.0.2
+        version: 5.0.2(@types/node@20.5.0)(sass@1.65.0)
 
   legacy/weather-app:
     dependencies:
@@ -2368,27 +2368,11 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@rollup/rollup-android-arm-eabi@4.5.2:
-    resolution: {integrity: sha512-ee7BudTwwrglFYSc3UnqInDDjCLWHKrFmGNi4aK7jlEyg4CyPa1DCMrZfsN1O13YT76UFEqXz2CoN7BCGpUlJw==}
-    cpu: [arm]
-    os: [android]
-    requiresBuild: true
-    dev: true
-    optional: true
-
   /@rollup/rollup-android-arm64@4.17.2:
     resolution: {integrity: sha512-yeX/Usk7daNIVwkq2uGoq2BYJKZY1JfyLTaHO/jaiSwi/lsf8fTFoQW/n6IdAsx5tx+iotu2zCJwz8MxI6D/Bw==}
     cpu: [arm64]
     os: [android]
     requiresBuild: true
-    optional: true
-
-  /@rollup/rollup-android-arm64@4.5.2:
-    resolution: {integrity: sha512-xOuhj9HHtn8128ir8veoQsBbAUBasDbHIBniYTEx02pAmu9EXL+ZjJqngnNEy6ZgZ4h1JwL33GMNu3yJL5Mzow==}
-    cpu: [arm64]
-    os: [android]
-    requiresBuild: true
-    dev: true
     optional: true
 
   /@rollup/rollup-darwin-arm64@4.17.2:
@@ -2398,14 +2382,6 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@rollup/rollup-darwin-arm64@4.5.2:
-    resolution: {integrity: sha512-NTGJWoL8bKyqyWFn9/RzSv4hQ4wTbaAv0lHHRwf4OnpiiP4P8W0jiXbm8Nc5BCXKmWAwuvJY82mcIU2TayC20g==}
-    cpu: [arm64]
-    os: [darwin]
-    requiresBuild: true
-    dev: true
-    optional: true
-
   /@rollup/rollup-darwin-x64@4.17.2:
     resolution: {integrity: sha512-AtKwD0VEx0zWkL0ZjixEkp5tbNLzX+FCqGG1SvOu993HnSz4qDI6S4kGzubrEJAljpVkhRSlg5bzpV//E6ysTQ==}
     cpu: [x64]
@@ -2413,27 +2389,11 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@rollup/rollup-darwin-x64@4.5.2:
-    resolution: {integrity: sha512-hlKqj7bpPvU15sZo4za14u185lpMzdwWLMc9raMqPK4wywt0wR23y1CaVQ4oAFXat3b5/gmRntyfpwWTKl+vvA==}
-    cpu: [x64]
-    os: [darwin]
-    requiresBuild: true
-    dev: true
-    optional: true
-
   /@rollup/rollup-linux-arm-gnueabihf@4.17.2:
     resolution: {integrity: sha512-3reX2fUHqN7sffBNqmEyMQVj/CKhIHZd4y631duy0hZqI8Qoqf6lTtmAKvJFYa6bhU95B1D0WgzHkmTg33In0A==}
     cpu: [arm]
     os: [linux]
     requiresBuild: true
-    optional: true
-
-  /@rollup/rollup-linux-arm-gnueabihf@4.5.2:
-    resolution: {integrity: sha512-7ZIZx8c3u+pfI0ohQsft/GywrXez0uR6dUP0JhBuCK3sFO5TfdLn/YApnVkvPxuTv3+YKPIZend9Mt7Cz6sS3Q==}
-    cpu: [arm]
-    os: [linux]
-    requiresBuild: true
-    dev: true
     optional: true
 
   /@rollup/rollup-linux-arm-musleabihf@4.17.2:
@@ -2450,27 +2410,11 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@rollup/rollup-linux-arm64-gnu@4.5.2:
-    resolution: {integrity: sha512-7Pk/5mO11JW/cH+a8lL/i0ZxmRGrbpYqN0VwO2DHhU+SJWWOH2zE1RAcPaj8KqiwC8DCDIJOSxjV9+9lLb6aeA==}
-    cpu: [arm64]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
   /@rollup/rollup-linux-arm64-musl@4.17.2:
     resolution: {integrity: sha512-NMPylUUZ1i0z/xJUIx6VUhISZDRT+uTWpBcjdv0/zkp7b/bQDF+NfnfdzuTiB1G6HTodgoFa93hp0O1xl+/UbA==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
-    optional: true
-
-  /@rollup/rollup-linux-arm64-musl@4.5.2:
-    resolution: {integrity: sha512-KrRnuG5phJx756e62wxvWH2e+TK84MP2IVuPwfge+GBvWqIUfVzFRn09TKruuQBXzZp52Vyma7FjMDkwlA9xpg==}
-    cpu: [arm64]
-    os: [linux]
-    requiresBuild: true
-    dev: true
     optional: true
 
   /@rollup/rollup-linux-powerpc64le-gnu@4.17.2:
@@ -2501,27 +2445,11 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@rollup/rollup-linux-x64-gnu@4.5.2:
-    resolution: {integrity: sha512-My+53GasPa2D2tU5dXiyHYwrELAUouSfkNlZ3bUKpI7btaztO5vpALEs3mvFjM7aKTvEbc7GQckuXeXIDKQ0fg==}
-    cpu: [x64]
-    os: [linux]
-    requiresBuild: true
-    dev: true
-    optional: true
-
   /@rollup/rollup-linux-x64-musl@4.17.2:
     resolution: {integrity: sha512-h1+yTWeYbRdAyJ/jMiVw0l6fOOm/0D1vNLui9iPuqgRGnXA0u21gAqOyB5iHjlM9MMfNOm9RHCQ7zLIzT0x11Q==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
-    optional: true
-
-  /@rollup/rollup-linux-x64-musl@4.5.2:
-    resolution: {integrity: sha512-/f0Q6Sc+Vw54Ws6N8fxaEe4R7at3b8pFyv+O/F2VaQ4hODUJcRUcCBJh6zuqtgQQt7w845VTkGLFgWZkP3tUoQ==}
-    cpu: [x64]
-    os: [linux]
-    requiresBuild: true
-    dev: true
     optional: true
 
   /@rollup/rollup-win32-arm64-msvc@4.17.2:
@@ -2531,14 +2459,6 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@rollup/rollup-win32-arm64-msvc@4.5.2:
-    resolution: {integrity: sha512-NCKuuZWLht6zj7s6EIFef4BxCRX1GMr83S2W4HPCA0RnJ4iHE4FS1695q6Ewoa6A9nFjJe1//yUu0kgBU07Edw==}
-    cpu: [arm64]
-    os: [win32]
-    requiresBuild: true
-    dev: true
-    optional: true
-
   /@rollup/rollup-win32-ia32-msvc@4.17.2:
     resolution: {integrity: sha512-7II/QCSTAHuE5vdZaQEwJq2ZACkBpQDOmQsE6D6XUbnBHW8IAhm4eTufL6msLJorzrHDFv3CF8oCA/hSIRuZeQ==}
     cpu: [ia32]
@@ -2546,27 +2466,11 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@rollup/rollup-win32-ia32-msvc@4.5.2:
-    resolution: {integrity: sha512-J5zL3riR4AOyU/J3M/i4k/zZ8eP1yT+nTmAKztCXJtnI36jYH0eepvob22mAQ/kLwfsK2TB6dbyVY1F8c/0H5A==}
-    cpu: [ia32]
-    os: [win32]
-    requiresBuild: true
-    dev: true
-    optional: true
-
   /@rollup/rollup-win32-x64-msvc@4.17.2:
     resolution: {integrity: sha512-TGGO7v7qOq4CYmSBVEYpI1Y5xDuCEnbVC5Vth8mOsW0gDSzxNrVERPc790IGHsrT2dQSimgMr9Ub3Y1Jci5/8w==}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
-    optional: true
-
-  /@rollup/rollup-win32-x64-msvc@4.5.2:
-    resolution: {integrity: sha512-pL0RXRHuuGLhvs7ayX/SAHph1hrDPXOM5anyYUQXWJEENxw3nfHkzv8FfVlEVcLyKPAEgDRkd6RKZq2SMqS/yg==}
-    cpu: [x64]
-    os: [win32]
-    requiresBuild: true
-    dev: true
     optional: true
 
   /@shikijs/core@1.6.0:
@@ -3636,6 +3540,7 @@ packages:
       readdirp: 3.6.0
     optionalDependencies:
       fsevents: 2.3.3
+    dev: false
 
   /chokidar@3.6.0:
     resolution: {integrity: sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==}
@@ -6254,15 +6159,6 @@ packages:
       util-deprecate: 1.0.2
     dev: true
 
-  /postcss@8.4.31:
-    resolution: {integrity: sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ==}
-    engines: {node: ^10 || ^12 || >=14}
-    dependencies:
-      nanoid: 3.3.7
-      picocolors: 1.0.0
-      source-map-js: 1.2.0
-    dev: true
-
   /postcss@8.4.38:
     resolution: {integrity: sha512-Wglpdk03BSfXkHoQa3b/oulrotAkwrlLDRSOb9D0bN86FdRyE9lppSp33aHNPgBa0JKCoB+drFLZkQoRRYae5A==}
     engines: {node: ^10 || ^12 || >=14}
@@ -6635,26 +6531,6 @@ packages:
       '@rollup/rollup-win32-x64-msvc': 4.17.2
       fsevents: 2.3.3
 
-  /rollup@4.5.2:
-    resolution: {integrity: sha512-CRK1uoROBfkcqrZKyaFcqCcZWNsvJ6yVYZkqTlRocZhO2s5yER6Z3f/QaYtO8RGyloPnmhwgzuPQpNGeK210xQ==}
-    engines: {node: '>=18.0.0', npm: '>=8.0.0'}
-    hasBin: true
-    optionalDependencies:
-      '@rollup/rollup-android-arm-eabi': 4.5.2
-      '@rollup/rollup-android-arm64': 4.5.2
-      '@rollup/rollup-darwin-arm64': 4.5.2
-      '@rollup/rollup-darwin-x64': 4.5.2
-      '@rollup/rollup-linux-arm-gnueabihf': 4.5.2
-      '@rollup/rollup-linux-arm64-gnu': 4.5.2
-      '@rollup/rollup-linux-arm64-musl': 4.5.2
-      '@rollup/rollup-linux-x64-gnu': 4.5.2
-      '@rollup/rollup-linux-x64-musl': 4.5.2
-      '@rollup/rollup-win32-arm64-msvc': 4.5.2
-      '@rollup/rollup-win32-ia32-msvc': 4.5.2
-      '@rollup/rollup-win32-x64-msvc': 4.5.2
-      fsevents: 2.3.3
-    dev: true
-
   /run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
     dependencies:
@@ -6701,9 +6577,9 @@ packages:
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
-      chokidar: 3.5.3
+      chokidar: 3.6.0
       immutable: 4.3.4
-      source-map-js: 1.0.2
+      source-map-js: 1.2.0
 
   /sass@1.77.2:
     resolution: {integrity: sha512-eb4GZt1C3avsX3heBNlrc7I09nyT00IUuo4eFhAbeXWU2fvA7oXI53SxODVAA+zgZCk9aunAZgO+losjR3fAwA==}
@@ -6841,10 +6717,6 @@ packages:
     dependencies:
       no-case: 2.3.2
     dev: true
-
-  /source-map-js@1.0.2:
-    resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
-    engines: {node: '>=0.10.0'}
 
   /source-map-js@1.2.0:
     resolution: {integrity: sha512-itJW8lvSA0TXEphiRoawsCksnlf8SyvmFzIhltqAHluXd88pkCd+cXJVHTDwdCr0IzwptSm035IHQktUu1QUMg==}
@@ -7482,8 +7354,8 @@ packages:
     dependencies:
       '@types/node': 20.5.0
       esbuild: 0.19.7
-      postcss: 8.4.31
-      rollup: 4.5.2
+      postcss: 8.4.38
+      rollup: 4.17.2
       sass: 1.65.0
     optionalDependencies:
       fsevents: 2.3.3
