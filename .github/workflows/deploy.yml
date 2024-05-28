@@ -35,10 +35,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build challenges (a few challenges for now)
+      - name: Build challenges
         run: pnpm run build
-        env:
-          VITE_WEATHER_API_KEY: ${{ secrets.WEATHERAPI_API_KEY }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
