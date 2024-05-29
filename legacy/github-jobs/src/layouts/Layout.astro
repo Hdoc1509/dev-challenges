@@ -77,9 +77,25 @@ const { title } = Astro.props;
   }
 
   body {
-    min-width: 320px;
+    --_padding: 2rem;
+    --_max-width: 1200px;
+
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 16px;
+
+    width: min(var(--_max-width), 100% - calc(2 * var(--_padding)));
+    min-height: 100vh;
+    min-height: 100dvh;
     background-color: var(--bg-color, #fff);
+    padding-block: var(--_padding);
+    margin: 0 auto;
 
     color: var(--text-color, #000);
+
+    @media (max-width: 767px) {
+      --_padding: 1rem;
+    }
   }
 </style>
