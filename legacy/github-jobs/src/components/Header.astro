@@ -1,0 +1,32 @@
+---
+import { ThemeToggle } from "./ThemeToggle.tsx";
+---
+
+<header class="main-header">
+  <h1>
+    <span class="bold">Github</span> Jobs
+  </h1>
+  <ThemeToggle client:only="react" />
+</header>
+
+<style is:global>
+  .main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-family: "Poppins", sans-serif;
+  }
+  .main-header .bold {
+    font-weight: 700;
+  }
+
+  h1 {
+    font-size: var(--fs-4);
+    font-weight: 300;
+  }
+
+  [data-theme="dark"] .theme-button {
+    --icon-color: #87ceeb;
+  }
+</style>
