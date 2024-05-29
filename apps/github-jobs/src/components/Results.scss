@@ -16,4 +16,7 @@ main {
   display: grid;
   gap: 32px;
 
+  &__link {
+    text-decoration: none;
+  }
 }

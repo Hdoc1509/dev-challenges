@@ -1,5 +1,3 @@
-import { createJobLink } from "../utils/jobs";
-import { Link } from "react-router-dom";
 import { Icon } from "@hrc/material-icons";
 import type { Job } from "../types";
 import "./JobCard.scss";
@@ -8,11 +6,7 @@ export const JobCard = ({ job }: { job: Job }) => {
   const { thumbnail, company, title, isFullTime, location, createdAt } = job;
 
   return (
-    <Link
-      to={`/job/${createJobLink(job)}`}
-      state={{ job }}
-      className="job-card"
-    >
+    <div className="job-card">
       <div className="job-card__image">
         {thumbnail ? (
           <img src={thumbnail} alt={`${company.name} logo`} />
@@ -29,6 +23,6 @@ export const JobCard = ({ job }: { job: Job }) => {
       <p className="job-card__created">
         <Icon name="access_time" /> {createdAt ?? "Unkown date"}
       </p>
-    </Link>
+    </div>
   );
 };
