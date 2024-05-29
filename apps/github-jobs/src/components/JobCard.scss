@@ -36,6 +36,45 @@
       ".     location created-at";
   }
 
+  &--in-job-page {
+    grid-template-areas:
+      "title title schedule"
+      "created-at created-at ."
+      "image company ."
+      "image location ."
+      "description description description";
+      grid-template-columns: 60px auto 1fr;
+
+    padding: 0;
+    box-shadow: none;
+    margin-bottom: auto;
+
+    cursor: default;
+
+    &:hover,
+    &:focus-visible {
+      outline: none;
+      --job-title-decoration: none;
+    }
+
+    .job-card__title {
+      font-size: var(--fs-4);
+      // TODO: get font-weight from figma
+    }
+    .job-card__image {
+      margin-block: 20px;
+    }
+    .job-card__company {
+      margin-top: 10px;
+      font-size: var(--fs-2);
+      font-weight: 700;
+    }
+    .job-card__location {
+      margin-left: 0;
+      margin-bottom: 10px;
+    }
+  }
+
   &__image {
     grid-area: image;
 
@@ -97,5 +136,11 @@
     color: var(--text-secondary);
     font-weight: 500;
     --icon-size: 1.5em;
+  }
+
+  &__description {
+    grid-area: description;
+    font-size: 1rem;
+    white-space: pre-wrap;
   }
 }

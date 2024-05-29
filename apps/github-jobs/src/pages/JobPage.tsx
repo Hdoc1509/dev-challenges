@@ -1,6 +1,6 @@
 import { useLocation, Link } from "react-router-dom";
 import { Icon } from "@hrc/material-icons";
-import { JobDetails } from "../components/JobDetails";
+import { JobCard } from "../components/JobCard";
 import type { Job } from "../types";
 
 export const JobPage = () => {
@@ -31,7 +31,7 @@ export const JobPage = () => {
           </p>
         </section>
       </aside>
-      <JobDetails job={job} />
+      <JobCard job={job} isInJobPage />
     </div>
   );
 };
