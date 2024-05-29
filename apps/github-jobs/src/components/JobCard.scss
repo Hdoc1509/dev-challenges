@@ -43,7 +43,7 @@
       "image company ."
       "image location ."
       "description description description";
-      grid-template-columns: 60px auto 1fr;
+    grid-template-columns: 60px auto 1fr;
 
     padding: 0;
     box-shadow: none;
@@ -72,6 +72,17 @@
     .job-card__location {
       margin-left: 0;
       margin-bottom: 10px;
+    }
+
+    @media (max-width: 1050px) {
+      grid-template-areas:
+        "title title"
+        "schedule ."
+        "created-at ."
+        "image company"
+        "image location"
+        "description description";
+      grid-template-columns: auto 1fr auto;
     }
   }
 
