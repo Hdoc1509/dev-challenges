@@ -1,0 +1,14 @@
+[
+  {
+    "id": "585069b4ee19ad271e9b9d88",
+    "google_id": 1023191,
+    "google_parent_id": 21167,
+    "name": "New York",
+    "canonical_name": "New York,New York,United States",
+    "country_code": "US",
+    "target_type": "City",
+    "reach": 23600000,
+    "gps": [-74.0059413, 40.7127837],
+    "keys": ["new", "york", "new", "york", "united", "states"]
+  }
+]
