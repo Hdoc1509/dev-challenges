@@ -1,12 +1,11 @@
-import { parseJobs } from "@/utils/jobs";
-import { JobsResponseSchema } from "@/schemas/jobs";
+import { JobsResponseSchema, type JobsResponse } from "@/schemas/jobs";
 import { JobsResponseError } from "@/errors";
 import { SERPAPI } from "@/config";
 import locationsMock from "@/mocks/locations.json";
 import type { JobService } from "./types";
 
-export const getJobs: JobService = async (query, options = {}) => {
-  const { location, fullTime, page } = options;
+export const getJobs: JobService<JobsResponse> = async (query, options) => {
+  const { location, fullTime, page } = options ?? {};
   const params = new URLSearchParams({
     engine: "google_jobs",
     q: query,
@@ -41,7 +40,7 @@ export const getJobs: JobService = async (query, options = {}) => {
     if (data.search_information?.jobs_results_state === "Fully empty")
       return [new Error(`No jobs found for: ${query}`)];
 
-    return [null, parseJobs(data)];
+    return [null, data];
   } catch (error) {
     if (error instanceof Error) return [error];
   }
