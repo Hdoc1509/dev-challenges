@@ -1,10 +1,10 @@
 import { searchLocation } from "../services/geolocation";
 import { getCurrentCoords } from "./geolocation";
 import { sanitizeString } from "./string";
-import type { ApiResponse } from "../schemas/jobs";
+import type { JobsResponse } from "../schemas/jobs";
 import type { Job, PromiseWithError } from "../types";
 
-export const parseJobs = (data: ApiResponse): Job[] => {
+export const parseJobs = (data: JobsResponse): Job[] => {
   return data.jobs_results!.map((job) => ({
     title: job.title,
     company: {

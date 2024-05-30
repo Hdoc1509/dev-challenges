@@ -65,7 +65,7 @@ const JobsResultSchema = z.object({
 });
 export type JobsResult = z.infer<typeof JobsResultSchema>;
 
-export const ApiResponseSchema = z.object({
+export const JobsResponseSchema = z.object({
   search_metadata: SearchMetadataSchema,
   search_parameters: SearchParametersSchema,
   jobs_results: z.array(JobsResultSchema).optional(),
@@ -73,4 +73,4 @@ export const ApiResponseSchema = z.object({
   search_information: SearchInformationSchema.optional(),
   error: z.string().optional(),
 });
-export type ApiResponse = z.infer<typeof ApiResponseSchema>;
+export type JobsResponse = z.infer<typeof JobsResponseSchema>;

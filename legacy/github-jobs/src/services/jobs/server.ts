@@ -1,5 +1,5 @@
 import { parseJobs } from "@/utils/jobs";
-import { ApiResponseSchema } from "@/schemas/jobs";
+import { JobsResponseSchema } from "@/schemas/jobs";
 import { JobsResponseError } from "@/errors";
 import { SERPAPI } from "@/config";
 import locationsMock from "@/mocks/locations.json";
@@ -29,7 +29,7 @@ export const getJobs: JobService = async (query, options = {}) => {
     if (!res.ok)
       return [new JobsResponseError("Jobs service response error", res)];
 
-    const parsedData = ApiResponseSchema.safeParse(await res.json());
+    const parsedData = JobsResponseSchema.safeParse(await res.json());
 
     if (!parsedData.success)
       return [new Error("Jobs service data error. Invalid data")];
