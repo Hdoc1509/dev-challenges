@@ -17,12 +17,6 @@ export type LocationCoords = {
   longitude: number;
 };
 
-export type SearchOptions = {
-  fullTime?: boolean;
-  location?: string;
-  page?: number;
-};
-
 export type Search = {
   query: string;
   location: string;
