@@ -5,8 +5,8 @@ import type { JobService } from "./types";
 
 const mockLocations = jobsMock.jobs_results.map(({ location }) => location);
 
-export const getMockedJobs: JobService = (query, options = {}) => {
-  const { location, fullTime } = options;
+export const getMockedJobs: JobService = (search) => {
+  const { query, location, fullTime } = search;
   const jobs = parseJobs(jobsMock);
   const endIndexSlice = randomInt(7, 10);
 

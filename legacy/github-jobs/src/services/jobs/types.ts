@@ -1,6 +1,3 @@
-import type { Job, PromiseWithError, SearchOptions } from "@/types";
+import type { Job, PromiseWithError, Search } from "@/types";
 
-export type JobService<T = Job[]> = (
-  query: string,
-  options?: SearchOptions,
-) => PromiseWithError<T>;
+export type JobService<T = Job[]> = (search: Search) => PromiseWithError<T>;

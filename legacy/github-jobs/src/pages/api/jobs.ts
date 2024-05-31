@@ -30,8 +30,7 @@ export const GET: APIRoute = async ({ request }) => {
       status: 400,
     });
 
-  const options = { location, fullTime, page };
-  const [jobsError, jobs] = await getJobs(query, options);
+  const [jobsError, jobs] = await getJobs({ query, location, fullTime, page });
 
   if (jobsError)
     return new Response(JSON.stringify({ error: jobsError.message }), {

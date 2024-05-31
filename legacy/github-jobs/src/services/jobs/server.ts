@@ -4,8 +4,8 @@ import { SERPAPI } from "@/config";
 import locationsMock from "@/mocks/locations.json";
 import type { JobService } from "./types";
 
-export const getJobs: JobService<JobsResponse> = async (query, options) => {
-  const { location, fullTime, page } = options ?? {};
+export const getJobs: JobService<JobsResponse> = async (search) => {
+  const { query, location, fullTime, page } = search;
   const params = new URLSearchParams({
     engine: "google_jobs",
     q: query,
