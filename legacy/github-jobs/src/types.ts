@@ -23,4 +23,11 @@ export type SearchOptions = {
   page?: number;
 };
 
+export type Search = {
+  query: string;
+  location: string;
+  fullTime?: boolean;
+  page?: number;
+};
+
 export type PromiseWithError<T> = Promise<[Error] | [null, T]>;
