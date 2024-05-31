@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import type { Job, SearchOptions } from "../types";
+import type { Job, Search } from "../types";
 
 type Status = "idle" | "error" | "success" | "loading";
 
@@ -7,8 +7,7 @@ type State = {
   jobs: Job[];
   status: Status;
   error?: Error;
-  searchQuery: string;
-  searchOptions: SearchOptions;
+  search: Search;
   pages: number;
 };
 
@@ -16,8 +15,7 @@ type Action = {
   setJobs: (jobs: Job[]) => void;
   setStatus: (status: Status) => void;
   setError: (error: Error) => void;
-  setSearchQuery: (query: string) => void;
-  setSearchOptions: (options: SearchOptions) => void;
+  setSearch: (newSearch: Partial<Search>) => void;
   setPages: (pages: number) => void;
 };
 
@@ -25,10 +23,10 @@ const initialState: State = {
   jobs: [],
   status: "idle",
   error: undefined,
-  searchQuery: "",
-  searchOptions: {
-    fullTime: undefined,
-    location: undefined,
+  search: {
+    query: "",
+    location: "",
+    fullTime: false,
     page: 0,
   },
   pages: 10,
@@ -40,7 +38,9 @@ export const useJobsStore = create<State & Action>()((set) => ({
   setJobs: (jobs: Job[]) => set({ jobs }),
   setStatus: (status: Status) => set({ status }),
   setError: (error: Error) => set({ error }),
-  setSearchQuery: (query: string) => set({ searchQuery: query }),
-  setSearchOptions: (options: SearchOptions) => set({ searchOptions: options }),
+  setSearch: (newSearch: Partial<Search>) =>
+    set((state) => ({
+      search: { ...state.search, ...newSearch },
+    })),
   setPages: (pages: number) => set({ pages }),
 }));
