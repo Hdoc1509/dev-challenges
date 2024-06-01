@@ -1,16 +1,9 @@
 import { WEATHERAPI } from "@/config";
 import { GeolocationResponseError } from "@/errors";
-import {
-  LocationResponseSchema,
-  type LocationResponse,
-} from "@/schemas/geolocation";
-import type { LocationCoords, PromiseWithError } from "@/types";
+import { LocationResponseSchema } from "@/schemas/geolocation";
+import type { LocationService } from "./types";
 
-type LocationOptions = { zipCode: number } | { coords: LocationCoords };
-
-export const searchLocation = async (
-  options: LocationOptions,
-): PromiseWithError<LocationResponse[number]> => {
+export const searchLocation: LocationService = async (options) => {
   const params = new URLSearchParams({
     limit: "1",
     key: WEATHERAPI.KEY,
