@@ -1,0 +1,52 @@
+.jobs-pagination {
+  display: grid;
+  position: relative;
+
+  grid-auto-flow: column;
+  grid-auto-columns: 36px;
+  grid-auto-rows: 36px;
+  gap: 12px;
+
+  margin-left: auto;
+  padding: 0;
+  width: fit-content;
+
+  list-style: none;
+
+  li {
+    color: var(--text-secondary);
+
+    &:hover {
+      color: var(--primary);
+    }
+
+    &.disabled,
+    &.selected {
+      pointer-events: none;
+    }
+
+    &.disabled {
+      color: rgb(255 255 255 / 30%);
+    }
+  }
+
+  a {
+    display: grid;
+    place-items: center;
+
+    border: 1px solid;
+    border-radius: 4px;
+    height: 100%;
+
+    font-size: var(--fs-00);
+
+    cursor: pointer;
+
+    --icon-size: 2em;
+  }
+  li.selected a {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+  }
+}

@@ -1,22 +1,19 @@
 ---
+import { Home } from "@/components/Home";
 import Layout from "../layouts/Layout.astro";
 import "@/styles/index.css";
 ---
 
 <Layout>
-  <div class="home">
-    <div class="search-form">search form</div>
-    <div class="search-options">search options</div>
-    <main>results</main>
-  </div>
+  <Home client:only="react" />
 </Layout>
 
-<style>
-.search-form {
-  grid-area: search-form;
-}
+<style is:global>
+  .search-form {
+    grid-area: search-form;
+  }
 
-.search-options {
-  grid-area: search-options;
-}
+  .search-options {
+    grid-area: search-options;
+  }
 </style>
