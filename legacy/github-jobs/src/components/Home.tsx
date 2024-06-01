@@ -5,7 +5,7 @@ import { getMockedJobs } from "@/services/jobs/mock";
 import { getLocationOption } from "@/utils/geolocation";
 import { RingSpinner } from "@hrc/spinner/dist/RingSpinner";
 import { SearchForm } from "./SearchForm";
-// import { SearchOptions } from "./SearchOptions";
+import { SearchOptions } from "./SearchOptions";
 // import { Results } from "./Results";
 import { Pagination } from "./Pagination";
 import { isDev } from "@/config";
@@ -56,8 +56,7 @@ export const Home = () => {
   return (
     <div className="home">
       <SearchForm />
-      {/* <SearchOptions /> */}
-      <div className="search-options">search options</div>
+      <SearchOptions />
       <main>
         {status === "loading" && <RingSpinner size="large" />}
         {status === "error" && <h3>{error?.message}</h3>}
