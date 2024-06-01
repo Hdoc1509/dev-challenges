@@ -1,4 +1,4 @@
-import { searchLocation } from "../services/geolocation";
+import { searchLocation } from "@/services/geolocation/client";
 import { getCurrentCoords } from "./geolocation";
 import { sanitizeString } from "./string";
 import type { JobsResponse } from "../schemas/jobs";
