@@ -4,7 +4,7 @@ import { getJobs } from "@/services/jobs/client";
 import { getMockedJobs } from "@/services/jobs/mock";
 import { getLocationOption } from "@/utils/geolocation";
 import { RingSpinner } from "@hrc/spinner/dist/RingSpinner";
-// import { SearchForm } from "./SearchForm";
+import { SearchForm } from "./SearchForm";
 // import { SearchOptions } from "./SearchOptions";
 // import { Results } from "./Results";
 import { Pagination } from "./Pagination";
@@ -55,8 +55,7 @@ export const Home = () => {
 
   return (
     <div className="home">
-      {/* <SearchForm /> */}
-      <div className="search-form">search form</div>
+      <SearchForm />
       {/* <SearchOptions /> */}
       <div className="search-options">search options</div>
       <main>
