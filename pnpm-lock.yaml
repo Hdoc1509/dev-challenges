@@ -299,6 +299,9 @@ importers:
       react-loading-skeleton:
         specifier: 3.4.0
         version: 3.4.0(react@18.2.0)
+      react-paginate:
+        specifier: 8.2.0
+        version: 8.2.0(react@18.2.0)
       zod:
         specifier: 3.22.4
         version: 3.22.4
