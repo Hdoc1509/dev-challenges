@@ -23,8 +23,15 @@ export const SearchResults = ({ onClose }: { onClose: () => void }) => {
     clearData();
     onClose();
 
-    const [[weatherError, weather], [forecastError, forecast]] =
-      await Promise.all([getWeather(coords), getForecast(coords)]);
+    // NOTE: it is typed incorrectly with array desctructuring
+    // const [[weatherError, weather], [forecastError, forecast]] =
+    //   await Promise.all([getWeather(coords), getForecast(coords)]);
+    const [weatherResult, forecastResult] = await Promise.all([
+      getWeather(coords),
+      getForecast(coords),
+    ]);
+    const [weatherError, weather] = weatherResult;
+    const [forecastError, forecast] = forecastResult;
 
     if (weatherError) return setWeatherError(weatherError);
     if (forecastError) return setWeatherError(forecastError);

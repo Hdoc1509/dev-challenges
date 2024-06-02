@@ -38,8 +38,15 @@ function App() {
 
       if (coordsError) throw coordsError;
 
-      const [[weatherError, weather], [forecastError, forecast]] =
-        await Promise.all([getWeather(coords), getForecast(coords)]);
+      // NOTE: it is typed incorrectly with array desctructuring
+      // const [[weatherError, weather], [forecastError, forecast]] =
+      //   await Promise.all([getWeather(coords), getForecast(coords)]);
+      const [weatherResult, forecastResult] = await Promise.all([
+        getWeather(coords),
+        getForecast(coords),
+      ]);
+      const [weatherError, weather] = weatherResult;
+      const [forecastError, forecast] = forecastResult;
 
       if (weatherError) throw weatherError;
       if (forecastError) throw forecastError;
