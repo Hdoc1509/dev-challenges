@@ -1,0 +1,19 @@
+.home {
+  display: grid;
+  grid-template-areas:
+    "search-form    search-form"
+    "search-options main";
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr 2fr;
+  gap: 16px;
+}
+@media (max-width: 767px) {
+  .home {
+    grid-template-areas:
+      "search-form"
+      "search-options"
+      "main";
+    grid-template-rows: auto auto 1fr;
+    grid-template-columns: unset;
+  }
+}

@@ -1,0 +1,16 @@
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-family: "Poppins", sans-serif;
+
+  .bold {
+    font-weight: 700;
+  }
+}
+
+h1 {
+  font-size: var(--fs-4);
+  font-weight: 300;
+}

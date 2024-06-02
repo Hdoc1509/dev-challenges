@@ -1,6 +1,4 @@
 ---
-import Header from "@/components/Header.astro";
-import { Footer } from "@internal/components/src/Footer";
 import "@material-design-icons/font/filled.css";
 import "@fontsource/roboto/latin-400.css";
 import "@fontsource/roboto/latin-500.css";
@@ -30,9 +28,7 @@ import "@fontsource/poppins/latin-700.css";
       is:inline></script>
   </head>
   <body>
-    <Header />
     <slot />
-    <Footer />
   </body>
 </html>
 <style is:global lang="scss">
@@ -69,6 +65,10 @@ import "@fontsource/poppins/latin-700.css";
 
     --checkbox-bg-hover: rgb(255 255 255 / 8%);
     --radio-bg-hover: rgb(255 255 255 / 8%);
+
+    .theme-button {
+      --icon-color: #87ceeb;
+    }
   }
 
   body {

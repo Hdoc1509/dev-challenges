@@ -3,23 +3,20 @@ import { useJobsStore } from "@/store/jobs";
 import { getJobs } from "@/services/jobs/client";
 import { getMockedJobs } from "@/services/jobs/mock";
 import { getLocationOption } from "@/utils/geolocation";
-import { RingSpinner } from "@hrc/spinner/dist/RingSpinner";
-import { SearchForm } from "./SearchForm";
-import { SearchOptions } from "./SearchOptions";
-// import { Results } from "./Results";
-import { Pagination } from "./Pagination";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { Footer } from "@internal/components/src/Footer";
+import { Header } from "@/components/Header";
+import { Home } from "./Home";
+import { JobPage } from "./JobPage";
 import { isDev } from "@/config";
 
 let didInit = false;
 
-export const Home = () => {
-  const status = useJobsStore((s) => s.status);
-  const error = useJobsStore((s) => s.error);
-  // const jobs = useJobsStore((s) => s.jobs);
+function App() {
   const setJobs = useJobsStore((s) => s.setJobs);
+  const setStatus = useJobsStore((s) => s.setStatus);
   const setError = useJobsStore((s) => s.setError);
   const setPages = useJobsStore((s) => s.setPages);
-  const setStatus = useJobsStore((s) => s.setStatus);
 
   const getInitialJobs = useCallback(async () => {
     setStatus("loading");
@@ -49,21 +46,20 @@ export const Home = () => {
   useEffect(() => {
     if (!didInit) {
       didInit = true;
-      getInitialJobs();
+      void getInitialJobs();
     }
-  }, []);
+  }, [getInitialJobs, setJobs]);
 
   return (
-    <div className="home">
-      <SearchForm />
-      <SearchOptions />
-      <main>
-        {status === "loading" && <RingSpinner size="large" />}
-        {status === "error" && <h3>{error?.message}</h3>}
-        {/* {status === "success" && <Results jobs={jobs} />} */}
-        {status === "success" && <p>results</p>}
-        <Pagination />
-      </main>
-    </div>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/job/:name" element={<JobPage />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
   );
-};
+}
+
+export default App;

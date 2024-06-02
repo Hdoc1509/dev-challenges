@@ -1,0 +1,40 @@
+.job-page {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 32px;
+}
+@media (max-width: 767px) {
+  .job-page {
+    grid-template-columns: unset;
+    grid-template-rows: auto 1fr;
+  }
+}
+.job-page__aside {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+
+  font-size: var(--fs-0);
+}
+.back-to-search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  width: fit-content;
+  color: var(--primary);
+  text-decoration: none;
+  --icon-size: 1.5em;
+}
+.job-page__apply h3 {
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+.job-page__apply p {
+  color: var(--text);
+}
+.company-website {
+  color: var(--primary);
+  text-decoration: none;
+}
