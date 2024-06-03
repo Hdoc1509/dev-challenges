@@ -15,7 +15,7 @@ There are some [packages](#packages) I created while completing them.
 - [x] [Random quote generator](/legacy/quote-generator/)
 - [x] [Country quiz](/legacy/country-quiz/)
 - [x] [Weather app](/legacy/weather-app/)
-- [ ] [Github Jobs](/apps/github-jobs/)
+- [ ] [Github Jobs](/legacy/github-jobs/)
 
 ## Packages
 
