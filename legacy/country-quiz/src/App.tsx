@@ -17,8 +17,7 @@ function App() {
   const question = questions[currentQuestionIndex];
 
   const loadQuestions = useCallback(
-    async (limit?: number) => {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+    (limit?: number) => {
       void getQuestions(limit).then(setQuestions);
     },
     [setQuestions],
