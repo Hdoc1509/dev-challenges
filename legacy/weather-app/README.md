@@ -83,5 +83,5 @@ cd dev-challenges && pnpm install
 
 # Run weather-app in dev-mode
 cd legacy/weather-app
-pnpm run dev --open
+pnpm run dev
 ```

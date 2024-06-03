@@ -82,5 +82,5 @@ cd dev-challenges && pnpm install
 
 # Run github-jobs in dev-mode
 cd legacy/github-jobs
-pnpm run dev --open
+pnpm run dev
 ```
