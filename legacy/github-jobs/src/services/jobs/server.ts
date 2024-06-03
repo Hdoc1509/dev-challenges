@@ -11,6 +11,7 @@ export const getJobs: JobService<JobsResponse> = async (search) => {
     q: query,
     api_key: SERPAPI.KEY,
   });
+  const controller = new AbortController();
 
   // INFO: https://serpapi.com/google-jobs-api#api-parameters-pagination
   params.append("start", (page ? (page - 1) * 10 : 0).toString());
@@ -22,8 +23,12 @@ export const getJobs: JobService<JobsResponse> = async (search) => {
     params.append("chips", "employment_type:FULLTIME");
   }
 
+  setTimeout(() => controller.abort(), 5000);
+
   try {
-    const res = await fetch(`${SERPAPI.URL}/search.json?${params.toString()}`);
+    const res = await fetch(`${SERPAPI.URL}/search.json?${params.toString()}`, {
+      signal: controller.signal,
+    });
 
     if (!res.ok)
       return [new JobsResponseError("Jobs service response error", res)];
@@ -42,7 +47,14 @@ export const getJobs: JobService<JobsResponse> = async (search) => {
 
     return [null, data];
   } catch (error) {
-    if (error instanceof Error) return [error];
+    if (error instanceof Error) {
+      const { name } = error;
+
+      if (name === "AbortError")
+        return [new Error("Jobs service response timed out")];
+
+      return [error];
+    }
   }
 
   return [new Error("An unknown error occurred while trying to get jobs")];

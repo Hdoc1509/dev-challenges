@@ -8,6 +8,7 @@ export const searchLocation: LocationService = async (options) => {
     limit: "1",
     key: WEATHERAPI.KEY,
   });
+  const controller = new AbortController();
 
   if ("coords" in options) {
     const { latitude, longitude } = options.coords;
@@ -16,9 +17,12 @@ export const searchLocation: LocationService = async (options) => {
     params.append("q", `${options.zipCode}`);
   }
 
+  setTimeout(() => controller.abort(), 3000);
+
   try {
     const res = await fetch(
       `${WEATHERAPI.URL}/search.json?${params.toString()}`,
+      { signal: controller.signal },
     );
 
     if (!res.ok)
@@ -33,7 +37,14 @@ export const searchLocation: LocationService = async (options) => {
 
     return [null, parsedData.data[0]];
   } catch (error) {
-    if (error instanceof Error) return [error];
+    if (error instanceof Error) {
+      const { name } = error;
+
+      if (name === "AbortError")
+        return [new Error("Geolocation service response timed out ")];
+
+      return [error];
+    }
   }
 
   return [new Error("An unknown error occurred while trying to get location")];
