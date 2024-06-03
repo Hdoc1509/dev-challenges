@@ -107,6 +107,12 @@
     & .material-icons-outlined {
       margin-left: auto;
       --icon-size: 24px;
+
+    }
+
+    // NOTE: This will be added in next release of @hrc/button
+    > [class] {
+      flex-shrink: 0;
     }
   }
 }
