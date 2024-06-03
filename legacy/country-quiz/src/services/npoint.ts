@@ -1,7 +1,7 @@
 import { type Country } from "../schemas/country";
 
 const API_URL = "https://api.npoint.io";
-const BIN_ID = "b10c3aec32d6fb9d4e4d";
+const BIN_ID = "071b01607bee8b976c4e";
 
 export const getCountriesFromBin = async (): Promise<Country[]> => {
   const params = new URLSearchParams({ fields: "name,flags,capital,region" });
