@@ -1,8 +1,11 @@
 import { CountryResponseSchema } from "@/schemas/country";
+import { ServiceError } from "@/errors/service";
 import { parseCountries } from "@/utils/countries";
 import type { Country, PromiseWithError } from "@/types";
 
 const API_URL = "https://restcountries.com/v3.1";
+
+const CountriesError = new ServiceError("Countries");
 
 export const getCountries = async (): PromiseWithError<Country[]> => {
   const controller = new AbortController();
@@ -17,21 +20,18 @@ export const getCountries = async (): PromiseWithError<Country[]> => {
       signal: controller.signal,
     });
 
-    if (!res.ok) return [new Error("Countries service response error")];
+    if (!res.ok) return [CountriesError.response()];
 
     const parsedData = CountryResponseSchema.safeParse(await res.json());
 
-    if (!parsedData.success)
-      return [new Error("Countries service data error. Invalid data")];
+    if (!parsedData.success) return [CountriesError.validation()];
 
     return [null, parseCountries(parsedData.data)];
   } catch (error) {
     if (error instanceof Error) {
-      return error.name === "AbortError"
-        ? [new Error("Countries service timed out")]
-        : [error];
+      return error.name === "AbortError" ? [CountriesError.timeout()] : [error];
     }
   }
 
-  return [new Error("Countries service unknown error")];
+  return [CountriesError.unknown()];
 };
