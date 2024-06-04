@@ -3,7 +3,6 @@ import { getQuestions } from "./services/questions";
 import { useQuestionStore } from "./store/questions";
 import { Footer } from "@internal/components/src/Footer";
 import { QuizCard } from "./components/QuizCard";
-import { Results } from "./components/Results";
 import "./App.css";
 
 function App() {
@@ -37,10 +36,7 @@ function App() {
     <>
       <main>
         <h1>Country Quiz</h1>
-        <QuizCard
-          category={question?.category}
-          resultsElement={<Results tryAgain={tryAgain} />}
-        />
+        <QuizCard category={question?.category} tryAgain={tryAgain} />
       </main>
       <Footer />
     </>
