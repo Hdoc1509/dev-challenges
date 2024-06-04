@@ -3,20 +3,23 @@ import { clsx } from "clsx";
 import { Quiz } from "./Quiz";
 import { Results } from "./Results";
 import { Loader } from "./Loader";
-import { QuestionCategories, type QuestionCategory } from "../constants";
+import { QuestionCategories } from "../constants";
 import "./QuizCard.scss";
 
 type Props = {
-  category?: QuestionCategory;
   tryAgain: () => void;
 };
 
-export const QuizCard = ({ category, tryAgain }: Props) => {
+export const QuizCard = ({ tryAgain }: Props) => {
   const status = useQuestionStore((s) => s.status);
+  const questions = useQuestionStore((s) => s.questions);
+  const currentQuestionIndex = useQuestionStore((s) => s.currentQuestionIndex);
+
+  const question = questions[currentQuestionIndex];
 
   const className = clsx("quiz-card", {
     "quiz-card--over": status === "over",
-    "quiz-card--flag": category === QuestionCategories.FlagOfCountry,
+    "quiz-card--flag": question.category === QuestionCategories.FlagOfCountry,
     "quiz-card--loading": status === "loading",
   });
 

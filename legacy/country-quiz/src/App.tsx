@@ -7,12 +7,8 @@ import "./App.css";
 
 function App() {
   const setStatus = useQuestionStore((s) => s.setStatus);
-  const questions = useQuestionStore((s) => s.questions);
-  const currentQuestionIndex = useQuestionStore((s) => s.currentQuestionIndex);
   const setQuestions = useQuestionStore((s) => s.setQuestions);
   const reset = useQuestionStore((s) => s.reset);
-
-  const question = questions[currentQuestionIndex];
 
   const loadQuestions = useCallback(
     (limit?: number) => {
@@ -36,7 +32,7 @@ function App() {
     <>
       <main>
         <h1>Country Quiz</h1>
-        <QuizCard category={question?.category} tryAgain={tryAgain} />
+        <QuizCard tryAgain={tryAgain} />
       </main>
       <Footer />
     </>
