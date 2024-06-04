@@ -1,4 +1,6 @@
-import { CountryResponseSchema, type Country } from "../schemas/country";
+import { CountryResponseSchema } from "../schemas/country";
+import { parseCountries } from "../utils/countries";
+import type { Country } from "../types";
 
 const API_URL = "https://restcountries.com/v3.1";
 
@@ -18,5 +20,5 @@ export const getCountries = async (): Promise<Country[]> => {
 
   const countries = CountryResponseSchema.parse(await res.json());
 
-  return countries;
+  return parseCountries(countries);
 };
