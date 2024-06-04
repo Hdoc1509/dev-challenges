@@ -29,7 +29,7 @@ export const getCountries = async (): PromiseWithError<Country[]> => {
     return [null, parseCountries(parsedData.data)];
   } catch (error) {
     if (error instanceof Error) {
-      return error.name === "AbortError" ? [CountriesError.timeout()] : [error];
+      return [error.name === "AbortError" ? CountriesError.timeout() : error];
     }
   }
 
