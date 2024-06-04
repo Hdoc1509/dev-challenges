@@ -40,7 +40,7 @@ function App() {
         <h1>Country Quiz</h1>
         <QuizCard
           category={question?.category}
-          resultsElement={<Results questions={questions} tryAgain={tryAgain} />}
+          resultsElement={<Results tryAgain={tryAgain} />}
         >
           <Quiz
             quiz={question}

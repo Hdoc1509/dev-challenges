@@ -1,15 +1,15 @@
+import { useQuestionStore } from "../store/questions";
 import { getResultMessage } from "../utils/helpers";
 import { Button } from "@hrc/button/dist/Button";
-import type { Question } from "../types";
 import winnerUrl from "/winner.svg";
 import "./Results.scss";
 
 type Props = {
-  questions: Question[];
   tryAgain: () => void;
 };
 
-export const Results = ({ questions, tryAgain }: Props) => {
+export const Results = ({ tryAgain }: Props) => {
+  const questions = useQuestionStore((s) => s.questions);
   const correct = questions.filter((q) => q.hasBeenAnsweredCorrectly).length;
 
   return (
