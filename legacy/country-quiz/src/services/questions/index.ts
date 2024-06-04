@@ -1,9 +1,9 @@
-import { generateQuestions } from "../utils/questions-generator";
-import { randomSort } from "../utils/helpers";
-import { getCountries } from "./countries";
-import { getCountriesFromBin } from "./npoint";
-import data from "../mocks/questions.json";
-import type { Question, Country } from "../types";
+import { generateQuestions } from "../../utils/questions-generator";
+import { randomSort } from "../../utils/helpers";
+import { getCountries } from "../countries";
+import { getCountriesFromBin } from "../npoint";
+import data from "../../mocks/questions.json";
+import type { Question, Country } from "../../types";
 
 const LS_KEY = "countries";
 
