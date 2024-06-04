@@ -9,7 +9,6 @@ export const Quiz = () => {
   const questions = useQuestionStore((s) => s.questions);
   const currentQuestionIndex = useQuestionStore((s) => s.currentQuestionIndex);
   const goNextQuestion = useQuestionStore((s) => s.goNextQuestion);
-  const selectAnswer = useQuestionStore((s) => s.selectAnswer);
   const setStatus = useQuestionStore((s) => s.setStatus);
 
   const quiz = questions[currentQuestionIndex];
@@ -18,10 +17,6 @@ export const Quiz = () => {
 
   const isLastQuestion = currentQuestion === total;
   const { category, flagUrl, question, selectedAnswer } = quiz;
-
-  const handleAnswer = (answer: string) => {
-    selectAnswer(quiz.id, answer);
-  };
 
   const handleAction = () => {
     isLastQuestion ? setStatus("over") : goNextQuestion();
@@ -34,7 +29,7 @@ export const Quiz = () => {
         <img src={flagUrl} className="quiz-flag" alt="flag" />
       )}
       <p className="quiz-question">{question}</p>
-      <QuizOptions quiz={quiz} handleAnswer={handleAnswer} />
+      <QuizOptions quiz={quiz} />
       {/* NOTE: Can it be moved to QuizCard? */}
       <footer className="quiz-footer">
         <p className="quiz-current-question">

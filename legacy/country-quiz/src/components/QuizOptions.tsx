@@ -1,3 +1,4 @@
+import { useQuestionStore } from "../store/questions";
 import { clsx } from "clsx";
 import { getAnswerData } from "./Quiz.utils";
 import { Button } from "@hrc/button/dist/Button";
@@ -33,11 +34,16 @@ const Option = ({
 
 type Props = {
   quiz: Question;
-  handleAnswer: (answer: string) => void;
 };
 
-export const QuizOptions = ({ quiz, handleAnswer }: Props) => {
+export const QuizOptions = ({ quiz }: Props) => {
+  const selectAnswer = useQuestionStore((s) => s.selectAnswer);
+
   const { answerOptions, selectedAnswer, correctAnswer } = quiz;
+
+  const handleAnswer = (answer: string) => {
+    selectAnswer(quiz.id, answer);
+  };
 
   return (
     <div className="quiz-answers">
