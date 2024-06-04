@@ -6,13 +6,11 @@ const NativeNameSchema = z.object({
 });
 export type NativeName = z.infer<typeof NativeNameSchema>;
 
-const NameSchema = z
-  .object({
-    common: z.string(),
-    official: z.string(),
-    nativeName: z.record(z.string(), NativeNameSchema),
-  })
-  .transform(({ common }) => common);
+const NameSchema = z.object({
+  common: z.string(),
+  official: z.string(),
+  nativeName: z.record(z.string(), NativeNameSchema),
+});
 export type Name = z.infer<typeof NameSchema>;
 
 const FlagsSchema = z.object({
@@ -22,14 +20,12 @@ const FlagsSchema = z.object({
 });
 export type Flags = z.infer<typeof FlagsSchema>;
 
-const CountrySchema = z
-  .object({
-    flags: FlagsSchema,
-    name: NameSchema,
-    capital: z.array(z.string()),
-    region: z.string(),
-  })
-  .transform(({ flags, ...rest }) => ({ ...rest, flagUrl: flags.svg }));
-export type Country = z.infer<typeof CountrySchema>;
+const CountrySchema = z.object({
+  flags: FlagsSchema,
+  name: NameSchema,
+  capital: z.array(z.string()),
+  region: z.string(),
+});
 
 export const CountryResponseSchema = z.array(CountrySchema);
+export type CountryResponse = z.infer<typeof CountryResponseSchema>;
