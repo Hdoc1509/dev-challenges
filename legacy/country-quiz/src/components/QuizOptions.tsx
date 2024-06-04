@@ -1,9 +1,9 @@
-import { useQuestionStore } from "../store/questions";
+import { useQuestionStore } from "@/store/questions";
 import { clsx } from "clsx";
 import { getAnswerData } from "./Quiz.utils";
 import { Button } from "@hrc/button/dist/Button";
 import { Icon } from "@hrc/material-icons";
-import type { Question } from "../types";
+import type { Question } from "@/types";
 
 type OptionProps = {
   option: string;

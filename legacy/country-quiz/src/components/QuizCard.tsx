@@ -1,9 +1,9 @@
-import { useQuestionStore } from "../store/questions";
+import { useQuestionStore } from "@/store/questions";
 import { clsx } from "clsx";
 import { Quiz } from "./Quiz";
 import { Results } from "./Results";
 import { Loader } from "./Loader";
-import { QuestionCategories } from "../constants";
+import { QuestionCategories } from "@/constants";
 import "./QuizCard.scss";
 
 type Props = {

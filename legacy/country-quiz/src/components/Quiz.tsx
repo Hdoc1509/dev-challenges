@@ -1,6 +1,6 @@
-import { useQuestionStore } from "../store/questions";
+import { useQuestionStore } from "@/store/questions";
 import { Button } from "@hrc/button/dist/Button";
-import { QuestionCategories } from "../constants";
+import { QuestionCategories } from "@/constants";
 import { QuizOptions } from "./QuizOptions";
 import characterUrl from "/character.svg";
 import "./Quiz.scss";

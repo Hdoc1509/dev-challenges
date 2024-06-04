@@ -1,5 +1,5 @@
-import { useQuestionStore } from "../store/questions";
-import { getResultMessage } from "../utils/helpers";
+import { useQuestionStore } from "@/store/questions";
+import { getResultMessage } from "@/utils/helpers";
 import { Button } from "@hrc/button/dist/Button";
 import winnerUrl from "/winner.svg";
 import "./Results.scss";
