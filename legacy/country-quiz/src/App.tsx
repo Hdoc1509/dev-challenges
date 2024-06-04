@@ -42,12 +42,7 @@ function App() {
           category={question?.category}
           resultsElement={<Results tryAgain={tryAgain} />}
         >
-          <Quiz
-            quiz={question}
-            totalQuestions={questions.length}
-            currentQuestion={currentQuestionIndex + 1}
-            showResults={() => setStatus("over")}
-          />
+          <Quiz />
         </QuizCard>
       </main>
       <Footer />

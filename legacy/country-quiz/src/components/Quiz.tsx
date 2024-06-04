@@ -2,27 +2,21 @@ import { useQuestionStore } from "../store/questions";
 import { Button } from "@hrc/button/dist/Button";
 import { QuestionCategories } from "../constants";
 import { QuizOptions } from "./QuizOptions";
-import type { Question } from "../types";
 import characterUrl from "/character.svg";
 import "./Quiz.scss";
 
-type Props = {
-  quiz: Question;
-  currentQuestion: number;
-  totalQuestions: number;
-  showResults: () => void;
-};
-
-export const Quiz = ({
-  quiz,
-  currentQuestion,
-  totalQuestions,
-  showResults,
-}: Props) => {
+export const Quiz = () => {
+  const questions = useQuestionStore((s) => s.questions);
+  const currentQuestionIndex = useQuestionStore((s) => s.currentQuestionIndex);
   const goNextQuestion = useQuestionStore((s) => s.goNextQuestion);
   const selectAnswer = useQuestionStore((s) => s.selectAnswer);
+  const setStatus = useQuestionStore((s) => s.setStatus);
 
-  const isLastQuestion = currentQuestion === totalQuestions;
+  const quiz = questions[currentQuestionIndex];
+  const currentQuestion = currentQuestionIndex + 1;
+  const total = questions.length;
+
+  const isLastQuestion = currentQuestion === total;
   const { category, flagUrl, question, selectedAnswer } = quiz;
 
   const handleAnswer = (answer: string) => {
@@ -30,7 +24,7 @@ export const Quiz = ({
   };
 
   const handleAction = () => {
-    isLastQuestion ? showResults() : goNextQuestion();
+    isLastQuestion ? setStatus("over") : goNextQuestion();
   };
 
   return (
@@ -44,7 +38,7 @@ export const Quiz = ({
       {/* NOTE: Can it be moved to QuizCard? */}
       <footer className="quiz-footer">
         <p className="quiz-current-question">
-          {currentQuestion} / {totalQuestions}
+          {currentQuestion} / {total}
         </p>
         <Button
           className="quiz-button"
