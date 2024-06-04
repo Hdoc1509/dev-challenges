@@ -19,7 +19,7 @@ export const QuizCard = ({ tryAgain }: Props) => {
 
   const className = clsx("quiz-card", {
     "quiz-card--over": status === "over",
-    "quiz-card--flag": question.category === QuestionCategories.FlagOfCountry,
+    "quiz-card--flag": question?.category === QuestionCategories.FlagOfCountry,
     "quiz-card--loading": status === "loading",
   });
 
