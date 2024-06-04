@@ -2,7 +2,6 @@ import { useCallback, useEffect } from "react";
 import { getQuestions } from "./services/questions";
 import { useQuestionStore } from "./store/questions";
 import { Footer } from "@internal/components/src/Footer";
-import { Quiz } from "./components/Quiz";
 import { QuizCard } from "./components/QuizCard";
 import { Results } from "./components/Results";
 import "./App.css";
@@ -41,9 +40,7 @@ function App() {
         <QuizCard
           category={question?.category}
           resultsElement={<Results tryAgain={tryAgain} />}
-        >
-          <Quiz />
-        </QuizCard>
+        />
       </main>
       <Footer />
     </>

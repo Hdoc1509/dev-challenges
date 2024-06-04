@@ -1,5 +1,6 @@
 import { useQuestionStore } from "../store/questions";
 import { clsx } from "clsx";
+import { Quiz } from "./Quiz";
 import { Loader } from "./Loader";
 import { QuestionCategories, type QuestionCategory } from "../constants";
 import "./QuizCard.scss";
@@ -9,11 +10,7 @@ type Props = {
   resultsElement: React.ReactNode;
 };
 
-export const QuizCard = ({
-  category,
-  resultsElement,
-  children,
-}: React.PropsWithChildren<Props>) => {
+export const QuizCard = ({ category, resultsElement }: Props) => {
   const status = useQuestionStore((s) => s.status);
 
   const className = clsx("quiz-card", {
@@ -25,7 +22,7 @@ export const QuizCard = ({
   return (
     <div className={className}>
       {status === "loading" && <Loader />}
-      {status === "success" && children}
+      {status === "success" && <Quiz />}
       {status === "over" && resultsElement}
     </div>
   );
