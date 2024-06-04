@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect } from "react";
 import { getQuestions } from "./services/questions";
 import { useQuestionStore } from "./store/questions";
 import { Footer } from "@internal/components/src/Footer";
@@ -8,7 +8,7 @@ import { Results } from "./components/Results";
 import "./App.css";
 
 function App() {
-  const [isQuizOver, setIsQuizOver] = useState(false);
+  const setStatus = useQuestionStore((s) => s.setStatus);
   const questions = useQuestionStore((s) => s.questions);
   const currentQuestionIndex = useQuestionStore((s) => s.currentQuestionIndex);
   const setQuestions = useQuestionStore((s) => s.setQuestions);
@@ -18,14 +18,17 @@ function App() {
 
   const loadQuestions = useCallback(
     (limit?: number) => {
-      void getQuestions(limit).then(setQuestions);
+      setStatus("loading");
+      void getQuestions(limit).then((questions) => {
+        setQuestions(questions);
+        setStatus("success");
+      });
     },
-    [setQuestions],
+    [setQuestions, setStatus],
   );
 
   const tryAgain = () => {
     reset();
-    setIsQuizOver(false);
     void loadQuestions();
   };
 
@@ -36,8 +39,6 @@ function App() {
       <main>
         <h1>Country Quiz</h1>
         <QuizCard
-          isOver={isQuizOver}
-          isLoading={question == null}
           category={question?.category}
           resultsElement={<Results questions={questions} tryAgain={tryAgain} />}
         >
@@ -45,7 +46,7 @@ function App() {
             quiz={question}
             totalQuestions={questions.length}
             currentQuestion={currentQuestionIndex + 1}
-            showResults={() => setIsQuizOver(true)}
+            showResults={() => setStatus("over")}
           />
         </QuizCard>
       </main>

@@ -1,12 +1,16 @@
 import { create } from "zustand";
 import type { Question } from "../types";
 
+type Status = "idle" | "loading" | "success" | "error" | "over";
+
 type State = {
+  status: Status;
   questions: Question[];
   currentQuestionIndex: number;
 };
 
 type Action = {
+  setStatus: (status: Status) => void;
   setQuestions: (questions: Question[]) => void;
   selectAnswer: (questionId: number, answer: string) => void;
   goNextQuestion: () => void;
@@ -14,6 +18,7 @@ type Action = {
 };
 
 const initialState: State = {
+  status: "idle",
   questions: [],
   currentQuestionIndex: 0,
 };
@@ -22,6 +27,7 @@ export const useQuestionStore = create<State & Action>()((set, get) => {
   return {
     ...initialState,
 
+    setStatus: (status: Status) => set({ status }),
     setQuestions: (questions: Question[]) => set({ questions }),
     selectAnswer: (questionId: number, answer: string) => {
       const { questions } = get();
