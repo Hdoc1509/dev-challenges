@@ -1,10 +1,10 @@
 import { CountryResponseSchema } from "@/schemas/country";
 import { parseCountries } from "@/utils/countries";
-import type { Country } from "@/types";
+import type { Country, PromiseWithError } from "@/types";
 
 const API_URL = "https://restcountries.com/v3.1";
 
-export const getCountries = async (): Promise<Country[]> => {
+export const getCountries = async (): PromiseWithError<Country[]> => {
   const controller = new AbortController();
   const params = new URLSearchParams({
     fields: "name,flags,capital,region",
@@ -12,13 +12,26 @@ export const getCountries = async (): Promise<Country[]> => {
 
   setTimeout(() => controller.abort(), 5000);
 
-  const res = await fetch(`${API_URL}/all?${params.toString()}`, {
-    signal: controller.signal,
-  });
+  try {
+    const res = await fetch(`${API_URL}/all?${params.toString()}`, {
+      signal: controller.signal,
+    });
 
-  if (!res.ok) throw new Error("Failed to get countries data");
+    if (!res.ok) return [new Error("Countries service response error")];
 
-  const countries = CountryResponseSchema.parse(await res.json());
+    const parsedData = CountryResponseSchema.safeParse(await res.json());
 
-  return parseCountries(countries);
+    if (!parsedData.success)
+      return [new Error("Countries service data error. Invalid data")];
+
+    return [null, parseCountries(parsedData.data)];
+  } catch (error) {
+    if (error instanceof Error) {
+      return error.name === "AbortError"
+        ? [new Error("Countries service timed out")]
+        : [error];
+    }
+  }
+
+  return [new Error("Countries service unknown error")];
 };

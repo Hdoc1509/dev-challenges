@@ -22,7 +22,9 @@ export const getQuestions = async (limit: number = 10): Promise<Question[]> => {
   }
 
   try {
-    const data = await getCountries();
+    const [countriesError, data] = await getCountries();
+
+    if (countriesError) throw countriesError;
 
     countries = data;
   } catch (error) {
