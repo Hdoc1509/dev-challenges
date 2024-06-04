@@ -4,21 +4,18 @@ const NativeNameSchema = z.object({
   official: z.string(),
   common: z.string(),
 });
-export type NativeName = z.infer<typeof NativeNameSchema>;
 
 const NameSchema = z.object({
   common: z.string(),
   official: z.string(),
   nativeName: z.record(z.string(), NativeNameSchema),
 });
-export type Name = z.infer<typeof NameSchema>;
 
 const FlagsSchema = z.object({
   png: z.string(),
   svg: z.string(),
   alt: z.string(),
 });
-export type Flags = z.infer<typeof FlagsSchema>;
 
 const CountrySchema = z.object({
   flags: FlagsSchema,
