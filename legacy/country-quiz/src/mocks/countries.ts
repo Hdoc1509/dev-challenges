@@ -1,4 +1,4 @@
-import type { Country } from "../schemas/country";
+import type { Country } from "../types";
 
 export const countries: Country[] = [
   {

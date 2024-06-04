@@ -10,3 +10,10 @@ export type Question = {
   selectedAnswer: string | null;
   hasBeenAnsweredCorrectly: boolean | null;
 };
+
+export type Country = {
+  flagUrl: string;
+  name: string;
+  capital: string[];
+  region: string;
+};

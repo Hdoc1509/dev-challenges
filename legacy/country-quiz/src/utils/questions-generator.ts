@@ -4,8 +4,7 @@ import {
   QuestionCategories,
   type QuestionCategory,
 } from "../constants";
-import type { Country } from "../schemas/country";
-import type { Question } from "../types";
+import type { Question, Country } from "../types";
 
 export const QUESTION = {
   [QuestionCategories.CountryOfCapital]: (capital: string) =>
@@ -22,7 +21,7 @@ type AnswerOptions<T> = {
   mapBy: (country: T) => string;
 };
 
-const generateAnswers = <T,>({ source, correct, mapBy }: AnswerOptions<T>) =>
+const generateAnswers = <T>({ source, correct, mapBy }: AnswerOptions<T>) =>
   randomSort(source.map(mapBy).filter((c) => c !== correct))
     .slice(0, 3)
     .concat(correct);
