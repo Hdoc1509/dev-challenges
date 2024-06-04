@@ -1,7 +1,6 @@
 import { generateQuestions } from "../../utils/questions-generator";
 import { randomSort } from "../../utils/helpers";
-import { getCountries } from "../countries";
-import { getCountriesFromBin } from "../npoint";
+import { getCountries, getCountriesFromBin } from "../countries";
 import data from "../../mocks/questions.json";
 import type { Question, Country } from "../../types";
 

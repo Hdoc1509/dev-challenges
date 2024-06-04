@@ -1,6 +1,6 @@
-import { CountryResponseSchema } from "../schemas/country";
-import { parseCountries } from "../utils/countries";
-import type { Country } from "../types";
+import { CountryResponseSchema } from "@/schemas/country";
+import { parseCountries } from "@/utils/countries";
+import type { Country } from "@/types";
 
 const API_URL = "https://restcountries.com/v3.1";
 
