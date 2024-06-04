@@ -17,3 +17,5 @@ export type Country = {
   capital: string[];
   region: string;
 };
+
+export type PromiseWithError<T> = Promise<[Error] | [null, T]>;
