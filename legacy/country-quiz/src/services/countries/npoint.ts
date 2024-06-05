@@ -1,14 +1,28 @@
-import { type Country } from "@/types";
+import { z } from "zod";
+import { ServiceError, fetcher } from "@/lib/fetcher";
+import type { Country, PromiseWithError } from "@/types";
 
 const API_URL = "https://api.npoint.io";
 const BIN_ID = "071b01607bee8b976c4e";
 
-export const getCountriesFromBin = async (): Promise<Country[]> => {
-  const res = await fetch(`${API_URL}/${BIN_ID}`);
+const CountriesError = new ServiceError("Countries");
 
-  if (!res.ok) throw new Error("Failed to get countries data");
+const Schema = z.array(
+  z.object({
+    name: z.string(),
+    region: z.string(),
+    capital: z.array(z.string()),
+    flagUrl: z.string(),
+  }),
+);
 
-  const countries = (await res.json()) as Country[];
+export const getCountriesFromBin = async (): PromiseWithError<Country[]> => {
+  const [error, data] = await fetcher(`${API_URL}/${BIN_ID}`, {
+    schema: Schema,
+    serviceError: CountriesError,
+  });
 
-  return countries;
+  if (error) return [error];
+
+  return [null, data];
 };

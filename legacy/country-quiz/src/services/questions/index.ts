@@ -28,7 +28,9 @@ export const getQuestions = async (limit: number = 10): Promise<Question[]> => {
 
     countries = data;
   } catch (error) {
-    const data = await getCountriesFromBin();
+    const [countriesError, data] = await getCountriesFromBin();
+
+    if (countriesError) throw countriesError;
 
     countries = data;
   }
