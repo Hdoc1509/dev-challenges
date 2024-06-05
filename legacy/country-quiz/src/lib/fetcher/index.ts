@@ -1,4 +1,4 @@
-import type { ServiceError } from "@/errors/service";
+import { ServiceError } from "./error";
 import type { PromiseWithError } from "@/types";
 import type { z } from "zod";
 
@@ -37,3 +37,5 @@ export async function fetcher<S extends z.ZodTypeAny>(
 
   return [serviceError.unknown()];
 }
+
+export { ServiceError };

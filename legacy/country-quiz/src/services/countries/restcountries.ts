@@ -1,6 +1,5 @@
 import { CountryResponseSchema } from "@/schemas/country";
-import { ServiceError } from "@/errors/service";
-import { fetcher } from "@/lib/fetcher";
+import { fetcher, ServiceError } from "@/lib/fetcher";
 import { parseCountries } from "@/utils/countries";
 import type { Country, PromiseWithError } from "@/types";
 
