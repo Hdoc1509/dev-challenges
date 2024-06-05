@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { generateQuestions } from "@/utils/questions-generator";
 import { randomSort } from "@/utils/helpers";
-import { getCountries, getCountriesFromBin } from "../countries";
+import { getCountries, getCountriesFromBin } from "./countries";
 import questionsMock from "@/mocks/questions.json";
 import type { Question, PromiseWithError } from "@/types";
 
