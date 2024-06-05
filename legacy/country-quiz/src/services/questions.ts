@@ -31,20 +31,17 @@ export const getQuestions: QuestionService = async (limit = 10) => {
     const parsed = StoredSchema.safeParse(JSON.parse(stored));
 
     if (parsed.success)
-      return [null, generateQuestions(randomSort(parsed.data)).slice(0, limit)];
+      return [null, generateQuestions(randomSort(parsed.data), limit)];
   }
 
   const [errorRestCountries, dataRestCountries] = await getCountries();
 
   if (!errorRestCountries)
-    return [
-      null,
-      generateQuestions(randomSort(dataRestCountries)).slice(0, limit),
-    ];
+    return [null, generateQuestions(randomSort(dataRestCountries), limit)];
 
   const [errorNpoint, dataNpoint] = await getCountriesFromBin();
 
   if (errorNpoint) return [errorNpoint];
 
-  return [null, generateQuestions(randomSort(dataNpoint)).slice(0, limit)];
+  return [null, generateQuestions(randomSort(dataNpoint), limit)];
 };

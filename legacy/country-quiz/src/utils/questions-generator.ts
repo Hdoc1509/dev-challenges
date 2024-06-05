@@ -26,7 +26,10 @@ const generateAnswers = <T>({ source, correct, mapBy }: AnswerOptions<T>) =>
     .slice(0, 3)
     .concat(correct);
 
-export const generateQuestions = (countries: Country[]): Question[] => {
+export const generateQuestions = (
+  countries: Country[],
+  limit: number,
+): Question[] => {
   const questions: Question[] = [];
 
   countries.forEach((country) => {
@@ -81,5 +84,5 @@ export const generateQuestions = (countries: Country[]): Question[] => {
     }
   });
 
-  return randomSort(questions);
+  return randomSort(questions).slice(0, limit);
 };
