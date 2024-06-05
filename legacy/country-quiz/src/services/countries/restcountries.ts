@@ -1,5 +1,6 @@
 import { CountryResponseSchema } from "@/schemas/country";
 import { ServiceError } from "@/errors/service";
+import { fetcher } from "@/lib/fetcher";
 import { parseCountries } from "@/utils/countries";
 import type { Country, PromiseWithError } from "@/types";
 
@@ -8,30 +9,16 @@ const API_URL = "https://restcountries.com/v3.1";
 const CountriesError = new ServiceError("Countries");
 
 export const getCountries = async (): PromiseWithError<Country[]> => {
-  const controller = new AbortController();
   const params = new URLSearchParams({
     fields: "name,flags,capital,region",
   });
 
-  setTimeout(() => controller.abort(), 5000);
+  const [error, data] = await fetcher(`${API_URL}/all?${params.toString()}`, {
+    schema: CountryResponseSchema,
+    serviceError: CountriesError,
+  });
 
-  try {
-    const res = await fetch(`${API_URL}/all?${params.toString()}`, {
-      signal: controller.signal,
-    });
+  if (error) return [error];
 
-    if (!res.ok) return [CountriesError.response()];
-
-    const parsedData = CountryResponseSchema.safeParse(await res.json());
-
-    if (!parsedData.success) return [CountriesError.validation()];
-
-    return [null, parseCountries(parsedData.data)];
-  } catch (error) {
-    if (error instanceof Error) {
-      return [error.name === "AbortError" ? CountriesError.timeout() : error];
-    }
-  }
-
-  return [CountriesError.unknown()];
+  return [null, parseCountries(data)];
 };
