@@ -2,7 +2,7 @@ import { z } from "zod";
 import { generateQuestions } from "@/utils/questions-generator";
 import { randomSort } from "@/utils/helpers";
 import { getCountries, getCountriesFromBin } from "../countries";
-import data from "@/mocks/questions.json";
+import questionsMock from "@/mocks/questions.json";
 import type { Question, PromiseWithError } from "@/types";
 
 type QuestionService = (limit?: number) => PromiseWithError<Question[]>;
@@ -19,7 +19,7 @@ const StoredSchema = z.array(
 const LS_KEY = "countries";
 
 export const getMockQuestions = (limit: number = 10): Promise<Question[]> => {
-  return Promise.resolve(data.questions.slice(0, limit) as Question[]);
+  return Promise.resolve(questionsMock.questions.slice(0, limit) as Question[]);
 };
 
 export const getQuestions: QuestionService = async (limit = 10) => {
