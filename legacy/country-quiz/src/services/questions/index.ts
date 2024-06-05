@@ -1,8 +1,20 @@
+import { z } from "zod";
 import { generateQuestions } from "@/utils/questions-generator";
 import { randomSort } from "@/utils/helpers";
 import { getCountries, getCountriesFromBin } from "../countries";
 import data from "@/mocks/questions.json";
-import type { Question, Country } from "@/types";
+import type { Question, PromiseWithError } from "@/types";
+
+type QuestionService = (limit?: number) => PromiseWithError<Question[]>;
+
+const StoredSchema = z.array(
+  z.object({
+    name: z.string(),
+    region: z.string(),
+    capital: z.array(z.string()),
+    flagUrl: z.string(),
+  }),
+);
 
 const LS_KEY = "countries";
 
@@ -10,32 +22,29 @@ export const getMockQuestions = (limit: number = 10): Promise<Question[]> => {
   return Promise.resolve(data.questions.slice(0, limit) as Question[]);
 };
 
-export const getQuestions = async (limit: number = 10): Promise<Question[]> => {
+export const getQuestions: QuestionService = async (limit = 10) => {
   const stored = localStorage.getItem(LS_KEY);
-  let countries: Country[] = [];
 
   if (stored) {
     await new Promise((resolve) => setTimeout(resolve, 1000));
-    const data = JSON.parse(stored) as Country[];
 
-    return generateQuestions(randomSort(data)).slice(0, limit);
+    const parsed = StoredSchema.safeParse(JSON.parse(stored));
+
+    if (parsed.success)
+      return [null, generateQuestions(randomSort(parsed.data)).slice(0, limit)];
   }
 
-  try {
-    const [countriesError, data] = await getCountries();
+  const [errorRestCountries, dataRestCountries] = await getCountries();
 
-    if (countriesError) throw countriesError;
+  if (!errorRestCountries)
+    return [
+      null,
+      generateQuestions(randomSort(dataRestCountries)).slice(0, limit),
+    ];
 
-    countries = data;
-  } catch (error) {
-    const [countriesError, data] = await getCountriesFromBin();
+  const [errorNpoint, dataNpoint] = await getCountriesFromBin();
 
-    if (countriesError) throw countriesError;
+  if (errorNpoint) return [errorNpoint];
 
-    countries = data;
-  }
-
-  localStorage.setItem(LS_KEY, JSON.stringify(countries));
-
-  return generateQuestions(randomSort(countries)).slice(0, limit);
+  return [null, generateQuestions(randomSort(dataNpoint)).slice(0, limit)];
 };
