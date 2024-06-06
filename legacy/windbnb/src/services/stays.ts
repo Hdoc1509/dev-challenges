@@ -11,6 +11,7 @@ export const searchStays = async ({
   // This is just a mock implementation.
   // You should retrieve data from a real API and parse it here.
   // Filtering should be handled by the API.
+  await new Promise((resolve) => setTimeout(resolve, 1500));
   const parsed = validateStays(staysMock);
 
   if (!parsed.success)
