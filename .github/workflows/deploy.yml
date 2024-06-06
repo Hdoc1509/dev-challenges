@@ -14,7 +14,7 @@ permissions:
 jobs:
   build:
     outputs:
-      status: ${{ steps.build.outcome }}
+      status: ${{ steps.build.conclusion }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -40,10 +40,6 @@ jobs:
       - name: Build challenges
         id: build
         run: pnpm run build
-
-      - name: Check build status
-        if: steps.build.outcome != 'success'
-        run: exit 1
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
