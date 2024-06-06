@@ -14,11 +14,10 @@
     text-align: center;
   }
 
-  &--flag {
-    padding: var(--quiz-card-padding__flag, 32px)
-  }
-  &--loading, &--error {
-    padding: var(--quiz-card-padding__loading, 32px);
+  &--flag,
+  &--loading,
+  &--error {
+    padding: var(--quiz-card-padding__equal, 32px);
   }
 }
 
