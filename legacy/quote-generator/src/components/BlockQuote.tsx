@@ -1,5 +1,5 @@
 import { Icon } from "@hrc/material-icons";
-import type { Quote } from "../schemas/quotes";
+import type { Quote } from "../types";
 import "./BlockQuote.scss";
 
 type Props = {

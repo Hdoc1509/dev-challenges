@@ -20,7 +20,6 @@ export const QuoteSchema = z
     author: quoteAuthor,
     genre: quoteGenre,
   }));
-export type Quote = z.infer<typeof QuoteSchema>;
 
 export const QuoteResponseSchema = z.object({
   statusCode: z.number(),

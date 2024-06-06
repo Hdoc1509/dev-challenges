@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 import { getAuthorQuotes, getRandomQuote } from "../services/quotes";
 import { parseError } from "../utils/error";
-import type { Quote } from "../schemas/quotes";
+import type { Quote } from "../types";
 
 export const useQuotes = () => {
   // TODO: Use status logic from github-jobs
