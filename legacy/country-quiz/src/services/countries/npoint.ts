@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { ServiceError, fetcher, type PromiseWithError } from "@/lib/fetcher";
+import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
 import type { Country } from "@/types";
 
 const API_URL = "https://api.npoint.io";
