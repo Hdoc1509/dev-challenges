@@ -5,8 +5,6 @@ import { getCountries, getCountriesFromBin } from "./countries";
 import questionsMock from "@/mocks/questions.json";
 import type { Question, PromiseWithError } from "@/types";
 
-type QuestionService = (limit?: number) => PromiseWithError<Question[]>;
-
 const StoredSchema = z.array(
   z.object({
     name: z.string(),
@@ -22,7 +20,9 @@ export const getMockQuestions = (limit: number = 10): Promise<Question[]> => {
   return Promise.resolve(questionsMock.questions.slice(0, limit) as Question[]);
 };
 
-export const getQuestions: QuestionService = async (limit = 10) => {
+export const getQuestions = async (
+  limit: number,
+): PromiseWithError<Question[]> => {
   const stored = localStorage.getItem(LS_KEY);
 
   if (stored) {
