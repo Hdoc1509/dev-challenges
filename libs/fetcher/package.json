@@ -1,0 +1,10 @@
+{
+  "name": "@lib/fetcher",
+  "private": true,
+  "version": "0.0.1",
+  "main": "index.ts",
+  "type": "module",
+  "peerDependencies": {
+    "zod": "3.22.4"
+  }
+}
