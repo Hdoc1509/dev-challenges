@@ -13,6 +13,8 @@ permissions:
 
 jobs:
   build:
+    outputs:
+      status: ${{ steps.build.outcome }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -50,6 +52,7 @@ jobs:
 
   deploy:
     needs: build
+    if: needs.build.outputs.status == 'success'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
