@@ -5,7 +5,7 @@ import { Footer } from "@internal/components/src/Footer";
 import { QuizCard } from "./components/QuizCard";
 import "./App.css";
 
-// const QUESTIONS = 10;
+const QUESTIONS = 10;
 
 function App() {
   const setStatus = useQuestionStore((s) => s.setStatus);
