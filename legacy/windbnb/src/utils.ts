@@ -1,7 +1,7 @@
 import { validateStays } from "./schemas/results-schema";
 import type { RequiredSearchLocation, Stay } from "./types";
 
-export const parseResults = (results: unknown): Stay[] => {
+export const parseStays = (results: unknown): Stay[] => {
   const parsedResults = validateStays(results);
 
   if (!parsedResults.success) {

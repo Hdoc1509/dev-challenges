@@ -1,5 +1,5 @@
 import results from "../mocks/stays.json";
-import { parseResults } from "../utils";
+import { parseStays } from "../utils";
 import type { SearchOptions, Stay } from "../types";
 
 export const searchStays = async ({
@@ -10,7 +10,7 @@ export const searchStays = async ({
   // This is just a mock implementation.
   // You should retrieve data from a real API and parse it here.
   // Filtering should be handled by the API.
-  const stays = parseResults(results)
+  const stays = parseStays(results)
     .filter((stay) => stay.maxGuests >= guests)
     .filter((stay) => {
       if (location) {
