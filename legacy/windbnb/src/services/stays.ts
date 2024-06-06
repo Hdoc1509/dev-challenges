@@ -22,5 +22,5 @@ export const searchStays = async ({
       return true;
     });
 
-  return new Promise((resolve) => resolve(stays));
+  return stays;
 };
