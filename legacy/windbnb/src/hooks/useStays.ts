@@ -5,24 +5,23 @@ import type { SearchOptions, Stay } from "../types";
 export const useStays = () => {
   const [stays, setStays] = useState<Stay[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<Error | null>(null);
 
   const getStays = useCallback(
     async ({ location, guests }: SearchOptions = {}) => {
-      try {
-        setIsLoading(true);
+      setIsLoading(true);
+      setError(null);
 
-        const [staysError, newStays] = await searchStays({ location, guests });
+      const [staysError, newStays] = await searchStays({ location, guests });
 
-        if (staysError) {
-          throw new Error(staysError.message);
-        }
-
-        setStays(newStays);
-      } catch (e) {
-        console.error(e);
-      } finally {
+      if (staysError) {
+        setError(staysError);
         setIsLoading(false);
+        return;
       }
+
+      setStays(newStays);
+      setIsLoading(false);
     },
     [],
   );
@@ -30,6 +29,7 @@ export const useStays = () => {
   return {
     stays,
     isLoading,
+    error,
     getStays,
   };
 };
