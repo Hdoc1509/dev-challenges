@@ -14,6 +14,8 @@ const StaysResponseSchema = z.array(
   }),
 );
 
+export type StaysResponse = z.infer<typeof StaysResponseSchema>;
+
 export const validateStays = (results: unknown) => {
   return StaysResponseSchema.safeParse(results);
 };
