@@ -1,8 +1,10 @@
 mkdir dist
 mkdir dist/legacy
 
-pnpm --filter=\!weather-app --filter=\!github-jobs build
-# pnpm run -r build
+if ! pnpm --filter=!weather-app --filter=!github-jobs build; then
+  echo "ERROR: failed while building. Aborting."
+  exit 1
+fi
 
 for dist in legacy/*/dist; do
   app_name="$(basename "$(dirname "$dist")")"

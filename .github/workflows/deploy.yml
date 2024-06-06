@@ -38,10 +38,6 @@ jobs:
       - name: Build challenges
         run: pnpm run build
 
-      - name: Check build status
-        if: failure()
-        uses: andymckay/cancel-action@0.2
-
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
