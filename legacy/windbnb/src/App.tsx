@@ -6,7 +6,7 @@ import { useStays } from "./hooks/useStays.ts";
 import "./App.css";
 
 function App() {
-  const { stays, getStays, isLoading, error } = useStays();
+  const { stays, error, status, getStays } = useStays();
 
   useEffect(() => void getStays(), [getStays]);
 
@@ -14,8 +14,9 @@ function App() {
     <>
       <Header getStays={getStays} />
       <main>
-        {error && <p>{error.message}</p>}
-        {isLoading ? <p>Loading...</p> : <SearchResults results={stays} />}
+        {status === "loading" && <p>Loading...</p>}
+        {status === "error" && <p>{error?.message}</p>}
+        {status === "success" && <SearchResults results={stays} />}
       </main>
       <Footer />
     </>
