@@ -10,7 +10,7 @@ import { ErrorMessage } from "./components/ErrorMessage";
 import "./App.scss";
 
 function App() {
-  const { isLoading, quotes, error, getRandomQuote, getAuthorQuotes } =
+  const { quotes, error, status, getRandomQuote, getAuthorQuotes } =
     useQuotes();
   const [showAuthorQuotes, setShowAuthorQuotes] = useState(false);
 
@@ -33,7 +33,7 @@ function App() {
           iconEnd={<Icon name="autorenew" />}
           onClick={handleRandomQuote}
           disableShadow
-          disabled={isLoading}
+          disabled={status === "loading"}
         >
           random
         </Button>
@@ -44,19 +44,20 @@ function App() {
         />
       </header>
       <main className="content">
-        {isLoading && <RingSpinner />}
-        {error && <ErrorMessage message={error.message} />}
-        {showAuthorQuotes && (
-          <h2 className="quotes-author">{quotes[0]?.author}</h2>
+        {status === "loading" && <RingSpinner />}
+        {status === "error" && <ErrorMessage message={error!.message} />}
+        {status === "success" && showAuthorQuotes && (
+          <h2 className="quotes-author">{quotes[0].author}</h2>
         )}
-        {quotes?.map((quote) => (
-          <BlockQuote
-            key={quote.id}
-            quote={quote}
-            onClick={() => handleAuthorQuotes(quote.author)}
-            withFooter={!showAuthorQuotes}
-          />
-        ))}
+        {status === "success" &&
+          quotes.map((quote) => (
+            <BlockQuote
+              key={quote.id}
+              quote={quote}
+              onClick={() => handleAuthorQuotes(quote.author)}
+              withFooter={!showAuthorQuotes}
+            />
+          ))}
       </main>
       <Footer />
     </>
