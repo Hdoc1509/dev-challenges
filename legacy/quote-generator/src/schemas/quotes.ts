@@ -1,13 +1,13 @@
 import * as z from "zod";
 
-export const paginationSchema = z.object({
+export const PaginationSchema = z.object({
   currentPage: z.number(),
   nextPage: z.number().nullable(),
   totalPages: z.number(),
 });
-export type Pagination = z.infer<typeof paginationSchema>;
+export type Pagination = z.infer<typeof PaginationSchema>;
 
-export const quoteSchema = z
+export const QuoteSchema = z
   .object({
     _id: z.string(),
     quoteText: z.string(),
@@ -21,13 +21,13 @@ export const quoteSchema = z
     author: quoteAuthor,
     genre: quoteGenre,
   }));
-export type Quote = z.infer<typeof quoteSchema>;
+export type Quote = z.infer<typeof QuoteSchema>;
 
-export const quoteResponseSchema = z.object({
+export const QuoteResponseSchema = z.object({
   statusCode: z.number(),
   message: z.string(),
-  pagination: paginationSchema,
+  pagination: PaginationSchema,
   totalQuotes: z.number(),
-  data: z.array(quoteSchema),
+  data: z.array(QuoteSchema),
 });
-export type QuoteResponse = z.infer<typeof quoteResponseSchema>;
+export type QuoteResponse = z.infer<typeof QuoteResponseSchema>;
