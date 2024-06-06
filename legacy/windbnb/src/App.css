@@ -31,3 +31,9 @@
 .credits {
   margin-top: 25px;
 }
+
+main[data-status="loading"] {
+  display: flex;
+  justify-content: center;
+  --spinner-size: 60px;
+}

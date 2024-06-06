@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { RingSpinner } from "@hrc/spinner";
 import { Footer } from "@internal/components/src/Footer";
 import { SearchResults } from "./components/Results";
 import { Header } from "./components/Header.tsx";
@@ -13,8 +14,8 @@ function App() {
   return (
     <>
       <Header getStays={getStays} />
-      <main>
-        {status === "loading" && <p>Loading...</p>}
+      <main data-status={status}>
+        {status === "loading" && <RingSpinner />}
         {status === "error" && <p>{error?.message}</p>}
         {status === "success" && <SearchResults results={stays} />}
       </main>
