@@ -5,6 +5,8 @@ import { Footer } from "@internal/components/src/Footer";
 import { QuizCard } from "./components/QuizCard";
 import "./App.css";
 
+const QUESTIONS = 10;
+
 function App() {
   const setStatus = useQuestionStore((s) => s.setStatus);
   const setError = useQuestionStore((s) => s.setError);
@@ -14,7 +16,7 @@ function App() {
   const loadQuestions = useCallback(async () => {
     setStatus("loading");
 
-    const [error, questions] = await getQuestions(10);
+    const [error, questions] = await getQuestions(QUESTIONS);
 
     if (error) {
       setError(error);
