@@ -6,17 +6,15 @@ import type { SearchOptions, Stay } from "../types";
 export const searchStays = async ({
   location,
   guests = -Infinity,
-}: SearchOptions = {}): Promise<Stay[]> => {
+}: SearchOptions = {}): Promise<[Error] | [null, Stay[]]> => {
   // WARNING:
   // This is just a mock implementation.
   // You should retrieve data from a real API and parse it here.
   // Filtering should be handled by the API.
   const parsed = validateStays(staysMock);
 
-  if (!parsed.success) {
-    console.error(parsed.error);
-    return [];
-  }
+  if (!parsed.success)
+    return [new Error("Stays service data error. Invalid data")];
 
   const stays = parseStays(parsed.data)
     .filter((stay) => stay.maxGuests >= guests)
@@ -30,5 +28,5 @@ export const searchStays = async ({
       return true;
     });
 
-  return stays;
+  return [null, stays];
 };

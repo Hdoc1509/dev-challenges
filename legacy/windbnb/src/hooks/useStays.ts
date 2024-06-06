@@ -11,7 +11,12 @@ export const useStays = () => {
       try {
         setIsLoading(true);
 
-        const newStays = await searchStays({ location, guests });
+        const [staysError, newStays] = await searchStays({ location, guests });
+
+        if (staysError) {
+          throw new Error(staysError.message);
+        }
+
         setStays(newStays);
       } catch (e) {
         console.error(e);
