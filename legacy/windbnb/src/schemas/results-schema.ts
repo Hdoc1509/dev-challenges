@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const resultsSchema = z.array(
+const StaysResponseSchema = z.array(
   z.object({
     photo: z.string(),
     superHost: z.boolean(),
@@ -15,5 +15,5 @@ const resultsSchema = z.array(
 );
 
 export const validateResults = (results: unknown) => {
-  return resultsSchema.safeParse(results);
+  return StaysResponseSchema.safeParse(results);
 };
