@@ -5,7 +5,6 @@ export const PaginationSchema = z.object({
   nextPage: z.number().nullable(),
   totalPages: z.number(),
 });
-export type Pagination = z.infer<typeof PaginationSchema>;
 
 export const QuoteSchema = z
   .object({
@@ -30,4 +29,3 @@ export const QuoteResponseSchema = z.object({
   totalQuotes: z.number(),
   data: z.array(QuoteSchema),
 });
-export type QuoteResponse = z.infer<typeof QuoteResponseSchema>;
