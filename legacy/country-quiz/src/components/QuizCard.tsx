@@ -12,6 +12,7 @@ type Props = {
 
 export const QuizCard = ({ tryAgain }: Props) => {
   const status = useQuestionStore((s) => s.status);
+  const error = useQuestionStore((s) => s.error);
   const questions = useQuestionStore((s) => s.questions);
   const currentQuestionIndex = useQuestionStore((s) => s.currentQuestionIndex);
 
@@ -21,12 +22,14 @@ export const QuizCard = ({ tryAgain }: Props) => {
     "quiz-card--over": status === "over",
     "quiz-card--flag": question?.category === QuestionCategories.FlagOfCountry,
     "quiz-card--loading": status === "loading",
+    "quiz-card--error": status === "error"
   });
 
   return (
     <div className={className}>
       {status === "loading" && <Loader />}
       {status === "success" && <Quiz />}
+      {status === "error" && <p className="quiz-error">{error?.message}</p>}
       {status === "over" && <Results tryAgain={tryAgain} />}
     </div>
   );

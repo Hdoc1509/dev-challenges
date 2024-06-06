@@ -7,19 +7,24 @@ import "./App.css";
 
 function App() {
   const setStatus = useQuestionStore((s) => s.setStatus);
+  const setError = useQuestionStore((s) => s.setError);
   const setQuestions = useQuestionStore((s) => s.setQuestions);
   const reset = useQuestionStore((s) => s.reset);
 
-  const loadQuestions = useCallback(
-    (limit?: number) => {
-      setStatus("loading");
-      void getQuestions(limit).then((questions) => {
-        setQuestions(questions);
-        setStatus("success");
-      });
-    },
-    [setQuestions, setStatus],
-  );
+  const loadQuestions = useCallback(async () => {
+    setStatus("loading");
+
+    const [error, questions] = await getQuestions(10);
+
+    if (error) {
+      setError(error);
+      setStatus("error");
+      return;
+    }
+
+    setQuestions(questions);
+    setStatus("success");
+  }, [setQuestions, setStatus]);
 
   const tryAgain = () => {
     reset();

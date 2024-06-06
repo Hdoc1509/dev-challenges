@@ -17,7 +17,15 @@
   &--flag {
     padding: var(--quiz-card-padding__flag, 32px)
   }
-  &--loading {
+  &--loading, &--error {
     padding: var(--quiz-card-padding__loading, 32px);
   }
+}
+
+.quiz-error {
+  margin: 0;
+
+  color: var(--primary-dark);
+  font-weight: 700;
+  font-size: var(--fs-fluid-3);
 }

@@ -5,12 +5,14 @@ type Status = "idle" | "loading" | "success" | "error" | "over";
 
 type State = {
   status: Status;
+  error?: Error;
   questions: Question[];
   currentQuestionIndex: number;
 };
 
 type Action = {
   setStatus: (status: Status) => void;
+  setError: (error: Error) => void;
   setQuestions: (questions: Question[]) => void;
   selectAnswer: (questionId: number, answer: string) => void;
   goNextQuestion: () => void;
@@ -28,6 +30,7 @@ export const useQuestionStore = create<State & Action>()((set, get) => {
     ...initialState,
 
     setStatus: (status: Status) => set({ status }),
+    setError: (error: Error) => set({ error }),
     setQuestions: (questions: Question[]) => set({ questions }),
     selectAnswer: (questionId: number, answer: string) => {
       const { questions } = get();
