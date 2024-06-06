@@ -14,6 +14,6 @@ const StaysResponseSchema = z.array(
   }),
 );
 
-export const validateResults = (results: unknown) => {
+export const validateStays = (results: unknown) => {
   return StaysResponseSchema.safeParse(results);
 };

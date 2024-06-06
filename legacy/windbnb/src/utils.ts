@@ -1,8 +1,8 @@
-import { validateResults } from "./schemas/results-schema";
+import { validateStays } from "./schemas/results-schema";
 import type { RequiredSearchLocation, Stay } from "./types";
 
 export const parseResults = (results: unknown): Stay[] => {
-  const parsedResults = validateResults(results);
+  const parsedResults = validateStays(results);
 
   if (!parsedResults.success) {
     console.error(parsedResults.error);
