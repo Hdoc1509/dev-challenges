@@ -1,16 +1,8 @@
-import { validateStays } from "./schemas/stays";
+import type { StaysResponse } from "./schemas/stays";
 import type { RequiredSearchLocation, Stay } from "./types";
 
-export const parseStays = (results: unknown): Stay[] => {
-  const parsedResults = validateStays(results);
-
-  if (!parsedResults.success) {
-    console.error(parsedResults.error);
-    // NOTE: should return an empty array(?)
-    return [];
-  }
-
-  return parsedResults.data.map(({ photo, superHost, ...rest }) => ({
+export const parseStays = (results: StaysResponse): Stay[] => {
+  return results.map(({ photo, superHost, ...rest }) => ({
     imageUrl: photo,
     isSuperHost: superHost,
     ...rest,

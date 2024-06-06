@@ -1,5 +1,6 @@
 import staysMock from "../mocks/stays.json";
 import { parseStays } from "../utils";
+import { validateStays } from "../schemas/stays";
 import type { SearchOptions, Stay } from "../types";
 
 export const searchStays = async ({
@@ -10,7 +11,14 @@ export const searchStays = async ({
   // This is just a mock implementation.
   // You should retrieve data from a real API and parse it here.
   // Filtering should be handled by the API.
-  const stays = parseStays(staysMock)
+  const parsed = validateStays(staysMock);
+
+  if (!parsed.success) {
+    console.error(parsed.error);
+    return [];
+  }
+
+  const stays = parseStays(parsed.data)
     .filter((stay) => stay.maxGuests >= guests)
     .filter((stay) => {
       if (location) {
