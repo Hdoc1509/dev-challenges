@@ -5,6 +5,8 @@ import { getRandomValues } from "crypto";
 import { QuestionCategories } from "../constants";
 import type { Question } from "../types";
 
+const QUESTIONS = 10;
+
 const cryptoMock = { getRandomValues };
 vi.stubGlobal("crypto", cryptoMock);
 
@@ -17,18 +19,18 @@ describe("questions generator", () => {
     questions.find((q) => q.category === QuestionCategories.Region);
 
   it("list without countries does not return questions", () => {
-    expect(generateQuestions([])).toEqual([]);
+    expect(generateQuestions([], QUESTIONS)).toEqual([]);
   });
 
   it("questions should have unique ids", () => {
-    const ids = generateQuestions(countries).map((q) => q.id);
+    const ids = generateQuestions(countries, QUESTIONS).map((q) => q.id);
     expect(new Set(ids).size).toBe(ids.length);
   });
 
   it("questions should have valid categories", () => {
     const validCategories = new Set(Object.values(QuestionCategories));
     const categories = new Set(
-      generateQuestions(countries).map((q) => q.category),
+      generateQuestions(countries, QUESTIONS).map((q) => q.category),
     );
 
     expect(categories).toEqual(validCategories);
@@ -38,7 +40,7 @@ describe("questions generator", () => {
     const countryWithoutCapital = countries.find(
       (c) => c.capital.length === 0,
     )!;
-    const questions = generateQuestions([countryWithoutCapital]);
+    const questions = generateQuestions([countryWithoutCapital], QUESTIONS);
     const capitalQuestion = getCapitalQuestion(questions);
 
     expect(questions.length).toBe(Object.values(QuestionCategories).length - 1);
@@ -47,14 +49,14 @@ describe("questions generator", () => {
 
   it("question about flag should have flagUrl", () => {
     const country = countries.find((c) => c.capital.length === 1)!;
-    const question = getFlagQuestion(generateQuestions([country]))!;
+    const question = getFlagQuestion(generateQuestions([country], QUESTIONS))!;
 
     expect(question).toHaveProperty("flagUrl");
   });
 
   it("should generate valid questions", () => {
     const country = countries.find((c) => c.capital.length === 1)!;
-    const questions = generateQuestions([country]);
+    const questions = generateQuestions([country], QUESTIONS);
 
     expect(questions.length).toBe(Object.values(QuestionCategories).length);
     expect(getCapitalQuestion(questions)!.question).toBe(
@@ -71,7 +73,7 @@ describe("questions generator", () => {
   it("questions should have valid answer options", () => {
     const idx = countries.findIndex((c) => c.capital.length === 1);
     const country = countries[idx];
-    const questions = generateQuestions(countries.slice(idx));
+    const questions = generateQuestions(countries.slice(idx), QUESTIONS);
     // NOTE: it need more specific conditions because of random sorting
     const { answerOptions: capitalAnswers } = questions.find(
       (q) =>
@@ -107,7 +109,7 @@ describe("questions generator", () => {
 
   it("questions should have a correct answer", () => {
     const country = countries.find((c) => c.capital.length === 1)!;
-    const questions = generateQuestions([country]);
+    const questions = generateQuestions([country], QUESTIONS);
 
     expect(getCapitalQuestion(questions)!.correctAnswer).toBe(country.name);
     expect(getFlagQuestion(questions)!.correctAnswer).toBe(country.name);
@@ -115,7 +117,7 @@ describe("questions generator", () => {
   });
 
   it("questions should have properties about selected answer", () => {
-    const question = generateQuestions(countries)[0];
+    const question = generateQuestions(countries, QUESTIONS)[0];
 
     expect(question.selectedAnswer).toBeNull();
     expect(question.hasBeenAnsweredCorrectly).toBeNull();
