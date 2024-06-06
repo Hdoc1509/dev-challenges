@@ -1,5 +1,5 @@
 import { ServiceError } from "./error";
-import type { PromiseWithError } from "@/types";
+import type { PromiseWithError } from "./types";
 import type { z } from "zod";
 
 type Options<S> = {
@@ -38,4 +38,4 @@ export async function fetcher<S extends z.ZodTypeAny>(
   return [serviceError.unknown()];
 }
 
-export { ServiceError };
+export { ServiceError, type PromiseWithError };

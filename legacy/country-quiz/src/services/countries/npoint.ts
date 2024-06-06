@@ -1,6 +1,6 @@
 import { z } from "zod";
-import { ServiceError, fetcher } from "@/lib/fetcher";
-import type { Country, PromiseWithError } from "@/types";
+import { ServiceError, fetcher, type PromiseWithError } from "@/lib/fetcher";
+import type { Country } from "@/types";
 
 const API_URL = "https://api.npoint.io";
 const BIN_ID = "071b01607bee8b976c4e";
