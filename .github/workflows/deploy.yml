@@ -36,7 +36,12 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build challenges
+        id: build
         run: pnpm run build
+
+      - name: Check build status
+        if: steps.build.outcome != 'success'
+        run: exit 1
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
