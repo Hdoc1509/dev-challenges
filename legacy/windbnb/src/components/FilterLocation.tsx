@@ -26,14 +26,7 @@ export const LocationOption = ({ location }: { location: Location }) => {
   );
 };
 
-type MenuProps = {
-  options: Location[];
-  isLoading: boolean;
-};
-
-const LocationMenu = ({ options, isLoading }: MenuProps) => {
-  if (isLoading) return <span>Loading...</span>;
-
+const LocationMenu = ({ options }: { options: Location[] }) => {
   return (
     <menu className="location-menu">
       {options.map((location) => (
@@ -69,9 +62,8 @@ export const FilterLocation = ({ isSelected }: { isSelected?: boolean }) => {
         isSelected={isSelected}
         onClick={() => setFilter(FILTERS.LOCATION)}
       />
-      {isSelected && (
-        <LocationMenu options={options} isLoading={status === "loading"} />
-      )}
+      {status === "loading" && <span>Loading...</span>}
+      {status === "success" && isSelected && <LocationMenu options={options} />}
     </>
   );
 };
