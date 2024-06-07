@@ -1,33 +1,34 @@
+import { fetcher, ServiceError, type PromiseWithError } from "@lib/fetcher";
 import { QuoteResponseSchema } from "../schemas/quotes";
 import type { Quote } from "../types";
 
 const API_URL = "https://quote-garden.onrender.com/api/v3/quotes";
 
-// TODO: use error handling method from github-jobs
-export const getRandomQuote = async (): Promise<Quote> => {
-  const controller = new AbortController();
-  setTimeout(() => controller.abort(), 5000);
+const QuotesError = new ServiceError("Quotes");
 
-  const res = await fetch(`${API_URL}/random`, { signal: controller.signal });
-  if (!res.ok) throw new Error("Failed to get a random quote");
-  const { data } = QuoteResponseSchema.parse(await res.json());
+export const getRandomQuote = async (): PromiseWithError<Quote> => {
+  const [error, data] = await fetcher(`${API_URL}/random`, {
+    schema: QuoteResponseSchema,
+    serviceError: QuotesError,
+  });
 
-  return data[0];
+  if (error) return [error];
+
+  return [null, data.data[0]];
 };
 
 export const getAuthorQuotes = async (
   author: string,
   limit = 3,
-): Promise<Quote[]> => {
+): PromiseWithError<Quote[]> => {
   const params = new URLSearchParams({ author, limit: `${limit}` });
-  const controller = new AbortController();
-  setTimeout(() => controller.abort(), 5000);
 
-  const res = await fetch(`${API_URL}?${params.toString()}`, {
-    signal: controller.signal,
+  const [error, data] = await fetcher(`${API_URL}?${params.toString()}`, {
+    schema: QuoteResponseSchema,
+    serviceError: QuotesError,
   });
-  if (!res.ok) throw new Error("Failed to get author's quotes");
-  const { data } = QuoteResponseSchema.parse(await res.json());
 
-  return data;
+  if (error) return [error];
+
+  return [null, data.data];
 };

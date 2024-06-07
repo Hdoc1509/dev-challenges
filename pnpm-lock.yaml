@@ -369,6 +369,9 @@ importers:
       '@internal/components':
         specifier: workspace:3.0.0
         version: link:../../libs/components
+      '@lib/fetcher':
+        specifier: workspace:*
+        version: link:../../libs/fetcher
       '@lib/sass-utils':
         specifier: workspace:*
         version: link:../../libs/sass-utils
