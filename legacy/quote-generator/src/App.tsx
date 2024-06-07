@@ -29,7 +29,7 @@ function App() {
         isLoading={status === "loading"}
         handleRandomQuote={handleRandomQuote}
       />
-      <main className="content">
+      <main>
         {status === "loading" && <RingSpinner />}
         {status === "error" && <ErrorMessage message={error!.message} />}
         {status === "success" && showAuthorQuotes && (
