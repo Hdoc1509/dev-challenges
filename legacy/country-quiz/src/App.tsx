@@ -26,7 +26,7 @@ function App() {
 
     setQuestions(questions);
     setStatus("success");
-  }, [setQuestions, setStatus]);
+  }, [setError, setQuestions, setStatus]);
 
   const tryAgain = () => {
     reset();
