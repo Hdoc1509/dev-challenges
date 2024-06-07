@@ -1,8 +1,7 @@
 import { useCallback, useState } from "react";
 import { getAuthorQuotes, getRandomQuote } from "../services/quotes";
+import type { Status } from "@lib/fetcher";
 import type { Quote } from "../types";
-
-type Status = "idle" | "loading" | "error" | "success";
 
 export const useQuotes = () => {
   const [status, setStatus] = useState<Status>("idle");
