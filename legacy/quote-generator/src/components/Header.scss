@@ -1,0 +1,31 @@
+.main-header {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  padding-block: 1rem;
+
+  --icon-size: var(--fs-4);
+
+  &__random-button {
+    --button-bg: transparent;
+    --button-bg-hover: var(--bg-hover);
+    --button-bg-disabled: rgb(180 180 180 / 0.75);
+    --button-text: var(--text-light);
+    --button-text-disabled: rgb(36 36 36 / 0.5);
+    // NOTE: Rem units will be used from next version of @hrc/button
+    --button-font-size: var(--fs-0);
+    font-family: inherit;
+    font-weight: 500;
+
+    &:hover,
+    &:focus {
+      --text-light: #fff;
+    }
+  }
+
+  .theme-button {
+    margin: auto 0;
+    --icon-color: #87ceeb;
+  }
+}

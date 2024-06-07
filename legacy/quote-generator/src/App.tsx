@@ -1,9 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useQuotes } from "./hooks/useQuotes";
-import { ThemeButton } from "@hrc/toggle-theme";
-import { Icon } from "@hrc/material-icons";
-import { Button } from "@hrc/button/dist/Button";
 import { RingSpinner } from "@hrc/spinner/dist/RingSpinner";
+import { Header } from "./components/Header";
 import { Footer } from "@internal/components/src/Footer";
 import { BlockQuote } from "./components/BlockQuote";
 import { ErrorMessage } from "./components/ErrorMessage";
@@ -27,22 +25,10 @@ function App() {
 
   return (
     <>
-      <header className="main-header">
-        <Button
-          className="main-header__random-button"
-          iconEnd={<Icon name="autorenew" />}
-          onClick={handleRandomQuote}
-          disableShadow
-          disabled={status === "loading"}
-        >
-          random
-        </Button>
-        <ThemeButton
-          lightElement={<Icon name="light_mode" color="warning" />}
-          darkElement={<Icon name="dark_mode" />}
-          fullRounded
-        />
-      </header>
+      <Header
+        isLoading={status === "loading"}
+        handleRandomQuote={handleRandomQuote}
+      />
       <main className="content">
         {status === "loading" && <RingSpinner />}
         {status === "error" && <ErrorMessage message={error!.message} />}
