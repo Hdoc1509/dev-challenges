@@ -1,7 +1,6 @@
 import { create } from "zustand";
 import type { Question } from "../types";
-
-type Status = "idle" | "loading" | "success" | "error" | "over";
+import type { Status } from "@lib/fetcher";
 
 type State = {
   status: Status;
