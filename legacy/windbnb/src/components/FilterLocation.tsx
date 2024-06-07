@@ -54,7 +54,9 @@ export const FilterLocation = ({ isSelected }: { isSelected?: boolean }) => {
     ).map(splitStringLocation);
   }, [stays]);
 
-  useEffect(() => void getStays(), [getStays]);
+  useEffect(() => {
+    if (isSelected) void getStays();
+  }, [isSelected, getStays]);
 
   return (
     <>
