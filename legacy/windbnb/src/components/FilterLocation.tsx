@@ -48,7 +48,7 @@ export const FilterLocation = ({ isSelected }: { isSelected?: boolean }) => {
   const location = useFilterStore((state) => state.location);
   const setFilter = useFilterStore((state) => state.setFilter);
 
-  const locationOptions = useMemo(() => {
+  const options = useMemo(() => {
     return Array.from(
       new Set(stays.map((stay) => `${stay.city}, ${stay.country}`)),
     ).map(splitStringLocation);
@@ -67,9 +67,7 @@ export const FilterLocation = ({ isSelected }: { isSelected?: boolean }) => {
         isSelected={isSelected}
         onClick={() => setFilter(FILTERS.LOCATION)}
       />
-      {isSelected && (
-        <LocationMenu options={locationOptions} isLoading={isLoading} />
-      )}
+      {isSelected && <LocationMenu options={options} isLoading={isLoading} />}
     </>
   );
 };
