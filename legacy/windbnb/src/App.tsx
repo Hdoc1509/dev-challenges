@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { RingSpinner } from "@hrc/spinner";
+import { RingSpinner } from "@hrc/spinner/dist/RingSpinner";
 import { Footer } from "@internal/components/src/Footer";
 import { SearchResults } from "./components/Results";
 import { Header } from "./components/Header.tsx";
