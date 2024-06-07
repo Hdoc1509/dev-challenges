@@ -13,11 +13,11 @@ function App() {
   const [showAuthorQuotes, setShowAuthorQuotes] = useState(false);
 
   const handleRandomQuote = useCallback(() => {
-    getRandomQuote();
+    void getRandomQuote();
     setShowAuthorQuotes(false);
   }, [getRandomQuote]);
   const handleAuthorQuotes = (author: string) => {
-    getAuthorQuotes(author);
+    void getAuthorQuotes(author);
     setShowAuthorQuotes(true);
   };
 

@@ -1,6 +1,5 @@
 import { useCallback, useState } from "react";
 import { getAuthorQuotes, getRandomQuote } from "../services/quotes";
-import { parseError } from "../utils/error";
 import type { Quote } from "../types";
 
 type Status = "idle" | "loading" | "error" | "success";
@@ -10,32 +9,34 @@ export const useQuotes = () => {
   const [quotes, setQuotes] = useState<Quote[]>([]);
   const [error, setError] = useState<Error | null>(null);
 
-  const handleRandomQuote = useCallback(() => {
+  const handleRandomQuote = useCallback(async () => {
     setStatus("loading");
 
-    getRandomQuote()
-      .then((quote) => {
-        setQuotes([quote]);
-        setStatus("success");
-      })
-      .catch((error) => {
-        setError(parseError(error));
-        setStatus("error");
-      });
+    const [error, quote] = await getRandomQuote();
+
+    if (error) {
+      setError(error);
+      setStatus("error");
+      return;
+    }
+
+    setQuotes([quote]);
+    setStatus("success");
   }, []);
 
-  const handleAuthorQuotes = useCallback((author: string) => {
+  const handleAuthorQuotes = useCallback(async (author: string) => {
     setStatus("loading");
 
-    getAuthorQuotes(author)
-      .then((newQuotes) => {
-        setQuotes(newQuotes.length > 1 ? newQuotes : [newQuotes[0]]);
-        setStatus("success");
-      })
-      .catch((error) => {
-        setError(parseError(error));
-        setStatus("error");
-      });
+    const [error, newQuotes] = await getAuthorQuotes(author);
+
+    if (error) {
+      setError(error);
+      setStatus("error");
+      return;
+    }
+
+    setQuotes(newQuotes.length > 1 ? newQuotes : [newQuotes[0]]);
+    setStatus("success");
   }, []);
 
   return {
