@@ -1,8 +1,7 @@
 import { useCallback, useState } from "react";
 import { searchStays } from "../services/stays";
 import type { SearchOptions, Stay } from "../types";
-
-type Status = "idle" | "loading" | "error" | "success";
+import type { Status } from "@lib/fetcher";
 
 export const useStays = () => {
   const [stays, setStays] = useState<Stay[]>([]);

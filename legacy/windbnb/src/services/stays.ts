@@ -1,12 +1,13 @@
 import staysMock from "../mocks/stays.json";
 import { parseStays } from "../utils";
 import { validateStays } from "../schemas/stays";
+import type { PromiseWithError } from "@lib/fetcher";
 import type { SearchOptions, Stay } from "../types";
 
 export const searchStays = async ({
   location,
   guests = -Infinity,
-}: SearchOptions = {}): Promise<[Error] | [null, Stay[]]> => {
+}: SearchOptions = {}): PromiseWithError<Stay[]> => {
   // WARNING:
   // This is just a mock implementation.
   // You should retrieve data from a real API and parse it here.
