@@ -3,8 +3,8 @@ import { useQuotes } from "./hooks/useQuotes";
 import { RingSpinner } from "@hrc/spinner/dist/RingSpinner";
 import { Header } from "./components/Header";
 import { Footer } from "@internal/components/src/Footer";
-import { BlockQuote } from "./components/BlockQuote";
 import { ErrorMessage } from "./components/ErrorMessage";
+import { Results } from "./components/Results";
 import "./App.scss";
 
 function App() {
@@ -32,18 +32,13 @@ function App() {
       <main>
         {status === "loading" && <RingSpinner />}
         {status === "error" && <ErrorMessage message={error!.message} />}
-        {status === "success" && showAuthorQuotes && (
-          <h2 className="quotes-author">{quotes[0].author}</h2>
+        {status === "success" && (
+          <Results
+            quotes={quotes}
+            showAuthorQuotes={showAuthorQuotes}
+            handleAuthorQuotes={handleAuthorQuotes}
+          />
         )}
-        {status === "success" &&
-          quotes.map((quote) => (
-            <BlockQuote
-              key={quote.id}
-              quote={quote}
-              onClick={() => handleAuthorQuotes(quote.author)}
-              withFooter={!showAuthorQuotes}
-            />
-          ))}
       </main>
       <Footer />
     </>
