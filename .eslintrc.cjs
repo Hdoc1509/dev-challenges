@@ -16,7 +16,7 @@ module.exports = {
     tsconfigRootDir: __dirname,
   },
   parser: "@typescript-eslint/parser",
-  plugins: ["react-refresh"],
+  plugins: ["@typescript-eslint", "react-refresh"],
   rules: {
     "react-refresh/only-export-components": [
       "warn",
