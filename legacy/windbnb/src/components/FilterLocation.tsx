@@ -44,7 +44,7 @@ const LocationMenu = ({ options, isLoading }: MenuProps) => {
 };
 
 export const FilterLocation = ({ isSelected }: { isSelected?: boolean }) => {
-  const { stays, isLoading, getStays } = useStays();
+  const { stays, status, getStays } = useStays();
   const location = useFilterStore((state) => state.location);
   const setFilter = useFilterStore((state) => state.setFilter);
 
@@ -67,7 +67,9 @@ export const FilterLocation = ({ isSelected }: { isSelected?: boolean }) => {
         isSelected={isSelected}
         onClick={() => setFilter(FILTERS.LOCATION)}
       />
-      {isSelected && <LocationMenu options={options} isLoading={isLoading} />}
+      {isSelected && (
+        <LocationMenu options={options} isLoading={status === "loading"} />
+      )}
     </>
   );
 };
