@@ -30,6 +30,7 @@ export const useStays = () => {
   return {
     stays,
     status,
+    setStatus,
     error,
     getStays,
   };
