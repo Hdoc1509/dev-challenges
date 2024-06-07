@@ -1,6 +1,7 @@
 import { useEffect, useMemo } from "react";
 import { Button } from "@hrc/button";
 import { Icon } from "@hrc/material-icons";
+import { RingSpinner } from "@hrc/spinner";
 import { FilterInput } from "./FilterInput";
 import { FILTERS, useFilterStore } from "../store/filter";
 import { useStays } from "../hooks/useStays";
@@ -63,7 +64,7 @@ export const FilterLocation = ({ isSelected }: { isSelected?: boolean }) => {
         isSelected={isSelected}
         onClick={() => setFilter(FILTERS.LOCATION)}
       />
-      {status === "loading" && <span>Loading...</span>}
+      {status === "loading" && <RingSpinner className="location-spinner" />}
       {status === "success" && <LocationMenu options={options} />}
     </>
   );
