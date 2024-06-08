@@ -9,10 +9,10 @@ export type Options<S> = {
   schema: S;
   timeout?: number;
   /**
-   * Whether to return an error if `response.ok` is `false`.
+   * Whether to return an error based on `response.ok`.
    * Useful if endpoint returns the error as a JSON in the response.
    *
-   * **Be sure to use an schema that matches the expected error format**
+   * **If `false`, be sure to use an schema that matches the expected error format.**
    * @default true
    * */
   checkStatus?: boolean;
