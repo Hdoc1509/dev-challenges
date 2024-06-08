@@ -1,20 +1,6 @@
 import { ServiceError } from "./error";
-import type { PromiseWithError, Status } from "./types";
+import type { Options, PromiseWithError, Status } from "./types";
 import type { z } from "zod";
-
-type Options<S> = {
-  serviceError: ServiceError;
-  schema: S;
-  timeout?: number;
-  /**
-   * Whether to return an error if `response.ok` is `false`.
-   * Useful if endpoint returns the error as a JSON in the response.
-   *
-   * **Be sure to use an schema that matches the expected error format**
-   * @default true
-   * */
-  checkStatus?: boolean;
-} & Omit<RequestInit, "signal">;
 
 // based on https://zod.dev/?id=writing-generic-functions
 /** Utility for validating and handling errors from a fetch request */
