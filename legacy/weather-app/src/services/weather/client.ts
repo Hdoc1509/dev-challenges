@@ -1,11 +1,9 @@
-import { z } from "zod";
 import { parseWeather } from "@/utils/weather";
+import { ApiErrorSchema } from "@/schemas/api-error";
 import { WeatherResponseSchema } from "@/schemas/weather";
 import type { LocationCoords, PromiseWithError, Weather } from "@/types";
 
-const ApiResponseSchema = WeatherResponseSchema.or(
-  z.object({ error: z.string() }),
-);
+const ApiResponseSchema = WeatherResponseSchema.or(ApiErrorSchema);
 
 export const getWeather = async (
   coords: LocationCoords,

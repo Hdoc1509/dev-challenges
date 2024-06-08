@@ -1,10 +1,8 @@
-import { z } from "zod";
+import { ApiErrorSchema } from "@/schemas/api-error";
 import { SearchCityResponseSchema } from "@/schemas/geolocation";
 import type { City, PromiseWithError } from "@/types";
 
-const ApiResponseSchema = SearchCityResponseSchema.or(
-  z.object({ error: z.string() }),
-);
+const ApiResponseSchema = SearchCityResponseSchema.or(ApiErrorSchema);
 const errorPrefix = "Search city service error";
 
 export const searchCity = async (city: string): PromiseWithError<City[]> => {
