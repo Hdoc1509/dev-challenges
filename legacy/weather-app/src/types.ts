@@ -1,5 +1,3 @@
-import type { SearchCityResponse } from "./schemas/geolocation";
-
 export type Weather = {
   location: {
     name: string;
@@ -44,10 +42,10 @@ export type LocationCoords = {
   longitude: number;
 };
 
-export type City = Omit<
-  SearchCityResponse[number],
-  "url" | "region" | "lat" | "lon"
-> & {
+export type City = {
+  id: number;
+  name: string;
+  country: string;
   latitude: number;
   longitude: number;
 };
