@@ -1,5 +1,4 @@
-import type { SearchCityResponse } from "@/schemas/geolocation";
-import type { City, LocationCoords, PromiseWithError } from "@/types";
+import type { LocationCoords, PromiseWithError } from "@/types";
 
 const ERROR = {
   PERMISSION_DENIED: 1,
@@ -33,14 +32,4 @@ export const getCurrentCoords = async (): PromiseWithError<LocationCoords> => {
       },
     );
   });
-};
-
-export const parseCities = (cities: SearchCityResponse): City[] => {
-  return cities.map((city) => ({
-    id: city.id,
-    name: city.name,
-    country: city.country,
-    latitude: city.lat,
-    longitude: city.lon,
-  }));
 };
