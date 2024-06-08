@@ -1,6 +1,11 @@
+import { z } from "zod";
 import { parseWeather } from "@/utils/weather";
 import { WeatherResponseSchema } from "@/schemas/weather";
 import type { LocationCoords, PromiseWithError, Weather } from "@/types";
+
+const ApiResponseSchema = WeatherResponseSchema.or(
+  z.object({ error: z.string() }),
+);
 
 export const getWeather = async (
   coords: LocationCoords,
@@ -14,14 +19,16 @@ export const getWeather = async (
   try {
     const res = await fetch(`/api/weather?${params.toString()}`);
 
-    if (!res.ok) return [new Error("Weather service error. Response error.")];
+    // NOTE: ALL VALIDATIONS are done on the SERVER
+    // // if api endpoint has an error, it returns `{ error: string }`
+    const parsed = ApiResponseSchema.safeParse(await res.json());
 
-    const parsedData = WeatherResponseSchema.safeParse(await res.json());
-
-    if (!parsedData.success)
+    if (!parsed.success)
       return [new Error("Weather service error. Invalid data")];
 
-    return [null, parseWeather(parsedData.data)];
+    if ("error" in parsed.data) return [new Error(parsed.data.error)];
+
+    return [null, parseWeather(parsed.data)];
   } catch (error) {
     if (error instanceof Error) return [error];
   }
