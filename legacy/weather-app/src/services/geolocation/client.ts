@@ -1,19 +1,25 @@
+import { z } from "zod";
 import { SearchCityResponseSchema } from "@/schemas/geolocation";
 import type { City, PromiseWithError } from "@/types";
 
+const ApiResponseSchema = SearchCityResponseSchema.or(
+  z.object({ error: z.string() }),
+);
 const errorPrefix = "Search city service error";
 
 export const searchCity = async (city: string): PromiseWithError<City[]> => {
   try {
     const res = await fetch(`/api/geolocation?city=${city}`);
 
-    if (!res.ok) return [new Error(`${errorPrefix}. Response error.`)];
+    // NOTE: ALL VALIDATIONS are done on the SERVER
+    // if api endpoint has an error, it returns `{ error: string }`
+    const parsed = ApiResponseSchema.safeParse(await res.json());
 
-    const parsedData = SearchCityResponseSchema.safeParse(await res.json());
+    if (!parsed.success) return [new Error(`${errorPrefix}. Invalid data`)];
 
-    if (!parsedData.success) return [new Error(`${errorPrefix}. Invalid data`)];
+    if ("error" in parsed.data) return [new Error(parsed.data.error)];
 
-    return [null, parsedData.data];
+    return [null, parsed.data];
   } catch (error) {
     if (error instanceof Error) return [error];
   }
