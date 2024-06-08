@@ -1,4 +1,3 @@
-import { parseCities } from "@/utils/geolocation";
 import { SearchCityResponseSchema } from "@/schemas/geolocation";
 import type { City, PromiseWithError } from "@/types";
 
@@ -14,7 +13,7 @@ export const searchCity = async (city: string): PromiseWithError<City[]> => {
 
     if (!parsedData.success) return [new Error(`${errorPrefix}. Invalid data`)];
 
-    return [null, parseCities(parsedData.data)];
+    return [null, parsedData.data];
   } catch (error) {
     if (error instanceof Error) return [error];
   }
