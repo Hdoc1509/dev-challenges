@@ -1,13 +1,8 @@
 import { parseForecast } from "@/utils/forecast";
 import { ForecastSchema } from "@/schemas/forecast";
 import { OPEN_METEO_API } from "@/config";
+import { FORECAST_PARAMS } from "./params";
 import type { Forecast, LocationCoords, PromiseWithError } from "@/types";
-
-const dailyParams = [
-  "temperature_2m_max",
-  "temperature_2m_min",
-  "weather_code",
-].join(",");
 
 export const getForecast = async (
   coords: LocationCoords,
@@ -16,9 +11,9 @@ export const getForecast = async (
   const params = new URLSearchParams({
     latitude: `${latitude}`,
     longitude: `${longitude}`,
-    daily: dailyParams,
-    forecast_days: "6",
-    timezone: "auto",
+    daily: FORECAST_PARAMS.DAILY,
+    forecast_days: FORECAST_PARAMS.DAYS,
+    timezone: FORECAST_PARAMS.TIMEZONE,
   });
 
   try {
