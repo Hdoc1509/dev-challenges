@@ -5,6 +5,7 @@ import {
 } from "@/schemas/geolocation";
 import type { PromiseWithError } from "@/types";
 
+const CITIES_LIMIT = "5";
 const errorPrefix = "Search city service error";
 
 export const searchCity = async (
@@ -12,7 +13,7 @@ export const searchCity = async (
 ): PromiseWithError<SearchCityResponse> => {
   const params = new URLSearchParams({
     q: search,
-    limit: "5",
+    limit: CITIES_LIMIT,
     key: WEATHERAPI.KEY,
   });
 
