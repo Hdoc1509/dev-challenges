@@ -22,6 +22,7 @@
     "@hrc/material-icons": "2.3.0",
     "@hrc/spinner": "0.3.2",
     "@internal/components": "workspace:*",
+    "@lib/fetcher": "workspace:*",
     "@lib/sass-utils": "workspace:*",
     "@material-design-icons/font": "0.14.13",
     "astro": "4.8.6",
