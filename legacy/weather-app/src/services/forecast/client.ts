@@ -7,7 +7,7 @@ const dailyParams = [
   "temperature_2m_max",
   "temperature_2m_min",
   "weather_code",
-];
+].join(",");
 
 export const getForecast = async (
   coords: LocationCoords,
@@ -16,7 +16,7 @@ export const getForecast = async (
   const params = new URLSearchParams({
     latitude: `${latitude}`,
     longitude: `${longitude}`,
-    daily: dailyParams.join(","),
+    daily: dailyParams,
     forecast_days: "6",
     timezone: "auto",
   });
