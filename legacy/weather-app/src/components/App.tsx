@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { useWeatherStore } from "@/store/weather";
-import { getCurrentCoords } from "@/utils/geolocation";
+import { getCurrentCoords } from "@lib/geolocation";
 import { getWeather } from "@/services/weather/client";
 import { getForecast } from "@/services/forecast/client";
 import { Footer } from "@internal/components";
