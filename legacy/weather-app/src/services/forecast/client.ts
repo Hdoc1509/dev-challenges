@@ -1,8 +1,11 @@
-import { parseForecast } from "@/utils/forecast";
+import { ServiceError, fetcher } from "@lib/fetcher";
 import { ForecastSchema } from "@/schemas/forecast";
+import { parseForecast } from "@/utils/forecast";
 import { OPEN_METEO_API } from "@/config";
 import { FORECAST_PARAMS } from "./params";
 import type { Forecast, LocationCoords, PromiseWithError } from "@/types";
+
+const ForecastError = new ServiceError("Forecast");
 
 export const getForecast = async (
   coords: LocationCoords,
@@ -16,26 +19,15 @@ export const getForecast = async (
     timezone: FORECAST_PARAMS.TIMEZONE,
   });
 
-  try {
-    const res = await fetch(
-      `${OPEN_METEO_API.URL}/forecast?${params.toString()}`,
-    );
+  const [error, data] = await fetcher(
+    `${OPEN_METEO_API.URL}/forecast?${params.toString()}`,
+    {
+      schema: ForecastSchema,
+      serviceError: ForecastError,
+    },
+  );
 
-    if (!res.ok) return [new Error("Forecast service error. Response error.")];
+  if (error) return [error];
 
-    const parsedData = ForecastSchema.safeParse(await res.json());
-
-    if (!parsedData.success)
-      return [new Error("Forecast service error. Invalid data")];
-
-    return [null, parseForecast(parsedData.data)];
-  } catch (error) {
-    if (error instanceof Error) return [error];
-  }
-
-  return [
-    new Error(
-      "Forecast service error. Something went wrong. Please try again later.",
-    ),
-  ];
+  return [null, parseForecast(data)];
 };
