@@ -1,9 +1,11 @@
+import { ServiceError, fetcher } from "@lib/fetcher";
 import { parseWeather } from "@/utils/weather";
 import { ApiErrorSchema } from "@/schemas/api-error";
 import { WeatherResponseSchema } from "@/schemas/weather";
 import type { LocationCoords, PromiseWithError, Weather } from "@/types";
 
 const ApiResponseSchema = WeatherResponseSchema.or(ApiErrorSchema);
+const WeatherError = new ServiceError("Weather");
 
 export const getWeather = async (
   coords: LocationCoords,
@@ -14,26 +16,18 @@ export const getWeather = async (
     longitude: `${longitude}`,
   });
 
-  try {
-    const res = await fetch(`/api/weather?${params.toString()}`);
+  const [error, data] = await fetcher(`/api/weather?${params.toString()}`, {
+    schema: ApiResponseSchema,
+    serviceError: WeatherError,
+    checkStatus: false,
+    // NOTE:
+    // response error is the same for client and server, because of ServiceError
+    // it means that `checkStatus` option has no effect to the error message
+  });
 
-    // NOTE: ALL VALIDATIONS are done on the SERVER
-    // // if api endpoint has an error, it returns `{ error: string }`
-    const parsed = ApiResponseSchema.safeParse(await res.json());
+  if (error) return [error];
 
-    if (!parsed.success)
-      return [new Error("Weather service error. Invalid data")];
+  if ("error" in data) return [new Error(data.error)];
 
-    if ("error" in parsed.data) return [new Error(parsed.data.error)];
-
-    return [null, parseWeather(parsed.data)];
-  } catch (error) {
-    if (error instanceof Error) return [error];
-  }
-
-  return [
-    new Error(
-      "Weather service error. Something went wrong. Please try again later.",
-    ),
-  ];
+  return [null, parseWeather(data)];
 };
