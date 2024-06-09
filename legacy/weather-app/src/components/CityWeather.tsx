@@ -8,14 +8,11 @@ import { WeatherDetails } from "./WeatherDetails";
 import "./CityWeather.scss";
 
 type Props = {
-  getCurrentLocationWeather: () => void;
+  getCurrentWeather: () => void;
   openDrawer: () => void;
 };
 
-export const CityWeather = ({
-  openDrawer,
-  getCurrentLocationWeather,
-}: Props) => {
+export const CityWeather = ({ openDrawer, getCurrentWeather }: Props) => {
   const weather = useWeatherStore((s) => s.weather);
 
   return (
@@ -31,7 +28,7 @@ export const CityWeather = ({
         <ButtonIcon
           className="weather__current"
           color="secondary"
-          onClick={getCurrentLocationWeather}
+          onClick={getCurrentWeather}
           aria-label="Get current location weather"
         >
           <Icon name="gps_fixed" />

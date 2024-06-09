@@ -42,7 +42,7 @@ function App() {
     <div className="App">
       <CityWeather
         openDrawer={openDrawer}
-        getCurrentLocationWeather={getCurrentLocationWeather}
+        getCurrentWeather={getCurrentLocationWeather}
       />
       <SearchDrawer onClose={closeDrawer} isOpen={showSearchDrawer} />
       <main>
