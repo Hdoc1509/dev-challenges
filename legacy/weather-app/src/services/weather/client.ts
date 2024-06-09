@@ -19,15 +19,12 @@ export const getWeather = async (
   const [error, data] = await fetcher(`/api/weather?${params.toString()}`, {
     schema: ApiResponseSchema,
     serviceError: WeatherError,
-    checkStatus: false,
-    // NOTE:
-    // response error is the same for client and server, because of ServiceError
-    // it means that `checkStatus` option has no effect to the error message
+    checkStatus: false, // allows to read api endpoint errors in response
   });
 
   if (error) return [error];
 
-  if ("error" in data) return [new Error(data.error)];
+  if ("error" in data) return [new Error(data.error)]; // api endpoint error
 
   return [null, parseWeather(data)];
 };
