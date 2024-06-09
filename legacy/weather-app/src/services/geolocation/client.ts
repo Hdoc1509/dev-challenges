@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { ServiceError, fetcher } from "@lib/fetcher";
 import { ApiErrorSchema } from "@/schemas/api-error";
 import type { City, PromiseWithError } from "@/types";
 
@@ -12,26 +13,18 @@ const Schema = z.array(
   }),
 );
 const ApiResponseSchema = Schema.or(ApiErrorSchema);
-const errorPrefix = "Search city service error";
+const SearchCityError = new ServiceError("Search city");
 
 export const searchCity = async (city: string): PromiseWithError<City[]> => {
-  try {
-    const res = await fetch(`/api/geolocation?city=${city}`);
+  const [error, data] = await fetcher(`/api/geolocation?city=${city}`, {
+    schema: ApiResponseSchema,
+    serviceError: SearchCityError,
+    checkStatus: false, // allows to read api endpoint errors in response
+  });
 
-    // NOTE: ALL VALIDATIONS are done on the SERVER
-    // if api endpoint has an error, it returns `{ error: string }`
-    const parsed = ApiResponseSchema.safeParse(await res.json());
+  if (error) return [error];
 
-    if (!parsed.success) return [new Error(`${errorPrefix}. Invalid data`)];
+  if ("error" in data) return [new Error(data.error)]; // api endpoint error
 
-    if ("error" in parsed.data) return [new Error(parsed.data.error)];
-
-    return [null, parsed.data];
-  } catch (error) {
-    if (error instanceof Error) return [error];
-  }
-
-  return [
-    new Error(`${errorPrefix}. Something went wrong. Please try again later.`),
-  ];
+  return [null, data];
 };
