@@ -14,30 +14,25 @@ export const useCurrentWeather = () => {
   const getCurrentLocationWeather = useCallback(async () => {
     clearData();
 
-    try {
-      const [coordsError, coords] = await getCurrentCoords();
+    const [coordsError, coords] = await getCurrentCoords();
 
-      if (coordsError) throw coordsError;
+    if (coordsError) return setError(coordsError);
 
-      // NOTE: it is typed incorrectly with array desctructuring
-      // const [[weatherError, weather], [forecastError, forecast]] =
-      //   await Promise.all([getWeather(coords), getForecast(coords)]);
-      const [weatherResult, forecastResult] = await Promise.all([
-        getWeather(coords),
-        getForecast(coords),
-      ]);
-      const [weatherError, weather] = weatherResult;
-      const [forecastError, forecast] = forecastResult;
+    // NOTE: it is typed incorrectly with array desctructuring
+    // const [[weatherError, weather], [forecastError, forecast]] =
+    //   await Promise.all([getWeather(coords), getForecast(coords)]);
+    const [weatherResult, forecastResult] = await Promise.all([
+      getWeather(coords),
+      getForecast(coords),
+    ]);
+    const [weatherError, weather] = weatherResult;
+    const [forecastError, forecast] = forecastResult;
 
-      if (weatherError) throw weatherError;
-      if (forecastError) throw forecastError;
+    if (weatherError) return setError(weatherError);
+    if (forecastError) return setError(forecastError);
 
-      setWeather(weather);
-      setForecast(forecast);
-    } catch (error) {
-      // NOTE: All errors are thrown and handled manually
-      setError(error as Error);
-    }
+    setWeather(weather);
+    setForecast(forecast);
   }, [setForecast, setWeather, clearData]);
 
   return { getCurrentLocationWeather, error };
