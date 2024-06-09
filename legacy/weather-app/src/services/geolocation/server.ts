@@ -1,12 +1,13 @@
-import { WEATHERAPI } from "@/config";
+import { ServiceError, fetcher } from "@lib/fetcher";
 import {
   SearchCityResponseSchema,
   type SearchCityResponse,
 } from "@/schemas/geolocation";
+import { WEATHERAPI } from "@/config";
 import type { PromiseWithError } from "@/types";
 
+const SearchCityError = new ServiceError("Search city");
 const CITIES_LIMIT = "5";
-const errorPrefix = "Search city service error";
 
 export const searchCity = async (
   search: string,
@@ -17,23 +18,15 @@ export const searchCity = async (
     key: WEATHERAPI.KEY,
   });
 
-  try {
-    const res = await fetch(
-      `${WEATHERAPI.URL}/search.json?${params.toString()}`,
-    );
+  const [error, data] = await fetcher(
+    `${WEATHERAPI.URL}/search.json?${params.toString()}`,
+    {
+      schema: SearchCityResponseSchema,
+      serviceError: SearchCityError,
+    },
+  );
 
-    if (!res.ok) return [new Error(`${errorPrefix}. Response error.`)];
+  if (error) return [error];
 
-    const parsedData = SearchCityResponseSchema.safeParse(await res.json());
-
-    if (!parsedData.success) return [new Error(`${errorPrefix}. Invalid data`)];
-
-    return [null, parsedData.data];
-  } catch (error) {
-    if (error instanceof Error) return [error];
-  }
-
-  return [
-    new Error(`${errorPrefix}. Something went wrong. Please try again later.`),
-  ];
+  return [null, data];
 };
