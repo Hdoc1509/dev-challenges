@@ -1,4 +1,4 @@
-import type { LocationResponse } from "@/schemas/geolocation";
+import type { SearchLocationResponse } from "@/schemas/geolocation";
 import type { LocationService } from "./types";
 
 export const searchLocation: LocationService = async (options) => {
@@ -18,7 +18,7 @@ export const searchLocation: LocationService = async (options) => {
     // NOTE: if server has an error it returns `{ error: string }`
     const data = (await res.json()) as
       | { error: string }
-      | LocationResponse[number];
+      | SearchLocationResponse[number];
 
     if ("error" in data) return [new Error(data.error)];
 

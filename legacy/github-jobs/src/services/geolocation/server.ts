@@ -1,6 +1,6 @@
 import { WEATHERAPI } from "@/config";
 import { GeolocationResponseError } from "@/errors";
-import { LocationResponseSchema } from "@/schemas/geolocation";
+import { SearchLocationResponseSchema } from "@/schemas/geolocation";
 import type { LocationService } from "./types";
 
 export const searchLocation: LocationService = async (options) => {
@@ -30,7 +30,7 @@ export const searchLocation: LocationService = async (options) => {
         new GeolocationResponseError("Geolocation service response error", res),
       ];
 
-    const parsedData = LocationResponseSchema.safeParse(await res.json());
+    const parsedData = SearchLocationResponseSchema.safeParse(await res.json());
 
     if (!parsedData.success)
       return [new Error("Geolocation service data error. Invalid data")];

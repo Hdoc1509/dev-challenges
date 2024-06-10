@@ -1,6 +1,6 @@
 import * as z from "zod";
 
-export const LocationResponseSchema = z.array(
+export const SearchLocationResponseSchema = z.array(
   z.object({
     id: z.number(),
     name: z.string(),
@@ -11,4 +11,6 @@ export const LocationResponseSchema = z.array(
     url: z.string(),
   }),
 );
-export type LocationResponse = z.infer<typeof LocationResponseSchema>;
+export type SearchLocationResponse = z.infer<
+  typeof SearchLocationResponseSchema
+>;
