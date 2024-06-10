@@ -211,6 +211,9 @@ importers:
       '@internal/components':
         specifier: workspace:*
         version: link:../../libs/components
+      '@lib/fetcher':
+        specifier: workspace:*
+        version: link:../../libs/fetcher
       '@lib/geolocation':
         specifier: workspace:*
         version: link:../../libs/geolocation
