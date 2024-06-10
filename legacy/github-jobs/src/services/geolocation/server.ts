@@ -3,9 +3,11 @@ import { GeolocationResponseError } from "@/errors";
 import { SearchLocationResponseSchema } from "@/schemas/geolocation";
 import type { LocationService } from "./types";
 
+const LOCATIONS_LIMIT = "1";
+
 export const searchLocation: LocationService = async (options) => {
   const params = new URLSearchParams({
-    limit: "1",
+    limit: LOCATIONS_LIMIT,
     key: WEATHERAPI.KEY,
   });
   const controller = new AbortController();
