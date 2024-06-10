@@ -10,24 +10,19 @@ export const getMockedJobs: JobService = (search) => {
   const jobs = parseJobs(jobsMock);
   const endIndexSlice = randomInt(7, 10);
 
+  const isLocationInMocks = mockLocations.some((mockLocation) =>
+    mockLocation.match(new RegExp(location, "i")),
+  );
+
   const filtered = jobs.filter((job) => {
     const queryMatch =
       query !== ""
         ? job.title.toLowerCase().includes(query.toLowerCase())
         : true;
-    const locationMatch = ((location) => {
-      if (location != null) {
-        const isLocationInMocks = mockLocations.some((mockLocation) =>
-          mockLocation.match(new RegExp(location, "i")),
-        );
+    const locationMatch = isLocationInMocks
+      ? job.location.match(new RegExp(location, "i")) != null
+      : job.location.match(/new york|\sny/i) != null;
 
-        return isLocationInMocks
-          ? job.location.match(new RegExp(location, "i")) != null
-          : job.location.match(/new york|\sny/i) != null;
-      }
-
-      return job.location.match(/new york|\sny/i) != null;
-    })(location);
     const fullTimeMatch = fullTime ? job.isFullTime : true;
 
     return queryMatch && locationMatch && fullTimeMatch;
