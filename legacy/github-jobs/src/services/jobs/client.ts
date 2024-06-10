@@ -1,6 +1,11 @@
+import { ServiceError, fetcher } from "@lib/fetcher";
+import { ApiErrorSchema } from "@/schemas/api-error";
+import { JobsResponseSchema } from "@/schemas/jobs";
 import { parseJobs } from "@/utils/jobs";
-import type { JobsResponse } from "@/schemas/jobs";
 import type { JobService } from "./types";
+
+const ApiResponseSchema = JobsResponseSchema.or(ApiErrorSchema);
+const JobsError = new ServiceError("Jobs");
 
 export const getJobs: JobService = async (search) => {
   const { query, location, fullTime, page } = search;
@@ -10,19 +15,15 @@ export const getJobs: JobService = async (search) => {
   if (fullTime) params.append("full_time", "");
   if (page) params.append("page", `${page}`);
 
-  try {
-    const res = await fetch(`/api/jobs?${params.toString()}`);
+  const [error, data] = await fetcher(`/api/jobs?${params.toString()}`, {
+    schema: ApiResponseSchema,
+    serviceError: JobsError,
+    checkStatus: false, // allows to read api endpoint errors in response
+  });
 
-    // NOTE: ALL VALIDATIONS are done on the SERVER
-    // NOTE: if server has an error it returns `{ error: string }`
-    const data = (await res.json()) as { error: string } | JobsResponse;
+  if (error) return [error];
 
-    if ("error" in data) return [new Error(data.error)];
+  if ("error" in data) return [new Error(data.error)]; // api endpoint error
 
-    return [null, parseJobs(data)];
-  } catch (error) {
-    if (error instanceof Error) return [error];
-  }
-
-  return [new Error("An unknown error occurred while trying to get jobs")];
+  return [null, parseJobs(data)];
 };
