@@ -12,11 +12,6 @@ export type Job = {
   isFullTime: boolean;
 };
 
-export type LocationCoords = {
-  latitude: number;
-  longitude: number;
-};
-
 export type Search = {
   query: string;
   location: string;
