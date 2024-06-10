@@ -1,6 +1,6 @@
 import { getCurrentCoords } from "@lib/geolocation";
 import { searchLocation } from "@/services/geolocation/client";
-import type { PromiseWithError } from "../types";
+import type { PromiseWithError } from "@lib/fetcher";
 
 export const getLocationOption = async (
   location?: string,

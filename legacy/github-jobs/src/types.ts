@@ -18,5 +18,3 @@ export type Search = {
   fullTime?: boolean;
   page?: number;
 };
-
-export type PromiseWithError<T> = Promise<[Error] | [null, T]>;
