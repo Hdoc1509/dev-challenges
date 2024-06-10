@@ -1,13 +1,13 @@
-import { ServiceError, fetcher } from "@lib/fetcher";
+import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
 import { ApiErrorSchema } from "@/schemas/api-error";
 import { JobsResponseSchema } from "@/schemas/jobs";
 import { parseJobs } from "@/utils/jobs";
-import type { JobService } from "./types";
+import type { Job, Search } from "@/types";
 
 const ApiResponseSchema = JobsResponseSchema.or(ApiErrorSchema);
 const JobsError = new ServiceError("Jobs");
 
-export const getJobs: JobService = async (search) => {
+export const getJobs = async (search: Search): PromiseWithError<Job[]> => {
   const { query, location, fullTime, page } = search;
 
   const params = new URLSearchParams({ q: query, location });

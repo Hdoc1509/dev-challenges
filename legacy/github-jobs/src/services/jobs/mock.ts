@@ -1,11 +1,12 @@
 import { parseJobs } from "@/utils/jobs";
 import jobsMock from "@/mocks/jobs.json";
 import { randomInt } from "@/utils/number";
-import type { JobService } from "./types";
+import type { PromiseWithError } from "@lib/fetcher";
+import type { Job, Search } from "@/types";
 
 const mockLocations = jobsMock.jobs_results.map(({ location }) => location);
 
-export const getMockedJobs: JobService = (search) => {
+export const getMockedJobs = (search: Search): PromiseWithError<Job[]> => {
   const { query, location, fullTime } = search;
   const jobs = parseJobs(jobsMock);
   const endIndexSlice = randomInt(7, 10);

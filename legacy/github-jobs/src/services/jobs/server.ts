@@ -1,12 +1,14 @@
-import { ServiceError, fetcher } from "@lib/fetcher";
+import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
 import { JobsResponseSchema, type JobsResponse } from "@/schemas/jobs";
 import { SERPAPI } from "@/config";
 import locationsMock from "@/mocks/locations.json";
-import type { JobService } from "./types";
+import type { Search } from "@/types";
 
 const JobsError = new ServiceError("Jobs");
 
-export const getJobs: JobService<JobsResponse> = async (search) => {
+export const getJobs = async (
+  search: Search,
+): PromiseWithError<JobsResponse> => {
   const { query, location, fullTime, page } = search;
   const params = new URLSearchParams({
     engine: "google_jobs",
