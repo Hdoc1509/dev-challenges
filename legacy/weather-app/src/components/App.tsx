@@ -11,7 +11,7 @@ import "./App.scss";
 let didInit = false;
 
 function App() {
-  const { getCurrentLocationWeather, error } = useCurrentWeather();
+  const { getCurrentWeather, error } = useCurrentWeather();
   const [showSearchDrawer, setShowSearchDrawer] = useState(false);
 
   const openDrawer = () => {
@@ -26,9 +26,9 @@ function App() {
   useEffect(() => {
     if (!didInit) {
       didInit = true;
-      getCurrentLocationWeather();
+      getCurrentWeather();
     }
-  }, [getCurrentLocationWeather]);
+  }, [getCurrentWeather]);
 
   if (error) {
     return (
@@ -42,7 +42,7 @@ function App() {
     <div className="App">
       <CityWeather
         openDrawer={openDrawer}
-        getCurrentWeather={getCurrentLocationWeather}
+        getCurrentWeather={getCurrentWeather}
       />
       <SearchDrawer onClose={closeDrawer} isOpen={showSearchDrawer} />
       <main>

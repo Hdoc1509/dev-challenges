@@ -11,7 +11,7 @@ export const useCurrentWeather = () => {
   const setError = useWeatherStore((s) => s.setError);
   const clearData = useWeatherStore((s) => s.clearData);
 
-  const getCurrentLocationWeather = useCallback(async () => {
+  const getCurrentWeather = useCallback(async () => {
     clearData();
 
     const [coordsError, coords] = await getCurrentCoords();
@@ -35,5 +35,5 @@ export const useCurrentWeather = () => {
     setForecast(forecast);
   }, [setForecast, setWeather, clearData]);
 
-  return { getCurrentLocationWeather, error };
+  return { getCurrentWeather, error };
 };
