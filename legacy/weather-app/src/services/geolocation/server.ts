@@ -1,11 +1,10 @@
 import { z } from "zod";
-import { ServiceError, fetcher } from "@lib/fetcher";
+import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
 import {
   SearchCityResponseSchema,
   type SearchCityResponse,
 } from "@/schemas/geolocation";
 import { WEATHERAPI } from "@/config";
-import type { PromiseWithError } from "@/types";
 
 // based on http://www.weatherapi.com/docs/#intro-error-codes
 const ErrorSchema = z.object({

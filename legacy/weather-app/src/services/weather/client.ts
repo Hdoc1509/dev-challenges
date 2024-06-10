@@ -1,9 +1,9 @@
-import { ServiceError, fetcher } from "@lib/fetcher";
-import { parseWeather } from "@/utils/weather";
+import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
 import { ApiErrorSchema } from "@/schemas/api-error";
 import { WeatherResponseSchema } from "@/schemas/weather";
+import { parseWeather } from "@/utils/weather";
 import type { LocationCoords } from "@lib/geolocation";
-import type { PromiseWithError, Weather } from "@/types";
+import type { Weather } from "@/types";
 
 const ApiResponseSchema = WeatherResponseSchema.or(ApiErrorSchema);
 const WeatherError = new ServiceError("Weather");

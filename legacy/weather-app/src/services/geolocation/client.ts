@@ -1,7 +1,7 @@
 import { z } from "zod";
-import { ServiceError, fetcher } from "@lib/fetcher";
+import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
 import { ApiErrorSchema } from "@/schemas/api-error";
-import type { City, PromiseWithError } from "@/types";
+import type { City } from "@/types";
 
 const Schema = z.array(
   z.object({

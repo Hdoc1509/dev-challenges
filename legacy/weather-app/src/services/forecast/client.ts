@@ -1,10 +1,10 @@
-import { ServiceError, fetcher } from "@lib/fetcher";
+import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
 import { ForecastSchema } from "@/schemas/forecast";
 import { parseForecast } from "@/utils/forecast";
 import { OPEN_METEO_API } from "@/config";
 import { FORECAST_PARAMS } from "./params";
 import type { LocationCoords } from "@lib/geolocation";
-import type { Forecast, PromiseWithError } from "@/types";
+import type { Forecast } from "@/types";
 
 const ForecastError = new ServiceError("Forecast");
 
