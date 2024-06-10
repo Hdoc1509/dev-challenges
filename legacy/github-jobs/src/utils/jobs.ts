@@ -1,4 +1,4 @@
-import { sanitizeString } from "./string";
+import { sanitizeString } from "./helpers";
 import type { JobsResponse } from "../schemas/jobs";
 import type { Job } from "../types";
 
