@@ -1,12 +1,17 @@
-import { ServiceError, fetcher } from "@lib/fetcher";
+import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
 import { WEATHERAPI } from "@/config";
-import { SearchLocationResponseSchema } from "@/schemas/geolocation";
-import type { LocationService } from "./types";
+import {
+  SearchLocationResponseSchema,
+  type LocationResponse,
+} from "@/schemas/geolocation";
+import type { LocationOptions } from "@/types";
 
 const GeolocationError = new ServiceError("Geolocation");
 const LOCATIONS_LIMIT = "1";
 
-export const searchLocation: LocationService = async (options) => {
+export const searchLocation = async (
+  options: LocationOptions,
+): PromiseWithError<LocationResponse> => {
   const params = new URLSearchParams({
     limit: LOCATIONS_LIMIT,
     key: WEATHERAPI.KEY,
