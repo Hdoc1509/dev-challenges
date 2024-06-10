@@ -12,6 +12,3 @@ export const LocationResponseSchema = z.object({
 export type LocationResponse = z.infer<typeof LocationResponseSchema>;
 
 export const SearchLocationResponseSchema = z.array(LocationResponseSchema);
-export type SearchLocationResponse = z.infer<
-  typeof SearchLocationResponseSchema
->;
