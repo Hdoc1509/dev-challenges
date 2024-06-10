@@ -37,11 +37,6 @@ export type Forecast = {
   };
 };
 
-export type LocationCoords = {
-  latitude: number;
-  longitude: number;
-};
-
 export type City = {
   id: number;
   name: string;

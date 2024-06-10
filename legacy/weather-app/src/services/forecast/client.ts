@@ -3,7 +3,8 @@ import { ForecastSchema } from "@/schemas/forecast";
 import { parseForecast } from "@/utils/forecast";
 import { OPEN_METEO_API } from "@/config";
 import { FORECAST_PARAMS } from "./params";
-import type { Forecast, LocationCoords, PromiseWithError } from "@/types";
+import type { LocationCoords } from "@lib/geolocation";
+import type { Forecast, PromiseWithError } from "@/types";
 
 const ForecastError = new ServiceError("Forecast");
 
