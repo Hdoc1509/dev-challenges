@@ -1,4 +1,5 @@
-import type { City, Status } from "@/types";
+import type { Status } from "@lib/fetcher";
+import type { City } from "@/types";
 import { create } from "zustand";
 
 type State = {

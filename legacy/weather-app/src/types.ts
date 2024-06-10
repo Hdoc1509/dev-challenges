@@ -44,5 +44,3 @@ export type City = {
   latitude: number;
   longitude: number;
 };
-
-export type Status = "idle" | "loading" | "success" | "error";
