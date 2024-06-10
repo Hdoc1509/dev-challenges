@@ -1,8 +1,6 @@
 import type { PromiseWithError } from "@lib/fetcher";
-import type { LocationCoords } from "@lib/geolocation";
 import type { LocationResponse } from "@/schemas/geolocation";
-
-export type LocationOptions = { zipCode: number } | { coords: LocationCoords };
+import type { LocationOptions } from "@/types";
 
 export type LocationService = (
   options: LocationOptions,

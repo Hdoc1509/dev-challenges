@@ -1,3 +1,5 @@
+import type { LocationCoords } from "@lib/geolocation";
+
 export type Job = {
   title: string;
   company: {
@@ -18,3 +20,5 @@ export type Search = {
   fullTime?: boolean;
   page?: number;
 };
+
+export type LocationOptions = { zipCode: number } | { coords: LocationCoords };

@@ -1,6 +1,6 @@
 import { searchLocation } from "@/services/geolocation/server";
-import type { LocationOptions } from "@/services/geolocation/types";
 import type { APIRoute } from "astro";
+import type { LocationOptions } from "@/types";
 
 export const GET: APIRoute = async ({ request }) => {
   const params = new URL(request.url).searchParams;
