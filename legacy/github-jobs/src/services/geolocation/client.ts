@@ -1,5 +1,8 @@
-import type { SearchLocationResponse } from "@/schemas/geolocation";
+import { ApiErrorSchema } from "@/schemas/api-error";
+import { LocationResponseSchema } from "@/schemas/geolocation";
 import type { LocationService } from "./types";
+
+const ApiResponseSchema = LocationResponseSchema.or(ApiErrorSchema);
 
 export const searchLocation: LocationService = async (options) => {
   const params = new URLSearchParams();
@@ -14,11 +17,12 @@ export const searchLocation: LocationService = async (options) => {
   try {
     const res = await fetch(`/api/geolocation?${params.toString()}`);
 
-    // NOTE: ALL VALIDATIONS are done on the SERVER
-    // NOTE: if server has an error it returns `{ error: string }`
-    const data = (await res.json()) as
-      | { error: string }
-      | SearchLocationResponse[number];
+    const parsed = ApiResponseSchema.safeParse(await res.json());
+
+    if (!parsed.success)
+      return [new Error("Geolocation service data error. Invalid data")];
+
+    const { data } = parsed;
 
     if ("error" in data) return [new Error(data.error)];
 
