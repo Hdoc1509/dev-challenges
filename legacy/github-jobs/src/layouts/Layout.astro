@@ -22,10 +22,9 @@ import "@fontsource/poppins/latin-700.css";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Github Jobs - Legacy DevChallenges</title>
-    <script
-      type="module"
-      src="node_modules/@hrc/toggle-theme/dist/load-theme.js"
-      is:inline></script>
+    <script>
+      import "@hrc/toggle-theme/dist/load-theme";
+    </script>
   </head>
   <body>
     <slot />
