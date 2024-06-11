@@ -1,16 +1,16 @@
-import { z } from "zod";
 import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
 import { ApiErrorSchema } from "@/schemas/api-error";
+import { SearchCityResponseSchema } from "@/schemas/geolocation";
 import type { City } from "@/types";
 
-const Schema = z.array(
-  z.object({
-    id: z.number(),
-    name: z.string(),
-    country: z.string(),
-    latitude: z.number(),
-    longitude: z.number(),
-  }),
+const Schema = SearchCityResponseSchema.transform((locations) =>
+  locations.map(({ id, name, country, lat, lon }) => ({
+    id,
+    name,
+    country,
+    latitude: lat,
+    longitude: lon,
+  })),
 );
 const ApiResponseSchema = Schema.or(ApiErrorSchema);
 const SearchCityError = new ServiceError("Search city");
