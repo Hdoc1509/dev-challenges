@@ -47,7 +47,7 @@ export const SearchResults = ({ onClose }: { onClose: () => void }) => {
     <menu className="search-drawer__results">
       {results.map((result) => (
         <li key={result.id}>
-          <Button onClick={() => handleSelect(result)} disableShadow>
+          <Button onClick={() => void handleSelect(result)} disableShadow>
             {result.name} - {result.country}
             <Icon name="keyboard_arrow_right" />
           </Button>
