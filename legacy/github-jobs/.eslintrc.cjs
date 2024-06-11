@@ -1,6 +1,4 @@
-// TODO: try https://github.com/kaje94/astro-react-ts-eslint-starter/tree/main
 module.exports = {
-  root: true,
   extends: ["plugin:astro/recommended"],
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   parser: "@typescript-eslint/parser",
