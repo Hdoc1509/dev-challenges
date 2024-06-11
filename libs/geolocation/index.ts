@@ -26,13 +26,12 @@ const getErrorMessage = (code: number) => {
   return "An unknown error occurred while trying to get your location";
 };
 
-export const getCurrentCoords = (): Promise<
-  [Error] | [null, LocationCoords]
-> => {
-  return new Promise((resolve) => {
-    // NOTE: it happens when there's no internet connection
-    setTimeout(() => resolve([new Error(MESSAGES.TIMEOUT)]), 5000);
+export const getCurrentCoords = (
+  options: PositionOptions = {},
+): Promise<[Error] | [null, LocationCoords]> => {
+  const { timeout = 5000, enableHighAccuracy, maximumAge } = options;
 
+  return new Promise((resolve) => {
     navigator.geolocation.getCurrentPosition(
       ({ coords: { latitude, longitude } }) => {
         resolve([null, { latitude, longitude }]);
@@ -40,6 +39,7 @@ export const getCurrentCoords = (): Promise<
       ({ code }) => {
         resolve([new Error(getErrorMessage(code))]);
       },
+      { timeout, enableHighAccuracy, maximumAge },
     );
   });
 };
