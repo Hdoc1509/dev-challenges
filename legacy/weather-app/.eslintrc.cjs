@@ -1,17 +1,17 @@
 module.exports = {
-  root: true,
-  extends: [
-    'plugin:@typescript-eslint/recommended-type-checked',
-    'plugin:astro/recommended',
-  ],
+  parserOptions: {
+    project: "./tsconfig.json",
+    tsconfigRootDir: __dirname,
+  },
   overrides: [
     {
-      files: ['*.astro'],
-      parser: 'astro-eslint-parser',
+      files: ["*.astro"],
+      extends: ["plugin:astro/recommended"],
+      parser: "astro-eslint-parser",
       parserOptions: {
-        parser: '@typescript-eslint/parser',
-        extraFileExtensions: ['.astro'],
+        parser: "@typescript-eslint/parser",
+        extraFileExtensions: [".astro"],
       },
-    }
-  ]
-}
+    },
+  ],
+};
