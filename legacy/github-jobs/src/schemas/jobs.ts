@@ -22,10 +22,6 @@ const RelatedLinkSchema = z.object({
   text: z.string(),
 });
 
-const SearchInformationSchema = z.object({
-  jobs_results_state: z.string(),
-});
-
 const SearchMetadataSchema = z.object({
   id: z.string(),
   status: z.string(),
@@ -65,12 +61,22 @@ const JobsResultSchema = z.object({
 });
 export type JobsResult = z.infer<typeof JobsResultSchema>;
 
+// based on https://serpapi.com/playground?engine=google_jobs
 export const JobsResponseSchema = z.object({
   search_metadata: SearchMetadataSchema,
   search_parameters: SearchParametersSchema,
-  jobs_results: z.array(JobsResultSchema).optional(),
-  chips: z.array(ChipSchema).optional(),
-  search_information: SearchInformationSchema.optional(),
-  error: z.string().optional(),
+  jobs_results: z.array(JobsResultSchema),
+  chips: z.array(ChipSchema),
 });
 export type JobsResponse = z.infer<typeof JobsResponseSchema>;
+
+// based on https://serpapi.com/searches/245e315c7524f950/6644d67d7690dc208bd21e49.json
+const SearchInformationSchema = z.object({
+  jobs_results_state: z.string(),
+});
+export const JobsErrorResponseSchema = z.object({
+  search_metadata: SearchMetadataSchema,
+  search_parameters: SearchParametersSchema,
+  search_information: SearchInformationSchema,
+  error: z.string(),
+});

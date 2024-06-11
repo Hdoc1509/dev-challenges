@@ -3,7 +3,7 @@ import type { JobsResponse } from "../schemas/jobs";
 import type { Job } from "../types";
 
 export const parseJobs = (data: JobsResponse): Job[] => {
-  return data.jobs_results!.map((job) => ({
+  return data.jobs_results.map((job) => ({
     title: job.title,
     company: {
       name: job.company_name,

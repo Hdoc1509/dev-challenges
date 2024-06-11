@@ -1,9 +1,14 @@
 import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
-import { JobsResponseSchema, type JobsResponse } from "@/schemas/jobs";
+import {
+  JobsResponseSchema,
+  JobsErrorResponseSchema,
+  type JobsResponse,
+} from "@/schemas/jobs";
 import { SERPAPI } from "@/config";
 import locationsMock from "@/mocks/locations.json";
 import type { Search } from "@/types";
 
+const Schema = JobsResponseSchema.or(JobsErrorResponseSchema);
 const JobsError = new ServiceError("Jobs");
 
 export const getJobs = async (
@@ -29,16 +34,20 @@ export const getJobs = async (
   const [error, data] = await fetcher(
     `${SERPAPI.URL}/search.json?${params.toString()}`,
     {
-      schema: JobsResponseSchema,
+      schema: Schema,
       serviceError: JobsError,
+      checkStatus: false, // allows to read serpapi endpoint errors in response
     },
   );
 
   if (error) return [error];
 
-  // based on https://serpapi.com/searches/245e315c7524f950/6644d67d7690dc208bd21e49.json
-  if (data.search_information?.jobs_results_state === "Fully empty")
-    return [new Error(`No jobs found for: ${query}`)];
+  if ("error" in data) { // serpapi endpoint error
+    if (data.search_information.jobs_results_state === "Fully empty")
+      return [new Error(`No jobs found for: ${query}`)];
+
+    return [new Error(data.error)];
+  }
 
   return [null, data];
 };
