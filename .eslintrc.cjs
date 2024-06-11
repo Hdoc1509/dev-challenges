@@ -4,9 +4,6 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended-type-checked",
-    "plugin:react/recommended",
-    "plugin:react/jsx-runtime",
-    "plugin:react-hooks/recommended",
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs", "vite.config.ts"],
   parserOptions: {
@@ -16,15 +13,28 @@ module.exports = {
     tsconfigRootDir: __dirname,
   },
   parser: "@typescript-eslint/parser",
-  plugins: ["@typescript-eslint", "react-refresh"],
+  plugins: ["@typescript-eslint"],
   rules: {
-    "react-refresh/only-export-components": [
-      "warn",
-      { allowConstantExport: true },
-    ],
-    "@typescript-eslint/consistent-type-imports": "error"
+    "@typescript-eslint/consistent-type-imports": "error",
   },
-  settings: {
-    react: { version: "detect" },
-  },
+  overrides: [
+    {
+      files: ["*.tsx"],
+      extends: [
+        "plugin:react/recommended",
+        "plugin:react/jsx-runtime",
+        "plugin:react-hooks/recommended",
+      ],
+      plugins: ["react-refresh"],
+      rules: {
+        "react-refresh/only-export-components": [
+          "warn",
+          { allowConstantExport: true },
+        ],
+      },
+      settings: {
+        react: { version: "detect" },
+      },
+    },
+  ],
 };
