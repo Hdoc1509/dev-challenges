@@ -1,16 +1,37 @@
 @use "@scss" as *;
 
+@keyframes skeleton {
+  0% {
+    background-color: var(--skeleton-base);
+  }
+  100% {
+    background-color: var(--skeleton-accent);
+  }
+}
+
 .stay-card {
   display: flex;
   flex-direction: column;
   gap: 12px;
 
   &__image {
+    --skeleton-base: #aaa;
+    --skeleton-accent: #cbcbcb;
     object-fit: cover;
     border-radius: 24px;
     width: 100%;
+    outline: 1px solid var(--skeleton-base);
+
+    color: var(--text);
 
     aspect-ratio: 16 / 10.5;
+
+    animation: skeleton 1.25s linear infinite alternate;
+
+    [data-theme="dark"] & {
+      --skeleton-base: #333;
+      --skeleton-accent: #444;
+    }
   }
 
   &__features {
