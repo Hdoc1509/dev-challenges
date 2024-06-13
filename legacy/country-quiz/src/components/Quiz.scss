@@ -111,7 +111,7 @@
     }
 
     // NOTE: This will be added in next release of @hrc/button
-    > [class] {
+    > * {
       flex-shrink: 0;
     }
   }
