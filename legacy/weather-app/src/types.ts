@@ -1,35 +1,37 @@
+type Temperature = {
+  celsius: number;
+  fahrenheit: number;
+};
+
+export type Wind = {
+  speed: number;
+  direction: string;
+  directionDegree: number;
+};
+
 export type Weather = {
   location: {
     name: string;
     country: string;
   };
   current: {
-    temperature: {
-      celsius: number;
-      fahrenheit: number;
-    };
+    temperature: Temperature;
     condition: {
       name: string;
       code: number;
     };
-    wind: {
-      speed: number;
-      direction: string;
-      directionDegree: number;
-    };
+    wind: Wind;
     humidity: number;
     visibility: number;
     airPressure: number;
   };
 };
 
-export type Wind = Weather["current"]["wind"];
-
 export type Forecast = {
   day: string;
   temperature: {
-    min: Weather["current"]["temperature"];
-    max: Weather["current"]["temperature"];
+    min: Temperature;
+    max: Temperature;
   };
   condition: {
     code: number;
