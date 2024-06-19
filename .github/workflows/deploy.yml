@@ -26,6 +26,8 @@ jobs:
           files: |
             _templates/**
             .github/**
+            legacy/weather-app/**
+            legacy/github-jobs/**
             !.github/workflows/deploy.yml
             **.md
 
