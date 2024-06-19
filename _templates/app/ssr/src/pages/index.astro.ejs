@@ -1,0 +1,12 @@
+---
+to: ssr/<%= name %>/src/pages/index.astro
+---
+
+---
+import Layout from "../layouts/Layout.astro";
+import App from "@/App";
+---
+
+<Layout>
+  <App client:only="react" />
+</Layout>

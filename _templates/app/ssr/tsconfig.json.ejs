@@ -1,0 +1,17 @@
+---
+to: ssr/<%= name %>/tsconfig.json
+---
+
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+
+    "baseUrl": ".",
+    "outDir": "dist",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  }
+}

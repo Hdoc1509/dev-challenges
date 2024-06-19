@@ -5,7 +5,8 @@
     "build": "bash ./scripts/build.sh",
     "clean": "npkill",
     "lint": "eslint --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "gen:app": "hygen app new"
+    "gen:app": "hygen app new",
+    "gen:ssr": "hygen app ssr"
   },
   "author": "Héctor Ochoa <hector.ochoa.dev@gmail.com>",
   "packageManager": "pnpm@8.10.5",

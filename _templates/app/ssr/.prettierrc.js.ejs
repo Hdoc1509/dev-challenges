@@ -1,0 +1,15 @@
+---
+to: ssr/<%= name %>/.prettierrc.js
+---
+
+export default {
+  plugins: ["prettier-plugin-astro"],
+  overrides: [
+    {
+      files: ["*.astro"],
+      options: {
+        parser: "astro",
+      },
+    },
+  ],
+}
