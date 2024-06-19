@@ -5,7 +5,7 @@ module.exports = {
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended-type-checked",
   ],
-  ignorePatterns: ["dist", ".eslintrc.cjs", "vite.config.ts"],
+  ignorePatterns: ["dist", ".eslintrc.cjs"],
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
