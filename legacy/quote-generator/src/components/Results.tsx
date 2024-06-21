@@ -1,5 +1,5 @@
 import { BlockQuote } from "./BlockQuote";
-import type { Quote } from "../types";
+import type { Quote } from "@/types";
 import './Results.scss';
 
 type Props = {
