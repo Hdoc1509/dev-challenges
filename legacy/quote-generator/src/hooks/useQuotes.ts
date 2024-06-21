@@ -1,8 +1,5 @@
 import { useCallback, useState } from "react";
-import {
-  getAuthorQuotes,
-  getRandomQuote,
-} from "@/services/quotes/quote-garden";
+import { getAuthorQuotes, getRandomQuote } from "@/services/quotes/quotable";
 import type { Status } from "@lib/fetcher";
 import type { Quote } from "@/types";
 
