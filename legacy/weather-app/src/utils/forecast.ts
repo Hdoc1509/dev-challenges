@@ -14,16 +14,19 @@ export const parseForecast = (data: ForecastResponse): Forecast[] => {
   const forecast: Forecast[] = [];
 
   time.forEach((date, index) => {
+    const minTemp = temperature_2m_min[index];
+    const maxTemp = temperature_2m_max[index];
+
     forecast.push({
       day: formatDate(parseDate(date)),
       temperature: {
         min: {
-          celsius: temperature_2m_min[index],
-          fahrenheit: celsiusToFahrenheit(temperature_2m_min[index]),
+          celsius: minTemp,
+          fahrenheit: celsiusToFahrenheit(minTemp),
         },
         max: {
-          celsius: temperature_2m_max[index],
-          fahrenheit: celsiusToFahrenheit(temperature_2m_max[index]),
+          celsius: maxTemp,
+          fahrenheit: celsiusToFahrenheit(maxTemp),
         },
       },
       condition: {
