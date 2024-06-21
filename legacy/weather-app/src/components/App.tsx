@@ -26,7 +26,7 @@ function App() {
   useEffect(() => {
     if (!didInit) {
       didInit = true;
-      void getCurrentWeather();
+      getCurrentWeather();
     }
   }, [getCurrentWeather]);
 
@@ -42,7 +42,7 @@ function App() {
     <div className="App">
       <CityWeather
         openDrawer={openDrawer}
-        getCurrentWeather={() => getCurrentWeather}
+        getCurrentWeather={getCurrentWeather}
       />
       <SearchDrawer onClose={closeDrawer} isOpen={showSearchDrawer} />
       <main>

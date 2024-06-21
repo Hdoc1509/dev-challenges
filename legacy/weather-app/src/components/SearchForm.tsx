@@ -35,7 +35,7 @@ export const SearchForm = ({ disabled }: { disabled: boolean }) => {
   };
 
   return (
-    <form className="search-drawer__form" onSubmit={() => handleSubmit}>
+    <form className="search-drawer__form" onSubmit={handleSubmit}>
       <Input
         iconStart={<Icon name="search" />}
         placeholder="search location"
