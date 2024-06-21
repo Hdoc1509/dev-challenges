@@ -8,16 +8,13 @@ const celsiusToFahrenheit = (celsius: number) => {
   return Number(result.toFixed(2));
 };
 
-export const parseForecast = (data: ForecastResponse): Forecast[] => {
-  const { daily } = data;
+export const parseForecast = ({ daily }: ForecastResponse): Forecast[] => {
   const { time, temperature_2m_max, temperature_2m_min, weather_code } = daily;
-  const forecast: Forecast[] = [];
-
-  time.forEach((date, index) => {
+  const forecast = time.map((date, index) => {
     const minTemp = temperature_2m_min[index];
     const maxTemp = temperature_2m_max[index];
 
-    forecast.push({
+    return {
       day: formatDate(parseDate(date)),
       temperature: {
         min: {
@@ -35,10 +32,10 @@ export const parseForecast = (data: ForecastResponse): Forecast[] => {
           weather_code[index] as keyof typeof FORECAST_CODES
         ],
       },
-    });
+    } satisfies Forecast;
   });
 
-  forecast.shift();
+  forecast.shift(); // remove today
   forecast[0].day = "Tomorrow";
 
   return forecast;
