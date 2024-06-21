@@ -1,6 +1,6 @@
 import { fetcher, ServiceError, type PromiseWithError } from "@lib/fetcher";
-import { QuoteResponseSchema } from "../schemas/quotes";
-import type { Quote } from "../types";
+import { QuoteResponseSchema } from "../../schemas/quotes";
+import type { Quote } from "../../types";
 
 const API_URL = "https://quote-garden.onrender.com/api/v3/quotes";
 
