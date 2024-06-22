@@ -41,7 +41,10 @@
 - [@hrc/toggle-theme](https://hdoc1509.github.io/hrc/packages/toggle-theme/)
 - [fontsource](https://fontsource.org/)
 - [@material-design-icons/font](https://marella.me/material-design-icons/demo/font/)
-- [QuoteGarden API](https://prathameshmore.online/QuoteGarden/)
+- [Quotable API](https://github.com/lukePeavey/quotable) _(replacement of
+  QuoteGarden API)_
+- [QuoteGarden API](https://prathameshmore.online/QuoteGarden/) _(suspended
+  services, at least at 2024-06-22)_
 
 ### Extra Features
 
