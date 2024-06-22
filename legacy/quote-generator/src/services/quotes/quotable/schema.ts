@@ -1,7 +1,7 @@
 import type { Quote } from "@/types";
 import * as z from "zod";
 
-export const QuoteSchema = z
+const QuoteSchema = z
   .object({
     _id: z.string(),
     content: z.string(),

@@ -1,12 +1,12 @@
 import * as z from "zod";
 
-export const PaginationSchema = z.object({
+const PaginationSchema = z.object({
   currentPage: z.number(),
   nextPage: z.number().nullable(),
   totalPages: z.number(),
 });
 
-export const QuoteSchema = z
+const QuoteSchema = z
   .object({
     _id: z.string(),
     quoteText: z.string(),
