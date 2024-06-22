@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { useCurrentWeather } from "@/hooks/useCurrentWeather";
 import { Footer } from "@internal/components";
-import { CityWeather } from "./CityWeather";
-import { Forecast } from "./Forecast";
-import { Highlights } from "./Highlights";
-import { TemperatureConverter } from "./TemperatureConverter";
-import { SearchDrawer } from "./SearchDrawer";
+import { CityWeather } from "@/components/CityWeather";
+import { Forecast } from "@/components/Forecast";
+import { Highlights } from "@/components/Highlights";
+import { TemperatureConverter } from "@/components/TemperatureConverter";
+import { SearchDrawer } from "@/components/SearchDrawer";
 import "./App.scss";
 
 let didInit = false;
