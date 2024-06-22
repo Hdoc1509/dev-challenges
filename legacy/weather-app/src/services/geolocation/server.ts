@@ -1,16 +1,12 @@
-import { z } from "zod";
 import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
-import { CityResponseSchema, type CityResponse } from "./schema";
+import {
+  CityResponseSchema,
+  CityErrorResponseSchema,
+  type CityResponse,
+} from "./schema";
 import { WEATHERAPI } from "@/config";
 
-// based on http://www.weatherapi.com/docs/#intro-error-codes
-const ErrorSchema = z.object({
-  error: z.object({
-    code: z.number(),
-    message: z.string(),
-  }),
-});
-const ResponseSchema = CityResponseSchema.or(ErrorSchema);
+const ResponseSchema = CityResponseSchema.or(CityErrorResponseSchema);
 const SearchCityError = new ServiceError("Search city");
 const CITIES_LIMIT = "5";
 

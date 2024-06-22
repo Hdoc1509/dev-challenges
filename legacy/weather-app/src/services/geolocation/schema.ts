@@ -12,3 +12,11 @@ export const CityResponseSchema = z.array(
   }),
 );
 export type CityResponse = z.infer<typeof CityResponseSchema>;
+
+// based on http://www.weatherapi.com/docs/#intro-error-codes
+export const CityErrorResponseSchema = z.object({
+  error: z.object({
+    code: z.number(),
+    message: z.string(),
+  }),
+});
