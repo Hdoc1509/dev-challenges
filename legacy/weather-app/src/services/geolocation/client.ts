@@ -1,10 +1,10 @@
 import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
 import { ApiErrorSchema } from "@/schemas/api-error";
-import { SearchCityResponseSchema } from "./schema";
+import { CityResponseSchema } from "./schema";
 import { parseCities } from "./parse";
 import type { City } from "@/types";
 
-const ApiResponseSchema = SearchCityResponseSchema.or(ApiErrorSchema);
+const ApiResponseSchema = CityResponseSchema.or(ApiErrorSchema);
 const SearchCityError = new ServiceError("Search city");
 
 export const searchCity = async (city: string): PromiseWithError<City[]> => {
