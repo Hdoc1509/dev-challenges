@@ -14,7 +14,7 @@ export const useCurrentWeather = () => {
   const getCurrentWeather = useCallback(async () => {
     clearData();
 
-    const [coordsError, coords] = await getCurrentCoords();
+    const [coordsError, coords] = await getCurrentCoords({ timeout: 8000 });
 
     if (coordsError) return setError(coordsError);
 
