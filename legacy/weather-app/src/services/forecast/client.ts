@@ -1,5 +1,5 @@
 import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
-import { ForecastSchema } from "@/schemas/forecast";
+import { ForecastSchema } from "./schema";
 import { parseForecast } from "@/utils/forecast";
 import { OPEN_METEO_API } from "@/config";
 import { FORECAST_PARAMS } from "./params";

@@ -1,6 +1,6 @@
 import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
 import { ApiErrorSchema } from "@/schemas/api-error";
-import { SearchCityResponseSchema } from "@/schemas/geolocation";
+import { SearchCityResponseSchema } from "./schema";
 import type { City } from "@/types";
 
 const Schema = SearchCityResponseSchema.transform((locations) =>
