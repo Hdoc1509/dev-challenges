@@ -14,7 +14,7 @@ const DailySchema = z.object({
   weather_code: z.array(z.number()),
 });
 
-export const ForecastSchema = z.object({
+export const ForecastResponseSchema = z.object({
   latitude: z.number(),
   longitude: z.number(),
   generationtime_ms: z.number(),
@@ -25,4 +25,4 @@ export const ForecastSchema = z.object({
   daily_units: DailyUnitsSchema,
   daily: DailySchema,
 });
-export type ForecastResponse = z.infer<typeof ForecastSchema>;
+export type ForecastResponse = z.infer<typeof ForecastResponseSchema>;

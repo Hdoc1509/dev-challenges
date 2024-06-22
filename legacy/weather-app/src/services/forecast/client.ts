@@ -1,5 +1,5 @@
 import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
-import { ForecastSchema } from "./schema";
+import { ForecastResponseSchema } from "./schema";
 import { parseForecast } from "./parse";
 import { OPEN_METEO_API } from "@/config";
 import { FORECAST_PARAMS } from "./params";
@@ -23,7 +23,7 @@ export const getForecast = async (
   const [error, data] = await fetcher(
     `${OPEN_METEO_API.URL}/forecast?${params.toString()}`,
     {
-      schema: ForecastSchema,
+      schema: ForecastResponseSchema,
       serviceError: ForecastError,
     },
   );
