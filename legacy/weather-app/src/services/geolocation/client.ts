@@ -1,18 +1,10 @@
 import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
 import { ApiErrorSchema } from "@/schemas/api-error";
 import { SearchCityResponseSchema } from "./schema";
+import { parseCities } from "./parse";
 import type { City } from "@/types";
 
-const Schema = SearchCityResponseSchema.transform((locations) =>
-  locations.map(({ id, name, country, lat, lon }) => ({
-    id,
-    name,
-    country,
-    latitude: lat,
-    longitude: lon,
-  })),
-);
-const ApiResponseSchema = Schema.or(ApiErrorSchema);
+const ApiResponseSchema = SearchCityResponseSchema.or(ApiErrorSchema);
 const SearchCityError = new ServiceError("Search city");
 
 export const searchCity = async (city: string): PromiseWithError<City[]> => {
@@ -26,5 +18,5 @@ export const searchCity = async (city: string): PromiseWithError<City[]> => {
 
   if ("error" in data) return [new Error(data.error)]; // api endpoint error
 
-  return [null, data];
+  return [null, parseCities(data)];
 };
