@@ -1,6 +1,6 @@
-import { fetcher, ServiceError, type PromiseWithError } from "@lib/fetcher";
+import { fetcher, ServiceError } from "@lib/fetcher";
 import { QuoteResponseSchema } from "./schema";
-import type { Quote } from "@/types";
+import type { AuthorQuotesService, RandomQuoteService } from "../types";
 
 const API_URL = "https://quote-garden.onrender.com/api/v3/quotes";
 
@@ -9,7 +9,7 @@ const fetcherOptions = {
   serviceError: new ServiceError("Quotes"),
 };
 
-export const getRandomQuote = async (): PromiseWithError<Quote> => {
+export const getRandomQuote: RandomQuoteService = async () => {
   const [error, data] = await fetcher(`${API_URL}/random`, fetcherOptions);
 
   if (error) return [error];
@@ -17,10 +17,10 @@ export const getRandomQuote = async (): PromiseWithError<Quote> => {
   return [null, data.data[0]];
 };
 
-export const getAuthorQuotes = async (
-  author: string,
+export const getAuthorQuotes: AuthorQuotesService = async (
+  author,
   limit = 3,
-): PromiseWithError<Quote[]> => {
+) => {
   const params = new URLSearchParams({ author, limit: `${limit}` });
 
   const [error, data] = await fetcher(

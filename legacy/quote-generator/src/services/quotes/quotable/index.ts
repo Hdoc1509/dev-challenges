@@ -1,14 +1,14 @@
+import { fetcher, ServiceError } from "@lib/fetcher";
 import {
   AuthorQuotesResponseSchema,
   RandomQuoteResponseSchema,
 } from "./schema";
-import { fetcher, ServiceError, type PromiseWithError } from "@lib/fetcher";
-import type { Quote } from "@/types";
+import type { AuthorQuotesService, RandomQuoteService } from "../types";
 
 const API_URL = "https://api.quotable.io/quotes";
 const QuotesError = new ServiceError("Quotes");
 
-export const getRandomQuote = async (): PromiseWithError<Quote> => {
+export const getRandomQuote: RandomQuoteService = async () => {
   const [error, data] = await fetcher(`${API_URL}/random`, {
     schema: RandomQuoteResponseSchema,
     serviceError: QuotesError,
@@ -19,10 +19,10 @@ export const getRandomQuote = async (): PromiseWithError<Quote> => {
   return [null, data[0]];
 };
 
-export const getAuthorQuotes = async (
-  author: string,
+export const getAuthorQuotes: AuthorQuotesService = async (
+  author,
   limit = 3,
-): PromiseWithError<Quote[]> => {
+) => {
   const params = new URLSearchParams({ author, limit: `${limit}` });
   console.log(params.toString());
 
