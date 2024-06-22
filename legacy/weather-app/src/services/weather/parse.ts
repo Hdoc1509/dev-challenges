@@ -1,4 +1,4 @@
-import type { WeatherResponse } from "@/schemas/weather";
+import type { WeatherResponse } from "./schema";
 import type { Weather } from "@/types";
 
 export const parseWeather = (weather: WeatherResponse): Weather => {

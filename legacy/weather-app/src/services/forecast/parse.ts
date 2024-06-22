@@ -1,6 +1,6 @@
-import { formatDate, parseDate } from "./date";
-import { FORECAST_CODES } from "../consts";
-import type { ForecastResponse } from "../schemas/forecast";
+import { formatDate, parseDate } from "@/utils/date";
+import { FORECAST_CODES } from "@/consts";
+import type { ForecastResponse } from "./schema";
 import type { Forecast } from "@/types";
 
 const celsiusToFahrenheit = (celsius: number) => {

@@ -1,7 +1,7 @@
 import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
 import { ApiErrorSchema } from "@/schemas/api-error";
 import { WeatherResponseSchema } from "./schema";
-import { parseWeather } from "@/utils/weather";
+import { parseWeather } from "./parse";
 import type { LocationCoords } from "@lib/geolocation";
 import type { Weather } from "@/types";
 
