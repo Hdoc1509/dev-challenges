@@ -1,19 +1,10 @@
-import { z } from "zod";
+import { StoredSchema } from "./schema";
 import { generateQuestions } from "@/utils/questions-generator";
 import { randomSort } from "@/utils/helpers";
-import { getCountries, getCountriesFromBin } from "./countries";
+import { getCountries, getCountriesFromBin } from "../countries";
 import questionsMock from "@/mocks/questions.json";
-import type { Question } from "@/types";
 import type { PromiseWithError } from "@lib/fetcher";
-
-const StoredSchema = z.array(
-  z.object({
-    name: z.string(),
-    region: z.string(),
-    capital: z.array(z.string()),
-    flagUrl: z.string(),
-  }),
-);
+import type { Question } from "@/types";
 
 const LS_KEY = "countries";
 
