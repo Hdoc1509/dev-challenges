@@ -6,22 +6,16 @@ const PaginationSchema = z.object({
   totalPages: z.number(),
 });
 
-const QuoteSchema = z
-  .object({
-    _id: z.string(),
-    quoteText: z.string(),
-    quoteAuthor: z.string(),
-    quoteGenre: z.string(),
-    __v: z.number(),
-  })
-  .transform(({ _id, quoteText, quoteAuthor, quoteGenre }) => ({
-    id: _id,
-    text: quoteText,
-    author: quoteAuthor,
-    genre: quoteGenre,
-  }));
+const QuoteSchema = z.object({
+  _id: z.string(),
+  quoteText: z.string(),
+  quoteAuthor: z.string(),
+  quoteGenre: z.string(),
+  __v: z.number(),
+});
+export type QuoteResponse = z.infer<typeof QuoteSchema>;
 
-export const QuoteResponseSchema = z.object({
+export const QuotesResponseSchema = z.object({
   statusCode: z.number(),
   message: z.string(),
   pagination: PaginationSchema,

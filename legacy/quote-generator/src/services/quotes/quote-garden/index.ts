@@ -1,11 +1,12 @@
 import { fetcher, ServiceError } from "@lib/fetcher";
-import { QuoteResponseSchema } from "./schema";
+import { QuotesResponseSchema } from "./schema";
+import { parseQuotes } from "./parse";
 import type { AuthorQuotesService, RandomQuoteService } from "../types";
 
 const API_URL = "https://quote-garden.onrender.com/api/v3/quotes";
 
 const fetcherOptions = {
-  schema: QuoteResponseSchema,
+  schema: QuotesResponseSchema,
   serviceError: new ServiceError("Quotes"),
 };
 
@@ -14,7 +15,7 @@ export const getRandomQuote: RandomQuoteService = async () => {
 
   if (error) return [error];
 
-  return [null, data.data[0]];
+  return [null, parseQuotes(data.data)[0]];
 };
 
 export const getAuthorQuotes: AuthorQuotesService = async (
@@ -30,5 +31,5 @@ export const getAuthorQuotes: AuthorQuotesService = async (
 
   if (error) return [error];
 
-  return [null, data.data];
+  return [null, parseQuotes(data.data)];
 };
