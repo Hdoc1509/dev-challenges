@@ -1,5 +1,5 @@
-import { CountryResponseSchema } from "@/schemas/country";
 import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
+import { CountryResponseSchema } from "./schema";
 import type { Country } from "@/types";
 
 const API_URL = "https://restcountries.com/v3.1";
