@@ -3,10 +3,10 @@ import { Button } from "@hrc/button";
 import { Icon } from "@hrc/material-icons";
 import { RingSpinner } from "@hrc/spinner/dist/RingSpinner";
 import { FilterInput } from "./FilterInput";
-import { FILTERS, useFilterStore } from "../store/filter";
-import { useStays } from "../hooks/useStays";
-import { splitStringLocation, stringifyLocation } from "../utils";
-import type { RequiredSearchLocation } from "../types";
+import { FILTERS, useFilterStore } from "@/store/filter";
+import { useStays } from "@/hooks/useStays";
+import { splitStringLocation, stringifyLocation } from "@/utils";
+import type { RequiredSearchLocation } from "@/types";
 import "./FilterLocation.scss";
 
 type Location = RequiredSearchLocation;

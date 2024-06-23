@@ -1,4 +1,4 @@
-import type { RequiredSearchLocation, SearchOptions } from "../types";
+import type { RequiredSearchLocation, SearchOptions } from "@/types";
 import { create } from "zustand";
 
 export const FILTERS = Object.freeze({

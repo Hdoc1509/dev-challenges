@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
-import { searchStays } from "../services/stays";
-import type { SearchOptions, Stay } from "../types";
+import { searchStays } from "@/services/stays";
+import type { SearchOptions, Stay } from "@/types";
 import type { Status } from "@lib/fetcher";
 
 export const useStays = () => {

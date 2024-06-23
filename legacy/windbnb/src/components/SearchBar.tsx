@@ -1,7 +1,7 @@
 import { Button, ButtonGroup, ButtonIcon } from "@hrc/button";
 import { Icon } from "@hrc/material-icons";
-import { FILTERS, useFilterStore } from "../store/filter";
-import { stringifyLocation } from "../utils";
+import { FILTERS, useFilterStore } from "@/store/filter";
+import { stringifyLocation } from "@/utils";
 import clsx from "clsx";
 import "./SearchBar.scss";
 

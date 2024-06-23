@@ -1,8 +1,8 @@
-import staysMock from "../mocks/stays.json";
-import { parseStays } from "../utils";
-import { validateStays } from "../schemas/stays";
+import staysMock from "@/mocks/stays.json";
+import { parseStays } from "@/utils";
+import { validateStays } from "@/schemas/stays";
 import type { PromiseWithError } from "@lib/fetcher";
-import type { SearchOptions, Stay } from "../types";
+import type { SearchOptions, Stay } from "@/types";
 
 export const searchStays = async ({
   location,

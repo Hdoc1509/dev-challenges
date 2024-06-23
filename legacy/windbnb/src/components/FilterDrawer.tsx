@@ -3,8 +3,8 @@ import { Icon } from "@hrc/material-icons";
 import { FilterGuests } from "./FilterGuests";
 import { FilterLocation } from "./FilterLocation";
 import { Drawer } from "./Drawer";
-import { FILTERS, useFilterStore } from "../store/filter";
-import type { FnSearchOptions } from "../types";
+import { FILTERS, useFilterStore } from "@/store/filter";
+import type { FnSearchOptions } from "@/types";
 import "./FilterDrawer.scss";
 
 type Props = {

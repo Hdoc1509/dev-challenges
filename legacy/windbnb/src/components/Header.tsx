@@ -2,8 +2,8 @@ import { ThemeButton } from "@hrc/toggle-theme";
 import { Icon } from "@hrc/material-icons";
 import { SearchBar } from "./SearchBar";
 import { FilterDrawer } from "./FilterDrawer";
-import { useFilterStore } from "../store/filter";
-import type { FnSearchOptions } from "../types";
+import { useFilterStore } from "@/store/filter";
+import type { FnSearchOptions } from "@/types";
 import logoUrl from "/logo.svg";
 import "./Header.scss";
 

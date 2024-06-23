@@ -8,6 +8,7 @@ export default defineConfig({
   base: "/dev-challenges/legacy/windbnb/",
   resolve: {
     alias: {
+      "@": resolve(__dirname, "src"),
       "@scss": resolve(__dirname, "src/scss"),
     },
   },

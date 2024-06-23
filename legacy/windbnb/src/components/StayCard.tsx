@@ -1,5 +1,5 @@
 import { Icon } from "@hrc/material-icons";
-import type { Stay } from "../types";
+import type { Stay } from "@/types";
 import "./StayCard.scss";
 
 export function StayCard({ stay }: { stay: Stay }) {

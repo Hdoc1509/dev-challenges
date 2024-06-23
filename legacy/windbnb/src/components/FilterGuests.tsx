@@ -1,7 +1,7 @@
 import { ButtonIcon } from "@hrc/button";
 import { Icon } from "@hrc/material-icons";
 import { FilterInput } from "./FilterInput";
-import { type GuestType, useFilterStore, FILTERS } from "../store/filter";
+import { type GuestType, useFilterStore, FILTERS } from "@/store/filter";
 import "./FilterGuests.scss";
 
 type CriteriaProps = {
