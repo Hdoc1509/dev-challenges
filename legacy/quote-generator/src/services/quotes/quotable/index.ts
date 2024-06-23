@@ -3,6 +3,7 @@ import {
   AuthorQuotesResponseSchema,
   RandomQuoteResponseSchema,
 } from "./schema";
+import { parseQuotes } from "./parse";
 import type { AuthorQuotesService, RandomQuoteService } from "../types";
 
 const API_URL = "https://api.quotable.io/quotes";
@@ -16,7 +17,7 @@ export const getRandomQuote: RandomQuoteService = async () => {
 
   if (error) return [error];
 
-  return [null, data[0]];
+  return [null, parseQuotes(data)[0]];
 };
 
 export const getAuthorQuotes: AuthorQuotesService = async (
@@ -33,5 +34,5 @@ export const getAuthorQuotes: AuthorQuotesService = async (
 
   if (error) return [error];
 
-  return [null, data.results];
+  return [null, parseQuotes(data.results)];
 };
