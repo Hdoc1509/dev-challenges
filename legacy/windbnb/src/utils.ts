@@ -1,13 +1,4 @@
-import type { StaysResponse } from "./schemas/stays";
-import type { RequiredSearchLocation, Stay } from "./types";
-
-export const parseStays = (results: StaysResponse): Stay[] => {
-  return results.map(({ photo, superHost, ...rest }) => ({
-    imageUrl: photo,
-    isSuperHost: superHost,
-    ...rest,
-  }));
-};
+import type { RequiredSearchLocation } from "./types";
 
 export const stringifyLocation = (location: RequiredSearchLocation): string => {
   return `${location.city}, ${location.country}`;

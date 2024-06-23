@@ -1,6 +1,6 @@
 import staysMock from "@/mocks/stays.json";
-import { parseStays } from "@/utils";
 import { validateStays } from "./schema";
+import { parseStays } from "./parse";
 import type { PromiseWithError } from "@lib/fetcher";
 import type { SearchOptions, Stay } from "@/types";
 
