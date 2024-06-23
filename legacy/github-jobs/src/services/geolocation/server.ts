@@ -1,9 +1,6 @@
 import { z } from "zod";
 import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
-import {
-  SearchLocationResponseSchema,
-  type LocationResponse,
-} from "@/schemas/geolocation";
+import { SearchLocationResponseSchema, type LocationResponse } from "./schema";
 import { WEATHERAPI } from "@/config";
 import type { LocationOptions } from "@/types";
 

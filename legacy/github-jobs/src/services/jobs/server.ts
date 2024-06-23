@@ -3,7 +3,7 @@ import {
   JobsResponseSchema,
   JobsErrorResponseSchema,
   type JobsResponse,
-} from "@/schemas/jobs";
+} from "./schema";
 import { SERPAPI } from "@/config";
 import locationsMock from "@/mocks/locations.json";
 import type { Search } from "@/types";

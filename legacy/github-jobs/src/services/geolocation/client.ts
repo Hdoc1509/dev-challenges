@@ -1,9 +1,6 @@
 import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
 import { ApiErrorSchema } from "@/schemas/api-error";
-import {
-  LocationResponseSchema,
-  type LocationResponse,
-} from "@/schemas/geolocation";
+import { LocationResponseSchema, type LocationResponse } from "./schema";
 import type { LocationOptions } from "@/types";
 
 const ApiResponseSchema = LocationResponseSchema.or(ApiErrorSchema);
