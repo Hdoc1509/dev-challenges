@@ -14,7 +14,7 @@ export const getLocationOption = async (
 
     if (locationError) return [locationError];
 
-    return [null, coordsLocation.name];
+    return [null, coordsLocation];
   }
 
   // INFO: about zipcode
@@ -27,7 +27,7 @@ export const getLocationOption = async (
 
     if (locationError) return [locationError];
 
-    return [null, zipLocation.name];
+    return [null, zipLocation];
   }
 
   return [null, location];
