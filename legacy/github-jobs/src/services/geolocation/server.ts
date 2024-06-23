@@ -1,17 +1,15 @@
-import { z } from "zod";
 import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
-import { SearchLocationResponseSchema, type LocationResponse } from "./schema";
+import {
+  SearchLocationResponseSchema,
+  SearchLocationErrorSchema,
+  type LocationResponse,
+} from "./schema";
 import { WEATHERAPI } from "@/config";
 import type { LocationOptions } from "@/types";
 
-// based on http://www.weatherapi.com/docs/#intro-error-codes
-const ErrorSchema = z.object({
-  error: z.object({
-    code: z.number(),
-    message: z.string(),
-  }),
-});
-const ApiResponseSchema = SearchLocationResponseSchema.or(ErrorSchema);
+const ApiResponseSchema = SearchLocationResponseSchema.or(
+  SearchLocationErrorSchema,
+);
 const GeolocationError = new ServiceError("Geolocation");
 const LOCATIONS_LIMIT = "1";
 
