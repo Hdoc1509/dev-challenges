@@ -1,5 +1,6 @@
 import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
 import { CountryResponseSchema } from "./schema";
+import { parseCountries } from "./parse";
 import type { Country } from "@/types";
 
 const API_URL = "https://restcountries.com/v3.1";
@@ -18,5 +19,5 @@ export const getCountries = async (): PromiseWithError<Country[]> => {
 
   if (error) return [error];
 
-  return [null, data];
+  return [null, parseCountries(data)];
 };

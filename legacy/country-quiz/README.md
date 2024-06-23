@@ -57,7 +57,6 @@
 ### What I learned
 
 - Create a quiz app using an API.
-- Use zod `.transform()` to parse data from API.
 - Create a utility for generate questions by different categories.
 
 ## How To Use
