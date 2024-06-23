@@ -1,4 +1,4 @@
-import { parseJobs } from "@/utils/jobs";
+import { parseJobs } from "./parse";
 import { randomInt } from "@/utils/helpers";
 import jobsMock from "@/mocks/jobs.json";
 import type { PromiseWithError } from "@lib/fetcher";

@@ -1,7 +1,7 @@
 import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
 import { ApiErrorSchema } from "@/schemas/api-error";
 import { JobsResponseSchema } from "./schema";
-import { parseJobs } from "@/utils/jobs";
+import { parseJobs } from "./parse";
 import type { Job, Search } from "@/types";
 
 const ApiResponseSchema = JobsResponseSchema.or(ApiErrorSchema);
