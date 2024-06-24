@@ -3,7 +3,9 @@ to: apps/<%= name %>/src/App.tsx
 ---
 
 import { Footer, HeaderWithTheme as Header } from "@internal/components";
+<% if (locals.ssr == null) { -%>
 import "./App.css";
+<% } -%>
 
 function App() {
   return (
