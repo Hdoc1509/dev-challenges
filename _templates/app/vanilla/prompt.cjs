@@ -1,1 +1,1 @@
-module.exports = require("../shared-prompt");
+module.exports = require("../shared-prompt.cjs");
