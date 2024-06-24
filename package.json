@@ -1,7 +1,6 @@
 {
   "name": "@hdoc/dev-challenges",
   "private": true,
-  "type": "module",
   "scripts": {
     "build": "bash ./scripts/build.sh",
     "clean": "npkill",
