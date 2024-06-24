@@ -1,0 +1,4 @@
+---
+to: "<%= ! with_server ? `${project_name}/src/services/${service_name}/client.http` : null %>"
+---
+GET <%= api_url %>?param=value

@@ -1,0 +1,11 @@
+---
+to: "<%= with_parser ? `${project_name}/src/services/${service_name}/parser.ts` : null %>"
+---
+<%
+  ServiceName = h.changeCase.pascal(service_name)
+  ServiceParser = `parse${ServiceName}`
+  ServiceResponseType = `${ServiceName}Response`
+-%>
+export const <%= ServiceParser %> = (data: <%= ServiceResponseType %>) => {
+  return data;
+}

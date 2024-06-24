@@ -1,0 +1,28 @@
+---
+to: "<%= with_server ? `${project_name}/src/services/${service_name}/server.ts` : null %>"
+---
+<%
+  ServiceName = h.changeCase.pascal(service_name)
+  ServiceResponseSchema = `${ServiceName}Schema`
+  ServiceResponseType = `${ServiceName}Response`
+  ServiceError = `${ServiceName}Error`
+-%>
+import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
+import { <%= ServiceResponseSchema %>, type <%= ServiceResponseType %> } from"./schema";
+
+const API_URL = "<%= api_url %>";
+
+const <%= ServiceError %> = new ServiceError(<%= ServiceName %>);
+
+export const get<%= ServiceName %> = async (): PromiseWithError<<%= ServiceResponseType %>> => {
+  const params = new URLSearchParams({ param: "value" })
+
+  const [error, data] = await fetcher(`${API_URL}?${params.toString()}`, {
+    schema: <%= ServiceResponseSchema %>,
+    serviceError: <%= ServiceError %>,
+  });
+
+  if (error) return [error]
+
+  return [null, data]
+}

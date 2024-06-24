@@ -1,0 +1,52 @@
+---
+to: <%= project_name %>/src/services/<%= service_name %>/client.ts
+---
+<%
+  ServiceName = h.changeCase.pascal(service_name)
+  ServiceResponseSchema = `${ServiceName}Schema`
+  ServiceParser = `parse${ServiceName}`
+  ServiceError = `${ServiceName}Error`
+-%>
+import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
+<% if (with_server) { -%>
+import { ApiErrorSchema } from "@/schemas/api-error";
+<% } -%>
+import { <%= ServiceResponseSchema %> } from "./schema";
+<% if (with_parser) { -%>
+import { <%= ServiceParser %> } from "./parser";
+<% } -%>
+<% if (!with_server) { -%>
+
+const API_URL = "<%= api_url %>";
+
+<% } -%>
+const ApiResponseSchema = <%= ServiceResponseSchema %>.or(ApiErrorSchema);
+const <%= ServiceError %> = new ServiceError(<%= ServiceName %>);
+
+export const get<%= ServiceName %> = async (): PromiseWithError<any> => {
+  const params = new URLSearchParams({ param: "value" })
+
+<% if (with_server) { -%>
+  const [error, data] = await fetcher(`/api/<%= service_name %>?${params.toString()}`, {
+<% } else { -%>
+  const [error, data] = await fetcher(`${API_URL}?${params.toString()}`, {
+<% } -%>
+    schema: ApiResponseSchema,
+    serviceError: <%= ServiceError %>,
+<% if (with_server || check_status) { -%>
+    checkStatus: false, // allows to read api endpoint errors in response body
+<% } -%>
+  });
+
+  if (error) return [error]
+
+<% if (with_server) { -%>
+  if ("error" in data) return [new Error(data.error)] // api endpoint error
+
+<% } -%>
+<% if (with_parser) { -%>
+  return [null, <%= ServiceParser %>(data)]
+<% } else { -%>
+  return [null, data]
+<% } -%>
+}
