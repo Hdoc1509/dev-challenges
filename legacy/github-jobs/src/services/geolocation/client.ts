@@ -28,5 +28,5 @@ export const searchLocation = async (
 
   if ("error" in data) return [new Error(data.error)];
 
-  return [null, data.name];
+  return [null, data[0].name];
 };

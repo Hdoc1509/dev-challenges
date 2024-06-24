@@ -1,15 +1,13 @@
 import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
 import {
-  SearchLocationResponseSchema,
-  SearchLocationErrorSchema,
+  LocationResponseSchema,
+  LocationErrorSchema,
   type LocationResponse,
 } from "./schema";
 import { WEATHERAPI } from "@/config";
 import type { LocationOptions } from "@/types";
 
-const ApiResponseSchema = SearchLocationResponseSchema.or(
-  SearchLocationErrorSchema,
-);
+const ResponseSchema = LocationResponseSchema.or(LocationErrorSchema);
 const GeolocationError = new ServiceError("Geolocation");
 const LOCATIONS_LIMIT = "1";
 
@@ -31,7 +29,7 @@ export const searchLocation = async (
   const [error, data] = await fetcher(
     `${WEATHERAPI.URL}/search.json?${params.toString()}`,
     {
-      schema: ApiResponseSchema,
+      schema: ResponseSchema,
       serviceError: GeolocationError,
       checkStatus: false, // allows to read weatherapi endpoint errors in response
     },
@@ -46,5 +44,5 @@ export const searchLocation = async (
   if (data.length === 0 && "zipCode" in options)
     return [new Error(`No locations found for zip code: ${options.zipCode}`)];
 
-  return [null, data[0]];
+  return [null, data];
 };
