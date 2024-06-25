@@ -6,7 +6,8 @@
     "clean": "npkill",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "gen:vanilla": "hygen app vanilla",
-    "gen:ssr": "hygen app ssr --ssr"
+    "gen:ssr": "hygen app ssr --ssr",
+    "gen:service": "hygen service new"
   },
   "author": "Héctor Ochoa <hector.ochoa.dev@gmail.com>",
   "packageManager": "pnpm@8.10.5",
