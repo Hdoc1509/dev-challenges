@@ -5,6 +5,7 @@ to: <%= project_name %>/src/services/<%= service_name %>/schema.ts
   ServiceName = h.changeCase.pascal(service_name)
   ServiceResponseSchema = `${ServiceName}Schema`
   ServiceResponseType = `${ServiceName}Response`
+  ServiceErrorSchema = `${ServiceName}ErrorSchema`
 -%>
 import { z } from "zod";
 
@@ -15,3 +16,9 @@ export const <%= ServiceResponseSchema %> = z.object({
   }),
 });
 export type <%= ServiceResponseType %> = z.infer<typeof <%= ServiceResponseSchema %>>;
+<% if (!check_status) { -%>
+
+export const <%= ServiceErrorSchema %> = z.object({
+  error: z.string(),
+});
+<% } -%>
