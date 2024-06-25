@@ -20,8 +20,9 @@ import { <%= ServiceParser %> } from "./parser";
 const API_URL = "<%= api_url %>";
 
 <% } -%>
+
 const ApiResponseSchema = <%= ServiceResponseSchema %>.or(ApiErrorSchema);
-const <%= ServiceError %> = new ServiceError(<%= ServiceName %>);
+const <%= ServiceError %> = new ServiceError("<%= ServiceName %>");
 
 export const get<%= ServiceName %> = async (): PromiseWithError<any> => {
   const params = new URLSearchParams({ param: "value" })

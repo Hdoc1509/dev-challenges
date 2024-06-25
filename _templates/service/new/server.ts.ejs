@@ -12,7 +12,7 @@ import { <%= ServiceResponseSchema %>, type <%= ServiceResponseType %> } from"./
 
 const API_URL = "<%= api_url %>";
 
-const <%= ServiceError %> = new ServiceError(<%= ServiceName %>);
+const <%= ServiceError %> = new ServiceError("<%= ServiceName %>");
 
 export const get<%= ServiceName %> = async (): PromiseWithError<<%= ServiceResponseType %>> => {
   const params = new URLSearchParams({ param: "value" })
