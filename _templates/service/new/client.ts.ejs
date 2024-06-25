@@ -34,7 +34,7 @@ export const get<%= ServiceName %> = async (): PromiseWithError<any> => {
 <% } -%>
     schema: ApiResponseSchema,
     serviceError: <%= ServiceError %>,
-<% if (with_server || check_status) { -%>
+<% if (with_server || !check_status) { -%>
     checkStatus: false, // allows to read api endpoint errors in response body
 <% } -%>
   });
