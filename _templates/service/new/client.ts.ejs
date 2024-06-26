@@ -1,5 +1,6 @@
 ---
 to: <%= project_name %>/src/services/<%= service_name %>/client.ts
+sh: "<%= cwd %>/scripts/check-client-service.sh <%= project_name %> <%= service_name %> <%= cwd %>"
 ---
 <%
   ServiceName = h.changeCase.pascal(service_name)
