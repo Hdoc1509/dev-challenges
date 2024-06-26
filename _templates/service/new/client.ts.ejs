@@ -1,8 +1,8 @@
 ---
-to: "<%= `${project_name}/src/services/${service_name}/${h.isSSR(project_name) ? 'client' : 'index'}.ts` %>"
+to: "<%= `${app}/src/services/${service}/${h.isSSR(app) ? 'client' : 'index'}.ts` %>"
 ---
 <%
-  ServiceName = h.changeCase.pascal(service_name)
+  ServiceName = h.changeCase.pascal(service)
   ServiceResponseSchema = `${ServiceName}Schema`
   ServiceParser = `parse${ServiceName}`
   ServiceError = `${ServiceName}Error`
@@ -28,7 +28,7 @@ export const get<%= ServiceName %> = async (): PromiseWithError<any> => {
   const params = new URLSearchParams({ param: "value" })
 
 <% if (with_server) { -%>
-  const [error, data] = await fetcher(`/api/<%= service_name %>?${params.toString()}`, {
+  const [error, data] = await fetcher(`/api/<%= service %>?${params.toString()}`, {
 <% } else { -%>
   const [error, data] = await fetcher(`${API_URL}?${params.toString()}`, {
 <% } -%>

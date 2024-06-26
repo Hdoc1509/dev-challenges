@@ -8,7 +8,7 @@ const getInputs = async (inquirer) => {
   let withServer = false;
   const initialAnswers = await inquirer.prompt(QUESTIONS.initial);
 
-  const isSSR = initialAnswers.project_name.startsWith("ssr");
+  const isSSR = initialAnswers.app.startsWith("ssr");
 
   initialAnswers.is_ssr = isSSR;
 

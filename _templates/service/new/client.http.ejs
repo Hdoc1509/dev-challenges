@@ -1,4 +1,4 @@
 ---
-to: "<%= ! with_server ? `${project_name}/src/services/${service_name}/${h.isSSR(project_name) ? 'client' : 'request'}.http` : null %>"
+to: "<%= ! with_server ? `${app}/src/services/${service}/${h.isSSR(app) ? 'client' : 'request'}.http` : null %>"
 ---
 GET <%= api_url %>?param=value

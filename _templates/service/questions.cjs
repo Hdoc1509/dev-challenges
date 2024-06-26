@@ -4,13 +4,13 @@ const QUESTIONS = {
   initial: [
     {
       type: "autocomplete",
-      name: "project_name",
+      name: "app",
       message: "Select project:",
       choices: apps,
     },
     {
       type: "input",
-      name: "service_name",
+      name: "service",
       message: "Service name:",
     },
     { type: "input", name: "api_url", message: "API URL:" },

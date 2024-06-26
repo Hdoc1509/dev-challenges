@@ -1,8 +1,8 @@
 ---
-to: "<%= with_parser ? `${project_name}/src/services/${service_name}/parser.ts` : null %>"
+to: "<%= with_parser ? `${app}/src/services/${service}/parser.ts` : null %>"
 ---
 <%
-  ServiceName = h.changeCase.pascal(service_name)
+  ServiceName = h.changeCase.pascal(service)
   ServiceParser = `parse${ServiceName}`
   ServiceResponseType = `${ServiceName}Response`
 -%>

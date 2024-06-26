@@ -1,8 +1,8 @@
 ---
-to: "<%= with_server ? `${project_name}/src/services/${service_name}/server.ts` : null %>"
+to: "<%= with_server ? `${app}/src/services/${service}/server.ts` : null %>"
 ---
 <%
-  ServiceName = h.changeCase.pascal(service_name)
+  ServiceName = h.changeCase.pascal(service)
   ServiceResponseSchema = `${ServiceName}Schema`
   ServiceResponseType = `${ServiceName}Response`
   ServiceErrorSchema = `${ServiceName}ErrorSchema`

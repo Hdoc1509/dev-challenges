@@ -1,8 +1,8 @@
 ---
-to: <%= project_name %>/src/services/<%= service_name %>/schema.ts
+to: <%= app %>/src/services/<%= service %>/schema.ts
 ---
 <%
-  ServiceName = h.changeCase.pascal(service_name)
+  ServiceName = h.changeCase.pascal(service)
   ServiceResponseSchema = `${ServiceName}Schema`
   ServiceResponseType = `${ServiceName}Response`
   ServiceErrorSchema = `${ServiceName}ErrorSchema`
