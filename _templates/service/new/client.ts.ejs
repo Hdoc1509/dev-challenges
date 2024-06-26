@@ -1,5 +1,5 @@
 ---
-to: "<%= `${project_name}/src/services/${service_name}/${project_name.startsWith('ssr') ? 'client' : 'index'}.ts` %>"
+to: "<%= `${project_name}/src/services/${service_name}/${h.isSSR(project_name) ? 'client' : 'index'}.ts` %>"
 ---
 <%
   ServiceName = h.changeCase.pascal(service_name)
