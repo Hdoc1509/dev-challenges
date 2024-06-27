@@ -4,5 +4,8 @@ to: vanilla/<%= name %>/tsconfig.node.json
 
 {
   "extends": "../../tsconfig.node.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo"
+  },
   "include": ["vite.config.ts"]
 }
