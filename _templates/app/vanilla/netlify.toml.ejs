@@ -1,9 +1,0 @@
----
-to: vanilla/<%= name %>/netlify.toml
----
-
-
-[build]
-  command = 'pnpm --filter <%= name %> build'
-  publish = 'vanilla/<%= name %>/dist'
-  ignore = 'bash ./scripts/docs-check.sh vanilla/<%= name %>'
