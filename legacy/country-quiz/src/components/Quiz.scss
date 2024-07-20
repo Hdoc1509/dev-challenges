@@ -70,7 +70,7 @@
     font-size: var(--fs-fluid-0-2);
     text-align: left;
 
-    &:hover:enabled {
+    &:hover:enabled, &:focus:enabled {
       --button-text: #fff;
       --button-outline-color: var(--warning);
     }
