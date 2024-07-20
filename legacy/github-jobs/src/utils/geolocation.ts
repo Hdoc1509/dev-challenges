@@ -6,7 +6,7 @@ export const getLocationOption = async (
   location?: string,
 ): PromiseWithError<string> => {
   if (location === "" || location == null) {
-    const [coordsError, coords] = await getCurrentCoords();
+    const [coordsError, coords] = await getCurrentCoords({ timeout: 8000 });
 
     if (coordsError) return [coordsError];
 
