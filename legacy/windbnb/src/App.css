@@ -22,12 +22,6 @@
   }
 }
 
-.button {
-  font-family: unset;
-  cursor: pointer;
-  --button-font-size: var(--fs-0);
-}
-
 .credits {
   margin-top: 25px;
 }
