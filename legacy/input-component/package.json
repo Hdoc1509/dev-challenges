@@ -17,7 +17,7 @@
     "@fontsource/poppins": "5.0.8",
     "@fontsource/ubuntu-mono": "5.0.20",
     "@hrc/material-icons": "2.3.0",
-    "@hrc/toggle-theme": "2.2.0",
+    "@hrc/toggle-theme": "2.3.0",
     "@internal/components": "workspace:3.0.0",
     "@lib/sass-utils": "workspace:*",
     "@material-design-icons/font": "0.14.13",
