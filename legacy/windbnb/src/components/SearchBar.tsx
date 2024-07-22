@@ -9,8 +9,9 @@ export const SearchBar = () => {
   const location = useFilterStore((state) => state.location);
   const guests = useFilterStore((state) => state.guests.total);
   const setFilter = useFilterStore((state) => state.setFilter);
-  const locationClass = clsx("searchbar__location", { "with-value": location });
-  const guestsClass = clsx("searchbar__guests", { "with-value": guests > 0 });
+
+  const locationClass = clsx({ "with-value": location });
+  const guestsClass = clsx({ "with-value": guests > 0 });
 
   return (
     <ButtonGroup className="searchbar">

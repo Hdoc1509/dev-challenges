@@ -21,9 +21,8 @@
     margin-inline: auto;
   }
 
-  &__location.with-value,
-  &__guests.with-value {
-    --button-text: var(--text);
+  & > .with-value {
+    color: var(--text);
   }
 
   &__search {
