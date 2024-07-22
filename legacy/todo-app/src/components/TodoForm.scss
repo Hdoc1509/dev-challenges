@@ -5,15 +5,16 @@
   --input-border-color: var(--text-light);
   --input-border-color-hover: var(--text);
   --input-border-color-focus: var(--primary);
-  --input-padding: 12px;
-  --input-radius: 12px;
-  --input-text: var(--text-dark);
-  --input-font-size: var(--fs-0);
-  --input-font-weight: 400;
   --placeholder-color: var(--text-secondary);
   .input {
     flex-grow: 1;
+
+    border-radius: 12px;
+    padding: 12px;
+
+    color: var(--text-dark);
     font-family: inherit;
+    font-weight: 400;
   }
 
   --button-padding: 20px 40px;

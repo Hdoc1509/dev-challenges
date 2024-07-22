@@ -7,29 +7,30 @@
 
   list-style: none;
 
-  --label-text: var(--text-dark);
-  --label-font-weight: 500;
   .label {
-    --label-font-size: var(--fs-2);
+    color: var(--text-dark);
     font-family: inherit;
+    font-size: var(--fs-2);
+    font-weight: 500;
 
     &--checked {
-      --label-text: var(--text);
+      color: var(--text);
       text-decoration: line-through;
     }
   }
+
   --checkbox-color: var(--text-secondary);
   --checkbox-bg-hover: var(--_item-bg-hover);
   --checkbox-size: var(--fs-4);
 
-  --button-padding: 0.5rem;
   --button-outline-bg-hover: var(--_item-bg-hover);
   .button {
     display: none;
+    padding: 0.5rem;
     color: var(--text-light);
 
     &:hover {
-      --button-text: var(--text);
+      color: var(--text);
     }
 
     [data-filter="completed"] & {
