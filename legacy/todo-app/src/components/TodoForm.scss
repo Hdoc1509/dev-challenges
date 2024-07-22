@@ -14,17 +14,10 @@
   .input {
     flex-grow: 1;
     font-family: inherit;
-
-    &__inner::placeholder {
-      opacity: 1;
-    }
   }
 
   --button-padding: 20px 40px;
   --button-radius: 12px;
   --button-font-size: var(--fs-0);
   --button-font-weight: 600;
-  .button {
-    font-family: inherit;
-  }
 }

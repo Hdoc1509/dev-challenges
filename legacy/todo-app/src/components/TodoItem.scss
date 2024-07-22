@@ -1,5 +1,6 @@
 .todo-item {
-  --_bg-hover: rgb(0 0 0 / 10%);
+  --_item-bg-hover: rgb(0 0 0 / 10%);
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,14 +19,14 @@
     }
   }
   --checkbox-color: var(--text-secondary);
-  --checkbox-bg-hover: var(--_bg-hover);
+  --checkbox-bg-hover: var(--_item-bg-hover);
   --checkbox-size: var(--fs-4);
 
   --button-padding: 0.5rem;
+  --button-outline-bg-hover: var(--_item-bg-hover);
   .button {
     display: none;
-    --button-text: var(--text-light);
-    --button-bg-hover: var(--_bg-hover);
+    color: var(--text-light);
 
     &:hover {
       --button-text: var(--text);
@@ -37,6 +38,6 @@
   }
 
   [data-theme="dark"] & {
-    --_bg-hover: rgb(0 0 0 / 20%);
+    --_item-bg-hover: rgb(0 0 0 / 20%);
   }
 }

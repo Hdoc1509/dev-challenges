@@ -35,7 +35,7 @@ export const TodoItem = ({ todo, onToggle, onRemove }: Props) => {
           variant="text"
           onClick={onRemove}
           aria-label="Delete todo"
-          fullRounded
+          rounded="full"
         >
           <Icon name="delete" variant="outlined" />
         </ButtonIcon>

@@ -404,17 +404,17 @@ importers:
         specifier: 5.0.18
         version: 5.0.18
       '@hrc/button':
-        specifier: 2.6.1
-        version: 2.6.1(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
+        specifier: 3.0.0
+        version: 3.0.0(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
       '@hrc/input':
-        specifier: 0.9.1
-        version: 0.9.1(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
+        specifier: 1.0.0
+        version: 1.0.0(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
       '@hrc/material-icons':
         specifier: 2.3.0
         version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
       '@hrc/toggle-theme':
-        specifier: 2.2.0
-        version: 2.2.0(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
+        specifier: 2.3.0
+        version: 2.3.0(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
       '@internal/components':
         specifier: workspace:3.0.0
         version: link:../../libs/components
@@ -1751,6 +1751,22 @@ packages:
 
   /@hrc/input@0.9.1(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2):
     resolution: {integrity: sha512-HgNnOrwcNgxACm9ckliI60ww6itiazaAZZfzRCHhG7OC3JSAg8fsX8jOTbxCTYk4uBHyxyKc8kmIdmTmTNBCJQ==}
+    peerDependencies:
+      '@types/react': ^17.0.0 || ^18.0.0
+      react: ^17.0.0 || ^18.0.0
+      react-dom: ^17.0.0 || ^18.0.0
+    dependencies:
+      '@hrc/type-utils': 1.1.2(typescript@5.3.2)
+      '@types/react': 18.2.79
+      clsx: 2.0.0
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    transitivePeerDependencies:
+      - typescript
+    dev: false
+
+  /@hrc/input@1.0.0(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2):
+    resolution: {integrity: sha512-xe88cQuKw1ePDJiu+OjkWTrp8CRVQXK1bhes5BUHDygfSXGggHIUTOaqMFQUrSvQ6M7a80Rodyg4ognmcclCiw==}
     peerDependencies:
       '@types/react': ^17.0.0 || ^18.0.0
       react: ^17.0.0 || ^18.0.0
