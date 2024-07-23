@@ -18,19 +18,19 @@
     list-style: none;
     display: flex;
 
+    --button-bg: transparent;
+    --button-bg-hover: var(--filter-location-bg-hover, #efefef);
     .button {
       flex-grow: 1;
+      gap: 10px;
+      justify-content: flex-start;
+
+      border-radius: 16px;
+      box-shadow: none;
+      padding: 10px;
+      color: var(--text-light);
     }
   }
-
-  --button-gap: 10px;
-  --button-justify: flex-start;
-  --button-bg: transparent;
-  --button-bg-hover: var(--filter-location-bg-hover, #efefef);
-  --button-radius: 16px;
-  --button-shadow: none;
-  --button-padding: 10px;
-  --button-text: var(--text-light);
 }
 
 .location-input {
