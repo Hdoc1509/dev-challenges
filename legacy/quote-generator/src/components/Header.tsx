@@ -1,7 +1,7 @@
 import { ThemeButton } from "@hrc/toggle-theme";
 import { Icon } from "@hrc/material-icons";
 import { Button } from "@hrc/button/dist/Button";
-import './Header.scss';
+import "./Header.scss";
 
 type Props = {
   isLoading: boolean;
@@ -15,8 +15,8 @@ export const Header = ({ isLoading, handleRandomQuote }: Props) => {
         className="main-header__random-button"
         iconEnd={<Icon name="autorenew" />}
         onClick={handleRandomQuote}
-        disableShadow
         disabled={isLoading}
+        noShadow
       >
         random
       </Button>
