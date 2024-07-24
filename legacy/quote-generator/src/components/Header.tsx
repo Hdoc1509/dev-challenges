@@ -12,7 +12,6 @@ export const Header = ({ isLoading, handleRandomQuote }: Props) => {
   return (
     <header className="main-header">
       <Button
-        className="main-header__random-button"
         iconEnd={<Icon name="autorenew" />}
         onClick={handleRandomQuote}
         disabled={isLoading}
