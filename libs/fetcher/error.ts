@@ -17,6 +17,12 @@ export class ServiceError {
     return new Error(`${this.name} service response timed out`);
   }
 
+  network() {
+    return new Error(
+      `${this.name} service network error. Unable to connect to the server`,
+    );
+  }
+
   unknown() {
     return new Error(`${this.name} service unknown error`);
   }

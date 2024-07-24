@@ -31,7 +31,12 @@ export async function fetcher<S extends z.ZodTypeAny>(
     return [null, parsed.data];
   } catch (error) {
     if (error instanceof Error) {
-      return [error.name === "AbortError" ? serviceError.timeout() : error];
+      const { name, message } = error;
+
+      if (name === "AbortError") return [serviceError.timeout()];
+
+      if (message.match(/NetworkError|Failed to fetch/) != null)
+        return [serviceError.network()];
     }
   }
 
