@@ -1,4 +1,3 @@
-import { ServiceError } from "./error";
 import type { Options, PromiseWithError, Status } from "./types";
 import type { z } from "zod";
 
@@ -22,11 +21,11 @@ export async function fetcher<S extends z.ZodTypeAny>(
   try {
     const res = await fetch(url, { ...restOptions, signal: controller.signal });
 
-    if (checkStatus && !res.ok) return [serviceError.response()];
+    if (checkStatus && !res.ok) return [serviceError.response(res)];
 
     const parsed = schema.safeParse(await res.json());
 
-    if (!parsed.success) return [serviceError.validation()];
+    if (!parsed.success) return [serviceError.validation(parsed.error)];
 
     return [null, parsed.data];
   } catch (error) {
@@ -43,5 +42,5 @@ export async function fetcher<S extends z.ZodTypeAny>(
   return [serviceError.unknown()];
 }
 
-export { ServiceError };
+export * from "./error";
 export type { PromiseWithError, Status };
