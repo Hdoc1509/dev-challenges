@@ -31,7 +31,7 @@ function App() {
       />
       <main>
         {status === "loading" && <RingSpinner />}
-        {status === "error" && <ErrorMessage message={error!.message} />}
+        {status === "error" && <ErrorMessage error={error as Error} />}
         {status === "success" && (
           <Results
             quotes={quotes}
