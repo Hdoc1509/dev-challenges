@@ -14,14 +14,7 @@
   --input-radius: 0;
   --input-text: var(--text);
   --input-font-size: var(--fs-1);
-  .input__inner::placeholder {
-    opacity: 1;
-    color: var(--secondary-dark);
-  }
+  --placeholder-color: var(--secondary-dark);
 
-  --button-radius: 0;
   --button-font-weight: 600;
-  .button {
-    font-family: inherit;
-  }
 }

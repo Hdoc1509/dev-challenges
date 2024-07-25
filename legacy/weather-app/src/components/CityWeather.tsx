@@ -21,13 +21,14 @@ export const CityWeather = ({ openDrawer, getCurrentWeather }: Props) => {
         <Button
           className="weather__search"
           color="secondary"
+          rounded="none"
           onClick={openDrawer}
         >
           Search for places
         </Button>
         <ButtonIcon
-          className="weather__current"
           color="secondary"
+          rounded="full"
           onClick={getCurrentWeather}
           aria-label="Get current location weather"
         >

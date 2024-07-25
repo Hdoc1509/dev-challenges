@@ -45,7 +45,7 @@ export const SearchForm = ({ disabled }: { disabled: boolean }) => {
         required
         disabled={disabled}
       />
-      <Button color="primary" disabled={disabled}>
+      <Button color="primary" rounded="none" disabled={disabled}>
         Search
       </Button>
     </form>

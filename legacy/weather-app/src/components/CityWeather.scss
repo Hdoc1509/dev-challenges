@@ -18,14 +18,8 @@
     padding-inline: var(--weather-padding, 42px);
   }
 
-  --button-text: var(--text);
   &__search {
-    --button-radius: 0;
-    font-family: inherit;
     font-size: var(--fs-1);
-  }
-  &__current {
-    --button-radius: 50%;
   }
 
   .weather-image {

@@ -6,7 +6,7 @@
   padding: 0;
   list-style: none;
 
-  --button-justify-content: space-between;
+  --button-justify: space-between;
   --button-bg: transparent;
   --button-bg-hover: transparent;
   --button-padding: 22px 12px;
@@ -17,11 +17,12 @@
   --icon-color: transparent;
   .button {
     width: 100%;
+    outline: none;
 
     &:hover,
     &:focus-visible {
       --icon-color: var(--secondary-dark);
-      outline: solid 1px var(--secondary-dark);
+      border-color: var(--secondary-dark);
     }
   }
 }

@@ -19,7 +19,7 @@ importers:
         version: 18.2.25
       '@typescript-eslint/eslint-plugin':
         specifier: 7.12.0
-        version: 7.12.0(@typescript-eslint/parser@7.12.0)(eslint@8.57.0)(typescript@5.3.2)
+        version: 7.12.0(@typescript-eslint/parser@7.12.0(eslint@8.57.0)(typescript@5.3.2))(eslint@8.57.0)(typescript@5.3.2)
       '@typescript-eslint/parser':
         specifier: 7.12.0
         version: 7.12.0(eslint@8.57.0)(typescript@5.3.2)
@@ -76,10 +76,10 @@ importers:
         version: 5.0.20
       '@hrc/material-icons':
         specifier: 2.3.0
-        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@hrc/toggle-theme':
         specifier: 2.3.0
-        version: 2.3.0(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.3.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@internal/components':
         specifier: workspace:3.0.0
         version: link:../../libs/components
@@ -104,7 +104,7 @@ importers:
         version: 1.1.2(typescript@5.3.2)
       '@vitejs/plugin-react':
         specifier: 4.2.0
-        version: 4.2.0(vite@5.0.2)
+        version: 4.2.0(vite@5.0.2(@types/node@20.5.0)(sass@1.65.0))
       sass:
         specifier: 1.65.0
         version: 1.65.0
@@ -128,13 +128,13 @@ importers:
         version: 5.0.8
       '@hrc/button':
         specifier: 3.0.0
-        version: 3.0.0(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
+        version: 3.0.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
       '@hrc/material-icons':
         specifier: 2.3.0
-        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@hrc/spinner':
         specifier: 0.3.2
-        version: 0.3.2(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
+        version: 0.3.2(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@internal/components':
         specifier: workspace:3.0.0
         version: link:../../libs/components
@@ -165,7 +165,7 @@ importers:
     devDependencies:
       '@vitejs/plugin-react':
         specifier: 4.2.0
-        version: 4.2.0(vite@5.0.2)
+        version: 4.2.0(vite@5.0.2(@types/node@20.5.0)(sass@1.65.0))
       sass:
         specifier: 1.65.0
         version: 1.65.0
@@ -183,10 +183,10 @@ importers:
     dependencies:
       '@astrojs/netlify':
         specifier: 5.2.1
-        version: 5.2.1(@opentelemetry/api@1.8.0)(astro@4.8.6)
+        version: 5.2.1(@opentelemetry/api@1.8.0)(astro@4.8.6(@types/node@20.5.0)(sass@1.65.0)(typescript@5.3.2))
       '@astrojs/react':
         specifier: 3.3.4
-        version: 3.3.4(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(vite@5.0.2)
+        version: 3.3.4(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(vite@5.2.11(@types/node@20.5.0)(sass@1.65.0))
       '@fontsource-variable/montserrat':
         specifier: 5.0.17
         version: 5.0.17
@@ -201,19 +201,19 @@ importers:
         version: 5.0.8
       '@hrc/button':
         specifier: 2.6.1
-        version: 2.6.1(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
+        version: 2.6.1(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
       '@hrc/input':
         specifier: 0.9.1
-        version: 0.9.1(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
+        version: 0.9.1(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
       '@hrc/material-icons':
         specifier: 2.3.0
-        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@hrc/spinner':
         specifier: 0.3.2
-        version: 0.3.2(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
+        version: 0.3.2(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@hrc/toggle-theme':
         specifier: 2.2.0
-        version: 2.2.0(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.2.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@internal/components':
         specifier: workspace:*
         version: link:../../libs/components
@@ -249,7 +249,7 @@ importers:
         version: 8.2.0(react@18.2.0)
       react-router-dom:
         specifier: 6.23.1
-        version: 6.23.1(react-dom@18.2.0)(react@18.2.0)
+        version: 6.23.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       zod:
         specifier: 3.22.4
         version: 3.22.4
@@ -289,10 +289,10 @@ importers:
         version: 5.0.20
       '@hrc/material-icons':
         specifier: 2.3.0
-        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@hrc/toggle-theme':
         specifier: 2.3.0
-        version: 2.3.0(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.3.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@internal/components':
         specifier: workspace:3.0.0
         version: link:../../libs/components
@@ -317,7 +317,7 @@ importers:
         version: 1.1.2(typescript@5.3.2)
       '@vitejs/plugin-react':
         specifier: 4.2.0
-        version: 4.2.0(vite@5.0.2)
+        version: 4.2.0(vite@5.0.2(@types/node@20.5.0)(sass@1.65.0))
       sass:
         specifier: 1.65.0
         version: 1.65.0
@@ -344,16 +344,16 @@ importers:
         version: 5.0.18
       '@hrc/button':
         specifier: 3.0.0
-        version: 3.0.0(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
+        version: 3.0.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
       '@hrc/material-icons':
         specifier: 2.3.0
-        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@hrc/spinner':
         specifier: 0.3.2
-        version: 0.3.2(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
+        version: 0.3.2(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@hrc/toggle-theme':
         specifier: 2.3.0
-        version: 2.3.0(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.3.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@internal/components':
         specifier: workspace:3.0.0
         version: link:../../libs/components
@@ -378,7 +378,7 @@ importers:
     devDependencies:
       '@vitejs/plugin-react':
         specifier: 4.2.0
-        version: 4.2.0(vite@5.0.2)
+        version: 4.2.0(vite@5.0.2(@types/node@20.5.0)(sass@1.65.0))
       sass:
         specifier: 1.65.0
         version: 1.65.0
@@ -405,16 +405,16 @@ importers:
         version: 5.0.18
       '@hrc/button':
         specifier: 3.0.0
-        version: 3.0.0(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
+        version: 3.0.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
       '@hrc/input':
         specifier: 1.0.0
-        version: 1.0.0(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
+        version: 1.0.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
       '@hrc/material-icons':
         specifier: 2.3.0
-        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@hrc/toggle-theme':
         specifier: 2.3.0
-        version: 2.3.0(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.3.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@internal/components':
         specifier: workspace:3.0.0
         version: link:../../libs/components
@@ -436,7 +436,7 @@ importers:
     devDependencies:
       '@vitejs/plugin-react':
         specifier: 4.2.0
-        version: 4.2.0(vite@5.0.2)
+        version: 4.2.0(vite@5.0.2(@types/node@20.5.0)(sass@1.65.0))
       sass:
         specifier: 1.65.0
         version: 1.65.0
@@ -451,10 +451,10 @@ importers:
     dependencies:
       '@astrojs/netlify':
         specifier: 5.2.1
-        version: 5.2.1(@opentelemetry/api@1.8.0)(astro@4.8.6)
+        version: 5.2.1(@opentelemetry/api@1.8.0)(astro@4.8.6(@types/node@20.5.0)(sass@1.65.0)(typescript@5.3.2))
       '@astrojs/react':
         specifier: 3.3.4
-        version: 3.3.4(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(vite@5.0.2)
+        version: 3.3.4(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(vite@5.2.11(@types/node@20.5.0)(sass@1.65.0))
       '@fontsource-variable/montserrat':
         specifier: 5.0.17
         version: 5.0.17
@@ -468,17 +468,17 @@ importers:
         specifier: 5.0.18
         version: 5.0.18
       '@hrc/button':
-        specifier: 2.6.1
-        version: 2.6.1(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
+        specifier: 3.0.0
+        version: 3.0.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
       '@hrc/input':
-        specifier: 0.9.1
-        version: 0.9.1(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
+        specifier: 1.0.0
+        version: 1.0.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
       '@hrc/material-icons':
         specifier: 2.3.0
-        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@hrc/spinner':
         specifier: 0.3.2
-        version: 0.3.2(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
+        version: 0.3.2(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@internal/components':
         specifier: workspace:*
         version: link:../../libs/components
@@ -542,16 +542,16 @@ importers:
         version: 5.0.17
       '@hrc/button':
         specifier: 3.0.0
-        version: 3.0.0(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)
+        version: 3.0.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
       '@hrc/material-icons':
         specifier: 2.3.0
-        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@hrc/spinner':
         specifier: 0.3.2
-        version: 0.3.2(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
+        version: 0.3.2(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@hrc/toggle-theme':
         specifier: 2.3.0
-        version: 2.3.0(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.3.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@internal/components':
         specifier: workspace:3.0.0
         version: link:../../libs/components
@@ -585,7 +585,7 @@ importers:
         version: 1.1.2(typescript@5.3.2)
       '@vitejs/plugin-react':
         specifier: 4.2.0
-        version: 4.2.0(vite@5.0.2)
+        version: 4.2.0(vite@5.0.2(@types/node@20.5.0)(sass@1.65.0))
       sass:
         specifier: 1.65.0
         version: 1.65.0
@@ -600,10 +600,10 @@ importers:
     dependencies:
       '@hrc/material-icons':
         specifier: 2.3.0
-        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@hrc/toggle-theme':
         specifier: 2.2.0
-        version: 2.2.0(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
+        version: 2.2.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@lib/sass-utils':
         specifier: workspace:*
         version: link:../sass-utils
@@ -4386,8 +4386,6 @@ snapshots:
       '@volar/language-service': 2.2.4
       '@volar/typescript': 2.2.4
       fast-glob: 3.3.2
-      prettier: 3.0.1
-      prettier-plugin-astro: 0.13.0
       volar-service-css: 0.0.45(@volar/language-service@2.2.4)
       volar-service-emmet: 0.0.45(@volar/language-service@2.2.4)
       volar-service-html: 0.0.45(@volar/language-service@2.2.4)
@@ -4396,6 +4394,9 @@ snapshots:
       volar-service-typescript-twoslash-queries: 0.0.45(@volar/language-service@2.2.4)
       vscode-html-languageservice: 5.2.0
       vscode-uri: 3.0.8
+    optionalDependencies:
+      prettier: 3.0.1
+      prettier-plugin-astro: 0.13.0
     transitivePeerDependencies:
       - typescript
 
@@ -4422,7 +4423,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/netlify@5.2.1(@opentelemetry/api@1.8.0)(astro@4.8.6)':
+  '@astrojs/netlify@5.2.1(@opentelemetry/api@1.8.0)(astro@4.8.6(@types/node@20.5.0)(sass@1.65.0)(typescript@5.3.2))':
     dependencies:
       '@astrojs/underscore-redirects': 0.3.3
       '@netlify/functions': 2.7.0(@opentelemetry/api@1.8.0)
@@ -4435,11 +4436,11 @@ snapshots:
     dependencies:
       prismjs: 1.29.0
 
-  '@astrojs/react@3.3.4(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(vite@5.0.2)':
+  '@astrojs/react@3.3.4(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(vite@5.2.11(@types/node@20.5.0)(sass@1.65.0))':
     dependencies:
       '@types/react': 18.2.79
       '@types/react-dom': 18.2.25
-      '@vitejs/plugin-react': 4.2.1(vite@5.0.2)
+      '@vitejs/plugin-react': 4.2.1(vite@5.2.11(@types/node@20.5.0)(sass@1.65.0))
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       ultrahtml: 1.5.3
@@ -4894,7 +4895,7 @@ snapshots:
 
   '@fontsource/ubuntu-mono@5.0.20': {}
 
-  '@hrc/button@2.6.1(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)':
+  '@hrc/button@2.6.1(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)':
     dependencies:
       '@hrc/type-utils': 1.1.2(typescript@5.3.2)
       '@types/react': 18.2.79
@@ -4904,7 +4905,7 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@hrc/button@3.0.0(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)':
+  '@hrc/button@3.0.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)':
     dependencies:
       '@hrc/type-utils': 1.1.2(typescript@5.3.2)
       '@types/react': 18.2.79
@@ -4914,7 +4915,7 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@hrc/input@0.9.1(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)':
+  '@hrc/input@0.9.1(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)':
     dependencies:
       '@hrc/type-utils': 1.1.2(typescript@5.3.2)
       '@types/react': 18.2.79
@@ -4924,7 +4925,7 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@hrc/input@1.0.0(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)(typescript@5.3.2)':
+  '@hrc/input@1.0.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)':
     dependencies:
       '@hrc/type-utils': 1.1.2(typescript@5.3.2)
       '@types/react': 18.2.79
@@ -4934,7 +4935,7 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@hrc/material-icons@2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)':
+  '@hrc/material-icons@2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       '@material-design-icons/font': 0.14.13
       '@types/react': 18.2.79
@@ -4942,20 +4943,20 @@ snapshots:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
-  '@hrc/spinner@0.3.2(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)':
+  '@hrc/spinner@0.3.2(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       '@types/react': 18.2.79
       clsx: 2.0.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
-  '@hrc/toggle-theme@2.2.0(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)':
+  '@hrc/toggle-theme@2.2.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       '@types/react': 18.2.79
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
-  '@hrc/toggle-theme@2.3.0(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)':
+  '@hrc/toggle-theme@2.3.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       '@types/react': 18.2.79
       react: 18.2.0
@@ -5308,7 +5309,7 @@ snapshots:
 
   '@types/unist@3.0.2': {}
 
-  '@typescript-eslint/eslint-plugin@7.12.0(@typescript-eslint/parser@7.12.0)(eslint@8.57.0)(typescript@5.3.2)':
+  '@typescript-eslint/eslint-plugin@7.12.0(@typescript-eslint/parser@7.12.0(eslint@8.57.0)(typescript@5.3.2))(eslint@8.57.0)(typescript@5.3.2)':
     dependencies:
       '@eslint-community/regexpp': 4.10.1
       '@typescript-eslint/parser': 7.12.0(eslint@8.57.0)(typescript@5.3.2)
@@ -5321,6 +5322,7 @@ snapshots:
       ignore: 5.3.1
       natural-compare: 1.4.0
       ts-api-utils: 1.3.0(typescript@5.3.2)
+    optionalDependencies:
       typescript: 5.3.2
     transitivePeerDependencies:
       - supports-color
@@ -5333,6 +5335,7 @@ snapshots:
       '@typescript-eslint/visitor-keys': 7.12.0
       debug: 4.3.5
       eslint: 8.57.0
+    optionalDependencies:
       typescript: 5.3.2
     transitivePeerDependencies:
       - supports-color
@@ -5349,6 +5352,7 @@ snapshots:
       debug: 4.3.5
       eslint: 8.57.0
       ts-api-utils: 1.3.0(typescript@5.3.2)
+    optionalDependencies:
       typescript: 5.3.2
     transitivePeerDependencies:
       - supports-color
@@ -5365,6 +5369,7 @@ snapshots:
       minimatch: 9.0.4
       semver: 7.6.2
       ts-api-utils: 1.3.0(typescript@5.3.2)
+    optionalDependencies:
       typescript: 5.3.2
     transitivePeerDependencies:
       - supports-color
@@ -5387,7 +5392,7 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@vitejs/plugin-react@4.2.0(vite@5.0.2)':
+  '@vitejs/plugin-react@4.2.0(vite@5.0.2(@types/node@20.5.0)(sass@1.65.0))':
     dependencies:
       '@babel/core': 7.24.5
       '@babel/plugin-transform-react-jsx-self': 7.23.3(@babel/core@7.24.5)
@@ -5398,14 +5403,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vitejs/plugin-react@4.2.1(vite@5.0.2)':
+  '@vitejs/plugin-react@4.2.1(vite@5.2.11(@types/node@20.5.0)(sass@1.65.0))':
     dependencies:
       '@babel/core': 7.24.5
       '@babel/plugin-transform-react-jsx-self': 7.23.3(@babel/core@7.24.5)
       '@babel/plugin-transform-react-jsx-source': 7.23.3(@babel/core@7.24.5)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.0
-      vite: 5.0.2(@types/node@20.5.0)(sass@1.65.0)
+      vite: 5.2.11(@types/node@20.5.0)(sass@1.65.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -5701,7 +5706,7 @@ snapshots:
       unist-util-visit: 5.0.0
       vfile: 6.0.1
       vite: 5.2.11(@types/node@20.5.0)(sass@1.65.0)
-      vitefu: 0.2.5(vite@5.2.11)
+      vitefu: 0.2.5(vite@5.2.11(@types/node@20.5.0)(sass@1.65.0))
       which-pm: 2.2.0
       yargs-parser: 21.1.1
       zod: 3.23.8
@@ -7680,7 +7685,7 @@ snapshots:
 
   react-refresh@0.14.0: {}
 
-  react-router-dom@6.23.1(react-dom@18.2.0)(react@18.2.0):
+  react-router-dom@6.23.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
       '@remix-run/router': 1.16.1
       react: 18.2.0
@@ -8152,7 +8157,7 @@ snapshots:
       typescript: 5.3.2
 
   tsconfck@3.0.3(typescript@5.3.2):
-    dependencies:
+    optionalDependencies:
       typescript: 5.3.2
 
   tslib@2.6.2: {}
@@ -8379,26 +8384,26 @@ snapshots:
 
   vite@5.0.2(@types/node@20.5.0)(sass@1.65.0):
     dependencies:
-      '@types/node': 20.5.0
       esbuild: 0.19.7
       postcss: 8.4.38
       rollup: 4.17.2
-      sass: 1.65.0
     optionalDependencies:
+      '@types/node': 20.5.0
       fsevents: 2.3.3
+      sass: 1.65.0
 
   vite@5.2.11(@types/node@20.5.0)(sass@1.65.0):
     dependencies:
-      '@types/node': 20.5.0
       esbuild: 0.20.2
       postcss: 8.4.38
       rollup: 4.17.2
-      sass: 1.65.0
     optionalDependencies:
+      '@types/node': 20.5.0
       fsevents: 2.3.3
+      sass: 1.65.0
 
-  vitefu@0.2.5(vite@5.2.11):
-    dependencies:
+  vitefu@0.2.5(vite@5.2.11(@types/node@20.5.0)(sass@1.65.0)):
+    optionalDependencies:
       vite: 5.2.11(@types/node@20.5.0)(sass@1.65.0)
 
   vitest@0.34.6(sass@1.65.0):
@@ -8438,43 +8443,48 @@ snapshots:
 
   volar-service-css@0.0.45(@volar/language-service@2.2.4):
     dependencies:
-      '@volar/language-service': 2.2.4
       vscode-css-languageservice: 6.2.14
       vscode-languageserver-textdocument: 1.0.11
       vscode-uri: 3.0.8
+    optionalDependencies:
+      '@volar/language-service': 2.2.4
 
   volar-service-emmet@0.0.45(@volar/language-service@2.2.4):
     dependencies:
       '@emmetio/css-parser': 0.4.0
       '@emmetio/html-matcher': 1.3.0
-      '@volar/language-service': 2.2.4
       '@vscode/emmet-helper': 2.9.3
+    optionalDependencies:
+      '@volar/language-service': 2.2.4
 
   volar-service-html@0.0.45(@volar/language-service@2.2.4):
     dependencies:
-      '@volar/language-service': 2.2.4
       vscode-html-languageservice: '@johnsoncodehk/vscode-html-languageservice@5.2.0-34a5462'
       vscode-languageserver-textdocument: 1.0.11
       vscode-uri: 3.0.8
+    optionalDependencies:
+      '@volar/language-service': 2.2.4
 
   volar-service-prettier@0.0.45(@volar/language-service@2.2.4)(prettier@3.0.1):
     dependencies:
+      vscode-uri: 3.0.8
+    optionalDependencies:
       '@volar/language-service': 2.2.4
       prettier: 3.0.1
-      vscode-uri: 3.0.8
 
   volar-service-typescript-twoslash-queries@0.0.45(@volar/language-service@2.2.4):
-    dependencies:
+    optionalDependencies:
       '@volar/language-service': 2.2.4
 
   volar-service-typescript@0.0.45(@volar/language-service@2.2.4):
     dependencies:
-      '@volar/language-service': 2.2.4
       path-browserify: 1.0.1
       semver: 7.6.2
       typescript-auto-import-cache: 0.3.2
       vscode-languageserver-textdocument: 1.0.11
       vscode-nls: 5.2.0
+    optionalDependencies:
+      '@volar/language-service': 2.2.4
 
   vscode-css-languageservice@6.2.14:
     dependencies:
@@ -8626,8 +8636,9 @@ snapshots:
 
   zustand@4.4.3(@types/react@18.2.79)(react@18.2.0):
     dependencies:
+      use-sync-external-store: 1.2.0(react@18.2.0)
+    optionalDependencies:
       '@types/react': 18.2.79
       react: 18.2.0
-      use-sync-external-store: 1.2.0(react@18.2.0)
 
   zwitch@2.0.4: {}
