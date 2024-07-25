@@ -8,14 +8,15 @@
   --button-bg: #585676;
   --button-bg-hover: #37364a;
   --button-bg-disabled: var(--text);
-  --button-padding: 10px;
-  --button-radius: 40px;
   --button-text: var(--text);
   --button-text-disabled: var(--blue-dark);
-  --button-font-weight: 700;
   .button {
     aspect-ratio: 1 / 1;
     width: 40px;
+    border-radius: 40px;
+    padding: 10px;
+
     font-size: var(--fs-2);
+    font-weight: 700;
   }
 }

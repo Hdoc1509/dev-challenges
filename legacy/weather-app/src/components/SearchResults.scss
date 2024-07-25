@@ -9,15 +9,17 @@
   --button-justify: space-between;
   --button-bg: transparent;
   --button-bg-hover: transparent;
-  --button-padding: 22px 12px;
-  --button-radius: 0;
-  --button-text: currentcolor;
-  --button-font-size: var(--fs-1);
-  --button-font-weight: 500;
   --icon-color: transparent;
   .button {
     width: 100%;
+    padding: 22px 12px;
+    border-radius: 0;
     outline: none;
+
+    color: currentcolor;
+
+    font-size: var(--fs-1);
+    font-weight: 500;
 
     &:hover,
     &:focus-visible {
