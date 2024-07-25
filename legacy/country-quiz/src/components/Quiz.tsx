@@ -24,19 +24,19 @@ export const Quiz = () => {
 
   return (
     <>
-      <img src={characterUrl} className="quiz-character" alt="character" />
+      <img src={characterUrl} className="character" alt="character" />
       {category === QuestionCategories.FlagOfCountry && (
-        <img src={flagUrl} className="quiz-flag" alt="flag" />
+        <img src={flagUrl} className="flag" alt="flag" />
       )}
-      <p className="quiz-question">{question}</p>
+      <p className="question">{question}</p>
       <QuizOptions quiz={quiz} />
       {/* NOTE: Can it be moved to QuizCard? */}
       <footer className="quiz-footer">
-        <p className="quiz-current-question">
+        <p className="current-question">
           {currentQuestion} / {total}
         </p>
         <Button
-          className="quiz-button"
+          className="action"
           color="warning"
           onClick={handleAction}
           disabled={selectedAnswer == null}

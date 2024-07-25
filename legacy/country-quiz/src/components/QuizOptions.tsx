@@ -1,5 +1,4 @@
 import { useQuestionStore } from "@/store/questions";
-import { clsx } from "clsx";
 import { getAnswerData } from "./Quiz.utils";
 import { Button } from "@hrc/button/dist/Button";
 import { Icon } from "@hrc/material-icons";
@@ -21,7 +20,7 @@ const Option = ({
 
   return (
     <Button
-      className={clsx("quiz-answers__option", className)}
+      className={className}
       variant="outline"
       iconEnd={icon && <Icon name={icon} variant="outlined" />}
       disabled={selectedAnswer != null}

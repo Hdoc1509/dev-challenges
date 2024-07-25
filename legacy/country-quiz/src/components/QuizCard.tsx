@@ -27,7 +27,7 @@ export const QuizCard = ({ tryAgain }: Props) => {
     <div className={className}>
       {status === "loading" && <Loader />}
       {status === "success" && <Quiz />}
-      {status === "error" && <p className="quiz-error">{error?.message}</p>}
+      {status === "error" && <p className="error">{error?.message}</p>}
       {status === "over" && <Results tryAgain={tryAgain} />}
     </div>
   );

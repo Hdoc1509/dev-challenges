@@ -1,8 +1,8 @@
-.quiz-results-winner {
+.winner {
   margin-inline: auto;
 }
 
-.quiz-results-message {
+.results-message {
   color: var(--primary-darkest);
 
   h2 {
@@ -12,7 +12,7 @@
   }
 }
 
-.quiz-results-points {
+.results-points {
   margin: 0;
   font-size: var(--fs-2);
   font-weight: 400;
@@ -24,16 +24,16 @@
   }
 }
 
-.quiz-results-try-again {
+.try-again {
   margin-inline: auto;
 
   --button-outline-bg-hover: var(--primary-darkest);
-  --button-outline-color: var(--primary-darkest);
-  --button-radius: 12px;
-  --button-padding: 18px 60px;
-  --button-font-weight: 600;
+  border-radius: 12px;
   border-width: 2px;
+  padding: 18px 60px;
+  color: var(--primary-darkest);
   font-size: var(--fs-2);
+  font-weight: 600;
 
   &:hover {
     color: #fff;

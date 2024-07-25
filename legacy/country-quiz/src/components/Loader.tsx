@@ -3,7 +3,7 @@ import "./Loader.scss";
 
 export const Loader = () => {
   return (
-    <div className="quiz-loader">
+    <div className="loader">
       <RingSpinner />
       <p>Generating questions...</p>
     </div>

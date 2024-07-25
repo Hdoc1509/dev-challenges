@@ -14,20 +14,16 @@ export const Results = ({ tryAgain }: Props) => {
 
   return (
     <>
-      <img className="quiz-results-winner" src={winnerUrl} alt="winner" />
-      <div className="quiz-results-message">
+      <img className="winner" src={winnerUrl} alt="winner" />
+      <div className="results-message">
         <h2>{getResultMessage({ correct, total: questions.length })}</h2>
-        <p className="quiz-results-points">
+        <p className="results-points">
           You got
-          <span className="quiz-results-points__correct">{` ${correct} `}</span>
+          <span className="results-points__correct">{` ${correct} `}</span>
           correct answers
         </p>
       </div>
-      <Button
-        className="quiz-results-try-again"
-        variant="outline"
-        onClick={tryAgain}
-      >
+      <Button className="try-again" variant="outline" onClick={tryAgain}>
         Try again
       </Button>
     </>
