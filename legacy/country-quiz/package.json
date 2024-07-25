@@ -14,7 +14,7 @@
     "@fontsource-variable/montserrat": "5.0.17",
     "@fontsource/montserrat": "5.0.17",
     "@fontsource/poppins": "5.0.8",
-    "@hrc/button": "2.6.1",
+    "@hrc/button": "3.0.0",
     "@hrc/material-icons": "2.3.0",
     "@hrc/spinner": "0.3.2",
     "@internal/components": "workspace:3.0.0",

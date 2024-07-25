@@ -60,32 +60,29 @@
     gap: var(--option-gap, 40px);
     justify-content: flex-start;
 
-    --button-bg-hover: var(--warning);
+    --button-outline-bg-hover: var(--warning);
     --button-text-disabled: var(--primary);
     --button-outline-color: var(--primary);
-    --button-padding-y: 10px;
+    --button-padding: 10px 20px;
     --button-radius: 12px;
 
-    font-family: inherit;
     font-size: var(--fs-fluid-0-2);
     text-align: left;
 
-    &:hover:enabled, &:focus:enabled {
-      --button-text: #fff;
-      --button-outline-color: var(--warning);
+    &:hover:enabled,
+    &:focus:enabled,
+    &.correct,
+    &.wrong {
+      color: #fff;
     }
 
     &.correct {
-      --button-bg: var(--success);
-      --button-outline-color: var(--success);
+      --button-bg-disabled: var(--success);
+      border-color: var(--success);
     }
     &.wrong {
-      --button-bg: var(--error);
-      --button-outline-color: var(--error);
-    }
-    &.correct,
-    &.wrong {
-      --button-text: #fff;
+      --button-bg-disabled: var(--error);
+      border-color: var(--error);
     }
 
     &::before {
@@ -107,12 +104,6 @@
     & .material-icons-outlined {
       margin-left: auto;
       --icon-size: 24px;
-
-    }
-
-    // NOTE: This will be added in next release of @hrc/button
-    > * {
-      flex-shrink: 0;
     }
   }
 }
@@ -121,6 +112,5 @@
   --button-radius: 12px;
   --button-padding: 14px 36px;
   --button-font-weight: 700;
-  font-family: inherit;
   font-size: var(--fs-fluid-0-2);
 }

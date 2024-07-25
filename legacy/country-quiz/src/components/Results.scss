@@ -27,16 +27,16 @@
 .quiz-results-try-again {
   margin-inline: auto;
 
-  --button-bg-hover: var(--primary-darkest);
+  --button-outline-bg-hover: var(--primary-darkest);
   --button-outline-color: var(--primary-darkest);
   --button-radius: 12px;
   --button-padding: 18px 60px;
   --button-font-weight: 600;
-  outline: solid 2px;
-  font-family: inherit;
+  border-width: 2px;
   font-size: var(--fs-2);
 
   &:hover {
-    --button-text: #fff;
+    color: #fff;
+    border-color: var(--primary-darkest);
   }
 }
