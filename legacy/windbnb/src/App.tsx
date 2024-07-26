@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { RingSpinner } from "@hrc/spinner/dist/RingSpinner";
-import { Footer } from "@lib/components/src/Footer";
+import { Footer } from "@lib/components/Footer";
 import { SearchResults } from "./components/Results";
 import { Header } from "./components/Header.tsx";
 import { useStays } from "./hooks/useStays.ts";

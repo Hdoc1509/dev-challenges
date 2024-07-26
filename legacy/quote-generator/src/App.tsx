@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useQuotes } from "./hooks/useQuotes";
 import { RingSpinner } from "@hrc/spinner/dist/RingSpinner";
 import { Header } from "./components/Header";
-import { Footer } from "@lib/components/src/Footer";
+import { Footer } from "@lib/components/Footer";
 import { ErrorMessage } from "./components/ErrorMessage";
 import { Results } from "./components/Results";
 import "./App.scss";

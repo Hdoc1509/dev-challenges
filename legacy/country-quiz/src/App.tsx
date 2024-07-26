@@ -1,7 +1,7 @@
 import { useCallback, useEffect } from "react";
 import { getQuestions } from "./services/questions";
 import { useQuestionStore } from "./store/questions";
-import { Footer } from "@lib/components/src/Footer";
+import { Footer } from "@lib/components/Footer";
 import { QuizCard } from "./components/QuizCard";
 import "./App.css";
 

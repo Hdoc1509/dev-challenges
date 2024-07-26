@@ -2,7 +2,7 @@
   "name": "@lib/components",
   "private": true,
   "version": "0.0.0",
-  "main": "./src/main.tsx",
+  "main": "main.tsx",
   "type": "module",
   "dependencies": {
     "@hrc/material-icons": "2.3.0",
