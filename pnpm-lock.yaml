@@ -81,7 +81,7 @@ importers:
         specifier: 2.3.0
         version: 2.3.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@lib/components':
-        specifier: workspace:3.0.0
+        specifier: workspace:*
         version: link:../../libs/components
       '@lib/sass-utils':
         specifier: workspace:*
@@ -136,7 +136,7 @@ importers:
         specifier: 0.3.2
         version: 0.3.2(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@lib/components':
-        specifier: workspace:3.0.0
+        specifier: workspace:*
         version: link:../../libs/components
       '@lib/fetcher':
         specifier: workspace:*
@@ -294,7 +294,7 @@ importers:
         specifier: 2.3.0
         version: 2.3.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@lib/components':
-        specifier: workspace:3.0.0
+        specifier: workspace:*
         version: link:../../libs/components
       '@lib/sass-utils':
         specifier: workspace:*
@@ -355,7 +355,7 @@ importers:
         specifier: 2.3.0
         version: 2.3.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@lib/components':
-        specifier: workspace:3.0.0
+        specifier: workspace:*
         version: link:../../libs/components
       '@lib/fetcher':
         specifier: workspace:*
@@ -416,7 +416,7 @@ importers:
         specifier: 2.3.0
         version: 2.3.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@lib/components':
-        specifier: workspace:3.0.0
+        specifier: workspace:*
         version: link:../../libs/components
       '@lib/sass-utils':
         specifier: workspace:*
@@ -553,7 +553,7 @@ importers:
         specifier: 2.3.0
         version: 2.3.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@lib/components':
-        specifier: workspace:3.0.0
+        specifier: workspace:*
         version: link:../../libs/components
       '@lib/fetcher':
         specifier: workspace:*

@@ -1,7 +1,7 @@
 {
   "name": "@lib/components",
   "private": true,
-  "version": "3.0.0",
+  "version": "0.0.0",
   "main": "./src/main.tsx",
   "type": "module",
   "dependencies": {
