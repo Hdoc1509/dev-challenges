@@ -22,26 +22,25 @@
     outline: 2px solid var(--primary);
   }
 
+  --label-text: var(--text-secondary);
+  --label-text-focus: var(--primary);
   .label {
     justify-content: center;
+  }
+
+  --icon-size: 1.5em;
+  .input {
+    gap: 8px;
+    border-color: transparent;
+    outline: none;
+    padding: 10px;
+
+    font-size: var(--fs-00);
   }
 
   --button-padding: 14px 48px;
   --button-radius: 4px;
   --button-font-size: 1rem;
-
-  --label-text: var(--text-secondary);
-  --label-text-focus: var(--primary);
-  --input-gap: 8px;
-  --input-padding: 10px;
-  --input-border-color: transparent;
-  --input-border-color-hover: transparent;
-  --input-border-color-focus: transparent;
-  --input-font-size: var(--fs-00);
-  --icon-size: 1.5em;
-  .input__inner:placeholder-shown {
-    text-overflow: ellipsis;
-  }
 
   @media (max-width: 767px) {
     width: 90%;

@@ -10,35 +10,29 @@
   --label-text-focus: var(--primary);
   --label-font-weight: 700;
   --label-font-size: var(--fs-0);
-
   .label--checkbox,
   .label--radio {
-    --label-text: var(--text);
-    --label-font-size: var(--fs-0);
-    --label-font-weight: 500;
     width: fit-content;
+    color: var(--text);
+    font-size: var(--fs-0);
+    font-weight: 500;
   }
+
   --checkbox-color: var(--text-secondary);
   --radio-color: var(--text-secondary);
   --radio-checked-color: var(--primary);
-  .label--radio:focus-within {
-    --label-text: var(--text);
-  }
 
   --input-border-color: transparent;
   --input-border-color-hover: var(--text-secondary);
   --input-border-color-focus: var(--primary);
-  --input-font-weight: 400;
-  --input-font-size: var(--fs-00);
   --icon-size: 1.5em;
   .input {
     align-items: center;
     box-shadow: var(--box-shadow);
-    font-family: "Roboto", sans-serif;
 
-    &__inner:placeholder-shown {
-      text-overflow: ellipsis;
-    }
+    font-family: "Roboto", sans-serif;
+    font-size: var(--fs-00);
+    font-weight: 400;
   }
 
   [data-theme="dark"] & {
