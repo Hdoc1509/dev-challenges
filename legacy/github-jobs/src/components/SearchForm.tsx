@@ -21,28 +21,28 @@ export const SearchForm = () => {
 
     setStatus("loading");
 
-    try {
-      const [locationError, location] = await getLocationOption(
-        search.location,
-      );
+    const [locationError, location] = await getLocationOption(search.location);
 
-      if (locationError) throw locationError;
-
-      const newSearch = { ...search, location };
-      const [error, jobs] = await (isDev
-        ? getMockedJobs(newSearch)
-        : getJobs(newSearch));
-
-      if (error) throw error;
-
-      setJobs(jobs);
-      setStatus("success");
-      setPages(jobs.length < 10 ? 1 : 10);
-    } catch (error) {
-      // NOTE: All errors are thrown and handled manually
-      setError(error as Error);
+    if (locationError) {
+      setError(locationError);
       setStatus("error");
+      return;
     }
+
+    const newSearch = { ...search, location };
+    const [jobsError, jobs] = await (isDev
+      ? getMockedJobs(newSearch)
+      : getJobs(newSearch));
+
+    if (jobsError) {
+      setError(jobsError);
+      setStatus("error");
+      return;
+    }
+
+    setJobs(jobs);
+    setStatus("success");
+    setPages(jobs.length < 10 ? 1 : 10);
   };
 
   return (
@@ -55,7 +55,7 @@ export const SearchForm = () => {
         <Input
           iconStart={<Icon name="work_outline" />}
           placeholder="Title, companies, expertise or benefits"
-          onChange={(e) => setSearch({ query: e.target.value})}
+          onChange={(e) => setSearch({ query: e.target.value })}
           value={search.query}
           required
           fullWidth

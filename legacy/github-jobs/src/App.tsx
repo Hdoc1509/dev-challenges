@@ -21,26 +21,28 @@ function App() {
   const getInitialJobs = useCallback(async () => {
     setStatus("loading");
 
-    try {
-      const [locationError, location] = await getLocationOption();
+    const [locationError, location] = await getLocationOption();
 
-      if (locationError) throw locationError;
-
-      const search = { query: "front", location };
-      const [jobsError, jobs] = await (isDev
-        ? getMockedJobs(search)
-        : getJobs(search));
-
-      if (jobsError) throw jobsError;
-
-      setJobs(jobs);
-      setStatus("success");
-      if (jobs.length < 10) setPages(1);
-    } catch (error) {
-      // NOTE: All errors are thrown and handled manually
-      setError(error as Error);
+    if (locationError) {
+      setError(locationError);
       setStatus("error");
+      return;
     }
+
+    const search = { query: "front", location };
+    const [jobsError, jobs] = await (isDev
+      ? getMockedJobs(search)
+      : getJobs(search));
+
+    if (jobsError) {
+      setError(jobsError);
+      setStatus("error");
+      return;
+    }
+
+    setJobs(jobs);
+    setStatus("success");
+    if (jobs.length < 10) setPages(1);
   }, [setError, setJobs, setPages, setStatus]);
 
   useEffect(() => {

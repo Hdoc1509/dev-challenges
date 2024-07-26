@@ -20,32 +20,36 @@ export const Pagination = () => {
     async (newPage: number) => {
       setStatus("loading");
 
-      try {
-        const [locationError, location] = await getLocationOption(
-          search.location,
-        );
+      const [locationError, location] = await getLocationOption(
+        search.location,
+      );
 
-        if (locationError) throw locationError;
-
-        const { query } = search;
-        const newSearch = { query: query === "" ? "front" : query,
-          location, page: newPage + 1
-        };
-
-        const [jobsError, jobs] = await (isDev
-          ? getMockedJobs(newSearch)
-          : getJobs(newSearch));
-
-        if (jobsError) throw jobsError;
-
-        setJobs(jobs);
-        setStatus("success");
-        if (jobs.length < 10) setPages(newPage + 1);
-      } catch (error) {
-        // NOTE: All errors are thrown and handled manually
-        setError(error as Error);
+      if (locationError) {
+        setError(locationError);
         setStatus("error");
+        return;
       }
+
+      const { query } = search;
+      const newSearch = {
+        query: query === "" ? "front" : query,
+        location,
+        page: newPage + 1,
+      };
+
+      const [jobsError, jobs] = await (isDev
+        ? getMockedJobs(newSearch)
+        : getJobs(newSearch));
+
+      if (jobsError) {
+        setError(jobsError);
+        setStatus("error");
+        return;
+      }
+
+      setJobs(jobs);
+      setStatus("success");
+      if (jobs.length < 10) setPages(newPage + 1);
     },
     [search, setError, setJobs, setPages, setStatus],
   );
