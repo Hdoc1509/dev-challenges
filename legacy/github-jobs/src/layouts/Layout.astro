@@ -1,5 +1,4 @@
 ---
-import ThemeProvider from "@/components/ThemeProvider.astro";
 import "@material-design-icons/font/filled.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
@@ -23,7 +22,11 @@ import "@fontsource/poppins/700.css";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Github Jobs - Legacy DevChallenges</title>
-    <ThemeProvider />
+    <script>
+      import { loadTheme } from "@hrc/toggle-theme";
+
+      loadTheme();
+    </script>
   </head>
   <body>
     <slot />
