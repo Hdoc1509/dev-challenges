@@ -200,11 +200,11 @@ importers:
         specifier: 5.0.8
         version: 5.0.8
       '@hrc/button':
-        specifier: 2.6.1
-        version: 2.6.1(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
+        specifier: 3.0.0
+        version: 3.0.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
       '@hrc/input':
-        specifier: 0.9.1
-        version: 0.9.1(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
+        specifier: 1.0.0
+        version: 1.0.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
       '@hrc/material-icons':
         specifier: 2.3.0
         version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -212,8 +212,8 @@ importers:
         specifier: 0.3.2
         version: 0.3.2(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@hrc/toggle-theme':
-        specifier: 2.2.0
-        version: 2.2.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: 2.3.0
+        version: 2.3.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@internal/components':
         specifier: workspace:*
         version: link:../../libs/components
@@ -1285,22 +1285,8 @@ packages:
   '@fontsource/ubuntu-mono@5.0.20':
     resolution: {integrity: sha512-DR//BlexvmRZIV+j4AQLKIAEso5McT+3CiDqyJkuRAwUK6QzCnTt8fAB5+TKj3R/ww92nYDZpnb3KTjoozmgXg==}
 
-  '@hrc/button@2.6.1':
-    resolution: {integrity: sha512-19KI5DrEdAqjCWnwEVVQiOkDYRrMmXcuyDrmBj8Nb49ht48QI0CT2SCJd4p1yrjWhTMb4rGL9Lz8bknqCbgXjg==}
-    peerDependencies:
-      '@types/react': ^17.0.0 || ^18.0.0
-      react: ^17.0.0 || ^18.0.0
-      react-dom: ^17.0.0 || ^18.0.0
-
   '@hrc/button@3.0.0':
     resolution: {integrity: sha512-fFxazRCz/kjjm0CmLi6uArCjxNqQzcwnLCW1UI3bfpz8hQZ2lADFdg4vTbijQXolFJstLBpqiVozTEiFIOnrag==}
-    peerDependencies:
-      '@types/react': ^17.0.0 || ^18.0.0
-      react: ^17.0.0 || ^18.0.0
-      react-dom: ^17.0.0 || ^18.0.0
-
-  '@hrc/input@0.9.1':
-    resolution: {integrity: sha512-HgNnOrwcNgxACm9ckliI60ww6itiazaAZZfzRCHhG7OC3JSAg8fsX8jOTbxCTYk4uBHyxyKc8kmIdmTmTNBCJQ==}
     peerDependencies:
       '@types/react': ^17.0.0 || ^18.0.0
       react: ^17.0.0 || ^18.0.0
@@ -4895,27 +4881,7 @@ snapshots:
 
   '@fontsource/ubuntu-mono@5.0.20': {}
 
-  '@hrc/button@2.6.1(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)':
-    dependencies:
-      '@hrc/type-utils': 1.1.2(typescript@5.3.2)
-      '@types/react': 18.2.79
-      clsx: 2.0.0
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-    transitivePeerDependencies:
-      - typescript
-
   '@hrc/button@3.0.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)':
-    dependencies:
-      '@hrc/type-utils': 1.1.2(typescript@5.3.2)
-      '@types/react': 18.2.79
-      clsx: 2.0.0
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-    transitivePeerDependencies:
-      - typescript
-
-  '@hrc/input@0.9.1(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)':
     dependencies:
       '@hrc/type-utils': 1.1.2(typescript@5.3.2)
       '@types/react': 18.2.79

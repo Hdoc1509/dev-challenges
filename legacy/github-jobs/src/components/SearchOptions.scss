@@ -16,7 +16,6 @@
     --label-text: var(--text);
     --label-font-size: var(--fs-0);
     --label-font-weight: 500;
-    cursor: pointer; /* TODO: add to @hrc/input */
     width: fit-content;
   }
   --checkbox-color: var(--text-secondary);
@@ -40,11 +39,6 @@
     &__inner:placeholder-shown {
       text-overflow: ellipsis;
     }
-  }
-  .checkbox__inner,
-  .radio__inner {
-    /* TODO: add to @hrc */
-    cursor: inherit;
   }
 
   [data-theme="dark"] & {
