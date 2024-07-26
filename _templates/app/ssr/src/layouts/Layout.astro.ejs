@@ -25,7 +25,9 @@ import "@fontsource/montserrat/700.css";
     <slot />
   </body>
 </html>
-<style is:global>
+<style is:global lang="scss">
+  @use "@lib/sass-utils";
+
   :root {
     --text: #000;
     --bg: #fff;
@@ -36,16 +38,7 @@ import "@fontsource/montserrat/700.css";
     --bg: #242424;
   }
 
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-    margin: 0;
-  }
-
   body {
-    margin: 0;
-    min-width: 320px;
     background-color: var(--bg);
     color: var(--text);
   }

@@ -2,14 +2,10 @@
 to: vanilla/<%= name %>/src/index.scss
 ---
 
+@use "@lib/sass-utils";
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
 
   --bg: #fff;
   --text: #000;
@@ -20,16 +16,7 @@ to: vanilla/<%= name %>/src/index.scss
   --text: #fff;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 body {
-  min-width: 320px;
   background-color: var(--bg);
-  margin: 0;
-
   color: var(--text);
 }
