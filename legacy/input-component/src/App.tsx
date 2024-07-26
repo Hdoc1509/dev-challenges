@@ -1,4 +1,4 @@
-import { Footer, HeaderWithTheme as Header } from "@internal/components";
+import { Footer, HeaderWithTheme as Header } from "@lib/components";
 import { Input } from "../lib/Input";
 import { InputVariant } from "./InputVariant";
 import "./App.css";

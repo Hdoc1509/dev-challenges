@@ -21,7 +21,7 @@
     "@hrc/input": "1.0.0",
     "@hrc/material-icons": "2.3.0",
     "@hrc/spinner": "0.3.2",
-    "@internal/components": "workspace:*",
+    "@lib/components": "workspace:*",
     "@lib/fetcher": "workspace:*",
     "@lib/geolocation": "workspace:*",
     "@lib/sass-utils": "workspace:*",

@@ -1,6 +1,6 @@
 import { Button } from "../lib/Button";
 import { ButtonVariant } from "./ButtonVariant";
-import { Footer, HeaderWithTheme as Header } from "@internal/components";
+import { Footer, HeaderWithTheme as Header } from "@lib/components";
 import "./App.scss";
 
 function App() {

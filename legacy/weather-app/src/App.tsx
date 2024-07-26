@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useCurrentWeather } from "@/hooks/useCurrentWeather";
-import { Footer } from "@internal/components/src/Footer";
+import { Footer } from "@lib/components/src/Footer";
 import { CityWeather } from "@/components/CityWeather";
 import { Forecast } from "@/components/Forecast";
 import { Highlights } from "@/components/Highlights";

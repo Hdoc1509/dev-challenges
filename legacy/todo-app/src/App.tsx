@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Footer, HeaderWithTheme as Header } from "@internal/components";
+import { Footer, HeaderWithTheme as Header } from "@lib/components";
 import { Nav } from "./components/Nav";
 import { TodoList } from "./components/TodoList";
 import { TodoForm } from "./components/TodoForm";

@@ -22,7 +22,7 @@
     "@hrc/material-icons": "2.3.0",
     "@hrc/spinner": "0.3.2",
     "@hrc/toggle-theme": "2.3.0",
-    "@internal/components": "workspace:*",
+    "@lib/components": "workspace:*",
     "@lib/fetcher": "workspace:*",
     "@lib/geolocation": "workspace:*",
     "@lib/sass-utils": "workspace:*",

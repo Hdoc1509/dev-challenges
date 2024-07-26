@@ -18,7 +18,7 @@
     "@hrc/material-icons": "2.3.0",
     "@hrc/spinner": "0.3.2",
     "@hrc/toggle-theme": "2.3.0",
-    "@internal/components": "workspace:3.0.0",
+    "@lib/components": "workspace:3.0.0",
     "@lib/fetcher": "workspace:*",
     "@lib/sass-utils": "workspace:*",
     "@material-design-icons/font": "0.14.13",

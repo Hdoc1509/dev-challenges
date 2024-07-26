@@ -4,7 +4,7 @@ import { getJobs } from "@/services/jobs/client";
 import { getMockedJobs } from "@/services/jobs/mock";
 import { getLocationOption } from "@/utils/geolocation";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-import { Footer } from "@internal/components/src/Footer";
+import { Footer } from "@lib/components/src/Footer";
 import { Header } from "@/components/Header";
 import { Home } from "./Home";
 import { JobPage } from "./JobPage";
