@@ -6,7 +6,7 @@
   "type": "module",
   "dependencies": {
     "@hrc/material-icons": "2.3.0",
-    "@hrc/toggle-theme": "2.2.0",
+    "@hrc/toggle-theme": "2.3.0",
     "@lib/sass-utils": "workspace:*"
   }
 }
