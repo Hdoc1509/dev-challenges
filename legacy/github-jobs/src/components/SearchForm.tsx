@@ -23,25 +23,16 @@ export const SearchForm = () => {
 
     const [locationError, location] = await getLocationOption(search.location);
 
-    if (locationError) {
-      setError(locationError);
-      setStatus("error");
-      return;
-    }
+    if (locationError) return setError(locationError);
 
     const newSearch = { ...search, location };
     const [jobsError, jobs] = await (isDev
       ? getMockedJobs(newSearch)
       : getJobs(newSearch));
 
-    if (jobsError) {
-      setError(jobsError);
-      setStatus("error");
-      return;
-    }
+    if (jobsError) return setError(jobsError);
 
     setJobs(jobs);
-    setStatus("success");
     setPages(jobs.length < 10 ? 1 : 10);
   };
 

@@ -12,8 +12,10 @@ type State = {
 };
 
 type Action = {
+  /** Sets the jobs and status to `success` */
   setJobs: (jobs: Job[]) => void;
   setStatus: (status: Status) => void;
+  /** Sets the error and status to `error` */
   setError: (error: Error) => void;
   setSearch: (newSearch: Partial<Search>) => void;
   setPages: (pages: number) => void;
@@ -35,9 +37,9 @@ const initialState: State = {
 export const useJobsStore = create<State & Action>()((set) => ({
   ...initialState,
 
-  setJobs: (jobs: Job[]) => set({ jobs }),
+  setJobs: (jobs: Job[]) => set({ jobs, status: "success" }),
   setStatus: (status: Status) => set({ status }),
-  setError: (error: Error) => set({ error }),
+  setError: (error: Error) => set({ error, status: "error" }),
   setSearch: (newSearch: Partial<Search>) =>
     set((state) => ({
       search: { ...state.search, ...newSearch },

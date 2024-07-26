@@ -23,25 +23,16 @@ function App() {
 
     const [locationError, location] = await getLocationOption();
 
-    if (locationError) {
-      setError(locationError);
-      setStatus("error");
-      return;
-    }
+    if (locationError) return setError(locationError);
 
     const search = { query: "front", location };
     const [jobsError, jobs] = await (isDev
       ? getMockedJobs(search)
       : getJobs(search));
 
-    if (jobsError) {
-      setError(jobsError);
-      setStatus("error");
-      return;
-    }
+    if (jobsError) return setError(jobsError);
 
     setJobs(jobs);
-    setStatus("success");
     if (jobs.length < 10) setPages(1);
   }, [setError, setJobs, setPages, setStatus]);
 

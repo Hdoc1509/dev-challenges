@@ -24,11 +24,7 @@ export const Pagination = () => {
         search.location,
       );
 
-      if (locationError) {
-        setError(locationError);
-        setStatus("error");
-        return;
-      }
+      if (locationError) return setError(locationError);
 
       const { query } = search;
       const newSearch = {
@@ -41,14 +37,9 @@ export const Pagination = () => {
         ? getMockedJobs(newSearch)
         : getJobs(newSearch));
 
-      if (jobsError) {
-        setError(jobsError);
-        setStatus("error");
-        return;
-      }
+      if (jobsError) return setError(jobsError);
 
       setJobs(jobs);
-      setStatus("success");
       if (jobs.length < 10) setPages(newPage + 1);
     },
     [search, setError, setJobs, setPages, setStatus],
