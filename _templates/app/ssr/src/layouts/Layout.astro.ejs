@@ -3,7 +3,6 @@ to: ssr/<%= name %>/src/layouts/Layout.astro
 ---
 
 ---
-import ThemeProvider from "@/components/ThemeProvider.astro";
 import "@material-design-icons/font/index.css";
 import "@fontsource-variable/montserrat/index.css";
 import "@fontsource/montserrat/500.css";
@@ -19,7 +18,11 @@ import "@fontsource/montserrat/700.css";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title><%= h.changeCase.title(name) %> - DevChallenges</title>
-    <ThemeProvider />
+    <script>
+      import { loadTheme } from "@hrc/toggle-theme";
+
+      loadTheme();
+    </script>
   </head>
   <body>
     <slot />
