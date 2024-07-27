@@ -1,14 +1,11 @@
 @use "@lib/sass-utils/mixins" as utils;
 @use "@lib/sass-utils/font/sizes/static";
+@use "@lib/sass-utils/reset/font";
+@use "@lib/sass-utils/reset/box-model";
+@use "@lib/sass-utils/reset/body";
 
 :root {
   @include utils.font-variable("Montserrat", sans-serif);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
 
   --bg: #fff;
   --text: #333;
@@ -20,12 +17,6 @@
   --primary-hover: #1366d6;
 
   --icon-size: var(--fs-4);
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
 }
 
 [data-theme="light"] {
@@ -41,10 +32,6 @@
 }
 
 body {
-  margin: 0;
-  min-width: 320px;
-
   background-color: var(--bg);
-
   color: var(--text);
 }
