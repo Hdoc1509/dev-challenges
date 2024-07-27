@@ -1,8 +1,8 @@
 @use "@scss" as *;
-@use "@lib/sass-utils/mixins" as *;
+@use "@lib/sass-utils/mixins" as utils;
 
 .search-results {
-  @include font-variable("Montserrat", sans-serif);
+  @include utils.font-variable("Montserrat", sans-serif);
 
   header {
     display: flex;
