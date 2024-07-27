@@ -3,12 +3,6 @@
 :root {
   font-family: "Poppins", sans-serif;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-
   --primary: #6066d0b2;
   --primary-dark: #2f527b;
   --primary-darkest: #1d355d;
@@ -21,16 +15,7 @@
   --credits-text: #f2f2f2;
 }
 
-/* TODO: Add this to app template */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 body {
-  margin: 0;
-  min-width: 320px;
   background-image: url("/background.png");
   background-color: #5256a1;
   background-size: cover;
