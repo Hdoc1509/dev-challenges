@@ -1,0 +1,17 @@
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  vertical-align: middle;
+  shape-margin: 1rem;
+
+  font-style: italic;
+}
