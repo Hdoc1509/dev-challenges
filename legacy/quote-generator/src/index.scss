@@ -1,8 +1,8 @@
 @use "@lib/sass-utils/font/sizes/static";
-@use "@lib/sass-utils/mixins" as *;
+@use "@lib/sass-utils/mixins" as utils;
 
 :root {
-  @include font-variable("Raleway", sans-serif);
+  @include utils.font-variable("Raleway", sans-serif);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
