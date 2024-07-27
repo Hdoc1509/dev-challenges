@@ -38,6 +38,7 @@
 }
 
 body {
+  max-width: unset;
   background-color: var(--color-bg);
   color: var(--color-text);
 }

@@ -4,8 +4,6 @@
   grid-template-rows: auto 1fr auto;
 
   min-height: 100svh;
-
-  margin: 0 auto;
   padding: 2rem;
   padding-inline: 3rem;
 }
