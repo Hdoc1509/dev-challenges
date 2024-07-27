@@ -12,9 +12,13 @@
     border-radius: 12px;
     padding: 12px;
 
-    color: var(--text-dark);
     font-family: inherit;
     font-weight: 400;
+
+    // NOTE: this will be simplified in next version of @hrc/input
+    &__inner {
+      color: var(--text-dark);
+    }
   }
 
   --button-padding: 20px 40px;
