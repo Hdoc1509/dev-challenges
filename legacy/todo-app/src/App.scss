@@ -1,4 +1,4 @@
-@use "@lib/sass-utils/mixins" as *;
+@use "@lib/sass-utils/mixins" as utils;
 
 #root {
   position: relative;
@@ -19,7 +19,7 @@
 }
 
 h1 {
-  @include font-variable("Raleway", sans-serif);
+  @include utils.font-variable("Raleway", sans-serif);
   font-weight: 700;
   font-size: var(--fs-6);
   text-align: center;

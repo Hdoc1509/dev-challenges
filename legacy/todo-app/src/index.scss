@@ -1,8 +1,8 @@
-@use "@lib/sass-utils/mixins" as *;
+@use "@lib/sass-utils/mixins" as utils;
 @use "@lib/sass-utils/font/sizes/static";
 
 :root {
-  @include font-variable("Montserrat", sans-serif);
+  @include utils.font-variable("Montserrat", sans-serif);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
