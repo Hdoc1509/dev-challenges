@@ -1,11 +1,8 @@
+@use "@lib/sass-utils/reset/font";
+@use "@lib/sass-utils/reset/body";
+
 :root {
   font-family: "Ubuntu Mono", monospace;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
 
   --bg: #fff;
   --text: #000;
@@ -17,11 +14,7 @@
 }
 
 body {
-  margin: 0;
-  min-width: 320px;
-
   background-color: var(--bg);
-
   color: var(--text);
 }
 
