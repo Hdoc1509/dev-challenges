@@ -26,16 +26,12 @@ import "@fontsource/raleway/700.css";
   </body>
 </html>
 <style lang="scss" is:global>
-  @use "@lib/sass-utils/font/sizes/static";
   @use "@lib/sass-utils/mixins" as utils;
+  @use "@lib/sass-utils/font/sizes/static";
+  @use "@lib/sass-utils/reset";
 
   :root {
     @include utils.font-variable("Raleway", sans-serif);
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-text-size-adjust: 100%;
 
     --blue: #1e213a;
     --blue-dark: #110e3c;
@@ -59,15 +55,8 @@ import "@fontsource/raleway/700.css";
     --fs-fluid-4-6: clamp(1.5rem, 3.5vw, 2.25rem);
   }
 
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-    margin: 0;
-  }
-
   body {
-    min-width: 320px;
+    max-width: unset;
     background-color: var(--blue-darkest);
     color: var(--text);
   }
