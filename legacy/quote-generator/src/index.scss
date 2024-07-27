@@ -1,14 +1,11 @@
-@use "@lib/sass-utils/font/sizes/static";
 @use "@lib/sass-utils/mixins" as utils;
+@use "@lib/sass-utils/font/sizes/static";
+@use "@lib/sass-utils/reset/font";
+@use "@lib/sass-utils/reset/body";
+@use "@lib/sass-utils/reset/box-model";
 
 :root {
   @include utils.font-variable("Raleway", sans-serif);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
 
   --bg: #fff;
   --text: #000;
@@ -21,12 +18,6 @@
   --fs-fluid-3-6: clamp(var(--fs-3), 3vw, var(--fs-6));
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 [data-theme="dark"] {
   --bg: #242424;
   --text: #fff;
@@ -35,10 +26,6 @@
 }
 
 body {
-  margin: 0;
-  min-width: 320px;
-
   background-color: var(--bg);
-
   color: var(--text);
 }
