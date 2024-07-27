@@ -4,12 +4,6 @@
 :root {
   @include utils.font-variable("Mulish", sans-serif);
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-
   --text: #333;
   --text-light: #4f4f4f;
   --text-secondary: #828282;
@@ -20,12 +14,6 @@
   --shadow: 0px 4px 6px 0px rgb(0 0 0 / 10%);
 
   --icon-size: var(--fs-4);
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
 }
 
 [data-theme="light"] {
@@ -50,10 +38,6 @@
 }
 
 body {
-  margin: 0;
-  min-width: 320px;
-
   background-color: var(--color-bg);
-
   color: var(--color-text);
 }
