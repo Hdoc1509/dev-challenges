@@ -27,7 +27,7 @@ export const getJobs = async (
   params.append("location", location ?? locationsMock[0].canonical_name);
 
   if (fullTime) {
-    //NOTE: Based on employment_type chip from jobs mock. Line 707
+    //NOTE: Based on employment_type chip from mocks/jobs.json Line 707
     params.append("chips", "employment_type:FULLTIME");
   }
 
