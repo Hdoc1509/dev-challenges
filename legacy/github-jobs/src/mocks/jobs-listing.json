@@ -1,0 +1,76 @@
+{
+  "search_metadata": {
+    "id": "66a5bd6a303eb105e5177acd",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/fb1e31968936e9a6/66a5bd6a303eb105e5177acd.json",
+    "created_at": "2024-07-28 03:39:22 UTC",
+    "processed_at": "2024-07-28 03:39:22 UTC",
+    "google_jobs_listing_url": "https://www.google.com/search?q=Guest+Advocate+%28Cashier+or+Front+of+Store+Attendant%2FCart+Attendant%29+%28T1845%29&ibp=htl;jobs#htidocid=DDgQsormcg77KSZ6AAAAAA==",
+    "raw_html_file": "https://serpapi.com/searches/fb1e31968936e9a6/66a5bd6a303eb105e5177acd.html",
+    "prettify_html_file": "https://serpapi.com/searches/fb1e31968936e9a6/66a5bd6a303eb105e5177acd.prettify",
+    "total_time_taken": 2.99
+  },
+  "search_parameters": {
+    "q": "eyJqb2JfdGl0bGUiOiJHdWVzdCBBZHZvY2F0ZSAoQ2FzaGllciBvciBGcm9udCBvZiBTdG9yZSBBdHRlbmRhbnQvQ2FydCBBdHRlbmRhbnQpIChUMTg0NSkiLCJjb21wYW55X25hbWUiOiJUQVJHRVQiLCJhZGRyZXNzX2NpdHkiOiJXaWxrZXMtQmFycmUgVG93bnNoaXAsIFBBIiwiaHRpZG9jaWQiOiJERGdRc29ybWNnNzdLU1o2QUFBQUFBPT0ifQ==",
+    "engine": "google_jobs_listing"
+  },
+  "salaries": [
+    {
+      "job_title": "Cashier",
+      "link": "https://www.indeed.com/cmp/Shoprite-of-Birney-Plaza,-Moosic-PA-Shoprite-of-Daleville,-Covington-Twp,-PA/salaries/Cashier/Moosic%2C+PA?utm_campaign=google_jobs_salary&utm_source=google_jobs_salary&utm_medium=organic",
+      "source": "Indeed",
+      "salary_from": 13,
+      "salary_to": 17,
+      "salary_currency": "$",
+      "salary_periodicity": "hour",
+      "salary_period": "hour",
+      "based_on": "Based on local employers"
+    }
+  ],
+  "apply_options": [
+    {
+      "title": "Apply on Target Careers",
+      "link": "https://jobs.target.com/job/wilkes-barre-township/guest-advocate-cashier-or-front-of-store-attendant-cart-attendant-t1845/1118/54718234528?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+    },
+    {
+      "title": "Apply on LinkedIn",
+      "link": "https://www.linkedin.com/jobs/view/guest-advocate-cashier-or-front-of-store-attendant-cart-attendant-t1845-at-target-3827201244?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+    },
+    {
+      "title": "Apply on AARP Job Board",
+      "link": "https://jobs.aarp.org/job/guest-advocate-cashier-or-front-of-store-attendant-cart-attendant-t1845-wilkes-barre-township-69950633?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+    },
+    {
+      "title": "Apply on National Labor Exchange Veterans Jobs",
+      "link": "https://veterans.usnlx.com/wilkes-barre-township-pa/guest-advocate-cashier-or-front-of-store-attendantcart-attendant-t1845/81E3B6023A9C4930B574767A44438993/job/?vs=28&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+    },
+    {
+      "title": "Apply on DE Jobs",
+      "link": "https://dejobs.org/wilkes-barre-township-pa/guest-advocate-cashier-or-front-of-store-attendantcart-attendant-t1845/81E3B6023A9C4930B574767A44438993/job/?utm_campaign=American+Job+Center&utm_medium=NLX&utm_source=American+Job+Center-DE&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+    },
+    {
+      "title": "Apply on Veterans Enterprise",
+      "link": "https://veteransenterprise.com/wilkes-barre-township-pa/guest-advocate-cashier-or-front-of-store-attendantcart-attendant-t1845/81E3B6023A9C4930B574767A44438993/job/?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+    }
+  ],
+  "ratings": [
+    {
+      "link": "https://www.indeed.com/cmp/Target/reviews?fcountry=US&floc=Hanford,+CA&utm_campaign=google_jobs_reviews&utm_source=google_jobs_reviews&utm_medium=organic",
+      "source": "Indeed",
+      "rating": 3.5,
+      "reviews": 74984
+    },
+    {
+      "link": "https://www.glassdoor.com/Reviews/Target-California-Reviews-EI_IE194.0,6_IL.7,17_IS2280.htm?utm_campaign=google_jobs_reviews&utm_source=google_jobs_reviews&utm_medium=organic",
+      "source": "Glassdoor",
+      "rating": 3.4,
+      "reviews": 86534
+    },
+    {
+      "link": "https://www.comparably.com/companies/target/reviews?utm_campaign=google_jobs_reviews&utm_source=google_jobs_reviews&utm_medium=organic",
+      "source": "Comparably",
+      "rating": 3.6,
+      "reviews": 5646
+    }
+  ]
+}

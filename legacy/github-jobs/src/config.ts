@@ -2,6 +2,7 @@ const { SERPAPI_API_KEY, WEATHERAPI_API_KEY, DEV } = import.meta.env;
 
 // Documentation
 // - https://serpapi.com/google-jobs-api
+// - https://serpapi.com/google-jobs-listing-api
 export const SERPAPI = {
   KEY: SERPAPI_API_KEY,
   URL: "https://serpapi.com",
