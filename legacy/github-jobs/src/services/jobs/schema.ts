@@ -1,10 +1,5 @@
 import * as z from "zod";
 
-const OptionSchema = z.object({
-  text: z.string(),
-  value: z.string().optional(),
-});
-
 const DetectedExtensionsSchema = z.object({
   schedule_type: z.string(),
   work_from_home: z.boolean().optional(),
@@ -15,11 +10,6 @@ const DetectedExtensionsSchema = z.object({
 const JobHighlightSchema = z.object({
   title: z.string().optional(),
   items: z.array(z.string()),
-});
-
-const RelatedLinkSchema = z.object({
-  link: z.string(),
-  text: z.string(),
 });
 
 const SearchMetadataSchema = z.object({
@@ -38,12 +28,7 @@ const SearchParametersSchema = z.object({
   engine: z.string(),
   google_domain: z.string(),
   start: z.number(),
-});
-
-const ChipSchema = z.object({
-  type: z.string(),
-  param: z.string(),
-  options: z.array(OptionSchema),
+  chips: z.string().optional(),
 });
 
 const JobsResultSchema = z.object({
@@ -53,7 +38,6 @@ const JobsResultSchema = z.object({
   via: z.string(),
   description: z.string(),
   job_highlights: z.array(JobHighlightSchema),
-  related_links: z.array(RelatedLinkSchema),
   extensions: z.array(z.string()),
   detected_extensions: DetectedExtensionsSchema,
   job_id: z.string(),
@@ -66,11 +50,10 @@ export const JobsResponseSchema = z.object({
   search_metadata: SearchMetadataSchema,
   search_parameters: SearchParametersSchema,
   jobs_results: z.array(JobsResultSchema),
-  chips: z.array(ChipSchema),
 });
 export type JobsResponse = z.infer<typeof JobsResponseSchema>;
 
-// based on https://serpapi.com/searches/245e315c7524f950/6644d67d7690dc208bd21e49.json
+// based on src/mocks/jobs-invalid.json
 const SearchInformationSchema = z.object({
   jobs_results_state: z.string(),
 });
