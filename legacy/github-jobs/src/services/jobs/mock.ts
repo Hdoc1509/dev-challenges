@@ -9,7 +9,7 @@ const mockLocations = jobsMock.jobs_results.map(({ location }) => location);
 export const getMockedJobs = (search: Search): PromiseWithError<Job[]> => {
   const { query, location, fullTime } = search;
   const jobs = parseJobs(jobsMock);
-  const endIndexSlice = randomInt(7, 10);
+  const endIndexSlice = randomInt(0, 10);
 
   const isLocationInMocks = mockLocations.some((mockLocation) =>
     mockLocation.match(new RegExp(location, "i")),

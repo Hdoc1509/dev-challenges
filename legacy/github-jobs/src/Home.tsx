@@ -1,4 +1,5 @@
 import { useJobsStore } from "@/store/jobs";
+import { JobsEmptyResultsError } from "@/errors";
 import { RingSpinner } from "@hrc/spinner/dist/RingSpinner";
 import { SearchForm } from "@/components/SearchForm";
 import { SearchOptions } from "@/components/SearchOptions";
@@ -19,7 +20,9 @@ export const Home = () => {
         {status === "loading" && <RingSpinner size="large" />}
         {status === "error" && <p className="error">{error?.message}</p>}
         {status === "success" && <Results jobs={jobs} />}
-        <Pagination />
+        {(status === "success" || error instanceof JobsEmptyResultsError) && (
+          <Pagination />
+        )}
       </main>
     </div>
   );
