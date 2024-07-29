@@ -17,7 +17,7 @@ export const Home = () => {
       <SearchOptions />
       <main>
         {status === "loading" && <RingSpinner size="large" />}
-        {status === "error" && <h3>{error?.message}</h3>}
+        {status === "error" && <p className="error">{error?.message}</p>}
         {status === "success" && <Results jobs={jobs} />}
         <Pagination />
       </main>

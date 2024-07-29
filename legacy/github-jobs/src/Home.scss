@@ -6,6 +6,11 @@
   grid-template-rows: auto 1fr;
   grid-template-columns: 1fr 2fr;
   gap: 16px;
+
+  .error {
+    font-size: var(--fs-3);
+    font-weight: bold;
+  }
 }
 @media (max-width: 767px) {
   .home {
@@ -16,4 +21,5 @@
     grid-template-rows: auto auto 1fr;
     grid-template-columns: unset;
   }
+
 }
