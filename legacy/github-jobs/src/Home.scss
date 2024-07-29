@@ -7,13 +7,7 @@
   grid-template-columns: 1fr 2fr;
   gap: 16px;
 
-  .error {
-    font-size: var(--fs-3);
-    font-weight: bold;
-  }
-}
-@media (max-width: 767px) {
-  .home {
+  @media (max-width: 767px) {
     grid-template-areas:
       "search-form"
       "search-options"
@@ -22,4 +16,8 @@
     grid-template-columns: unset;
   }
 
+  .error {
+    font-size: var(--fs-3);
+    font-weight: bold;
+  }
 }
