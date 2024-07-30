@@ -1,14 +1,20 @@
 import * as z from "zod";
 
+const ApplyOptionSchema = z.object({
+  title: z.string(),
+  link: z.string(),
+});
+
 const DetectedExtensionsSchema = z.object({
-  schedule_type: z.string(),
-  work_from_home: z.boolean().optional(),
   posted_at: z.string().optional(),
-  salary: z.string().optional(),
+  schedule_type: z.string(),
+  health_insurance: z.boolean().optional(),
+  dental_coverage: z.boolean().optional(),
+  paid_time_off: z.boolean().optional(),
 });
 
 const JobHighlightSchema = z.object({
-  title: z.string().optional(),
+  title: z.string(),
   items: z.array(z.string()),
 });
 
@@ -27,21 +33,27 @@ const SearchParametersSchema = z.object({
   q: z.string(),
   engine: z.string(),
   google_domain: z.string(),
-  start: z.number(),
-  chips: z.string().optional(),
+  next_page_token: z.string().optional(),
 });
 
-const JobsResultSchema = z.object({
+const SerpapiPaginationSchema = z.object({
+  next_page_token: z.string(),
+  next: z.string(),
+});
+
+export const JobsResultSchema = z.object({
   title: z.string(),
   company_name: z.string(),
   location: z.string(),
   via: z.string(),
-  description: z.string(),
-  job_highlights: z.array(JobHighlightSchema),
+  share_link: z.string(),
+  thumbnail: z.string().optional(),
   extensions: z.array(z.string()),
   detected_extensions: DetectedExtensionsSchema,
+  description: z.string(),
+  job_highlights: z.array(JobHighlightSchema),
+  apply_options: z.array(ApplyOptionSchema),
   job_id: z.string(),
-  thumbnail: z.string().optional(),
 });
 export type JobsResult = z.infer<typeof JobsResultSchema>;
 
@@ -49,6 +61,7 @@ export type JobsResult = z.infer<typeof JobsResultSchema>;
 export const JobsResponseSchema = z.object({
   search_metadata: SearchMetadataSchema,
   search_parameters: SearchParametersSchema,
+  serpapi_pagination: SerpapiPaginationSchema,
   jobs_results: z.array(JobsResultSchema),
 });
 export type JobsResponse = z.infer<typeof JobsResponseSchema>;
