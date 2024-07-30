@@ -1,0 +1,56 @@
+---
+import { Header } from "./components/Header";
+import { Footer } from "@lib/components/Footer";
+---
+
+<Header client:only="react" />
+<main>
+  <h2>Website under maintenance</h2>
+  <h3>We hope to be back soon!</h3>
+  <picture>
+    <source srcSet="/public/repair-512.png" media="(min-width: 500px)" />
+    <img src="/public/repair-256.png" alt="repair" />
+  </picture>
+  <p>
+    If you are curious, you can check{" "}
+    <a href="https://github.com/hdoc1509/dev-challenges/issues/1">
+      this issue
+    </a>{" "}
+    for more information.
+  </p>
+</main>
+<Footer />
+
+<style lang="scss">
+  @use "@lib/sass-utils/font/sizes";
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    text-align: center;
+
+    * {
+      margin: 0;
+    }
+  }
+
+  h2 {
+    font-size: var(--fs-fluid-6-8);
+  }
+
+  h3 {
+    font-size: var(--fs-fluid-4);
+  }
+
+  main > picture {
+    margin-block: 1rem;
+  }
+
+  main > p {
+    margin-top: 1rem;
+  }
+</style>
