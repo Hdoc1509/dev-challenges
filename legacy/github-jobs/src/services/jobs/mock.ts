@@ -22,7 +22,7 @@ export const getMockedJobs = (search: Search): PromiseWithError<Job[]> => {
         : true;
     const locationMatch = isLocationInMocks
       ? job.location.match(new RegExp(location, "i")) != null
-      : job.location.match(/new york|\sny/i) != null;
+      : true;
 
     const fullTimeMatch = fullTime ? job.isFullTime : true;
 
