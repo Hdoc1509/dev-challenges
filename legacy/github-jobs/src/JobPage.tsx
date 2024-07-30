@@ -10,7 +10,7 @@ export const JobPage = () => {
   const { job } = location.state as { job: Job };
 
   return (
-    <div className="job-page">
+    <main className="job-page">
       <aside className="job-page__aside">
         <nav>
           <Link to="/" className="back-to-search">
@@ -33,6 +33,6 @@ export const JobPage = () => {
         </section>
       </aside>
       <JobCard job={job} isInJobPage />
-    </div>
+    </main>
   );
 };
