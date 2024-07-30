@@ -1,0 +1,21 @@
+{
+  "search_metadata": {
+    "id": "66a978547bea27cea9b53aa7",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/c0af312e5653c928/66a978547bea27cea9b53aa7.json",
+    "created_at": "2024-07-30 23:33:40 UTC",
+    "processed_at": "2024-07-30 23:33:40 UTC",
+    "google_jobs_url": "https://www.google.com/search?q=noresultquery&udm=8",
+    "raw_html_file": "https://serpapi.com/searches/c0af312e5653c928/66a978547bea27cea9b53aa7.html",
+    "total_time_taken": 2.57
+  },
+  "search_parameters": {
+    "q": "noresultquery",
+    "engine": "google_jobs",
+    "google_domain": "google.com"
+  },
+  "search_information": {
+    "jobs_results_state": "Fully empty"
+  },
+  "error": "Google hasn't returned any results for this query."
+}
