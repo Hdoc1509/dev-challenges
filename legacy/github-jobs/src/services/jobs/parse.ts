@@ -3,14 +3,9 @@ import type { JobsResponse } from "./schema";
 
 export const parseJobs = (data: JobsResponse): Job[] => {
   return data.jobs_results.map((job) => ({
-    // TODO: use Goggle Jobs Listing API to get job url instead of company.url
-    // https://serpapi.com/google-jobs-listing-api
-    // mock jobs-listing.json is based on first result from jobs-update-no-chips.json
+    applyOptions: job.apply_options,
     title: job.title,
-    company: {
-      name: job.company_name,
-      url: job.company_name,
-    },
+    company: job.company_name,
     // NOTE: job location has extra spaces in it. You can check it in jobs mock
     location: job.location.trim(),
     description: job.description,

@@ -19,17 +19,7 @@ export const JobPage = () => {
         </nav>
         <section className="job-page__apply">
           <h3>How to apply</h3>
-          <p>
-            Please contact the company via its{" "}
-            <a
-              className="company-website"
-              href={job.company.url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              website.
-            </a>
-          </p>
+          {/* TODO: loop through job.applyOptions and render links */}
         </section>
       </aside>
       <JobCard job={job} isInJobPage />

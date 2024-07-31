@@ -1,17 +1,20 @@
 import type { LocationCoords } from "@lib/geolocation";
 
+export type ApplyOption = {
+  title: string;
+  link: string;
+};
+
 export type Job = {
   title: string;
-  company: {
-    name: string;
-    url: string;
-  };
+  company: string;
   location: string;
   description: string;
   id: string;
   createdAt?: string;
   thumbnail?: string;
   isFullTime: boolean;
+  applyOptions: ApplyOption[];
 };
 
 export type Search = {
