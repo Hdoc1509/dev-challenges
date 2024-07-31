@@ -38,7 +38,7 @@
 
   &--in-job-page {
     grid-template-areas:
-      "title title schedule"
+      "title title title"
       "created-at created-at ."
       "image company ."
       "image location ."
@@ -72,6 +72,9 @@
     .job-card__location {
       margin-left: 0;
       margin-bottom: 10px;
+    }
+    .job-card__schedule-type {
+      margin-left: 1rem;
     }
 
     @media (max-width: 1050px) {
@@ -121,6 +124,7 @@
   &__schedule-type {
     grid-area: schedule;
     font-weight: 700;
+    font-size: var(--fs-00);
 
     border: 1px solid;
     border-radius: 4px;

@@ -30,8 +30,15 @@ export const JobCard = ({ job, isInJobPage }: Props) => {
         )}
       </div>
       <p className="job-card__company">{company}</p>
-      <p className="job-card__title">{title}</p>
-      {isFullTime && <p className="job-card__schedule-type">Full time</p>}
+      <p className="job-card__title">
+        {title}
+        {isInJobPage && isFullTime && (
+          <span className="job-card__schedule-type">Full time</span>
+        )}
+      </p>
+      {!isInJobPage && isFullTime && (
+        <p className="job-card__schedule-type">Full time</p>
+      )}
       <p className="job-card__location">
         <Icon name="public" /> {location}
       </p>
