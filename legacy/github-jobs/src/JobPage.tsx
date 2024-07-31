@@ -1,8 +1,21 @@
 import { useLocation, Link } from "react-router-dom";
 import { Icon } from "@hrc/material-icons";
 import { JobCard } from "@/components/JobCard";
-import type { Job } from "@/types";
-import './JobPage.scss';
+import type { Job, ApplyOption as ApplyOptionType } from "@/types";
+import "@hrc/button/dist/Button"; // styles side-effects?
+import "./JobPage.scss";
+
+const ApplyOption = ({ option }: { option: ApplyOptionType }) => (
+  <a
+    className="button button--primary"
+    key={option.title}
+    href={option.link}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Apply on {option.title}
+  </a>
+);
 
 export const JobPage = () => {
   const location = useLocation();
@@ -19,7 +32,9 @@ export const JobPage = () => {
         </nav>
         <section className="job-page__apply">
           <h3>How to apply</h3>
-          {/* TODO: loop through job.applyOptions and render links */}
+          {job.applyOptions.map((option) => (
+            <ApplyOption key={option.title} option={option} />
+          ))}
         </section>
       </aside>
       <JobCard job={job} isInJobPage />
