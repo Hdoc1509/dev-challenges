@@ -1,3 +1,4 @@
+import { JobsEmptyResultsError } from "@/errors";
 import { parseJobs } from "./parse";
 import { randomInt } from "@/utils/helpers";
 import jobsMock from "@/mocks/jobs.json";
@@ -37,14 +38,18 @@ export const getMockedJobs = (search: Search): PromiseWithError<Job[]> => {
   });
 
   if (filtered.length === 0) {
-    return Promise.resolve([new Error(`No jobs found for: ${query}`)]);
+    return Promise.resolve([
+      new JobsEmptyResultsError(`No jobs found for: ${query}`),
+    ]);
   }
 
   const sorted = filtered.sort(() => Math.random() - 0.5);
   const sliced = sorted.slice(0, endIndexSlice);
 
   if (sliced.length === 0) {
-    return Promise.resolve([new Error(`No jobs found for: ${query}`)]);
+    return Promise.resolve([
+      new JobsEmptyResultsError(`No jobs found for: ${query}`),
+    ]);
   }
 
   return Promise.resolve([null, sliced]);
