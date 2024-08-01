@@ -20,13 +20,22 @@ export const getMockedJobs = (search: Search): PromiseWithError<Job[]> => {
       query !== ""
         ? job.title.toLowerCase().includes(query.toLowerCase())
         : true;
+    // allow match "Forklift Operator" at line 222 in mocks/job.json
+    const queryMatchForklift =
+      query === "front" ? job.title.match(/front|fork/i) != null : true;
     const locationMatch = isLocationInMocks
       ? job.location.match(new RegExp(location, "i")) != null
       : true;
+    // allow to match all jobs
+    const locationMatchAny = location.match(/any/i) != null;
 
     const fullTimeMatch = fullTime ? job.isFullTime : true;
 
-    return queryMatch && locationMatch && fullTimeMatch;
+    return (
+      (queryMatch || queryMatchForklift) &&
+      (locationMatch || locationMatchAny) &&
+      fullTimeMatch
+    );
   });
 
   if (filtered.length === 0) {
