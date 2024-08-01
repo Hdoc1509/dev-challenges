@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import { Icon } from "@hrc/material-icons";
 import type { Job } from "@/types";
 import "./JobCard.scss";
@@ -18,10 +17,9 @@ export const JobCard = ({ job, isInJobPage }: Props) => {
     createdAt,
     description,
   } = job;
-  const className = clsx("job-card", { "job-card--in-job-page": isInJobPage });
 
   return (
-    <div className={className}>
+    <div className="job-card">
       <div className="job-card__image">
         {thumbnail ? (
           <img src={thumbnail} alt={`${company} logo`} />
