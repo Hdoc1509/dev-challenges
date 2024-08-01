@@ -43,7 +43,6 @@ export const Pagination = () => {
         if (jobsError instanceof JobsEmptyResultsError) {
           setJobs([]);
           setPages(newPage + 1);
-          return;
         }
 
         return setError(jobsError);
