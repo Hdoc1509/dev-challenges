@@ -10,6 +10,7 @@ export const Home = () => {
   const status = useJobsStore((s) => s.status);
   const error = useJobsStore((s) => s.error);
   const jobs = useJobsStore((s) => s.jobs);
+  const pages = useJobsStore((s) => s.pages);
 
   return (
     <div className="home">
@@ -19,7 +20,7 @@ export const Home = () => {
         {status === "loading" && <RingSpinner size="large" />}
         {status === "error" && <p className="error">{error?.message}</p>}
         {status === "success" && <Results jobs={jobs} />}
-        <Pagination />
+        {pages > 1 && <Pagination />}
       </main>
     </div>
   );
