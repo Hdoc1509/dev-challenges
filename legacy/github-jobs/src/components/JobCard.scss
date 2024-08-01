@@ -9,7 +9,7 @@
     "image company  .        ."
     "image title    title    title"
     "image schedule location created-at";
-  grid-template-columns: 60px 1fr auto auto;
+  grid-template-columns: var(--card-cols, 60px 1fr auto auto);
   gap: 10px 16px;
 
   padding: 12px;
@@ -25,7 +25,7 @@
   &:hover,
   &:focus-visible {
     outline: 1px solid var(--text);
-    --job-title-decoration: underline;
+    --title-decoration: underline;
   }
 
   @media (max-width: 767px) {
@@ -43,7 +43,7 @@
       "image       company    ."
       "image       location   ."
       "description description description";
-    grid-template-columns: 60px auto 1fr;
+    --card-cols: 60px auto 1fr;
 
     padding: 0;
     box-shadow: none;
@@ -54,28 +54,19 @@
     &:hover,
     &:focus-visible {
       outline: none;
-      --job-title-decoration: none;
+      --title-decoration: none;
     }
 
-    .job-card__title {
-      font-size: var(--fs-4);
-      font-weight: 700;
-    }
-    .job-card__image {
-      margin-block: 20px;
-    }
-    .job-card__company {
-      margin-top: 10px;
-      font-size: var(--fs-2);
-      font-weight: 700;
-    }
-    .job-card__location {
-      margin-left: 0;
-      margin-bottom: 10px;
-    }
-    .job-card__schedule-type {
-      margin-left: 1rem;
-    }
+    --title-fs: var(--fs-4);
+    --title-fw: 700;
+
+    --image-margin: 20px;
+
+    --company-margin-top: 10px;
+    --company-fs: var(--fs-2);
+
+    --location-margin-inline: 0;
+    --location-margin-bottom: 10px;
 
     @media (max-width: 1050px) {
       grid-template-areas:
@@ -85,12 +76,13 @@
         "image       company"
         "image       location"
         "description description";
-      grid-template-columns: auto 1fr auto;
+      --card-cols: auto 1fr auto;
     }
   }
 
   &__image {
     grid-area: image;
+    margin-block: var(--image-margin);
 
     img {
       width: 60px;
@@ -112,13 +104,20 @@
 
   &__company {
     grid-area: company;
+    margin-top: var(--company-margin-top);
+    font-size: var(--company-fs, var(--fs-00));
     font-weight: 700;
   }
 
   &__title {
     grid-area: title;
-    text-decoration: var(--job-title-decoration);
-    font-size: clamp(1rem, 2vw, var(--fs-2));
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    text-decoration: var(--title-decoration);
+    font-size: var(--title-fs, clamp(1rem, 2vw, var(--fs-2)));
+    font-weight: var(--title-fw, 400);
   }
 
   &__schedule-type {
@@ -134,7 +133,8 @@
 
   &__location {
     grid-area: location;
-    margin-left: auto;
+    margin-inline: var(--location-margin-inline, auto 0);
+    margin-bottom: var(--location-margin-bottom);
   }
 
   &__created {
