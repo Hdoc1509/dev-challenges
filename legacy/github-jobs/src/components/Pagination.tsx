@@ -71,8 +71,11 @@ export const Pagination = () => {
         forcePage={search.page ?? 0}
         marginPagesDisplayed={0}
         onPageChange={({ selected }) => void handlePageChange(selected)}
-        onClick={() => {
+        onClick={({ selected, isBreak }) => {
           if (!isSameSearch(search, lastSearch)) return false;
+
+          // go to next page if is break label
+          if (isBreak) return selected + 1;
         }}
       />
     </nav>
