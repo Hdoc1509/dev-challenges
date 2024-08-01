@@ -4,6 +4,7 @@ import { getJobs } from "@/services/jobs/client";
 import { getMockedJobs } from "@/services/jobs/mock";
 import { JobsEmptyResultsError } from "@/errors";
 import { getLocationOption } from "@/utils/geolocation";
+import { isSameSearch } from "@/utils/search";
 import ReactPaginate from "react-paginate";
 import { Icon } from "@hrc/material-icons";
 import { isDev } from "@/config";
@@ -11,28 +12,29 @@ import "./Pagination.scss";
 
 export const Pagination = () => {
   const search = useJobsStore((s) => s.search);
+  const lastSearch = useJobsStore((s) => s.lastSearch);
   const pages = useJobsStore((s) => s.pages);
   const setJobs = useJobsStore((s) => s.setJobs);
   const setError = useJobsStore((s) => s.setError);
-  const setSearch = useJobsStore((s) => s.setSearch);
+  const setLastSearch = useJobsStore((s) => s.setLastSearch);
   const setStatus = useJobsStore((s) => s.setStatus);
   const setPages = useJobsStore((s) => s.setPages);
 
   const handlePageChange = useCallback(
     async (newPage: number) => {
+      const { query, location: newLocation, fullTime } = search;
+
       setStatus("loading");
 
-      const [locationError, location] = await getLocationOption(
-        search.location,
-      );
+      const [locationError, location] = await getLocationOption(newLocation);
 
       if (locationError) return setError(locationError);
 
-      const { query } = search;
       const newSearch = {
         query: query === "" ? "front" : query,
         location,
         page: newPage + 1,
+        fullTime,
       };
 
       const [jobsError, jobs] = await (isDev
@@ -42,17 +44,17 @@ export const Pagination = () => {
       if (jobsError) {
         if (jobsError instanceof JobsEmptyResultsError) {
           setJobs([]);
-          setPages(newPage + 1);
+          setPages(newSearch.page);
         }
 
         return setError(jobsError);
       }
 
-      setSearch({ page: newPage });
       setJobs(jobs);
-      if (jobs.length < 10) setPages(newPage + 1);
+      setLastSearch(newSearch);
+      if (jobs.length < 10) setPages(newSearch.page);
     },
-    [search, setError, setJobs, setPages, setSearch, setStatus],
+    [search, setError, setJobs, setLastSearch, setPages, setStatus],
   );
 
   return (
@@ -66,6 +68,9 @@ export const Pagination = () => {
         forcePage={search.page ?? 0}
         marginPagesDisplayed={0}
         onPageChange={({ selected }) => void handlePageChange(selected)}
+        onClick={() => {
+          if (!isSameSearch(search, lastSearch)) return false;
+        }}
       />
     </nav>
   );

@@ -2,6 +2,7 @@ import { getJobs } from "@/services/jobs/client";
 import { getMockedJobs } from "@/services/jobs/mock";
 import { useJobsStore } from "@/store/jobs";
 import { getLocationOption } from "@/utils/geolocation";
+import { isSameSearch } from "@/utils/search";
 import { Button } from "@hrc/button/dist/Button";
 import { Input } from "@hrc/input/dist/Input";
 import { Icon } from "@hrc/material-icons";
@@ -10,7 +11,9 @@ import "./SearchForm.scss";
 
 export const SearchForm = () => {
   const search = useJobsStore((s) => s.search);
+  const lastSearch = useJobsStore((s) => s.lastSearch);
   const setSearch = useJobsStore((s) => s.setSearch);
+  const setLastSearch = useJobsStore((s) => s.setLastSearch);
   const setJobs = useJobsStore((s) => s.setJobs);
   const setStatus = useJobsStore((s) => s.setStatus);
   const setError = useJobsStore((s) => s.setError);
@@ -19,9 +22,13 @@ export const SearchForm = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    if (isSameSearch(search, lastSearch)) return;
+
+    const { location: newLocation } = search;
+
     setStatus("loading");
 
-    const [locationError, location] = await getLocationOption(search.location);
+    const [locationError, location] = await getLocationOption(newLocation);
 
     if (locationError) return setError(locationError);
 
@@ -33,6 +40,7 @@ export const SearchForm = () => {
     if (jobsError) return setError(jobsError);
 
     setJobs(jobs);
+    setLastSearch(newSearch);
     setPages(jobs.length < 10 ? 1 : 10);
   };
 
