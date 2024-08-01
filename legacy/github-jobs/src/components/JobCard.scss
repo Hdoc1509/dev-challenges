@@ -6,8 +6,8 @@
   display: grid;
   align-items: center;
   grid-template-areas:
-    "image company . ."
-    "image title title title"
+    "image company  .        ."
+    "image title    title    title"
     "image schedule location created-at";
   grid-template-columns: 60px 1fr auto auto;
   gap: 10px 16px;
@@ -38,10 +38,10 @@
 
   &--in-job-page {
     grid-template-areas:
-      "title title title"
-      "created-at created-at ."
-      "image company ."
-      "image location ."
+      "title       title      title"
+      "created-at  created-at ."
+      "image       company    ."
+      "image       location   ."
       "description description description";
     grid-template-columns: 60px auto 1fr;
 
@@ -79,11 +79,11 @@
 
     @media (max-width: 1050px) {
       grid-template-areas:
-        "title title"
-        "schedule ."
-        "created-at ."
-        "image company"
-        "image location"
+        "title       title"
+        "schedule    ."
+        "created-at  ."
+        "image       company"
+        "image       location"
         "description description";
       grid-template-columns: auto 1fr auto;
     }
