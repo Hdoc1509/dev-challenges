@@ -7,6 +7,7 @@ import { getLocationOption } from "@/utils/geolocation";
 import { isSameSearch } from "@/utils/search";
 import ReactPaginate from "react-paginate";
 import { Icon } from "@hrc/material-icons";
+import { Ellipsis } from "./Icons";
 import { isDev } from "@/config";
 import "./Pagination.scss";
 
@@ -61,7 +62,9 @@ export const Pagination = () => {
     <nav aria-label="Search results pages">
       <ReactPaginate
         className="jobs-pagination"
-        breakLabel="..."
+        // NOTE: pagination of SerpApi, only can navigate to prev/next page
+        // so, is neceesary to use custom breakLabel?
+        breakLabel={<Ellipsis />}
         nextLabel={<Icon name="keyboard_arrow_right" />}
         previousLabel={<Icon name="keyboard_arrow_left" />}
         pageCount={pages}
