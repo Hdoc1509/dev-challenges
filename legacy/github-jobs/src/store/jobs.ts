@@ -8,6 +8,7 @@ type State = {
   status: Status;
   error?: Error;
   search: Search;
+  lastSearch: Search;
   pages: number;
 };
 
@@ -18,6 +19,7 @@ type Action = {
   /** Sets the error and status to `error` */
   setError: (error: Error) => void;
   setSearch: (newSearch: Partial<Search>) => void;
+  setLastSearch: (newSearch: Partial<Search>) => void;
   setPages: (pages: number) => void;
 };
 
@@ -26,6 +28,12 @@ const initialState: State = {
   status: "idle",
   error: undefined,
   search: {
+    query: "",
+    location: "",
+    fullTime: false,
+    page: 0,
+  },
+  lastSearch: {
     query: "",
     location: "",
     fullTime: false,
@@ -43,6 +51,10 @@ export const useJobsStore = create<State & Action>()((set) => ({
   setSearch: (newSearch: Partial<Search>) =>
     set((state) => ({
       search: { ...state.search, ...newSearch },
+    })),
+  setLastSearch: (newSearch: Partial<Search>) =>
+    set((state) => ({
+      lastSearch: { ...state.lastSearch, ...newSearch },
     })),
   setPages: (pages: number) => set({ pages }),
 }));
