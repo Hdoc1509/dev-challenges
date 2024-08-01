@@ -20,7 +20,7 @@ export const Home = () => {
         {status === "loading" && <RingSpinner size="large" />}
         {status === "error" && <p className="error">{error?.message}</p>}
         {status === "success" && <Results jobs={jobs} />}
-        {(status === "success" || error instanceof JobsEmptyResultsError) && (
+        {(status !== "error" || error instanceof JobsEmptyResultsError) && (
           <Pagination />
         )}
       </main>
