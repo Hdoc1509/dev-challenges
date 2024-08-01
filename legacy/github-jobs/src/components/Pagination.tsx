@@ -65,7 +65,7 @@ export const Pagination = () => {
         previousLabel={<Icon name="keyboard_arrow_left" />}
         pageCount={pages}
         forcePage={search.page ?? 0}
-        marginPagesDisplayed={1}
+        marginPagesDisplayed={0}
         onPageChange={({ selected }) => void handlePageChange(selected)}
       />
     </nav>
