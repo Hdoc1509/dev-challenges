@@ -43,5 +43,9 @@ export const getMockedJobs = (search: Search): PromiseWithError<Job[]> => {
   const sorted = filtered.sort(() => Math.random() - 0.5);
   const sliced = sorted.slice(0, endIndexSlice);
 
+  if (sliced.length === 0) {
+    return Promise.resolve([new Error(`No jobs found for: ${query}`)]);
+  }
+
   return Promise.resolve([null, sliced]);
 };
