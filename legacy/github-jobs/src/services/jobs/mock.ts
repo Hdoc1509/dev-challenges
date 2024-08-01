@@ -17,9 +17,7 @@ export const getMockedJobs = (search: Search): PromiseWithError<Job[]> => {
 
   const filtered = jobs.filter((job) => {
     const queryMatch =
-      query !== ""
-        ? job.title.toLowerCase().includes(query.toLowerCase())
-        : true;
+      query !== "" ? job.title.match(new RegExp(query, "i")) != null : true;
     // allow match "Forklift Operator" at line 222 in mocks/job.json
     const queryMatchForklift =
       query === "front" ? job.title.match(/front|fork/i) != null : true;
