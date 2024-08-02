@@ -2,7 +2,11 @@ import { NetworkError, ValidationError } from "@lib/fetcher";
 import "./ErrorMessage.scss";
 
 const IssueLink = () => (
-  <a href="https://github.com/Hdoc1509/dev-challenges/issues/new">
+  <a
+    href="https://github.com/Hdoc1509/dev-challenges/issues/new"
+    target="_blank"
+    rel="noreferrer"
+  >
     rise an issue on Github
   </a>
 );
