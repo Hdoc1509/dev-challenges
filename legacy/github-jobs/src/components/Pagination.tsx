@@ -52,7 +52,7 @@ export const Pagination = () => {
       }
 
       setJobs(jobs);
-      setLastSearch(newSearch);
+      setLastSearch(search);
       if (jobs.length < 10) setPages(newSearch.page);
     },
     [search, setError, setJobs, setLastSearch, setPages, setStatus],

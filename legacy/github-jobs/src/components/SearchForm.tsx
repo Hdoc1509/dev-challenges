@@ -41,7 +41,7 @@ export const SearchForm = () => {
     if (jobsError) return setError(jobsError);
 
     setJobs(jobs);
-    setLastSearch(newSearch);
+    setLastSearch(search);
     setPages(jobs.length < 10 ? 1 : 10);
   };
 
