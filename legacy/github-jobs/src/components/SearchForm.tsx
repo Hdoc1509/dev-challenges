@@ -12,6 +12,7 @@ import "./SearchForm.scss";
 export const SearchForm = () => {
   const search = useJobsStore((s) => s.search);
   const lastSearch = useJobsStore((s) => s.lastSearch);
+  const status = useJobsStore((s) => s.status);
   const setSearch = useJobsStore((s) => s.setSearch);
   const setLastSearch = useJobsStore((s) => s.setLastSearch);
   const setJobs = useJobsStore((s) => s.setJobs);
@@ -50,6 +51,7 @@ export const SearchForm = () => {
         id="search-form"
         className="search-form__inner"
         onSubmit={(e) => void handleSubmit(e)}
+        data-loading={status === "loading"}
       >
         <Input
           iconStart={<Icon name="work_outline" />}

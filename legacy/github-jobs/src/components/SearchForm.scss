@@ -22,6 +22,14 @@
     outline: 2px solid var(--primary);
   }
 
+  &[data-loading="true"] {
+    .button {
+      --primary: var(--primary-disabled);
+      --primary-hover: var(--primary-disabled);
+      pointer-events: none;
+    }
+  }
+
   --label-text: var(--text-secondary);
   --label-text-focus: var(--primary);
   .label {
