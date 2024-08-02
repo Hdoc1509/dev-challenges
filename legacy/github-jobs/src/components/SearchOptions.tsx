@@ -1,5 +1,5 @@
 import { useJobsStore } from "@/store/jobs";
-import { Checkbox } from "@hrc/input/dist/Checkbox";
+// import { Checkbox } from "@hrc/input/dist/Checkbox";
 import { Input } from "@hrc/input/dist/Input";
 import { Icon } from "@hrc/material-icons";
 import { RadioGroup } from "./RadioGroup";
@@ -14,13 +14,13 @@ export const SearchOptions = () => {
 
   return (
     <aside className="search-options">
-      <Checkbox
+      {/* <Checkbox
         label="Full time"
         form={form}
         color="primary"
         onChange={(e) => setSearch({ fullTime: e.target.checked })}
         checked={search.fullTime ?? false}
-      />
+      /> */}
       <Input
         label="LOCATION"
         iconStart={<Icon name="public" />}

@@ -14,7 +14,7 @@ const JobsError = new ServiceError("Jobs");
 export const getJobs = async (
   search: Search,
 ): PromiseWithError<JobsResponse> => {
-  const { query, location, fullTime, page } = search;
+  const { query, location, /* fullTime, */ page } = search;
   const params = new URLSearchParams({
     engine: "google_jobs",
     q: query,
@@ -26,10 +26,9 @@ export const getJobs = async (
 
   params.append("location", location ?? locationsMock[0].canonical_name);
 
-  if (fullTime) {
-    //NOTE: Based on employment_type chip from mocks/jobs.json Line 707
-    params.append("chips", "employment_type:FULLTIME");
-  }
+  // if (fullTime) {
+  //   params.append("chips", "employment_type:FULLTIME");
+  // }
 
   const [error, data] = await fetcher(
     `${SERPAPI.URL}/search.json?${params.toString()}`,
@@ -42,7 +41,8 @@ export const getJobs = async (
 
   if (error) return [error];
 
-  if ("error" in data) { // serpapi endpoint error
+  if ("error" in data) {
+    // serpapi endpoint error
     if (data.search_information.jobs_results_state === "Fully empty")
       return [new Error(`No jobs found for: ${query}`)];
 

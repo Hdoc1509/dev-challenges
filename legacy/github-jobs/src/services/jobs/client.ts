@@ -9,11 +9,11 @@ const ApiResponseSchema = JobsResponseSchema.or(ApiErrorSchema);
 const JobsError = new ServiceError("Jobs");
 
 export const getJobs = async (search: Search): PromiseWithError<Job[]> => {
-  const { query, location, fullTime, page } = search;
+  const { query, location, /* fullTime, */ page } = search;
 
   const params = new URLSearchParams({ q: query, location });
 
-  if (fullTime) params.append("full_time", "");
+  // if (fullTime) params.append("full_time", "");
   if (page) params.append("page", `${page}`);
 
   const [error, data] = await fetcher(`/api/jobs?${params.toString()}`, {
