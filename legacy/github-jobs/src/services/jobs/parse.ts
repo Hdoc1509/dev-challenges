@@ -12,8 +12,9 @@ export const parseJobs = (data: JobsResponse): Job[] => {
     id: job.job_id,
     createdAt: job.detected_extensions.posted_at,
     thumbnail: job.thumbnail,
-    isFullTime:
-      job.detected_extensions.schedule_type.toLowerCase() === "full-time",
+    isFullTime: job.detected_extensions.schedule_type
+      .toLowerCase()
+      .includes("full-time"),
     scheduleType: job.detected_extensions.schedule_type,
   }));
 };
