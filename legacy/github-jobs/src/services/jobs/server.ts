@@ -14,15 +14,14 @@ const JobsError = new ServiceError("Jobs");
 export const getJobs = async (
   search: Search,
 ): PromiseWithError<JobsResponse> => {
-  const { query, location, /* fullTime, */ page } = search;
+  const { query, location, /* fullTime, */ nextPageToken } = search;
   const params = new URLSearchParams({
     engine: "google_jobs",
     q: query,
     api_key: SERPAPI.KEY,
   });
 
-  // INFO: https://serpapi.com/google-jobs-api#api-parameters-pagination
-  params.append("start", (page ? (page - 1) * 10 : 0).toString());
+  if (nextPageToken != null) params.append("next_page_token", nextPageToken);
 
   params.append("location", location ?? locationsMock[0].canonical_name);
 

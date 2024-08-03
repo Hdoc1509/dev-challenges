@@ -7,7 +7,7 @@ export const GET: APIRoute = async ({ request }) => {
   const query = params.get("q");
   const location = params.get("location");
   const fullTimeParam = params.get("full_time");
-  const pageParam = params.get("page");
+  const nextPageToken = params.get("next_page_token");
 
   if (!query)
     return new Response(JSON.stringify({ error: "Missing query" }), {
@@ -17,20 +17,19 @@ export const GET: APIRoute = async ({ request }) => {
     return new Response(JSON.stringify({ error: "Missing location" }), {
       status: 400,
     });
-  if (pageParam === "0")
-    return new Response(JSON.stringify({ error: "Invalid page" }), {
+  if (nextPageToken === "")
+    return new Response(JSON.stringify({ error: "Invalid next page token" }), {
       status: 400,
     });
 
   const fullTime = fullTimeParam != null;
-  const page = pageParam ? Number(pageParam) : 1;
 
-  if (isNaN(page))
-    return new Response(JSON.stringify({ error: "Invalid page" }), {
-      status: 400,
-    });
-
-  const [jobsError, jobs] = await getJobs({ query, location, fullTime, page });
+  const [jobsError, jobs] = await getJobs({
+    query,
+    location,
+    fullTime,
+    nextPageToken: nextPageToken ?? undefined,
+  });
 
   if (jobsError)
     return new Response(JSON.stringify({ error: jobsError.message }), {
