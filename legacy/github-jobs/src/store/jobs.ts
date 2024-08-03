@@ -5,8 +5,7 @@ type Status = "idle" | "error" | "success" | "loading";
 
 type State = {
   jobs: Job[];
-  prevPageJobs?: Job[];
-  nextPageJobs?: Job[];
+  jobsResults: Job[][] | null;
   status: Status;
   error?: Error;
   search: Search;
@@ -17,8 +16,10 @@ type State = {
 type Action = {
   /** Sets the jobs and status to `success` */
   setJobs: (jobs: Job[]) => void;
-  setPrevPageJobs: (jobs: Job[]) => void;
-  setNextPageJobs: (jobs: Job[]) => void;
+  /** Save the jobs results to avoid making unnecessary requests
+   * **Used for pagination**
+   */
+  setJobsResults: (jobsResults: Job[][] | null) => void;
   setStatus: (status: Status) => void;
   /** Sets the error and status to `error` */
   setError: (error: Error) => void;
@@ -29,6 +30,7 @@ type Action = {
 
 const initialState: State = {
   jobs: [],
+  jobsResults: null,
   status: "idle",
   error: undefined,
   search: {
@@ -50,8 +52,7 @@ export const useJobsStore = create<State & Action>()((set) => ({
   ...initialState,
 
   setJobs: (jobs: Job[]) => set({ jobs, status: "success" }),
-  setPrevPageJobs: (jobs: Job[]) => set({ prevPageJobs: jobs }),
-  setNextPageJobs: (jobs: Job[]) => set({ nextPageJobs: jobs }),
+  setJobsResults: (jobsResults: Job[][] | null) => set({ jobsResults }),
   setStatus: (status: Status) => set({ status }),
   setError: (error: Error) => set({ error, status: "error" }),
   setSearch: (newSearch: Partial<Search>) =>
