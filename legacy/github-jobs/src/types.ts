@@ -22,6 +22,7 @@ export type Search = {
   location: string;
   fullTime?: boolean;
   page?: number;
+  nextPageToken?: string;
 };
 
 export type LocationOptions = { zipCode: number } | { coords: LocationCoords };
