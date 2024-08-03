@@ -41,7 +41,7 @@ function App() {
       didInit = true;
       void getInitialJobs();
     }
-  }, [getInitialJobs, setJobs]);
+  }, [getInitialJobs]);
 
   return (
     <BrowserRouter>
