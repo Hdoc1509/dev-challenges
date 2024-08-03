@@ -8,7 +8,12 @@ import type { Job, Search } from "@/types";
 const ApiResponseSchema = JobsResponseSchema.or(ApiErrorSchema);
 const JobsError = new ServiceError("Jobs");
 
-export const getJobs = async (search: Search): PromiseWithError<Job[]> => {
+export type JobsServiceReturn = PromiseWithError<{
+  jobs: Job[];
+  nextPageToken?: string;
+}>;
+
+export const getJobs = async (search: Search): JobsServiceReturn => {
   const { query, location, /* fullTime, */ nextPageToken } = search;
 
   const params = new URLSearchParams({ q: query, location });
@@ -31,5 +36,11 @@ export const getJobs = async (search: Search): PromiseWithError<Job[]> => {
     return [new Error(data.error)]; // api endpoint error
   }
 
-  return [null, parseJobs(data)];
+  return [
+    null,
+    {
+      jobs: parseJobs(data.jobs_results),
+      nextPageToken: data.search_parameters.next_page_token,
+    },
+  ];
 };

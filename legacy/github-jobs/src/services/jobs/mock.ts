@@ -2,14 +2,14 @@ import { JobsEmptyResultsError } from "@/errors";
 import { parseJobs } from "./parse";
 import { randomInt } from "@/utils/helpers";
 import jobsMock from "@/mocks/jobs.json";
-import type { PromiseWithError } from "@lib/fetcher";
-import type { Job, Search } from "@/types";
+import type { Search } from "@/types";
+import type { JobsServiceReturn } from "./client";
 
 const mockLocations = jobsMock.jobs_results.map(({ location }) => location);
 
-export const getMockedJobs = (search: Search): PromiseWithError<Job[]> => {
+export const getMockedJobs = (search: Search): JobsServiceReturn => {
   const { query, location, fullTime } = search;
-  const jobs = parseJobs(jobsMock);
+  const jobs = parseJobs(jobsMock.jobs_results);
   const endIndexSlice = randomInt(0, 10);
 
   const isLocationInMocks = mockLocations.some((mockLocation) =>
@@ -52,5 +52,11 @@ export const getMockedJobs = (search: Search): PromiseWithError<Job[]> => {
     ]);
   }
 
-  return Promise.resolve([null, sliced]);
+  return Promise.resolve([
+    null,
+    {
+      jobs: sliced,
+      nextPageToken: sliced.length < 10 ? undefined : "wildcard-token",
+    },
+  ]);
 };

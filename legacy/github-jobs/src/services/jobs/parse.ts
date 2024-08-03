@@ -1,8 +1,8 @@
 import type { Job } from "@/types";
 import type { JobsResponse } from "./schema";
 
-export const parseJobs = (data: JobsResponse): Job[] => {
-  return data.jobs_results.map((job) => ({
+export const parseJobs = (results: JobsResponse["jobs_results"]): Job[] => {
+  return results.map((job) => ({
     applyOptions: job.apply_options,
     title: job.title,
     company: job.company_name,
