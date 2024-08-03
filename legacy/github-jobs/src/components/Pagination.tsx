@@ -17,6 +17,7 @@ export const Pagination = () => {
   const pages = useJobsStore((s) => s.pages);
   const setJobs = useJobsStore((s) => s.setJobs);
   const setError = useJobsStore((s) => s.setError);
+  const setSearch = useJobsStore((s) => s.setSearch);
   const setLastSearch = useJobsStore((s) => s.setLastSearch);
   const setStatus = useJobsStore((s) => s.setStatus);
   const setPages = useJobsStore((s) => s.setPages);
@@ -24,6 +25,9 @@ export const Pagination = () => {
   const handlePageChange = useCallback(
     async (newPage: number) => {
       const { query, location: newLocation, fullTime } = search;
+      console.log({ page: search.page, newPage });
+      const isPrevPage = newPage < search.page;
+      console.log({ isNextPage: isPrevPage });
 
       setStatus("loading");
 
@@ -38,7 +42,7 @@ export const Pagination = () => {
         fullTime,
       };
 
-      const [jobsError, jobs] = await (isDev
+      const [jobsError, jobsResult] = await (isDev
         ? getMockedJobs(newSearch)
         : getJobs(newSearch));
 
@@ -51,11 +55,14 @@ export const Pagination = () => {
         return setError(jobsError);
       }
 
+      const { jobs, nextPageToken } = jobsResult;
+
       setJobs(jobs);
       setLastSearch(search);
       if (jobs.length < 10) setPages(newSearch.page);
+      else setSearch({ nextPageToken });
     },
-    [search, setError, setJobs, setLastSearch, setPages, setStatus],
+    [search, setError, setJobs, setLastSearch, setPages, setSearch, setStatus],
   );
 
   return (

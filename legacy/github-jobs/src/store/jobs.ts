@@ -3,13 +3,15 @@ import type { Job, Search } from "../types";
 
 type Status = "idle" | "error" | "success" | "loading";
 
+type StoreSearch = Omit<Search, "page"> & { page: number };
+
 type State = {
   jobs: Job[];
   jobsResults: Job[][] | null;
   status: Status;
   error?: Error;
-  search: Search;
-  lastSearch: Search;
+  search: StoreSearch;
+  lastSearch: StoreSearch;
   pages: number;
 };
 
