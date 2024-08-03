@@ -6,7 +6,7 @@ export const GET: APIRoute = async ({ request }) => {
 
   const query = params.get("q");
   const location = params.get("location");
-  const fullTimeParam = params.get("full_time");
+  // const fullTimeParam = params.get("full_time");
   const nextPageToken = params.get("next_page_token");
 
   if (!query)
@@ -22,12 +22,12 @@ export const GET: APIRoute = async ({ request }) => {
       status: 400,
     });
 
-  const fullTime = fullTimeParam != null;
+  // const fullTime = fullTimeParam != null;
 
   const [jobsError, jobs] = await getJobs({
     query,
     location,
-    fullTime,
+    // fullTime,
     nextPageToken: nextPageToken ?? undefined,
   });
 
