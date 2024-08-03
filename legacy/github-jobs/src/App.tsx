@@ -13,6 +13,7 @@ import { isDev } from "@/config";
 let didInit = false;
 
 function App() {
+  const setSearch = useJobsStore((s) => s.setSearch);
   const setJobs = useJobsStore((s) => s.setJobs);
   const setStatus = useJobsStore((s) => s.setStatus);
   const setError = useJobsStore((s) => s.setError);
@@ -26,15 +27,18 @@ function App() {
     if (locationError) return setError(locationError);
 
     const search = { query: "front", location };
-    const [jobsError, jobs] = await (isDev
+    const [jobsError, jobsResult] = await (isDev
       ? getMockedJobs(search)
       : getJobs(search));
 
     if (jobsError) return setError(jobsError);
 
+    const { jobs, nextPageToken } = jobsResult;
+
     setJobs(jobs);
     if (jobs.length < 10) setPages(1);
-  }, [setError, setJobs, setPages, setStatus]);
+    else setSearch({ nextPageToken });
+  }, [setError, setJobs, setPages, setSearch, setStatus]);
 
   useEffect(() => {
     if (!didInit) {

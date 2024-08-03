@@ -34,16 +34,22 @@ export const SearchForm = () => {
     if (locationError) return setError(locationError);
 
     const newSearch = { ...search, location };
-    const [jobsError, jobs] = await (isDev
+    const [jobsError, jobsResult] = await (isDev
       ? getMockedJobs(newSearch)
       : getJobs(newSearch));
 
     if (jobsError) return setError(jobsError);
 
+    const { jobs, nextPageToken } = jobsResult;
+
     setJobs(jobs);
     setSearch({ page: 0 });
     setLastSearch(search);
-    setPages(jobs.length < 10 ? 1 : 10);
+    if (jobs.length < 10) setPages(1);
+    else {
+      setPages(10);
+      setSearch({ nextPageToken });
+    }
   };
 
   return (
