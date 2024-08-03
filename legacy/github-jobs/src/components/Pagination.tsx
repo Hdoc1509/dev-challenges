@@ -58,6 +58,7 @@ export const Pagination = () => {
       const { jobs, nextPageToken } = jobsResult;
 
       setJobs(jobs);
+      setSearch({ page: newPage });
       setLastSearch(search);
       if (jobs.length < 10) setPages(newSearch.page);
       else setSearch({ nextPageToken });
