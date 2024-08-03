@@ -7,7 +7,7 @@ type StoreSearch = Omit<Search, "page"> & { page: number };
 
 type State = {
   jobs: Job[];
-  jobsResults: Job[][] | null;
+  cachedJobs: Job[][];
   status: Status;
   error?: Error;
   search: StoreSearch;
@@ -21,7 +21,7 @@ type Action = {
   /** Save the jobs results to avoid making unnecessary requests
    * **Used for pagination**
    */
-  setJobsResults: (jobsResults: Job[][] | null) => void;
+  setCachedJobs: (jobsResults: Job[][]) => void;
   setStatus: (status: Status) => void;
   /** Sets the error and status to `error` */
   setError: (error: Error) => void;
@@ -32,7 +32,7 @@ type Action = {
 
 const initialState: State = {
   jobs: [],
-  jobsResults: null,
+  cachedJobs: [],
   status: "idle",
   error: undefined,
   search: {
@@ -54,7 +54,7 @@ export const useJobsStore = create<State & Action>()((set) => ({
   ...initialState,
 
   setJobs: (jobs: Job[]) => set({ jobs, status: "success" }),
-  setJobsResults: (jobsResults: Job[][] | null) => set({ jobsResults }),
+  setCachedJobs: (cachedJobs: Job[][]) => set({ cachedJobs }),
   setStatus: (status: Status) => set({ status }),
   setError: (error: Error) => set({ error, status: "error" }),
   setSearch: (newSearch: Partial<Search>) =>
