@@ -3,7 +3,7 @@ import type { Job, Search } from "../types";
 
 type Status = "idle" | "error" | "success" | "loading";
 
-type StoreSearch = Omit<Search, "pageAsIndex"> & { pageAsIndex: number };
+export type StoreSearch = Omit<Search, "pageAsIndex"> & { pageAsIndex: number };
 
 type State = {
   jobs: Job[];

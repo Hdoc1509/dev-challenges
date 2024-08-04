@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { useJobsStore } from "@/store/jobs";
+import { useJobsStore, type StoreSearch } from "@/store/jobs";
 import { getJobs } from "@/services/jobs/client";
 import { getMockedJobs } from "@/services/jobs/mock";
 import { JobsEmptyResultsError } from "@/errors";
@@ -41,11 +41,14 @@ export const Pagination = () => {
 
       if (locationError) return setError(locationError);
 
-      const newSearch = {
+      const { nextPageToken } = search;
+
+      const newSearch: StoreSearch = {
         query: query === "" ? "front" : query,
         location,
         pageAsIndex: newPage + 1,
         fullTime,
+        nextPageToken,
       };
 
       const [jobsError, jobsResult] = await (isDev
@@ -61,14 +64,14 @@ export const Pagination = () => {
         return setError(jobsError);
       }
 
-      const { jobs, nextPageToken } = jobsResult;
+      const { jobs, nextPageToken: newNextPageToken } = jobsResult;
 
       setJobs(jobs);
       cacheJobs(jobs);
       setSearch({ pageAsIndex: newPage });
       setLastSearch(search);
       if (jobs.length < 10) setPages(newSearch.pageAsIndex);
-      else setSearch({ nextPageToken });
+      else setSearch({ nextPageToken: newNextPageToken });
     },
     [
       cachedJobs,
