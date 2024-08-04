@@ -22,6 +22,7 @@ type Action = {
    * **Used for pagination**
    */
   cacheJobs: (jobs: Job[]) => void;
+  clearCachedJobs: () => void;
   setStatus: (status: Status) => void;
   /** Sets the error and status to `error` */
   setError: (error: Error) => void;
@@ -56,6 +57,7 @@ export const useJobsStore = create<State & Action>()((set) => ({
   setJobs: (jobs: Job[]) => set({ jobs, status: "success" }),
   cacheJobs: (jobs: Job[]) =>
     set(({ cachedJobs }) => ({ cachedJobs: cachedJobs.concat([jobs]) })),
+  clearCachedJobs: () => set({ cachedJobs: [] }),
   setStatus: (status: Status) => set({ status }),
   setError: (error: Error) => set({ error, status: "error" }),
   setSearch: (newSearch: Partial<Search>) =>
