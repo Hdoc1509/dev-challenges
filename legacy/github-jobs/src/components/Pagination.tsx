@@ -46,7 +46,7 @@ export const Pagination = () => {
       const newSearch: StoreSearch = {
         query: query === "" ? "front" : query,
         location,
-        pageAsIndex: newPage + 1,
+        pageAsIndex: newPage,
         fullTime,
         nextPageToken,
       };
@@ -58,7 +58,7 @@ export const Pagination = () => {
       if (jobsError) {
         if (jobsError instanceof JobsEmptyResultsError) {
           setJobs([]);
-          setPages(newSearch.pageAsIndex);
+          setPages(newPage + 1);
         }
 
         return setError(jobsError);
@@ -70,7 +70,7 @@ export const Pagination = () => {
       cacheJobs(jobs);
       setSearch({ pageAsIndex: newPage });
       setLastSearch(search);
-      if (jobs.length < 10) setPages(newSearch.pageAsIndex);
+      if (jobs.length < 10) setPages(newPage + 1);
       else setSearch({ nextPageToken: newNextPageToken });
     },
     [

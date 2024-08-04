@@ -8,7 +8,7 @@ import type { JobsServiceReturn } from "./client";
 const mockLocations = jobsMock.jobs_results.map(({ location }) => location);
 
 export const getMockedJobs = (search: Search): JobsServiceReturn => {
-  const { query, location, fullTime } = search;
+  const { query, location, fullTime, pageAsIndex = 0 } = search;
   const jobs = parseJobs(jobsMock.jobs_results);
   const endIndexSlice = randomInt(0, 10);
 
@@ -56,7 +56,7 @@ export const getMockedJobs = (search: Search): JobsServiceReturn => {
     null,
     {
       jobs: sliced,
-      nextPageToken: sliced.length < 10 ? undefined : "wildcard-token",
+      nextPageToken: sliced.length < 10 ? undefined : `token-${pageAsIndex}`,
     },
   ]);
 };
