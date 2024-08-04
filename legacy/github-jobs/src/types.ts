@@ -21,7 +21,7 @@ export type Search = {
   query: string;
   location: string;
   fullTime?: boolean;
-  page?: number;
+  pageAsIndex?: number;
   nextPageToken?: string;
 };
 

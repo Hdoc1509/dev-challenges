@@ -3,7 +3,7 @@ import type { Job, Search } from "../types";
 
 type Status = "idle" | "error" | "success" | "loading";
 
-type StoreSearch = Omit<Search, "page"> & { page: number };
+type StoreSearch = Omit<Search, "pageAsIndex"> & { pageAsIndex: number };
 
 type State = {
   jobs: Job[];
@@ -40,13 +40,13 @@ const initialState: State = {
     query: "",
     location: "",
     fullTime: false,
-    page: 0,
+    pageAsIndex: 0,
   },
   lastSearch: {
     query: "",
     location: "",
     fullTime: false,
-    page: 0,
+    pageAsIndex: 0,
   },
   pages: 10,
 };

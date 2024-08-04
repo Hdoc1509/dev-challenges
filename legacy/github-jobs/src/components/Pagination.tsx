@@ -31,7 +31,7 @@ export const Pagination = () => {
 
       if (newPageCache != null) {
         setJobs(newPageCache);
-        setSearch({ page: newPage });
+        setSearch({ pageAsIndex: newPage });
         return;
       }
 
@@ -44,7 +44,7 @@ export const Pagination = () => {
       const newSearch = {
         query: query === "" ? "front" : query,
         location,
-        page: newPage + 1,
+        pageAsIndex: newPage + 1,
         fullTime,
       };
 
@@ -55,7 +55,7 @@ export const Pagination = () => {
       if (jobsError) {
         if (jobsError instanceof JobsEmptyResultsError) {
           setJobs([]);
-          setPages(newSearch.page);
+          setPages(newSearch.pageAsIndex);
         }
 
         return setError(jobsError);
@@ -65,9 +65,9 @@ export const Pagination = () => {
 
       setJobs(jobs);
       cacheJobs(jobs);
-      setSearch({ page: newPage });
+      setSearch({ pageAsIndex: newPage });
       setLastSearch(search);
-      if (jobs.length < 10) setPages(newSearch.page);
+      if (jobs.length < 10) setPages(newSearch.pageAsIndex);
       else setSearch({ nextPageToken });
     },
     [
@@ -93,7 +93,7 @@ export const Pagination = () => {
         nextLabel={<Icon name="keyboard_arrow_right" />}
         previousLabel={<Icon name="keyboard_arrow_left" />}
         pageCount={pages}
-        forcePage={search.page ?? 0}
+        forcePage={search.pageAsIndex ?? 0}
         marginPagesDisplayed={0}
         onPageChange={({ selected }) => void handlePageChange(selected)}
         onClick={({ selected, isBreak }) => {
