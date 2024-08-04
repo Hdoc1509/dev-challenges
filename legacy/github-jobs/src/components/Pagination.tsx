@@ -29,7 +29,11 @@ export const Pagination = () => {
       const { query, location: newLocation, fullTime } = search;
       const newPageCache = cachedJobs[newPage];
 
-      if (newPageCache != null) return setJobs(newPageCache);
+      if (newPageCache != null) {
+        setJobs(newPageCache);
+        setSearch({ page: newPage });
+        return;
+      }
 
       setStatus("loading");
 
