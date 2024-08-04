@@ -13,6 +13,7 @@ import { isDev } from "@/config";
 let didInit = false;
 
 function App() {
+  const cacheJobs = useJobsStore((s) => s.cacheJobs);
   const setSearch = useJobsStore((s) => s.setSearch);
   const setJobs = useJobsStore((s) => s.setJobs);
   const setStatus = useJobsStore((s) => s.setStatus);
@@ -37,8 +38,11 @@ function App() {
 
     setJobs(jobs);
     if (jobs.length < 10) setPages(1);
-    else setSearch({ nextPageToken });
-  }, [setError, setJobs, setPages, setSearch, setStatus]);
+    else {
+      setSearch({ nextPageToken });
+      cacheJobs(jobs);
+    }
+  }, [cacheJobs, setError, setJobs, setPages, setSearch, setStatus]);
 
   useEffect(() => {
     if (!didInit) {

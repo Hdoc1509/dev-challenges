@@ -13,6 +13,8 @@ export const SearchForm = () => {
   const search = useJobsStore((s) => s.search);
   const lastSearch = useJobsStore((s) => s.lastSearch);
   const status = useJobsStore((s) => s.status);
+  const cacheJobs = useJobsStore((s) => s.cacheJobs);
+  const clearCachedJobs = useJobsStore((s) => s.clearCachedJobs);
   const setSearch = useJobsStore((s) => s.setSearch);
   const setLastSearch = useJobsStore((s) => s.setLastSearch);
   const setJobs = useJobsStore((s) => s.setJobs);
@@ -45,10 +47,12 @@ export const SearchForm = () => {
     setJobs(jobs);
     setSearch({ page: 0 });
     setLastSearch(search);
+    clearCachedJobs();
     if (jobs.length < 10) setPages(1);
     else {
       setPages(10);
       setSearch({ nextPageToken });
+      cacheJobs(jobs);
     }
   };
 

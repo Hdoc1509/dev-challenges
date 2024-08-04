@@ -12,10 +12,12 @@ import { isDev } from "@/config";
 import "./Pagination.scss";
 
 export const Pagination = () => {
+  const cachedJobs = useJobsStore((s) => s.cachedJobs);
   const search = useJobsStore((s) => s.search);
   const lastSearch = useJobsStore((s) => s.lastSearch);
   const pages = useJobsStore((s) => s.pages);
   const setJobs = useJobsStore((s) => s.setJobs);
+  const cacheJobs = useJobsStore((s) => s.cacheJobs);
   const setError = useJobsStore((s) => s.setError);
   const setSearch = useJobsStore((s) => s.setSearch);
   const setLastSearch = useJobsStore((s) => s.setLastSearch);
@@ -24,10 +26,14 @@ export const Pagination = () => {
 
   const handlePageChange = useCallback(
     async (newPage: number) => {
-      const { query, location: newLocation, fullTime } = search;
-      console.log({ page: search.page, newPage });
-      const isPrevPage = newPage < search.page;
-      console.log({ isNextPage: isPrevPage });
+      const { query, location: newLocation, fullTime, page } = search;
+      const isPrevPage = newPage < page;
+
+      if (isPrevPage) return setJobs(cachedJobs[newPage]);
+
+      const nextJobs = cachedJobs[newPage];
+
+      if (nextJobs != null) return setJobs(nextJobs);
 
       setStatus("loading");
 
@@ -58,12 +64,23 @@ export const Pagination = () => {
       const { jobs, nextPageToken } = jobsResult;
 
       setJobs(jobs);
+      cacheJobs(jobs);
       setSearch({ page: newPage });
       setLastSearch(search);
       if (jobs.length < 10) setPages(newSearch.page);
       else setSearch({ nextPageToken });
     },
-    [search, setError, setJobs, setLastSearch, setPages, setSearch, setStatus],
+    [
+      cachedJobs,
+      search,
+      cacheJobs,
+      setError,
+      setJobs,
+      setLastSearch,
+      setPages,
+      setSearch,
+      setStatus,
+    ],
   );
 
   return (
