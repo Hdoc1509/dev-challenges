@@ -26,14 +26,10 @@ export const Pagination = () => {
 
   const handlePageChange = useCallback(
     async (newPage: number) => {
-      const { query, location: newLocation, fullTime, page } = search;
-      const isPrevPage = newPage < page;
+      const { query, location: newLocation, fullTime } = search;
+      const newPageCache = cachedJobs[newPage];
 
-      if (isPrevPage) return setJobs(cachedJobs[newPage]);
-
-      const nextJobs = cachedJobs[newPage];
-
-      if (nextJobs != null) return setJobs(nextJobs);
+      if (newPageCache != null) return setJobs(newPageCache);
 
       setStatus("loading");
 
