@@ -48,7 +48,7 @@ export const SearchForm = () => {
     setSearch({ pageAsIndex: 0, nextPageToken });
     setLastSearch({ ...search, location });
     clearCachedJobs();
-    if (jobs.length < 10) setPages(1);
+    if (nextPageToken == null) setPages(1);
     else {
       setPages(10);
       cacheJobs(jobs);

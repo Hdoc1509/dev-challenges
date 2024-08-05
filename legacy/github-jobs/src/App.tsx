@@ -39,9 +39,9 @@ function App() {
 
     setJobs(jobs);
     setLastSearch({ location });
-    if (jobs.length < 10) setPages(1);
+    setSearch({ nextPageToken });
+    if (nextPageToken == null) setPages(1);
     else {
-      setSearch({ nextPageToken });
       cacheJobs(jobs);
       setPages(10);
     }
