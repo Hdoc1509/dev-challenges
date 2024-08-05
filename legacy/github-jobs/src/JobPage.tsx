@@ -12,8 +12,10 @@ const ApplyOption = ({ option }: { option: ApplyOptionType }) => (
     href={option.link}
     target="_blank"
     rel="noopener noreferrer"
+    role="button"
   >
     Apply on {option.title}
+    <Icon name="open_in_new" />
   </a>
 );
 
