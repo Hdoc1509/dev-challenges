@@ -35,7 +35,7 @@ export const SearchForm = () => {
 
     if (locationError) return setError(locationError);
 
-    const newSearch = { ...search, location };
+    const newSearch = { ...search, pageAsIndex: 0, location };
     const [jobsError, jobsResult] = await (isDev
       ? getMockedJobs(newSearch)
       : getJobs(newSearch));
@@ -45,13 +45,12 @@ export const SearchForm = () => {
     const { jobs, nextPageToken } = jobsResult;
 
     setJobs(jobs);
-    setSearch({ pageAsIndex: 0 });
+    setSearch({ pageAsIndex: 0, nextPageToken });
     setLastSearch(search);
     clearCachedJobs();
     if (jobs.length < 10) setPages(1);
     else {
       setPages(10);
-      setSearch({ nextPageToken });
       cacheJobs(jobs);
     }
   };
