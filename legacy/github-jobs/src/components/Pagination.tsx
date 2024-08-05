@@ -70,8 +70,7 @@ export const Pagination = () => {
       cacheJobs(jobs);
       setSearch({ pageAsIndex: newPage, nextPageToken: newNextPageToken });
       setLastSearch(search);
-      if (jobs.length < 10) setPages(newPage + 1);
-      else setPages(10);
+      setPages(jobs.length < 10 ? newPage + 1 : 10);
     },
     [
       cachedJobs,
