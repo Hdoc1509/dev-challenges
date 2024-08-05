@@ -27,10 +27,10 @@ export const SearchForm = () => {
 
     if (!isDev && isSameSearch({ current: search, last: lastSearch })) return;
 
-    const { location: newLocation } = search;
-
     setStatus("loading");
 
+    const newLocation =
+      search.location === "" ? lastSearch.location : search.location;
     const [locationError, location] = await getLocationOption(newLocation);
 
     if (locationError) return setError(locationError);
@@ -46,7 +46,7 @@ export const SearchForm = () => {
 
     setJobs(jobs);
     setSearch({ pageAsIndex: 0, nextPageToken });
-    setLastSearch(search);
+    setLastSearch({ ...search, location });
     clearCachedJobs();
     if (jobs.length < 10) setPages(1);
     else {

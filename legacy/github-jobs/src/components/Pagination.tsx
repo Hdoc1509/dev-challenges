@@ -26,7 +26,7 @@ export const Pagination = () => {
 
   const handlePageChange = useCallback(
     async (newPage: number) => {
-      const { query, location: newLocation, fullTime } = search;
+      const { query, fullTime } = search;
       const newPageCache = cachedJobs[newPage];
 
       if (newPageCache != null) {
@@ -37,6 +37,8 @@ export const Pagination = () => {
 
       setStatus("loading");
 
+      const newLocation =
+        search.location === "" ? lastSearch.location : search.location;
       const [locationError, location] = await getLocationOption(newLocation);
 
       if (locationError) return setError(locationError);
@@ -69,19 +71,20 @@ export const Pagination = () => {
       setJobs(jobs);
       cacheJobs(jobs);
       setSearch({ pageAsIndex: newPage, nextPageToken: newNextPageToken });
-      setLastSearch(search);
+      setLastSearch({ ...search, location });
       setPages(jobs.length < 10 ? newPage + 1 : 10);
     },
     [
-      cachedJobs,
       search,
-      cacheJobs,
+      cachedJobs,
+      setStatus,
+      lastSearch.location,
       setError,
       setJobs,
+      cacheJobs,
+      setSearch,
       setLastSearch,
       setPages,
-      setSearch,
-      setStatus,
     ],
   );
 

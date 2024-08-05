@@ -15,6 +15,7 @@ let didInit = false;
 function App() {
   const cacheJobs = useJobsStore((s) => s.cacheJobs);
   const setSearch = useJobsStore((s) => s.setSearch);
+  const setLastSearch = useJobsStore((s) => s.setLastSearch);
   const setJobs = useJobsStore((s) => s.setJobs);
   const setStatus = useJobsStore((s) => s.setStatus);
   const setError = useJobsStore((s) => s.setError);
@@ -37,13 +38,22 @@ function App() {
     const { jobs, nextPageToken } = jobsResult;
 
     setJobs(jobs);
+    setLastSearch({ location });
     if (jobs.length < 10) setPages(1);
     else {
       setSearch({ nextPageToken });
       cacheJobs(jobs);
       setPages(10);
     }
-  }, [cacheJobs, setError, setJobs, setPages, setSearch, setStatus]);
+  }, [
+    cacheJobs,
+    setError,
+    setJobs,
+    setLastSearch,
+    setPages,
+    setSearch,
+    setStatus,
+  ]);
 
   useEffect(() => {
     if (!didInit) {
