@@ -48,7 +48,7 @@ const initialState: State = {
     fullTime: false,
     pageAsIndex: 0,
   },
-  pages: 10,
+  pages: 0,
 };
 
 export const useJobsStore = create<State & Action>()((set) => ({

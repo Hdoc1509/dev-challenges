@@ -41,6 +41,7 @@ function App() {
     else {
       setSearch({ nextPageToken });
       cacheJobs(jobs);
+      setPages(10);
     }
   }, [cacheJobs, setError, setJobs, setPages, setSearch, setStatus]);
 
