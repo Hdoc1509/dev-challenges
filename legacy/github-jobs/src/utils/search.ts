@@ -1,9 +1,11 @@
 import type { Search } from "@/types";
 
-export const isSameSearch = (searchA: Search, searchB: Search) => {
+type SameSearchArgs = { current: Search; last: Search };
+
+export const isSameSearch = ({ current, last }: SameSearchArgs): boolean => {
   return (
-    searchA.query === searchB.query &&
-    searchA.location === searchB.location &&
-    searchA.fullTime === searchB.fullTime
+    current.query === last.query &&
+    current.location === last.location &&
+    current.fullTime === last.fullTime
   );
 };

@@ -25,7 +25,7 @@ export const SearchForm = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!isDev && isSameSearch(search, lastSearch)) return;
+    if (!isDev && isSameSearch({ current: search, last: lastSearch })) return;
 
     const { location: newLocation } = search;
 

@@ -99,7 +99,8 @@ export const Pagination = () => {
         marginPagesDisplayed={0}
         onPageChange={({ selected }) => void handlePageChange(selected)}
         onClick={({ selected, isBreak }) => {
-          if (!isSameSearch(search, lastSearch)) return false;
+          if (!isSameSearch({ current: search, last: lastSearch }))
+            return false;
 
           // go to next page if is break label
           if (isBreak) return selected + 1;
