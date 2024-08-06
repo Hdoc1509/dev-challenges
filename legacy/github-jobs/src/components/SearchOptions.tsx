@@ -2,7 +2,7 @@ import { useJobsStore } from "@/store/jobs";
 // import { Checkbox } from "@hrc/input/dist/Checkbox";
 import { Input } from "@hrc/input/dist/Input";
 import { Icon } from "@hrc/material-icons";
-import { RadioGroup } from "./RadioGroup";
+import { RadioGroup } from "@hrc/input/dist/RadioGroup";
 import { predefinedCities } from "@/constants";
 import "./SearchOptions.scss";
 
@@ -31,9 +31,11 @@ export const SearchOptions = () => {
         fullWidth
       />
       <RadioGroup
+        name="location-options"
         form={form}
         options={predefinedCities}
-        onChange={(e) => setSearch({ location: e.target.value })}
+        onChange={(location) => setSearch({ location })}
+        // FIX: group is not unchecking when changing <Input /> location
         value={search.location ?? ""}
       />
     </aside>
