@@ -5,6 +5,7 @@
   --input-border-color: var(--text-light);
   --input-border-color-hover: var(--text);
   --input-border-color-focus: var(--primary);
+  --input-text: var(--text-dark);
   --placeholder-color: var(--text-secondary);
   .input {
     flex-grow: 1;
@@ -14,11 +15,6 @@
 
     font-family: inherit;
     font-weight: 400;
-
-    // NOTE: this will be simplified in next version of @hrc/input
-    &__inner {
-      color: var(--text-dark);
-    }
   }
 
   --button-padding: 20px 40px;
