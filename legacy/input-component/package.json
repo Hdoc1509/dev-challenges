@@ -10,27 +10,27 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@fontsource-variable/montserrat": "5.0.17",
-    "@fontsource-variable/noto-sans-jp": "5.0.19",
-    "@fontsource/montserrat": "5.0.17",
-    "@fontsource/noto-sans-jp": "5.0.19",
-    "@fontsource/poppins": "5.0.8",
-    "@fontsource/ubuntu-mono": "5.0.20",
-    "@hrc/material-icons": "2.3.0",
-    "@hrc/toggle-theme": "2.3.0",
+    "@fontsource-variable/montserrat": "catalog:",
+    "@fontsource-variable/noto-sans-jp": "catalog:",
+    "@fontsource/montserrat": "catalog:",
+    "@fontsource/noto-sans-jp": "catalog:",
+    "@fontsource/poppins": "catalog:",
+    "@fontsource/ubuntu-mono": "catalog:",
+    "@hrc/material-icons": "catalog:",
+    "@hrc/toggle-theme": "catalog:",
     "@lib/components": "workspace:*",
     "@lib/sass-utils": "workspace:*",
-    "@material-design-icons/font": "0.14.13",
-    "clsx": "2.0.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "@material-design-icons/font": "catalog:",
+    "clsx": "catalog:",
+    "react": "catalog:",
+    "react-dom": "catalog:"
   },
   "devDependencies": {
-    "@hrc/type-utils": "1.1.2",
-    "@vitejs/plugin-react": "4.2.0",
-    "sass": "1.65.0",
-    "typescript": "5.3.2",
-    "vite": "5.0.2"
+    "@hrc/type-utils": "catalog:",
+    "@vitejs/plugin-react": "catalog:",
+    "sass": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:"
   },
   "engines": {
     "node": ">=18",

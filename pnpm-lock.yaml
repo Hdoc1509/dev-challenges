@@ -4,81 +4,231 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+catalogs:
+  default:
+    '@astrojs/check':
+      specifier: 0.7.0
+      version: 0.7.0
+    '@astrojs/netlify':
+      specifier: 5.2.1
+      version: 5.2.1
+    '@astrojs/react':
+      specifier: 3.3.4
+      version: 3.3.4
+    '@fontsource-variable/montserrat':
+      specifier: 5.0.17
+      version: 5.0.17
+    '@fontsource-variable/mulish':
+      specifier: 5.0.18
+      version: 5.0.18
+    '@fontsource-variable/noto-sans-jp':
+      specifier: 5.0.19
+      version: 5.0.19
+    '@fontsource-variable/raleway':
+      specifier: 5.0.19
+      version: 5.0.19
+    '@fontsource/montserrat':
+      specifier: 5.0.17
+      version: 5.0.17
+    '@fontsource/mulish':
+      specifier: 5.0.17
+      version: 5.0.17
+    '@fontsource/noto-sans-jp':
+      specifier: 5.0.19
+      version: 5.0.19
+    '@fontsource/poppins':
+      specifier: 5.0.8
+      version: 5.0.8
+    '@fontsource/raleway':
+      specifier: 5.0.18
+      version: 5.0.18
+    '@fontsource/roboto':
+      specifier: 5.0.8
+      version: 5.0.8
+    '@fontsource/ubuntu-mono':
+      specifier: 5.0.20
+      version: 5.0.20
+    '@hrc/button':
+      specifier: 3.0.0
+      version: 3.0.0
+    '@hrc/input':
+      specifier: 1.0.0
+      version: 1.0.0
+    '@hrc/material-icons':
+      specifier: 2.3.0
+      version: 2.3.0
+    '@hrc/spinner':
+      specifier: 0.3.2
+      version: 0.3.2
+    '@hrc/toggle-theme':
+      specifier: 2.3.0
+      version: 2.3.0
+    '@hrc/type-utils':
+      specifier: 1.1.2
+      version: 1.1.2
+    '@material-design-icons/font':
+      specifier: 0.14.13
+      version: 0.14.13
+    '@types/node':
+      specifier: 20.5.0
+      version: 20.5.0
+    '@types/react':
+      specifier: 18.2.79
+      version: 18.2.79
+    '@types/react-dom':
+      specifier: 18.2.25
+      version: 18.2.25
+    '@typescript-eslint/eslint-plugin':
+      specifier: 7.12.0
+      version: 7.12.0
+    '@typescript-eslint/parser':
+      specifier: 7.12.0
+      version: 7.12.0
+    '@vitejs/plugin-react':
+      specifier: 4.2.0
+      version: 4.2.0
+    astro:
+      specifier: 4.8.6
+      version: 4.8.6
+    clsx:
+      specifier: 2.0.0
+      version: 2.0.0
+    eslint:
+      specifier: 8.57.0
+      version: 8.57.0
+    eslint-plugin-astro:
+      specifier: 1.2.0
+      version: 1.2.0
+    eslint-plugin-react:
+      specifier: 7.34.2
+      version: 7.34.2
+    eslint-plugin-react-hooks:
+      specifier: 4.6.2
+      version: 4.6.2
+    eslint-plugin-react-refresh:
+      specifier: 0.4.7
+      version: 0.4.7
+    hygen:
+      specifier: 6.2.11
+      version: 6.2.11
+    npkill:
+      specifier: 0.11.3
+      version: 0.11.3
+    prettier:
+      specifier: 3.0.1
+      version: 3.0.1
+    prettier-plugin-astro:
+      specifier: 0.13.0
+      version: 0.13.0
+    react:
+      specifier: 18.2.0
+      version: 18.2.0
+    react-dom:
+      specifier: 18.2.0
+      version: 18.2.0
+    react-loading-skeleton:
+      specifier: 3.4.0
+      version: 3.4.0
+    react-paginate:
+      specifier: 8.2.0
+      version: 8.2.0
+    react-router-dom:
+      specifier: 6.23.1
+      version: 6.23.1
+    sass:
+      specifier: 1.65.0
+      version: 1.65.0
+    typescript:
+      specifier: 5.3.2
+      version: 5.3.2
+    vite:
+      specifier: 5.0.2
+      version: 5.0.2
+    vitest:
+      specifier: 0.34.6
+      version: 0.34.6
+    zod:
+      specifier: 3.22.4
+      version: 3.22.4
+    zustand:
+      specifier: 4.4.3
+      version: 4.4.3
+
 importers:
 
   .:
     devDependencies:
       '@types/node':
-        specifier: 20.5.0
+        specifier: 'catalog:'
         version: 20.5.0
       '@types/react':
-        specifier: 18.2.79
+        specifier: 'catalog:'
         version: 18.2.79
       '@types/react-dom':
-        specifier: 18.2.25
+        specifier: 'catalog:'
         version: 18.2.25
       '@typescript-eslint/eslint-plugin':
-        specifier: 7.12.0
+        specifier: 'catalog:'
         version: 7.12.0(@typescript-eslint/parser@7.12.0(eslint@8.57.0)(typescript@5.3.2))(eslint@8.57.0)(typescript@5.3.2)
       '@typescript-eslint/parser':
-        specifier: 7.12.0
+        specifier: 'catalog:'
         version: 7.12.0(eslint@8.57.0)(typescript@5.3.2)
       eslint:
-        specifier: 8.57.0
+        specifier: 'catalog:'
         version: 8.57.0
       eslint-plugin-astro:
-        specifier: 1.2.0
+        specifier: 'catalog:'
         version: 1.2.0(eslint@8.57.0)(typescript@5.3.2)
       eslint-plugin-react:
-        specifier: 7.34.2
+        specifier: 'catalog:'
         version: 7.34.2(eslint@8.57.0)
       eslint-plugin-react-hooks:
-        specifier: 4.6.2
+        specifier: 'catalog:'
         version: 4.6.2(eslint@8.57.0)
       eslint-plugin-react-refresh:
-        specifier: 0.4.7
+        specifier: 'catalog:'
         version: 0.4.7(eslint@8.57.0)
       hygen:
-        specifier: 6.2.11
+        specifier: 'catalog:'
         version: 6.2.11
       npkill:
-        specifier: 0.11.3
+        specifier: 'catalog:'
         version: 0.11.3
       prettier:
-        specifier: 3.0.1
+        specifier: 'catalog:'
         version: 3.0.1
       prettier-plugin-astro:
-        specifier: 0.13.0
+        specifier: 'catalog:'
         version: 0.13.0
       typescript:
-        specifier: 5.3.2
+        specifier: 'catalog:'
         version: 5.3.2
 
   legacy/button-component:
     dependencies:
       '@fontsource-variable/montserrat':
-        specifier: 5.0.17
+        specifier: 'catalog:'
         version: 5.0.17
       '@fontsource-variable/noto-sans-jp':
-        specifier: 5.0.19
+        specifier: 'catalog:'
         version: 5.0.19
       '@fontsource/montserrat':
-        specifier: 5.0.17
+        specifier: 'catalog:'
         version: 5.0.17
       '@fontsource/noto-sans-jp':
-        specifier: 5.0.19
+        specifier: 'catalog:'
         version: 5.0.19
       '@fontsource/poppins':
-        specifier: 5.0.8
+        specifier: 'catalog:'
         version: 5.0.8
       '@fontsource/ubuntu-mono':
-        specifier: 5.0.20
+        specifier: 'catalog:'
         version: 5.0.20
       '@hrc/material-icons':
-        specifier: 2.3.0
+        specifier: 'catalog:'
         version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@hrc/toggle-theme':
-        specifier: 2.3.0
+        specifier: 'catalog:'
         version: 2.3.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@lib/components':
         specifier: workspace:*
@@ -87,53 +237,53 @@ importers:
         specifier: workspace:*
         version: link:../../libs/sass-utils
       '@material-design-icons/font':
-        specifier: 0.14.13
+        specifier: 'catalog:'
         version: 0.14.13
       clsx:
-        specifier: 2.0.0
+        specifier: 'catalog:'
         version: 2.0.0
       react:
-        specifier: 18.2.0
+        specifier: 'catalog:'
         version: 18.2.0
       react-dom:
-        specifier: 18.2.0
+        specifier: 'catalog:'
         version: 18.2.0(react@18.2.0)
     devDependencies:
       '@hrc/type-utils':
-        specifier: 1.1.2
+        specifier: 'catalog:'
         version: 1.1.2(typescript@5.3.2)
       '@vitejs/plugin-react':
-        specifier: 4.2.0
+        specifier: 'catalog:'
         version: 4.2.0(vite@5.0.2(@types/node@20.5.0)(sass@1.65.0))
       sass:
-        specifier: 1.65.0
+        specifier: 'catalog:'
         version: 1.65.0
       typescript:
-        specifier: 5.3.2
+        specifier: 'catalog:'
         version: 5.3.2
       vite:
-        specifier: 5.0.2
+        specifier: 'catalog:'
         version: 5.0.2(@types/node@20.5.0)(sass@1.65.0)
 
   legacy/country-quiz:
     dependencies:
       '@fontsource-variable/montserrat':
-        specifier: 5.0.17
+        specifier: 'catalog:'
         version: 5.0.17
       '@fontsource/montserrat':
-        specifier: 5.0.17
+        specifier: 'catalog:'
         version: 5.0.17
       '@fontsource/poppins':
-        specifier: 5.0.8
+        specifier: 'catalog:'
         version: 5.0.8
       '@hrc/button':
-        specifier: 3.0.0
+        specifier: 'catalog:'
         version: 3.0.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
       '@hrc/material-icons':
-        specifier: 2.3.0
+        specifier: 'catalog:'
         version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@hrc/spinner':
-        specifier: 0.3.2
+        specifier: 'catalog:'
         version: 0.3.2(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@lib/components':
         specifier: workspace:*
@@ -145,74 +295,74 @@ importers:
         specifier: workspace:*
         version: link:../../libs/sass-utils
       '@material-design-icons/font':
-        specifier: 0.14.13
+        specifier: 'catalog:'
         version: 0.14.13
       clsx:
-        specifier: 2.0.0
+        specifier: 'catalog:'
         version: 2.0.0
       react:
-        specifier: 18.2.0
+        specifier: 'catalog:'
         version: 18.2.0
       react-dom:
-        specifier: 18.2.0
+        specifier: 'catalog:'
         version: 18.2.0(react@18.2.0)
       zod:
-        specifier: 3.22.4
+        specifier: 'catalog:'
         version: 3.22.4
       zustand:
-        specifier: 4.4.3
+        specifier: 'catalog:'
         version: 4.4.3(@types/react@18.2.79)(react@18.2.0)
     devDependencies:
       '@vitejs/plugin-react':
-        specifier: 4.2.0
+        specifier: 'catalog:'
         version: 4.2.0(vite@5.0.2(@types/node@20.5.0)(sass@1.65.0))
       sass:
-        specifier: 1.65.0
+        specifier: 'catalog:'
         version: 1.65.0
       typescript:
-        specifier: 5.3.2
+        specifier: 'catalog:'
         version: 5.3.2
       vite:
-        specifier: 5.0.2
+        specifier: 'catalog:'
         version: 5.0.2(@types/node@20.5.0)(sass@1.65.0)
       vitest:
-        specifier: 0.34.6
+        specifier: 'catalog:'
         version: 0.34.6(sass@1.65.0)
 
   legacy/github-jobs:
     dependencies:
       '@astrojs/netlify':
-        specifier: 5.2.1
+        specifier: 'catalog:'
         version: 5.2.1(@opentelemetry/api@1.8.0)(astro@4.8.6(@types/node@20.5.0)(sass@1.65.0)(typescript@5.3.2))
       '@astrojs/react':
-        specifier: 3.3.4
+        specifier: 'catalog:'
         version: 3.3.4(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(vite@5.2.11(@types/node@20.5.0)(sass@1.65.0))
       '@fontsource-variable/montserrat':
-        specifier: 5.0.17
+        specifier: 'catalog:'
         version: 5.0.17
       '@fontsource/montserrat':
-        specifier: 5.0.17
+        specifier: 'catalog:'
         version: 5.0.17
       '@fontsource/poppins':
-        specifier: 5.0.8
+        specifier: 'catalog:'
         version: 5.0.8
       '@fontsource/roboto':
-        specifier: 5.0.8
+        specifier: 'catalog:'
         version: 5.0.8
       '@hrc/button':
-        specifier: 3.0.0
+        specifier: 'catalog:'
         version: 3.0.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
       '@hrc/input':
-        specifier: 1.0.0
+        specifier: 'catalog:'
         version: 1.0.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
       '@hrc/material-icons':
-        specifier: 2.3.0
+        specifier: 'catalog:'
         version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@hrc/spinner':
-        specifier: 0.3.2
+        specifier: 'catalog:'
         version: 0.3.2(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@hrc/toggle-theme':
-        specifier: 2.3.0
+        specifier: 'catalog:'
         version: 2.3.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@lib/components':
         specifier: workspace:*
@@ -227,71 +377,71 @@ importers:
         specifier: workspace:*
         version: link:../../libs/sass-utils
       '@material-design-icons/font':
-        specifier: 0.14.13
+        specifier: 'catalog:'
         version: 0.14.13
       astro:
-        specifier: 4.8.6
+        specifier: 'catalog:'
         version: 4.8.6(@types/node@20.5.0)(sass@1.65.0)(typescript@5.3.2)
       clsx:
-        specifier: 2.0.0
+        specifier: 'catalog:'
         version: 2.0.0
       react:
-        specifier: 18.2.0
+        specifier: 'catalog:'
         version: 18.2.0
       react-dom:
-        specifier: 18.2.0
+        specifier: 'catalog:'
         version: 18.2.0(react@18.2.0)
       react-loading-skeleton:
-        specifier: 3.4.0
+        specifier: 'catalog:'
         version: 3.4.0(react@18.2.0)
       react-paginate:
-        specifier: 8.2.0
+        specifier: 'catalog:'
         version: 8.2.0(react@18.2.0)
       react-router-dom:
-        specifier: 6.23.1
+        specifier: 'catalog:'
         version: 6.23.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       zod:
-        specifier: 3.22.4
+        specifier: 'catalog:'
         version: 3.22.4
       zustand:
-        specifier: 4.4.3
+        specifier: 'catalog:'
         version: 4.4.3(@types/react@18.2.79)(react@18.2.0)
     devDependencies:
       '@astrojs/check':
-        specifier: 0.7.0
+        specifier: 'catalog:'
         version: 0.7.0(prettier-plugin-astro@0.13.0)(prettier@3.0.1)(typescript@5.3.2)
       sass:
-        specifier: 1.65.0
+        specifier: 'catalog:'
         version: 1.65.0
       typescript:
-        specifier: 5.3.2
+        specifier: 'catalog:'
         version: 5.3.2
 
   legacy/input-component:
     dependencies:
       '@fontsource-variable/montserrat':
-        specifier: 5.0.17
+        specifier: 'catalog:'
         version: 5.0.17
       '@fontsource-variable/noto-sans-jp':
-        specifier: 5.0.19
+        specifier: 'catalog:'
         version: 5.0.19
       '@fontsource/montserrat':
-        specifier: 5.0.17
+        specifier: 'catalog:'
         version: 5.0.17
       '@fontsource/noto-sans-jp':
-        specifier: 5.0.19
+        specifier: 'catalog:'
         version: 5.0.19
       '@fontsource/poppins':
-        specifier: 5.0.8
+        specifier: 'catalog:'
         version: 5.0.8
       '@fontsource/ubuntu-mono':
-        specifier: 5.0.20
+        specifier: 'catalog:'
         version: 5.0.20
       '@hrc/material-icons':
-        specifier: 2.3.0
+        specifier: 'catalog:'
         version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@hrc/toggle-theme':
-        specifier: 2.3.0
+        specifier: 'catalog:'
         version: 2.3.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@lib/components':
         specifier: workspace:*
@@ -300,59 +450,59 @@ importers:
         specifier: workspace:*
         version: link:../../libs/sass-utils
       '@material-design-icons/font':
-        specifier: 0.14.13
+        specifier: 'catalog:'
         version: 0.14.13
       clsx:
-        specifier: 2.0.0
+        specifier: 'catalog:'
         version: 2.0.0
       react:
-        specifier: 18.2.0
+        specifier: 'catalog:'
         version: 18.2.0
       react-dom:
-        specifier: 18.2.0
+        specifier: 'catalog:'
         version: 18.2.0(react@18.2.0)
     devDependencies:
       '@hrc/type-utils':
-        specifier: 1.1.2
+        specifier: 'catalog:'
         version: 1.1.2(typescript@5.3.2)
       '@vitejs/plugin-react':
-        specifier: 4.2.0
+        specifier: 'catalog:'
         version: 4.2.0(vite@5.0.2(@types/node@20.5.0)(sass@1.65.0))
       sass:
-        specifier: 1.65.0
+        specifier: 'catalog:'
         version: 1.65.0
       typescript:
-        specifier: 5.3.2
+        specifier: 'catalog:'
         version: 5.3.2
       vite:
-        specifier: 5.0.2
+        specifier: 'catalog:'
         version: 5.0.2(@types/node@20.5.0)(sass@1.65.0)
 
   legacy/quote-generator:
     dependencies:
       '@fontsource-variable/montserrat':
-        specifier: 5.0.17
+        specifier: 'catalog:'
         version: 5.0.17
       '@fontsource-variable/raleway':
-        specifier: 5.0.19
+        specifier: 'catalog:'
         version: 5.0.19
       '@fontsource/montserrat':
-        specifier: 5.0.17
+        specifier: 'catalog:'
         version: 5.0.17
       '@fontsource/raleway':
-        specifier: 5.0.18
+        specifier: 'catalog:'
         version: 5.0.18
       '@hrc/button':
-        specifier: 3.0.0
+        specifier: 'catalog:'
         version: 3.0.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
       '@hrc/material-icons':
-        specifier: 2.3.0
+        specifier: 'catalog:'
         version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@hrc/spinner':
-        specifier: 0.3.2
+        specifier: 'catalog:'
         version: 0.3.2(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@hrc/toggle-theme':
-        specifier: 2.3.0
+        specifier: 'catalog:'
         version: 2.3.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@lib/components':
         specifier: workspace:*
@@ -364,56 +514,56 @@ importers:
         specifier: workspace:*
         version: link:../../libs/sass-utils
       '@material-design-icons/font':
-        specifier: 0.14.13
+        specifier: 'catalog:'
         version: 0.14.13
       react:
-        specifier: 18.2.0
+        specifier: 'catalog:'
         version: 18.2.0
       react-dom:
-        specifier: 18.2.0
+        specifier: 'catalog:'
         version: 18.2.0(react@18.2.0)
       zod:
-        specifier: 3.22.4
+        specifier: 'catalog:'
         version: 3.22.4
     devDependencies:
       '@vitejs/plugin-react':
-        specifier: 4.2.0
+        specifier: 'catalog:'
         version: 4.2.0(vite@5.0.2(@types/node@20.5.0)(sass@1.65.0))
       sass:
-        specifier: 1.65.0
+        specifier: 'catalog:'
         version: 1.65.0
       typescript:
-        specifier: 5.3.2
+        specifier: 'catalog:'
         version: 5.3.2
       vite:
-        specifier: 5.0.2
+        specifier: 'catalog:'
         version: 5.0.2(@types/node@20.5.0)(sass@1.65.0)
 
   legacy/todo-app:
     dependencies:
       '@fontsource-variable/montserrat':
-        specifier: 5.0.17
+        specifier: 'catalog:'
         version: 5.0.17
       '@fontsource-variable/raleway':
-        specifier: 5.0.19
+        specifier: 'catalog:'
         version: 5.0.19
       '@fontsource/montserrat':
-        specifier: 5.0.17
+        specifier: 'catalog:'
         version: 5.0.17
       '@fontsource/raleway':
-        specifier: 5.0.18
+        specifier: 'catalog:'
         version: 5.0.18
       '@hrc/button':
-        specifier: 3.0.0
+        specifier: 'catalog:'
         version: 3.0.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
       '@hrc/input':
-        specifier: 1.0.0
+        specifier: 'catalog:'
         version: 1.0.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
       '@hrc/material-icons':
-        specifier: 2.3.0
+        specifier: 'catalog:'
         version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@hrc/toggle-theme':
-        specifier: 2.3.0
+        specifier: 'catalog:'
         version: 2.3.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@lib/components':
         specifier: workspace:*
@@ -422,62 +572,62 @@ importers:
         specifier: workspace:*
         version: link:../../libs/sass-utils
       '@material-design-icons/font':
-        specifier: 0.14.13
+        specifier: 'catalog:'
         version: 0.14.13
       clsx:
-        specifier: 2.0.0
+        specifier: 'catalog:'
         version: 2.0.0
       react:
-        specifier: 18.2.0
+        specifier: 'catalog:'
         version: 18.2.0
       react-dom:
-        specifier: 18.2.0
+        specifier: 'catalog:'
         version: 18.2.0(react@18.2.0)
     devDependencies:
       '@vitejs/plugin-react':
-        specifier: 4.2.0
+        specifier: 'catalog:'
         version: 4.2.0(vite@5.0.2(@types/node@20.5.0)(sass@1.65.0))
       sass:
-        specifier: 1.65.0
+        specifier: 'catalog:'
         version: 1.65.0
       typescript:
-        specifier: 5.3.2
+        specifier: 'catalog:'
         version: 5.3.2
       vite:
-        specifier: 5.0.2
+        specifier: 'catalog:'
         version: 5.0.2(@types/node@20.5.0)(sass@1.65.0)
 
   legacy/weather-app:
     dependencies:
       '@astrojs/netlify':
-        specifier: 5.2.1
+        specifier: 'catalog:'
         version: 5.2.1(@opentelemetry/api@1.8.0)(astro@4.8.6(@types/node@20.5.0)(sass@1.65.0)(typescript@5.3.2))
       '@astrojs/react':
-        specifier: 3.3.4
+        specifier: 'catalog:'
         version: 3.3.4(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(vite@5.2.11(@types/node@20.5.0)(sass@1.65.0))
       '@fontsource-variable/montserrat':
-        specifier: 5.0.17
+        specifier: 'catalog:'
         version: 5.0.17
       '@fontsource-variable/raleway':
-        specifier: 5.0.19
+        specifier: 'catalog:'
         version: 5.0.19
       '@fontsource/montserrat':
-        specifier: 5.0.17
+        specifier: 'catalog:'
         version: 5.0.17
       '@fontsource/raleway':
-        specifier: 5.0.18
+        specifier: 'catalog:'
         version: 5.0.18
       '@hrc/button':
-        specifier: 3.0.0
+        specifier: 'catalog:'
         version: 3.0.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
       '@hrc/input':
-        specifier: 1.0.0
+        specifier: 'catalog:'
         version: 1.0.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
       '@hrc/material-icons':
-        specifier: 2.3.0
+        specifier: 'catalog:'
         version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@hrc/spinner':
-        specifier: 0.3.2
+        specifier: 'catalog:'
         version: 0.3.2(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@lib/components':
         specifier: workspace:*
@@ -492,65 +642,65 @@ importers:
         specifier: workspace:*
         version: link:../../libs/sass-utils
       '@material-design-icons/font':
-        specifier: 0.14.13
+        specifier: 'catalog:'
         version: 0.14.13
       astro:
-        specifier: 4.8.6
+        specifier: 'catalog:'
         version: 4.8.6(@types/node@20.5.0)(sass@1.65.0)(typescript@5.3.2)
       clsx:
-        specifier: 2.0.0
+        specifier: 'catalog:'
         version: 2.0.0
       react:
-        specifier: 18.2.0
+        specifier: 'catalog:'
         version: 18.2.0
       react-dom:
-        specifier: 18.2.0
+        specifier: 'catalog:'
         version: 18.2.0(react@18.2.0)
       react-loading-skeleton:
-        specifier: 3.4.0
+        specifier: 'catalog:'
         version: 3.4.0(react@18.2.0)
       zod:
-        specifier: 3.22.4
+        specifier: 'catalog:'
         version: 3.22.4
       zustand:
-        specifier: 4.4.3
+        specifier: 'catalog:'
         version: 4.4.3(@types/react@18.2.79)(react@18.2.0)
     devDependencies:
       '@astrojs/check':
-        specifier: 0.7.0
+        specifier: 'catalog:'
         version: 0.7.0(prettier-plugin-astro@0.13.0)(prettier@3.0.1)(typescript@5.3.2)
       sass:
-        specifier: 1.65.0
+        specifier: 'catalog:'
         version: 1.65.0
       typescript:
-        specifier: 5.3.2
+        specifier: 'catalog:'
         version: 5.3.2
 
   legacy/windbnb:
     dependencies:
       '@fontsource-variable/montserrat':
-        specifier: 5.0.17
+        specifier: 'catalog:'
         version: 5.0.17
       '@fontsource-variable/mulish':
-        specifier: 5.0.18
+        specifier: 'catalog:'
         version: 5.0.18
       '@fontsource/montserrat':
-        specifier: 5.0.17
+        specifier: 'catalog:'
         version: 5.0.17
       '@fontsource/mulish':
-        specifier: 5.0.17
+        specifier: 'catalog:'
         version: 5.0.17
       '@hrc/button':
-        specifier: 3.0.0
+        specifier: 'catalog:'
         version: 3.0.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
       '@hrc/material-icons':
-        specifier: 2.3.0
+        specifier: 'catalog:'
         version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@hrc/spinner':
-        specifier: 0.3.2
+        specifier: 'catalog:'
         version: 0.3.2(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@hrc/toggle-theme':
-        specifier: 2.3.0
+        specifier: 'catalog:'
         version: 2.3.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@lib/components':
         specifier: workspace:*
@@ -562,47 +712,47 @@ importers:
         specifier: workspace:*
         version: link:../../libs/sass-utils
       '@material-design-icons/font':
-        specifier: 0.14.13
+        specifier: 'catalog:'
         version: 0.14.13
       clsx:
-        specifier: 2.0.0
+        specifier: 'catalog:'
         version: 2.0.0
       react:
-        specifier: 18.2.0
+        specifier: 'catalog:'
         version: 18.2.0
       react-dom:
-        specifier: 18.2.0
+        specifier: 'catalog:'
         version: 18.2.0(react@18.2.0)
       zod:
-        specifier: 3.22.4
+        specifier: 'catalog:'
         version: 3.22.4
       zustand:
-        specifier: 4.4.3
+        specifier: 'catalog:'
         version: 4.4.3(@types/react@18.2.79)(react@18.2.0)
     devDependencies:
       '@hrc/type-utils':
-        specifier: 1.1.2
+        specifier: 'catalog:'
         version: 1.1.2(typescript@5.3.2)
       '@vitejs/plugin-react':
-        specifier: 4.2.0
+        specifier: 'catalog:'
         version: 4.2.0(vite@5.0.2(@types/node@20.5.0)(sass@1.65.0))
       sass:
-        specifier: 1.65.0
+        specifier: 'catalog:'
         version: 1.65.0
       typescript:
-        specifier: 5.3.2
+        specifier: 'catalog:'
         version: 5.3.2
       vite:
-        specifier: 5.0.2
+        specifier: 'catalog:'
         version: 5.0.2(@types/node@20.5.0)(sass@1.65.0)
 
   libs/components:
     dependencies:
       '@hrc/material-icons':
-        specifier: 2.3.0
+        specifier: 'catalog:'
         version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@hrc/toggle-theme':
-        specifier: 2.3.0
+        specifier: 'catalog:'
         version: 2.3.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@lib/sass-utils':
         specifier: workspace:*
@@ -611,7 +761,7 @@ importers:
   libs/fetcher:
     dependencies:
       zod:
-        specifier: 3.22.4
+        specifier: 'catalog:'
         version: 3.22.4
 
   libs/geolocation: {}
@@ -2098,10 +2248,6 @@ packages:
     resolution: {integrity: sha512-VGtlMu3x/4DOtIUwEkRezxUZ2lBacNJCHash0N0WeZDBS+7Ux1dm3XWAgWYxLJFMMdOeXMHXorshEFhbMSGelg==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
-  cli-spinners@2.9.0:
-    resolution: {integrity: sha512-4/aL9X3Wh0yiMQlE+eeRhWP6vclO3QRtw1JHKIT0FFUs5FjpFmESqtMvYZ0+lbzBw900b95mS0hohy+qn2VK/g==}
-    engines: {node: '>=6'}
-
   cli-spinners@2.9.2:
     resolution: {integrity: sha512-ywqV+5MmyL4E7ybXgKys4DugZbX0FC6LnwrhjuykIjnK9k8OQacQ7axGKnjDXWNhns0xot3bZI5h55H8yo9cJg==}
     engines: {node: '>=6'}
@@ -2188,15 +2334,6 @@ packages:
   data-view-byte-offset@1.0.0:
     resolution: {integrity: sha512-t/Ygsytq+R995EJ5PZlD4Cu56sWa8InXySaViRzw9apusqsOO2bQP+SbYzAhR0pFKoB+43lYy8rWban9JSuXnA==}
     engines: {node: '>= 0.4'}
-
-  debug@4.3.4:
-    resolution: {integrity: sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==}
-    engines: {node: '>=6.0'}
-    peerDependencies:
-      supports-color: '*'
-    peerDependenciesMeta:
-      supports-color:
-        optional: true
 
   debug@4.3.5:
     resolution: {integrity: sha512-pt0bNEmneDIvdL1Xsd9oDQ/wrQRkXDT4AUWlNZNPKvW5x/jyO9VFXkJUP07vQ2upmw5PlaITaPKc31jK13V+jg==}
@@ -2556,6 +2693,7 @@ packages:
 
   gar@1.0.4:
     resolution: {integrity: sha512-w4n9cPWyP7aHxKxYHFQMegj7WIAsL/YX/C4Bs5Rr8s1H9M1rNtRWRsw+ovYMkXDQ5S4ZbYHsHAPmevPjPgw44w==}
+    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
   gensync@1.0.0-beta.2:
     resolution: {integrity: sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg==}
@@ -3877,9 +4015,6 @@ packages:
       typescript:
         optional: true
 
-  tslib@2.6.2:
-    resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
-
   tslib@2.6.3:
     resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
 
@@ -4877,7 +5012,7 @@ snapshots:
     dependencies:
       '@hrc/type-utils': 1.1.2(typescript@5.3.2)
       '@types/react': 18.2.79
-      clsx: 2.0.0
+      clsx: 2.1.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     transitivePeerDependencies:
@@ -4887,7 +5022,7 @@ snapshots:
     dependencies:
       '@hrc/type-utils': 1.1.2(typescript@5.3.2)
       '@types/react': 18.2.79
-      clsx: 2.0.0
+      clsx: 2.1.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     transitivePeerDependencies:
@@ -4897,14 +5032,14 @@ snapshots:
     dependencies:
       '@material-design-icons/font': 0.14.13
       '@types/react': 18.2.79
-      clsx: 2.0.0
+      clsx: 2.1.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
   '@hrc/spinner@0.3.2(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
       '@types/react': 18.2.79
-      clsx: 2.0.0
+      clsx: 2.1.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
 
@@ -5622,7 +5757,7 @@ snapshots:
       common-ancestor-path: 1.0.1
       cookie: 0.6.0
       cssesc: 3.0.0
-      debug: 4.3.4
+      debug: 4.3.5
       deterministic-object-hash: 2.0.2
       devalue: 5.0.0
       diff: 5.2.0
@@ -5844,8 +5979,6 @@ snapshots:
     dependencies:
       restore-cursor: 4.0.0
 
-  cli-spinners@2.9.0: {}
-
   cli-spinners@2.9.2: {}
 
   cliui@8.0.1:
@@ -5928,10 +6061,6 @@ snapshots:
       call-bind: 1.0.7
       es-errors: 1.3.0
       is-data-view: 1.0.1
-
-  debug@4.3.4:
-    dependencies:
-      ms: 2.1.2
 
   debug@4.3.5:
     dependencies:
@@ -6682,7 +6811,7 @@ snapshots:
       '@types/node': 17.0.45
       chalk: 4.1.2
       change-case: 3.1.0
-      debug: 4.3.4
+      debug: 4.3.5
       degit: 2.8.4
       ejs: 3.1.9
       enquirer: 2.4.1
@@ -7446,7 +7575,7 @@ snapshots:
       bl: 4.1.0
       chalk: 4.1.2
       cli-cursor: 3.1.0
-      cli-spinners: 2.9.0
+      cli-spinners: 2.9.2
       is-interactive: 1.0.0
       is-unicode-supported: 0.1.0
       log-symbols: 4.1.0
@@ -7834,7 +7963,7 @@ snapshots:
 
   rxjs@7.8.1:
     dependencies:
-      tslib: 2.6.2
+      tslib: 2.6.3
 
   s.color@0.0.15: {}
 
@@ -8112,8 +8241,6 @@ snapshots:
     optionalDependencies:
       typescript: 5.3.2
 
-  tslib@2.6.2: {}
-
   tslib@2.6.3: {}
 
   type-check@0.4.0:
@@ -8323,7 +8450,7 @@ snapshots:
       mlly: 1.4.2
       pathe: 1.1.1
       picocolors: 1.0.0
-      vite: 5.0.2(@types/node@20.5.0)(sass@1.65.0)
+      vite: 5.2.11(@types/node@20.5.0)(sass@1.65.0)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -8372,7 +8499,7 @@ snapshots:
       acorn-walk: 8.3.0
       cac: 6.7.14
       chai: 4.3.10
-      debug: 4.3.4
+      debug: 4.3.5
       local-pkg: 0.4.3
       magic-string: 0.30.10
       pathe: 1.1.1
@@ -8381,7 +8508,7 @@ snapshots:
       strip-literal: 1.3.0
       tinybench: 2.5.1
       tinypool: 0.7.0
-      vite: 5.0.2(@types/node@20.5.0)(sass@1.65.0)
+      vite: 5.2.11(@types/node@20.5.0)(sass@1.65.0)
       vite-node: 0.34.6(@types/node@20.5.0)(sass@1.65.0)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
