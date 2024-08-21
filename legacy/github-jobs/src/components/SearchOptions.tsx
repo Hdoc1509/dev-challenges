@@ -35,7 +35,6 @@ export const SearchOptions = () => {
         form={form}
         options={predefinedCities}
         onChange={(location) => setSearch({ location })}
-        // FIX: group is not unchecking when changing <Input /> location
         value={search.location ?? ""}
       />
     </aside>
