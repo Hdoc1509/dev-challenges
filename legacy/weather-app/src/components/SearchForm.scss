@@ -6,9 +6,6 @@
 
   --label-text: var(--secondary-dark);
   --label-text-focus: var(--text);
-  .label {
-    font-family: inherit; // NOTE: this will be added to @hrc/input
-  }
   --input-gap: 16px;
   --input-border-color: var(--text-secondary);
   --input-border-color-hover: var(--text);
