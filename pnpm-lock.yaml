@@ -49,11 +49,11 @@ catalogs:
       specifier: 5.0.20
       version: 5.0.20
     '@hrc/button':
-      specifier: 3.0.0
-      version: 3.0.0
+      specifier: 3.1.0
+      version: 3.1.0
     '@hrc/input':
-      specifier: 1.0.0
-      version: 1.0.0
+      specifier: 1.1.0
+      version: 1.1.0
     '@hrc/material-icons':
       specifier: 2.3.0
       version: 2.3.0
@@ -278,7 +278,7 @@ importers:
         version: 5.0.8
       '@hrc/button':
         specifier: 'catalog:'
-        version: 3.0.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
+        version: 3.1.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
       '@hrc/material-icons':
         specifier: 'catalog:'
         version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -351,10 +351,10 @@ importers:
         version: 5.0.8
       '@hrc/button':
         specifier: 'catalog:'
-        version: 3.0.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
+        version: 3.1.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
       '@hrc/input':
         specifier: 'catalog:'
-        version: 1.0.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
+        version: 1.1.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
       '@hrc/material-icons':
         specifier: 'catalog:'
         version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -494,7 +494,7 @@ importers:
         version: 5.0.18
       '@hrc/button':
         specifier: 'catalog:'
-        version: 3.0.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
+        version: 3.1.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
       '@hrc/material-icons':
         specifier: 'catalog:'
         version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -555,10 +555,10 @@ importers:
         version: 5.0.18
       '@hrc/button':
         specifier: 'catalog:'
-        version: 3.0.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
+        version: 3.1.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
       '@hrc/input':
         specifier: 'catalog:'
-        version: 1.0.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
+        version: 1.1.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
       '@hrc/material-icons':
         specifier: 'catalog:'
         version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -619,10 +619,10 @@ importers:
         version: 5.0.18
       '@hrc/button':
         specifier: 'catalog:'
-        version: 3.0.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
+        version: 3.1.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
       '@hrc/input':
         specifier: 'catalog:'
-        version: 1.0.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
+        version: 1.1.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
       '@hrc/material-icons':
         specifier: 'catalog:'
         version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -692,7 +692,7 @@ importers:
         version: 5.0.17
       '@hrc/button':
         specifier: 'catalog:'
-        version: 3.0.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
+        version: 3.1.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)
       '@hrc/material-icons':
         specifier: 'catalog:'
         version: 2.3.0(@material-design-icons/font@0.14.13)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -1435,15 +1435,15 @@ packages:
   '@fontsource/ubuntu-mono@5.0.20':
     resolution: {integrity: sha512-DR//BlexvmRZIV+j4AQLKIAEso5McT+3CiDqyJkuRAwUK6QzCnTt8fAB5+TKj3R/ww92nYDZpnb3KTjoozmgXg==}
 
-  '@hrc/button@3.0.0':
-    resolution: {integrity: sha512-fFxazRCz/kjjm0CmLi6uArCjxNqQzcwnLCW1UI3bfpz8hQZ2lADFdg4vTbijQXolFJstLBpqiVozTEiFIOnrag==}
+  '@hrc/button@3.1.0':
+    resolution: {integrity: sha512-py44RcsKBvjiwR085BtjrA74nTEN7jFM/4QIgMqwU/YtmxmAxwggdMXPL4JYKDNgiqOj7thoihMpyxmnRo5mRA==}
     peerDependencies:
       '@types/react': ^17.0.0 || ^18.0.0
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
 
-  '@hrc/input@1.0.0':
-    resolution: {integrity: sha512-xe88cQuKw1ePDJiu+OjkWTrp8CRVQXK1bhes5BUHDygfSXGggHIUTOaqMFQUrSvQ6M7a80Rodyg4ognmcclCiw==}
+  '@hrc/input@1.1.0':
+    resolution: {integrity: sha512-WL5RA9pGLMc/+V5IYfOi1kOqJ5vZ/dmPS1MIfbK445bIbup46HriMfsktGIZIP3pB8CLmB4UvC/rJGGraBPEPA==}
     peerDependencies:
       '@types/react': ^17.0.0 || ^18.0.0
       react: ^17.0.0 || ^18.0.0
@@ -5008,7 +5008,7 @@ snapshots:
 
   '@fontsource/ubuntu-mono@5.0.20': {}
 
-  '@hrc/button@3.0.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)':
+  '@hrc/button@3.1.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)':
     dependencies:
       '@hrc/type-utils': 1.1.2(typescript@5.3.2)
       '@types/react': 18.2.79
@@ -5018,7 +5018,7 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@hrc/input@1.0.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)':
+  '@hrc/input@1.1.0(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(typescript@5.3.2)':
     dependencies:
       '@hrc/type-utils': 1.1.2(typescript@5.3.2)
       '@types/react': 18.2.79

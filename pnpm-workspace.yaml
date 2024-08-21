@@ -18,8 +18,8 @@ catalog:
   "@fontsource/raleway": 5.0.18
   "@fontsource/roboto": 5.0.8
   "@fontsource/ubuntu-mono": 5.0.20
-  "@hrc/button": 3.0.0
-  "@hrc/input": 1.0.0
+  "@hrc/button": 3.1.0
+  "@hrc/input": 1.1.0
   "@hrc/material-icons": 2.3.0
   "@hrc/spinner": 0.3.2
   "@hrc/toggle-theme": 2.3.0
