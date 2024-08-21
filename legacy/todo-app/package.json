@@ -29,7 +29,8 @@
     "@vitejs/plugin-react": "catalog:",
     "sass": "catalog:",
     "typescript": "catalog:",
-    "vite": "catalog:"
+    "vite": "catalog:",
+    "vite-plugin-hrc-import": "catalog:"
   },
   "engines": {
     "node": ">=18",

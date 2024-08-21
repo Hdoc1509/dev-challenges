@@ -1,4 +1,4 @@
-import { Button } from "@hrc/button/dist/Button";
+import { Button } from "@hrc/button";
 import { Icon } from "@hrc/material-icons";
 import "./GeneralActions.scss";
 

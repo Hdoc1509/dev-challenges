@@ -144,6 +144,9 @@ catalogs:
     vite:
       specifier: 5.0.2
       version: 5.0.2
+    vite-plugin-hrc-import:
+      specifier: 1.1.0
+      version: 1.1.0
     vitest:
       specifier: 0.34.6
       version: 0.34.6
@@ -596,6 +599,9 @@ importers:
       vite:
         specifier: 'catalog:'
         version: 5.0.2(@types/node@20.5.0)(sass@1.65.0)
+      vite-plugin-hrc-import:
+        specifier: 'catalog:'
+        version: 1.1.0(vite@5.0.2(@types/node@20.5.0)(sass@1.65.0))
 
   legacy/weather-app:
     dependencies:
@@ -4171,6 +4177,12 @@ packages:
     resolution: {integrity: sha512-nlBMJ9x6n7/Amaz6F3zJ97EBwR2FkzhBRxF5e+jE6LA3yi6Wtc2lyTij1OnDMIr34v5g/tVQtsVAzhT0jc5ygA==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
+
+  vite-plugin-hrc-import@1.1.0:
+    resolution: {integrity: sha512-R2e4/yjlz8oE1tm+tAVHaAk4uYrj5DA/10F17/IVNlxRQaNThmhMPrXB9xFSC+0KFT0+EinRMw1hXDVmzgWNmQ==}
+    engines: {node: '>=13.2.0'}
+    peerDependencies:
+      vite: ^5.0.0
 
   vite@5.0.2:
     resolution: {integrity: sha512-6CCq1CAJCNM1ya2ZZA7+jS2KgnhbzvxakmlIjN24cF/PXhRMzpM/z8QgsVJA/Dm5fWUWnVEsmtBoMhmerPxT0g==}
@@ -8460,6 +8472,10 @@ snapshots:
       - sugarss
       - supports-color
       - terser
+
+  vite-plugin-hrc-import@1.1.0(vite@5.0.2(@types/node@20.5.0)(sass@1.65.0)):
+    dependencies:
+      vite: 5.0.2(@types/node@20.5.0)(sass@1.65.0)
 
   vite@5.0.2(@types/node@20.5.0)(sass@1.65.0):
     dependencies:

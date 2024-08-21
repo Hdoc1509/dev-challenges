@@ -1,5 +1,5 @@
-import { Button } from "@hrc/button/dist/Button";
-import { Input } from "@hrc/input/dist/Input";
+import { Button } from "@hrc/button";
+import { Input } from "@hrc/input";
 import "./TodoForm.scss";
 
 type FormFields = {
