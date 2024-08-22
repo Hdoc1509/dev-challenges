@@ -32,7 +32,8 @@
     "sass": "catalog:",
     "typescript": "catalog:",
     "vite": "catalog:",
-    "vitest": "catalog:"
+    "vitest": "catalog:",
+    "vite-plugin-hrc-import": "catalog:"
   },
   "engines": {
     "node": ">=18",

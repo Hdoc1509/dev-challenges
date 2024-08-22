@@ -1,6 +1,6 @@
 import { useQuestionStore } from "@/store/questions";
 import { getResultMessage } from "@/utils/helpers";
-import { Button } from "@hrc/button/dist/Button";
+import { Button } from "@hrc/button";
 import winnerUrl from "/winner.svg";
 import "./Results.scss";
 

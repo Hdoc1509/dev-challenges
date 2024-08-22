@@ -1,5 +1,5 @@
 import { useQuestionStore } from "@/store/questions";
-import { Button } from "@hrc/button/dist/Button";
+import { Button } from "@hrc/button";
 import { QuestionCategories } from "@/constants";
 import { QuizOptions } from "./QuizOptions";
 import characterUrl from "/character.svg";

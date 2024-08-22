@@ -1,4 +1,4 @@
-import { RingSpinner } from "@hrc/spinner/dist/RingSpinner";
+import { RingSpinner } from "@hrc/spinner";
 import "./Loader.scss";
 
 export const Loader = () => {

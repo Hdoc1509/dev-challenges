@@ -1,6 +1,6 @@
 import { useQuestionStore } from "@/store/questions";
 import { getAnswerData } from "./Quiz.utils";
-import { Button } from "@hrc/button/dist/Button";
+import { Button } from "@hrc/button";
 import { Icon } from "@hrc/material-icons";
 import type { Question } from "@/types";
 
