@@ -2,7 +2,7 @@ import { useSearchStore } from "@/store/search";
 import { useWeatherStore } from "@/store/weather";
 import { getWeather } from "@/services/weather/client";
 import { getForecast } from "@/services/forecast/client";
-import { Button } from "@hrc/button/dist/Button";
+import { Button } from "@hrc/button";
 import { Icon } from "@hrc/material-icons";
 import type { City } from "@/types";
 import "./SearchResults.scss";

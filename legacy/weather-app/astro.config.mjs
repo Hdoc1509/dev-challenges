@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config";
 import react from "@astrojs/react";
+import hrcImportPlugin from "vite-plugin-hrc-import";
 
 import netlify from "@astrojs/netlify";
 
@@ -18,5 +19,6 @@ export default defineConfig({
         "@hrc/toggle-theme",
       ],
     },
+    plugins: [hrcImportPlugin()],
   },
 });

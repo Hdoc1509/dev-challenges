@@ -37,6 +37,7 @@
   "devDependencies": {
     "@astrojs/check": "catalog:",
     "sass": "catalog:",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "vite-plugin-hrc-import": "catalog:"
   }
 }

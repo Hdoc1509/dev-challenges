@@ -1,7 +1,7 @@
 import { useSearchStore } from "@/store/search";
 import { clsx } from "clsx";
 import { Icon } from "@hrc/material-icons";
-import { RingSpinner } from "@hrc/spinner/dist/RingSpinner";
+import { RingSpinner } from "@hrc/spinner";
 import { SearchForm } from "./SearchForm";
 import { SearchResults } from "./SearchResults";
 import "./SearchDrawer.scss";

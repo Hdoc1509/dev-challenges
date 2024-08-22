@@ -1,7 +1,7 @@
 import { useSearchStore } from "@/store/search";
 import { searchCity } from "@/services/geolocation/client";
-import { Button } from "@hrc/button/dist/Button";
-import { Input } from "@hrc/input/dist/Input";
+import { Button } from "@hrc/button";
+import { Input } from "@hrc/input";
 import { Icon } from "@hrc/material-icons";
 import "./SearchForm.scss";
 

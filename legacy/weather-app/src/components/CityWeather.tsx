@@ -1,8 +1,7 @@
 import Skeleton from "react-loading-skeleton";
 import { useWeatherStore } from "@/store/weather";
 import { getWeatherIcon } from "@/utils/icons";
-import { Button } from "@hrc/button/dist/Button";
-import { ButtonIcon } from "@hrc/button/dist/ButtonIcon";
+import { Button, ButtonIcon } from "@hrc/button";
 import { Icon } from "@hrc/material-icons";
 import { WeatherDetails } from "./WeatherDetails";
 import "./CityWeather.scss";
