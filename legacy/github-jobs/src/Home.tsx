@@ -1,5 +1,5 @@
 import { useJobsStore } from "@/store/jobs";
-import { RingSpinner } from "@hrc/spinner/dist/RingSpinner";
+import { RingSpinner } from "@hrc/spinner";
 import { SearchForm } from "@/components/SearchForm";
 import { SearchOptions } from "@/components/SearchOptions";
 import { Results } from "@/components/Results";

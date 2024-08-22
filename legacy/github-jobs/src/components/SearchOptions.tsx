@@ -1,8 +1,6 @@
 import { useJobsStore } from "@/store/jobs";
-// import { Checkbox } from "@hrc/input/dist/Checkbox";
-import { Input } from "@hrc/input/dist/Input";
+import { /* Checkbox, */ Input, RadioGroup } from "@hrc/input";
 import { Icon } from "@hrc/material-icons";
-import { RadioGroup } from "@hrc/input/dist/RadioGroup";
 import { predefinedCities } from "@/constants";
 import "./SearchOptions.scss";
 
