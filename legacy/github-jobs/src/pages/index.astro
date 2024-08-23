@@ -1,12 +1,12 @@
 ---
 import App from "@/App";
-import Maintenance from "@/Maintenance.astro";
+// import Maintenance from "@/Maintenance.astro";
 import Layout from "../layouts/Layout.astro";
-import { isDev } from "@/config";
+// import { isDev } from "@/config";
 ---
 
 <Layout>
-  {isDev ? <App client:only="react" /> : <Maintenance />}
-  <!-- <App client:only="react" /> -->
+  <!-- {isDev ? <App client:only="react" /> : <Maintenance />} -->
+  <App client:only="react" />
   <!-- <Maintenance /> -->
 </Layout>
