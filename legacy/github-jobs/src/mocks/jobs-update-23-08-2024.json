@@ -1,0 +1,550 @@
+{
+  "search_metadata": {
+    "id": "66c90914f59d00a10d578bfc",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/29b25dcaa4023a32/66c90914f59d00a10d578bfc.json",
+    "created_at": "2024-08-23 22:11:32 UTC",
+    "processed_at": "2024-08-23 22:11:32 UTC",
+    "google_jobs_url": "https://www.google.com/search?q=web&uule=w+CAIQICIfTmV3IFlvcmssTmV3IFlvcmssVW5pdGVkIFN0YXRlcw&udm=8",
+    "raw_html_file": "https://serpapi.com/searches/29b25dcaa4023a32/66c90914f59d00a10d578bfc.html",
+    "total_time_taken": 1.14
+  },
+  "search_parameters": {
+    "q": "web",
+    "engine": "google_jobs",
+    "location_requested": "New York, New York, United States",
+    "location_used": "New York,New York,United States",
+    "google_domain": "google.com"
+  },
+  "jobs_results": [
+    {
+      "title": "Web Developer- Back End Development",
+      "company_name": "Alexander Interactive",
+      "location": "New York, NY",
+      "via": "ZipRecruiter",
+      "share_link": "https://www.google.com/search?ibp=htl;jobs&q=web&htidocid=zr4yjsEM9ovc57q1AAAAAA%3D%3D&hl=en-US&shndl=-1&shem=vslcca&source=sh/x/job/li/m1/1#fpstate=tldetail&htivrt=jobs&htiq=web&htidocid=zr4yjsEM9ovc57q1AAAAAA%3D%3D",
+      "extensions": ["2 days ago", "Full-time", "No degree mentioned"],
+      "detected_extensions": {
+        "posted_at": "2 days ago",
+        "schedule_type": "Full-time"
+      },
+      "description": "As a senior back end engineer you will be leading the build of the software the runs our clients' websites. You will lead small teams of talented engineers and collaborate with front end developers, information architects, business analysts and visual designers. You will naturally know the good solutions to any given problem and be able to direct the team in executing those solutions across different software languages, tools and environments.\n\nOur typical engagement size and the size of our teams makes it possible for all team members to craft and shape the experiences we produce, with the full support of the leads and directors. The flexibility of our process makes for happy clients and the unusual ability to produce exactly the work you envision. Each project will have one Senior Backend Engineer as the lead for all back-end coding and markup integration.\n\nIf you want to make a real difference on a project, this is your dream role. Off projects, you will be expected to teach your colleagues something they didn't know in an area you are excited about. Has continuous integration only been a dream for you?\n\nMake it happen. Fast data indexing your thing? How about NoSQL data structures?\n\nThere is no shortage of opportunity to use it here. Developers contribute to all aspects of technology on an engagement, including front and back-end engineering and quality assurance. Developers works closely with the Technology Director and Leads to help define system architecture, Quality Assurance, and the Project Manager to ensure flawless project planning and execution.\n\nResponsibilities Assist with design, planning, and architecture of complex web and mobile solutions Work closely with clients to understand business needs and develop technology solutions Contribute to company thought leadership; accumulate market know-how, industry and technology trends, to enhance and manage knowledge on projects Write elegant and maintainable code Work in a non-corporate environment with ability to shift priorities over multiple projects Skills and Qualifications 4+ years developing and leading large-scale web technology projects and at least 2+ years doing so in an agency environment 4+ years PHP and/or Python experience Very deep experience in enterprise architecture, systems integration, and system architecture Must have hands-on experience as a developer building enterprise commerce and content systems Experience evaluating open source software Automated testing + TDD experience Expert-level knowledge of object-oriented design concepts, various frameworks, data storage implementations and enterprise design patterns Advanced knowledge of modern web technologies, social networking platforms, and mobile development An interest and a drive to grow and lead Excellent time management, problem solving, teamwork, and communication skills Magento Enterprise, Open For Business, and Websphere Commerce experience a significant plus",
+      "apply_options": [
+        {
+          "title": "ZipRecruiter",
+          "link": "https://www.ziprecruiter.com/c/Alexander-Interactive/Job/Web-Developer-Back-End-Development/-in-New-York,NY?jid=e3e9a99713484421&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+        },
+        {
+          "title": "BeBee",
+          "link": "https://us.bebee.com/job/4d56b2b44efc9ad11023655d26e5a8e9?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+        },
+        {
+          "title": "Jooble",
+          "link": "https://jooble.org/jdp/-7761642177687865845?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+        },
+        {
+          "title": "Pocahontascountyassessor.com",
+          "link": "https://pocahontascountyassessor.com/list/job/web-developer-back-end-development-at-alexander-interactive-new-york-ny-Zlk0SFZRQ0h6bDlPenBJa3VocTBGZy9BYlE9PQ==?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+        },
+        {
+          "title": "Jobs Trabajo.org",
+          "link": "https://us.trabajo.org/job-2951-b6868312bbb78a368f606444f2e91e1a?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+        },
+        {
+          "title": "Learn4Good",
+          "link": "https://www.learn4good.com/jobs/new-york/software_development/3466566990/e/?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+        },
+        {
+          "title": "Energy At Sea",
+          "link": "https://energyatsea.com/office/job/web-developer-back-end-development-at-alexander-interactive-new-york-ny-SmE4b1hOZ1dJSCtzSHdLTnRpcXR5ODBXNEE9PQ==?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+        }
+      ],
+      "job_id": "eyJqb2JfdGl0bGUiOiJXZWIgRGV2ZWxvcGVyLSBCYWNrIEVuZCBEZXZlbG9wbWVudCIsImNvbXBhbnlfbmFtZSI6IkFsZXhhbmRlciBJbnRlcmFjdGl2ZSIsImFkZHJlc3NfY2l0eSI6Ik5ldyBZb3JrLCBOWSIsImh0aWRvY2lkIjoienI0eWpzRU05b3ZjNTdxMUFBQUFBQT09IiwidXVsZSI6IncrQ0FJUUlDSWZUbVYzSUZsdmNtc3NUbVYzSUZsdmNtc3NWVzVwZEdWa0lGTjBZWFJsY3cifQ=="
+    },
+    {
+      "title": "Web Development Team",
+      "company_name": "Childhood Cancer Society",
+      "location": "Yonkers, NY",
+      "via": "LinkedIn",
+      "share_link": "https://www.google.com/search?ibp=htl;jobs&q=web&htidocid=VrsFohXXQmQ633jSAAAAAA%3D%3D&hl=en-US&shndl=-1&shem=vslcca&source=sh/x/job/li/m1/1#fpstate=tldetail&htivrt=jobs&htiq=web&htidocid=VrsFohXXQmQ633jSAAAAAA%3D%3D",
+      "thumbnail": "https://serpapi.com/searches/66c90914f59d00a10d578bfc/images/5e9da9f710dca6b5f483763e814869e6ade1b4936c19516212899529139d13d3.jpeg",
+      "extensions": ["Full-time"],
+      "detected_extensions": {
+        "schedule_type": "Full-time"
+      },
+      "description": "• Kickstart Your Career: Dive into the world of software development, collaborating with Project Leads and App Testers. As a Development Team intern, you’ll work closely with artists and technical developers over a 4-month journey.\n• Adaptable Assignments: The Development Team encompasses many overlapping disciplines. Whether you’re a sound designer, level designer, programmer, or a UX/UI designer, we will find a way to tailor your skills to our ongoing projects.\n• Consistent Collaborations: Participate in mandatory Zoom meetings to brainstorm, strategize, evaluate developed work, and receive feedback. (Monday & Thursday - 8:30PM - 9:30PM EST)\n• Real-world Experience: These sessions open doors to deep collaboration with Childhood Cancer Society leadership and a broader member network, enriching your professional expertise while uplifting our global outreach initiatives.\n• Dev Team Roles\n• Delivery of Assignments: Possessing an understanding that working on small parts of a large software project can heavily impact the development of the rest of the project.Therefore, timeliness and the required skills to deliver assignments are a must.\n• Game On!: Video game development is an industry of varied talents that are often specialized. Whether you specialize or are a generalist, don’t be afraid to apply!",
+      "job_highlights": [
+        {
+          "title": "Qualifications",
+          "items": [
+            "Delivery of Assignments: Possessing an understanding that working on small parts of a large software project can heavily impact the development of the rest of the project.Therefore, timeliness and the required skills to deliver assignments are a must",
+            "Game On!: Video game development is an industry of varied talents that are often specialized"
+          ]
+        },
+        {
+          "title": "Responsibilities",
+          "items": [
+            "Kickstart Your Career: Dive into the world of software development, collaborating with Project Leads and App Testers",
+            "As a Development Team intern, you’ll work closely with artists and technical developers over a 4-month journey",
+            "Adaptable Assignments: The Development Team encompasses many overlapping disciplines",
+            "Whether you’re a sound designer, level designer, programmer, or a UX/UI designer, we will find a way to tailor your skills to our ongoing projects",
+            "Consistent Collaborations: Participate in mandatory Zoom meetings to brainstorm, strategize, evaluate developed work, and receive feedback",
+            "Real-world Experience: These sessions open doors to deep collaboration with Childhood Cancer Society leadership and a broader member network, enriching your professional expertise while uplifting our global outreach initiatives"
+          ]
+        }
+      ],
+      "apply_options": [
+        {
+          "title": "LinkedIn",
+          "link": "https://www.linkedin.com/jobs/view/web-development-team-at-childhood-cancer-society-3975733828?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+        },
+        {
+          "title": "Jobilize",
+          "link": "https://www.jobilize.com/job/us-ny-yonkers-web-development-team-childhood-cancer-society-hiring?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+        }
+      ],
+      "job_id": "eyJqb2JfdGl0bGUiOiJXZWIgRGV2ZWxvcG1lbnQgVGVhbSIsImNvbXBhbnlfbmFtZSI6IkNoaWxkaG9vZCBDYW5jZXIgU29jaWV0eSIsImFkZHJlc3NfY2l0eSI6IllvbmtlcnMsIE5ZIiwiaHRpZG9jaWQiOiJWcnNGb2hYWFFtUTYzM2pTQUFBQUFBPT0iLCJ1dWxlIjoidytDQUlRSUNJZlRtVjNJRmx2Y21zc1RtVjNJRmx2Y21zc1ZXNXBkR1ZrSUZOMFlYUmxjdyJ9"
+    },
+    {
+      "title": "Web and Mobile App Development",
+      "company_name": "Luxe Beauty Pros",
+      "location": "New York, NY",
+      "via": "ZipRecruiter",
+      "share_link": "https://www.google.com/search?ibp=htl;jobs&q=web&htidocid=y51GE2Q1NzaFrzhCAAAAAA%3D%3D&hl=en-US&shndl=-1&shem=vslcca&source=sh/x/job/li/m1/1#fpstate=tldetail&htivrt=jobs&htiq=web&htidocid=y51GE2Q1NzaFrzhCAAAAAA%3D%3D",
+      "extensions": ["4 days ago", "Full-time"],
+      "detected_extensions": {
+        "posted_at": "4 days ago",
+        "schedule_type": "Full-time"
+      },
+      "description": "Luxe Beauty Pros is looking for enthusiastic college students to support the Design team. Our Web/UX/UI Interns will play a vital role in executing company-wide marketing initiatives to generate a larger customer base, build brand awareness vi\n\nWhat you'll do:\n\nAssist with Developing company site\n\nAssist in the Development for Luxe APP\nContinual updates and maintenance to site and app\n\nWhat you'll bring:\n\nAbility to multi-task in a fast-paced environment\n\nPassionate about computer science\n\nExceptional problem-solving abilities and research skills\n\nExcellent communication skills both verbal and written\n\nHighly organized\n\nMust be currently enrolled in an undergraduate or graduate program at an accredited institution\n\nOR be less than 1 year post-graduation\n\nMust be available 15 hours a week\n\nAccess to your own laptop and smartphone, Apple is a plus\n\nStrong knowledge of WEB & App Development\n\nKnowledge of Design and front-end is a MAJOR plus\nEmployment Type: INTERN",
+      "job_highlights": [
+        {
+          "title": "Qualifications",
+          "items": [
+            "Ability to multi-task in a fast-paced environment",
+            "Passionate about computer science",
+            "Exceptional problem-solving abilities and research skills",
+            "Excellent communication skills both verbal and written",
+            "Highly organized",
+            "Must be currently enrolled in an undergraduate or graduate program at an accredited institution",
+            "OR be less than 1 year post-graduation",
+            "Must be available 15 hours a week",
+            "Strong knowledge of WEB & App Development",
+            "Knowledge of Design and front-end is a MAJOR plus"
+          ]
+        },
+        {
+          "title": "Responsibilities",
+          "items": [
+            "Our Web/UX/UI Interns will play a vital role in executing company-wide marketing initiatives to generate a larger customer base, build brand awareness vi",
+            "Assist with Developing company site",
+            "Assist in the Development for Luxe APP",
+            "Continual updates and maintenance to site and app"
+          ]
+        }
+      ],
+      "apply_options": [
+        {
+          "title": "ZipRecruiter",
+          "link": "https://www.ziprecruiter.com/c/Luxe-Beauty-Pros/Job/Web-and-Mobile-App-Development/-in-New-York,NY?jid=c105daa3f038b813&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+        },
+        {
+          "title": "Luxebeautypros.freshteam.com",
+          "link": "https://luxebeautypros.freshteam.com/jobs/xv3XMXnvaCu-/web-and-mobile-app-development?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+        },
+        {
+          "title": "Dovidtherapy.com",
+          "link": "https://dovidtherapy.com/job-listing/job/web-and-mobile-app-development-at-luxe-beauty-pros-new-york-ny-NGpZZXJ1dFN1a1FHMUErTHVuemJMTGdpSGc9PQ==?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+        },
+        {
+          "title": "Wecleanhoods.com",
+          "link": "https://wecleanhoods.com/.career/job/web-and-mobile-app-development-at-luxe-beauty-pros-new-york-ny-RXV1TWZ6R2dnaUNrWEVqVzJiTjhkUnVTQkE9PQ==?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+        },
+        {
+          "title": "IT Tech Careers",
+          "link": "https://ittechcareers.com/job/web-and-mobile-app-development/?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+        },
+        {
+          "title": "Vgcontadorespublicos.com.mx",
+          "link": "https://vgcontadorespublicos.com.mx/library/job/web-and-mobile-app-development-at-luxe-beauty-pros-new-york-ny-NFZMZTlYdzBQQ0JDUG01bzJFNWFjKzR4ZkE9PQ==?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+        }
+      ],
+      "job_id": "eyJqb2JfdGl0bGUiOiJXZWIgYW5kIE1vYmlsZSBBcHAgRGV2ZWxvcG1lbnQiLCJjb21wYW55X25hbWUiOiJMdXhlIEJlYXV0eSBQcm9zIiwiYWRkcmVzc19jaXR5IjoiTmV3IFlvcmssIE5ZIiwiaHRpZG9jaWQiOiJ5NTFHRTJRMU56YUZyemhDQUFBQUFBPT0iLCJ1dWxlIjoidytDQUlRSUNJZlRtVjNJRmx2Y21zc1RtVjNJRmx2Y21zc1ZXNXBkR1ZrSUZOMFlYUmxjdyJ9"
+    },
+    {
+      "title": "Web design",
+      "company_name": "Mediabistro",
+      "location": "New York, NY",
+      "via": "Talent.com",
+      "share_link": "https://www.google.com/search?ibp=htl;jobs&q=web&htidocid=Z9-m0ASRJazcqUrIAAAAAA%3D%3D&hl=en-US&shndl=-1&shem=vslcca&source=sh/x/job/li/m1/1#fpstate=tldetail&htivrt=jobs&htiq=web&htidocid=Z9-m0ASRJazcqUrIAAAAAA%3D%3D",
+      "thumbnail": "https://serpapi.com/searches/66c90914f59d00a10d578bfc/images/5e9da9f710dca6b584789290fa9ac695066f0c8239266e809c0df8e80aeb0893.png",
+      "extensions": ["22 hours ago", "Full-time", "No degree mentioned"],
+      "detected_extensions": {
+        "posted_at": "22 hours ago",
+        "schedule_type": "Full-time"
+      },
+      "description": "Use the link below to experience our community : https : / / joinfud.page.link / kYTPWe are a growing start-up company looking for a\n\nStay-at-home Parent - Freelance Web Designer\n\nto join our community. As a Stay-at-home Parent - Freelance Web Designer, you will have the flexibility to work from home while using your web design skills to contribute to our community.\n\nJoin the Fud community to monetize your free time and let it become your next favorite side hustle. Our community encompasses content creators, freelancers, independent workers, gig workers, resellers & thrifters, entrepreneurs, solopreneurs, and small business owners.\n\nLast updated : 2024-08-23",
+      "job_highlights": [
+        {
+          "title": "Benefits",
+          "items": [
+            "As a Stay-at-home Parent - Freelance Web Designer, you will have the flexibility to work from home while using your web design skills to contribute to our community"
+          ]
+        }
+      ],
+      "apply_options": [
+        {
+          "title": "Talent.com",
+          "link": "https://www.talent.com/view?id=a2aaea525a12&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+        },
+        {
+          "title": "JoPilot",
+          "link": "https://jobs.jopilot.net/job/XSacaZEBNDRfCFvuXgDg0824?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+        }
+      ],
+      "job_id": "eyJqb2JfdGl0bGUiOiJXZWIgZGVzaWduIiwiY29tcGFueV9uYW1lIjoiTWVkaWFiaXN0cm8iLCJhZGRyZXNzX2NpdHkiOiJOZXcgWW9yaywgTlkiLCJodGlkb2NpZCI6Ilo5LW0wQVNSSmF6Y3FVcklBQUFBQUE9PSIsInV1bGUiOiJ3K0NBSVFJQ0lmVG1WM0lGbHZjbXNzVG1WM0lGbHZjbXNzVlc1cGRHVmtJRk4wWVhSbGN3In0="
+    },
+    {
+      "title": "Website development - Contract to Hire",
+      "company_name": "Upwork",
+      "location": "Anywhere",
+      "via": "Upwork",
+      "share_link": "https://www.google.com/search?ibp=htl;jobs&q=web&htidocid=TNQq21LiSwwyg4AkAAAAAA%3D%3D&hl=en-US&shndl=-1&shem=vslcca&source=sh/x/job/li/m1/1#fpstate=tldetail&htivrt=jobs&htiq=web&htidocid=TNQq21LiSwwyg4AkAAAAAA%3D%3D",
+      "extensions": [
+        "1 day ago",
+        "Work from home",
+        "Contractor",
+        "No degree mentioned"
+      ],
+      "detected_extensions": {
+        "posted_at": "1 day ago",
+        "schedule_type": "Contractor",
+        "work_from_home": true
+      },
+      "description": "Project Title: Recreate a Comprehensive Digital Marketing Solutions Website\n\nProject Description:\n\nWe are looking for an experienced web developer or agency to recreate our website, which offers a range of digital marketing services. Our goal is to enhance the online presence and functionality of our website, ensuring it is modern, responsive, and optimized for conversions.\n\nScope of Work:\n\nWebsite Design and Development:\n\nRecreate the existing website with a modern and user-friendly design. Ensure the website is fully responsive and compatible with all devices (desktop, tablet, mobile). Implement a content management system (CMS) like WordPress for easy updates.\n\nSearch Engine Optimization (SEO):\n\nOptimize the website for search engines to improve visibility and rankings.\n\nImplement on-page SEO, including meta tags, keywords, and alt text for images.\n\nSet up Google Analytics and Google Search Console for tracking performance.\n\nGraphics and Visual Design:\n\nCreate visually appealing graphics that align with our brand identity. Include custom banners, icons, and images that enhance the overall aesthetic of the site.\n\nDigital Marketing Integration:\n\nIntegrate social media channels and ensure seamless sharing of content. Set up a blog or news section for content marketing purposes. Implement email marketing sign-up forms and integrate with our CRM (if applicable).\n\nMobile App Development:\n\nWe need a section to showcase your mobile app development services.\n\nKey Deliverables:\n\n1. A fully functional, responsive website that aligns with the brand's objectives.\n\n2. SEO-optimized content and structure.\n\n3. High-quality graphics and visual elements.\n\n4. Integrated digital marketing tools and features.\n\nRequirements:\n\n1. Proven experience in web design and development, preferably with a portfolio of similar projects.\n\n2. Expertise in SEO best practices.\n\n3. Strong graphic design skills.\n\n4. Familiarity with digital marketing tools and integrations.\n\n5. Ability to meet deadlines and communicate effectively.\n\nDeadline:\n\nPlease specify your estimated time of completion. We are looking to start this project as soon as possible.\n\nHow to Apply:\n\nA brief introduction of yourself or your team.\n\nExamples of similar projects you've completed.\n\nAn outline of how you would approach this project.\n\nYour estimated cost and timeline.\n\nWe look forward to working with a skilled professional who can help us elevate our online presence!",
+      "job_highlights": [
+        {
+          "title": "Qualifications",
+          "items": [
+            "High-quality graphics and visual elements",
+            "Proven experience in web design and development, preferably with a portfolio of similar projects",
+            "Expertise in SEO best practices",
+            "Strong graphic design skills",
+            "Familiarity with digital marketing tools and integrations",
+            "Ability to meet deadlines and communicate effectively"
+          ]
+        },
+        {
+          "title": "Responsibilities",
+          "items": [
+            "Recreate the existing website with a modern and user-friendly design",
+            "Ensure the website is fully responsive and compatible with all devices (desktop, tablet, mobile)",
+            "Implement a content management system (CMS) like WordPress for easy updates",
+            "Optimize the website for search engines to improve visibility and rankings",
+            "Implement on-page SEO, including meta tags, keywords, and alt text for images",
+            "Set up Google Analytics and Google Search Console for tracking performance",
+            "Create visually appealing graphics that align with our brand identity",
+            "Include custom banners, icons, and images that enhance the overall aesthetic of the site",
+            "Integrate social media channels and ensure seamless sharing of content",
+            "Set up a blog or news section for content marketing purposes",
+            "Implement email marketing sign-up forms and integrate with our CRM (if applicable)",
+            "We need a section to showcase your mobile app development services",
+            "A fully functional, responsive website that aligns with the brand's objectives",
+            "SEO-optimized content and structure",
+            "Integrated digital marketing tools and features"
+          ]
+        }
+      ],
+      "apply_options": [
+        {
+          "title": "Upwork",
+          "link": "https://www.upwork.com/freelance-jobs/apply/Website-development_~01fe425bf42c29854f/?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+        }
+      ],
+      "job_id": "eyJqb2JfdGl0bGUiOiJXZWJzaXRlIGRldmVsb3BtZW50IC0gQ29udHJhY3QgdG8gSGlyZSIsImNvbXBhbnlfbmFtZSI6IlVwd29yayIsImFkZHJlc3NfY2l0eSI6IlVuaXRlZCBTdGF0ZXMiLCJodGlkb2NpZCI6IlROUXEyMUxpU3d3eWc0QWtBQUFBQUE9PSIsInV1bGUiOiJ3K0NBSVFJQ0lmVG1WM0lGbHZjbXNzVG1WM0lGbHZjbXNzVlc1cGRHVmtJRk4wWVhSbGN3In0="
+    },
+    {
+      "title": "Web Metrics with Adobe Analytics",
+      "company_name": "Keylent Inc",
+      "location": "Piscataway, NJ",
+      "via": "LinkedIn",
+      "share_link": "https://www.google.com/search?ibp=htl;jobs&q=web&htidocid=iy7gReJrA35anCM9AAAAAA%3D%3D&hl=en-US&shndl=-1&shem=vslcca&source=sh/x/job/li/m1/1#fpstate=tldetail&htivrt=jobs&htiq=web&htidocid=iy7gReJrA35anCM9AAAAAA%3D%3D",
+      "thumbnail": "https://serpapi.com/searches/66c90914f59d00a10d578bfc/images/5e9da9f710dca6b5a876f0d185bf8793657cf4b960575bce324ed9cdc47de246.jpeg",
+      "extensions": ["Full-time", "No degree mentioned"],
+      "detected_extensions": {
+        "schedule_type": "Full-time"
+      },
+      "description": "Immediate Need - Web Metrics with Adobe Analytics - Piscataway NJ - Onsite\n\nAdobe Analytics, Tealium, Zoom Info etc. Looker, Tableau, and Salesforce, Power BI, VBA, SQL\n• Demonstrable knowledge and front end /backend expertise in use and administration of business intelligence and web analytics solutions like Adobe Analytics, Tealium, Zoom Info etc.\n• Proven expertise in reporting software such as Looker, Tableau, and Salesforce\n• Strong knowledge of web analytics measurement methodologies, comparative differences, strengths, weaknesses and ability to work with different methodologies\n• Advanced experience in relational database systems such as Power BI, VBA, SQL, etc.\n• Working knowledge of website environments, operations, systems, and technology\n• Expert in MS Office Suite, particularly Advanced Excel and PowerPoint skills /Google Slides",
+      "job_highlights": [
+        {
+          "title": "Qualifications",
+          "items": [
+            "Adobe Analytics, Tealium, Zoom Info etc",
+            "Looker, Tableau, and Salesforce, Power BI, VBA, SQL",
+            "Demonstrable knowledge and front end /backend expertise in use and administration of business intelligence and web analytics solutions like Adobe Analytics, Tealium, Zoom Info etc",
+            "Proven expertise in reporting software such as Looker, Tableau, and Salesforce",
+            "Strong knowledge of web analytics measurement methodologies, comparative differences, strengths, weaknesses and ability to work with different methodologies",
+            "Advanced experience in relational database systems such as Power BI, VBA, SQL, etc",
+            "Working knowledge of website environments, operations, systems, and technology",
+            "Expert in MS Office Suite, particularly Advanced Excel and PowerPoint skills /Google Slides"
+          ]
+        }
+      ],
+      "apply_options": [
+        {
+          "title": "LinkedIn",
+          "link": "https://www.linkedin.com/jobs/view/web-metrics-with-adobe-analytics-at-keylent-inc-3925742096?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+        },
+        {
+          "title": "Nearby Works",
+          "link": "https://nearbyworks.com/en/jobs/united-states/12994?name=adobe-analytics-with-tealium-zoom-info&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+        }
+      ],
+      "job_id": "eyJqb2JfdGl0bGUiOiJXZWIgTWV0cmljcyB3aXRoIEFkb2JlIEFuYWx5dGljcyIsImNvbXBhbnlfbmFtZSI6IktleWxlbnQgSW5jIiwiYWRkcmVzc19jaXR5IjoiUGlzY2F0YXdheSwgTkoiLCJodGlkb2NpZCI6Iml5N2dSZUpyQTM1YW5DTTlBQUFBQUE9PSIsInV1bGUiOiJ3K0NBSVFJQ0lmVG1WM0lGbHZjbXNzVG1WM0lGbHZjbXNzVlc1cGRHVmtJRk4wWVhSbGN3In0="
+    },
+    {
+      "title": "Web Developer need with API Integration Exp. - Contract to Hire",
+      "company_name": "Upwork",
+      "location": "Anywhere",
+      "via": "Upwork",
+      "share_link": "https://www.google.com/search?ibp=htl;jobs&q=web&htidocid=IgbApK5-NhQAylxIAAAAAA%3D%3D&hl=en-US&shndl=-1&shem=vslcca&source=sh/x/job/li/m1/1#fpstate=tldetail&htivrt=jobs&htiq=web&htidocid=IgbApK5-NhQAylxIAAAAAA%3D%3D",
+      "extensions": [
+        "1 day ago",
+        "Work from home",
+        "Contractor",
+        "No degree mentioned"
+      ],
+      "detected_extensions": {
+        "posted_at": "1 day ago",
+        "schedule_type": "Contractor",
+        "work_from_home": true
+      },
+      "description": "I am looking for an experienced blockchain developer to create a simple NFT smart contract and a basic minting website for my NFT project. The ideal candidate should have prior experience in NFT development, including writing smart contracts on Ethereum or similar blockchain platforms and integrating them with a web-based minting interface.\n\nmy website is ready just check why it is not mining thanks",
+      "job_highlights": [
+        {
+          "title": "Qualifications",
+          "items": [
+            "The ideal candidate should have prior experience in NFT development, including writing smart contracts on Ethereum or similar blockchain platforms and integrating them with a web-based minting interface"
+          ]
+        }
+      ],
+      "apply_options": [
+        {
+          "title": "Upwork",
+          "link": "https://www.upwork.com/freelance-jobs/apply/Web-Developer-need-with-API-Integration-Exp_~01e5a9546624d4cb62/?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+        }
+      ],
+      "job_id": "eyJqb2JfdGl0bGUiOiJXZWIgRGV2ZWxvcGVyIG5lZWQgd2l0aCBBUEkgSW50ZWdyYXRpb24gRXhwLiAtIENvbnRyYWN0IHRvIEhpcmUiLCJjb21wYW55X25hbWUiOiJVcHdvcmsiLCJhZGRyZXNzX2NpdHkiOiJVbml0ZWQgU3RhdGVzIiwiaHRpZG9jaWQiOiJJZ2JBcEs1LU5oUUF5bHhJQUFBQUFBPT0iLCJ1dWxlIjoidytDQUlRSUNJZlRtVjNJRmx2Y21zc1RtVjNJRmx2Y21zc1ZXNXBkR1ZrSUZOMFlYUmxjdyJ9"
+    },
+    {
+      "title": "SharePoint Web Designer",
+      "company_name": "General Dynamics Information Technology",
+      "location": "North Carolina",
+      "via": "LinkedIn",
+      "share_link": "https://www.google.com/search?ibp=htl;jobs&q=web&htidocid=iQBM20OKJKKJetD2AAAAAA%3D%3D&hl=en-US&shndl=-1&shem=vslcca&source=sh/x/job/li/m1/1#fpstate=tldetail&htivrt=jobs&htiq=web&htidocid=iQBM20OKJKKJetD2AAAAAA%3D%3D",
+      "thumbnail": "https://serpapi.com/searches/66c90914f59d00a10d578bfc/images/5e9da9f710dca6b56c9233d6ff11a2c7af4049c4f2e4d27ccb8c392ed3aac83a.jpeg",
+      "extensions": [
+        "10 hours ago",
+        "Full-time",
+        "Paid time off",
+        "Dental insurance",
+        "Health insurance"
+      ],
+      "detected_extensions": {
+        "paid_time_off": true,
+        "dental_coverage": true,
+        "health_insurance": true,
+        "posted_at": "10 hours ago",
+        "schedule_type": "Full-time"
+      },
+      "description": "Job Description:\n\nType of Requisition:\n\nRegular\n\nClearance Level Must Currently Possess:\n\nTop Secret/SCI\n\nClearance Level Must Be Able To Obtain:\n\nTop Secret/SCI\n\nSuitability:\n\nPublic Trust/Other Required:\n\nJob Family:\n\nSoftware Development\n\nSkills:\n\nJob Qualifications:\n\nApplication Development, Information Technology (IT), Microsoft SharePoint, Software Development, Software Projects\n\nCertifications:\n\nExperience:\n\n4 + years of related experience\n\nUS Citizenship Required:\n\nYes\n\nJob Description:\n\nJob Description:\n\nDeliver simple solutions to complex problems as a SharePoint Web Designer at GDIT. Here, you’ll tailor cutting-edge solutions to the unique requirements of our clients. With a career in application development, you’ll make the end user’s experience your priority and we’ll make your career growth ours.\n\nAt GDIT, people are our differentiator. As a SharePoint Web Designer, you will help ensure today is safe and tomorrow is smarter.\n\nHOW A SOFTWARE DEVELOPER SENIOR WILL MAKE AN IMPACT\n• Provide automation and increased efficiency to a user base with high operational tempo. \n• Gathering and documenting business requirements, day-to-day coordination and administration of tasks, ensuring quality and productivity standards are maintained while meeting customer schedules.\n• Establish and maintain an effective and collaborative relationship with customers, end users and other team members.\n• Additional responsibilities include software testing and end user SharePoint training.\n\nRequired Experience:\n\nWHAT YOU’LL NEED TO SUCCEED:\n• Associates Degree or 2+ years of equivalent experience\n• Requires at least 4+ years of experience with the Microsoft SharePoint 2010, 2013 &/or 2016 to include site administration, creating custom content, managing permissions, creating workflows and configuring web parts\n\nRequired Technical Skills:\n• Requires at least 2-4 years of experience with technical writing, technical documentation or training end users of software systems\n• Requires experience utilizing and integrating Microsoft Office products to include PowerPoint, Excel, Project, Visio and OneNote with SharePoint and other Enterprise Systems\n• Experience with migration from one version of SharePoint to another is desired (2003, 2007, 2013, 2016)\n\nSecurity Clearance Level:\n• TS/SCI\n\nRequired Skills And Abilities:\n• Requires a strong understanding of Information Technology (IT) to include basic business applications and relational database concepts\n• Experience with software testing and QA/QC\n\nPreferred Skills:\n• Self-motivated, shows initiative, and works with minimal direction\n• Must be able to manage multiple tasks and projects simultaneously\n\nLocation:\n• On Customer Site\n\nCitizenship Required\n• US Citizenship\n\nGDIT IS YOUR PLACE:\n• 401K with company match\n• Comprehensive health and wellness packages\n• Internal mobility team dedicated to helping you own your career.\n• Professional growth opportunities including paid education and certifications.\n• Cutting-edge technology you can learn from\n• Rest and recharge with paid vacation and holidays\n\nThe likely salary range for this position is $85,000 - $115,000. This is not, however, a guarantee of compensation or salary. Rather, salary will be set based on experience, geographic location and possibly contractual requirements and could fall outside of this range.\n\nScheduled Weekly Hours:\n\n40\n\nTravel Required:\n\n10-25%\n\nTelecommuting Options:\n\nOnsite\n\nWork Location:\n\nUSA NC Fort Liberty\n\nAdditional Work Locations:\n\nTotal Rewards At GDIT:\n\nOur benefits package for all US-based employees includes a variety of medical plan options, some with Health Savings Accounts, dental plan options, a vision plan, and a 401(k) plan offering the ability to contribute both pre and post-tax dollars up to the IRS annual limits and receive a company match. To encourage work/life balance, GDIT offers employees full flex work weeks where possible and a variety of paid time off plans, including vacation, sick and personal time, holidays, paid parental, military, bereavement and jury duty leave. To ensure our employees are able to protect their income, other offerings such as short and long-term disability benefits, life, accidental death and dismemberment, personal accident, critical illness and business travel and accident insurance are provided or available. We regularly review our Total Rewards package to ensure our offerings are competitive and reflect what our employees have told us they value most.\n\nWe are GDIT. A global technology and professional services company that delivers consulting, technology and mission services to every major agency across the U.S. government, defense and intelligence community. Our 30,000 experts extract the power of technology to create immediate value and deliver solutions at the edge of innovation. We operate across 30 countries worldwide, offering leading capabilities in digital modernization, AI/ML, Cloud, Cyber and application development. Together with our clients, we strive to create a safer, smarter world by harnessing the power of deep expertise and advanced technology.\n\nWe connect people with the most impactful client missions, creating an unparalleled work experience that allows them to see their impact every day. We create opportunities for our people to lead and learn simultaneously. From securing our nation’s most sensitive systems, to enabling digital transformation and cloud adoption, our people are the ones who make change real.\n\nGDIT is an Equal Opportunity/Affirmative Action employer. All qualified applicants will receive consideration for employment without regard to race, color, religion, sex, sexual orientation, gender identity, national origin, disability, or veteran status, or any other protected class.",
+      "job_highlights": [
+        {
+          "title": "Qualifications",
+          "items": [
+            "Application Development, Information Technology (IT), Microsoft SharePoint, Software Development, Software Projects",
+            "4 + years of related experience",
+            "Associates Degree or 2+ years of equivalent experience",
+            "Requires at least 4+ years of experience with the Microsoft SharePoint 2010, 2013 &/or 2016 to include site administration, creating custom content, managing permissions, creating workflows and configuring web parts",
+            "Requires at least 2-4 years of experience with technical writing, technical documentation or training end users of software systems",
+            "Requires experience utilizing and integrating Microsoft Office products to include PowerPoint, Excel, Project, Visio and OneNote with SharePoint and other Enterprise Systems",
+            "Requires a strong understanding of Information Technology (IT) to include basic business applications and relational database concepts",
+            "Experience with software testing and QA/QC",
+            "US Citizenship"
+          ]
+        },
+        {
+          "title": "Benefits",
+          "items": [
+            "401K with company match",
+            "Comprehensive health and wellness packages",
+            "Internal mobility team dedicated to helping you own your career",
+            "Professional growth opportunities including paid education and certifications",
+            "Cutting-edge technology you can learn from",
+            "Rest and recharge with paid vacation and holidays",
+            "The likely salary range for this position is $85,000 - $115,000",
+            "This is not, however, a guarantee of compensation or salary",
+            "Rather, salary will be set based on experience, geographic location and possibly contractual requirements and could fall outside of this range",
+            "40",
+            "Our benefits package for all US-based employees includes a variety of medical plan options, some with Health Savings Accounts, dental plan options, a vision plan, and a 401(k) plan offering the ability to contribute both pre and post-tax dollars up to the IRS annual limits and receive a company match",
+            "To encourage work/life balance, GDIT offers employees full flex work weeks where possible and a variety of paid time off plans, including vacation, sick and personal time, holidays, paid parental, military, bereavement and jury duty leave",
+            "To ensure our employees are able to protect their income, other offerings such as short and long-term disability benefits, life, accidental death and dismemberment, personal accident, critical illness and business travel and accident insurance are provided or available"
+          ]
+        },
+        {
+          "title": "Responsibilities",
+          "items": [
+            "Deliver simple solutions to complex problems as a SharePoint Web Designer at GDIT",
+            "Provide automation and increased efficiency to a user base with high operational tempo. ",
+            "Gathering and documenting business requirements, day-to-day coordination and administration of tasks, ensuring quality and productivity standards are maintained while meeting customer schedules",
+            "Establish and maintain an effective and collaborative relationship with customers, end users and other team members",
+            "Additional responsibilities include software testing and end user SharePoint training"
+          ]
+        }
+      ],
+      "apply_options": [
+        {
+          "title": "LinkedIn",
+          "link": "https://www.linkedin.com/jobs/view/sharepoint-web-designer-at-general-dynamics-information-technology-4008596223?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+        },
+        {
+          "title": "Jobtrees",
+          "link": "https://www.jobtrees.com/postid/c2739c70b19cb8e9f8bcb20404715e4c?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+        }
+      ],
+      "job_id": "eyJqb2JfdGl0bGUiOiJTaGFyZVBvaW50IFdlYiBEZXNpZ25lciIsImNvbXBhbnlfbmFtZSI6IkdlbmVyYWwgRHluYW1pY3MgSW5mb3JtYXRpb24gVGVjaG5vbG9neSIsImFkZHJlc3NfY2l0eSI6Ik5vcnRoIENhcm9saW5hIiwiaHRpZG9jaWQiOiJpUUJNMjBPS0pLS0pldEQyQUFBQUFBPT0iLCJ1dWxlIjoidytDQUlRSUNJZlRtVjNJRmx2Y21zc1RtVjNJRmx2Y21zc1ZXNXBkR1ZrSUZOMFlYUmxjdyJ9"
+    },
+    {
+      "title": "Web Developer (Digital Team)",
+      "company_name": "InterSources Inc",
+      "location": "Maryland",
+      "via": "LinkedIn",
+      "share_link": "https://www.google.com/search?ibp=htl;jobs&q=web&htidocid=RK44bhQ_Rz2hqIpCAAAAAA%3D%3D&hl=en-US&shndl=-1&shem=vslcca&source=sh/x/job/li/m1/1#fpstate=tldetail&htivrt=jobs&htiq=web&htidocid=RK44bhQ_Rz2hqIpCAAAAAA%3D%3D",
+      "thumbnail": "https://serpapi.com/searches/66c90914f59d00a10d578bfc/images/5e9da9f710dca6b5ff761d79b57af79b8ca9a4d409e5765252ba22d0a6081bac.jpeg",
+      "extensions": ["2 days ago", "Full-time"],
+      "detected_extensions": {
+        "posted_at": "2 days ago",
+        "schedule_type": "Full-time"
+      },
+      "description": "Address: Washington DC – 100% Onsite\n\nIn-person Interview\n\n12 Months Contract / Full Time Position\n\nJob Description:\n\nClient needs a Web Developer to support the day-to-day projects within the Digital Service Team. Some of the primary responsibilities of this role would include requirements analysis, designing, modifying, developing, writing and implementing software programming applications and components. The Web Developer role requires a service-oriented mentality, high ownership of the problems and requests assigned, focus on managing and resolving issues in alignment with the SLAs, establishing and maintaining communication with technology customers to keep them updated with request status. Initiating and performing changes on production systems and proactively escalating any issues that cannot be resolved within the established timeframes. Will work closely with client and various District agencies to define needs or issues and analyze problems and advise on or recommend solutions.\n\nResponsibilities:\n\nCreate, maintain, and troubleshoot custom-coded JavaScript components and Drupal Twig templates.\n\nInstall and update Node packages.\n\nReview pull requests on GitHub.\n\nTranslate verbal and written requirements from stakeholders into working products.\n\nHelp with QA testing and bug hunts.\n\nHow we'll evaluate your job performance\n\nAdherence to development standards, governance processes, and best practices\n\nMaintenance of professional relationships with colleagues, management, and other stakeholders, while delivering high-quality customer service\n\nMultitasking in a fast-paced, high-profile environment\n\nEvolution of skill sets and adaptation to innovative technologies\n\nAbility to dive into code and understand how it all works without handholding\n\nOrganization and attention to detail\n\nThe Technical Skills You Need:\n\nExpertise with Drupal 9+ (especially Twig templates)\n\nJavaScript (encompassing vanilla JS, React, JSX, and TypeScript)\n\nA front-end framework such as GatsbyJS or NextJS\n\nHTML and CSS\n\nLocal development using Docker\n\nGit version control\n\nExperience with common programming design patterns (e.g., Strategy, Adapter, Decorator, Observer, etc.)\n\nFamiliarity with project management software such as Jira, Basecamp, or Wrike\n\nResponsibilities:\n\nDemonstrates expertise in conveying technical and functional concepts for a specific technical specialty.\n\nIdentifies improvements to project standards to achieve high quality services/ products. This is a professional position which may require subject matter expertise consistent with demanding and rare technological skills.\n\nMay require coordination of programming activities being conducted by the application development team\n\nConfers with other business and technical personnel to resolve problems of intent, inaccuracy, or feasibility of computer processing and project design.\n\nWorks with necessary personnel to determine if modifications are necessary with interested personnel to determine necessity for modifications or enhancements.\n\nLeverages excellent written and verbal communication skills to develop new business process and programming solutions as directed by business and technical stakeholders.\n\nMay coordinate activities of application developers.11-\n\nAble to identify best practices and standards for the use of the product.\n\nProven track record of hands-on technical design and code work within large complex systems.\n\nProven hands-on technical work with a variety of technologies.\n\nDemonstrated technical expertise integrating a variety of diverse technical environments and cross-platform technologies.\n\nDelivers support and design for industry specific applications that require integration with statewide systems or applications.\n\nInteracts with executive level business users or technical experts.\n\nAdvanced Experience In The Required Technical Subject Matter.\n\nMay function as a niche technical SME (Subject Matter Expert).\n\nHas proven experience across large and complex implementations and systems.\n\nMinimum Education/Certification Requirements:\n\nBachelor's degree in Information Technology or related field or equivalent experience\n\nSkill\n\nRequired No. of Years\n\nActual Years of Experience\n\n6-10 yrs. performing specialized (often advanced) programming and technical development for the Internet\n\n6\n\n6-10 yrs preparing complex technical documentation\n\n6\n\nBachelor's degree in IT or related field or equivalent experience\n\n4\n\nHTML5 / CSS3 / XML (L-4)\n\n8\n\nPHP (L-4) and Drupal (L3)\n\n5\n\nBootstrap 4\n\n5\n\nJavascript / ajax / jQuery : (L-5)\n\n7\n\nAngular: web development framework (L-4)\n\n8\n\nWeb Development\n\n8\n\nFamiliarity with architecture styles/APIs (REST, RPC)\n\n5\n\nAbout Us:\n\nInterSources Inc, a Certified Diverse Supplier, was founded in 2007 and offers innovative solutions to help clients with Digital Transformations across various domains and industries. Our history spans over 16 years and today we are an Award-Winning Global Software Consultancy solving complex problems with technology. We recognize that our employees and our clients are our strengths as the diverse talents and opportunities they bring to the table enable us to grow as a global platform and they are causally linked with our success. We provide strategic and technical advice, and we have expertise in areas covering Artificial Intelligence, Cloud Migration, Custom Software Development, Data Analytics Infrastructure & Cloud Solutions, Cyber Security Services, etc. We make reasonable accommodations for clients and employees and we do not discriminate based on any protected attribute including race, religion, color, national origin, gender sexual orientation, gender identity, age, or marital status. We also are a Google Cloud partner company. We align strategy with execution and provide secure service solutions by developing and using the latest technologies that thrive our resources to deliver industry-leading capabilities to our clients and customers, making it convenient for our clients to do business with InterSources Inc. Our teams also drive growth by refining technology-driven client experiences that put the users first, providing an unparalleled experience. This results in strengthening the core technologies of clients, enabling them to scale with flexibility, create seamless digital experiences and build lifelong relationships.",
+      "job_highlights": [
+        {
+          "title": "Qualifications",
+          "items": [
+            "Evolution of skill sets and adaptation to innovative technologies",
+            "Ability to dive into code and understand how it all works without handholding",
+            "Organization and attention to detail",
+            "Expertise with Drupal 9+ (especially Twig templates)",
+            "JavaScript (encompassing vanilla JS, React, JSX, and TypeScript)",
+            "A front-end framework such as GatsbyJS or NextJS",
+            "HTML and CSS",
+            "Local development using Docker",
+            "Git version control",
+            "Experience with common programming design patterns (e.g., Strategy, Adapter, Decorator, Observer, etc.)",
+            "Familiarity with project management software such as Jira, Basecamp, or Wrike",
+            "Proven track record of hands-on technical design and code work within large complex systems",
+            "Proven hands-on technical work with a variety of technologies",
+            "Demonstrated technical expertise integrating a variety of diverse technical environments and cross-platform technologies",
+            "Advanced Experience In The Required Technical Subject Matter",
+            "May function as a niche technical SME (Subject Matter Expert)",
+            "Has proven experience across large and complex implementations and systems",
+            "Bachelor's degree in Information Technology or related field or equivalent experience",
+            "Required No. of Years",
+            "Actual Years of Experience",
+            "6-10 yrs",
+            "performing specialized (often advanced) programming and technical development for the Internet",
+            "Bachelor's degree in IT or related field or equivalent experience",
+            "HTML5 / CSS3 / XML (L-4)",
+            "PHP (L-4) and Drupal (L3)",
+            "Web Development",
+            "Familiarity with architecture styles/APIs (REST, RPC)"
+          ]
+        },
+        {
+          "title": "Responsibilities",
+          "items": [
+            "Client needs a Web Developer to support the day-to-day projects within the Digital Service Team",
+            "Some of the primary responsibilities of this role would include requirements analysis, designing, modifying, developing, writing and implementing software programming applications and components",
+            "The Web Developer role requires a service-oriented mentality, high ownership of the problems and requests assigned, focus on managing and resolving issues in alignment with the SLAs, establishing and maintaining communication with technology customers to keep them updated with request status",
+            "Initiating and performing changes on production systems and proactively escalating any issues that cannot be resolved within the established timeframes",
+            "Will work closely with client and various District agencies to define needs or issues and analyze problems and advise on or recommend solutions",
+            "Create, maintain, and troubleshoot custom-coded JavaScript components and Drupal Twig templates",
+            "Install and update Node packages",
+            "Review pull requests on GitHub",
+            "Translate verbal and written requirements from stakeholders into working products",
+            "Help with QA testing and bug hunts",
+            "Adherence to development standards, governance processes, and best practices",
+            "Maintenance of professional relationships with colleagues, management, and other stakeholders, while delivering high-quality customer service",
+            "Multitasking in a fast-paced, high-profile environment",
+            "Demonstrates expertise in conveying technical and functional concepts for a specific technical specialty",
+            "Identifies improvements to project standards to achieve high quality services/ products",
+            "This is a professional position which may require subject matter expertise consistent with demanding and rare technological skills",
+            "May require coordination of programming activities being conducted by the application development team",
+            "Confers with other business and technical personnel to resolve problems of intent, inaccuracy, or feasibility of computer processing and project design",
+            "Works with necessary personnel to determine if modifications are necessary with interested personnel to determine necessity for modifications or enhancements",
+            "Leverages excellent written and verbal communication skills to develop new business process and programming solutions as directed by business and technical stakeholders",
+            "May coordinate activities of application developers.11-",
+            "Able to identify best practices and standards for the use of the product",
+            "Delivers support and design for industry specific applications that require integration with statewide systems or applications",
+            "Interacts with executive level business users or technical experts",
+            "6-10 yrs preparing complex technical documentation"
+          ]
+        }
+      ],
+      "apply_options": [
+        {
+          "title": "LinkedIn",
+          "link": "https://www.linkedin.com/jobs/view/web-developer-digital-team-at-intersources-inc-4004989172?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+        }
+      ],
+      "job_id": "eyJqb2JfdGl0bGUiOiJXZWIgRGV2ZWxvcGVyIChEaWdpdGFsIFRlYW0pIiwiY29tcGFueV9uYW1lIjoiSW50ZXJTb3VyY2VzIEluYyIsImFkZHJlc3NfY2l0eSI6Ik1hcnlsYW5kIiwiaHRpZG9jaWQiOiJSSzQ0YmhRX1J6MmhxSXBDQUFBQUFBPT0iLCJ1dWxlIjoidytDQUlRSUNJZlRtVjNJRmx2Y21zc1RtVjNJRmx2Y21zc1ZXNXBkR1ZrSUZOMFlYUmxjdyJ9"
+    },
+    {
+      "title": "Web Developer for International Trade Company Website",
+      "company_name": "Upwork",
+      "location": "Anywhere",
+      "via": "Upwork",
+      "share_link": "https://www.google.com/search?ibp=htl;jobs&q=web&htidocid=3m29eyrwJ4HnHbeeAAAAAA%3D%3D&hl=en-US&shndl=-1&shem=vslcca&source=sh/x/job/li/m1/1#fpstate=tldetail&htivrt=jobs&htiq=web&htidocid=3m29eyrwJ4HnHbeeAAAAAA%3D%3D",
+      "extensions": [
+        "2 days ago",
+        "Work from home",
+        "Contractor",
+        "No degree mentioned"
+      ],
+      "detected_extensions": {
+        "posted_at": "2 days ago",
+        "schedule_type": "Contractor",
+        "work_from_home": true
+      },
+      "description": "We are seeking a skilled web developer to create an independent website for our international trade company. The website should showcase our products and services and provide a seamless user experience for our clients. The ideal candidate should have experience in web development, with a focus on e-commerce and international trade. The website should be mobile-responsive and have a modern design. Additionally, the developer should be proficient in HTML, CSS, JavaScript, and have experience with content management systems. The project will require close collaboration with our team to ensure the website meets our specifications. If you have a strong portfolio and a passion for creating user-friendly websites, we would love to hear from you!",
+      "job_highlights": [
+        {
+          "title": "Qualifications",
+          "items": [
+            "The ideal candidate should have experience in web development, with a focus on e-commerce and international trade",
+            "The website should be mobile-responsive and have a modern design",
+            "Additionally, the developer should be proficient in HTML, CSS, JavaScript, and have experience with content management systems",
+            "The project will require close collaboration with our team to ensure the website meets our specifications"
+          ]
+        },
+        {
+          "title": "Responsibilities",
+          "items": [
+            "The website should showcase our products and services and provide a seamless user experience for our clients"
+          ]
+        }
+      ],
+      "apply_options": [
+        {
+          "title": "Upwork",
+          "link": "https://www.upwork.com/freelance-jobs/apply/Web-Developer-for-International-Trade-Company-Website_~01b8aca1f3d6a2228f/?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic"
+        }
+      ],
+      "job_id": "eyJqb2JfdGl0bGUiOiJXZWIgRGV2ZWxvcGVyIGZvciBJbnRlcm5hdGlvbmFsIFRyYWRlIENvbXBhbnkgV2Vic2l0ZSIsImNvbXBhbnlfbmFtZSI6IlVwd29yayIsImFkZHJlc3NfY2l0eSI6IlVuaXRlZCBTdGF0ZXMiLCJodGlkb2NpZCI6IjNtMjlleXJ3SjRIbkhiZWVBQUFBQUE9PSIsInV1bGUiOiJ3K0NBSVFJQ0lmVG1WM0lGbHZjbXNzVG1WM0lGbHZjbXNzVlc1cGRHVmtJRk4wWVhSbGN3In0="
+    }
+  ],
+  "serpapi_pagination": {
+    "next_page_token": "eyJmYyI6IkVvd0VDc3dEUVVwSE9VcHJUVFUzYm0xM1UyTkJkamhGYkZJMmEySnpaMDFEVjFCQ1RFZHNXblZJUTJkeVNGSXRNVkJFUkU1U1ZUWnFkR2hFWDBnMGNIUk1hMjFwYzFGNVNqRlRSelpyWVVWeVluUk5PRjg0T1dwS2FHUk9aVTFJYnkweVJqUXRSVzF3V0ROdVIydFhla3BSUVROQ2VXVkphMVZVVTJZMWRsRlZTbHBWYzAxUFkzcEJUVTk1YURaVlRuZzRUWGcwWVdoNVVHdzJhVTFmVm1VME1FbExTaTFqZVhCemFVMURTM0IwWmxoaE1uVkRRbWhOYWpCQmVqZEdWbWRKUVMxM09UZEJTR000UWpaNk9EUnhjbG8wTFhwV1lXaDZRbFJhZFZGaU0wcHNTVFJwVEMxclkwMVJSelo1YzI1UVdFdGlZV1pwVlZCcWRGTlVablZrU1hCc05qZDBaazl2ZW1sNVVIWmFWRzB5ZW0xWE1ucGphMkpRV0hwdVFqSkpaVlI1YTFoRlRUaElUWHBHYjFOTFNVZGhVa0psUm5WSWJEbFNlVVpHTTBaSWFWWTVRVVZ1YzFsVFZqUjBZVlV6VmxSeE1FZEZWbnAyZUVOeVpuSk1jbEpWWms1M2RWWTVjRFJIVTIxWVExVkdkemxIVDNKelozbE9SM0ZSY0ZOQ1ZIaDBXVXhtVWtwVFRuWmtPV05DVjJZMmFWUkxWbVZNV2xaRVVXeFJTelV6WlhKNE5FbzROWG90UkVFNGNrRm5jbGh3YUdsUFYxVlNaR001YjAxWVFrb3hjVEZsVFVGT1lrSktSbXBKY3hJWFJsRnVTbHAyYlVKR1dXbHZNV1U0VURnMGVtcHBRVTBhSWtGR1dISkZZM0pmY1UxYVkycDRlSE5DYlZsMGVuTlJMUzF3YlVzM2JHODFiMmMiLCJmY3YiOiIzIn0=",
+    "next": "https://serpapi.com/search.json?engine=google_jobs&google_domain=google.com&location=New+York%2C+New+York%2C+United+States&next_page_token=eyJmYyI6IkVvd0VDc3dEUVVwSE9VcHJUVFUzYm0xM1UyTkJkamhGYkZJMmEySnpaMDFEVjFCQ1RFZHNXblZJUTJkeVNGSXRNVkJFUkU1U1ZUWnFkR2hFWDBnMGNIUk1hMjFwYzFGNVNqRlRSelpyWVVWeVluUk5PRjg0T1dwS2FHUk9aVTFJYnkweVJqUXRSVzF3V0ROdVIydFhla3BSUVROQ2VXVkphMVZVVTJZMWRsRlZTbHBWYzAxUFkzcEJUVTk1YURaVlRuZzRUWGcwWVdoNVVHdzJhVTFmVm1VME1FbExTaTFqZVhCemFVMURTM0IwWmxoaE1uVkRRbWhOYWpCQmVqZEdWbWRKUVMxM09UZEJTR000UWpaNk9EUnhjbG8wTFhwV1lXaDZRbFJhZFZGaU0wcHNTVFJwVEMxclkwMVJSelo1YzI1UVdFdGlZV1pwVlZCcWRGTlVablZrU1hCc05qZDBaazl2ZW1sNVVIWmFWRzB5ZW0xWE1ucGphMkpRV0hwdVFqSkpaVlI1YTFoRlRUaElUWHBHYjFOTFNVZGhVa0psUm5WSWJEbFNlVVpHTTBaSWFWWTVRVVZ1YzFsVFZqUjBZVlV6VmxSeE1FZEZWbnAyZUVOeVpuSk1jbEpWWms1M2RWWTVjRFJIVTIxWVExVkdkemxIVDNKelozbE9SM0ZSY0ZOQ1ZIaDBXVXhtVWtwVFRuWmtPV05DVjJZMmFWUkxWbVZNV2xaRVVXeFJTelV6WlhKNE5FbzROWG90UkVFNGNrRm5jbGh3YUdsUFYxVlNaR001YjAxWVFrb3hjVEZsVFVGT1lrSktSbXBKY3hJWFJsRnVTbHAyYlVKR1dXbHZNV1U0VURnMGVtcHBRVTBhSWtGR1dISkZZM0pmY1UxYVkycDRlSE5DYlZsMGVuTlJMUzF3YlVzM2JHODFiMmMiLCJmY3YiOiIzIn0%3D&q=web"
+  }
+}
