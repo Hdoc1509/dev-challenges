@@ -1,18 +1,13 @@
 import { create } from "zustand";
-import type { Job, Search } from "../types";
+import type { Job } from "../types";
 
 type Status = "idle" | "error" | "success" | "loading";
-
-export type StoreSearch = Omit<Search, "pageAsIndex"> & { pageAsIndex: number };
 
 type State = {
   jobs: Job[];
   cachedJobs: Job[][];
   status: Status;
   error?: Error;
-  search: StoreSearch;
-  lastSearch: StoreSearch;
-  pages: number;
 };
 
 type Action = {
@@ -26,9 +21,6 @@ type Action = {
   setStatus: (status: Status) => void;
   /** Sets the error and status to `error` */
   setError: (error: Error) => void;
-  setSearch: (newSearch: Partial<Search>) => void;
-  setLastSearch: (newSearch: Partial<Search>) => void;
-  setPages: (pages: number) => void;
 };
 
 const initialState: State = {
@@ -36,19 +28,6 @@ const initialState: State = {
   cachedJobs: [],
   status: "idle",
   error: undefined,
-  search: {
-    query: "",
-    location: "",
-    fullTime: false,
-    pageAsIndex: 0,
-  },
-  lastSearch: {
-    query: "",
-    location: "",
-    fullTime: false,
-    pageAsIndex: 0,
-  },
-  pages: 0,
 };
 
 export const useJobsStore = create<State & Action>()((set) => ({
@@ -60,13 +39,4 @@ export const useJobsStore = create<State & Action>()((set) => ({
   clearCachedJobs: () => set({ cachedJobs: [] }),
   setStatus: (status: Status) => set({ status }),
   setError: (error: Error) => set({ error, status: "error" }),
-  setSearch: (newSearch: Partial<Search>) =>
-    set((state) => ({
-      search: { ...state.search, ...newSearch },
-    })),
-  setLastSearch: (newSearch: Partial<Search>) =>
-    set((state) => ({
-      lastSearch: { ...state.lastSearch, ...newSearch },
-    })),
-  setPages: (pages: number) => set({ pages }),
 }));

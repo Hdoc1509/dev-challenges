@@ -1,5 +1,6 @@
 import { useCallback } from "react";
-import { useJobsStore, type StoreSearch } from "@/store/jobs";
+import { useJobsStore } from "@/store/jobs";
+import { useSearchStore, type StoreSearch } from "@/store/search";
 import { getJobs } from "@/services/jobs/client";
 import { getMockedJobs } from "@/services/jobs/mock";
 import { JobsEmptyResultsError } from "@/errors";
@@ -13,16 +14,16 @@ import "./Pagination.scss";
 
 export const Pagination = () => {
   const cachedJobs = useJobsStore((s) => s.cachedJobs);
-  const search = useJobsStore((s) => s.search);
-  const lastSearch = useJobsStore((s) => s.lastSearch);
-  const pages = useJobsStore((s) => s.pages);
+  const search = useSearchStore((s) => s.search);
+  const lastSearch = useSearchStore((s) => s.lastSearch);
+  const pages = useSearchStore((s) => s.pages);
   const setJobs = useJobsStore((s) => s.setJobs);
   const cacheJobs = useJobsStore((s) => s.cacheJobs);
   const setError = useJobsStore((s) => s.setError);
-  const setSearch = useJobsStore((s) => s.setSearch);
-  const setLastSearch = useJobsStore((s) => s.setLastSearch);
+  const setSearch = useSearchStore((s) => s.setSearch);
+  const setLastSearch = useSearchStore((s) => s.setLastSearch);
   const setStatus = useJobsStore((s) => s.setStatus);
-  const setPages = useJobsStore((s) => s.setPages);
+  const setPages = useSearchStore((s) => s.setPages);
 
   const handlePageChange = useCallback(
     async (newPage: number) => {

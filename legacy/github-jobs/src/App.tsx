@@ -1,5 +1,6 @@
 import { useCallback, useEffect } from "react";
 import { useJobsStore } from "@/store/jobs";
+import { useSearchStore } from "@/store/search";
 import { getJobs } from "@/services/jobs/client";
 import { getMockedJobs } from "@/services/jobs/mock";
 import { getLocationOption } from "@/utils/geolocation";
@@ -14,12 +15,12 @@ let didInit = false;
 
 function App() {
   const cacheJobs = useJobsStore((s) => s.cacheJobs);
-  const setSearch = useJobsStore((s) => s.setSearch);
-  const setLastSearch = useJobsStore((s) => s.setLastSearch);
+  const setSearch = useSearchStore((s) => s.setSearch);
+  const setLastSearch = useSearchStore((s) => s.setLastSearch);
   const setJobs = useJobsStore((s) => s.setJobs);
   const setStatus = useJobsStore((s) => s.setStatus);
   const setError = useJobsStore((s) => s.setError);
-  const setPages = useJobsStore((s) => s.setPages);
+  const setPages = useSearchStore((s) => s.setPages);
 
   const getInitialJobs = useCallback(async () => {
     setStatus("loading");

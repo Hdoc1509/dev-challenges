@@ -1,4 +1,5 @@
 import { useJobsStore } from "@/store/jobs";
+import { useSearchStore } from "@/store/search";
 import { RingSpinner } from "@hrc/spinner";
 import { SearchForm } from "@/components/SearchForm";
 import { SearchOptions } from "@/components/SearchOptions";
@@ -10,7 +11,7 @@ export const Home = () => {
   const status = useJobsStore((s) => s.status);
   const error = useJobsStore((s) => s.error);
   const jobs = useJobsStore((s) => s.jobs);
-  const pages = useJobsStore((s) => s.pages);
+  const pages = useSearchStore((s) => s.pages);
 
   return (
     <div className="home">

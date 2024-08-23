@@ -1,6 +1,7 @@
 import { getJobs } from "@/services/jobs/client";
 import { getMockedJobs } from "@/services/jobs/mock";
 import { useJobsStore } from "@/store/jobs";
+import { useSearchStore } from "@/store/search";
 import { getLocationOption } from "@/utils/geolocation";
 import { isSameSearch } from "@/utils/search";
 import { Button } from "@hrc/button";
@@ -10,17 +11,17 @@ import { isDev } from "@/config";
 import "./SearchForm.scss";
 
 export const SearchForm = () => {
-  const search = useJobsStore((s) => s.search);
-  const lastSearch = useJobsStore((s) => s.lastSearch);
+  const search = useSearchStore((s) => s.search);
+  const lastSearch = useSearchStore((s) => s.lastSearch);
   const status = useJobsStore((s) => s.status);
   const cacheJobs = useJobsStore((s) => s.cacheJobs);
   const clearCachedJobs = useJobsStore((s) => s.clearCachedJobs);
-  const setSearch = useJobsStore((s) => s.setSearch);
-  const setLastSearch = useJobsStore((s) => s.setLastSearch);
+  const setSearch = useSearchStore((s) => s.setSearch);
+  const setLastSearch = useSearchStore((s) => s.setLastSearch);
   const setJobs = useJobsStore((s) => s.setJobs);
   const setStatus = useJobsStore((s) => s.setStatus);
   const setError = useJobsStore((s) => s.setError);
-  const setPages = useJobsStore((s) => s.setPages);
+  const setPages = useSearchStore((s) => s.setPages);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
