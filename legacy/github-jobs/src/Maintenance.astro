@@ -1,6 +1,12 @@
 ---
 import { Header } from "./components/Header";
 import { Footer } from "@lib/components/Footer";
+
+type Props = {
+  issue: string;
+};
+
+const { issue } = Astro.props;
 ---
 
 <Header client:only="react" />
@@ -11,7 +17,7 @@ import { Footer } from "@lib/components/Footer";
   <p>
     If you are curious, you can check{" "}
     <a
-      href="https://github.com/hdoc1509/dev-challenges/issues/2"
+      href={`https://github.com/hdoc1509/dev-challenges/issues/${issue}`}
       target="_blank"
       rel="noopener noreferrer"
     >
