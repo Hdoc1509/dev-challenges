@@ -16,7 +16,7 @@ export async function fetcher<S extends z.ZodTypeAny>(
   } = options;
   const controller = new AbortController();
 
-  setTimeout(() => controller.abort(), timeout);
+  const timeoutID = setTimeout(() => controller.abort(), timeout);
 
   try {
     const res = await fetch(url, { ...restOptions, signal: controller.signal });
@@ -37,6 +37,8 @@ export async function fetcher<S extends z.ZodTypeAny>(
       if (message.match(/NetworkError|Failed to fetch/) != null)
         return [serviceError.network()];
     }
+  } finally {
+    clearTimeout(timeoutID);
   }
 
   return [serviceError.unknown()];
