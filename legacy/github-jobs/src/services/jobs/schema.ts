@@ -51,7 +51,7 @@ export const JobsResultSchema = z.object({
   extensions: z.array(z.string()),
   detected_extensions: DetectedExtensionsSchema,
   description: z.string(),
-  job_highlights: z.array(JobHighlightSchema),
+  job_highlights: z.array(JobHighlightSchema).optional(),
   apply_options: z.array(ApplyOptionSchema),
   job_id: z.string(),
 });
