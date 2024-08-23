@@ -2,17 +2,14 @@ import { useLocation, Link } from "react-router-dom";
 import { Icon } from "@hrc/material-icons";
 import { JobCard } from "@/components/JobCard";
 import type { Job, ApplyOption as ApplyOptionType } from "@/types";
-import "@hrc/button/dist/Button"; // styles side-effects?
 import "./JobPage.scss";
 
 const ApplyOption = ({ option }: { option: ApplyOptionType }) => (
   <a
-    className="button button--primary"
-    key={option.title}
+    className="job-page__apply-option"
     href={option.link}
     target="_blank"
     rel="noopener noreferrer"
-    role="button"
   >
     Apply on {option.title}
     <Icon name="open_in_new" />

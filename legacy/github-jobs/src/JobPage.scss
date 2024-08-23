@@ -46,9 +46,21 @@
     text-decoration: none;
     --icon-size: 1.5em;
   }
+}
+.job-page__apply-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
 
-  [data-theme="dark"] & {
-    --primary: #006cea;
-    --primary-hover: #095cd3;
+  color: var(--primary);
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-size: var(--fs-0);
+  font-weight: 500;
+
+  --icon-size: 1.5em;
+
+  &:hover {
+    text-decoration: underline;
   }
 }
