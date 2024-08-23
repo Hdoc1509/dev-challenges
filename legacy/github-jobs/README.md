@@ -33,7 +33,7 @@ Challenge: Create a job search using an API. Use Front-end libraries like React 
 - [x] User story (optional): I can see a list of jobs in the closest city from my location by default
 - [x] User story (optional): I can see jobs on different pages, 5 items on each page
 
-  **NOTE: The used API paginates by 10 items per page**
+  **NOTE: The used API for jobs returns up to 10 items per page**
 
 ### Built With
 
