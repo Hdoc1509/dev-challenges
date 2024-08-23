@@ -33,7 +33,6 @@ const SearchParametersSchema = z.object({
   q: z.string(),
   engine: z.string(),
   google_domain: z.string(),
-  next_page_token: z.string().optional(),
 });
 
 const SerpapiPaginationSchema = z.object({

@@ -40,7 +40,7 @@ export const getJobs = async (search: Search): JobsServiceReturn => {
     null,
     {
       jobs: parseJobs(data.jobs_results),
-      nextPageToken: data.search_parameters.next_page_token,
+      nextPageToken: data.serpapi_pagination.next_page_token,
     },
   ];
 };
