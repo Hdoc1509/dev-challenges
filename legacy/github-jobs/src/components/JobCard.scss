@@ -34,6 +34,7 @@
       "image title    title"
       "image schedule ."
       ".     location created-at";
+    --card-cols: auto 1fr auto;
   }
 
   &__image {
@@ -158,6 +159,6 @@
       "image       company"
       "image       location"
       "description description";
-    --card-cols: auto 1fr auto;
+    --card-cols: auto 1fr;
   }
 }
