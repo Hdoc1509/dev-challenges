@@ -4,3 +4,6 @@ export const predefinedCities = [
   { label: "New York", value: "New York" },
   { label: "Berlin", value: "Berlin" },
 ];
+
+export const DEFAULT_QUERY = "front end";
+export const DEFAULT_SEARCH = { query: DEFAULT_QUERY };
