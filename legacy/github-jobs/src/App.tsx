@@ -1,60 +1,34 @@
 import { useCallback, useEffect } from "react";
-import { useJobsStore } from "@/store/jobs";
 import { useSearchStore } from "@/store/search";
-import { getJobs } from "@/services/jobs/client";
-import { getMockedJobs } from "@/services/jobs/mock";
-import { getLocationOption } from "@/utils/geolocation";
+import { useJobs } from "@/hooks/useJobs";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { Footer } from "@lib/components/Footer";
 import { Header } from "@/components/Header";
 import { Home } from "./Home";
 import { JobPage } from "./JobPage";
-import { isDev } from "@/config";
 
 let didInit = false;
 
 function App() {
-  const cacheJobs = useJobsStore((s) => s.cacheJobs);
+  const { searchJobs } = useJobs();
   const setSearch = useSearchStore((s) => s.setSearch);
   const setLastSearch = useSearchStore((s) => s.setLastSearch);
-  const setJobs = useJobsStore((s) => s.setJobs);
-  const setStatus = useJobsStore((s) => s.setStatus);
-  const setError = useJobsStore((s) => s.setError);
   const setPages = useSearchStore((s) => s.setPages);
 
   const getInitialJobs = useCallback(async () => {
-    setStatus("loading");
+    const search = { query: "front", location: "" };
 
-    const [locationError, location] = await getLocationOption();
+    const [searchError, searchResult] = await searchJobs(search);
 
-    if (locationError) return setError(locationError);
+    if (searchError) return;
 
-    const search = { query: "front", location };
-    const [jobsError, jobsResult] = await (isDev
-      ? getMockedJobs(search)
-      : getJobs(search));
+    const { nextPageToken, usedLocation } = searchResult;
 
-    if (jobsError) return setError(jobsError);
-
-    const { jobs, nextPageToken } = jobsResult;
-
-    setJobs(jobs);
-    setLastSearch({ location });
+    setLastSearch({ location: usedLocation });
     setSearch({ nextPageToken });
     if (nextPageToken == null) setPages(1);
-    else {
-      cacheJobs(jobs);
-      setPages(10);
-    }
-  }, [
-    cacheJobs,
-    setError,
-    setJobs,
-    setLastSearch,
-    setPages,
-    setSearch,
-    setStatus,
-  ]);
+    else setPages(10);
+  }, [searchJobs, setLastSearch, setPages, setSearch]);
 
   useEffect(() => {
     if (!didInit) {
