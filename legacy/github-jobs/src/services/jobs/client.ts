@@ -9,9 +9,9 @@ const ApiResponseSchema = JobsResponseSchema.or(ApiErrorSchema);
 const JobsError = new ServiceError("Jobs");
 
 export type JobsServiceSuccess = { jobs: Job[]; nextPageToken?: string };
-export type JobsServiceReturn = PromiseWithError<JobsServiceSuccess>;
+export type JobsServiceResult = PromiseWithError<JobsServiceSuccess>;
 
-export const getJobs = async (search: Search): JobsServiceReturn => {
+export const getJobs = async (search: Search): JobsServiceResult => {
   const { query, location, /* fullTime, */ nextPageToken } = search;
 
   const params = new URLSearchParams({ q: query, location });

@@ -7,7 +7,7 @@ import { isDev } from "@/config";
 import type { Search, SetOptional } from "@/types";
 import type { PromiseWithError } from "@lib/fetcher";
 
-type SearchReturn = PromiseWithError<
+type SearchResult = PromiseWithError<
   JobsServiceSuccess & { usedLocation: string }
 >;
 type JobSearch = SetOptional<Search, "location">;
@@ -21,7 +21,7 @@ export function useJobs() {
   const setStatus = useJobsStore((s) => s.setStatus);
   const setError = useJobsStore((s) => s.setError);
 
-  const searchJobs = useCallback(async (search: JobSearch): SearchReturn => {
+  const searchJobs = useCallback(async (search: JobSearch): SearchResult => {
     setStatus("loading");
 
     const [locationError, location] = await getLocationOption(search.location);

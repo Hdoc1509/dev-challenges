@@ -3,11 +3,11 @@ import { parseJobs } from "./parse";
 import { randomInt } from "@/utils/helpers";
 import jobsMock from "@/mocks/jobs.json";
 import type { Search } from "@/types";
-import type { JobsServiceReturn } from "./client";
+import type { JobsServiceResult } from "./client";
 
 const mockLocations = jobsMock.jobs_results.map(({ location }) => location);
 
-export const getMockedJobs = (search: Search): JobsServiceReturn => {
+export const getMockedJobs = (search: Search): JobsServiceResult => {
   const { query, location, fullTime, pageAsIndex = 0 } = search;
   const jobs = parseJobs(jobsMock.jobs_results);
   const endIndexSlice = randomInt(0, 10);
