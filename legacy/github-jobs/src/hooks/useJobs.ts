@@ -1,17 +1,15 @@
 import { useCallback } from "react";
 import { useJobsStore } from "@/store/jobs";
-import { getJobs } from "@/services/jobs/client";
+import { getJobs, type JobsServiceSuccess } from "@/services/jobs/client";
 import { getMockedJobs } from "@/services/jobs/mock";
 import { getLocationOption } from "@/utils/geolocation";
 import { isDev } from "@/config";
-import type { Job, Search, SetOptional } from "@/types";
+import type { Search, SetOptional } from "@/types";
 import type { PromiseWithError } from "@lib/fetcher";
 
-type SearchReturn = PromiseWithError<{
-  jobs: Job[];
-  nextPageToken?: string;
-  usedLocation: string;
-}>;
+type SearchReturn = PromiseWithError<
+  JobsServiceSuccess & { usedLocation: string }
+>;
 type JobSearch = SetOptional<Search, "location">;
 
 export function useJobs() {
