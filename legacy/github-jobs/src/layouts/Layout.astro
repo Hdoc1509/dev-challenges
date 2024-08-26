@@ -64,22 +64,20 @@ import "@fontsource/poppins/700.css";
   }
 
   body {
-    --_padding: 2rem;
-    --_max-width: 1200px;
-
     position: relative;
     display: grid;
     grid-template-rows: auto 1fr auto;
     gap: 16px;
 
-    width: min(var(--_max-width), 100% - calc(2 * var(--_padding)));
+    max-width: 1200px;
+    min-width: 320px;
     background-color: var(--bg-color, #fff);
-    padding-block: var(--_padding);
+    padding: 2rem;
 
     color: var(--text-color, #000);
 
     @media (max-width: 767px) {
-      --_padding: 1rem;
+      padding: 1rem;
     }
   }
 
