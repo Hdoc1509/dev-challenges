@@ -16,7 +16,7 @@ function App() {
   const setPages = useSearchStore((s) => s.setPages);
 
   const getInitialJobs = useCallback(async () => {
-    const search = { query: "front", location: "" };
+    const search = { query: "front" };
 
     const [searchError, searchResult] = await searchJobs(search);
 

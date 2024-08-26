@@ -4,7 +4,7 @@ import { getJobs } from "@/services/jobs/client";
 import { getMockedJobs } from "@/services/jobs/mock";
 import { getLocationOption } from "@/utils/geolocation";
 import { isDev } from "@/config";
-import type { Job, Search } from "@/types";
+import type { Job, Search, SetOptional } from "@/types";
 import type { PromiseWithError } from "@lib/fetcher";
 
 type SearchReturn = PromiseWithError<{
@@ -12,6 +12,7 @@ type SearchReturn = PromiseWithError<{
   nextPageToken?: string;
   usedLocation: string;
 }>;
+type JobSearch = SetOptional<Search, "location">;
 
 export function useJobs() {
   const jobs = useJobsStore((s) => s.jobs);
@@ -22,7 +23,7 @@ export function useJobs() {
   const setStatus = useJobsStore((s) => s.setStatus);
   const setError = useJobsStore((s) => s.setError);
 
-  const searchJobs = useCallback(async (search: Search): SearchReturn => {
+  const searchJobs = useCallback(async (search: JobSearch): SearchReturn => {
     setStatus("loading");
 
     const [locationError, location] = await getLocationOption(search.location);
