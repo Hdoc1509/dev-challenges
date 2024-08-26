@@ -8,10 +8,8 @@ import type { Job, Search } from "@/types";
 const ApiResponseSchema = JobsResponseSchema.or(ApiErrorSchema);
 const JobsError = new ServiceError("Jobs");
 
-export type JobsServiceReturn = PromiseWithError<{
-  jobs: Job[];
-  nextPageToken?: string;
-}>;
+export type JobsServiceSuccess = { jobs: Job[]; nextPageToken?: string };
+export type JobsServiceReturn = PromiseWithError<JobsServiceSuccess>;
 
 export const getJobs = async (search: Search): JobsServiceReturn => {
   const { query, location, /* fullTime, */ nextPageToken } = search;
