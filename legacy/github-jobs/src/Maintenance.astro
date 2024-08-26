@@ -1,6 +1,7 @@
 ---
 import { Header } from "./components/Header";
 import { Footer } from "@lib/components/Footer";
+import { Maintenance as LibMaintenance } from "@lib/components/Maintenance";
 
 type Props = {
   issue: number;
@@ -10,50 +11,11 @@ const { issue } = Astro.props;
 ---
 
 <Header client:only="react" />
-<main>
-  <h2>Website under maintenance</h2>
-  <h3>We hope to be back soon!</h3>
-  <img src="/repair.png" alt="repair" />
-  <p>
-    If you are curious, you can check{" "}
-    <a
-      href={`https://github.com/hdoc1509/dev-challenges/issues/${issue}`}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      this issue
-    </a>{" "}
-    for more information.
-  </p>
-</main>
+<LibMaintenance issue={issue} repairImageSrc="/repair.png" />
 <Footer />
 
-<style lang="scss">
-  @use "@lib/sass-utils/font/sizes";
-
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-
-    text-align: center;
-  }
-
-  h2 {
-    font-size: var(--fs-fluid-6-8);
-  }
-
-  h3 {
-    font-size: var(--fs-fluid-4);
-  }
-
-  img {
-    margin-block: 1rem;
-  }
-
-  p {
-    margin-top: 1rem;
+<style lang="css">
+  :root {
+    --issue-link-text: var(--primary);
   }
 </style>
