@@ -6,6 +6,7 @@ import { Footer } from "@lib/components/Footer";
 import { Header } from "@/components/Header";
 import { Home } from "./Home";
 import { JobPage } from "./JobPage";
+import { DEFAULT_SEARCH } from "@/constants";
 
 let didInit = false;
 
@@ -16,9 +17,7 @@ function App() {
   const setPages = useSearchStore((s) => s.setPages);
 
   const getInitialJobs = useCallback(async () => {
-    const search = { query: "front" };
-
-    const [searchError, searchResult] = await searchJobs(search);
+    const [searchError, searchResult] = await searchJobs(DEFAULT_SEARCH);
 
     if (searchError) return;
 
