@@ -17,6 +17,7 @@ export function useJobs() {
   const error = useJobsStore((s) => s.error);
   const status = useJobsStore((s) => s.status);
   const cacheJobs = useJobsStore((s) => s.cacheJobs);
+  const clearCachedJobs = useJobsStore((s) => s.clearCachedJobs);
   const setJobs = useJobsStore((s) => s.setJobs);
   const setStatus = useJobsStore((s) => s.setStatus);
   const setError = useJobsStore((s) => s.setError);
@@ -57,6 +58,7 @@ export function useJobs() {
     jobs,
     jobsError: error,
     jobsStatus: status,
+    clearCachedJobs,
     searchJobs,
     setJobsError: setError,
     setJobsStatus: setStatus,

@@ -1,4 +1,3 @@
-import { useJobsStore } from "@/store/jobs";
 import { useSearchStore } from "@/store/search";
 import { useJobs } from "@/hooks/useJobs";
 import { isSameSearch } from "@/utils/search";
@@ -9,10 +8,9 @@ import { isDev } from "@/config";
 import "./SearchForm.scss";
 
 export const SearchForm = () => {
-  const { jobsStatus, searchJobs } = useJobs();
+  const { jobsStatus, clearCachedJobs, searchJobs } = useJobs();
   const search = useSearchStore((s) => s.search);
   const lastSearch = useSearchStore((s) => s.lastSearch);
-  const clearCachedJobs = useJobsStore((s) => s.clearCachedJobs);
   const setSearch = useSearchStore((s) => s.setSearch);
   const setLastSearch = useSearchStore((s) => s.setLastSearch);
   const setPages = useSearchStore((s) => s.setPages);
