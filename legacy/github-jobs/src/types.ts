@@ -26,3 +26,9 @@ export type Search = {
 };
 
 export type LocationOptions = { zipCode: number } | { coords: LocationCoords };
+
+export type SetOptional<BaseType, Keys extends keyof BaseType> = Omit<
+  BaseType,
+  Keys
+> &
+  Partial<Pick<BaseType, Keys>>;
