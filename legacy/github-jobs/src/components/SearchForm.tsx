@@ -1,8 +1,6 @@
-import { getJobs } from "@/services/jobs/client";
-import { getMockedJobs } from "@/services/jobs/mock";
 import { useJobsStore } from "@/store/jobs";
 import { useSearchStore } from "@/store/search";
-import { getLocationOption } from "@/utils/geolocation";
+import { useJobs } from "@/hooks/useJobs";
 import { isSameSearch } from "@/utils/search";
 import { Button } from "@hrc/button";
 import { Input } from "@hrc/input";
@@ -11,16 +9,12 @@ import { isDev } from "@/config";
 import "./SearchForm.scss";
 
 export const SearchForm = () => {
+  const { jobsStatus, searchJobs } = useJobs();
   const search = useSearchStore((s) => s.search);
   const lastSearch = useSearchStore((s) => s.lastSearch);
-  const status = useJobsStore((s) => s.status);
-  const cacheJobs = useJobsStore((s) => s.cacheJobs);
   const clearCachedJobs = useJobsStore((s) => s.clearCachedJobs);
   const setSearch = useSearchStore((s) => s.setSearch);
   const setLastSearch = useSearchStore((s) => s.setLastSearch);
-  const setJobs = useJobsStore((s) => s.setJobs);
-  const setStatus = useJobsStore((s) => s.setStatus);
-  const setError = useJobsStore((s) => s.setError);
   const setPages = useSearchStore((s) => s.setPages);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -28,32 +22,21 @@ export const SearchForm = () => {
 
     if (!isDev && isSameSearch({ current: search, last: lastSearch })) return;
 
-    setStatus("loading");
-
     const newLocation =
       search.location === "" ? lastSearch.location : search.location;
-    const [locationError, location] = await getLocationOption(newLocation);
 
-    if (locationError) return setError(locationError);
+    const newSearch = { ...search, pageAsIndex: 0, location: newLocation };
+    const [searchError, searchResult] = await searchJobs(newSearch);
 
-    const newSearch = { ...search, pageAsIndex: 0, location };
-    const [jobsError, jobsResult] = await (isDev
-      ? getMockedJobs(newSearch)
-      : getJobs(newSearch));
+    if (searchError) return;
 
-    if (jobsError) return setError(jobsError);
+    const { nextPageToken, usedLocation } = searchResult;
 
-    const { jobs, nextPageToken } = jobsResult;
-
-    setJobs(jobs);
     setSearch({ pageAsIndex: 0, nextPageToken });
-    setLastSearch({ ...search, location });
+    setLastSearch({ ...search, location: usedLocation });
     clearCachedJobs();
     if (nextPageToken == null) setPages(1);
-    else {
-      setPages(10);
-      cacheJobs(jobs);
-    }
+    else setPages(10);
   };
 
   return (
@@ -62,7 +45,7 @@ export const SearchForm = () => {
         id="search-form"
         className="search-form__inner"
         onSubmit={(e) => void handleSubmit(e)}
-        data-loading={status === "loading"}
+        data-loading={jobsStatus === "loading"}
       >
         <Input
           iconStart={<Icon name="work_outline" />}
