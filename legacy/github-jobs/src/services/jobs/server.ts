@@ -1,4 +1,9 @@
-import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
+import {
+  ServiceError,
+  ResponseError,
+  fetcher,
+  type PromiseWithError,
+} from "@lib/fetcher";
 import {
   JobsResponseSchema,
   JobsErrorResponseSchema,
@@ -34,11 +39,15 @@ export const getJobs = async (
     {
       schema: Schema,
       serviceError: JobsError,
-      checkStatus: false, // allows to read serpapi endpoint errors in response
     },
   );
 
-  if (error) return [error];
+  if (error != null) {
+    if (error instanceof ResponseError && error.res.status >= 500)
+      return [new Error("Jobs service internal error")];
+
+    return [error];
+  }
 
   if ("error" in data) {
     // serpapi endpoint error
