@@ -13,7 +13,7 @@ module.exports = {
   },
   overrides: [
     {
-      files: ["*.tsx"],
+      files: ["*.tsx", "use*.ts"],
       extends: [
         "plugin:react/recommended",
         "plugin:react/jsx-runtime",
