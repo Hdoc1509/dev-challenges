@@ -28,12 +28,23 @@ export function useJobs() {
   const searchJobs = useCallback(async (search: JobSearch): SearchResult => {
     setStatus("loading");
 
+    const { pageAsIndex } = search;
+
     const [locationError, location] = await getLocationOption(search.location);
 
     if (locationError) {
       setError(locationError);
       setStatus("error");
       return [locationError];
+    }
+
+    if (pageAsIndex != null) {
+      const pageCache = cachedJobs[pageAsIndex];
+
+      if (pageCache != null && pageCache.length > 0) {
+        setJobs(pageCache);
+        return [null, { jobs: pageCache, usedLocation: location }];
+      }
     }
 
     const jobSearch = { ...search, location };

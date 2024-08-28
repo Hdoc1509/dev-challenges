@@ -10,7 +10,7 @@ import { Ellipsis } from "./Icons";
 import "./Pagination.scss";
 
 export const Pagination = () => {
-  const { cachedJobs, searchJobs, setJobsError } = useJobs();
+  const { searchJobs, setJobsError } = useJobs();
   const search = useSearchStore((s) => s.search);
   const lastSearch = useSearchStore((s) => s.lastSearch);
   const userLocation = useSearchStore((s) => s.userLocation);
@@ -22,14 +22,6 @@ export const Pagination = () => {
 
   const handlePageChange = useCallback(
     async (newPage: number) => {
-      const newPageCache = cachedJobs[newPage];
-
-      if (newPageCache != null) {
-        setJobs(newPageCache);
-        setSearch({ pageAsIndex: newPage });
-        return;
-      }
-
       const { query, fullTime, nextPageToken } = search;
       const location = search.location === "" ? userLocation : search.location;
       const newSearch: StoreSearch = {
@@ -59,7 +51,6 @@ export const Pagination = () => {
     },
     [
       search,
-      cachedJobs,
       userLocation,
       searchJobs,
       setJobs,
