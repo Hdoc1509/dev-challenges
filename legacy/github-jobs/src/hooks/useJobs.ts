@@ -14,6 +14,7 @@ type JobSearch = SetOptional<Search, "location">;
 
 export function useJobs() {
   const jobs = useJobsStore((s) => s.jobs);
+  const cachedJobs = useJobsStore((s) => s.cachedJobs);
   const error = useJobsStore((s) => s.error);
   const status = useJobsStore((s) => s.status);
   const cacheJobs = useJobsStore((s) => s.cacheJobs);
@@ -56,6 +57,7 @@ export function useJobs() {
 
   return {
     jobs,
+    cachedJobs,
     jobsError: error,
     jobsStatus: status,
     clearCachedJobs,
