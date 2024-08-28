@@ -45,17 +45,16 @@ export function useJobs() {
       if (pageAsIndex != null) {
         const pageCache = cachedJobs[pageAsIndex];
 
-        if (pageCache != null && pageCache.length > 0) {
-          setJobs(pageCache);
+        if (pageCache != null) {
+          const isEmpty = pageCache.length === 0;
+          const jobsToUse = isEmpty ? [] : pageCache;
+
+          setJobs(jobsToUse);
           setStatus("success");
           return [
             null,
-            { jobs: pageCache, usedLocation: location, isCached: true },
+            { jobs: jobsToUse, usedLocation: location, isCached: true },
           ];
-        } else if (pageCache != null && pageCache.length === 0) {
-          setJobs([]);
-          setStatus("success");
-          return [null, { jobs: [], usedLocation: location, isCached: true }];
         }
       }
 
