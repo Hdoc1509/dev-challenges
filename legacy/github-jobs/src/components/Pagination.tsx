@@ -16,6 +16,7 @@ export const Pagination = () => {
   const cachedJobs = useJobsStore((s) => s.cachedJobs);
   const search = useSearchStore((s) => s.search);
   const lastSearch = useSearchStore((s) => s.lastSearch);
+  const userLocation = useSearchStore((s) => s.userLocation);
   const pages = useSearchStore((s) => s.pages);
   const setJobs = useJobsStore((s) => s.setJobs);
   const cacheJobs = useJobsStore((s) => s.cacheJobs);
@@ -39,7 +40,7 @@ export const Pagination = () => {
       setStatus("loading");
 
       const newLocation =
-        search.location === "" ? lastSearch.location : search.location;
+        search.location === "" ? userLocation : search.location;
       const [locationError, location] = await getLocationOption(newLocation);
 
       if (locationError) return setError(locationError);
@@ -78,8 +79,8 @@ export const Pagination = () => {
     [
       search,
       cachedJobs,
+      userLocation,
       setStatus,
-      lastSearch.location,
       setError,
       setJobs,
       cacheJobs,

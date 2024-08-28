@@ -13,7 +13,7 @@ let didInit = false;
 function App() {
   const { searchJobs } = useJobs();
   const setSearch = useSearchStore((s) => s.setSearch);
-  const setLastSearch = useSearchStore((s) => s.setLastSearch);
+  const setUserLocation = useSearchStore((s) => s.setUserLocation);
   const setPages = useSearchStore((s) => s.setPages);
 
   const getInitialJobs = useCallback(async () => {
@@ -23,11 +23,11 @@ function App() {
 
     const { nextPageToken, usedLocation } = searchResult;
 
-    setLastSearch({ location: usedLocation });
+    setUserLocation(usedLocation);
     setSearch({ nextPageToken });
     if (nextPageToken == null) setPages(1);
     else setPages(10);
-  }, [searchJobs, setLastSearch, setPages, setSearch]);
+  }, [searchJobs, setUserLocation, setPages, setSearch]);
 
   useEffect(() => {
     if (!didInit) {

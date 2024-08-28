@@ -7,12 +7,14 @@ type State = {
   search: StoreSearch;
   lastSearch: StoreSearch;
   pages: number;
+  userLocation: string;
 };
 
 type Action = {
   setSearch: (newSearch: Partial<Search>) => void;
   setLastSearch: (newSearch: Partial<Search>) => void;
   setPages: (pages: number) => void;
+  setUserLocation: (location: string) => void;
 };
 
 const initialState: State = {
@@ -29,6 +31,7 @@ const initialState: State = {
     pageAsIndex: 0,
   },
   pages: 0,
+  userLocation: "",
 };
 
 export const useSearchStore = create<State & Action>()((set) => ({
@@ -43,4 +46,5 @@ export const useSearchStore = create<State & Action>()((set) => ({
       lastSearch: { ...state.lastSearch, ...newSearch },
     })),
   setPages: (pages: number) => set({ pages }),
+  setUserLocation: (location: string) => set({ userLocation: location }),
 }));

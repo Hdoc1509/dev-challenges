@@ -11,6 +11,7 @@ export const SearchForm = () => {
   const { jobsStatus, clearCachedJobs, searchJobs } = useJobs();
   const search = useSearchStore((s) => s.search);
   const lastSearch = useSearchStore((s) => s.lastSearch);
+  const userLocation = useSearchStore((s) => s.userLocation);
   const setSearch = useSearchStore((s) => s.setSearch);
   const setLastSearch = useSearchStore((s) => s.setLastSearch);
   const setPages = useSearchStore((s) => s.setPages);
@@ -20,10 +21,9 @@ export const SearchForm = () => {
 
     if (!isDev && isSameSearch({ current: search, last: lastSearch })) return;
 
-    const newLocation =
-      search.location === "" ? lastSearch.location : search.location;
+    const location = search.location === "" ? userLocation : search.location;
+    const newSearch = { ...search, pageAsIndex: 0, location };
 
-    const newSearch = { ...search, pageAsIndex: 0, location: newLocation };
     const [searchError, searchResult] = await searchJobs(newSearch);
 
     if (searchError) return setPages(0);
