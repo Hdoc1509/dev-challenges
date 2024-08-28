@@ -32,7 +32,7 @@ export const GET: APIRoute = async ({ request }) => {
         status: 400,
       });
 
-    if (zipCode < 9999 || zipCode > 99999)
+    if (zipCode <= 9999 || zipCode > 99999)
       return new Response(
         JSON.stringify({ error: "Zip code must be 5 digits" }),
         { status: 400 },
