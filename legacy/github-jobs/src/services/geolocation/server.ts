@@ -10,6 +10,10 @@ import type { LocationOptions } from "@/types";
 const ResponseSchema = LocationResponseSchema.or(LocationErrorSchema);
 const GeolocationError = new ServiceError("Geolocation");
 const LOCATIONS_LIMIT = "1";
+// from https://www.weatherapi.com/docs/#intro-error-codes
+const WEATHERAPI_ERROR_CODE = {
+  INTERNAL: 9999,
+};
 
 export const searchLocation = async (
   options: LocationOptions,
@@ -37,7 +41,14 @@ export const searchLocation = async (
 
   if (error) return [error];
 
-  if ("error" in data) return [new Error(data.error.message)];
+  if ("error" in data) {
+    const { message, code } = data.error;
+
+    if (code === WEATHERAPI_ERROR_CODE.INTERNAL)
+      return [new Error("Geolocation service internal error")];
+
+    return [new Error(message)];
+  }
 
   // if no results, response can succeed returning empty array
   // coordinates will always be valid because of Geolocation API
