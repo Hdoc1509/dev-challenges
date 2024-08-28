@@ -45,6 +45,9 @@ export function useJobs() {
       if (pageCache != null && pageCache.length > 0) {
         setJobs(pageCache);
         return [null, { jobs: pageCache, usedLocation: location }];
+      } else if (pageCache != null && pageCache.length === 0) {
+        setJobs([]);
+        return [null, { jobs: [], usedLocation: location }];
       }
     }
 
