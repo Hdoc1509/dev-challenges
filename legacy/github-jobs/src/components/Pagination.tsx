@@ -22,7 +22,6 @@ export const Pagination = () => {
 
   const handlePageChange = useCallback(
     async (newPage: number) => {
-      const { query, fullTime } = search;
       const newPageCache = cachedJobs[newPage];
 
       if (newPageCache != null) {
@@ -31,10 +30,8 @@ export const Pagination = () => {
         return;
       }
 
+      const { query, fullTime, nextPageToken } = search;
       const location = search.location === "" ? userLocation : search.location;
-
-      const { nextPageToken } = search;
-
       const newSearch: StoreSearch = {
         query: query === "" ? "front" : query,
         location,
