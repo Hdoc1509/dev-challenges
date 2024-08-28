@@ -3,6 +3,7 @@ import { useJobsStore } from "@/store/jobs";
 import { getJobs, type JobsServiceSuccess } from "@/services/jobs/client";
 import { getMockedJobs } from "@/services/jobs/mock";
 import { getLocationOption } from "@/utils/geolocation";
+import { JobsEmptyResultsError } from "@/errors";
 import { isDev } from "@/config";
 import type { Search, SetOptional } from "@/types";
 import type { PromiseWithError } from "@lib/fetcher";
@@ -52,6 +53,7 @@ export function useJobs() {
     const [jobsError, jobsSearchResult] = await getJobsService(jobSearch);
 
     if (jobsError) {
+      if (jobsError instanceof JobsEmptyResultsError) setJobs([]);
       setError(jobsError);
       setStatus("error");
       return [jobsError];

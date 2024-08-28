@@ -1,5 +1,4 @@
 import { useCallback } from "react";
-import { useJobsStore } from "@/store/jobs";
 import { useJobs } from "@/hooks/useJobs";
 import { useSearchStore, type StoreSearch } from "@/store/search";
 import { JobsEmptyResultsError } from "@/errors";
@@ -10,12 +9,11 @@ import { Ellipsis } from "./Icons";
 import "./Pagination.scss";
 
 export const Pagination = () => {
-  const { searchJobs, setJobsError } = useJobs();
+  const { searchJobs } = useJobs();
   const search = useSearchStore((s) => s.search);
   const lastSearch = useSearchStore((s) => s.lastSearch);
   const userLocation = useSearchStore((s) => s.userLocation);
   const pages = useSearchStore((s) => s.pages);
-  const setJobs = useJobsStore((s) => s.setJobs);
   const setSearch = useSearchStore((s) => s.setSearch);
   const setLastSearch = useSearchStore((s) => s.setLastSearch);
   const setPages = useSearchStore((s) => s.setPages);
@@ -35,12 +33,9 @@ export const Pagination = () => {
       const [searchError, searchResult] = await searchJobs(newSearch);
 
       if (searchError) {
-        if (searchError instanceof JobsEmptyResultsError) {
-          setJobs([]);
-          setPages(newPage + 1);
-        }
+        if (searchError instanceof JobsEmptyResultsError) setPages(newPage + 1);
 
-        return setJobsError(searchError);
+        return;
       }
 
       const { nextPageToken: newNextPageToken, usedLocation } = searchResult;
@@ -49,16 +44,7 @@ export const Pagination = () => {
       setLastSearch({ ...search, location: usedLocation });
       setPages(newNextPageToken == null ? newPage + 1 : 10);
     },
-    [
-      search,
-      userLocation,
-      searchJobs,
-      setJobs,
-      setSearch,
-      setLastSearch,
-      setPages,
-      setJobsError,
-    ],
+    [search, userLocation, searchJobs, setSearch, setLastSearch, setPages],
   );
 
   return (
