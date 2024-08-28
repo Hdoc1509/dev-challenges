@@ -38,7 +38,13 @@ export const Pagination = () => {
         return;
       }
 
-      const { nextPageToken: newNextPageToken, usedLocation } = searchResult;
+      const {
+        nextPageToken: newNextPageToken,
+        usedLocation,
+        isCached,
+      } = searchResult;
+
+      if (isCached) return setSearch({ pageAsIndex: newPage });
 
       setSearch({ pageAsIndex: newPage, nextPageToken: newNextPageToken });
       setLastSearch({ ...search, location: usedLocation });

@@ -9,7 +9,7 @@ import type { Search, SetOptional } from "@/types";
 import type { PromiseWithError } from "@lib/fetcher";
 
 type SearchResult = PromiseWithError<
-  JobsServiceSuccess & { usedLocation: string }
+  JobsServiceSuccess & { usedLocation: string; isCached?: boolean }
 >;
 type JobSearch = SetOptional<Search, "location">;
 
@@ -48,11 +48,14 @@ export function useJobs() {
         if (pageCache != null && pageCache.length > 0) {
           setJobs(pageCache);
           setStatus("success");
-          return [null, { jobs: pageCache, usedLocation: location }];
+          return [
+            null,
+            { jobs: pageCache, usedLocation: location, isCached: true },
+          ];
         } else if (pageCache != null && pageCache.length === 0) {
           setJobs([]);
           setStatus("success");
-          return [null, { jobs: [], usedLocation: location }];
+          return [null, { jobs: [], usedLocation: location, isCached: true }];
         }
       }
 
