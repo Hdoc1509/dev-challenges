@@ -75,7 +75,5 @@ export function useJobs() {
     jobsStatus: status,
     clearCachedJobs,
     searchJobs,
-    setJobsError: setError,
-    setJobsStatus: setStatus,
   };
 }
