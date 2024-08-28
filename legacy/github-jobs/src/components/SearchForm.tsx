@@ -24,6 +24,8 @@ export const SearchForm = () => {
     const location = search.location === "" ? userLocation : search.location;
     const newSearch = { ...search, pageAsIndex: 0, location };
 
+    clearCachedJobs();
+
     const [searchError, searchResult] = await searchJobs(newSearch);
 
     if (searchError) return setPages(0);
@@ -32,7 +34,6 @@ export const SearchForm = () => {
 
     setSearch({ pageAsIndex: 0, nextPageToken });
     setLastSearch({ ...search, location: usedLocation });
-    clearCachedJobs();
     if (nextPageToken == null) setPages(1);
     else setPages(10);
   };
