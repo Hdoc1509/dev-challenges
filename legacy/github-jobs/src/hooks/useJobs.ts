@@ -12,6 +12,8 @@ type SearchResult = PromiseWithError<
 >;
 type JobSearch = SetOptional<Search, "location">;
 
+const getJobsService = isDev ? getMockedJobs : getJobs;
+
 export function useJobs() {
   const jobs = useJobsStore((s) => s.jobs);
   const cachedJobs = useJobsStore((s) => s.cachedJobs);
@@ -36,9 +38,7 @@ export function useJobs() {
 
     const jobSearch = { ...search, location };
 
-    const [jobsError, jobsSearchResult] = await (isDev
-      ? getMockedJobs(jobSearch)
-      : getJobs(jobSearch));
+    const [jobsError, jobsSearchResult] = await getJobsService(jobSearch);
 
     if (jobsError) {
       setError(jobsError);
