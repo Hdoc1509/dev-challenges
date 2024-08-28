@@ -26,50 +26,55 @@ export function useJobs() {
   const setStatus = useJobsStore((s) => s.setStatus);
   const setError = useJobsStore((s) => s.setError);
 
-  const searchJobs = useCallback(async (search: JobSearch): SearchResult => {
-    setStatus("loading");
+  const searchJobs = useCallback(
+    async (search: JobSearch): SearchResult => {
+      setStatus("loading");
 
-    const { pageAsIndex } = search;
+      const { pageAsIndex } = search;
 
-    const [locationError, location] = await getLocationOption(search.location);
+      const [locationError, location] = await getLocationOption(
+        search.location,
+      );
 
-    if (locationError) {
-      setError(locationError);
-      setStatus("error");
-      return [locationError];
-    }
-
-    if (pageAsIndex != null) {
-      const pageCache = cachedJobs[pageAsIndex];
-
-      if (pageCache != null && pageCache.length > 0) {
-        setJobs(pageCache);
-        return [null, { jobs: pageCache, usedLocation: location }];
-      } else if (pageCache != null && pageCache.length === 0) {
-        setJobs([]);
-        return [null, { jobs: [], usedLocation: location }];
+      if (locationError) {
+        setError(locationError);
+        setStatus("error");
+        return [locationError];
       }
-    }
 
-    const jobSearch = { ...search, location };
+      if (pageAsIndex != null) {
+        const pageCache = cachedJobs[pageAsIndex];
 
-    const [jobsError, jobsSearchResult] = await getJobsService(jobSearch);
+        if (pageCache != null && pageCache.length > 0) {
+          setJobs(pageCache);
+          return [null, { jobs: pageCache, usedLocation: location }];
+        } else if (pageCache != null && pageCache.length === 0) {
+          setJobs([]);
+          return [null, { jobs: [], usedLocation: location }];
+        }
+      }
 
-    if (jobsError) {
-      if (jobsError instanceof JobsEmptyResultsError) setJobs([]);
-      setError(jobsError);
-      setStatus("error");
-      return [jobsError];
-    }
+      const jobSearch = { ...search, location };
 
-    const { jobs: jobsResult } = jobsSearchResult;
+      const [jobsError, jobsSearchResult] = await getJobsService(jobSearch);
 
-    cacheJobs(jobsResult);
-    setJobs(jobsResult);
-    setStatus("success");
+      if (jobsError) {
+        if (jobsError instanceof JobsEmptyResultsError) setJobs([]);
+        setError(jobsError);
+        setStatus("error");
+        return [jobsError];
+      }
 
-    return [null, { ...jobsSearchResult, usedLocation: location }];
-  }, []);
+      const { jobs: jobsResult } = jobsSearchResult;
+
+      cacheJobs(jobsResult);
+      setJobs(jobsResult);
+      setStatus("success");
+
+      return [null, { ...jobsSearchResult, usedLocation: location }];
+    },
+    [cachedJobs, cacheJobs, setError, setJobs, setStatus],
+  );
 
   return {
     jobs,
