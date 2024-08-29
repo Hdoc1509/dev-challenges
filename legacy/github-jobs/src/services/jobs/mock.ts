@@ -7,7 +7,7 @@ import type { JobsServiceResult } from "./client";
 
 const mockLocations = jobsMock.jobs_results.map(({ location }) => location);
 
-export const getMockedJobs = (search: Search): JobsServiceResult => {
+export const getMockedJobs = async (search: Search): JobsServiceResult => {
   const { query, location, fullTime, pageAsIndex = 0 } = search;
   const jobs = parseJobs(jobsMock.jobs_results);
   const endIndexSlice = randomInt(0, 10);
@@ -37,26 +37,22 @@ export const getMockedJobs = (search: Search): JobsServiceResult => {
     );
   });
 
-  if (filtered.length === 0) {
-    return Promise.resolve([
-      new JobsEmptyResultsError(`No jobs found for: ${query}`),
-    ]);
-  }
+  await new Promise((r) => setTimeout(r, 1000));
+
+  if (filtered.length === 0)
+    return [new JobsEmptyResultsError(`No jobs found for: ${query}`)];
 
   const sorted = filtered.sort(() => Math.random() - 0.5);
   const sliced = sorted.slice(0, endIndexSlice);
 
-  if (sliced.length === 0) {
-    return Promise.resolve([
-      new JobsEmptyResultsError(`No jobs found for: ${query}`),
-    ]);
-  }
+  if (sliced.length === 0)
+    return [new JobsEmptyResultsError(`No jobs found for: ${query}`)];
 
-  return Promise.resolve([
+  return [
     null,
     {
       jobs: sliced,
       nextPageToken: sliced.length < 10 ? undefined : `token-${pageAsIndex}`,
     },
-  ]);
+  ];
 };
