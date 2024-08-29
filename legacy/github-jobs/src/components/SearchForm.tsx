@@ -24,6 +24,8 @@ export const SearchForm = () => {
     const location = search.location === "" ? userLocation : search.location;
     const newSearch = { ...search, pageAsIndex: 0, location, clearCache: true };
 
+    setPages(0);
+
     const [searchError, searchResult] = await searchJobs(newSearch);
 
     if (searchError) return setPages(0);
