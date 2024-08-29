@@ -8,7 +8,7 @@ import { isDev } from "@/config";
 import "./SearchForm.scss";
 
 export const SearchForm = () => {
-  const { jobsStatus, clearCachedJobs, searchJobs } = useJobs();
+  const { jobsStatus, searchJobs } = useJobs();
   const search = useSearchStore((s) => s.search);
   const lastSearch = useSearchStore((s) => s.lastSearch);
   const userLocation = useSearchStore((s) => s.userLocation);
@@ -22,9 +22,7 @@ export const SearchForm = () => {
     if (!isDev && isSameSearch({ current: search, last: lastSearch })) return;
 
     const location = search.location === "" ? userLocation : search.location;
-    const newSearch = { ...search, pageAsIndex: 0, location };
-
-    clearCachedJobs();
+    const newSearch = { ...search, pageAsIndex: 0, location, clearCache: true };
 
     const [searchError, searchResult] = await searchJobs(newSearch);
 

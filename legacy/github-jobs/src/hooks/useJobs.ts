@@ -11,7 +11,7 @@ import type { PromiseWithError } from "@lib/fetcher";
 type SearchResult = PromiseWithError<
   JobsServiceSuccess & { usedLocation: string; isCached?: boolean }
 >;
-type JobSearch = SetOptional<Search, "location">;
+type JobSearch = SetOptional<Search, "location"> & { clearCache?: boolean };
 
 const getJobsService = isDev ? getMockedJobs : getJobs;
 
@@ -30,7 +30,7 @@ export function useJobs() {
     async (search: JobSearch): SearchResult => {
       setStatus("loading");
 
-      const { pageAsIndex } = search;
+      const { pageAsIndex, clearCache } = search;
 
       const [locationError, location] = await getLocationOption(
         search.location,
@@ -42,7 +42,7 @@ export function useJobs() {
         return [locationError];
       }
 
-      if (pageAsIndex != null) {
+      if (pageAsIndex != null && !clearCache) {
         const pageCache = cachedJobs[pageAsIndex];
 
         if (pageCache != null) {
@@ -71,13 +71,14 @@ export function useJobs() {
 
       const { jobs: jobsResult } = jobsSearchResult;
 
+      if (clearCache) clearCachedJobs();
       cacheJobs(jobsResult);
       setJobs(jobsResult);
       setStatus("success");
 
       return [null, { ...jobsSearchResult, usedLocation: location }];
     },
-    [cachedJobs, cacheJobs, setError, setJobs, setStatus],
+    [cachedJobs, cacheJobs, clearCachedJobs, setError, setJobs, setStatus],
   );
 
   return {
@@ -85,7 +86,6 @@ export function useJobs() {
     cachedJobs,
     jobsError: error,
     jobsStatus: status,
-    clearCachedJobs,
     searchJobs,
   };
 }
