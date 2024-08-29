@@ -416,6 +416,9 @@ importers:
       '@astrojs/check':
         specifier: 'catalog:'
         version: 0.7.0(prettier-plugin-astro@0.13.0)(prettier@3.0.1)(typescript@5.3.2)
+      '@hrc/type-utils':
+        specifier: 'catalog:'
+        version: 1.1.2(typescript@5.3.2)
       sass:
         specifier: 'catalog:'
         version: 1.65.0

@@ -1,3 +1,4 @@
+import type { Simplify } from "@hrc/type-utils";
 import type { LocationCoords } from "@lib/geolocation";
 
 export type ApplyOption = {
@@ -27,8 +28,6 @@ export type Search = {
 
 export type LocationOptions = { zipCode: number } | { coords: LocationCoords };
 
-export type SetOptional<BaseType, Keys extends keyof BaseType> = Omit<
-  BaseType,
-  Keys
-> &
-  Partial<Pick<BaseType, Keys>>;
+export type SetOptional<BaseType, Keys extends keyof BaseType> = Simplify<
+  Omit<BaseType, Keys> & Partial<Pick<BaseType, Keys>>
+>;

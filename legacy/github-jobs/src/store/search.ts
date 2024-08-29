@@ -1,7 +1,10 @@
 import { create } from "zustand";
+import type { Simplify } from "@hrc/type-utils";
 import type { Search } from "@/types";
 
-export type StoreSearch = Omit<Search, "pageAsIndex"> & { pageAsIndex: number };
+export type StoreSearch = Simplify<
+  Omit<Search, "pageAsIndex"> & { pageAsIndex: number }
+>;
 
 type State = {
   search: StoreSearch;

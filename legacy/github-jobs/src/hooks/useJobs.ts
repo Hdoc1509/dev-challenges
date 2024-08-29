@@ -5,13 +5,16 @@ import { getMockedJobs } from "@/services/jobs/mock";
 import { getLocationOption } from "@/utils/geolocation";
 import { JobsEmptyResultsError } from "@/errors";
 import { isDev } from "@/config";
+import type { Simplify } from "@hrc/type-utils";
 import type { Search, SetOptional } from "@/types";
 import type { PromiseWithError } from "@lib/fetcher";
 
 type SearchResult = PromiseWithError<
-  JobsServiceSuccess & { usedLocation: string; isCached?: boolean }
+  Simplify<JobsServiceSuccess & { usedLocation: string; isCached?: boolean }>
 >;
-type JobSearch = SetOptional<Search, "location"> & { clearCache?: boolean };
+type JobSearch = Simplify<
+  SetOptional<Search, "location"> & { clearCache?: boolean }
+>;
 
 const getJobsService = isDev ? getMockedJobs : getJobs;
 
