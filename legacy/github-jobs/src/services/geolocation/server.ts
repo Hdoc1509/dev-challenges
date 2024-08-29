@@ -6,6 +6,9 @@ import {
 } from "./schema";
 import { WEATHERAPI } from "@/config";
 import type { LocationOptions } from "@/types";
+import type { SharedSearchParams } from "./params";
+
+type SearchParams = SharedSearchParams & { limit: string; key: string };
 
 const ResponseSchema = LocationResponseSchema.or(LocationErrorSchema);
 const GeolocationError = new ServiceError("Geolocation");
@@ -18,17 +21,20 @@ const WEATHERAPI_ERROR_CODE = {
 export const searchLocation = async (
   options: LocationOptions,
 ): PromiseWithError<LocationResponse> => {
-  const params = new URLSearchParams({
+  const paramsOptions: SearchParams = {
+    q: "",
     limit: LOCATIONS_LIMIT,
     key: WEATHERAPI.KEY,
-  });
+  };
 
   if ("coords" in options) {
     const { latitude, longitude } = options.coords;
-    params.append("q", `${latitude},${longitude}`);
+    paramsOptions.q = `${latitude},${longitude}`;
   } else {
-    params.append("q", `${options.zipCode}`);
+    paramsOptions.q = `${options.zipCode}`;
   }
+
+  const params = new URLSearchParams(paramsOptions);
 
   const [error, data] = await fetcher(
     `${WEATHERAPI.URL}/search.json?${params.toString()}`,

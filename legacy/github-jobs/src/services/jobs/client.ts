@@ -4,20 +4,23 @@ import { JobsResponseSchema } from "./schema";
 import { JobsEmptyResultsError } from "@/errors";
 import { parseJobs } from "./parse";
 import type { Job, Search } from "@/types";
+import type { SharedSearchParams } from "./params";
 
 const ApiResponseSchema = JobsResponseSchema.or(ApiErrorSchema);
 const JobsError = new ServiceError("Jobs");
 
+type SearchParams = SharedSearchParams & { full_time?: string };
 export type JobsServiceSuccess = { jobs: Job[]; nextPageToken?: string };
 export type JobsServiceResult = PromiseWithError<JobsServiceSuccess>;
 
 export const getJobs = async (search: Search): JobsServiceResult => {
   const { query, location, /* fullTime, */ nextPageToken } = search;
+  const paramsOptions: SearchParams = { q: query, location };
 
-  const params = new URLSearchParams({ q: query, location });
+  // if (fullTime) paramsOptions.full_time = "";
+  if (nextPageToken != null) paramsOptions.next_page_token = nextPageToken;
 
-  // if (fullTime) params.append("full_time", "");
-  if (nextPageToken != null) params.append("next_page_token", nextPageToken);
+  const params = new URLSearchParams(paramsOptions);
 
   const [error, data] = await fetcher(`/api/jobs?${params.toString()}`, {
     schema: ApiResponseSchema,

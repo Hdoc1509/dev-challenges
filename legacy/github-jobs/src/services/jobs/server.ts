@@ -12,7 +12,15 @@ import {
 import { SERPAPI } from "@/config";
 import locationsMock from "@/mocks/locations.json";
 import type { Search } from "@/types";
+import type { SharedSearchParams } from "./params";
 
+type SearchParams = SharedSearchParams & {
+  engine: typeof ENGINE;
+  api_key: string;
+  // chips?: string;
+};
+
+const ENGINE = "google_jobs";
 const Schema = JobsResponseSchema.or(JobsErrorResponseSchema);
 const JobsError = new ServiceError("Jobs");
 
@@ -20,19 +28,17 @@ export const getJobs = async (
   search: Search,
 ): PromiseWithError<JobsResponse> => {
   const { query, location, /* fullTime, */ nextPageToken } = search;
-  const params = new URLSearchParams({
-    engine: "google_jobs",
+  const paramsOptions: SearchParams = {
+    engine: ENGINE,
     q: query,
     api_key: SERPAPI.KEY,
-  });
+    location: location ?? locationsMock[0].canonical_name,
+  };
 
-  if (nextPageToken != null) params.append("next_page_token", nextPageToken);
+  // if (fullTime) paramsOptions.chips = "employment_type:FULLTIME";
+  if (nextPageToken != null) paramsOptions.next_page_token = nextPageToken;
 
-  params.append("location", location ?? locationsMock[0].canonical_name);
-
-  // if (fullTime) {
-  //   params.append("chips", "employment_type:FULLTIME");
-  // }
+  const params = new URLSearchParams(paramsOptions);
 
   const [error, data] = await fetcher(
     `${SERPAPI.URL}/search.json?${params.toString()}`,
