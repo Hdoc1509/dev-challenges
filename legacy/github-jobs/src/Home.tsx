@@ -1,5 +1,5 @@
-import { useJobsStore } from "@/store/jobs";
 import { useSearchStore } from "@/store/search";
+import { useJobs } from "./hooks/useJobs";
 import { RingSpinner } from "@hrc/spinner";
 import { SearchForm } from "@/components/SearchForm";
 import { SearchOptions } from "@/components/SearchOptions";
@@ -8,9 +8,7 @@ import { Pagination } from "@/components/Pagination";
 import "./Home.scss";
 
 export const Home = () => {
-  const status = useJobsStore((s) => s.status);
-  const error = useJobsStore((s) => s.error);
-  const jobs = useJobsStore((s) => s.jobs);
+  const { jobs, jobsError, jobsStatus } = useJobs();
   const pages = useSearchStore((s) => s.pages);
 
   return (
@@ -18,9 +16,11 @@ export const Home = () => {
       <SearchForm />
       <SearchOptions />
       <main>
-        {status === "loading" && <RingSpinner size="large" />}
-        {status === "error" && <p className="error">{error?.message}</p>}
-        {status === "success" && <Results jobs={jobs} />}
+        {jobsStatus === "loading" && <RingSpinner size="large" />}
+        {jobsStatus === "error" && (
+          <p className="error">{jobsError?.message}</p>
+        )}
+        {jobsStatus === "success" && <Results jobs={jobs} />}
         {pages > 1 && <Pagination />}
       </main>
     </div>
