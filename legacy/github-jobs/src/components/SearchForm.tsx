@@ -1,5 +1,7 @@
 import { useSearchStore } from "@/store/search";
 import { useJobs } from "@/hooks/useJobs";
+import { useRemainingSearches } from "@/hooks/useRemainingSearches";
+import { JobsEmptyResultsError } from "@/errors";
 import { isSameSearch } from "@/utils/search";
 import { Button } from "@hrc/button";
 import { Input } from "@hrc/input";
@@ -9,6 +11,7 @@ import "./SearchForm.scss";
 
 export const SearchForm = () => {
   const { jobsStatus, searchJobs } = useJobs();
+  const { getRemainingSearches } = useRemainingSearches();
   const search = useSearchStore((s) => s.search);
   const lastSearch = useSearchStore((s) => s.lastSearch);
   const userLocation = useSearchStore((s) => s.userLocation);
@@ -28,7 +31,11 @@ export const SearchForm = () => {
 
     const [searchError, searchResult] = await searchJobs(newSearch);
 
-    if (searchError) return setPages(0);
+    if (searchError) {
+      if (searchError instanceof JobsEmptyResultsError) getRemainingSearches();
+      setPages(0);
+      return;
+    }
 
     const { nextPageToken, usedLocation } = searchResult;
 
@@ -36,6 +43,7 @@ export const SearchForm = () => {
     setLastSearch({ ...search, location: usedLocation });
     if (nextPageToken == null) setPages(1);
     else setPages(10);
+    getRemainingSearches();
   };
 
   return (
