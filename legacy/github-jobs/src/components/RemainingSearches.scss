@@ -48,9 +48,11 @@
   align-items: center;
   justify-content: center;
 
-  &__checkbox:checked ~ .tooltip__content {
-    --_content-visibility: visible;
-    --_content-opacity: 1;
+  @media (hover: hover) and (pointer: fine) {
+    &__checkbox:checked ~ .tooltip__content {
+      --_content-visibility: visible;
+      --_content-opacity: 1;
+    }
   }
 
   &__icon {
