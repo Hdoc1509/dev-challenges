@@ -1,0 +1,125 @@
+.remaining-searches {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+
+  width: 100%;
+  font-size: var(--fs-1);
+
+  color: var(--text-secondary);
+
+  &__count {
+    color: var(--text);
+  }
+
+  --tooltip-content-bg: #ddd;
+  --tooltip-content-text: var(--text);
+  --tooltip-icon-color: var(--text);
+
+  --icon-size: 1.5em;
+
+  [data-theme="dark"] & {
+    --tooltip-content-bg: #333;
+  }
+}
+
+.tooltip a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700;
+
+  --icon-size: 1.5em;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.tooltip__content {
+  font-weight: 500;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &__checkbox:checked ~ .tooltip__content {
+    --_content-visibility: visible;
+    --_content-opacity: 1;
+  }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--tooltip-icon-color);
+
+    cursor: pointer;
+    user-select: none;
+    z-index: 1;
+
+    &:hover ~ .tooltip__content {
+      --_content-visibility: visible;
+      --_content-opacity: 1;
+    }
+  }
+
+  &__content {
+    --_content-visibility: hidden;
+    --_content-opacity: 0;
+    --_content-transition-duration: var(
+      --tooltip-content-transition-duration,
+      0.3s
+    );
+    --_content-transition-timing-function: var(
+      --tooltip-content-transition-timing-function,
+      ease-in-out
+    );
+    --_arrow-size: var(--tooltip-arrow-size, 1.3em);
+    position: absolute;
+    top: 100%;
+
+    min-width: var(--tooltip-content-min-width, 13em);
+    background-color: var(--tooltip-content-bg);
+    border-radius: 8px;
+    padding: 0.5em;
+
+    color: var(--tooltip-content-text);
+    text-align: center;
+
+    opacity: var(--_content-opacity);
+    visibility: var(--_content-visibility);
+    transform: translateY(
+      calc(var(--_arrow-size) * 0.5 + var(--tooltip-content-offset, 4px))
+    );
+    transition: opacity, visibility;
+    transition-duration: var(--_content-transition-duration);
+    transition-timing-function: var(--_content-transition-timing-function);
+
+    &:hover {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      right: 0;
+
+      width: 1em;
+      border: 0.5em solid transparent;
+      border-bottom-color: var(--tooltip-content-bg);
+      margin-inline: auto;
+
+      font-size: var(--_arrow-size);
+    }
+  }
+}

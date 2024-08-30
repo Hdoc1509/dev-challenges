@@ -1,5 +1,6 @@
 import { Icon } from "@hrc/material-icons";
 import { ThemeButton } from "@hrc/toggle-theme";
+import { RemainingSearches } from "./RemainingSearches";
 import './Header.scss'
 
 export const Header = () => {
@@ -13,6 +14,7 @@ export const Header = () => {
         darkElement={<Icon name="dark_mode" />}
         fullRounded
       />
+      <RemainingSearches />
     </header>
   );
 };
