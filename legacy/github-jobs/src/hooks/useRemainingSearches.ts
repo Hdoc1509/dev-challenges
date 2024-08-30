@@ -1,13 +1,18 @@
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
 import { getRemainingSearches } from "@/services/remaining-searches/client";
-import type { Status } from "@lib/fetcher";
+import { useRemainingSearchesStore } from "@/store/remaining-searches";
 
 export function useRemainingSearches() {
-  const [remainingSearches, setRemainingSearches] = useState<null | number>(
-    null,
+  const remainingSearches = useRemainingSearchesStore(
+    (s) => s.remainingSearches,
   );
-  const [status, setStatus] = useState<Status>("idle");
-  const [error, setError] = useState<null | Error>(null);
+  const error = useRemainingSearchesStore((s) => s.error);
+  const status = useRemainingSearchesStore((s) => s.status);
+  const setRemainingSearches = useRemainingSearchesStore(
+    (s) => s.setRemainingSearches,
+  );
+  const setStatus = useRemainingSearchesStore((s) => s.setStatus);
+  const setError = useRemainingSearchesStore((s) => s.setError);
 
   const handleGetRemainingSearches = useCallback(async () => {
     setStatus("loading");
@@ -22,7 +27,7 @@ export function useRemainingSearches() {
 
     setStatus("success");
     setRemainingSearches(result);
-  }, []);
+  }, [setError, setRemainingSearches, setStatus]);
 
   return {
     remainingSearches,
