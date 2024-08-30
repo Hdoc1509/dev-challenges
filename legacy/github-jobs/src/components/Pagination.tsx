@@ -1,6 +1,7 @@
 import { useCallback } from "react";
-import { useJobs } from "@/hooks/useJobs";
 import { useSearchStore, type StoreSearch } from "@/store/search";
+import { useJobs } from "@/hooks/useJobs";
+import { useRemainingSearches } from "@/hooks/useRemainingSearches";
 import { JobsEmptyResultsError } from "@/errors";
 import { isSameSearch } from "@/utils/search";
 import ReactPaginate from "react-paginate";
@@ -10,6 +11,7 @@ import "./Pagination.scss";
 
 export const Pagination = () => {
   const { searchJobs } = useJobs();
+  const { getRemainingSearches } = useRemainingSearches();
   const search = useSearchStore((s) => s.search);
   const lastSearch = useSearchStore((s) => s.lastSearch);
   const userLocation = useSearchStore((s) => s.userLocation);
@@ -33,7 +35,10 @@ export const Pagination = () => {
       const [searchError, searchResult] = await searchJobs(newSearch);
 
       if (searchError) {
-        if (searchError instanceof JobsEmptyResultsError) setPages(newPage + 1);
+        if (searchError instanceof JobsEmptyResultsError) {
+          setPages(newPage + 1);
+          getRemainingSearches();
+        }
 
         return;
       }
@@ -49,8 +54,17 @@ export const Pagination = () => {
       setSearch({ pageAsIndex: newPage, nextPageToken: newNextPageToken });
       setLastSearch({ ...search, location: usedLocation });
       setPages(newNextPageToken == null ? newPage + 1 : 10);
+      getRemainingSearches();
     },
-    [search, userLocation, searchJobs, setSearch, setLastSearch, setPages],
+    [
+      search,
+      userLocation,
+      searchJobs,
+      setSearch,
+      setLastSearch,
+      setPages,
+      getRemainingSearches,
+    ],
   );
 
   return (
