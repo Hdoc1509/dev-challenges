@@ -41,8 +41,7 @@ export const SearchForm = () => {
 
     setSearch({ pageAsIndex: 0, nextPageToken });
     setLastSearch({ ...search, location: usedLocation });
-    if (nextPageToken == null) setPages(1);
-    else setPages(10);
+    setPages(nextPageToken == null ? 1 : 10);
     getRemainingSearches();
   };
 

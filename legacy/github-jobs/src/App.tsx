@@ -31,8 +31,7 @@ function App() {
 
     setUserLocation(usedLocation);
     setSearch({ nextPageToken });
-    if (nextPageToken == null) setPages(1);
-    else setPages(10);
+    setPages(nextPageToken == null ? 1 : 10);
     getRemainingSearches();
   }, [searchJobs, setUserLocation, setSearch, setPages, getRemainingSearches]);
 
