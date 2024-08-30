@@ -1,49 +1,33 @@
-import { useCallback, useEffect, useState } from "react";
-import { getRemainingSearches } from "@/services/remaining-searches/client";
+import { useEffect } from "react";
+import { useRemainingSearches } from "@/hooks/useRemainingSearches";
 import { Icon } from "@hrc/material-icons";
 import { RingSpinner } from "@hrc/spinner";
-import type { Status } from "@lib/fetcher";
 import "./RemainingSearches.scss";
 
 let didInit = false;
 
 export function RemainingSearches() {
-  const [remainingSearches, setRemainingSearches] = useState<null | number>(
-    null,
-  );
-  const [status, setStatus] = useState<Status>("idle");
-  const [error, setError] = useState<null | Error>(null);
-
-  const getInitialRemainingSearches = useCallback(async () => {
-    setStatus("loading");
-
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    const [error, result] = await getRemainingSearches();
-
-    if (error != null) {
-      setError(error);
-      setStatus("error");
-      return;
-    }
-
-    setStatus("success");
-    setRemainingSearches(result);
-  }, []);
+  const {
+    remainingSearches,
+    remainingSearchesStatus,
+    remainingSearchesError,
+    getRemainingSearches,
+  } = useRemainingSearches();
 
   useEffect(() => {
     if (!didInit) {
       didInit = true;
-      getInitialRemainingSearches();
+      getRemainingSearches();
     }
-  }, [getInitialRemainingSearches]);
+  }, [getRemainingSearches]);
 
   return (
     <div className="remaining-searches bold">
       Remaining searches:
       <span className="remaining-searches__count">
-        {status === "loading" && <RingSpinner />}
-        {status === "error" && "??"}
-        {status === "success" && remainingSearches}
+        {remainingSearchesStatus === "loading" && <RingSpinner />}
+        {remainingSearchesStatus === "error" && "??"}
+        {remainingSearchesStatus === "success" && remainingSearches}
       </span>
       <label className="tooltip">
         <input type="checkbox" className="tooltip__checkbox" hidden />
@@ -62,8 +46,10 @@ export function RemainingSearches() {
           </a>
         </span>
       </label>
-      {status === "error" && (
-        <span className="remaining-searches__error">{error?.message}</span>
+      {remainingSearchesStatus === "error" && (
+        <span className="remaining-searches__error">
+          {remainingSearchesError?.message}
+        </span>
       )}
     </div>
   );
