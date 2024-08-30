@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   gap: 0.5em;
+  flex-wrap: wrap;
 
   width: 100%;
   font-size: var(--fs-1);
@@ -9,16 +10,36 @@
   color: var(--text-secondary);
 
   &__count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 1.5em;
+
     color: var(--text);
+
+    --spinner-size: 1.5em;
   }
 
   --tooltip-content-bg: #ddd;
   --tooltip-content-text: var(--text);
   --tooltip-icon-color: var(--text);
+  .tooltip__icon {
+    --icon-size: 1.5em;
+  }
 
-  --icon-size: 1.5em;
+  &__error {
+    background-color: rgba(255, 0, 0, var(--_error-opacity, 0.2));
+    border-radius: 4px;
+    padding: 0.1em 0.5em;
+
+    color: var(--_error-text, #5f2120);
+    font-weight: 500;
+  }
 
   [data-theme="dark"] & {
+    --_error-opacity: 0.15;
+    --_error-text: #f4c7c7;
     --tooltip-content-bg: #333;
   }
 }
