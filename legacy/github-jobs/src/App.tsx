@@ -1,6 +1,8 @@
 import { useCallback, useEffect } from "react";
 import { useSearchStore } from "@/store/search";
 import { useJobs } from "@/hooks/useJobs";
+import { useRemainingSearches } from "./hooks/useRemainingSearches";
+import { JobsEmptyResultsError } from "./errors";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { Footer } from "@lib/components/Footer";
 import { Header } from "@/components/Header";
@@ -12,6 +14,7 @@ let didInit = false;
 
 function App() {
   const { searchJobs } = useJobs();
+  const { getRemainingSearches } = useRemainingSearches();
   const setSearch = useSearchStore((s) => s.setSearch);
   const setUserLocation = useSearchStore((s) => s.setUserLocation);
   const setPages = useSearchStore((s) => s.setPages);
@@ -19,7 +22,10 @@ function App() {
   const getInitialJobs = useCallback(async () => {
     const [searchError, searchResult] = await searchJobs(DEFAULT_SEARCH);
 
-    if (searchError) return;
+    if (searchError) {
+      if (searchError instanceof JobsEmptyResultsError) getRemainingSearches();
+      return;
+    }
 
     const { nextPageToken, usedLocation } = searchResult;
 
@@ -27,7 +33,8 @@ function App() {
     setSearch({ nextPageToken });
     if (nextPageToken == null) setPages(1);
     else setPages(10);
-  }, [searchJobs, setUserLocation, setPages, setSearch]);
+    getRemainingSearches();
+  }, [searchJobs, setUserLocation, setSearch, setPages, getRemainingSearches]);
 
   useEffect(() => {
     if (!didInit) {
