@@ -2,10 +2,23 @@ import { useEffect } from "react";
 import { useRemainingSearches } from "@/hooks/useRemainingSearches";
 import { Icon } from "@hrc/material-icons";
 import { RingSpinner } from "@hrc/spinner";
+import { Tooltip } from "./Tooltip";
 import { STATUS } from "@lib/fetcher";
 import "./RemainingSearches.scss";
 
 let didInit = false;
+
+function TooltipContent() {
+  return (
+    <>
+      This project uses the free tier of{" "}
+      <a href="https://serpapi.com/pricing" target="_blank" rel="noreferrer">
+        SerpApi
+        <Icon name="open_in_new" />
+      </a>
+    </>
+  );
+}
 
 export function RemainingSearches() {
   const {
@@ -30,23 +43,10 @@ export function RemainingSearches() {
         {remainingSearchesStatus === STATUS.ERROR && "??"}
         {remainingSearchesStatus === STATUS.SUCCESS && remainingSearches}
       </span>
-      <label className="tooltip">
-        <input type="checkbox" className="tooltip__checkbox" hidden />
-        <span className="tooltip__icon">
-          <Icon name="help_outline" />
-        </span>
-        <span className="tooltip__content">
-          This project uses the free tier of{" "}
-          <a
-            href="https://serpapi.com/pricing"
-            target="_blank"
-            rel="noreferrer"
-          >
-            SerpApi
-            <Icon name="open_in_new" />
-          </a>
-        </span>
-      </label>
+      <Tooltip
+        content={<TooltipContent />}
+        trigger={<Icon name="help_outline" />}
+      />
       {remainingSearchesStatus === STATUS.ERROR && (
         <span className="remaining-searches__error">
           {remainingSearchesError?.message}
