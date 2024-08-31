@@ -1,6 +1,8 @@
 import { create } from "zustand";
 import type { Question } from "../types";
-import type { Status } from "@lib/fetcher";
+import type { Status as FetcherStatus } from "@lib/fetcher";
+
+type Status = FetcherStatus | "over";
 
 type State = {
   status: Status;
