@@ -71,8 +71,8 @@
 
   @media (hover: hover) and (pointer: fine) {
     &__checkbox:checked ~ .tooltip__content {
-      --_content-visibility: visible;
-      --_content-opacity: 1;
+      --_visibility: visible;
+      --_opacity: 1;
     }
   }
 
@@ -88,19 +88,16 @@
     z-index: 1;
 
     &:hover ~ .tooltip__content {
-      --_content-visibility: visible;
-      --_content-opacity: 1;
+      --_visibility: visible;
+      --_opacity: 1;
     }
   }
 
   &__content {
-    --_content-visibility: hidden;
-    --_content-opacity: 0;
-    --_content-transition-duration: var(
-      --tooltip-content-transition-duration,
-      0.3s
-    );
-    --_content-transition-timing-function: var(
+    --_visibility: hidden;
+    --_opacity: 0;
+    --_transition-duration: var(--tooltip-content-transition-duration, 0.3s);
+    --_transition-timing-function: var(
       --tooltip-content-transition-timing-function,
       ease-in-out
     );
@@ -116,14 +113,14 @@
     color: var(--tooltip-content-text);
     text-align: center;
 
-    opacity: var(--_content-opacity);
-    visibility: var(--_content-visibility);
+    opacity: var(--_opacity);
+    visibility: var(--_visibility);
     transform: translateY(
       calc(var(--_arrow-size) * 0.5 + var(--tooltip-content-offset, 4px))
     );
     transition: opacity, visibility;
-    transition-duration: var(--_content-transition-duration);
-    transition-timing-function: var(--_content-transition-timing-function);
+    transition-duration: var(--_transition-duration);
+    transition-timing-function: var(--_transition-timing-function);
 
     &:hover {
       visibility: visible;
