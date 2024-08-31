@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import type { Status } from "@lib/fetcher";
+import { STATUS, type Status } from "@lib/fetcher";
 import type { Job } from "../types";
 
 type State = {
@@ -23,7 +23,7 @@ type Action = {
 export const useJobsStore = create<State & Action>()((set) => ({
   jobs: [],
   cachedJobs: [],
-  status: "idle",
+  status: STATUS.IDLE,
 
   setJobs: (jobs: Job[]) => set({ jobs }),
   cacheJobs: (jobs: Job[]) =>

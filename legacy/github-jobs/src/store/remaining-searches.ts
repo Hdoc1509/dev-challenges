@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import type { Status } from "@lib/fetcher";
+import { STATUS, type Status } from "@lib/fetcher";
 
 type State = {
   remainingSearches: number | null;
@@ -15,7 +15,7 @@ type Action = {
 
 export const useRemainingSearchesStore = create<State & Action>()((set) => ({
   remainingSearches: null,
-  status: "idle",
+  status: STATUS.IDLE,
 
   setRemainingSearches: (remainingSearches: number) =>
     set({ remainingSearches }),
