@@ -20,15 +20,10 @@ type Action = {
   setError: (error: Error) => void;
 };
 
-const initialState: State = {
+export const useJobsStore = create<State & Action>()((set) => ({
   jobs: [],
   cachedJobs: [],
   status: "idle",
-  error: undefined,
-};
-
-export const useJobsStore = create<State & Action>()((set) => ({
-  ...initialState,
 
   setJobs: (jobs: Job[]) => set({ jobs }),
   cacheJobs: (jobs: Job[]) =>

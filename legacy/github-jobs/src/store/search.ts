@@ -20,25 +20,19 @@ type Action = {
   setUserLocation: (location: string) => void;
 };
 
-const initialState: State = {
+export const useSearchStore = create<State & Action>()((set) => ({
   search: {
     query: "",
     location: "",
-    fullTime: false,
     pageAsIndex: 0,
   },
   lastSearch: {
     query: "",
     location: "",
-    fullTime: false,
     pageAsIndex: 0,
   },
   pages: 0,
   userLocation: "",
-};
-
-export const useSearchStore = create<State & Action>()((set) => ({
-  ...initialState,
 
   setSearch: (newSearch: Partial<Search>) =>
     set((state) => ({
