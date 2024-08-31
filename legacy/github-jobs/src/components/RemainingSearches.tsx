@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useRemainingSearches } from "@/hooks/useRemainingSearches";
 import { Icon } from "@hrc/material-icons";
 import { RingSpinner } from "@hrc/spinner";
+import { STATUS } from "@lib/fetcher";
 import "./RemainingSearches.scss";
 
 let didInit = false;
@@ -25,9 +26,9 @@ export function RemainingSearches() {
     <div className="remaining-searches bold">
       Remaining searches:
       <span className="remaining-searches__count">
-        {remainingSearchesStatus === "loading" && <RingSpinner />}
-        {remainingSearchesStatus === "error" && "??"}
-        {remainingSearchesStatus === "success" && remainingSearches}
+        {remainingSearchesStatus === STATUS.LOADING && <RingSpinner />}
+        {remainingSearchesStatus === STATUS.ERROR && "??"}
+        {remainingSearchesStatus === STATUS.SUCCESS && remainingSearches}
       </span>
       <label className="tooltip">
         <input type="checkbox" className="tooltip__checkbox" hidden />
@@ -46,7 +47,7 @@ export function RemainingSearches() {
           </a>
         </span>
       </label>
-      {remainingSearchesStatus === "error" && (
+      {remainingSearchesStatus === STATUS.ERROR && (
         <span className="remaining-searches__error">
           {remainingSearchesError?.message}
         </span>

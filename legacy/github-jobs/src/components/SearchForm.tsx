@@ -6,6 +6,7 @@ import { isSameSearch } from "@/utils/search";
 import { Button } from "@hrc/button";
 import { Input } from "@hrc/input";
 import { Icon } from "@hrc/material-icons";
+import { STATUS } from "@lib/fetcher";
 import { isDev } from "@/config";
 import "./SearchForm.scss";
 
@@ -51,7 +52,7 @@ export const SearchForm = () => {
         id="search-form"
         className="search-form__inner"
         onSubmit={(e) => void handleSubmit(e)}
-        data-loading={jobsStatus === "loading"}
+        data-loading={jobsStatus === STATUS.LOADING}
       >
         <Input
           iconStart={<Icon name="work_outline" />}

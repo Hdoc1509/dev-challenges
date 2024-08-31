@@ -5,6 +5,7 @@ import { SearchForm } from "@/components/SearchForm";
 import { SearchOptions } from "@/components/SearchOptions";
 import { Results } from "@/components/Results";
 import { Pagination } from "@/components/Pagination";
+import { STATUS } from "@lib/fetcher";
 import "./Home.scss";
 
 export const Home = () => {
@@ -16,11 +17,11 @@ export const Home = () => {
       <SearchForm />
       <SearchOptions />
       <main>
-        {jobsStatus === "loading" && <RingSpinner size="large" />}
-        {jobsStatus === "error" && (
+        {jobsStatus === STATUS.LOADING && <RingSpinner size="large" />}
+        {jobsStatus === STATUS.ERROR && (
           <p className="error">{jobsError?.message}</p>
         )}
-        {jobsStatus === "success" && <Results jobs={jobs} />}
+        {jobsStatus === STATUS.SUCCESS && <Results jobs={jobs} />}
         {pages > 1 && <Pagination />}
       </main>
     </div>
