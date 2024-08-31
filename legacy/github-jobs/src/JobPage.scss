@@ -100,8 +100,7 @@
   @media (max-width: 1050px) {
     grid-template-areas:
       "title       title"
-      "schedule    ."
-      "created-at  ."
+      "created-at  created-at"
       "image       company"
       "image       location"
       "description description";
