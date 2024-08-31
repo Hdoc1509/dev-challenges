@@ -45,4 +45,5 @@ export async function fetcher<S extends z.ZodTypeAny>(
 }
 
 export * from "./error";
+export { STATUS } from "./status";
 export type { PromiseWithError, Status };
