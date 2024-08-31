@@ -36,16 +36,7 @@ export const JobPage = () => {
           ))}
         </section>
       </aside>
-      <JobCard job={job}>
-        <JobCard.Title>
-          <JobCard.ScheduleType />
-        </JobCard.Title>
-        <JobCard.CreatedAt />
-        <JobCard.Image />
-        <JobCard.Company />
-        <JobCard.Location />
-        <JobCard.Description />
-      </JobCard>
+      <JobCard job={job} isInJobPage />
     </main>
   );
 };

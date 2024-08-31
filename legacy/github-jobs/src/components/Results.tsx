@@ -14,14 +14,7 @@ export const Results = ({ jobs }: { jobs: Job[] }) => {
           state={{ job }}
           className="job-results__link"
         >
-          <JobCard job={job}>
-            <JobCard.Image />
-            <JobCard.Company />
-            <JobCard.Title />
-            <JobCard.ScheduleType />
-            <JobCard.Location />
-            <JobCard.CreatedAt />
-          </JobCard>
+          <JobCard job={job} />
         </Link>
       ))}
     </div>
