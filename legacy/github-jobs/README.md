@@ -62,6 +62,7 @@ Challenge: Create a job search using an API. Use Front-end libraries like React 
 
 - Dark mode
 - Loading and Error states
+- Counter for remaining free searches
 
 ### What I learned
 
