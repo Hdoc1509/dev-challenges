@@ -43,7 +43,6 @@ Challenge: Create a job search using an API. Use Front-end libraries like React 
 - [TypeScript](https://www.typescriptlang.org/)
 - [Sass](https://sass-lang.com/)
 - [BEM](https://getbem.com/)
-- [clsx](https://github.com/lukeed/clsx#readme)
 - [zod](https://zod.dev/)
 - [zustand](https://docs.pmnd.rs/zustand/getting-started/introduction)
 - [@hrc/button](https://hdoc1509.github.io/hrc/packages/button/)
