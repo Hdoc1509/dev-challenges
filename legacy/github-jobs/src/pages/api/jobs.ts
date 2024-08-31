@@ -1,4 +1,5 @@
 import { getJobs } from "@/services/jobs/server";
+import { createResponseError, createResponseSuccess } from "@/utils/response";
 import type { APIRoute } from "astro";
 
 export const GET: APIRoute = async ({ request }) => {
@@ -9,18 +10,10 @@ export const GET: APIRoute = async ({ request }) => {
   // const fullTimeParam = params.get("full_time");
   const nextPageToken = params.get("next_page_token");
 
-  if (!query)
-    return new Response(JSON.stringify({ error: "Missing query" }), {
-      status: 400,
-    });
-  if (!location)
-    return new Response(JSON.stringify({ error: "Missing location" }), {
-      status: 400,
-    });
+  if (!query) return createResponseError(400, "Missing query");
+  if (!location) return createResponseError(400, "Missing location");
   if (nextPageToken === "")
-    return new Response(JSON.stringify({ error: "Invalid next page token" }), {
-      status: 400,
-    });
+    return createResponseError(400, "Invalid next page token");
 
   // const fullTime = fullTimeParam != null;
 
@@ -31,14 +24,7 @@ export const GET: APIRoute = async ({ request }) => {
     nextPageToken: nextPageToken ?? undefined,
   });
 
-  if (jobsError)
-    return new Response(JSON.stringify({ error: jobsError.message }), {
-      status: 500,
-    });
+  if (jobsError) return createResponseError(500, jobsError.message);
 
-  return new Response(JSON.stringify(jobs), {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  return createResponseSuccess(jobs);
 };

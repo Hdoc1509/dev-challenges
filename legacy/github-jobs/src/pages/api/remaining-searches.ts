@@ -1,17 +1,11 @@
 import { getRemainingSearches } from "@/services/remaining-searches/server";
+import { createResponseError, createResponseSuccess } from "@/utils/response";
 import type { APIRoute } from "astro";
 
 export const GET: APIRoute = async () => {
   const [error, data] = await getRemainingSearches();
 
-  if (error)
-    return new Response(JSON.stringify({ error: error.message }), {
-      status: 500,
-    });
+  if (error) return createResponseError(500, error.message);
 
-  return new Response(JSON.stringify(data), {
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  return createResponseSuccess(data);
 };
