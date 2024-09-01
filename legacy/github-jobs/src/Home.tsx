@@ -8,7 +8,7 @@ import { Pagination } from "@/components/Pagination";
 import "./Home.scss";
 
 export const Home = () => {
-  const { jobs, jobsError, isError, isLoading, isSuccess } = useJobs();
+  const { jobs, error, isError, isLoading, isSuccess } = useJobs();
   const pages = useSearchStore((s) => s.pages);
 
   return (
@@ -17,7 +17,7 @@ export const Home = () => {
       <SearchOptions />
       <main>
         {isLoading && <RingSpinner size="large" />}
-        {isError && <p className="error">{jobsError?.message}</p>}
+        {isError && <p className="error">{error?.message}</p>}
         {isSuccess && <Results jobs={jobs} />}
         {pages > 1 && <Pagination />}
       </main>

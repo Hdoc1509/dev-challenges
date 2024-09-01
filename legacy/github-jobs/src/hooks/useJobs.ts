@@ -88,7 +88,7 @@ export function useJobs() {
   return {
     jobs,
     cachedJobs,
-    jobsError: error,
+    error,
     isError: status === STATUS.ERROR,
     isLoading: status === STATUS.LOADING,
     isSuccess: status === STATUS.SUCCESS,
