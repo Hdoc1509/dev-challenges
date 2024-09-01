@@ -28,6 +28,7 @@
     "@lib/sass-utils": "workspace:*",
     "@material-design-icons/font": "catalog:",
     "astro": "catalog:",
+    "clsx": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-paginate": "catalog:",

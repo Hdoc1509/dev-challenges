@@ -18,15 +18,36 @@ catalogs:
     '@fontsource-variable/montserrat':
       specifier: 5.0.17
       version: 5.0.17
+    '@fontsource-variable/mulish':
+      specifier: 5.0.18
+      version: 5.0.18
+    '@fontsource-variable/noto-sans-jp':
+      specifier: 5.0.19
+      version: 5.0.19
+    '@fontsource-variable/raleway':
+      specifier: 5.0.19
+      version: 5.0.19
     '@fontsource/montserrat':
       specifier: 5.0.17
       version: 5.0.17
+    '@fontsource/mulish':
+      specifier: 5.0.17
+      version: 5.0.17
+    '@fontsource/noto-sans-jp':
+      specifier: 5.0.19
+      version: 5.0.19
     '@fontsource/poppins':
       specifier: 5.0.8
       version: 5.0.8
+    '@fontsource/raleway':
+      specifier: 5.0.18
+      version: 5.0.18
     '@fontsource/roboto':
       specifier: 5.0.8
       version: 5.0.8
+    '@fontsource/ubuntu-mono':
+      specifier: 5.0.20
+      version: 5.0.20
     '@hrc/button':
       specifier: 3.1.0
       version: 3.1.0
@@ -48,15 +69,66 @@ catalogs:
     '@material-design-icons/font':
       specifier: 0.14.13
       version: 0.14.13
+    '@types/node':
+      specifier: 20.5.0
+      version: 20.5.0
+    '@types/react':
+      specifier: 18.2.79
+      version: 18.2.79
+    '@types/react-dom':
+      specifier: 18.2.25
+      version: 18.2.25
+    '@typescript-eslint/eslint-plugin':
+      specifier: 7.12.0
+      version: 7.12.0
+    '@typescript-eslint/parser':
+      specifier: 7.12.0
+      version: 7.12.0
+    '@vitejs/plugin-react':
+      specifier: 4.2.0
+      version: 4.2.0
     astro:
       specifier: 4.8.6
       version: 4.8.6
+    clsx:
+      specifier: 2.0.0
+      version: 2.0.0
+    eslint:
+      specifier: 8.57.0
+      version: 8.57.0
+    eslint-plugin-astro:
+      specifier: 1.2.0
+      version: 1.2.0
+    eslint-plugin-react:
+      specifier: 7.34.2
+      version: 7.34.2
+    eslint-plugin-react-hooks:
+      specifier: 4.6.2
+      version: 4.6.2
+    eslint-plugin-react-refresh:
+      specifier: 0.4.7
+      version: 0.4.7
+    hygen:
+      specifier: 6.2.11
+      version: 6.2.11
+    npkill:
+      specifier: 0.11.3
+      version: 0.11.3
+    prettier:
+      specifier: 3.0.1
+      version: 3.0.1
+    prettier-plugin-astro:
+      specifier: 0.13.0
+      version: 0.13.0
     react:
       specifier: 18.2.0
       version: 18.2.0
     react-dom:
       specifier: 18.2.0
       version: 18.2.0
+    react-loading-skeleton:
+      specifier: 3.4.0
+      version: 3.4.0
     react-paginate:
       specifier: 8.2.0
       version: 8.2.0
@@ -69,9 +141,15 @@ catalogs:
     typescript:
       specifier: 5.3.2
       version: 5.3.2
+    vite:
+      specifier: 5.0.2
+      version: 5.0.2
     vite-plugin-hrc-import:
       specifier: 1.1.0
       version: 1.1.0
+    vitest:
+      specifier: 0.34.6
+      version: 0.34.6
     zod:
       specifier: 3.22.4
       version: 3.22.4
@@ -310,6 +388,9 @@ importers:
       astro:
         specifier: 'catalog:'
         version: 4.8.6(@types/node@20.5.0)(sass@1.65.0)(typescript@5.3.2)
+      clsx:
+        specifier: 'catalog:'
+        version: 2.0.0
       react:
         specifier: 'catalog:'
         version: 18.2.0

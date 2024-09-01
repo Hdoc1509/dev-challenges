@@ -3,14 +3,16 @@ import { useSearchStore, type StoreSearch } from "@/store/search";
 import { useJobs } from "@/hooks/useJobs";
 import { useRemainingSearches } from "@/hooks/useRemainingSearches";
 import { JobsEmptyResultsError } from "@/errors";
+import clsx from "clsx";
 import { isSameSearch } from "@/utils/search";
 import ReactPaginate from "react-paginate";
 import { Icon } from "@hrc/material-icons";
 import { Ellipsis } from "./Icons";
+import { STATUS } from "@lib/fetcher";
 import "./Pagination.scss";
 
 export const Pagination = () => {
-  const { searchJobs } = useJobs();
+  const { jobsStatus, searchJobs } = useJobs();
   const { getRemainingSearches } = useRemainingSearches();
   const search = useSearchStore((s) => s.search);
   const lastSearch = useSearchStore((s) => s.lastSearch);
@@ -19,6 +21,9 @@ export const Pagination = () => {
   const setSearch = useSearchStore((s) => s.setSearch);
   const setLastSearch = useSearchStore((s) => s.setLastSearch);
   const setPages = useSearchStore((s) => s.setPages);
+
+  const isLoading = jobsStatus === STATUS.LOADING;
+  const className = clsx("jobs-pagination", { disabled: isLoading });
 
   const handlePageChange = useCallback(
     async (newPage: number) => {
@@ -70,7 +75,7 @@ export const Pagination = () => {
   return (
     <nav aria-label="Search results pages">
       <ReactPaginate
-        className="jobs-pagination"
+        className={className}
         // NOTE: pagination of SerpApi, only can navigate to prev/next page
         // so, is neceesary to use custom breakLabel?
         breakLabel={<Ellipsis />}
@@ -81,7 +86,7 @@ export const Pagination = () => {
         marginPagesDisplayed={0}
         onPageChange={({ selected }) => void handlePageChange(selected)}
         onClick={({ selected, isBreak }) => {
-          if (!isSameSearch({ current: search, last: lastSearch }))
+          if (!isSameSearch({ current: search, last: lastSearch }) || isLoading)
             return false;
 
           // go to next page if is break label

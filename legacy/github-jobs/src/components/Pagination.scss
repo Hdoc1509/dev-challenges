@@ -1,4 +1,5 @@
 .jobs-pagination {
+  --_disabled: rgb(255 255 255 / 30%);
   display: grid;
   position: relative;
 
@@ -14,6 +15,14 @@
   list-style: none;
   user-select: none;
 
+  &.disabled {
+    pointer-events: none;
+
+    & * {
+      color: var(--_disabled);
+    }
+  }
+
   li {
     color: var(--text-secondary);
 
@@ -27,7 +36,7 @@
     }
 
     &.disabled {
-      color: rgb(255 255 255 / 30%);
+      color: var(--_disabled);
     }
   }
 
