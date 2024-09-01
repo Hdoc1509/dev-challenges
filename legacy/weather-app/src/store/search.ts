@@ -1,6 +1,6 @@
-import type { Status } from "@lib/fetcher";
-import type { City } from "@/types";
 import { create } from "zustand";
+import { STATUS, type Status } from "@lib/fetcher";
+import type { City } from "@/types";
 
 type State = {
   search: string;
@@ -21,7 +21,7 @@ type Action = {
 export const useSearchStore = create<State & Action>()((set) => ({
   search: "",
   lastSearch: "",
-  status: "idle",
+  status: STATUS.IDLE,
   error: null,
   results: [],
   setSearch: (search: State["search"]) => set({ search }),

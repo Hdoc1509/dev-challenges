@@ -3,6 +3,7 @@ import { searchCity } from "@/services/geolocation/client";
 import { Button } from "@hrc/button";
 import { Input } from "@hrc/input";
 import { Icon } from "@hrc/material-icons";
+import { STATUS } from "@lib/fetcher";
 import "./SearchForm.scss";
 
 export const SearchForm = ({ disabled }: { disabled: boolean }) => {
@@ -20,18 +21,18 @@ export const SearchForm = ({ disabled }: { disabled: boolean }) => {
     if (search === lastSearch) return;
 
     setLastSearch(search);
-    setStatus("loading");
+    setStatus(STATUS.LOADING);
 
     const [citiesError, cities] = await searchCity(search);
 
     if (citiesError) {
       setError(citiesError);
-      setStatus("error");
+      setStatus(STATUS.ERROR);
       return;
     }
 
     setResults(cities);
-    setStatus("success");
+    setStatus(STATUS.SUCCESS);
   };
 
   return (

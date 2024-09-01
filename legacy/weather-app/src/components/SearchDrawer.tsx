@@ -4,6 +4,7 @@ import { Icon } from "@hrc/material-icons";
 import { RingSpinner } from "@hrc/spinner";
 import { SearchForm } from "./SearchForm";
 import { SearchResults } from "./SearchResults";
+import { STATUS } from "@lib/fetcher";
 import "./SearchDrawer.scss";
 
 type Props = {
@@ -23,9 +24,9 @@ export const SearchDrawer = ({ isOpen, onClose }: Props) => {
         <Icon name="close" />
       </div>
       <SearchForm disabled={!isOpen} />
-      {status === "loading" && <RingSpinner />}
-      {status === "error" && <p>{error?.message}</p>}
-      {status === "success" && <SearchResults onClose={onClose} />}
+      {status === STATUS.LOADING && <RingSpinner />}
+      {status === STATUS.ERROR && <p>{error?.message}</p>}
+      {status === STATUS.SUCCESS && <SearchResults onClose={onClose} />}
     </div>
   );
 };
