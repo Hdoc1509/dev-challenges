@@ -32,7 +32,7 @@ export function useJobs() {
 
   const searchJobs = useCallback(
     async (search: JobSearch): SearchResult => {
-      setStatus("loading");
+      setStatus(STATUS.LOADING);
 
       const { pageAsIndex, clearCache } = search;
 
@@ -42,7 +42,7 @@ export function useJobs() {
 
       if (locationError) {
         setError(locationError);
-        setStatus("error");
+        setStatus(STATUS.ERROR);
         return [locationError];
       }
 
@@ -54,7 +54,7 @@ export function useJobs() {
           const jobsToUse = isEmpty ? [] : pageCache;
 
           setJobs(jobsToUse);
-          setStatus("success");
+          setStatus(STATUS.SUCCESS);
           return [
             null,
             { jobs: jobsToUse, usedLocation: location, isCached: true },
@@ -69,7 +69,7 @@ export function useJobs() {
       if (jobsError) {
         if (jobsError instanceof JobsEmptyResultsError) setJobs([]);
         setError(jobsError);
-        setStatus("error");
+        setStatus(STATUS.ERROR);
         return [jobsError];
       }
 
@@ -78,7 +78,7 @@ export function useJobs() {
       if (clearCache) clearCachedJobs();
       cacheJobs(jobsResult);
       setJobs(jobsResult);
-      setStatus("success");
+      setStatus(STATUS.SUCCESS);
 
       return [null, { ...jobsSearchResult, usedLocation: location }];
     },
