@@ -44,6 +44,5 @@ export const useQuotes = () => {
     quotes,
     getRandomQuote: handleRandomQuote,
     getAuthorQuotes: handleAuthorQuotes,
-    setQuotes,
   };
 };
