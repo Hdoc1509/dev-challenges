@@ -16,17 +16,17 @@ export function useRemainingSearches() {
   const setError = useRemainingSearchesStore((s) => s.setError);
 
   const handleGetRemainingSearches = useCallback(async () => {
-    setStatus("loading");
+    setStatus(STATUS.LOADING);
 
     const [error, result] = await getRemainingSearches();
 
     if (error != null) {
       setError(error);
-      setStatus("error");
+      setStatus(STATUS.ERROR);
       return;
     }
 
-    setStatus("success");
+    setStatus(STATUS.SUCCESS);
     setRemainingSearches(result);
   }, [setError, setRemainingSearches, setStatus]);
 
