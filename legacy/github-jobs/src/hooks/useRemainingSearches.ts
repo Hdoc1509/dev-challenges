@@ -32,10 +32,10 @@ export function useRemainingSearches() {
 
   return {
     remainingSearches,
+    error,
     isError: status === STATUS.ERROR,
     isLoading: status === STATUS.LOADING,
     isSuccess: status === STATUS.SUCCESS,
-    remainingSearchesError: error,
     getRemainingSearches: handleGetRemainingSearches,
   };
 }

@@ -22,10 +22,10 @@ function TooltipContent() {
 export function RemainingSearches() {
   const {
     remainingSearches,
+    error,
     isError,
     isLoading,
     isSuccess,
-    remainingSearchesError,
     getRemainingSearches,
   } = useRemainingSearches();
 
@@ -49,9 +49,7 @@ export function RemainingSearches() {
         trigger={<Icon name="help_outline" />}
       />
       {isError && (
-        <span className="remaining-searches__error">
-          {remainingSearchesError?.message}
-        </span>
+        <span className="remaining-searches__error">{error?.message}</span>
       )}
     </div>
   );
