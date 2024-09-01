@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
 import { getAuthorQuotes, getRandomQuote } from "@/services/quotes/quotable";
-import type { Status } from "@lib/fetcher";
+import { STATUS, type Status } from "@lib/fetcher";
 import type { Quote } from "@/types";
 
 export const useQuotes = () => {
@@ -9,41 +9,41 @@ export const useQuotes = () => {
   const [error, setError] = useState<Error | null>(null);
 
   const handleRandomQuote = useCallback(async () => {
-    setStatus("loading");
+    setStatus(STATUS.LOADING);
 
     const [error, quote] = await getRandomQuote();
 
     if (error) {
       setError(error);
-      setStatus("error");
+      setStatus(STATUS.ERROR);
       return;
     }
 
     setQuotes([quote]);
-    setStatus("success");
+    setStatus(STATUS.SUCCESS);
   }, []);
 
   const handleAuthorQuotes = useCallback(async (author: string) => {
-    setStatus("loading");
+    setStatus(STATUS.LOADING);
 
     const [error, newQuotes] = await getAuthorQuotes(author);
 
     if (error) {
       setError(error);
-      setStatus("error");
+      setStatus(STATUS.ERROR);
       return;
     }
 
     setQuotes(newQuotes.length > 1 ? newQuotes : [newQuotes[0]]);
-    setStatus("success");
+    setStatus(STATUS.SUCCESS);
   }, []);
 
   return {
     quotes,
     error,
-    isLoading: status === "loading",
-    isError: status === "error",
-    isSuccess: status === "success",
+    isLoading: status === STATUS.LOADING,
+    isError: status === STATUS.ERROR,
+    isSuccess: status === STATUS.SUCCESS,
     getRandomQuote: handleRandomQuote,
     getAuthorQuotes: handleAuthorQuotes,
   };
