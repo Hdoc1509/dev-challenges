@@ -4,6 +4,7 @@ import { getJobs, type JobsServiceSuccess } from "@/services/jobs/client";
 import { getMockedJobs } from "@/services/jobs/mock";
 import { getLocationOption } from "@/utils/geolocation";
 import { JobsEmptyResultsError } from "@/errors";
+import { STATUS } from "@lib/fetcher";
 import { isDev } from "@/config";
 import type { Simplify } from "@hrc/type-utils";
 import type { Search, SetOptional } from "@/types";
@@ -88,7 +89,9 @@ export function useJobs() {
     jobs,
     cachedJobs,
     jobsError: error,
-    jobsStatus: status,
+    isError: status === STATUS.ERROR,
+    isLoading: status === STATUS.LOADING,
+    isSuccess: status === STATUS.SUCCESS,
     searchJobs,
   };
 }

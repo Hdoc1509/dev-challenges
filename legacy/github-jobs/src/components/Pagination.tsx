@@ -8,11 +8,10 @@ import { isSameSearch } from "@/utils/search";
 import ReactPaginate from "react-paginate";
 import { Icon } from "@hrc/material-icons";
 import { Ellipsis } from "./Icons";
-import { STATUS } from "@lib/fetcher";
 import "./Pagination.scss";
 
 export const Pagination = () => {
-  const { jobsStatus, searchJobs } = useJobs();
+  const { isLoading, searchJobs } = useJobs();
   const { getRemainingSearches } = useRemainingSearches();
   const search = useSearchStore((s) => s.search);
   const lastSearch = useSearchStore((s) => s.lastSearch);
@@ -22,7 +21,6 @@ export const Pagination = () => {
   const setLastSearch = useSearchStore((s) => s.setLastSearch);
   const setPages = useSearchStore((s) => s.setPages);
 
-  const isLoading = jobsStatus === STATUS.LOADING;
   const className = clsx("jobs-pagination", { disabled: isLoading });
 
   const handlePageChange = useCallback(

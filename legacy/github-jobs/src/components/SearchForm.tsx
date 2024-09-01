@@ -6,12 +6,11 @@ import { isSameSearch } from "@/utils/search";
 import { Button } from "@hrc/button";
 import { Input } from "@hrc/input";
 import { Icon } from "@hrc/material-icons";
-import { STATUS } from "@lib/fetcher";
 import { isDev } from "@/config";
 import "./SearchForm.scss";
 
 export const SearchForm = () => {
-  const { jobsStatus, searchJobs } = useJobs();
+  const { isLoading, searchJobs } = useJobs();
   const { getRemainingSearches } = useRemainingSearches();
   const search = useSearchStore((s) => s.search);
   const lastSearch = useSearchStore((s) => s.lastSearch);
@@ -19,8 +18,6 @@ export const SearchForm = () => {
   const setSearch = useSearchStore((s) => s.setSearch);
   const setLastSearch = useSearchStore((s) => s.setLastSearch);
   const setPages = useSearchStore((s) => s.setPages);
-
-  const isLoading = jobsStatus === STATUS.LOADING;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
