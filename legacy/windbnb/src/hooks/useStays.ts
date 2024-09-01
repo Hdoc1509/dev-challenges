@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 import { searchStays } from "@/services/stays";
+import { STATUS, type Status } from "@lib/fetcher";
 import type { SearchOptions, Stay } from "@/types";
-import type { Status } from "@lib/fetcher";
 
 export const useStays = () => {
   const [stays, setStays] = useState<Stay[]>([]);
@@ -10,18 +10,18 @@ export const useStays = () => {
 
   const getStays = useCallback(
     async ({ location, guests }: SearchOptions = {}) => {
-      setStatus("loading");
+      setStatus(STATUS.LOADING);
 
       const [staysError, newStays] = await searchStays({ location, guests });
 
       if (staysError) {
         setError(staysError);
-        setStatus("error");
+        setStatus(STATUS.ERROR);
         return;
       }
 
       setStays(newStays);
-      setStatus("success");
+      setStatus(STATUS.SUCCESS);
     },
     [],
   );
@@ -30,9 +30,9 @@ export const useStays = () => {
 
   return {
     stays,
-    isLoading: status === "loading",
-    isError: status === "error",
-    isSuccess: status === "success",
+    isLoading: status === STATUS.LOADING,
+    isError: status === STATUS.ERROR,
+    isSuccess: status === STATUS.SUCCESS,
     resetStatus,
     error,
     getStays,
