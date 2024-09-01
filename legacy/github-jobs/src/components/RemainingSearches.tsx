@@ -3,7 +3,6 @@ import { useRemainingSearches } from "@/hooks/useRemainingSearches";
 import { Icon } from "@hrc/material-icons";
 import { RingSpinner } from "@hrc/spinner";
 import { Tooltip } from "./Tooltip";
-import { STATUS } from "@lib/fetcher";
 import "./RemainingSearches.scss";
 
 let didInit = false;
@@ -23,7 +22,9 @@ function TooltipContent() {
 export function RemainingSearches() {
   const {
     remainingSearches,
-    remainingSearchesStatus,
+    isError,
+    isLoading,
+    isSuccess,
     remainingSearchesError,
     getRemainingSearches,
   } = useRemainingSearches();
@@ -39,15 +40,15 @@ export function RemainingSearches() {
     <div className="remaining-searches bold">
       Remaining searches:
       <span className="remaining-searches__count">
-        {remainingSearchesStatus === STATUS.LOADING && <RingSpinner />}
-        {remainingSearchesStatus === STATUS.ERROR && "??"}
-        {remainingSearchesStatus === STATUS.SUCCESS && remainingSearches}
+        {isLoading && <RingSpinner />}
+        {isError && "??"}
+        {isSuccess && remainingSearches}
       </span>
       <Tooltip
         content={<TooltipContent />}
         trigger={<Icon name="help_outline" />}
       />
-      {remainingSearchesStatus === STATUS.ERROR && (
+      {isError && (
         <span className="remaining-searches__error">
           {remainingSearchesError?.message}
         </span>

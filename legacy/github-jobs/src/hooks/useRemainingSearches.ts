@@ -1,6 +1,7 @@
 import { useCallback } from "react";
 import { getRemainingSearches } from "@/services/remaining-searches/client";
 import { useRemainingSearchesStore } from "@/store/remaining-searches";
+import { STATUS } from "@lib/fetcher";
 
 export function useRemainingSearches() {
   const remainingSearches = useRemainingSearchesStore(
@@ -31,7 +32,9 @@ export function useRemainingSearches() {
 
   return {
     remainingSearches,
-    remainingSearchesStatus: status,
+    isError: status === STATUS.ERROR,
+    isLoading: status === STATUS.LOADING,
+    isSuccess: status === STATUS.SUCCESS,
     remainingSearchesError: error,
     getRemainingSearches: handleGetRemainingSearches,
   };
