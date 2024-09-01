@@ -43,9 +43,9 @@ export const FilterLocation = ({ isSelected }: { isSelected?: boolean }) => {
   const setFilter = useFilterStore((state) => state.setFilter);
 
   const options = useMemo(() => {
-    return Array.from(
-      new Set(stays.map((stay) => `${stay.city}, ${stay.country}`)),
-    ).map(splitStringLocation);
+    return Array.from(new Set(stays.map(stringifyLocation))).map(
+      splitStringLocation,
+    );
   }, [stays]);
 
   useEffect(() => {
