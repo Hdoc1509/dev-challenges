@@ -8,8 +8,15 @@ import { Results } from "./components/Results";
 import "./App.scss";
 
 function App() {
-  const { quotes, error, status, getRandomQuote, getAuthorQuotes } =
-    useQuotes();
+  const {
+    quotes,
+    error,
+    isLoading,
+    isError,
+    isSuccess,
+    getRandomQuote,
+    getAuthorQuotes,
+  } = useQuotes();
   const [showAuthorQuotes, setShowAuthorQuotes] = useState(false);
 
   const handleRandomQuote = useCallback(() => {
@@ -25,14 +32,11 @@ function App() {
 
   return (
     <>
-      <Header
-        isLoading={status === "loading"}
-        handleRandomQuote={handleRandomQuote}
-      />
+      <Header isLoading={isLoading} handleRandomQuote={handleRandomQuote} />
       <main>
-        {status === "loading" && <RingSpinner />}
-        {status === "error" && <ErrorMessage error={error as Error} />}
-        {status === "success" && (
+        {isLoading && <RingSpinner />}
+        {isError && <ErrorMessage error={error as Error} />}
+        {isSuccess && (
           <Results
             quotes={quotes}
             showAuthorQuotes={showAuthorQuotes}

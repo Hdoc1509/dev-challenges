@@ -39,9 +39,11 @@ export const useQuotes = () => {
   }, []);
 
   return {
-    status,
-    error,
     quotes,
+    error,
+    isLoading: status === "loading",
+    isError: status === "error",
+    isSuccess: status === "success",
     getRandomQuote: handleRandomQuote,
     getAuthorQuotes: handleAuthorQuotes,
   };
