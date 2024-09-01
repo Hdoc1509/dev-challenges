@@ -20,6 +20,8 @@ export const SearchForm = () => {
   const setLastSearch = useSearchStore((s) => s.setLastSearch);
   const setPages = useSearchStore((s) => s.setPages);
 
+  const isLoading = jobsStatus === STATUS.LOADING;
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -52,7 +54,6 @@ export const SearchForm = () => {
         id="search-form"
         className="search-form__inner"
         onSubmit={(e) => void handleSubmit(e)}
-        data-loading={jobsStatus === STATUS.LOADING}
       >
         <Input
           iconStart={<Icon name="work_outline" />}
@@ -62,7 +63,9 @@ export const SearchForm = () => {
           required
           fullWidth
         />
-        <Button color="primary">Search</Button>
+        <Button color="primary" disabled={isLoading}>
+          Search
+        </Button>
       </form>
     </section>
   );

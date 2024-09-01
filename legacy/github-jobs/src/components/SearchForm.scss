@@ -22,14 +22,6 @@
     outline: 2px solid var(--primary);
   }
 
-  &[data-loading="true"] {
-    .button {
-      --primary: var(--primary-disabled);
-      --primary-hover: var(--primary-disabled);
-      pointer-events: none;
-    }
-  }
-
   --label-text: #5c6070;
   --label-text-focus: var(--primary);
   .label {
@@ -50,6 +42,8 @@
   --button-padding: 14px 48px;
   --button-radius: 4px;
   --button-font-size: 1rem;
+  --button-bg-disabled: var(--primary-disabled);
+  --button-text-disabled: #fff;
 
   @media (max-width: 767px) {
     width: 90%;
