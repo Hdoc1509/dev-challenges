@@ -3,6 +3,7 @@ import { getQuestions } from "./services/questions";
 import { useQuestionStore } from "./store/questions";
 import { Footer } from "@lib/components/Footer";
 import { QuizCard } from "./components/QuizCard";
+import { STATUS } from "./constants";
 import "./App.css";
 
 const QUESTIONS = 10;
@@ -14,18 +15,18 @@ function App() {
   const reset = useQuestionStore((s) => s.reset);
 
   const loadQuestions = useCallback(async () => {
-    setStatus("loading");
+    setStatus(STATUS.LOADING);
 
     const [error, questions] = await getQuestions(QUESTIONS);
 
     if (error) {
       setError(error);
-      setStatus("error");
+      setStatus(STATUS.ERROR);
       return;
     }
 
     setQuestions(questions);
-    setStatus("success");
+    setStatus(STATUS.SUCCESS);
   }, [setError, setQuestions, setStatus]);
 
   const tryAgain = () => {

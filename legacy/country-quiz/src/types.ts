@@ -1,4 +1,5 @@
 import type { QuestionCategory } from "./constants";
+export type { Status } from "./constants";
 
 export type Question = {
   id: number;

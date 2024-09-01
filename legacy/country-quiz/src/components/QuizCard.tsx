@@ -3,7 +3,7 @@ import { clsx } from "clsx";
 import { Quiz } from "./Quiz";
 import { Results } from "./Results";
 import { Loader } from "./Loader";
-import { QuestionCategories } from "@/constants";
+import { QuestionCategories, STATUS } from "@/constants";
 import "./QuizCard.scss";
 
 type Props = {
@@ -25,10 +25,10 @@ export const QuizCard = ({ tryAgain }: Props) => {
 
   return (
     <div className={className}>
-      {status === "loading" && <Loader />}
-      {status === "success" && <Quiz />}
-      {status === "error" && <p className="error">{error?.message}</p>}
-      {status === "over" && <Results tryAgain={tryAgain} />}
+      {status === STATUS.LOADING && <Loader />}
+      {status === STATUS.SUCCESS && <Quiz />}
+      {status === STATUS.ERROR && <p className="error">{error?.message}</p>}
+      {status === STATUS.OVER && <Results tryAgain={tryAgain} />}
     </div>
   );
 };
