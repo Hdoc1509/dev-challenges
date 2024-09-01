@@ -26,12 +26,14 @@ export const useStays = () => {
     [],
   );
 
+  const resetStatus = useCallback(() => setStatus("idle"), []);
+
   return {
     stays,
     isLoading: status === "loading",
     isError: status === "error",
     isSuccess: status === "success",
-    setStatus,
+    resetStatus,
     error,
     getStays,
   };

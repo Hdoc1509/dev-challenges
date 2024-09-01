@@ -38,7 +38,7 @@ const LocationMenu = ({ options }: { options: Location[] }) => {
 };
 
 export const FilterLocation = ({ isSelected }: { isSelected?: boolean }) => {
-  const { stays, isLoading, isSuccess, setStatus, getStays } = useStays();
+  const { stays, isLoading, isSuccess, resetStatus, getStays } = useStays();
   const location = useFilterStore((state) => state.location);
   const setFilter = useFilterStore((state) => state.setFilter);
 
@@ -49,9 +49,8 @@ export const FilterLocation = ({ isSelected }: { isSelected?: boolean }) => {
   }, [stays]);
 
   useEffect(() => {
-    if (isSelected) void getStays();
-    else setStatus("idle");
-  }, [isSelected, getStays, setStatus]);
+    isSelected ? void getStays() : resetStatus();
+  }, [isSelected, getStays, resetStatus]);
 
   return (
     <>
