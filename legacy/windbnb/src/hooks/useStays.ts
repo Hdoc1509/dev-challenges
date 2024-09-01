@@ -28,7 +28,9 @@ export const useStays = () => {
 
   return {
     stays,
-    status,
+    isLoading: status === "loading",
+    isError: status === "error",
+    isSuccess: status === "success",
     setStatus,
     error,
     getStays,

@@ -38,7 +38,7 @@ const LocationMenu = ({ options }: { options: Location[] }) => {
 };
 
 export const FilterLocation = ({ isSelected }: { isSelected?: boolean }) => {
-  const { stays, status, setStatus, getStays } = useStays();
+  const { stays, isLoading, isSuccess, setStatus, getStays } = useStays();
   const location = useFilterStore((state) => state.location);
   const setFilter = useFilterStore((state) => state.setFilter);
 
@@ -64,8 +64,8 @@ export const FilterLocation = ({ isSelected }: { isSelected?: boolean }) => {
         isSelected={isSelected}
         onClick={() => setFilter(FILTERS.LOCATION)}
       />
-      {status === "loading" && <RingSpinner className="location-spinner" />}
-      {status === "success" && <LocationMenu options={options} />}
+      {isLoading && <RingSpinner className="location-spinner" />}
+      {isSuccess && <LocationMenu options={options} />}
     </>
   );
 };

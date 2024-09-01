@@ -7,17 +7,17 @@ import { useStays } from "./hooks/useStays.ts";
 import "./App.css";
 
 function App() {
-  const { stays, error, status, getStays } = useStays();
+  const { stays, error, isLoading, isError, isSuccess, getStays } = useStays();
 
   useEffect(() => void getStays(), [getStays]);
 
   return (
     <>
       <Header getStays={getStays} />
-      <main data-status={status}>
-        {status === "loading" && <RingSpinner />}
-        {status === "error" && <p>{error?.message}</p>}
-        {status === "success" && <SearchResults results={stays} />}
+      <main data-loading={isLoading}>
+        {isLoading && <RingSpinner />}
+        {isError && <p>{error?.message}</p>}
+        {isSuccess && <SearchResults results={stays} />}
       </main>
       <Footer />
     </>
