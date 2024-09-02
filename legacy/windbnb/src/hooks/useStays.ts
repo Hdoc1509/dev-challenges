@@ -1,8 +1,10 @@
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 import { useStaysStore } from "@/store/stays";
 import { searchStays } from "@/services/stays";
 import { STATUS } from "@lib/fetcher";
 import type { SearchOptions } from "@/types";
+
+let didInit = false;
 
 export const useStays = () => {
   const stays = useStaysStore((state) => state.stays);
@@ -30,6 +32,13 @@ export const useStays = () => {
     },
     [setError, setStatus, setStays],
   );
+
+  useEffect(() => {
+    if (!didInit) {
+      didInit = true;
+      void getStays();
+    }
+  }, [getStays]);
 
   return {
     stays,
