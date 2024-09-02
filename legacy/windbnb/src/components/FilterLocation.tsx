@@ -1,11 +1,11 @@
-import { useEffect, useMemo } from "react";
+import { useEffect } from "react";
+import { useLocationOptions } from "@/hooks/useLocationOptions";
 import { Button } from "@hrc/button";
 import { Icon } from "@hrc/material-icons";
 import { RingSpinner } from "@hrc/spinner/dist/RingSpinner";
 import { FilterInput } from "./FilterInput";
 import { FILTERS, useFilterStore } from "@/store/filter";
-import { useStays } from "@/hooks/useStays";
-import { splitStringLocation, stringifyLocation } from "@/utils";
+import { stringifyLocation } from "@/utils";
 import type { Location } from "@/types";
 import "./FilterLocation.scss";
 
@@ -36,19 +36,14 @@ const LocationMenu = ({ options }: { options: Location[] }) => {
 };
 
 export const FilterLocation = ({ isSelected }: { isSelected?: boolean }) => {
-  const { stays, isLoading, isSuccess, resetStatus, getStays } = useStays();
+  const { options, isLoading, isSuccess, resetStatus, getOptions } =
+    useLocationOptions();
   const location = useFilterStore((state) => state.location);
   const setFilter = useFilterStore((state) => state.setFilter);
 
-  const options = useMemo(() => {
-    return Array.from(new Set(stays.map(stringifyLocation))).map(
-      splitStringLocation,
-    );
-  }, [stays]);
-
   useEffect(() => {
-    isSelected ? void getStays() : resetStatus();
-  }, [isSelected, getStays, resetStatus]);
+    isSelected ? void getOptions() : resetStatus();
+  }, [isSelected, getOptions, resetStatus]);
 
   return (
     <>
