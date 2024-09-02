@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { getAuthorQuotes, getRandomQuote } from "@/services/quotes/quotable";
 import { STATUS, type Status } from "@lib/fetcher";
 import type { Quote } from "@/types";
@@ -40,6 +40,8 @@ export const useQuotes = () => {
     setIsAuthorQuotes(true);
     setStatus(STATUS.SUCCESS);
   }, []);
+
+  useEffect(() => void handleRandomQuote(), [handleRandomQuote]);
 
   return {
     quotes,

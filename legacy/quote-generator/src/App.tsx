@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useQuotes } from "./hooks/useQuotes";
 import { RingSpinner } from "@hrc/spinner/dist/RingSpinner";
 import { Header } from "./components/Header";
@@ -18,8 +17,6 @@ function App() {
     getRandomQuote,
     getAuthorQuotes,
   } = useQuotes();
-
-  useEffect(() => void getRandomQuote(), [getRandomQuote]);
 
   return (
     <>
