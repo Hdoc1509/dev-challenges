@@ -8,15 +8,16 @@ import type { FnSearchOptions } from "@/types";
 import "./FilterDrawer.scss";
 
 type Props = {
-  isOpen?: boolean;
   onSearch: FnSearchOptions;
 };
 
-export const FilterDrawer = ({ isOpen, onSearch }: Props) => {
+export const FilterDrawer = ({ onSearch }: Props) => {
   const filter = useFilterStore((state) => state.filter);
   const guests = useFilterStore((state) => state.guests.total);
   const location = useFilterStore((state) => state.location);
   const clearFilter = useFilterStore((state) => state.clearFilter);
+
+  const isOpen = filter !== null;
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
