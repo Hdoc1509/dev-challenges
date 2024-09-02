@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useQuotes } from "./hooks/useQuotes";
 import { RingSpinner } from "@hrc/spinner/dist/RingSpinner";
 import { Header } from "./components/Header";
@@ -14,33 +14,24 @@ function App() {
     isLoading,
     isError,
     isSuccess,
+    isAuthorQuotes,
     getRandomQuote,
     getAuthorQuotes,
   } = useQuotes();
-  const [showAuthorQuotes, setShowAuthorQuotes] = useState(false);
 
-  const handleRandomQuote = useCallback(() => {
-    void getRandomQuote();
-    setShowAuthorQuotes(false);
-  }, [getRandomQuote]);
-  const handleAuthorQuotes = (author: string) => {
-    void getAuthorQuotes(author);
-    setShowAuthorQuotes(true);
-  };
-
-  useEffect(() => handleRandomQuote(), [handleRandomQuote]);
+  useEffect(() => void getRandomQuote(), [getRandomQuote]);
 
   return (
     <>
-      <Header isLoading={isLoading} handleRandomQuote={handleRandomQuote} />
+      <Header isLoading={isLoading} handleRandomQuote={getRandomQuote} />
       <main>
         {isLoading && <RingSpinner />}
         {isError && <ErrorMessage error={error as Error} />}
         {isSuccess && (
           <Results
             quotes={quotes}
-            showAuthorQuotes={showAuthorQuotes}
-            handleAuthorQuotes={handleAuthorQuotes}
+            showAuthorQuotes={isAuthorQuotes}
+            handleAuthorQuotes={getAuthorQuotes}
           />
         )}
       </main>

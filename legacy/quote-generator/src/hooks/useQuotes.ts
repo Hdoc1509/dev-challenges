@@ -7,6 +7,7 @@ export const useQuotes = () => {
   const [status, setStatus] = useState<Status>("idle");
   const [quotes, setQuotes] = useState<Quote[]>([]);
   const [error, setError] = useState<Error | null>(null);
+  const [isAuthorQuotes, setIsAuthorQuotes] = useState(false);
 
   const handleRandomQuote = useCallback(async () => {
     setStatus(STATUS.LOADING);
@@ -20,6 +21,7 @@ export const useQuotes = () => {
     }
 
     setQuotes([quote]);
+    setIsAuthorQuotes(false);
     setStatus(STATUS.SUCCESS);
   }, []);
 
@@ -35,6 +37,7 @@ export const useQuotes = () => {
     }
 
     setQuotes(newQuotes.length > 1 ? newQuotes : [newQuotes[0]]);
+    setIsAuthorQuotes(true);
     setStatus(STATUS.SUCCESS);
   }, []);
 
@@ -44,6 +47,7 @@ export const useQuotes = () => {
     isLoading: status === STATUS.LOADING,
     isError: status === STATUS.ERROR,
     isSuccess: status === STATUS.SUCCESS,
+    isAuthorQuotes,
     getRandomQuote: handleRandomQuote,
     getAuthorQuotes: handleAuthorQuotes,
   };
