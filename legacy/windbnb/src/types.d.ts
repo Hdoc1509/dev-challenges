@@ -19,5 +19,3 @@ export type SearchOptions = {
   location?: Location;
   guests?: number;
 };
-
-export type FnSearchOptions = (options?: SearchOptions) => Promise<void>;
