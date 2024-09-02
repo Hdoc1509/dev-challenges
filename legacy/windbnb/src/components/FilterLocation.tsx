@@ -6,10 +6,8 @@ import { FilterInput } from "./FilterInput";
 import { FILTERS, useFilterStore } from "@/store/filter";
 import { useStays } from "@/hooks/useStays";
 import { splitStringLocation, stringifyLocation } from "@/utils";
-import type { RequiredSearchLocation } from "@/types";
+import type { Location } from "@/types";
 import "./FilterLocation.scss";
-
-type Location = RequiredSearchLocation;
 
 export const LocationOption = ({ location }: { location: Location }) => {
   const setLocation = useFilterStore((state) => state.setLocation);

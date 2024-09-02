@@ -10,15 +10,14 @@ export type Stay = {
   imageUrl: string;
 };
 
-export type SearchOptions = {
-  location?: {
-    city: string;
-    country: string;
-  };
-  guests?: number;
+export type Location = {
+  city: string;
+  country: string;
 };
 
-export type RequiredSearchOptions = Required<SearchOptions>;
-export type RequiredSearchLocation = RequiredSearchOptions["location"];
+export type SearchOptions = {
+  location?: Location;
+  guests?: number;
+};
 
 export type FnSearchOptions = (options?: SearchOptions) => Promise<void>;

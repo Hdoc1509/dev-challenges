@@ -1,4 +1,4 @@
-import type { RequiredSearchLocation, SearchOptions } from "@/types";
+import type { Location, SearchOptions } from "@/types";
 import { create } from "zustand";
 
 export const FILTERS = Object.freeze({
@@ -22,7 +22,7 @@ type State = {
 type Action = {
   setFilter: (filter: Filter) => void;
   clearFilter: () => void;
-  setLocation: (location: RequiredSearchLocation) => void;
+  setLocation: (location: Location) => void;
   addGuest: (type: GuestType) => void;
   removeGuest: (type: GuestType) => void;
 };
