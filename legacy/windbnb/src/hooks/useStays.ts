@@ -1,12 +1,17 @@
-import { useCallback, useState } from "react";
+import { useCallback } from "react";
+import { useStaysStore } from "@/store/stays";
 import { searchStays } from "@/services/stays";
-import { STATUS, type Status } from "@lib/fetcher";
-import type { SearchOptions, Stay } from "@/types";
+import { STATUS } from "@lib/fetcher";
+import type { SearchOptions } from "@/types";
 
 export const useStays = () => {
-  const [stays, setStays] = useState<Stay[]>([]);
-  const [status, setStatus] = useState<Status>("idle");
-  const [error, setError] = useState<Error | null>(null);
+  const stays = useStaysStore((state) => state.stays);
+  const status = useStaysStore((state) => state.status);
+  const error = useStaysStore((state) => state.error);
+  const setStays = useStaysStore((state) => state.setStays);
+  const setStatus = useStaysStore((state) => state.setStatus);
+  const setError = useStaysStore((state) => state.setError);
+  const resetStatus = useStaysStore((state) => state.resetStatus);
 
   const getStays = useCallback(
     async ({ location, guests }: SearchOptions = {}) => {
@@ -23,10 +28,8 @@ export const useStays = () => {
       setStays(newStays);
       setStatus(STATUS.SUCCESS);
     },
-    [],
+    [setError, setStatus, setStays],
   );
-
-  const resetStatus = useCallback(() => setStatus("idle"), []);
 
   return {
     stays,
