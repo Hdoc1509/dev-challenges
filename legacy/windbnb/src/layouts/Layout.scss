@@ -1,0 +1,21 @@
+#root {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  min-height: 100svh;
+  padding: 2rem;
+  padding-inline: 3rem;
+
+  @media (max-width: 767px) {
+    padding: 1rem;
+  }
+
+  @media (min-width: 1200px) {
+    padding-inline: 6rem;
+  }
+}
+
+.credits {
+  margin-top: 25px;
+}
