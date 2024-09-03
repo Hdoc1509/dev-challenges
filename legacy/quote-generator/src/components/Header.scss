@@ -7,12 +7,13 @@
 
   --icon-size: var(--fs-4);
 
-  --button-bg: transparent;
-  --button-bg-hover: var(--bg-hover);
-  --button-bg-disabled: rgb(180 180 180 / 0.75);
-  --button-text: var(--text-light);
-  --button-text-disabled: rgb(36 36 36 / 0.5);
   .button {
+    --button-bg: transparent;
+    --button-bg-hover: var(--bg-hover);
+    --button-bg-disabled: rgb(180 180 180 / 0.75);
+    --button-text: var(--text-light);
+    --button-text-disabled: rgb(36 36 36 / 0.5);
+
     &:hover,
     &:focus {
       color: #fff;
