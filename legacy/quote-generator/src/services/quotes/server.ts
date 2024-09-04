@@ -6,9 +6,7 @@ export const getRandomQuote = async (): PromiseWithError<QuotesResponse> => {
   const [error, data] = await fetcher(`${FAVQS_API.URL}/quotes`, {
     schema: QuotesResponseSchema,
     serviceError: new ServiceError("Quotes"),
-    headers: {
-      Authorization: `Token token=${FAVQS_API.KEY}`,
-    },
+    headers: FAVQS_API.HEADERS,
   });
 
   if (error) return [error];

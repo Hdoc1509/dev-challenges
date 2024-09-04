@@ -4,4 +4,7 @@ const { FAVQS_API_KEY } = import.meta.env;
 export const FAVQS_API = {
   URL: "https://favqs.com/api",
   KEY: FAVQS_API_KEY,
+  HEADERS: {
+    Authorization: `Token token=${FAVQS_API_KEY}`,
+  },
 };
