@@ -15,9 +15,9 @@ export const QuoteSchema = z.object({
 });
 export type QuoteResponse = z.infer<typeof QuoteSchema>;
 
-export const QuotesResponseSchema = z.object({
+export const QuoteListResponseSchema = z.object({
   page: z.number(),
   last_page: z.boolean(),
   quotes: z.array(QuoteSchema),
 });
-export type QuotesResponse = z.infer<typeof QuotesResponseSchema>;
+export type QuoteListResponse = z.infer<typeof QuoteListResponseSchema>;
