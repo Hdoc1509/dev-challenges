@@ -2,7 +2,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://hdoc1509.github.io/dev-challenges/legacy/quote-generator/">
+    <a href="https://hdoc-quote-generator.netlify.app">
       Solution
     </a>
     <span> | </span>
@@ -70,6 +70,6 @@ git clone https://github.com/Hdoc1509/dev-challenges
 cd dev-challenges && pnpm install
 
 # Run random-quote-generator in dev-mode
-cd apps/random-quote-generator
-pnpm run dev --open
+cd legacy/random-quote-generator
+pnpm run dev
 ```

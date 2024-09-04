@@ -4,7 +4,6 @@ import { Header } from "./components/Header";
 import { Footer } from "@lib/components/Footer";
 import { ErrorMessage } from "./components/ErrorMessage";
 import { Results } from "./components/Results";
-import "./App.scss";
 
 function App() {
   const {

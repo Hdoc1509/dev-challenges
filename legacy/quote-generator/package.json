@@ -1,15 +1,18 @@
 {
   "name": "quote-generator",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/netlify": "catalog:",
+    "@astrojs/react": "catalog:",
     "@fontsource-variable/montserrat": "catalog:",
     "@fontsource-variable/raleway": "catalog:",
     "@fontsource/montserrat": "catalog:",
@@ -22,18 +25,14 @@
     "@lib/fetcher": "workspace:*",
     "@lib/sass-utils": "workspace:*",
     "@material-design-icons/font": "catalog:",
+    "astro": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "catalog:",
+    "@astrojs/check": "catalog:",
     "sass": "catalog:",
-    "typescript": "catalog:",
-    "vite": "catalog:"
-  },
-  "engines": {
-    "node": ">=18",
-    "pnpm": ">=8"
+    "typescript": "catalog:"
   }
 }

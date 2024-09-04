@@ -1,7 +1,7 @@
 mkdir dist
 mkdir dist/legacy
 
-if ! pnpm --filter=!weather-app --filter=!github-jobs build; then
+if ! pnpm --filter=!quote-generator --filter=!weather-app --filter=!github-jobs build; then
   echo "ERROR: failed while building. Aborting."
   exit 1
 fi

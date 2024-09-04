@@ -1,0 +1,83 @@
+---
+import "@material-design-icons/font/filled.css";
+import "@fontsource-variable/montserrat/index.css";
+import "@fontsource/montserrat/500.css";
+import "@fontsource/montserrat/700.css";
+import "@fontsource-variable/raleway/index.css";
+import "@fontsource/raleway/500.css";
+import "@fontsource/raleway/700.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Quote Generator" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Quote Generator - DevChallenges</title>
+    <script>
+      import { loadTheme } from "@hrc/toggle-theme";
+
+      loadTheme();
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+<style is:global lang="scss">
+  @use "@lib/sass-utils/mixins" as utils;
+  @use "@lib/sass-utils/font/sizes/static";
+  @use "@lib/sass-utils/reset/font";
+  @use "@lib/sass-utils/reset/body";
+  @use "@lib/sass-utils/reset/box-model";
+
+  :root {
+    @include utils.font-variable("Raleway", sans-serif);
+
+    --bg: #fff;
+    --text: #000;
+    --text-secondary: #828282;
+    --text-light: #4f4f4f;
+    --text-dark: #333;
+    --bg-hover: #333;
+
+    /* custom fluid font sizes */
+    --fs-fluid-3-6: clamp(var(--fs-3), 3vw, var(--fs-6));
+  }
+
+  [data-theme="dark"] {
+    --bg: #242424;
+    --text: #fff;
+    --text-secondary: #bdbdbd;
+    --text-light: #fff;
+  }
+
+  body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 24px;
+
+    background-color: var(--bg);
+    min-height: 100vh;
+    min-height: 100svh;
+    padding-inline: 2rem;
+
+    color: var(--text);
+  }
+
+  main {
+    display: grid;
+    align-items: center;
+    grid-template-columns: minmax(280px, 800px);
+    gap: 40px;
+    margin: auto;
+
+    .ring-spinner {
+      --spinner-size: 60px;
+      margin-inline: auto;
+    }
+  }
+</style>

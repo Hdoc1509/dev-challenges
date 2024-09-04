@@ -26,6 +26,7 @@ jobs:
           files: |
             _templates/**
             .github/**
+            legacy/quote-generator/**
             legacy/weather-app/**
             legacy/github-jobs/**
             !.github/workflows/deploy.yml
