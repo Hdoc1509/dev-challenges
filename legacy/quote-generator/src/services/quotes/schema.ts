@@ -9,9 +9,9 @@ export const QuoteSchema = z.object({
   favorites_count: z.number(),
   upvotes_count: z.number(),
   downvotes_count: z.number(),
-  author: z.string(),
-  author_permalink: z.string(),
-  body: z.string(),
+  author: z.string().optional(),
+  author_permalink: z.string().optional(),
+  body: z.string().optional(),
 });
 export type QuoteResponse = z.infer<typeof QuoteSchema>;
 
@@ -20,3 +20,4 @@ export const QuotesResponseSchema = z.object({
   last_page: z.boolean(),
   quotes: z.array(QuoteSchema),
 });
+export type QuotesResponse = z.infer<typeof QuotesResponseSchema>;
