@@ -1,8 +1,8 @@
 import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
-import { QuotesResponseSchema, type QuotesResponse } from "./schema";
+import { QuotesResponseSchema, type QuoteResponse } from "./schema";
 import { FAVQS_API } from "@/config";
 
-export const getRandomQuote = async (): PromiseWithError<QuotesResponse> => {
+export const getRandomQuote = async (): PromiseWithError<QuoteResponse> => {
   const [error, data] = await fetcher(`${FAVQS_API.URL}/quotes`, {
     schema: QuotesResponseSchema,
     serviceError: new ServiceError("Quotes"),
@@ -11,5 +11,5 @@ export const getRandomQuote = async (): PromiseWithError<QuotesResponse> => {
 
   if (error) return [error];
 
-  return [null, data];
+  return [null, data.quotes[0]];
 };
