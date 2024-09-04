@@ -1,0 +1,3 @@
+# get random quotes (25 items)
+GET https://favqs.com/api/quotes
+Authorization: Token token={{FAVQS_API_KEY}}
