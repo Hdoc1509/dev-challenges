@@ -1,9 +1,5 @@
 import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
-import {
-  QuoteListResponseSchema,
-  type QuoteResponse,
-  type QuoteListResponse,
-} from "./schema";
+import { QuoteListResponseSchema, type QuoteResponse } from "./schema";
 import { FAVQS_API } from "@/config";
 
 export const getRandomQuote = async (): PromiseWithError<QuoteResponse> => {
@@ -22,7 +18,7 @@ type AuthorParamsOptions = { filter: string; type: "author" };
 
 export const getAuthorQuotes = async (
   author: string,
-): PromiseWithError<QuoteListResponse> => {
+): PromiseWithError<QuoteResponse[]> => {
   const paramsOptions: AuthorParamsOptions = { type: "author", filter: author };
   const params = new URLSearchParams(paramsOptions);
 
@@ -37,5 +33,5 @@ export const getAuthorQuotes = async (
 
   if (error) return [error];
 
-  return [null, data];
+  return [null, data.quotes];
 };
