@@ -20,4 +20,3 @@ export const QuoteListResponseSchema = z.object({
   last_page: z.boolean(),
   quotes: z.array(QuoteSchema),
 });
-export type QuoteListResponse = z.infer<typeof QuoteListResponseSchema>;
