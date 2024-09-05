@@ -1,1 +1,1 @@
-export { createErrorResponse, createSuccessResponse } from "./response.js";
+export { createErrorResponse, createSuccessResponse } from "./response.ts";
