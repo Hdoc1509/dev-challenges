@@ -30,9 +30,9 @@
 
 ### Built With
 
+- [Astro](https://astro.build/)
 - [React](https://reactjs.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Vite](https://vitejs.dev/)
 - [Sass](https://sass-lang.com/)
 - [BEM](https://getbem.com/)
 - [zod](https://zod.dev/)
