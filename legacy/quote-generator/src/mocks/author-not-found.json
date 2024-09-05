@@ -1,0 +1,14 @@
+{
+  "page": 1,
+  "last_page": false,
+  "quotes": [
+    {
+      "id": 0,
+      "favorites_count": 0,
+      "favorite": false,
+      "dialogue": false,
+      "body": "No quotes found",
+      "tags": []
+    }
+  ]
+}
