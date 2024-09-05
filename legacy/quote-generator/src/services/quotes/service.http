@@ -1,3 +1,7 @@
 # get random quotes (25 items)
 GET https://favqs.com/api/quotes
 Authorization: Token token={{FAVQS_API_KEY}}
+
+# get quotes by invalid author
+GET https://favqs.com/api/quotes?filter=Invalid&type=author
+Authorization: Token token={{FAVQS_API_KEY}}
