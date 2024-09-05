@@ -27,7 +27,7 @@ export const getAuthorQuotes = async (
   const params = new URLSearchParams(paramsOptions);
 
   const [error, data] = await fetcher(
-    `${FAVQS_API}/quotes?${params.toString()}`,
+    `${FAVQS_API.URL}/quotes?${params.toString()}`,
     {
       schema: QuoteListResponseSchema,
       serviceError: new ServiceError("Quotes"),
