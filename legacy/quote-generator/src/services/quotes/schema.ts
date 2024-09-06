@@ -53,3 +53,9 @@ export const QuoteListEmptyResponseSchema = z.object({
     )
     .length(1),
 });
+
+// https://favqs.com/api#ErrorCodes
+export const QuoteListErrorResponseSchema = z.object({
+  error_code: z.number(),
+  message: z.string(),
+});
