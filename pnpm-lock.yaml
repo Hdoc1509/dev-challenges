@@ -525,6 +525,9 @@ importers:
       '@lib/fetcher':
         specifier: workspace:*
         version: link:../../libs/fetcher
+      '@lib/request':
+        specifier: workspace:*
+        version: link:../../libs/request
       '@lib/sass-utils':
         specifier: workspace:*
         version: link:../../libs/sass-utils
@@ -786,6 +789,8 @@ importers:
         version: 3.22.4
 
   libs/geolocation: {}
+
+  libs/request: {}
 
   libs/sass-utils:
     dependencies:
