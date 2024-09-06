@@ -1,7 +1,7 @@
 import {
   ServiceError,
-  ResponseError,
   fetcher,
+  is5xxError,
   type PromiseWithError,
 } from "@lib/fetcher";
 import {
@@ -26,8 +26,7 @@ export const getRandomQuote = async (): PromiseWithError<QuoteResponse> => {
   );
 
   if (error) {
-    if (error instanceof ResponseError && error.res.status >= 500)
-      return [QuotesServiceError.internal()];
+    if (is5xxError(error)) return [QuotesServiceError.internal()];
 
     return [error];
   }
@@ -51,8 +50,7 @@ export const getAuthorQuotes = async (
   );
 
   if (error) {
-    if (error instanceof ResponseError && error.res.status >= 500)
-      return [QuotesServiceError.internal()];
+    if (is5xxError(error)) return [QuotesServiceError.internal()];
 
     return [error];
   }
