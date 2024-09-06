@@ -1,2 +1,5 @@
 # NOTE: Be sure to read env from .env
 GET http://api.weatherapi.com/v1/search.json?q=lon&key={{WEATHER_API_KEY}}
+
+# Error response (no key)
+GET http://api.weatherapi.com/v1/search.json?q=lon
