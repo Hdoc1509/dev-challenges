@@ -1,5 +1,5 @@
 import { isAbortError, isNetworkError } from "./utils";
-import type { Options, PromiseWithError, Status } from "./types";
+import type { Options, PromiseWithError } from "./types";
 import type { z } from "zod";
 
 // based on https://zod.dev/?id=writing-generic-functions
@@ -44,4 +44,5 @@ export async function fetcher<S extends z.ZodTypeAny>(
 export * from "./error";
 export { STATUS } from "./status";
 export { is5xxError } from "./utils";
-export type { PromiseWithError, Status };
+export type { Status, ParamOptions } from "./types";
+export type { PromiseWithError };

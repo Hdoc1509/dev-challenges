@@ -3,6 +3,8 @@ export type { Status } from "./status";
 
 export type PromiseWithError<T> = Promise<[Error] | [null, T]>;
 
+export type ParamOptions<T extends string> = Record<T, string>;
+
 export type Options<S> = {
   serviceError: ServiceError;
   schema: S;
