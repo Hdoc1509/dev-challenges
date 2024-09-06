@@ -3,6 +3,8 @@ import { ValidationError } from "./validation";
 import { TimeoutError } from "./timeout";
 import { NetworkError } from "./network";
 import { UnknownError } from "./unknown";
+import { InternalError } from "./internal";
+import { GenericError } from "./generic";
 import type { z } from "zod";
 
 export class ServiceError {
@@ -35,5 +37,13 @@ export class ServiceError {
 
   unknown() {
     return new UnknownError(`${this.name} service unknown error`);
+  }
+
+  internal() {
+    return new InternalError(`${this.name} service internal error`);
+  }
+
+  generic(message: string) {
+    return new GenericError(`${this.name} service error: ${message}`);
   }
 }
