@@ -12,9 +12,10 @@ import {
 import { parseServerQuotes } from "./parse";
 import { FAVQS_API } from "@/config";
 
+const QuotesServiceError = new ServiceError("Quotes");
 const fetcherOptions = {
   schema: QuoteListResponseSchema.or(QuoteListErrorResponseSchema),
-  serviceError: new ServiceError("Quotes"),
+  serviceError: QuotesServiceError,
   headers: FAVQS_API.HEADERS,
 };
 
@@ -26,13 +27,12 @@ export const getRandomQuote = async (): PromiseWithError<QuoteResponse> => {
 
   if (error) {
     if (error instanceof ResponseError && error.res.status >= 500)
-      return [new Error("Quotes service internal error")];
+      return [QuotesServiceError.internal()];
 
     return [error];
   }
 
-  if ("error_code" in data)
-    return [new Error(`Quotes service error: ${data.message}`)];
+  if ("error_code" in data) return [QuotesServiceError.generic(data.message)];
 
   return [null, parseServerQuotes(data.quotes)[0]];
 };
@@ -52,13 +52,12 @@ export const getAuthorQuotes = async (
 
   if (error) {
     if (error instanceof ResponseError && error.res.status >= 500)
-      return [new Error("Quotes service internal error")];
+      return [QuotesServiceError.internal()];
 
     return [error];
   }
 
-  if ("error_code" in data)
-    return [new Error(`Quotes service error: ${data.message}`)];
+  if ("error_code" in data) return [QuotesServiceError.generic(data.message)];
 
   return [null, parseServerQuotes(data.quotes)];
 };
