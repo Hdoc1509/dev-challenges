@@ -18,10 +18,23 @@
     &:focus {
       color: #fff;
     }
+
+    &:disabled .material-icons {
+      animation: rotate 1s linear infinite;
+    }
   }
 
   .theme-button {
     margin: auto 0;
     --icon-color: #87ceeb;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
