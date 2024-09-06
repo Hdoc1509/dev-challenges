@@ -1,3 +1,4 @@
+import { isAbortError, isNetworkError } from "./utils";
 import type { Options, PromiseWithError, Status } from "./types";
 import type { z } from "zod";
 
@@ -30,12 +31,8 @@ export async function fetcher<S extends z.ZodTypeAny>(
     return [null, parsed.data];
   } catch (error) {
     if (error instanceof Error) {
-      const { name, message } = error;
-
-      if (name === "AbortError") return [serviceError.timeout()];
-
-      if (message.match(/NetworkError|Failed to fetch/) != null)
-        return [serviceError.network()];
+      if (isAbortError(error)) return [serviceError.timeout()];
+      if (isNetworkError(error)) return [serviceError.network()];
     }
   } finally {
     clearTimeout(timeoutID);
