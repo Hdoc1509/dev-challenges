@@ -33,7 +33,7 @@ export const QuoteMultipleAuthorSchema = QuoteSchema.omit({
 export const QuoteListResponseSchema = z.object({
   page: z.number(),
   last_page: z.boolean(),
-  quotes: z.array(QuoteSchema.or(QuoteMultipleAuthorSchema)).length(25),
+  quotes: z.array(QuoteSchema.or(QuoteMultipleAuthorSchema)).max(25),
 });
 export type QuoteListResponse = z.infer<typeof QuoteListResponseSchema>;
 
