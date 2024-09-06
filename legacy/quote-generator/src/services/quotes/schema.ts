@@ -1,5 +1,6 @@
 import * as z from "zod";
 
+// from @/mocks/success.json
 export const QuoteSchema = z.object({
   id: z.number(),
   dialogue: z.boolean(),
@@ -9,9 +10,8 @@ export const QuoteSchema = z.object({
   favorites_count: z.number(),
   upvotes_count: z.number(),
   downvotes_count: z.number(),
-  author: z.string().optional(),
-  author_permalink: z.string().optional(),
-  body: z.string().optional(),
+  author: z.string(),
+  body: z.string(),
 });
 export type QuoteResponse = z.infer<typeof QuoteSchema>;
 
