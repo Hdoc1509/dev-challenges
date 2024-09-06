@@ -14,8 +14,7 @@
 
 ## Deploy status
 
-<!-- [![Deploy challenges](https://github.com/Hdoc1509/dev-challenges/actions/workflows/deploy.yml/badge.svg)](https://github.com/Hdoc1509/dev-challenges/actions/workflows/deploy.yml) -->
-**_In development_**
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6eff1687-c978-47fd-8887-4954d8e04056/deploy-status)](https://app.netlify.com/sites/hdoc-quote-generator/deploys)
 
 ## Overview
 
