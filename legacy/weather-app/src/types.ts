@@ -46,5 +46,3 @@ export type City = {
   latitude: number;
   longitude: number;
 };
-
-export type ParamOptions<T extends string> = Record<T, string>;

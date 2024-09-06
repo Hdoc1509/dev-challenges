@@ -1,10 +1,15 @@
-import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
+import {
+  ServiceError,
+  fetcher,
+  type PromiseWithError,
+  type ParamOptions,
+} from "@lib/fetcher";
 import { ForecastResponseSchema } from "./schema";
 import { parseForecast } from "./parse";
 import { OPEN_METEO_API } from "@/config";
 import { FORECAST_PARAMS } from "./params";
 import type { LocationCoords } from "@lib/geolocation";
-import type { Forecast, ParamOptions } from "@/types";
+import type { Forecast } from "@/types";
 
 type ForecastParams = ParamOptions<
   "latitude" | "longitude" | "daily" | "forecast_days" | "timezone"

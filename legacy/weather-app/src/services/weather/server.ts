@@ -1,8 +1,12 @@
-import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
+import {
+  ServiceError,
+  fetcher,
+  type PromiseWithError,
+  type ParamOptions,
+} from "@lib/fetcher";
 import { WeatherResponseSchema, type WeatherResponse } from "./schema";
 import { WEATHERAPI } from "@/config";
 import type { LocationCoords } from "@lib/geolocation";
-import type { ParamOptions } from "@/types";
 
 type WeatherParams = ParamOptions<"q" | "key">;
 

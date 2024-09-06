@@ -1,8 +1,13 @@
-import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
+import {
+  ServiceError,
+  fetcher,
+  type PromiseWithError,
+  type ParamOptions,
+} from "@lib/fetcher";
 import { ApiErrorSchema } from "@/schemas/api-error";
 import { CityResponseSchema } from "./schema";
 import { parseCities } from "./parse";
-import type { City, ParamOptions } from "@/types";
+import type { City } from "@/types";
 
 type SearchCityParams = ParamOptions<"city">;
 

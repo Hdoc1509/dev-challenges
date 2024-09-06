@@ -1,11 +1,15 @@
-import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
+import {
+  ServiceError,
+  fetcher,
+  type PromiseWithError,
+  type ParamOptions,
+} from "@lib/fetcher";
 import {
   CityResponseSchema,
   CityErrorResponseSchema,
   type CityResponse,
 } from "./schema";
 import { WEATHERAPI } from "@/config";
-import type { ParamOptions } from "@/types";
 
 type SearchCityParams = ParamOptions<"q" | "limit" | "key">;
 
