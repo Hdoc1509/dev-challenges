@@ -1,16 +1,38 @@
-import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
-import { QuoteListResponseSchema, type QuoteResponse } from "./schema";
+import {
+  ServiceError,
+  ResponseError,
+  fetcher,
+  type PromiseWithError,
+} from "@lib/fetcher";
+import {
+  QuoteListErrorResponseSchema,
+  QuoteListResponseSchema,
+  type QuoteResponse,
+} from "./schema";
 import { parseServerQuotes } from "./parse";
 import { FAVQS_API } from "@/config";
 
-export const getRandomQuote = async (): PromiseWithError<QuoteResponse> => {
-  const [error, data] = await fetcher(`${FAVQS_API.URL}/quotes`, {
-    schema: QuoteListResponseSchema,
-    serviceError: new ServiceError("Quotes"),
-    headers: FAVQS_API.HEADERS,
-  });
+const fetcherOptions = {
+  schema: QuoteListResponseSchema.or(QuoteListErrorResponseSchema),
+  serviceError: new ServiceError("Quotes"),
+  headers: FAVQS_API.HEADERS,
+};
 
-  if (error) return [error];
+export const getRandomQuote = async (): PromiseWithError<QuoteResponse> => {
+  const [error, data] = await fetcher(
+    `${FAVQS_API.URL}/quotes`,
+    fetcherOptions,
+  );
+
+  if (error) {
+    if (error instanceof ResponseError && error.res.status >= 500)
+      return [new Error("Quotes service internal error")];
+
+    return [error];
+  }
+
+  if ("error_code" in data)
+    return [new Error(`Quotes service error: ${data.message}`)];
 
   return [null, parseServerQuotes(data.quotes)[0]];
 };
@@ -25,14 +47,18 @@ export const getAuthorQuotes = async (
 
   const [error, data] = await fetcher(
     `${FAVQS_API.URL}/quotes?${params.toString()}`,
-    {
-      schema: QuoteListResponseSchema,
-      serviceError: new ServiceError("Quotes"),
-      headers: FAVQS_API.HEADERS,
-    },
+    fetcherOptions,
   );
 
-  if (error) return [error];
+  if (error) {
+    if (error instanceof ResponseError && error.res.status >= 500)
+      return [new Error("Quotes service internal error")];
+
+    return [error];
+  }
+
+  if ("error_code" in data)
+    return [new Error(`Quotes service error: ${data.message}`)];
 
   return [null, parseServerQuotes(data.quotes)];
 };
