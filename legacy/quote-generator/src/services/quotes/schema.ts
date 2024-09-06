@@ -36,3 +36,20 @@ export const QuoteListResponseSchema = z.object({
   quotes: z.array(QuoteSchema.or(QuoteMultipleAuthorSchema)).length(25),
 });
 export type QuoteListResponse = z.infer<typeof QuoteListResponseSchema>;
+
+// from @/mocks/author-not-found.json
+export const QuoteListEmptyResponseSchema = z.object({
+  page: z.literal(1),
+  last_page: z.literal(false),
+  quotes: z
+    .array(
+      z.object({
+        id: z.literal(0),
+        favorites_count: z.literal(0),
+        favorite: z.literal(false),
+        dialogue: z.literal(false),
+        body: z.literal("No quotes found"),
+      }),
+    )
+    .length(1),
+});
