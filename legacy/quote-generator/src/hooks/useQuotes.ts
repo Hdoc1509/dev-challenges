@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { getAuthorQuotes, getRandomQuote } from "@/services/quotes/quotable";
+import { getAuthorQuotes, getRandomQuote } from "@/services/quotes/client";
 import { STATUS, type Status } from "@lib/fetcher";
 import type { Quote } from "@/types";
 
