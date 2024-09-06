@@ -5,6 +5,9 @@ import {
   type CityResponse,
 } from "./schema";
 import { WEATHERAPI } from "@/config";
+import type { ParamOptions } from "@/types";
+
+type SearchCityParams = ParamOptions<"q" | "limit" | "key">;
 
 const ResponseSchema = CityResponseSchema.or(CityErrorResponseSchema);
 const SearchCityError = new ServiceError("Search city");
@@ -17,7 +20,7 @@ export const searchCity = async (
     q: search,
     limit: CITIES_LIMIT,
     key: WEATHERAPI.KEY,
-  });
+  } satisfies SearchCityParams);
 
   const [error, data] = await fetcher(
     `${WEATHERAPI.URL}/search.json?${params.toString()}`,
