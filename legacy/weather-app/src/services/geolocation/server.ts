@@ -1,30 +1,23 @@
-import {
-  ServiceError,
-  fetcher,
-  type PromiseWithError,
-  type ParamOptions,
-} from "@lib/fetcher";
+import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
 import {
   CityResponseSchema,
   CityErrorResponseSchema,
   type CityResponse,
 } from "./schema";
 import { WEATHERAPI } from "@/config";
-
-type SearchCityParams = ParamOptions<"q" | "limit" | "key">;
+import { SEARCH_CITY_PARAMS, type SearchCityParams } from "./params";
 
 const ResponseSchema = CityResponseSchema.or(CityErrorResponseSchema);
 const SearchCityError = new ServiceError("Search city");
-const CITIES_LIMIT = "5";
 
 export const searchCity = async (
   search: string,
 ): PromiseWithError<CityResponse> => {
   const params = new URLSearchParams({
     q: search,
-    limit: CITIES_LIMIT,
+    limit: SEARCH_CITY_PARAMS.CITIES_LIMIT,
     key: WEATHERAPI.KEY,
-  } satisfies SearchCityParams);
+  } satisfies SearchCityParams["server"]);
 
   const [error, data] = await fetcher(
     `${WEATHERAPI.URL}/search.json?${params.toString()}`,

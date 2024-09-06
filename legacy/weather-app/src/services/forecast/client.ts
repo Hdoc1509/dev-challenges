@@ -1,19 +1,10 @@
-import {
-  ServiceError,
-  fetcher,
-  type PromiseWithError,
-  type ParamOptions,
-} from "@lib/fetcher";
+import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
 import { ForecastResponseSchema } from "./schema";
 import { parseForecast } from "./parse";
 import { OPEN_METEO_API } from "@/config";
-import { FORECAST_PARAMS } from "./params";
+import { FORECAST_PARAMS, type ForecastParams } from "./params";
 import type { LocationCoords } from "@lib/geolocation";
 import type { Forecast } from "@/types";
-
-type ForecastParams = ParamOptions<
-  "latitude" | "longitude" | "daily" | "forecast_days" | "timezone"
->;
 
 const ForecastError = new ServiceError("Forecast");
 
@@ -27,7 +18,7 @@ export const getForecast = async (
     daily: FORECAST_PARAMS.DAILY,
     forecast_days: FORECAST_PARAMS.DAYS,
     timezone: FORECAST_PARAMS.TIMEZONE,
-  } satisfies ForecastParams);
+  } satisfies ForecastParams["client"]);
 
   const [error, data] = await fetcher(
     `${OPEN_METEO_API.URL}/forecast?${params.toString()}`,

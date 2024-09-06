@@ -1,14 +1,8 @@
-import {
-  ServiceError,
-  fetcher,
-  type PromiseWithError,
-  type ParamOptions,
-} from "@lib/fetcher";
+import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
 import { WeatherResponseSchema, type WeatherResponse } from "./schema";
 import { WEATHERAPI } from "@/config";
 import type { LocationCoords } from "@lib/geolocation";
-
-type WeatherParams = ParamOptions<"q" | "key">;
+import type { WeatherParams } from "./params";
 
 const WeatherError = new ServiceError("Weather");
 
@@ -19,7 +13,7 @@ export const getWeather = async (
   const params = new URLSearchParams({
     q: `${latitude},${longitude}`,
     key: WEATHERAPI.KEY,
-  } satisfies WeatherParams);
+  } satisfies WeatherParams["server"]);
 
   const [error, data] = await fetcher(
     `${WEATHERAPI.URL}/current.json?${params.toString()}`,

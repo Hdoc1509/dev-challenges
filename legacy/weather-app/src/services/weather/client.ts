@@ -1,16 +1,10 @@
-import {
-  ServiceError,
-  fetcher,
-  type PromiseWithError,
-  type ParamOptions,
-} from "@lib/fetcher";
+import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
 import { ApiErrorSchema } from "@/schemas/api-error";
 import { WeatherResponseSchema } from "./schema";
 import { parseWeather } from "./parse";
 import type { LocationCoords } from "@lib/geolocation";
 import type { Weather } from "@/types";
-
-type WeatherParams = ParamOptions<"latitude" | "longitude">;
+import type { WeatherParams } from "./params";
 
 const ApiResponseSchema = WeatherResponseSchema.or(ApiErrorSchema);
 const WeatherError = new ServiceError("Weather");
@@ -22,7 +16,7 @@ export const getWeather = async (
   const params = new URLSearchParams({
     latitude: `${latitude}`,
     longitude: `${longitude}`,
-  } satisfies WeatherParams);
+  } satisfies WeatherParams["client"]);
 
   const [error, data] = await fetcher(`/api/weather?${params.toString()}`, {
     schema: ApiResponseSchema,
