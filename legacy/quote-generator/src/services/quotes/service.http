@@ -5,3 +5,7 @@ Authorization: Token token={{FAVQS_API_KEY}}
 # get quotes by invalid author
 GET https://favqs.com/api/quotes?filter=Invalid&type=author
 Authorization: Token token={{FAVQS_API_KEY}}
+
+# get quotes by author
+GET https://favqs.com/api/quotes?filter=Napoleon Bonaparte&type=author
+Authorization: Token token={{FAVQS_API_KEY}}
