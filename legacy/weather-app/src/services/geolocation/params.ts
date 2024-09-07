@@ -1,8 +1,6 @@
-import type { ParamOptions } from "@lib/fetcher";
-
 export type SearchCityParams = {
-  client: ParamOptions<"city">;
-  server: ParamOptions<"q" | "limit" | "key">;
+  client: { city: string };
+  server: { q: string; limit: string; key: string };
 };
 
 export const SEARCH_CITY_PARAMS = {
