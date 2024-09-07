@@ -1,16 +1,16 @@
-import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
+import { fetcher, type PromiseWithError } from "@lib/fetcher";
 import {
   LocationResponseSchema,
   LocationErrorSchema,
   type LocationResponse,
 } from "./schema";
+import { GeolocationServiceError } from "./service-error";
 import { pickLocationOption } from "@/utils/geolocation";
 import { WEATHERAPI } from "@/config";
 import type { LocationOptions } from "@/types";
 import type { LocationParams } from "./params";
 
 const ResponseSchema = LocationResponseSchema.or(LocationErrorSchema);
-const GeolocationError = new ServiceError("Geolocation");
 const LOCATIONS_LIMIT = "1";
 // from https://www.weatherapi.com/docs/#intro-error-codes
 const WEATHERAPI_ERROR_CODE = {
@@ -32,7 +32,7 @@ export const searchLocation = async (
     `${WEATHERAPI.URL}/search.json?${params.toString()}`,
     {
       schema: ResponseSchema,
-      serviceError: GeolocationError,
+      serviceError: GeolocationServiceError,
       checkStatus: false, // allows to read weatherapi endpoint errors in response
     },
   );

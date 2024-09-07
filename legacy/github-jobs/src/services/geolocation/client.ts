@@ -1,12 +1,12 @@
-import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
+import { fetcher, type PromiseWithError } from "@lib/fetcher";
 import { ApiErrorSchema } from "@/schemas/api-error";
 import { LocationResponseSchema } from "./schema";
+import { GeolocationServiceError } from "./service-error";
 import { pickLocationOption } from "@/utils/geolocation";
 import type { LocationOptions } from "@/types";
 import type { LocationParams } from "./params";
 
 const ApiResponseSchema = LocationResponseSchema.or(ApiErrorSchema);
-const GeolocationError = new ServiceError("Geolocation");
 
 export const searchLocation = async (
   options: LocationOptions,
@@ -17,7 +17,7 @@ export const searchLocation = async (
 
   const [error, data] = await fetcher(`/api/geolocation?${params.toString()}`, {
     schema: ApiResponseSchema,
-    serviceError: GeolocationError,
+    serviceError: GeolocationServiceError,
     checkStatus: false, // allows to read api endpoint errors in response
   });
 
