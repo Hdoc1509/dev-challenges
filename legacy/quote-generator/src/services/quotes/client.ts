@@ -21,8 +21,9 @@ export const getRandomQuote: RandomQuoteService = async () => {
 };
 
 export const getAuthorQuotes: AuthorQuotesService = async (author) => {
-  const paramsOptions: AuthorQuotesParams["client"] = { author };
-  const params = new URLSearchParams(paramsOptions);
+  const params = new URLSearchParams({
+    author,
+  } satisfies AuthorQuotesParams["client"]);
 
   const [error, data] = await fetcher(`/api/quotes?${params.toString()}`, {
     serviceError: QuotesServiceError,

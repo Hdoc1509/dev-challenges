@@ -35,11 +35,10 @@ export const getRandomQuote = async (): PromiseWithError<QuoteResponse> => {
 export const getAuthorQuotes = async (
   author: string,
 ): PromiseWithError<QuoteResponse[]> => {
-  const paramsOptions: AuthorQuotesParams["server"] = {
+  const params = new URLSearchParams({
     type: "author",
     filter: author,
-  };
-  const params = new URLSearchParams(paramsOptions);
+  } satisfies AuthorQuotesParams["server"]);
 
   const [error, data] = await fetcher(
     `${FAVQS_API.URL}/quotes?${params.toString()}`,
