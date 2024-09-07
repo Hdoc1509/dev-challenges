@@ -12,13 +12,7 @@ import {
 import { SERPAPI } from "@/config";
 import locationsMock from "@/mocks/locations.json";
 import type { Search } from "@/types";
-import type { SharedSearchParams } from "./params";
-
-type SearchParams = SharedSearchParams & {
-  engine: typeof ENGINE;
-  api_key: string;
-  // chips?: string;
-};
+import type { JobsParams } from "./params";
 
 const ENGINE = "google_jobs";
 const Schema = JobsResponseSchema.or(JobsErrorResponseSchema);
@@ -28,7 +22,7 @@ export const getJobs = async (
   search: Search,
 ): PromiseWithError<JobsResponse> => {
   const { query, location, /* fullTime, */ nextPageToken } = search;
-  const paramsOptions: SearchParams = {
+  const paramsOptions: JobsParams["server"] = {
     engine: ENGINE,
     q: query,
     api_key: SERPAPI.KEY,
