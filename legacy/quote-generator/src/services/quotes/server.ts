@@ -7,6 +7,7 @@ import {
 import { QuotesServiceError } from "./service-error";
 import { parseServerQuotes } from "./parse";
 import { FAVQS_API } from "@/config";
+import type { AuthorQuotesParams } from "./params";
 
 const fetcherOptions = {
   schema: QuoteListResponseSchema.or(QuoteListErrorResponseSchema),
@@ -31,12 +32,13 @@ export const getRandomQuote = async (): PromiseWithError<QuoteResponse> => {
   return [null, parseServerQuotes(data.quotes)[0]];
 };
 
-type AuthorParamsOptions = { filter: string; type: "author" };
-
 export const getAuthorQuotes = async (
   author: string,
 ): PromiseWithError<QuoteResponse[]> => {
-  const paramsOptions: AuthorParamsOptions = { type: "author", filter: author };
+  const paramsOptions: AuthorQuotesParams["server"] = {
+    type: "author",
+    filter: author,
+  };
   const params = new URLSearchParams(paramsOptions);
 
   const [error, data] = await fetcher(

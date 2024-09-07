@@ -5,6 +5,7 @@ import { QuoteSchema } from "./schema";
 import { QuotesServiceError } from "./service-error";
 import { parseQuotes } from "./parse";
 import type { AuthorQuotesService, RandomQuoteService } from "./types";
+import type { AuthorQuotesParams } from "./params";
 
 export const getRandomQuote: RandomQuoteService = async () => {
   const [error, data] = await fetcher("/api/quotes/random", {
@@ -19,10 +20,8 @@ export const getRandomQuote: RandomQuoteService = async () => {
   return [null, parseQuotes([data])[0]];
 };
 
-type AuthorParamsOptions = { author: string };
-
 export const getAuthorQuotes: AuthorQuotesService = async (author) => {
-  const paramsOptions: AuthorParamsOptions = { author };
+  const paramsOptions: AuthorQuotesParams["client"] = { author };
   const params = new URLSearchParams(paramsOptions);
 
   const [error, data] = await fetcher(`/api/quotes?${params.toString()}`, {
