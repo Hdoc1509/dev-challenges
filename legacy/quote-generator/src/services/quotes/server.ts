@@ -21,11 +21,7 @@ export const getRandomQuote = async (): PromiseWithError<QuoteResponse> => {
     fetcherOptions,
   );
 
-  if (error) {
-    if (is5xxError(error)) return [QuotesServiceError.internal()];
-
-    return [error];
-  }
+  if (error) return [is5xxError(error) ? QuotesServiceError.internal() : error];
 
   if ("error_code" in data) return [QuotesServiceError.generic(data.message)];
 
@@ -45,11 +41,7 @@ export const getAuthorQuotes = async (
     fetcherOptions,
   );
 
-  if (error) {
-    if (is5xxError(error)) return [QuotesServiceError.internal()];
-
-    return [error];
-  }
+  if (error) return [is5xxError(error) ? QuotesServiceError.internal() : error];
 
   if ("error_code" in data) return [QuotesServiceError.generic(data.message)];
 
