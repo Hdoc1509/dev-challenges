@@ -1,14 +1,10 @@
-import {
-  ServiceError,
-  ResponseError,
-  fetcher,
-  type PromiseWithError,
-} from "@lib/fetcher";
+import { ResponseError, fetcher, type PromiseWithError } from "@lib/fetcher";
 import {
   JobsResponseSchema,
   JobsErrorResponseSchema,
   type JobsResponse,
 } from "./schema";
+import { JobsServiceError } from "./service-error";
 import { SERPAPI } from "@/config";
 import locationsMock from "@/mocks/locations.json";
 import type { Search } from "@/types";
@@ -16,7 +12,6 @@ import type { JobsParams } from "./params";
 
 const ENGINE = "google_jobs";
 const Schema = JobsResponseSchema.or(JobsErrorResponseSchema);
-const JobsError = new ServiceError("Jobs");
 
 export const getJobs = async (
   search: Search,
@@ -38,7 +33,7 @@ export const getJobs = async (
     `${SERPAPI.URL}/search.json?${params.toString()}`,
     {
       schema: Schema,
-      serviceError: JobsError,
+      serviceError: JobsServiceError,
     },
   );
 

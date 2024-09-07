@@ -1,13 +1,13 @@
-import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
+import { fetcher, type PromiseWithError } from "@lib/fetcher";
 import { ApiErrorSchema } from "@/schemas/api-error";
 import { JobsResponseSchema } from "./schema";
 import { JobsEmptyResultsError } from "@/errors";
+import { JobsServiceError } from "./service-error";
 import { parseJobs } from "./parse";
 import type { Job, Search } from "@/types";
 import type { JobsParams } from "./params";
 
 const ApiResponseSchema = JobsResponseSchema.or(ApiErrorSchema);
-const JobsError = new ServiceError("Jobs");
 
 export type JobsServiceSuccess = { jobs: Job[]; nextPageToken?: string };
 export type JobsServiceResult = PromiseWithError<JobsServiceSuccess>;
@@ -23,7 +23,7 @@ export const getJobs = async (search: Search): JobsServiceResult => {
 
   const [error, data] = await fetcher(`/api/jobs?${params.toString()}`, {
     schema: ApiResponseSchema,
-    serviceError: JobsError,
+    serviceError: JobsServiceError,
     checkStatus: false, // allows to read api endpoint errors in response
   });
 
