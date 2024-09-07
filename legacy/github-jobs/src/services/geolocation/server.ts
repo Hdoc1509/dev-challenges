@@ -4,6 +4,7 @@ import {
   LocationErrorSchema,
   type LocationResponse,
 } from "./schema";
+import { pickLocationOption } from "@/utils/geolocation";
 import { WEATHERAPI } from "@/config";
 import type { LocationOptions } from "@/types";
 import type { SharedSearchParams } from "./params";
@@ -22,17 +23,10 @@ export const searchLocation = async (
   options: LocationOptions,
 ): PromiseWithError<LocationResponse> => {
   const paramsOptions: SearchParams = {
-    q: "",
+    q: pickLocationOption(options),
     limit: LOCATIONS_LIMIT,
     key: WEATHERAPI.KEY,
   };
-
-  if ("coords" in options) {
-    const { latitude, longitude } = options.coords;
-    paramsOptions.q = `${latitude},${longitude}`;
-  } else {
-    paramsOptions.q = `${options.zipCode}`;
-  }
 
   const params = new URLSearchParams(paramsOptions);
 

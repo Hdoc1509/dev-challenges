@@ -1,6 +1,7 @@
 import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
 import { ApiErrorSchema } from "@/schemas/api-error";
 import { LocationResponseSchema } from "./schema";
+import { pickLocationOption } from "@/utils/geolocation";
 import type { LocationOptions } from "@/types";
 import type { SharedSearchParams } from "./params";
 
@@ -12,16 +13,9 @@ const GeolocationError = new ServiceError("Geolocation");
 export const searchLocation = async (
   options: LocationOptions,
 ): PromiseWithError<string> => {
-  const paramsOptions: SearchParams = { q: "" };
-
-  if ("coords" in options) {
-    const { latitude, longitude } = options.coords;
-    paramsOptions.q = `${latitude},${longitude}`;
-  } else {
-    paramsOptions.q = `${options.zipCode}`;
-  }
-
-  const params = new URLSearchParams(paramsOptions);
+  const params = new URLSearchParams({
+    q: pickLocationOption(options),
+  } satisfies SearchParams);
 
   const [error, data] = await fetcher(`/api/geolocation?${params.toString()}`, {
     schema: ApiResponseSchema,

@@ -1,6 +1,7 @@
 import { getCurrentCoords } from "@lib/geolocation";
 import { searchLocation } from "@/services/geolocation/client";
 import type { PromiseWithError } from "@lib/fetcher";
+import type { LocationOptions } from "@/types";
 
 export const getLocationOption = async (
   location?: string,
@@ -32,3 +33,8 @@ export const getLocationOption = async (
 
   return [null, location];
 };
+
+export const pickLocationOption = (options: LocationOptions): string =>
+  "coords" in options
+    ? `${options.coords.latitude},${options.coords.longitude}`
+    : `${options.zipCode}`;
