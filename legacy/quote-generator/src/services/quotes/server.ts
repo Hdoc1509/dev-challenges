@@ -1,18 +1,13 @@
-import {
-  ServiceError,
-  fetcher,
-  is5xxError,
-  type PromiseWithError,
-} from "@lib/fetcher";
+import { fetcher, is5xxError, type PromiseWithError } from "@lib/fetcher";
 import {
   QuoteListErrorResponseSchema,
   QuoteListResponseSchema,
   type QuoteResponse,
 } from "./schema";
+import { QuotesServiceError } from "./service-error";
 import { parseServerQuotes } from "./parse";
 import { FAVQS_API } from "@/config";
 
-const QuotesServiceError = new ServiceError("Quotes");
 const fetcherOptions = {
   schema: QuoteListResponseSchema.or(QuoteListErrorResponseSchema),
   serviceError: QuotesServiceError,

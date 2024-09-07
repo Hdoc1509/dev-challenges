@@ -1,11 +1,10 @@
 import { z } from "zod";
-import { ServiceError, fetcher } from "@lib/fetcher";
+import { fetcher } from "@lib/fetcher";
 import { ApiErrorSchema } from "@/schemas/api-error";
 import { QuoteSchema } from "./schema";
+import { QuotesServiceError } from "./service-error";
 import { parseQuotes } from "./parse";
 import type { AuthorQuotesService, RandomQuoteService } from "./types";
-
-const QuotesServiceError = new ServiceError("Quotes");
 
 export const getRandomQuote: RandomQuoteService = async () => {
   const [error, data] = await fetcher("/api/quotes/random", {
