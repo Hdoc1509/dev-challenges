@@ -5,7 +5,7 @@ import {
   type LocationResponse,
 } from "./schema";
 import { GeolocationServiceError } from "./service-error";
-import { pickLocationOption } from "@/utils/geolocation";
+import { pickLocationOption } from "@/utils/location-option";
 import { WEATHERAPI } from "@/config";
 import type { LocationOptions } from "@/types";
 import type { LocationParams } from "./params";

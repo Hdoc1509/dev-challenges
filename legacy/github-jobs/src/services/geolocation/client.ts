@@ -2,7 +2,7 @@ import { fetcher, type PromiseWithError } from "@lib/fetcher";
 import { ApiErrorSchema } from "@/schemas/api-error";
 import { LocationResponseSchema } from "./schema";
 import { GeolocationServiceError } from "./service-error";
-import { pickLocationOption } from "@/utils/geolocation";
+import { pickLocationOption } from "@/utils/location-option";
 import type { LocationOptions } from "@/types";
 import type { LocationParams } from "./params";
 
