@@ -9,14 +9,16 @@ import {
   type RemainingSearchesResponse,
 } from "./schema";
 import { SERPAPI } from "@/config";
+import type { RemainingSearchesParams } from "./params";
 
-type SearchParams = { api_key: string };
 type ServiceResult = PromiseWithError<RemainingSearchesResponse>;
 
 const RemainingSearchesError = new ServiceError("Remaining searches");
 
 export async function getRemainingSearches(): ServiceResult {
-  const paramsOptions: SearchParams = { api_key: SERPAPI.KEY };
+  const paramsOptions: RemainingSearchesParams["server"] = {
+    api_key: SERPAPI.KEY,
+  };
   const params = new URLSearchParams(paramsOptions);
 
   const [error, data] = await fetcher(
