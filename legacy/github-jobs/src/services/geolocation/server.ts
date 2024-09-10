@@ -20,13 +20,11 @@ const WEATHERAPI_ERROR_CODE = {
 export const searchLocation = async (
   options: LocationOptions,
 ): PromiseWithError<LocationResponse> => {
-  const paramsOptions: LocationParams["server"] = {
+  const params = new URLSearchParams({
     q: pickLocationOption(options),
     limit: LOCATIONS_LIMIT,
     key: WEATHERAPI.KEY,
-  };
-
-  const params = new URLSearchParams(paramsOptions);
+  } satisfies LocationParams["server"]);
 
   const [error, data] = await fetcher(
     `${WEATHERAPI.URL}/search.json?${params.toString()}`,

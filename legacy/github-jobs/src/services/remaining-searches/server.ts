@@ -10,10 +10,9 @@ import type { RemainingSearchesParams } from "./params";
 type ServiceResult = PromiseWithError<RemainingSearchesResponse>;
 
 export async function getRemainingSearches(): ServiceResult {
-  const paramsOptions: RemainingSearchesParams["server"] = {
+  const params = new URLSearchParams({
     api_key: SERPAPI.KEY,
-  };
-  const params = new URLSearchParams(paramsOptions);
+  } satisfies RemainingSearchesParams["server"]);
 
   const [error, data] = await fetcher(
     `${SERPAPI.URL}/account.json?${params.toString()}`,
