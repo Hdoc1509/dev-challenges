@@ -1,4 +1,4 @@
-import { ResponseError, fetcher, type PromiseWithError } from "@lib/fetcher";
+import { fetcher, is5xxError, type PromiseWithError } from "@lib/fetcher";
 import {
   RemainingSearchesResponseSchema,
   type RemainingSearchesResponse,
@@ -23,12 +23,10 @@ export async function getRemainingSearches(): ServiceResult {
     },
   );
 
-  if (error != null) {
-    if (error instanceof ResponseError && error.res.status >= 500)
-      return [new Error("Remaining searches service internal error")];
-
-    return [error];
-  }
+  if (error != null)
+    return [
+      is5xxError(error) ? RemainingSearchesServiceError.internal() : error,
+    ];
 
   return [null, data];
 }
