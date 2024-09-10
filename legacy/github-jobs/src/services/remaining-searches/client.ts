@@ -1,14 +1,14 @@
-import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
+import { fetcher, type PromiseWithError } from "@lib/fetcher";
 import { ApiErrorSchema } from "@/schemas/api-error";
 import { RemainingSearchesResponseSchema } from "./schema";
+import { RemainingSearchesServiceError } from "./service-error";
 
 const ApiResponseSchema = RemainingSearchesResponseSchema.or(ApiErrorSchema);
-const RemainingSearchesError = new ServiceError("RemainingSearches");
 
 export async function getRemainingSearches(): PromiseWithError<number> {
   const [error, data] = await fetcher("/api/remaining-searches", {
     schema: ApiResponseSchema,
-    serviceError: RemainingSearchesError,
+    serviceError: RemainingSearchesServiceError,
     checkStatus: false, // allows to read api endpoint errors in response body
   });
 

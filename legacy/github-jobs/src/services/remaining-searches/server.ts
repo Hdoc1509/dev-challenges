@@ -1,19 +1,13 @@
-import {
-  ServiceError,
-  ResponseError,
-  fetcher,
-  type PromiseWithError,
-} from "@lib/fetcher";
+import { ResponseError, fetcher, type PromiseWithError } from "@lib/fetcher";
 import {
   RemainingSearchesResponseSchema,
   type RemainingSearchesResponse,
 } from "./schema";
+import { RemainingSearchesServiceError } from "./service-error";
 import { SERPAPI } from "@/config";
 import type { RemainingSearchesParams } from "./params";
 
 type ServiceResult = PromiseWithError<RemainingSearchesResponse>;
-
-const RemainingSearchesError = new ServiceError("Remaining searches");
 
 export async function getRemainingSearches(): ServiceResult {
   const paramsOptions: RemainingSearchesParams["server"] = {
@@ -25,7 +19,7 @@ export async function getRemainingSearches(): ServiceResult {
     `${SERPAPI.URL}/account.json?${params.toString()}`,
     {
       schema: RemainingSearchesResponseSchema,
-      serviceError: RemainingSearchesError,
+      serviceError: RemainingSearchesServiceError,
     },
   );
 
