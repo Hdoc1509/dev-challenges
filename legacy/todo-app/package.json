@@ -23,7 +23,8 @@
     "@material-design-icons/font": "catalog:",
     "clsx": "catalog:",
     "react": "catalog:",
-    "react-dom": "catalog:"
+    "react-dom": "catalog:",
+    "zustand": "catalog:"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "catalog:",
