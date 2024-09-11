@@ -31,6 +31,21 @@
   --text-light: #888;
 }
 
+#root {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 16px;
+
+  min-height: 100vh;
+  min-height: 100svh;
+  padding-inline: 2rem;
+
+  @media (max-width: 768px) {
+    padding-inline: 1rem;
+  }
+}
+
 body {
   max-width: 720px;
   background-color: var(--bg);

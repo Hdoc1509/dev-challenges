@@ -1,15 +1,11 @@
-import { Footer } from "@lib/components/Footer";
 import { Content } from "./components/Content";
-import { Header } from "./components/Header";
-import "./App.scss";
+import { Layout } from "./layouts/Layout";
 
 function App() {
   return (
-    <>
-      <Header />
+    <Layout>
       <Content />
-      <Footer />
-    </>
+    </Layout>
   );
 }
 
