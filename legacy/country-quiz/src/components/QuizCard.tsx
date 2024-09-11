@@ -1,4 +1,4 @@
-import { useQuestionStore } from "@/store/questions";
+import { useQuestions } from "@/hooks/useQuestions";
 import { clsx } from "clsx";
 import { Quiz } from "./Quiz";
 import { Results } from "./Results";
@@ -6,15 +6,9 @@ import { Loader } from "./Loader";
 import { QuestionCategories, STATUS } from "@/constants";
 import "./QuizCard.scss";
 
-type Props = {
-  tryAgain: () => void;
-};
-
-export const QuizCard = ({ tryAgain }: Props) => {
-  const status = useQuestionStore((s) => s.status);
-  const error = useQuestionStore((s) => s.error);
-  const questions = useQuestionStore((s) => s.questions);
-  const currentQuestionIndex = useQuestionStore((s) => s.currentQuestionIndex);
+export const QuizCard = () => {
+  const { questions, currentQuestionIndex, status, error, tryAgain } =
+    useQuestions();
 
   const question = questions[currentQuestionIndex];
 
