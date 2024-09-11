@@ -11,13 +11,12 @@ import "./App.scss";
 function App() {
   const { todos } = useTodos();
   const filter = useFilterStore((s) => s.filter);
-  const setFilter = useFilterStore((s) => s.setFilter);
 
   const filteredTodos = todos.filter((todo) => FILTER_METHODS[filter](todo));
 
   return (
     <>
-      <Header title="#todo" nav={<Nav setPath={setFilter} path={filter} />} />
+      <Header title="#todo" nav={<Nav />} />
       <main data-filter={filter}>
         <TodoForm />
         <TodoList todos={filteredTodos} />

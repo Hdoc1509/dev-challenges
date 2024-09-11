@@ -1,13 +1,12 @@
+import { useFilterStore } from "../store/filter";
 import { clsx } from "clsx";
 import { FILTERS, type Filter } from "../utils";
 import "./Nav.scss";
 
-type Props = {
-  setPath: (path: Filter) => void;
-  path: Filter;
-};
+export const Nav = () => {
+  const path = useFilterStore((s) => s.filter);
+  const setPath = useFilterStore((s) => s.setFilter);
 
-export const Nav = ({ path, setPath }: Props) => {
   const navClassName = (newPath: Filter) =>
     clsx("main-nav__link", {
       "main-nav__link--selected": newPath === path,
