@@ -9,8 +9,7 @@ import { useTodos } from "./hooks/useTodos";
 import "./App.scss";
 
 function App() {
-  const { todos, removeTodo, removeCompletedTodos, toggleCompleted } =
-    useTodos();
+  const { todos, removeCompletedTodos } = useTodos();
   const [filter, setFilter] = useState<Filter>(FILTERS.ALL);
 
   const filteredTodos = todos.filter((todo) => FILTER_METHODS[filter](todo));
@@ -20,11 +19,7 @@ function App() {
       <Header title="#todo" nav={<Nav setPath={setFilter} path={filter} />} />
       <main data-filter={filter}>
         <TodoForm />
-        <TodoList
-          todos={filteredTodos}
-          removeTodo={removeTodo}
-          toggleCompleted={toggleCompleted}
-        />
+        <TodoList todos={filteredTodos} />
         <GeneralActions removeCompleted={removeCompletedTodos} />
       </main>
       <Footer />

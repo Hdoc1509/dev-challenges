@@ -1,14 +1,15 @@
+import { useTodos } from "../hooks/useTodos";
 import { TodoItem } from "./TodoItem";
 import type { Todo } from "../types";
 import "./TodoList.scss";
 
 type Props = {
   todos: Todo[];
-  removeTodo: (id: number) => void;
-  toggleCompleted: (id: number) => void;
 };
 
-export const TodoList = ({ todos, removeTodo, toggleCompleted }: Props) => {
+export const TodoList = ({ todos }: Props) => {
+  const { removeTodo, toggleCompleted } = useTodos();
+
   if (todos.length === 0) return <span>No todos. ¯\_(ツ)_/¯</span>;
 
   return (
