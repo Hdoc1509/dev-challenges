@@ -29,8 +29,7 @@
     "astro": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
-    "zod": "catalog:",
-    "zustand": "catalog:"
+    "zod": "catalog:"
   },
   "devDependencies": {
     "@astrojs/check": "catalog:",
