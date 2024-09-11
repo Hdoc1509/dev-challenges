@@ -546,6 +546,9 @@ importers:
       zod:
         specifier: 'catalog:'
         version: 3.22.4
+      zustand:
+        specifier: 'catalog:'
+        version: 4.4.3(@types/react@18.2.79)(react@18.2.0)
     devDependencies:
       '@astrojs/check':
         specifier: 'catalog:'
