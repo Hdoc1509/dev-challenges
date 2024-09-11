@@ -1,31 +1,11 @@
-import { useLocalStorage } from "./useLocalStorage";
-import { todos as defaultTodos } from "../data";
+import { useTodosStore } from "../store/todos";
 
 export const useTodos = () => {
-  const [todos, setTodos] = useLocalStorage("todos", defaultTodos);
-
-  const addTodo = (title: string) => {
-    setTodos([
-      ...todos,
-      {
-        id: crypto.getRandomValues(new Uint32Array(1))[0],
-        title,
-        completed: false,
-      },
-    ]);
-  };
-  const toggleCompleted = (id: number) => {
-    setTodos(
-      todos.map((todo) =>
-        todo.id === id ? { ...todo, completed: !todo.completed } : todo,
-      ),
-    );
-  };
-  const removeTodo = (id: number) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
-  };
-  const removeCompletedTodos = () =>
-    setTodos(todos.filter((todo) => !todo.completed));
+  const todos = useTodosStore((s) => s.todos);
+  const addTodo = useTodosStore((s) => s.addTodo);
+  const toggleCompleted = useTodosStore((s) => s.toggleCompleted);
+  const removeTodo = useTodosStore((s) => s.removeTodo);
+  const removeCompletedTodos = useTodosStore((s) => s.removeCompletedTodos);
 
   return {
     todos,
