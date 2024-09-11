@@ -1,3 +1,48 @@
+@use "@lib/sass-utils";
+@use "@lib/sass-utils/mixins" as utils;
+
+:root {
+  @include utils.font-variable("Mulish", sans-serif);
+
+  --text: #333;
+  --text-light: #4f4f4f;
+  --text-secondary: #828282;
+
+  --error: #eb5757;
+  --error-hover: #e73434;
+
+  --shadow: 0px 4px 6px 0px rgb(0 0 0 / 10%);
+
+  --icon-size: var(--fs-4);
+}
+
+[data-theme="light"] {
+  --color-bg: #fff;
+  --color-text: #000;
+}
+
+[data-theme="dark"] {
+  --color-bg: #222;
+  --color-text: #fff;
+
+  --text: #fff;
+  --text-light: #d4d4d4;
+  --text-secondary: #c9c9c9;
+
+  --filter-input-bg-hover: #444;
+  --filter-location-bg-hover: #444;
+
+  --searchbar-text: #bbb;
+  --searchbar-bg-hover: rgba(200, 200, 200, 0.1);
+  --searchbar-divider-color: rgba(225, 225, 225, 0.5);
+}
+
+body {
+  max-width: unset;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
 #root {
   position: relative;
   display: grid;

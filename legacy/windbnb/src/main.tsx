@@ -11,7 +11,6 @@ import "@fontsource-variable/mulish";
 import "@fontsource/mulish/400.css";
 import "@fontsource/mulish/700.css";
 import "@fontsource/mulish/800.css";
-import "./index.scss";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
