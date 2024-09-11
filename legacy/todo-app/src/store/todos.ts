@@ -17,11 +17,16 @@ type Action = {
 const PREVIOUS_STORAGE_KEY = "todos";
 const STORAGE_KEY = "todo-app-todos-store";
 
-// use todos that were previously stored without zustand
-const previousTodosItem = window.localStorage.getItem(PREVIOUS_STORAGE_KEY);
-const defaultTodos = previousTodosItem
-  ? (JSON.parse(previousTodosItem) as Todo[])
-  : todosMock;
+const defaultTodos = (() => {
+  const previousTodosItem = localStorage.getItem(PREVIOUS_STORAGE_KEY);
+
+  if (previousTodosItem != null) {
+    localStorage.removeItem(PREVIOUS_STORAGE_KEY);
+    return JSON.parse(previousTodosItem) as Todo[];
+  }
+
+  return todosMock;
+})();
 
 export const useTodosStore = create<State & Action>()(
   persist(
