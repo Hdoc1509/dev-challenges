@@ -1,7 +1,15 @@
+@use "@lib/sass-utils/mixins" as utils;
 @use "@lib/components/HeaderWithTheme.scss";
 
 .main-header {
   grid-template-areas:
     ". title theme-button"
     "nav nav nav";
+}
+
+h1 {
+  @include utils.font-variable("Raleway", sans-serif);
+  font-weight: 700;
+  font-size: var(--fs-6);
+  text-align: center;
 }
