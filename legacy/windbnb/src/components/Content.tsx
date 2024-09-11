@@ -1,6 +1,7 @@
 import { useStays } from "@/hooks/useStays.ts";
 import { RingSpinner } from "@hrc/spinner/dist/RingSpinner";
 import { SearchResults } from "./Results";
+import "./Content.scss";
 
 export function Content() {
   const { stays, error, isLoading, isError, isSuccess } = useStays();

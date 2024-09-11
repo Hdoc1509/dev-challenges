@@ -1,6 +1,5 @@
 import { Layout } from "./layouts/Layout.tsx";
 import { Content } from "./components/Content.tsx";
-import "./App.css";
 
 function App() {
   return (
