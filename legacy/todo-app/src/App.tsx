@@ -1,16 +1,17 @@
-import { useState } from "react";
+import { useTodos } from "./hooks/useTodos";
+import { useFilterStore } from "./store/filter";
 import { Footer, HeaderWithTheme as Header } from "@lib/components";
 import { Nav } from "./components/Nav";
 import { TodoList } from "./components/TodoList";
 import { TodoForm } from "./components/TodoForm";
 import { GeneralActions } from "./components/GeneralActions";
-import { FILTERS, FILTER_METHODS, type Filter } from "./utils";
-import { useTodos } from "./hooks/useTodos";
+import { FILTER_METHODS } from "./utils";
 import "./App.scss";
 
 function App() {
   const { todos } = useTodos();
-  const [filter, setFilter] = useState<Filter>(FILTERS.ALL);
+  const filter = useFilterStore((s) => s.filter);
+  const setFilter = useFilterStore((s) => s.setFilter);
 
   const filteredTodos = todos.filter((todo) => FILTER_METHODS[filter](todo));
 
