@@ -22,16 +22,3 @@ h1 {
   font-size: var(--fs-6);
   text-align: center;
 }
-
-main {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-
-  font-size: var(--fs-2);
-
-  &[data-filter="completed"] {
-    --form-display: none;
-    --delete-all-display: inline-flex;
-  }
-}

@@ -1,0 +1,12 @@
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  font-size: var(--fs-2);
+
+  &[data-filter="completed"] {
+    --form-display: none;
+    --delete-all-display: inline-flex;
+  }
+}

@@ -4,6 +4,7 @@ import { GeneralActions } from "./GeneralActions";
 import { TodoForm } from "./TodoForm";
 import { TodoList } from "./TodoList";
 import { FILTER_METHODS } from "../utils";
+import "./Content.scss";
 
 export function Content() {
   const todos = useTodosStore((s) => s.todos);
