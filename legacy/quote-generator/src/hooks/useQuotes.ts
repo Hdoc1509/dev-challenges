@@ -36,7 +36,7 @@ export const useQuotes = () => {
       return;
     }
 
-    setQuotes(newQuotes.length > 1 ? newQuotes : [newQuotes[0]]);
+    setQuotes(newQuotes);
     setIsAuthorQuotes(true);
     setStatus(STATUS.SUCCESS);
   }, []);
