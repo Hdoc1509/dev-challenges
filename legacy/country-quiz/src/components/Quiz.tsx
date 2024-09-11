@@ -1,4 +1,4 @@
-import { useQuestionStore } from "@/store/questions";
+import { useQuestions } from "@/hooks/useQuestions";
 import { Button } from "@hrc/button";
 import { QuestionCategories } from "@/constants";
 import { QuizOptions } from "./QuizOptions";
@@ -6,10 +6,8 @@ import characterUrl from "/character.svg";
 import "./Quiz.scss";
 
 export const Quiz = () => {
-  const questions = useQuestionStore((s) => s.questions);
-  const currentQuestionIndex = useQuestionStore((s) => s.currentQuestionIndex);
-  const goNextQuestion = useQuestionStore((s) => s.goNextQuestion);
-  const setStatus = useQuestionStore((s) => s.setStatus);
+  const { questions, currentQuestionIndex, setStatus, goNextQuestion } =
+    useQuestions();
 
   const quiz = questions[currentQuestionIndex];
   const currentQuestion = currentQuestionIndex + 1;
