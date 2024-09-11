@@ -4,7 +4,7 @@ import { Nav } from "./components/Nav";
 import { TodoList } from "./components/TodoList";
 import { TodoForm } from "./components/TodoForm";
 import { GeneralActions } from "./components/GeneralActions";
-import { FILTERS, type Filter } from "./utils";
+import { FILTER_METHODS, type Filter } from "./utils";
 import { useTodos } from "./hooks/useTodos";
 import "./App.scss";
 
@@ -13,7 +13,7 @@ function App() {
     useTodos();
   const [filter, setFilter] = useState<Filter>("all");
 
-  const filteredTodos = todos.filter((todo) => FILTERS[filter](todo));
+  const filteredTodos = todos.filter((todo) => FILTER_METHODS[filter](todo));
 
   return (
     <>
