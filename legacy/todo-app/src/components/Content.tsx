@@ -1,5 +1,5 @@
 import { useFilterStore } from "../store/filter";
-import { useTodosStore } from "../store/todos";
+import { useTodos } from "../hooks/useTodos";
 import { GeneralActions } from "./GeneralActions";
 import { TodoForm } from "./TodoForm";
 import { TodoList } from "./TodoList";
@@ -7,7 +7,7 @@ import { FILTER_METHODS } from "../utils";
 import "./Content.scss";
 
 export function Content() {
-  const todos = useTodosStore((s) => s.todos);
+  const { todos } = useTodos();
   const filter = useFilterStore((s) => s.filter);
 
   const filteredTodos = todos.filter((todo) => FILTER_METHODS[filter](todo));
