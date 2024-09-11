@@ -1,9 +1,7 @@
 .main-header {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas:
-    ". title theme-button"
-    "nav nav nav";
+  grid-template-areas: ". title theme-button";
 
   h1 {
     grid-area: title;

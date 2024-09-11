@@ -4,10 +4,9 @@ import "./HeaderWithTheme.scss";
 
 type Props = {
   title: string;
-  nav?: React.ReactNode;
 };
 
-export const HeaderWithTheme = ({ title, nav }: Props) => (
+export const HeaderWithTheme = ({ title }: Props) => (
   <header className="main-header">
     <h1>{title}</h1>
     <ThemeButton
@@ -15,6 +14,5 @@ export const HeaderWithTheme = ({ title, nav }: Props) => (
       darkElement={<Icon name="dark_mode" />}
       fullRounded
     />
-    {nav}
   </header>
 );
