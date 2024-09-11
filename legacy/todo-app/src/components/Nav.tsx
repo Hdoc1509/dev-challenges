@@ -1,5 +1,5 @@
 import { clsx } from "clsx";
-import type { Filter } from "../utils";
+import { FILTERS, type Filter } from "../utils";
 import "./Nav.scss";
 
 type Props = {
@@ -16,22 +16,22 @@ export const Nav = ({ path, setPath }: Props) => {
   return (
     <nav className="main-nav">
       <a
-        className={navClassName("all")}
-        onClick={() => setPath("all")}
+        className={navClassName(FILTERS.ALL)}
+        onClick={() => setPath(FILTERS.ALL)}
         href="#"
       >
         All
       </a>
       <a
-        className={navClassName("active")}
-        onClick={() => setPath("active")}
+        className={navClassName(FILTERS.ACTIVE)}
+        onClick={() => setPath(FILTERS.ACTIVE)}
         href="#"
       >
         Active
       </a>
       <a
-        className={navClassName("completed")}
-        onClick={() => setPath("completed")}
+        className={navClassName(FILTERS.COMPLETED)}
+        onClick={() => setPath(FILTERS.COMPLETED)}
         href="#"
       >
         Completed

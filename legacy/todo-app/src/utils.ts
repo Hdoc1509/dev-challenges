@@ -1,9 +1,14 @@
 import type { Todo } from "./types";
 
-export type Filter = "all" | "active" | "completed";
+export const FILTERS = Object.freeze({
+  ALL: "all",
+  ACTIVE: "active",
+  COMPLETED: "completed",
+});
+export type Filter = (typeof FILTERS)[keyof typeof FILTERS];
 
 export const FILTER_METHODS: Record<Filter, (todo: Todo) => boolean> = {
-  all: () => true,
-  active: (todo) => !todo.completed,
-  completed: (todo) => todo.completed,
+  [FILTERS.ALL]: () => true,
+  [FILTERS.ACTIVE]: (todo) => !todo.completed,
+  [FILTERS.COMPLETED]: (todo) => todo.completed,
 };
