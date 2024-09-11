@@ -1,12 +1,12 @@
-import { Footer, HeaderWithTheme as Header } from "@lib/components";
-import { Nav } from "./components/Nav";
+import { Footer } from "@lib/components/Footer";
 import { Content } from "./components/Content";
+import { Header } from "./components/Header";
 import "./App.scss";
 
 function App() {
   return (
     <>
-      <Header title="#todo" nav={<Nav />} />
+      <Header />
       <Content />
       <Footer />
     </>

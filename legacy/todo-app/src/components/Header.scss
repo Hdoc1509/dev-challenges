@@ -1,0 +1,7 @@
+@use "@lib/components/HeaderWithTheme.scss";
+
+.main-header {
+  grid-template-areas:
+    ". title theme-button"
+    "nav nav nav";
+}
