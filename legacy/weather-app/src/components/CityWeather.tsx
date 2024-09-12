@@ -1,9 +1,8 @@
 import { useCurrentWeather } from "@/hooks/useCurrentWeather";
-import { getWeatherIcon } from "@/utils/icons";
 import { Button, ButtonIcon } from "@hrc/button";
 import { Icon } from "@hrc/material-icons";
-import Skeleton from "react-loading-skeleton";
 import { WeatherDetails } from "./WeatherDetails";
+import { WeatherImage } from "./WeatherImage";
 import "./CityWeather.scss";
 
 type Props = {
@@ -11,7 +10,7 @@ type Props = {
 };
 
 export const CityWeather = ({ openDrawer }: Props) => {
-  const { weather, getCurrentWeather } = useCurrentWeather();
+  const { getCurrentWeather } = useCurrentWeather();
 
   return (
     <aside className="weather">
@@ -33,24 +32,7 @@ export const CityWeather = ({ openDrawer }: Props) => {
           <Icon name="gps_fixed" />
         </ButtonIcon>
       </header>
-      <picture className="weather-image">
-        <img
-          src="/cloud-background.png"
-          alt="clouds"
-          className="weather-image__background"
-        />
-        {weather == null ? (
-          <div className="weather-image__loading">
-            <Skeleton circle />
-          </div>
-        ) : (
-          <img
-            src={`/icons/${getWeatherIcon(weather.current.condition.code)}.png`}
-            alt="shower"
-            className="weather-image__icon"
-          />
-        )}
-      </picture>
+      <WeatherImage />
       <WeatherDetails />
     </aside>
   );

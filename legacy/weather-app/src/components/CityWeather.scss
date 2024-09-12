@@ -21,31 +21,4 @@
   &__search {
     font-size: var(--fs-1);
   }
-
-  .weather-image {
-    position: relative;
-
-    &__background {
-      margin-inline: auto;
-      opacity: 0.1;
-    }
-    &__icon {
-      position: absolute;
-      inset: 0;
-      margin: auto;
-
-      @media (max-width: 767px) {
-        width: 150px;
-      }
-    }
-    &__loading {
-      position: absolute;
-      display: grid;
-      inset: 0;
-      place-items: center;
-
-      --skeleton-aspect-ratio: 1 / 1;
-      --skeleton-width: 180px;
-    }
-  }
 }
