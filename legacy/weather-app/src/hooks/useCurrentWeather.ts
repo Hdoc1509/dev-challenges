@@ -7,6 +7,7 @@ import { getForecast } from "@/services/forecast/client";
 let didInit = false;
 
 export const useCurrentWeather = () => {
+  const weather = useWeatherStore((s) => s.weather);
   const error = useWeatherStore((s) => s.error);
   const setWeather = useWeatherStore((s) => s.setWeather);
   const setForecast = useWeatherStore((s) => s.setForecast);
@@ -44,5 +45,5 @@ export const useCurrentWeather = () => {
     }
   }, [getCurrentWeather]);
 
-  return { getCurrentWeather, error };
+  return { getCurrentWeather, error, weather };
 };
