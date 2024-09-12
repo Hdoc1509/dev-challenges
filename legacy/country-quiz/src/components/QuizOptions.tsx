@@ -1,4 +1,4 @@
-import { useQuestionStore } from "@/store/questions";
+import { useQuestions } from "@/hooks/useQuestions";
 import { getAnswerData } from "./Quiz.utils";
 import { Button } from "@hrc/button";
 import { Icon } from "@hrc/material-icons";
@@ -36,8 +36,7 @@ type Props = {
 };
 
 export const QuizOptions = ({ quiz }: Props) => {
-  const selectAnswer = useQuestionStore((s) => s.selectAnswer);
-
+  const { selectAnswer } = useQuestions();
   const { answerOptions, selectedAnswer, correctAnswer } = quiz;
 
   const handleAnswer = (answer: string) => {
