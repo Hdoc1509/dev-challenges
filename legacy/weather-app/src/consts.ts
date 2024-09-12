@@ -28,3 +28,10 @@ export const FORECAST_CODES = {
   96: "Thunderstorm with slight hail",
   99: "Thunderstorm with heavy hail",
 };
+
+export const TEMPERATURE_UNIT = Object.freeze({
+  CELSIUS: "celsius",
+  FAHRENHEIT: "fahrenheit",
+});
+export type TemperatureUnit =
+  (typeof TEMPERATURE_UNIT)[keyof typeof TEMPERATURE_UNIT];
