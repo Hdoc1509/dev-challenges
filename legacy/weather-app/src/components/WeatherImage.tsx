@@ -20,7 +20,7 @@ export function WeatherImage() {
       ) : (
         <img
           src={`/icons/${getWeatherIcon(weather.current.condition.code)}.png`}
-          alt="shower"
+          alt={weather.current.condition.name}
           className="weather-image__icon"
         />
       )}
