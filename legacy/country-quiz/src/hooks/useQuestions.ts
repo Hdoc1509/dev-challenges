@@ -16,6 +16,7 @@ export function useQuestions() {
   const setQuestions = useQuestionStore((s) => s.setQuestions);
   const reset = useQuestionStore((s) => s.reset);
   const goNextQuestion = useQuestionStore((s) => s.goNextQuestion);
+  const selectAnswer = useQuestionStore((s) => s.selectAnswer);
 
   const loadQuestions = useCallback(async () => {
     setStatus(STATUS.LOADING);
@@ -50,6 +51,7 @@ export function useQuestions() {
     currentQuestionIndex,
     status,
     goNextQuestion,
+    selectAnswer,
     setStatus,
     tryAgain,
   };
