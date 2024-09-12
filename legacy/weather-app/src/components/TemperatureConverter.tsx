@@ -1,10 +1,10 @@
-import { useWeatherStore } from "@/store/weather";
+import { useTemperatureUnitStore } from "@/store/temperature-unit";
 import { Button } from "@hrc/button";
 import "./TemperatureConverter.scss";
 
 export const TemperatureConverter = () => {
-  const unit = useWeatherStore((s) => s.temperatureUnit);
-  const setUnit = useWeatherStore((s) => s.setTemperatureUnit);
+  const unit = useTemperatureUnitStore((s) => s.unit);
+  const setUnit = useTemperatureUnitStore((s) => s.setUnit);
 
   return (
     <menu className="temperature-converter">

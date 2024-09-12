@@ -1,4 +1,4 @@
-import { useWeatherStore } from "@/store/weather";
+import { useTemperatureUnitStore } from "@/store/temperature-unit";
 import { useCurrentWeather } from "@/hooks/useCurrentWeather";
 import { getCurrentDate } from "@/utils/date";
 import Skeleton from "react-loading-skeleton";
@@ -7,7 +7,7 @@ import "./WeatherDetails.scss";
 
 export const WeatherDetails = () => {
   const { weather } = useCurrentWeather();
-  const temperatureUnit = useWeatherStore((s) => s.temperatureUnit);
+  const temperatureUnit = useTemperatureUnitStore((s) => s.unit);
   const { current, location } = weather ?? {};
   // TODO: add stringifyLocation() util
   const locationName = `${location?.name}, ${location?.country}`;

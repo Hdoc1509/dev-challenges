@@ -1,11 +1,12 @@
 import Skeleton from "react-loading-skeleton";
+import { useTemperatureUnitStore } from "@/store/temperature-unit";
 import { useWeatherStore } from "@/store/weather";
 import { getWeatherIcon } from "@/utils/icons";
 import type { Forecast as ForecastType } from "@/types";
 import "./Forecast.scss";
 
 const ForecastDay = ({ day }: { day?: ForecastType }) => {
-  const temperatureUnit = useWeatherStore((s) => s.temperatureUnit);
+  const temperatureUnit = useTemperatureUnitStore((s) => s.unit);
   const temperatureUnitLetter = temperatureUnit[0].toUpperCase();
   const { condition, temperature } = day ?? {};
   const maxTemp = `${temperature?.max[temperatureUnit]}°${temperatureUnitLetter}`;
