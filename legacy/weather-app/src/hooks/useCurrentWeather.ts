@@ -33,7 +33,7 @@ export const useCurrentWeather = () => {
 
     setWeather(weather);
     setForecast(forecast);
-  }, [setForecast, setWeather, clearData]);
+  }, [clearData, setError, setWeather, setForecast]);
 
   return { getCurrentWeather, error };
 };
