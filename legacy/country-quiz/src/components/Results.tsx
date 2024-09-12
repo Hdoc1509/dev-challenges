@@ -1,15 +1,11 @@
-import { useQuestionStore } from "@/store/questions";
+import { useQuestions } from "@/hooks/useQuestions";
 import { getResultMessage } from "@/utils/helpers";
 import { Button } from "@hrc/button";
 import winnerUrl from "/winner.svg";
 import "./Results.scss";
 
-type Props = {
-  tryAgain: () => void;
-};
-
-export const Results = ({ tryAgain }: Props) => {
-  const questions = useQuestionStore((s) => s.questions);
+export const Results = () => {
+  const { questions, tryAgain } = useQuestions();
   const correct = questions.filter((q) => q.hasBeenAnsweredCorrectly).length;
 
   return (

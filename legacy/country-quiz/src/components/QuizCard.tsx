@@ -7,8 +7,7 @@ import { QuestionCategories, STATUS } from "@/constants";
 import "./QuizCard.scss";
 
 export const QuizCard = () => {
-  const { questions, currentQuestionIndex, status, error, tryAgain } =
-    useQuestions();
+  const { questions, currentQuestionIndex, status, error } = useQuestions();
 
   const question = questions[currentQuestionIndex];
 
@@ -22,7 +21,7 @@ export const QuizCard = () => {
       {status === STATUS.LOADING && <Loader />}
       {status === STATUS.SUCCESS && <Quiz />}
       {status === STATUS.ERROR && <p className="error">{error?.message}</p>}
-      {status === STATUS.OVER && <Results tryAgain={tryAgain} />}
+      {status === STATUS.OVER && <Results />}
     </div>
   );
 };
