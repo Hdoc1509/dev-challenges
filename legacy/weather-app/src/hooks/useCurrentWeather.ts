@@ -1,8 +1,10 @@
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 import { useWeatherStore } from "@/store/weather";
 import { getCurrentCoords } from "@lib/geolocation";
 import { getWeather } from "@/services/weather/client";
 import { getForecast } from "@/services/forecast/client";
+
+let didInit = false;
 
 export const useCurrentWeather = () => {
   const error = useWeatherStore((s) => s.error);
@@ -34,6 +36,13 @@ export const useCurrentWeather = () => {
     setWeather(weather);
     setForecast(forecast);
   }, [clearData, setError, setWeather, setForecast]);
+
+  useEffect(() => {
+    if (!didInit) {
+      didInit = true;
+      getCurrentWeather();
+    }
+  }, [getCurrentWeather]);
 
   return { getCurrentWeather, error };
 };
