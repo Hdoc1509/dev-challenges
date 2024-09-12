@@ -9,7 +9,7 @@ import { SearchDrawer } from "@/components/SearchDrawer";
 import "./App.scss";
 
 function App() {
-  const { getCurrentWeather, error } = useCurrentWeather();
+  const { error } = useCurrentWeather();
   const [showSearchDrawer, setShowSearchDrawer] = useState(false);
 
   const openDrawer = () => {
@@ -31,10 +31,7 @@ function App() {
 
   return (
     <div className="App">
-      <CityWeather
-        openDrawer={openDrawer}
-        getCurrentWeather={getCurrentWeather}
-      />
+      <CityWeather openDrawer={openDrawer} />
       <SearchDrawer onClose={closeDrawer} isOpen={showSearchDrawer} />
       <main>
         <TemperatureConverter />

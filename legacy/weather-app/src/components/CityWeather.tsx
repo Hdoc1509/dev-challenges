@@ -1,5 +1,6 @@
 import Skeleton from "react-loading-skeleton";
 import { useWeatherStore } from "@/store/weather";
+import { useCurrentWeather } from "@/hooks/useCurrentWeather";
 import { getWeatherIcon } from "@/utils/icons";
 import { Button, ButtonIcon } from "@hrc/button";
 import { Icon } from "@hrc/material-icons";
@@ -7,11 +8,11 @@ import { WeatherDetails } from "./WeatherDetails";
 import "./CityWeather.scss";
 
 type Props = {
-  getCurrentWeather: () => void;
   openDrawer: () => void;
 };
 
-export const CityWeather = ({ openDrawer, getCurrentWeather }: Props) => {
+export const CityWeather = ({ openDrawer }: Props) => {
+  const { getCurrentWeather } = useCurrentWeather();
   const weather = useWeatherStore((s) => s.weather);
 
   return (
