@@ -1,16 +1,14 @@
 import { useCurrentWeather } from "@/hooks/useCurrentWeather";
+import { useSearchDrawer } from "@/hooks/useSearchDrawer";
 import { Button, ButtonIcon } from "@hrc/button";
 import { Icon } from "@hrc/material-icons";
 import { WeatherDetails } from "./WeatherDetails";
 import { WeatherImage } from "./WeatherImage";
 import "./CityWeather.scss";
 
-type Props = {
-  openDrawer: () => void;
-};
-
-export const CityWeather = ({ openDrawer }: Props) => {
+export const CityWeather = () => {
   const { getCurrentWeather } = useCurrentWeather();
+  const { openDrawer } = useSearchDrawer();
 
   return (
     <aside className="weather">

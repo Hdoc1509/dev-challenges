@@ -12,10 +12,6 @@ function App() {
   const { error } = useCurrentWeather();
   const [showSearchDrawer, setShowSearchDrawer] = useState(false);
 
-  const openDrawer = () => {
-    setShowSearchDrawer(true);
-    document.body.classList.add("no-scroll");
-  };
   const closeDrawer = () => {
     setShowSearchDrawer(false);
     document.body.classList.remove("no-scroll");
@@ -31,7 +27,7 @@ function App() {
 
   return (
     <div className="App">
-      <CityWeather openDrawer={openDrawer} />
+      <CityWeather />
       <SearchDrawer onClose={closeDrawer} isOpen={showSearchDrawer} />
       <main>
         <TemperatureConverter />
