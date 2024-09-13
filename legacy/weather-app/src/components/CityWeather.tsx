@@ -6,30 +6,36 @@ import { WeatherDetails } from "./WeatherDetails";
 import { WeatherImage } from "./WeatherImage";
 import "./CityWeather.scss";
 
-export const CityWeather = () => {
+const HeaderButtons = () => {
   const { getCurrentWeather } = useCurrentWeather();
   const { openDrawer } = useSearchDrawer();
 
   return (
+    <header>
+      <Button
+        className="weather__search"
+        color="secondary"
+        rounded="none"
+        onClick={openDrawer}
+      >
+        Search for places
+      </Button>
+      <ButtonIcon
+        color="secondary"
+        rounded="full"
+        onClick={getCurrentWeather}
+        aria-label="Get current location weather"
+      >
+        <Icon name="gps_fixed" />
+      </ButtonIcon>
+    </header>
+  );
+};
+
+export const CityWeather = () => {
+  return (
     <aside className="weather">
-      <header>
-        <Button
-          className="weather__search"
-          color="secondary"
-          rounded="none"
-          onClick={openDrawer}
-        >
-          Search for places
-        </Button>
-        <ButtonIcon
-          color="secondary"
-          rounded="full"
-          onClick={getCurrentWeather}
-          aria-label="Get current location weather"
-        >
-          <Icon name="gps_fixed" />
-        </ButtonIcon>
-      </header>
+      <HeaderButtons />
       <WeatherImage />
       <WeatherDetails />
     </aside>
