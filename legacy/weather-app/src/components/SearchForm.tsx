@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useSearchStore } from "@/store/search";
 import { searchCity } from "@/services/geolocation/client";
 import { Button } from "@hrc/button";
@@ -7,10 +8,8 @@ import { STATUS } from "@lib/fetcher";
 import "./SearchForm.scss";
 
 export const SearchForm = ({ disabled }: { disabled: boolean }) => {
-  const search = useSearchStore((s) => s.search);
-  const lastSearch = useSearchStore((s) => s.lastSearch);
-  const setSearch = useSearchStore((s) => s.setSearch);
-  const setLastSearch = useSearchStore((s) => s.setLastSearch);
+  const [search, setSearch] = useState("");
+  const [lastSearch, setLastSearch] = useState("");
   const setError = useSearchStore((s) => s.setError);
   const setStatus = useSearchStore((s) => s.setStatus);
   const setResults = useSearchStore((s) => s.setResults);
