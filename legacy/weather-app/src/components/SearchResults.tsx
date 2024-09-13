@@ -7,7 +7,12 @@ import { Icon } from "@hrc/material-icons";
 import type { City } from "@/types";
 import "./SearchResults.scss";
 
-export const SearchResults = ({ onClose }: { onClose: () => void }) => {
+type Props = {
+  disabled: boolean;
+  onClose: () => void;
+};
+
+export const SearchResults = ({ disabled, onClose }: Props) => {
   const results = useSearchStore((s) => s.results);
   const setResults = useSearchStore((s) => s.setResults);
   const setWeatherError = useWeatherStore((s) => s.setError);
@@ -43,7 +48,11 @@ export const SearchResults = ({ onClose }: { onClose: () => void }) => {
     <menu className="search-drawer__results">
       {results.map((result) => (
         <li key={result.id}>
-          <Button onClick={() => handleSelect(result)} noShadow>
+          <Button
+            onClick={() => handleSelect(result)}
+            disabled={disabled}
+            noShadow
+          >
             {result.name} - {result.country}
             <Icon name="keyboard_arrow_right" />
           </Button>

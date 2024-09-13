@@ -22,7 +22,7 @@ export const SearchDrawer = () => {
       {/* TODO: move status logic to <SearchResults /> */}
       {isLoading && <RingSpinner />}
       {isError && <p>{error?.message}</p>}
-      {isSuccess && <SearchResults onClose={closeDrawer} />}
+      {isSuccess && <SearchResults disabled={!isOpen} onClose={closeDrawer} />}
     </div>
   );
 };
