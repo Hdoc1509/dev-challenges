@@ -1,4 +1,5 @@
 import { useSearchStore } from "@/store/search";
+import { useSearchDrawer } from "@/hooks/useSearchDrawer";
 import { clsx } from "clsx";
 import { Icon } from "@hrc/material-icons";
 import { RingSpinner } from "@hrc/spinner";
@@ -7,26 +8,22 @@ import { SearchResults } from "./SearchResults";
 import { STATUS } from "@lib/fetcher";
 import "./SearchDrawer.scss";
 
-type Props = {
-  isOpen?: boolean;
-  onClose: () => void;
-};
-
-export const SearchDrawer = ({ isOpen, onClose }: Props) => {
+export const SearchDrawer = () => {
   const status = useSearchStore((s) => s.status);
   const error = useSearchStore((s) => s.error);
+  const { isOpen, closeDrawer } = useSearchDrawer();
 
   const className = clsx("search-drawer", { open: isOpen });
 
   return (
     <div className={className}>
-      <div className="search-drawer__close" onClick={onClose}>
+      <div className="search-drawer__close" onClick={closeDrawer}>
         <Icon name="close" />
       </div>
       <SearchForm disabled={!isOpen} />
       {status === STATUS.LOADING && <RingSpinner />}
       {status === STATUS.ERROR && <p>{error?.message}</p>}
-      {status === STATUS.SUCCESS && <SearchResults onClose={onClose} />}
+      {status === STATUS.SUCCESS && <SearchResults onClose={closeDrawer} />}
     </div>
   );
 };

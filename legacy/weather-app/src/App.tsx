@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useCurrentWeather } from "@/hooks/useCurrentWeather";
 import { Footer } from "@lib/components/Footer";
 import { CityWeather } from "@/components/CityWeather";
@@ -10,12 +9,6 @@ import "./App.scss";
 
 function App() {
   const { error } = useCurrentWeather();
-  const [showSearchDrawer, setShowSearchDrawer] = useState(false);
-
-  const closeDrawer = () => {
-    setShowSearchDrawer(false);
-    document.body.classList.remove("no-scroll");
-  };
 
   if (error) {
     return (
@@ -28,7 +21,7 @@ function App() {
   return (
     <div className="App">
       <CityWeather />
-      <SearchDrawer onClose={closeDrawer} isOpen={showSearchDrawer} />
+      <SearchDrawer />
       <main>
         <TemperatureConverter />
         <Forecast />
