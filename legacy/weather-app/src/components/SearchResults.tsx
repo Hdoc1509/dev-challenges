@@ -9,15 +9,13 @@ import "./SearchResults.scss";
 
 export const SearchResults = ({ onClose }: { onClose: () => void }) => {
   const results = useSearchStore((s) => s.results);
-  const setSearch = useSearchStore((s) => s.setSearch);
-  const setLastSearch = useSearchStore((s) => s.setLastSearch);
   const setResults = useSearchStore((s) => s.setResults);
   const setWeatherError = useWeatherStore((s) => s.setError);
   const setWeather = useWeatherStore((s) => s.setWeather);
   const setForecast = useWeatherStore((s) => s.setForecast);
   const clearData = useWeatherStore((s) => s.clearData);
 
-  const handleSelect = async ({ latitude, longitude }: City) => {
+  const handleSelect = async ({ latitude, longitude, id }: City) => {
     const coords = { latitude, longitude };
 
     clearData();
@@ -36,11 +34,9 @@ export const SearchResults = ({ onClose }: { onClose: () => void }) => {
     if (weatherError) return setWeatherError(weatherError);
     if (forecastError) return setWeatherError(forecastError);
 
-    setLastSearch("");
     setForecast(forecast);
     setWeather(weather);
-    setResults([]);
-    setSearch("");
+    setResults(results.filter((result) => result.id !== id));
   };
 
   return (
