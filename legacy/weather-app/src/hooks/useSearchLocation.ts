@@ -29,6 +29,11 @@ export function useSearchLocation() {
     [setError, setResults, setStatus],
   );
 
+  const removeResultById = useCallback(
+    (resultId: number) => setResults(results.filter((r) => r.id !== resultId)),
+    [results, setResults],
+  );
+
   return {
     isLoading: status === STATUS.LOADING,
     isError: status === STATUS.ERROR,
@@ -36,5 +41,6 @@ export function useSearchLocation() {
     error,
     results,
     searchLocation,
+    removeResultById,
   };
 }
