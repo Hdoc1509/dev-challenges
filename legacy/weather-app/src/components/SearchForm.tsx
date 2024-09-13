@@ -1,18 +1,14 @@
 import { useState } from "react";
-import { useSearchStore } from "@/store/search";
-import { searchCity } from "@/services/geolocation/client";
+import { useSearchLocation } from "@/hooks/useSearchLocation";
 import { Button } from "@hrc/button";
 import { Input } from "@hrc/input";
 import { Icon } from "@hrc/material-icons";
-import { STATUS } from "@lib/fetcher";
 import "./SearchForm.scss";
 
 export const SearchForm = ({ disabled }: { disabled: boolean }) => {
+  const { searchLocation } = useSearchLocation();
   const [search, setSearch] = useState("");
   const [lastSearch, setLastSearch] = useState("");
-  const setError = useSearchStore((s) => s.setError);
-  const setStatus = useSearchStore((s) => s.setStatus);
-  const setResults = useSearchStore((s) => s.setResults);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -20,18 +16,7 @@ export const SearchForm = ({ disabled }: { disabled: boolean }) => {
     if (search === lastSearch) return;
 
     setLastSearch(search);
-    setStatus(STATUS.LOADING);
-
-    const [citiesError, cities] = await searchCity(search);
-
-    if (citiesError) {
-      setError(citiesError);
-      setStatus(STATUS.ERROR);
-      return;
-    }
-
-    setResults(cities);
-    setStatus(STATUS.SUCCESS);
+    searchLocation(search);
   };
 
   return (
