@@ -19,7 +19,6 @@ export const SearchDrawer = () => {
         <Icon name="close" />
       </div>
       <SearchForm disabled={!isOpen} />
-      {/* TODO: move status logic to <SearchResults /> */}
       {isLoading && <RingSpinner />}
       {isError && <p>{error?.message}</p>}
       {isSuccess && <SearchResults disabled={!isOpen} onClose={closeDrawer} />}

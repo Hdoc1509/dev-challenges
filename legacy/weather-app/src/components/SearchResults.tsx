@@ -1,5 +1,5 @@
-import { useSearchStore } from "@/store/search";
 import { useWeatherStore } from "@/store/weather";
+import { useSearchLocation } from "@/hooks/useSearchLocation";
 import { getWeather } from "@/services/weather/client";
 import { getForecast } from "@/services/forecast/client";
 import { Button } from "@hrc/button";
@@ -13,8 +13,7 @@ type Props = {
 };
 
 export const SearchResults = ({ disabled, onClose }: Props) => {
-  const results = useSearchStore((s) => s.results);
-  const setResults = useSearchStore((s) => s.setResults);
+  const { results, removeResultById } = useSearchLocation();
   const setWeatherError = useWeatherStore((s) => s.setError);
   const setWeather = useWeatherStore((s) => s.setWeather);
   const setForecast = useWeatherStore((s) => s.setForecast);
@@ -41,7 +40,7 @@ export const SearchResults = ({ disabled, onClose }: Props) => {
 
     setForecast(forecast);
     setWeather(weather);
-    setResults(results.filter((result) => result.id !== id));
+    removeResultById(id);
   };
 
   return (
