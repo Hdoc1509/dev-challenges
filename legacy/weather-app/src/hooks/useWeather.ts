@@ -6,7 +6,7 @@ import { getForecast } from "@/services/forecast/client";
 
 let didInit = false;
 
-export const useCurrentWeather = () => {
+export const useWeather = () => {
   const weather = useWeatherStore((s) => s.weather);
   const error = useWeatherStore((s) => s.error);
   const setWeather = useWeatherStore((s) => s.setWeather);
@@ -14,6 +14,9 @@ export const useCurrentWeather = () => {
   const setError = useWeatherStore((s) => s.setError);
   const clearData = useWeatherStore((s) => s.clearData);
 
+  // TODO:
+  // rename to searchWeather() and return it as getWeather()
+  // add getCurrentWeather() that will call searchWeather() internally
   const getCurrentWeather = useCallback(async () => {
     clearData();
 

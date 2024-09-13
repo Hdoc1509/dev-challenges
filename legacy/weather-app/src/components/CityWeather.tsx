@@ -1,4 +1,4 @@
-import { useCurrentWeather } from "@/hooks/useCurrentWeather";
+import { useWeather } from "@/hooks/useWeather";
 import { useSearchDrawer } from "@/hooks/useSearchDrawer";
 import { Button, ButtonIcon } from "@hrc/button";
 import { Icon } from "@hrc/material-icons";
@@ -7,7 +7,7 @@ import { WeatherImage } from "./WeatherImage";
 import "./CityWeather.scss";
 
 const HeaderButtons = () => {
-  const { getCurrentWeather } = useCurrentWeather();
+  const { getCurrentWeather } = useWeather();
   const { openDrawer } = useSearchDrawer();
 
   return (
