@@ -1,6 +1,6 @@
 import { useCallback, useEffect } from "react";
 import { useWeatherStore } from "@/store/weather";
-import { getCurrentCoords } from "@lib/geolocation";
+import { getCurrentCoords, type LocationCoords } from "@lib/geolocation";
 import { getWeather } from "@/services/weather/client";
 import { getForecast } from "@/services/forecast/client";
 
@@ -14,9 +14,35 @@ export const useWeather = () => {
   const setError = useWeatherStore((s) => s.setError);
   const clearData = useWeatherStore((s) => s.clearData);
 
-  // TODO:
-  // rename to searchWeather() and return it as getWeather()
-  // add getCurrentWeather() that will call searchWeather() internally
+  const searchWeather = useCallback(
+    async (coords: LocationCoords) => {
+      clearData();
+
+      // NOTE: it is typed incorrectly with array desctructuring
+      // const [[weatherError, weather], [forecastError, forecast]] =
+      //   await Promise.all([getWeather(coords), getForecast(coords)]);
+      const [weatherResult, forecastResult] = await Promise.all([
+        getWeather(coords),
+        getForecast(coords),
+      ]);
+      const [weatherError, weather] = weatherResult;
+      const [forecastError, forecast] = forecastResult;
+
+      if (weatherError) {
+        setError(weatherError);
+        return weatherError;
+      }
+      if (forecastError) {
+        setError(forecastError);
+        return forecastError;
+      }
+
+      setWeather(weather);
+      setForecast(forecast);
+    },
+    [clearData, setError, setForecast, setWeather],
+  );
+
   const getCurrentWeather = useCallback(async () => {
     clearData();
 
@@ -24,22 +50,8 @@ export const useWeather = () => {
 
     if (coordsError) return setError(coordsError);
 
-    // NOTE: it is typed incorrectly with array desctructuring
-    // const [[weatherError, weather], [forecastError, forecast]] =
-    //   await Promise.all([getWeather(coords), getForecast(coords)]);
-    const [weatherResult, forecastResult] = await Promise.all([
-      getWeather(coords),
-      getForecast(coords),
-    ]);
-    const [weatherError, weather] = weatherResult;
-    const [forecastError, forecast] = forecastResult;
-
-    if (weatherError) return setError(weatherError);
-    if (forecastError) return setError(forecastError);
-
-    setWeather(weather);
-    setForecast(forecast);
-  }, [clearData, setError, setWeather, setForecast]);
+    searchWeather(coords);
+  }, [clearData, setError, searchWeather]);
 
   useEffect(() => {
     if (!didInit) {
@@ -48,5 +60,5 @@ export const useWeather = () => {
     }
   }, [getCurrentWeather]);
 
-  return { getCurrentWeather, error, weather };
+  return { getCurrentWeather, getWeather: searchWeather, error, weather };
 };
