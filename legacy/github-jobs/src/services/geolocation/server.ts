@@ -37,14 +37,12 @@ export const searchLocation = async (
 
   if (error) return [error];
 
-  if ("error" in data) {
-    const { message, code } = data.error;
-
-    if (code === WEATHERAPI_ERROR_CODE.INTERNAL)
-      return [new Error("Geolocation service internal error")];
-
-    return [new Error(message)];
-  }
+  if ("error" in data)
+    return [
+      data.error.code === WEATHERAPI_ERROR_CODE.INTERNAL
+        ? new Error("Geolocation service internal error")
+        : new Error(data.error.message),
+    ];
 
   // if no results, response can succeed returning empty array
   // coordinates will always be valid because of Geolocation API
