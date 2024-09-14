@@ -6,6 +6,7 @@ import { isSameSearch } from "@/utils/search";
 import { Button } from "@hrc/button";
 import { Input } from "@hrc/input";
 import { Icon } from "@hrc/material-icons";
+import { SEARCH_FORM_ID } from "@/constants";
 import { isDev } from "@/config";
 import "./SearchForm.scss";
 
@@ -48,7 +49,7 @@ export const SearchForm = () => {
   return (
     <section className="search-form">
       <form
-        id="search-form"
+        id={SEARCH_FORM_ID}
         className="search-form__inner"
         onSubmit={(e) => void handleSubmit(e)}
       >

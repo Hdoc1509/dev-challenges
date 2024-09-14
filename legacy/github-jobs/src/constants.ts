@@ -7,3 +7,5 @@ export const predefinedCities = [
 
 export const DEFAULT_QUERY = "front";
 export const DEFAULT_SEARCH = { query: DEFAULT_QUERY };
+
+export const SEARCH_FORM_ID = "search-form";
