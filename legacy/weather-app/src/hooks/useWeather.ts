@@ -8,6 +8,7 @@ let didInit = false;
 
 export const useWeather = () => {
   const weather = useWeatherStore((s) => s.weather);
+  const forecast = useWeatherStore((s) => s.forecast);
   const error = useWeatherStore((s) => s.error);
   const setWeather = useWeatherStore((s) => s.setWeather);
   const setForecast = useWeatherStore((s) => s.setForecast);
@@ -60,5 +61,11 @@ export const useWeather = () => {
     }
   }, [getCurrentWeather]);
 
-  return { getCurrentWeather, getWeather: searchWeather, error, weather };
+  return {
+    weather,
+    forecast,
+    error,
+    getCurrentWeather,
+    getWeather: searchWeather,
+  };
 };
