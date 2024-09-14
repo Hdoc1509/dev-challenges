@@ -5,7 +5,7 @@ import { getWeatherIcon } from "@/utils/icons";
 import type { Forecast as ForecastType } from "@/types";
 import "./Forecast.scss";
 
-const ForecastDay = ({ day }: { day?: ForecastType }) => {
+const ForecastItem = ({ day }: { day?: ForecastType }) => {
   const temperatureUnit = useTemperatureUnitStore((s) => s.unit);
   const temperatureUnitLetter = temperatureUnit[0].toUpperCase();
   const { condition, temperature } = day ?? {};
@@ -38,11 +38,11 @@ export const Forecast = () => {
 
   return (
     <article className="forecast">
-      <ForecastDay day={forecast?.[0]} />
-      <ForecastDay day={forecast?.[1]} />
-      <ForecastDay day={forecast?.[2]} />
-      <ForecastDay day={forecast?.[3]} />
-      <ForecastDay day={forecast?.[4]} />
+      <ForecastItem day={forecast?.[0]} />
+      <ForecastItem day={forecast?.[1]} />
+      <ForecastItem day={forecast?.[2]} />
+      <ForecastItem day={forecast?.[3]} />
+      <ForecastItem day={forecast?.[4]} />
     </article>
   );
 };
