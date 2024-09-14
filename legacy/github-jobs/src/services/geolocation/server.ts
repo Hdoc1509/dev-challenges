@@ -40,7 +40,7 @@ export const searchLocation = async (
   if ("error" in data)
     return [
       data.error.code === WEATHERAPI_ERROR_CODE.INTERNAL
-        ? new Error("Geolocation service internal error")
+        ? GeolocationServiceError.internal()
         : new Error(data.error.message),
     ];
 
