@@ -1,10 +1,10 @@
 import { useWeather } from "@/hooks/useWeather";
 import { Footer } from "@lib/components/Footer";
-import { CityWeather } from "@/components/CityWeather";
-import { Forecast } from "@/components/Forecast";
-import { Highlights } from "@/components/Highlights";
+import { CityWeather } from "@/components/weather/CityWeather";
+import { Forecast } from "@/components/forecast/Forecast";
+import { Highlights } from "@/components/weather/highlights/Highlights";
 import { TemperatureConverter } from "@/components/TemperatureConverter";
-import { SearchDrawer } from "@/components/SearchDrawer";
+import { SearchDrawer } from "@/components/search/SearchDrawer";
 import "./App.scss";
 
 function App() {
