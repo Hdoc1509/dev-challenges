@@ -13,7 +13,7 @@ function App() {
   if (error) {
     return (
       <div className="App" data-error>
-        <h2 className="App__error">{error.message}</h2>
+        <p className="App__error">{error.message}</p>
       </div>
     );
   }
