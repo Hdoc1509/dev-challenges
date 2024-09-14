@@ -1,6 +1,6 @@
 import Skeleton from "react-loading-skeleton";
 import { useTemperatureUnitStore } from "@/store/temperature-unit";
-import { useWeatherStore } from "@/store/weather";
+import { useWeather } from "@/hooks/useWeather";
 import { getWeatherIcon } from "@/utils/icons";
 import type { Forecast as ForecastType } from "@/types";
 import "./Forecast.scss";
@@ -34,7 +34,7 @@ const ForecastDay = ({ day }: { day?: ForecastType }) => {
 };
 
 export const Forecast = () => {
-  const forecast = useWeatherStore((s) => s.forecast);
+  const { forecast } = useWeather();
 
   return (
     <article className="forecast">
