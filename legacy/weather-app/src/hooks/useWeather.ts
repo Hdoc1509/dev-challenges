@@ -9,9 +9,11 @@ let didInit = false;
 export const useWeather = () => {
   const weather = useWeatherStore((s) => s.weather);
   const forecast = useWeatherStore((s) => s.forecast);
+  const userLocation = useWeatherStore((s) => s.userLocation);
   const error = useWeatherStore((s) => s.error);
   const setWeather = useWeatherStore((s) => s.setWeather);
   const setForecast = useWeatherStore((s) => s.setForecast);
+  const setUserLocation = useWeatherStore((s) => s.setUserLocation);
   const setError = useWeatherStore((s) => s.setError);
   const clearData = useWeatherStore((s) => s.clearData);
 
@@ -45,14 +47,17 @@ export const useWeather = () => {
   );
 
   const getCurrentWeather = useCallback(async () => {
+    if (userLocation != null) return searchWeather(userLocation);
+
     clearData();
 
     const [coordsError, coords] = await getCurrentCoords({ timeout: 8000 });
 
     if (coordsError) return setError(coordsError);
 
+    setUserLocation(coords);
     searchWeather(coords);
-  }, [clearData, setError, searchWeather]);
+  }, [userLocation, searchWeather, clearData, setError, setUserLocation]);
 
   useEffect(() => {
     if (!didInit) {
