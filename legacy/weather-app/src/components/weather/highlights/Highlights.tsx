@@ -1,6 +1,6 @@
 import { useWeather } from "@/hooks/useWeather";
 import Skeleton from "react-loading-skeleton";
-import { Humidity } from "./Humidity";
+import { Meter } from "@/components/Meter";
 import { Wind } from "./Wind";
 import "./Highlights.scss";
 
@@ -21,7 +21,16 @@ export const Highlights = () => {
     <article className="highlights">
       <h2>{`Today's Highlights`}</h2>
       <Wind wind={wind} />
-      <Humidity humidity={humidity} />
+      <section className="humidity">
+        <h3>Humidity</h3>
+        <Value value={humidity} unit="%" />
+        <Meter
+          value={humidity}
+          trackFallback={<Skeleton containerClassName="flex-1" />}
+          unit="%"
+          marks
+        />
+      </section>
       <section className="visibility">
         <h3>Visibility</h3>
         <Value value={visibility} unit="miles" />

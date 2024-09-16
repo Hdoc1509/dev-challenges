@@ -38,6 +38,21 @@
   }
 }
 
+.humidity {
+  padding-inline: 50px;
+  --skeleton-width: 2ch;
+
+  --meter-bg: var(--text);
+  --meter-track-bg: #ffec65;
+  --meter-text: var(--text-secondary);
+  --meter-font-size: var(--fs-00);
+  --meter-font-weight: 700;
+  .meter {
+    --skeleton-height: 8px;
+    --skeleton-width: 100%;
+  }
+}
+
 .visibility {
   --skeleton-width: 1ch;
 }
