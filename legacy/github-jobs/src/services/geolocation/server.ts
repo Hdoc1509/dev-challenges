@@ -7,11 +7,10 @@ import {
 import { GeolocationServiceError } from "./service-error";
 import { pickLocationOption } from "@/utils/location-option";
 import { WEATHERAPI } from "@/config";
+import { SEARCH_LOCATION_PARAMS, type LocationParams } from "./params";
 import type { LocationOptions } from "@/types";
-import type { LocationParams } from "./params";
 
 const ResponseSchema = LocationResponseSchema.or(LocationErrorSchema);
-const LOCATIONS_LIMIT = "1";
 // from https://www.weatherapi.com/docs/#intro-error-codes
 const WEATHERAPI_ERROR_CODE = {
   INTERNAL: 9999,
@@ -22,7 +21,7 @@ export const searchLocation = async (
 ): PromiseWithError<LocationResponse> => {
   const params = new URLSearchParams({
     q: pickLocationOption(options),
-    limit: LOCATIONS_LIMIT,
+    limit: SEARCH_LOCATION_PARAMS.LOCATIONS_LIMIT,
     key: WEATHERAPI.KEY,
   } satisfies LocationParams["server"]);
 
