@@ -1,5 +1,5 @@
+import { useSearchDrawerStore } from "@/store/search-drawer";
 import { useWeather } from "@/hooks/useWeather";
-import { useSearchDrawer } from "@/hooks/useSearchDrawer";
 import { Button, ButtonIcon } from "@hrc/button";
 import { Icon } from "@hrc/material-icons";
 import { WeatherDetails } from "./WeatherDetails";
@@ -7,8 +7,8 @@ import { WeatherImage } from "./WeatherImage";
 import "./CityWeather.scss";
 
 const HeaderButtons = () => {
+  const openDrawer = useSearchDrawerStore((s) => s.openDrawer);
   const { getCurrentWeather } = useWeather();
-  const { openDrawer } = useSearchDrawer();
 
   return (
     <header>

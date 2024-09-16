@@ -1,4 +1,4 @@
-import { useSearchDrawer } from "@/hooks/useSearchDrawer";
+import { useSearchDrawerStore } from "@/store/search-drawer";
 import { useSearchLocation } from "@/hooks/useSearchLocation";
 import { clsx } from "clsx";
 import { Icon } from "@hrc/material-icons";
@@ -8,8 +8,9 @@ import { SearchResults } from "./SearchResults";
 import "./SearchDrawer.scss";
 
 export const SearchDrawer = () => {
+  const isOpen = useSearchDrawerStore((s) => s.isOpen);
+  const closeDrawer = useSearchDrawerStore((s) => s.closeDrawer);
   const { error, isLoading, isError, isSuccess } = useSearchLocation();
-  const { isOpen, closeDrawer } = useSearchDrawer();
 
   const className = clsx("search-drawer", { open: isOpen });
 
