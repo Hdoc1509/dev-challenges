@@ -49,3 +49,10 @@ export const WeatherResponseSchema = z.object({
 });
 
 export type WeatherResponse = z.infer<typeof WeatherResponseSchema>;
+
+export const WeatherErrorResponseSchema = z.object({
+  error: z.object({
+    code: z.number(),
+    message: z.string(),
+  }),
+});
