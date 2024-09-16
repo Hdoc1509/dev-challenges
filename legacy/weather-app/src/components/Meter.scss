@@ -1,0 +1,44 @@
+.meter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--meter-gap, 4px);
+  width: var(--meter-width, 100%);
+
+  color: var(--meter-text);
+  font-size: var(--meter-font-size);
+  font-weight: var(--meter-font-weight);
+
+  &__marks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    font-size: var(--meter-mark-font-size);
+    text-align: center;
+
+    > :first-child {
+      text-align: left;
+    }
+    > :last-child {
+      text-align: right;
+    }
+  }
+
+  &__bar {
+    display: flex;
+    align-items: center;
+
+    height: var(--meter-height, 8px);
+    background-color: var(--meter-bg, #fff);
+    border-radius: var(--meter-radius, 8px);
+  }
+  &__track {
+    height: 100%;
+    background-color: var(--meter-track-bg, #90cdf4);
+    border-radius: inherit;
+  }
+
+  &__unit {
+    margin-left: auto;
+    font-size: var(--meter-unit-font-size);
+  }
+}
