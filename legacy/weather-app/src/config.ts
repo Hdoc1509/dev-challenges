@@ -3,6 +3,10 @@
 export const WEATHERAPI = {
   KEY: import.meta.env.WEATHERAPI_API_KEY,
   URL: "https://api.weatherapi.com/v1",
+  // https://www.weatherapi.com/docs/#intro-error-codes
+  ERROR_CODES: {
+    INTERNAL: 9999,
+  },
 };
 
 // Documentation
