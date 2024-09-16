@@ -11,10 +11,6 @@ import { SEARCH_LOCATION_PARAMS, type LocationParams } from "./params";
 import type { LocationOptions } from "@/types";
 
 const ResponseSchema = LocationResponseSchema.or(LocationErrorSchema);
-// from https://www.weatherapi.com/docs/#intro-error-codes
-const WEATHERAPI_ERROR_CODE = {
-  INTERNAL: 9999,
-};
 
 export const searchLocation = async (
   options: LocationOptions,
@@ -38,7 +34,7 @@ export const searchLocation = async (
 
   if ("error" in data)
     return [
-      data.error.code === WEATHERAPI_ERROR_CODE.INTERNAL
+      data.error.code === WEATHERAPI.ERROR_CODES.INTERNAL
         ? GeolocationServiceError.internal()
         : new Error(data.error.message),
     ];

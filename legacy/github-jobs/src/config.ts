@@ -12,6 +12,10 @@ export const SERPAPI = {
 export const WEATHERAPI = {
   KEY: WEATHERAPI_API_KEY,
   URL: "https://api.weatherapi.com/v1",
+  // https://www.weatherapi.com/docs/#intro-error-codes
+  ERROR_CODES: {
+    INTERNAL: 9999,
+  },
 };
 
 // https://docs.astro.build/en/guides/environment-variables/#default-environment-variables
