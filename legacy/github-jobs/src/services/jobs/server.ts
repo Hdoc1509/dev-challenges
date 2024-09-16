@@ -6,11 +6,10 @@ import {
 } from "./schema";
 import { JobsServiceError } from "./service-error";
 import { SERPAPI } from "@/config";
+import { GET_JOBS_PARAMS, type JobsParams } from "./params";
 import locationsMock from "@/mocks/locations.json";
 import type { Search } from "@/types";
-import type { JobsParams } from "./params";
 
-const ENGINE = "google_jobs";
 const Schema = JobsResponseSchema.or(JobsErrorResponseSchema);
 
 export const getJobs = async (
@@ -18,7 +17,7 @@ export const getJobs = async (
 ): PromiseWithError<JobsResponse> => {
   const { query, location, /* fullTime, */ nextPageToken } = search;
   const paramsOptions: JobsParams["server"] = {
-    engine: ENGINE,
+    engine: GET_JOBS_PARAMS.ENGINE,
     q: query,
     api_key: SERPAPI.KEY,
     location: location ?? locationsMock[0].canonical_name,
