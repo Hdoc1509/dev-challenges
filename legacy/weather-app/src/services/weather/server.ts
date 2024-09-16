@@ -31,7 +31,12 @@ export const getWeather = async (
 
   if (error) return [error];
 
-  if ("error" in data) return [new Error(data.error.message)]; // api endpoint error
+  if ("error" in data)
+    return [
+      data.error.code === WEATHERAPI.ERROR_CODES.INTERNAL
+        ? WeatherServiceError.internal()
+        : new Error(data.error.message),
+    ];
 
   return [null, data];
 };
