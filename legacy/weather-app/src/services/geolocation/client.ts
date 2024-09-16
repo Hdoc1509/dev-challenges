@@ -1,12 +1,12 @@
-import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
+import { fetcher, type PromiseWithError } from "@lib/fetcher";
 import { ApiErrorSchema } from "@/schemas/api-error";
 import { CityResponseSchema } from "./schema";
+import { SearchCityServiceError } from "./service-error";
 import { parseCities } from "./parse";
 import type { City } from "@/types";
 import type { SearchCityParams } from "./params";
 
 const ApiResponseSchema = CityResponseSchema.or(ApiErrorSchema);
-const SearchCityError = new ServiceError("Search city");
 
 export const searchCity = async (city: string): PromiseWithError<City[]> => {
   const params = new URLSearchParams({
@@ -15,7 +15,7 @@ export const searchCity = async (city: string): PromiseWithError<City[]> => {
 
   const [error, data] = await fetcher(`/api/geolocation?${params.toString()}`, {
     schema: ApiResponseSchema,
-    serviceError: SearchCityError,
+    serviceError: SearchCityServiceError,
     checkStatus: false, // allows to read api endpoint errors in response
   });
 

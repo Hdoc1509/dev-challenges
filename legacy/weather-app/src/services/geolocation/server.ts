@@ -1,14 +1,14 @@
-import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
+import { fetcher, type PromiseWithError } from "@lib/fetcher";
 import {
   CityResponseSchema,
   CityErrorResponseSchema,
   type CityResponse,
 } from "./schema";
+import { SearchCityServiceError } from "./service-error";
 import { WEATHERAPI } from "@/config";
 import { SEARCH_CITY_PARAMS, type SearchCityParams } from "./params";
 
 const ResponseSchema = CityResponseSchema.or(CityErrorResponseSchema);
-const SearchCityError = new ServiceError("Search city");
 
 export const searchCity = async (
   search: string,
@@ -23,7 +23,7 @@ export const searchCity = async (
     `${WEATHERAPI.URL}/search.json?${params.toString()}`,
     {
       schema: ResponseSchema,
-      serviceError: SearchCityError,
+      serviceError: SearchCityServiceError,
       checkStatus: false, // allows to read weatherapi endpoint errors in response
     },
   );

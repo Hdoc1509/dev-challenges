@@ -1,13 +1,13 @@
-import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
+import { fetcher, type PromiseWithError } from "@lib/fetcher";
 import { ApiErrorSchema } from "@/schemas/api-error";
 import { WeatherResponseSchema } from "./schema";
+import { WeatherServiceError } from "./service-error";
 import { parseWeather } from "./parse";
 import type { LocationCoords } from "@lib/geolocation";
 import type { Weather } from "@/types";
 import type { WeatherParams } from "./params";
 
 const ApiResponseSchema = WeatherResponseSchema.or(ApiErrorSchema);
-const WeatherError = new ServiceError("Weather");
 
 export const getWeather = async (
   coords: LocationCoords,
@@ -20,7 +20,7 @@ export const getWeather = async (
 
   const [error, data] = await fetcher(`/api/weather?${params.toString()}`, {
     schema: ApiResponseSchema,
-    serviceError: WeatherError,
+    serviceError: WeatherServiceError,
     checkStatus: false, // allows to read api endpoint errors in response
   });
 
