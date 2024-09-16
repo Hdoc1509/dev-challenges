@@ -1,11 +1,12 @@
 import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
-import { ForecastResponseSchema } from "./schema";
+import { ForecastErrorResponseSchema, ForecastResponseSchema } from "./schema";
 import { parseForecast } from "./parse";
 import { OPEN_METEO_API } from "@/config";
 import { FORECAST_PARAMS, type ForecastParams } from "./params";
 import type { LocationCoords } from "@lib/geolocation";
 import type { Forecast } from "@/types";
 
+const ResponseSchema = ForecastResponseSchema.or(ForecastErrorResponseSchema);
 const ForecastError = new ServiceError("Forecast");
 
 export const getForecast = async (
@@ -23,12 +24,15 @@ export const getForecast = async (
   const [error, data] = await fetcher(
     `${OPEN_METEO_API.URL}/forecast?${params.toString()}`,
     {
-      schema: ForecastResponseSchema,
+      schema: ResponseSchema,
       serviceError: ForecastError,
+      checkStatus: false, // allows to read open-meteo endpoint errors in response
     },
   );
 
   if (error) return [error];
+
+  if ("error" in data) return [new Error(data.reason)];
 
   return [null, parseForecast(data)];
 };

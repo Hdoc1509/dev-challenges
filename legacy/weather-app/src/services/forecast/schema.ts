@@ -26,3 +26,8 @@ export const ForecastResponseSchema = z.object({
   daily: DailySchema,
 });
 export type ForecastResponse = z.infer<typeof ForecastResponseSchema>;
+
+export const ForecastErrorResponseSchema = z.object({
+  error: z.literal(true),
+  reason: z.string(),
+});
