@@ -4,3 +4,9 @@ export class JobsEmptyResultsError extends Error {
     this.name = "JobsEmptyResultsError";
   }
 }
+
+export const isJobsEmptyResultsError = (error: Error) =>
+  error instanceof JobsEmptyResultsError;
+
+export const isJobsEmptyResultsMessage = (message: string) =>
+  message.includes("No jobs found");
