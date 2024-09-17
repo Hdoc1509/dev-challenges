@@ -1,5 +1,10 @@
 import { ServiceError } from "@lib/fetcher";
 
+export const JOBS_EMPTY_RESULTS = {
+  MESSAGE_PREFIX: "No jobs found for:",
+  STATE: "Fully empty",
+};
+
 export const JobsServiceError = new ServiceError("Jobs");
 
 export class JobsEmptyResultsError extends Error {
@@ -13,4 +18,4 @@ export const isJobsEmptyResultsError = (error: Error) =>
   error instanceof JobsEmptyResultsError;
 
 export const isJobsEmptyResultsMessage = (message: string) =>
-  message.includes("No jobs found");
+  message.includes(JOBS_EMPTY_RESULTS.MESSAGE_PREFIX);
