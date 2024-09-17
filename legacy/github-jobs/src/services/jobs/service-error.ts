@@ -1,7 +1,7 @@
 import { ServiceError } from "@lib/fetcher";
 
 export const JOBS_EMPTY_RESULTS = {
-  MESSAGE_PREFIX: "No jobs found for:",
+  MESSAGE_PREFIX: "No jobs found for",
   STATE: "Fully empty",
 };
 
