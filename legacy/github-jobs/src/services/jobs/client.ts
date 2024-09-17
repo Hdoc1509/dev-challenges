@@ -29,12 +29,13 @@ export const getJobs = async (search: Search): JobsServiceResult => {
 
   if (error) return [error];
 
-  if ("error" in data) {
-    if (data.error.match(/No jobs found/) != null)
-      return [new JobsEmptyResultsError(data.error)];
-
-    return [new Error(data.error)]; // api endpoint error
-  }
+  // api endpoint error
+  if ("error" in data)
+    return [
+      data.error.match(/No jobs found/) != null
+        ? new JobsEmptyResultsError(data.error)
+        : new Error(data.error),
+    ];
 
   return [
     null,

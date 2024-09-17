@@ -39,13 +39,13 @@ export const getJobs = async (
   if (error != null)
     return [is5xxError(error) ? JobsServiceError.internal() : error];
 
-  if ("error" in data) {
-    // serpapi endpoint error
-    if (data.search_information.jobs_results_state === "Fully empty")
-      return [new Error(`No jobs found for: ${query}`)];
-
-    return [new Error(data.error)];
-  }
+  // serpapi endpoint error
+  if ("error" in data)
+    return [
+      data.search_information.jobs_results_state === "Fully empty"
+        ? new Error(`No jobs found for: ${query}`)
+        : new Error(data.error),
+    ];
 
   return [null, data];
 };
