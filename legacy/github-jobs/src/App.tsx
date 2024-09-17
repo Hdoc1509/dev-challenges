@@ -2,7 +2,7 @@ import { useCallback, useEffect } from "react";
 import { useSearchStore } from "@/store/search";
 import { useJobs } from "@/hooks/useJobs";
 import { useRemainingSearches } from "./hooks/useRemainingSearches";
-import { JobsEmptyResultsError } from "./services/jobs/service-error";
+import { isJobsEmptyResultsError } from "./services/jobs/service-error";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { Footer } from "@lib/components/Footer";
 import { Header } from "@/components/Header";
@@ -23,7 +23,7 @@ function App() {
     const [searchError, searchResult] = await searchJobs(DEFAULT_SEARCH);
 
     if (searchError) {
-      if (searchError instanceof JobsEmptyResultsError) getRemainingSearches();
+      if (isJobsEmptyResultsError(searchError)) getRemainingSearches();
       return;
     }
 

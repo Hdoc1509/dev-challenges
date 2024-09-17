@@ -1,7 +1,7 @@
 import { useSearchStore } from "@/store/search";
 import { useJobs } from "@/hooks/useJobs";
 import { useRemainingSearches } from "@/hooks/useRemainingSearches";
-import { JobsEmptyResultsError } from "@/services/jobs/service-error";
+import { isJobsEmptyResultsError } from "@/services/jobs/service-error";
 import { isSameSearch } from "@/utils/search";
 import { Button } from "@hrc/button";
 import { Input } from "@hrc/input";
@@ -33,7 +33,7 @@ export const SearchForm = () => {
     const [searchError, searchResult] = await searchJobs(newSearch);
 
     if (searchError) {
-      if (searchError instanceof JobsEmptyResultsError) getRemainingSearches();
+      if (isJobsEmptyResultsError(searchError)) getRemainingSearches();
       setPages(0);
       return;
     }
