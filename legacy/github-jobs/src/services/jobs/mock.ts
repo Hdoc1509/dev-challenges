@@ -39,14 +39,12 @@ export const getMockedJobs = async (search: Search): JobsServiceResult => {
 
   await new Promise((r) => setTimeout(r, 1000));
 
-  if (filtered.length === 0)
-    return [new JobsEmptyResultsError(`No jobs found for: ${query}`)];
+  if (filtered.length === 0) return [new JobsEmptyResultsError({ query })];
 
   const sorted = filtered.sort(() => Math.random() - 0.5);
   const sliced = sorted.slice(0, endIndexSlice);
 
-  if (sliced.length === 0)
-    return [new JobsEmptyResultsError(`No jobs found for: ${query}`)];
+  if (sliced.length === 0) return [new JobsEmptyResultsError({ query })];
 
   return [
     null,

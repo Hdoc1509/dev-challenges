@@ -8,8 +8,8 @@ export const JOBS_EMPTY_RESULTS = {
 export const JobsServiceError = new ServiceError("Jobs");
 
 export class JobsEmptyResultsError extends Error {
-  constructor(message: string) {
-    super(message);
+  constructor({ query }: { query: string }) {
+    super(`${JOBS_EMPTY_RESULTS.MESSAGE_PREFIX}: ${query}`);
     this.name = "JobsEmptyResultsError";
   }
 }

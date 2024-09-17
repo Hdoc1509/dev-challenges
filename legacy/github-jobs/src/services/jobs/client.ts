@@ -36,7 +36,7 @@ export const getJobs = async (search: Search): JobsServiceResult => {
   if ("error" in data)
     return [
       isJobsEmptyResultsMessage(data.error)
-        ? new JobsEmptyResultsError(data.error)
+        ? new JobsEmptyResultsError({ query })
         : new Error(data.error),
     ];
 
