@@ -1,7 +1,11 @@
 import { fetcher, type PromiseWithError } from "@lib/fetcher";
 import { ApiErrorSchema } from "@/schemas/api-error";
 import { JobsResponseSchema } from "./schema";
-import { JobsServiceError, JobsEmptyResultsError } from "./service-error";
+import {
+  JobsServiceError,
+  JobsEmptyResultsError,
+  isJobsEmptyResultsMessage,
+} from "./service-error";
 import { parseJobs } from "./parse";
 import type { Job, Search } from "@/types";
 import type { JobsParams } from "./params";
@@ -31,7 +35,7 @@ export const getJobs = async (search: Search): JobsServiceResult => {
   // api endpoint error
   if ("error" in data)
     return [
-      data.error.match(/No jobs found/) != null
+      isJobsEmptyResultsMessage(data.error)
         ? new JobsEmptyResultsError(data.error)
         : new Error(data.error),
     ];
