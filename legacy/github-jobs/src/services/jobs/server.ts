@@ -7,7 +7,6 @@ import {
 import { JOBS_EMPTY_RESULTS, JobsServiceError } from "./service-error";
 import { SERPAPI } from "@/config";
 import { GET_JOBS_PARAMS, type JobsParams } from "./params";
-import locationsMock from "@/mocks/locations.json";
 import type { Search } from "@/types";
 
 const Schema = JobsResponseSchema.or(JobsErrorResponseSchema);
@@ -21,7 +20,7 @@ export const getJobs = async (
     // see @/mocks/jobs-up-to-date.json line 68
     q: fullTime ? `${query} full time` : query,
     api_key: SERPAPI.KEY,
-    location: location ?? locationsMock[0].canonical_name,
+    location,
   };
 
   if (nextPageToken != null) paramsOptions.next_page_token = nextPageToken;
