@@ -4,7 +4,11 @@ import {
   JobsErrorResponseSchema,
   type JobsResponse,
 } from "./schema";
-import { JOBS_EMPTY_RESULTS, JobsServiceError } from "./service-error";
+import {
+  JobsServiceError,
+  JobsEmptyResultsError,
+  JOBS_EMPTY_RESULTS,
+} from "./service-error";
 import { SERPAPI } from "@/config";
 import { GET_JOBS_PARAMS, type JobsParams } from "./params";
 import type { Search } from "@/types";
@@ -42,7 +46,7 @@ export const getJobs = async (
   if ("error" in data)
     return [
       data.search_information.jobs_results_state === JOBS_EMPTY_RESULTS.STATE
-        ? new Error(`No jobs found for: ${query}`)
+        ? new JobsEmptyResultsError({ query })
         : new Error(data.error),
     ];
 
