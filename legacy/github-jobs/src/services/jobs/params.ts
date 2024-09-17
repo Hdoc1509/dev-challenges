@@ -9,7 +9,6 @@ export type JobsParams = {
   server: SharedParams & {
     api_key: string;
     engine: typeof GET_JOBS_PARAMS.ENGINE;
-    // chips?: string;
   };
 };
 

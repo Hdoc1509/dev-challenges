@@ -13,10 +13,10 @@ export type JobsServiceSuccess = { jobs: Job[]; nextPageToken?: string };
 export type JobsServiceResult = PromiseWithError<JobsServiceSuccess>;
 
 export const getJobs = async (search: Search): JobsServiceResult => {
-  const { query, location, /* fullTime, */ nextPageToken } = search;
+  const { query, location, fullTime, nextPageToken } = search;
   const paramsOptions: JobsParams["client"] = { q: query, location };
 
-  // if (fullTime) paramsOptions.full_time = "";
+  if (fullTime) paramsOptions.full_time = "";
   if (nextPageToken != null) paramsOptions.next_page_token = nextPageToken;
 
   const params = new URLSearchParams(paramsOptions);

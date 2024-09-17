@@ -1,5 +1,5 @@
 import { useSearchStore } from "@/store/search";
-import { /* Checkbox, */ Input, RadioGroup } from "@hrc/input";
+import { Checkbox, Input, RadioGroup } from "@hrc/input";
 import { Icon } from "@hrc/material-icons";
 import { SEARCH_FORM_ID, predefinedCities } from "@/constants";
 import "./SearchOptions.scss";
@@ -10,13 +10,13 @@ export const SearchOptions = () => {
 
   return (
     <aside className="search-options">
-      {/* <Checkbox
+      <Checkbox
         label="Full time"
         form={SEARCH_FORM_ID}
         color="primary"
         onChange={(e) => setSearch({ fullTime: e.target.checked })}
         checked={search.fullTime ?? false}
-      /> */}
+      />
       <Input
         label="LOCATION"
         iconStart={<Icon name="public" />}

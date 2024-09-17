@@ -15,15 +15,15 @@ const Schema = JobsResponseSchema.or(JobsErrorResponseSchema);
 export const getJobs = async (
   search: Search,
 ): PromiseWithError<JobsResponse> => {
-  const { query, location, /* fullTime, */ nextPageToken } = search;
+  const { query, location, fullTime, nextPageToken } = search;
   const paramsOptions: JobsParams["server"] = {
     engine: GET_JOBS_PARAMS.ENGINE,
-    q: query,
+    // see @/mocks/jobs-up-to-date.json line 68
+    q: fullTime ? `${query} full time` : query,
     api_key: SERPAPI.KEY,
     location: location ?? locationsMock[0].canonical_name,
   };
 
-  // if (fullTime) paramsOptions.chips = "employment_type:FULLTIME";
   if (nextPageToken != null) paramsOptions.next_page_token = nextPageToken;
 
   const params = new URLSearchParams(paramsOptions);
