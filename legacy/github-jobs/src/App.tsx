@@ -2,7 +2,7 @@ import { useCallback, useEffect } from "react";
 import { useSearchStore } from "@/store/search";
 import { useJobs } from "@/hooks/useJobs";
 import { useRemainingSearches } from "./hooks/useRemainingSearches";
-import { JobsEmptyResultsError } from "./errors";
+import { JobsEmptyResultsError } from "./services/jobs/service-error";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { Footer } from "@lib/components/Footer";
 import { Header } from "@/components/Header";

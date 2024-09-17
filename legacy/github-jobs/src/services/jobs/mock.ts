@@ -1,4 +1,4 @@
-import { JobsEmptyResultsError } from "@/errors";
+import { JobsEmptyResultsError } from "./service-error";
 import { parseJobs } from "./parse";
 import { randomInt } from "@/utils/helpers";
 import jobsMock from "@/mocks/jobs.json";

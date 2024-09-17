@@ -3,7 +3,7 @@ import { useJobsStore } from "@/store/jobs";
 import { getJobs, type JobsServiceSuccess } from "@/services/jobs/client";
 import { getMockedJobs } from "@/services/jobs/mock";
 import { getLocationOption } from "@/utils/geolocation";
-import { JobsEmptyResultsError } from "@/errors";
+import { JobsEmptyResultsError } from "@/services/jobs/service-error";
 import { STATUS } from "@lib/fetcher";
 import { isDev } from "@/config";
 import type { Simplify } from "@hrc/type-utils";

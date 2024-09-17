@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import { useSearchStore, type StoreSearch } from "@/store/search";
 import { useJobs } from "@/hooks/useJobs";
 import { useRemainingSearches } from "@/hooks/useRemainingSearches";
-import { JobsEmptyResultsError } from "@/errors";
+import { JobsEmptyResultsError } from "@/services/jobs/service-error";
 import clsx from "clsx";
 import { isSameSearch } from "@/utils/search";
 import ReactPaginate from "react-paginate";

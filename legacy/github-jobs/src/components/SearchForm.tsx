@@ -1,7 +1,7 @@
 import { useSearchStore } from "@/store/search";
 import { useJobs } from "@/hooks/useJobs";
 import { useRemainingSearches } from "@/hooks/useRemainingSearches";
-import { JobsEmptyResultsError } from "@/errors";
+import { JobsEmptyResultsError } from "@/services/jobs/service-error";
 import { isSameSearch } from "@/utils/search";
 import { Button } from "@hrc/button";
 import { Input } from "@hrc/input";
