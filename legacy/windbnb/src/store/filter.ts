@@ -11,7 +11,7 @@ export type GuestType = "adults" | "children";
 
 type State = {
   filter: Filter;
-  location: SearchOptions["location"];
+  location?: SearchOptions["location"];
   guests: {
     adults: number;
     children: number;
@@ -27,18 +27,14 @@ type Action = {
   removeGuest: (type: GuestType) => void;
 };
 
-const initialState: State = {
+export const useFilterStore = create<State & Action>((set) => ({
   filter: null,
-  location: undefined,
   guests: {
     adults: 0,
     children: 0,
     total: 0,
   },
-};
 
-export const useFilterStore = create<State & Action>((set) => ({
-  ...initialState,
   setFilter: (filter) => set({ filter }),
   clearFilter: () => set({ filter: null }),
   setLocation: (location) => set({ location }),
