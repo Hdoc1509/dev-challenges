@@ -1,4 +1,4 @@
-import { useTodos } from "../hooks/useTodos";
+import { useTodosStore } from "../store/todos";
 import { Button } from "@hrc/button";
 import { Input } from "@hrc/input";
 import "./TodoForm.scss";
@@ -8,7 +8,7 @@ type FormFields = {
 };
 
 export const TodoForm = () => {
-  const { addTodo } = useTodos();
+  const addTodo = useTodosStore((s) => s.addTodo);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

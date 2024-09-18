@@ -1,13 +1,15 @@
 import { useMemo } from "react";
 import { useFilterStore } from "../store/filter";
-import { useTodos } from "../hooks/useTodos";
+import { useTodosStore } from "../store/todos";
 import { TodoItem } from "./TodoItem";
 import { FILTER_METHODS } from "../utils";
 import "./TodoList.scss";
 
 export const TodoList = () => {
-  const { todos, removeTodo, toggleCompleted } = useTodos();
+  const todos = useTodosStore((s) => s.todos);
   const filter = useFilterStore((s) => s.filter);
+  const toggleCompleted = useTodosStore((s) => s.toggleCompleted);
+  const removeTodo = useTodosStore((s) => s.removeTodo);
 
   const filteredTodos = useMemo(
     () => todos.filter((todo) => FILTER_METHODS[filter](todo)),

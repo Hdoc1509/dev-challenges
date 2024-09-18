@@ -1,10 +1,10 @@
-import { useTodos } from "../hooks/useTodos";
+import { useTodosStore } from "../store/todos";
 import { Button } from "@hrc/button";
 import { Icon } from "@hrc/material-icons";
 import "./GeneralActions.scss";
 
 export const GeneralActions = () => {
-  const { removeCompletedTodos } = useTodos();
+  const removeCompletedTodos = useTodosStore((s) => s.removeCompletedTodos);
 
   return (
     <Button
