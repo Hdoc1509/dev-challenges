@@ -1,20 +1,24 @@
+import { useMemo } from "react";
+import { useFilterStore } from "../store/filter";
 import { useTodos } from "../hooks/useTodos";
 import { TodoItem } from "./TodoItem";
-import type { Todo } from "../types";
+import { FILTER_METHODS } from "../utils";
 import "./TodoList.scss";
 
-type Props = {
-  todos: Todo[];
-};
+export const TodoList = () => {
+  const { todos, removeTodo, toggleCompleted } = useTodos();
+  const filter = useFilterStore((s) => s.filter);
 
-export const TodoList = ({ todos }: Props) => {
-  const { removeTodo, toggleCompleted } = useTodos();
+  const filteredTodos = useMemo(
+    () => todos.filter((todo) => FILTER_METHODS[filter](todo)),
+    [filter, todos],
+  );
 
-  if (todos.length === 0) return <span>No todos. ¯\_(ツ)_/¯</span>;
+  if (filteredTodos.length === 0) return <span>No todos. ¯\_(ツ)_/¯</span>;
 
   return (
     <ul className="todo-list">
-      {todos.map((todo) => (
+      {filteredTodos.map((todo) => (
         <TodoItem
           key={todo.id}
           todo={todo}
