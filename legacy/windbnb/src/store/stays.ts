@@ -10,21 +10,12 @@ type State = {
 };
 
 type Action = {
-  setStays: (stays: Stay[]) => void;
-  setStatus: (status: Status) => void;
-  setError: (error: Error) => void;
-  resetStatus: () => void;
   getStays: (options?: SearchOptions) => void;
 };
 
 export const useStaysStore = create<State & Action>((set) => ({
   stays: [],
   status: STATUS.IDLE,
-
-  setStays: (stays) => set({ stays }),
-  setStatus: (status) => set({ status }),
-  setError: (error) => set({ error }),
-  resetStatus: () => set({ status: STATUS.IDLE }),
 
   getStays: async (options: SearchOptions = {}) => {
     set({ status: STATUS.LOADING });
