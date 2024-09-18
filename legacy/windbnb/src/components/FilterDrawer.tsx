@@ -9,7 +9,7 @@ import "./FilterDrawer.scss";
 
 export const FilterDrawer = () => {
   const filter = useFilterStore((state) => state.filter);
-  const guests = useFilterStore((state) => state.guests.total);
+  const totalGuests = useFilterStore((state) => state.guests.total);
   const location = useFilterStore((state) => state.location);
   const clearFilter = useFilterStore((state) => state.clearFilter);
   const getStays = useStaysStore((s) => s.getStays);
@@ -19,7 +19,7 @@ export const FilterDrawer = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    void getStays({ guests, location });
+    void getStays({ guests: totalGuests, location });
     clearFilter();
   };
 

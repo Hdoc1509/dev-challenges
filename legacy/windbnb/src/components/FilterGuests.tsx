@@ -45,14 +45,14 @@ export const Criteria = ({ label, hint }: CriteriaProps) => {
 
 export const FilterGuests = ({ isSelected }: { isSelected?: boolean }) => {
   const setFilter = useFilterStore((state) => state.setFilter);
-  const guests = useFilterStore((state) => state.guests.total);
+  const totalGuests = useFilterStore((state) => state.guests.total);
 
   return (
     <>
       <FilterInput
         className="guests-input"
         label="Guests"
-        value={guests === 0 ? "" : `${guests} guests`}
+        value={totalGuests === 0 ? "" : `${totalGuests} guests`}
         name="guests"
         placeholder="Add guests"
         isSelected={isSelected}

@@ -7,11 +7,11 @@ import "./SearchBar.scss";
 
 export const SearchBar = () => {
   const location = useFilterStore((state) => state.location);
-  const guests = useFilterStore((state) => state.guests.total);
+  const totalGuests = useFilterStore((state) => state.guests.total);
   const setFilter = useFilterStore((state) => state.setFilter);
 
   const locationClass = clsx({ "with-value": location });
-  const guestsClass = clsx({ "with-value": guests > 0 });
+  const guestsClass = clsx({ "with-value": totalGuests > 0 });
 
   return (
     <ButtonGroup className="searchbar">
@@ -22,7 +22,7 @@ export const SearchBar = () => {
         {location ? `${stringifyLocation(location)}` : "Add location"}
       </Button>
       <Button className={guestsClass} onClick={() => setFilter(FILTERS.GUESTS)}>
-        {guests ? `${guests} guests` : "Add guests"}
+        {totalGuests ? `${totalGuests} guests` : "Add guests"}
       </Button>
       <ButtonIcon
         className="searchbar__search"
