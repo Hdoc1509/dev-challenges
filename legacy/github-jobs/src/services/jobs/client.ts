@@ -44,7 +44,7 @@ export const getJobs = async (search: Search): JobsServiceResult => {
     null,
     {
       jobs: parseJobs(data.jobs_results),
-      nextPageToken: data.serpapi_pagination.next_page_token,
+      nextPageToken: data.serpapi_pagination?.next_page_token,
     },
   ];
 };

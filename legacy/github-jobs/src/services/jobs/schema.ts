@@ -60,7 +60,7 @@ export type JobsResult = z.infer<typeof JobsResultSchema>;
 export const JobsResponseSchema = z.object({
   search_metadata: SearchMetadataSchema,
   search_parameters: SearchParametersSchema,
-  serpapi_pagination: SerpapiPaginationSchema,
+  serpapi_pagination: SerpapiPaginationSchema.optional(),
   jobs_results: z.array(JobsResultSchema),
 });
 export type JobsResponse = z.infer<typeof JobsResponseSchema>;
