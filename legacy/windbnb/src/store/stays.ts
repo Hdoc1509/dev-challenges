@@ -17,7 +17,7 @@ export const useStaysStore = create<State & Action>((set) => ({
   stays: [],
   status: STATUS.IDLE,
 
-  getStays: async (options: SearchOptions = {}) => {
+  getStays: async (options) => {
     set({ status: STATUS.LOADING });
 
     const [error, stays] = await searchStays(options);
