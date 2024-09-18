@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import { useFilterStore } from "../store/filter";
 import { useTodosStore } from "../store/todos";
 import { TodoItem } from "./TodoItem";
@@ -11,10 +10,7 @@ export const TodoList = () => {
   const toggleCompleted = useTodosStore((s) => s.toggleCompleted);
   const removeTodo = useTodosStore((s) => s.removeTodo);
 
-  const filteredTodos = useMemo(
-    () => todos.filter((todo) => FILTER_METHODS[filter](todo)),
-    [filter, todos],
-  );
+  const filteredTodos = todos.filter((todo) => FILTER_METHODS[filter](todo));
 
   if (filteredTodos.length === 0) return <span>No todos. ¯\_(ツ)_/¯</span>;
 
