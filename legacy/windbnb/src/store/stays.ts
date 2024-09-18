@@ -14,7 +14,7 @@ type Action = {
   setStatus: (status: Status) => void;
   setError: (error: Error) => void;
   resetStatus: () => void;
-  getStays: (options: SearchOptions) => void;
+  getStays: (options?: SearchOptions) => void;
 };
 
 export const useStaysStore = create<State & Action>((set) => ({
@@ -26,7 +26,7 @@ export const useStaysStore = create<State & Action>((set) => ({
   setError: (error) => set({ error }),
   resetStatus: () => set({ status: STATUS.IDLE }),
 
-  getStays: async (options: SearchOptions) => {
+  getStays: async (options: SearchOptions = {}) => {
     set({ status: STATUS.LOADING });
 
     const [error, stays] = await searchStays(options);
@@ -36,3 +36,6 @@ export const useStaysStore = create<State & Action>((set) => ({
     set({ stays, status: STATUS.SUCCESS });
   },
 }));
+
+// initialize store on module load
+useStaysStore.getState().getStays();
