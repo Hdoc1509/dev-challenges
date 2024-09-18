@@ -1,4 +1,4 @@
-import { useStays } from "@/hooks/useStays";
+import { useStaysStore } from "@/store/stays";
 import { Button } from "@hrc/button";
 import { Icon } from "@hrc/material-icons";
 import { FilterGuests } from "./FilterGuests";
@@ -8,11 +8,11 @@ import { FILTERS, useFilterStore } from "@/store/filter";
 import "./FilterDrawer.scss";
 
 export const FilterDrawer = () => {
-  const { getStays } = useStays();
   const filter = useFilterStore((state) => state.filter);
   const guests = useFilterStore((state) => state.guests.total);
   const location = useFilterStore((state) => state.location);
   const clearFilter = useFilterStore((state) => state.clearFilter);
+  const getStays = useStaysStore((s) => s.getStays);
 
   const isOpen = filter !== null;
 
