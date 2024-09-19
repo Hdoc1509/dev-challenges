@@ -1,5 +1,4 @@
 import type { ServiceError } from "./error";
-export type { Status } from "./status";
 
 export type PromiseWithError<T> = Promise<[Error] | [null, T]>;
 
