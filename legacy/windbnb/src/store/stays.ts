@@ -32,5 +32,15 @@ export const useStaysStore = create<State & Action>((set) => ({
   },
 }));
 
+export const useStaysFetchingSelector = () =>
+  useStaysStore(
+    (s) =>
+      ({
+        status: s.status,
+        error: s.error,
+        stays: s.stays,
+      }) as StoreFetchingState,
+  );
+
 // initialize store on module load
 useStaysStore.getState().getStays();
