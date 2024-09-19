@@ -1,15 +1,7 @@
 import { create } from "zustand";
 import { searchStays } from "@/services/stays";
-import { STATUS } from "@lib/fetcher";
+import { STATUS, type FetchingState } from "@lib/fetcher";
 import type { SearchOptions, Stay } from "@/types";
-
-type FetchingState<T extends Record<string, unknown>> =
-  | ({
-      status: typeof STATUS.IDLE | typeof STATUS.LOADING;
-      error?: Error;
-    } & Partial<T>)
-  | ({ status: typeof STATUS.SUCCESS; error?: Error } & T)
-  | ({ status: typeof STATUS.ERROR; error: Error } & Partial<T>);
 
 type StoreFetchingState = FetchingState<{ stays: Stay[] }>;
 type State = StoreFetchingState;
