@@ -1,11 +1,13 @@
-import { useQuestions } from "@/hooks/useQuestions";
+import { useQuestionStore } from "@/store/questions";
 import { getResultMessage } from "@/utils/helpers";
 import { Button } from "@hrc/button";
 import winnerUrl from "/winner.svg";
 import "./Results.scss";
 
 export const Results = () => {
-  const { questions, tryAgain } = useQuestions();
+  const questions = useQuestionStore((s) => s.questions);
+  const tryAgain = useQuestionStore((s) => s.tryAgain);
+
   const correct = questions.filter((q) => q.hasBeenAnsweredCorrectly).length;
 
   return (

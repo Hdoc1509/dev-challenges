@@ -1,4 +1,4 @@
-import { useQuestions } from "@/hooks/useQuestions";
+import { useQuestionStore } from "@/store/questions";
 import { clsx } from "clsx";
 import { Quiz } from "./Quiz";
 import { Results } from "./Results";
@@ -7,7 +7,10 @@ import { QuestionCategories, STATUS } from "@/constants";
 import "./QuizCard.scss";
 
 export const QuizCard = () => {
-  const { questions, currentQuestionIndex, status, error } = useQuestions();
+  const questions = useQuestionStore((s) => s.questions);
+  const currentQuestionIndex = useQuestionStore((s) => s.currentQuestionIndex);
+  const status = useQuestionStore((s) => s.status);
+  const error = useQuestionStore((s) => s.error);
 
   const question = questions[currentQuestionIndex];
 
