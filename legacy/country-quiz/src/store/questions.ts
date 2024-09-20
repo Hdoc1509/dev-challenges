@@ -1,27 +1,8 @@
 import { create } from "zustand";
 import { getQuestions } from "@/services/questions";
 import { STATUS } from "@/constants";
-import type { FetchingState } from "@lib/fetcher";
 import type { Question } from "../types";
-
-type StoreFetchingState =
-  | FetchingState<{ questions: Question[] }>
-  | {
-      status: typeof STATUS.OVER;
-      questions: Question[];
-      error?: never;
-    };
-type State = StoreFetchingState & {
-  currentQuestionIndex: number;
-};
-
-type Action = {
-  setQuestionsOver: () => void;
-  selectAnswer: (questionId: number, answer: string) => void;
-  goNextQuestion: () => void;
-  loadQuestions: () => Promise<void>;
-  tryAgain: () => void;
-};
+import type { StoreFetchingState, State, Action } from "./questions.types";
 
 const initialState: State = {
   status: STATUS.IDLE,
