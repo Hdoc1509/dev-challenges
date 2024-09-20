@@ -31,11 +31,7 @@ const Option = ({
   );
 };
 
-type Props = {
-  quiz: Question;
-};
-
-export const QuizOptions = ({ quiz }: Props) => {
+export const QuizOptions = ({ quiz }: { quiz: Question }) => {
   const selectAnswer = useQuestionStore((s) => s.selectAnswer);
 
   const { answerOptions, selectedAnswer, correctAnswer } = quiz;
