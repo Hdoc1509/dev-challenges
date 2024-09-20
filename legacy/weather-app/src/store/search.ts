@@ -11,11 +11,11 @@ type State = {
 };
 
 type Action = {
-  setSearch: (search: State["search"]) => void;
-  setLastSearch: (lastSearch: State["lastSearch"]) => void;
-  setStatus: (status: State["status"]) => void;
-  setError: (error: State["error"]) => void;
-  setResults: (results: State["results"]) => void;
+  setSearch: (search: string) => void;
+  setLastSearch: (lastSearch: string) => void;
+  setStatus: (status: Status) => void;
+  setError: (error: Error) => void;
+  setResults: (results: City[]) => void;
 };
 
 export const useSearchStore = create<State & Action>()((set) => ({
@@ -24,9 +24,9 @@ export const useSearchStore = create<State & Action>()((set) => ({
   status: STATUS.IDLE,
   error: null,
   results: [],
-  setSearch: (search: State["search"]) => set({ search }),
-  setLastSearch: (lastSearch: State["lastSearch"]) => set({ lastSearch }),
-  setStatus: (status: State["status"]) => set({ status }),
-  setError: (error: State["error"]) => set({ error }),
-  setResults: (results: State["results"]) => set({ results }),
+  setSearch: (search) => set({ search }),
+  setLastSearch: (lastSearch) => set({ lastSearch }),
+  setStatus: (status) => set({ status }),
+  setError: (error) => set({ error }),
+  setResults: (results) => set({ results }),
 }));
