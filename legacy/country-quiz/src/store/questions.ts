@@ -14,6 +14,7 @@ type Action = {
   setStatus: (status: Status) => void;
   setError: (error: Error) => void;
   setQuestions: (questions: Question[]) => void;
+  setQuestionsOver: () => void;
   selectAnswer: (questionId: number, answer: string) => void;
   goNextQuestion: () => void;
   reset: () => void;
@@ -34,6 +35,7 @@ export const useQuestionStore = create<State & Action>()((set, get) => {
     setStatus: (status: Status) => set({ status }),
     setError: (error: Error) => set({ error }),
     setQuestions: (questions: Question[]) => set({ questions }),
+    setQuestionsOver: () => set({ status: STATUS.OVER }),
     selectAnswer: (questionId: number, answer: string) => {
       const { questions } = get();
       const newQuestions = structuredClone(questions);

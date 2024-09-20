@@ -8,7 +8,7 @@ import "./Quiz.scss";
 export const Quiz = () => {
   const questions = useQuestionStore((s) => s.questions);
   const currentQuestionIndex = useQuestionStore((s) => s.currentQuestionIndex);
-  const setStatus = useQuestionStore((s) => s.setStatus);
+  const setQuestionsOver = useQuestionStore((s) => s.setQuestionsOver);
   const goNextQuestion = useQuestionStore((s) => s.goNextQuestion);
 
   const quiz = questions[currentQuestionIndex];
@@ -18,9 +18,8 @@ export const Quiz = () => {
   const isLastQuestion = currentQuestion === total;
   const { category, flagUrl, question, selectedAnswer } = quiz;
 
-  const handleAction = () => {
-    isLastQuestion ? setStatus("over") : goNextQuestion();
-  };
+  const handleAction = () =>
+    isLastQuestion ? setQuestionsOver() : goNextQuestion();
 
   return (
     <>
