@@ -1,4 +1,4 @@
-import { useRemainingSearchesStore } from "@/store/remaining-searches";
+import { useRemainingSearchesFetchingSelector } from "@/store/remaining-searches";
 import { Icon } from "@hrc/material-icons";
 import { RingSpinner } from "@hrc/spinner";
 import { Tooltip } from "./Tooltip";
@@ -18,11 +18,8 @@ function TooltipContent() {
 }
 
 export function RemainingSearches() {
-  const status = useRemainingSearchesStore((s) => s.status);
-  const error = useRemainingSearchesStore((s) => s.error);
-  const remainingSearches = useRemainingSearchesStore(
-    (s) => s.remainingSearches,
-  );
+  const { status, error, remainingSearches } =
+    useRemainingSearchesFetchingSelector();
 
   return (
     <div className="remaining-searches bold">
@@ -37,7 +34,7 @@ export function RemainingSearches() {
         trigger={<Icon name="help_outline" />}
       />
       {status === STATUS.ERROR && (
-        <span className="remaining-searches__error">{error?.message}</span>
+        <span className="remaining-searches__error">{error.message}</span>
       )}
     </div>
   );

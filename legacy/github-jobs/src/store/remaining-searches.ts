@@ -1,19 +1,15 @@
 import { create } from "zustand";
 import { getRemainingSearches } from "@/services/remaining-searches/client";
-import { STATUS, type Status } from "@lib/fetcher";
+import { STATUS, type FetchingState } from "@lib/fetcher";
 
-type State = {
-  remainingSearches: number | null;
-  error?: Error;
-  status: Status;
-};
+type StoreFetchingState = FetchingState<{ remainingSearches: number }>;
+type State = StoreFetchingState;
 
 type Action = {
   getRemainingSearches: () => Promise<void>;
 };
 
 export const useRemainingSearchesStore = create<State & Action>()((set) => ({
-  remainingSearches: null,
   status: STATUS.IDLE,
 
   getRemainingSearches: async () => {
@@ -26,6 +22,16 @@ export const useRemainingSearchesStore = create<State & Action>()((set) => ({
     set({ status: STATUS.SUCCESS, remainingSearches });
   },
 }));
+
+export const useRemainingSearchesFetchingSelector = () =>
+  useRemainingSearchesStore(
+    (s) =>
+      ({
+        status: s.status,
+        error: s.error,
+        remainingSearches: s.remainingSearches,
+      }) as StoreFetchingState,
+  );
 
 // initialize store on module load
 useRemainingSearchesStore.getState().getRemainingSearches();
