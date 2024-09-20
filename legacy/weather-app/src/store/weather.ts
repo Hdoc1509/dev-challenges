@@ -12,11 +12,6 @@ type State = {
 };
 
 type Action = {
-  setError: (error: Error) => void;
-  setWeather: (weather: Weather) => void;
-  setForecast: (forecast: Forecast[]) => void;
-  setUserLocation: (userLocation: LocationCoords) => void;
-  clearData: () => void;
   getWeather: (coords: LocationCoords) => Promise<Error | undefined>;
   getCurrentWeather: () => void;
 };
@@ -25,12 +20,6 @@ export const useWeatherStore = create<State & Action>()((set, get) => ({
   error: null,
   weather: null,
   forecast: null,
-
-  setError: (error: Error) => set({ error }),
-  setWeather: (weather: Weather) => set({ weather }),
-  setForecast: (forecast: Forecast[]) => set({ forecast }),
-  setUserLocation: (userLocation: LocationCoords) => set({ userLocation }),
-  clearData: () => set({ weather: null, forecast: null }),
 
   getWeather: async (coords) => {
     set({ weather: null, forecast: null });
