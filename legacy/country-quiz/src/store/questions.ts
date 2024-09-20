@@ -1,12 +1,17 @@
 import { create } from "zustand";
 import { getQuestions } from "@/services/questions";
 import { STATUS } from "@/constants";
-import type { Question, Status } from "../types";
+import type { FetchingState } from "@lib/fetcher";
+import type { Question } from "../types";
 
-type State = {
-  status: Status;
-  error?: Error;
-  questions: Question[];
+type StoreFetchingState =
+  | FetchingState<{ questions: Question[] }>
+  | {
+      status: typeof STATUS.OVER;
+      questions: Question[];
+      error?: never;
+    };
+type State = StoreFetchingState & {
   currentQuestionIndex: number;
 };
 
@@ -19,8 +24,7 @@ type Action = {
 };
 
 const initialState: State = {
-  status: "idle",
-  questions: [],
+  status: STATUS.IDLE,
   currentQuestionIndex: 0,
 };
 
@@ -31,7 +35,7 @@ export const useQuestionStore = create<State & Action>()((set, get) => {
     setQuestionsOver: () => set({ status: STATUS.OVER }),
     selectAnswer: (questionId: number, answer: string) => {
       const { questions } = get();
-      const newQuestions = structuredClone(questions);
+      const newQuestions = structuredClone(questions as Question[]);
       const questionIndex = newQuestions.findIndex((q) => q.id === questionId);
       const question = newQuestions[questionIndex];
 
@@ -47,9 +51,8 @@ export const useQuestionStore = create<State & Action>()((set, get) => {
       const { currentQuestionIndex, questions } = get();
       const newQuestionIndex = currentQuestionIndex + 1;
 
-      if (newQuestionIndex < questions.length) {
+      if (newQuestionIndex < questions!.length)
         set({ currentQuestionIndex: newQuestionIndex });
-      }
     },
 
     loadQuestions: async () => {
@@ -68,6 +71,16 @@ export const useQuestionStore = create<State & Action>()((set, get) => {
     },
   };
 });
+
+export const useQuestionFetchingSelector = () =>
+  useQuestionStore(
+    (s) =>
+      ({
+        status: s.status,
+        error: s.error,
+        questions: s.questions,
+      }) as StoreFetchingState,
+  );
 
 // intitialize store on module load
 useQuestionStore.getState().loadQuestions();

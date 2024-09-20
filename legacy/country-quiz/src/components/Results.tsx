@@ -2,10 +2,10 @@ import { useQuestionStore } from "@/store/questions";
 import { getResultMessage } from "@/utils/helpers";
 import { Button } from "@hrc/button";
 import winnerUrl from "/winner.svg";
+import type { Question } from "@/types";
 import "./Results.scss";
 
-export const Results = () => {
-  const questions = useQuestionStore((s) => s.questions);
+export const Results = ({ questions }: { questions: Question[] }) => {
   const tryAgain = useQuestionStore((s) => s.tryAgain);
 
   const correct = questions.filter((q) => q.hasBeenAnsweredCorrectly).length;

@@ -3,10 +3,10 @@ import { Button } from "@hrc/button";
 import { QuestionCategories } from "@/constants";
 import { QuizOptions } from "./QuizOptions";
 import characterUrl from "/character.svg";
+import type { Question } from "@/types";
 import "./Quiz.scss";
 
-export const Quiz = () => {
-  const questions = useQuestionStore((s) => s.questions);
+export const Quiz = ({ questions }: { questions: Question[] }) => {
   const currentQuestionIndex = useQuestionStore((s) => s.currentQuestionIndex);
   const setQuestionsOver = useQuestionStore((s) => s.setQuestionsOver);
   const goNextQuestion = useQuestionStore((s) => s.goNextQuestion);
