@@ -1,6 +1,6 @@
 import { useCallback, useEffect } from "react";
+import { useJobsStore } from "./store/jobs";
 import { useSearchStore } from "@/store/search";
-import { useJobs } from "@/hooks/useJobs";
 import { useRemainingSearchesStore } from "./store/remaining-searches";
 import { isJobsEmptyResultsError } from "./services/jobs/service-error";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
@@ -13,7 +13,7 @@ import { DEFAULT_SEARCH } from "@/constants";
 let didInit = false;
 
 function App() {
-  const { searchJobs } = useJobs();
+  const searchJobs = useJobsStore((s) => s.searchJobs);
   const getRemainingSearches = useRemainingSearchesStore(
     (s) => s.getRemainingSearches,
   );

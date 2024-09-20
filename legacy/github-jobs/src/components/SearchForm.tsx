@@ -1,5 +1,5 @@
 import { useSearchStore } from "@/store/search";
-import { useJobs } from "@/hooks/useJobs";
+import { useJobsStore } from "@/store/jobs";
 import { useRemainingSearchesStore } from "@/store/remaining-searches";
 import { isJobsEmptyResultsError } from "@/services/jobs/service-error";
 import { isSameSearch } from "@/utils/search";
@@ -7,11 +7,13 @@ import { Button } from "@hrc/button";
 import { Input } from "@hrc/input";
 import { Icon } from "@hrc/material-icons";
 import { SEARCH_FORM_ID } from "@/constants";
+import { STATUS } from "@lib/fetcher";
 import { isDev } from "@/config";
 import "./SearchForm.scss";
 
 export const SearchForm = () => {
-  const { isLoading, searchJobs } = useJobs();
+  const status = useJobsStore((s) => s.status);
+  const searchJobs = useJobsStore((s) => s.searchJobs);
   const getRemainingSearches = useRemainingSearchesStore(
     (s) => s.getRemainingSearches,
   );
@@ -63,7 +65,7 @@ export const SearchForm = () => {
           required
           fullWidth
         />
-        <Button color="primary" disabled={isLoading}>
+        <Button color="primary" disabled={status === STATUS.LOADING}>
           Search
         </Button>
       </form>

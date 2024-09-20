@@ -1,6 +1,6 @@
 import { useCallback } from "react";
+import { useJobsStore } from "@/store/jobs";
 import { useSearchStore, type StoreSearch } from "@/store/search";
-import { useJobs } from "@/hooks/useJobs";
 import { useRemainingSearchesStore } from "@/store/remaining-searches";
 import clsx from "clsx";
 import { isJobsEmptyResultsError } from "@/services/jobs/service-error";
@@ -8,10 +8,12 @@ import { isSameSearch } from "@/utils/search";
 import ReactPaginate from "react-paginate";
 import { Icon } from "@hrc/material-icons";
 import { Ellipsis } from "./Icons";
+import { STATUS } from "@lib/fetcher";
 import "./Pagination.scss";
 
 export const Pagination = () => {
-  const { isLoading, searchJobs } = useJobs();
+  const status = useJobsStore((s) => s.status);
+  const searchJobs = useJobsStore((s) => s.searchJobs);
   const getRemainingSearches = useRemainingSearchesStore(
     (s) => s.getRemainingSearches,
   );
@@ -23,6 +25,7 @@ export const Pagination = () => {
   const setLastSearch = useSearchStore((s) => s.setLastSearch);
   const setPages = useSearchStore((s) => s.setPages);
 
+  const isLoading = status === STATUS.LOADING;
   const className = clsx("jobs-pagination", { disabled: isLoading });
 
   const handlePageChange = useCallback(
