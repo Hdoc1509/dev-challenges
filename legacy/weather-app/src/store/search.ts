@@ -1,13 +1,10 @@
 import { create } from "zustand";
 import { searchCity } from "@/services/geolocation/client";
-import { STATUS, type Status } from "@lib/fetcher";
+import { STATUS, type FetchingState } from "@lib/fetcher";
 import type { City } from "@/types";
 
-type State = {
-  status: Status;
-  error: Error | null;
-  results: City[];
-};
+type StoreFetchingState = FetchingState<{ results: City[] }>;
+type State = StoreFetchingState;
 
 type Action = {
   searchLocation: (search: string) => Promise<void>;
@@ -16,8 +13,6 @@ type Action = {
 
 export const useSearchStore = create<State & Action>()((set) => ({
   status: STATUS.IDLE,
-  error: null,
-  results: [],
 
   searchLocation: async (search) => {
     set({ status: STATUS.LOADING });
@@ -30,5 +25,15 @@ export const useSearchStore = create<State & Action>()((set) => ({
   },
 
   removeResultById: (id) =>
-    set(({ results }) => ({ results: results.filter((r) => r.id !== id) })),
+    set(({ results }) => ({ results: results!.filter((r) => r.id !== id) })),
 }));
+
+export const useSearchFetchingSelector = () =>
+  useSearchStore(
+    (s) =>
+      ({
+        status: s.status,
+        error: s.error,
+        results: s.results,
+      }) as StoreFetchingState,
+  );

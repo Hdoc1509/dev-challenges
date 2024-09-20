@@ -1,5 +1,5 @@
 import { useSearchDrawerStore } from "@/store/search-drawer";
-import { useSearchStore } from "@/store/search";
+import { useSearchFetchingSelector } from "@/store/search";
 import { clsx } from "clsx";
 import { Icon } from "@hrc/material-icons";
 import { RingSpinner } from "@hrc/spinner";
@@ -9,9 +9,7 @@ import { STATUS } from "@lib/fetcher";
 import "./SearchDrawer.scss";
 
 export const SearchDrawer = () => {
-  const status = useSearchStore((s) => s.status);
-  const error = useSearchStore((s) => s.error);
-  const results = useSearchStore((s) => s.results);
+  const { status, error, results } = useSearchFetchingSelector();
   const isOpen = useSearchDrawerStore((s) => s.isOpen);
   const closeDrawer = useSearchDrawerStore((s) => s.closeDrawer);
 
@@ -24,7 +22,7 @@ export const SearchDrawer = () => {
       </div>
       <SearchForm disabled={!isOpen} />
       {status === STATUS.LOADING && <RingSpinner />}
-      {status === STATUS.ERROR && <p>{error?.message}</p>}
+      {status === STATUS.ERROR && <p>{error.message}</p>}
       {status === STATUS.SUCCESS && (
         <SearchResults
           results={results}
