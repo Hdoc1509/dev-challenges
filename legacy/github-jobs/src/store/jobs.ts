@@ -23,15 +23,6 @@ type State = {
 };
 
 type Action = {
-  setJobs: (jobs: Job[]) => void;
-  /** Save the jobs results to avoid making unnecessary requests
-   * **Used for pagination**
-   */
-  cacheJobs: (jobs: Job[]) => void;
-  clearCachedJobs: () => void;
-  setStatus: (status: Status) => void;
-  setError: (error: Error) => void;
-
   searchJobs: (search: JobSearch) => SearchResult;
 };
 
@@ -41,13 +32,6 @@ export const useJobsStore = create<State & Action>()((set, get) => ({
   jobs: [],
   cachedJobs: [],
   status: STATUS.IDLE,
-
-  setJobs: (jobs: Job[]) => set({ jobs }),
-  cacheJobs: (jobs: Job[]) =>
-    set(({ cachedJobs }) => ({ cachedJobs: cachedJobs.concat([jobs]) })),
-  clearCachedJobs: () => set({ cachedJobs: [] }),
-  setStatus: (status: Status) => set({ status }),
-  setError: (error: Error) => set({ error }),
 
   searchJobs: async (search) => {
     set({ status: STATUS.LOADING });
