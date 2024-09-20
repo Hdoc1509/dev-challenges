@@ -1,4 +1,4 @@
-import { useWeather } from "@/hooks/useWeather";
+import { useWeatherStore } from "@/store/weather";
 import Skeleton from "react-loading-skeleton";
 import { Meter } from "@/components/Meter";
 import { Wind } from "./Wind";
@@ -14,7 +14,7 @@ const Value = ({ value, unit }: { value?: number; unit: string }) => {
 };
 
 export const Highlights = () => {
-  const { weather } = useWeather();
+  const weather = useWeatherStore((s) => s.weather);
   const { wind, humidity, visibility, airPressure } = weather?.current ?? {};
 
   return (

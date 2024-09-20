@@ -1,9 +1,9 @@
-import { useWeather } from "@/hooks/useWeather";
+import { useWeatherStore } from "@/store/weather";
 import { ForecastItem } from "./ForecastItem";
 import "./Forecast.scss";
 
 export const Forecast = () => {
-  const { forecast } = useWeather();
+  const forecast = useWeatherStore((s) => s.forecast);
 
   return (
     <article className="forecast">

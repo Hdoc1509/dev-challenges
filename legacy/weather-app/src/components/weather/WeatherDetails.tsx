@@ -1,5 +1,5 @@
 import { useTemperatureUnitStore } from "@/store/temperature-unit";
-import { useWeather } from "@/hooks/useWeather";
+import { useWeatherStore } from "@/store/weather";
 import { getCurrentDate } from "@/utils/date";
 import { stringifyLocation } from "@/utils/location";
 import Skeleton from "react-loading-skeleton";
@@ -7,7 +7,7 @@ import { Icon } from "@hrc/material-icons";
 import "./WeatherDetails.scss";
 
 export const WeatherDetails = () => {
-  const { weather } = useWeather();
+  const weather = useWeatherStore((s) => s.weather);
   const temperatureUnit = useTemperatureUnitStore((s) => s.unit);
   const { current, location } = weather ?? {};
 

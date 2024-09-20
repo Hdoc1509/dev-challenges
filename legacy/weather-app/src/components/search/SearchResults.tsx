@@ -1,5 +1,5 @@
+import { useWeatherStore } from "@/store/weather";
 import { useSearchLocation } from "@/hooks/useSearchLocation";
-import { useWeather } from "@/hooks/useWeather";
 import { Button } from "@hrc/button";
 import { Icon } from "@hrc/material-icons";
 import type { City } from "@/types";
@@ -12,7 +12,7 @@ type Props = {
 
 export const SearchResults = ({ disabled, onClose }: Props) => {
   const { results, removeResultById } = useSearchLocation();
-  const { getWeather } = useWeather();
+  const getWeather = useWeatherStore((s) => s.getWeather);
 
   const handleSelect = async ({ latitude, longitude, id }: City) => {
     const coords = { latitude, longitude };

@@ -1,10 +1,10 @@
-import { useWeather } from "@/hooks/useWeather";
+import { useWeatherStore } from "@/store/weather";
 import { getWeatherIcon } from "@/utils/icons";
 import Skeleton from "react-loading-skeleton";
 import "./WeatherImage.scss";
 
 export function WeatherImage() {
-  const { weather } = useWeather();
+  const weather = useWeatherStore((s) => s.weather);
 
   return (
     <picture className="weather-image">

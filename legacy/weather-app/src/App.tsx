@@ -1,4 +1,4 @@
-import { useWeather } from "@/hooks/useWeather";
+import { useWeatherStore } from "./store/weather";
 import { Footer } from "@lib/components/Footer";
 import { CityWeather } from "@/components/weather/CityWeather";
 import { Forecast } from "@/components/forecast/Forecast";
@@ -8,7 +8,7 @@ import { SearchDrawer } from "@/components/search/SearchDrawer";
 import "./App.scss";
 
 function App() {
-  const { error } = useWeather();
+  const error = useWeatherStore((s) => s.error);
 
   if (error) {
     return (
