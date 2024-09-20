@@ -1,12 +1,9 @@
-import { useEffect } from "react";
 import { useRemainingSearchesStore } from "@/store/remaining-searches";
 import { Icon } from "@hrc/material-icons";
 import { RingSpinner } from "@hrc/spinner";
 import { Tooltip } from "./Tooltip";
 import { STATUS } from "@lib/fetcher";
 import "./RemainingSearches.scss";
-
-let didInit = false;
 
 function TooltipContent() {
   return (
@@ -26,16 +23,6 @@ export function RemainingSearches() {
   const remainingSearches = useRemainingSearchesStore(
     (s) => s.remainingSearches,
   );
-  const getRemainingSearches = useRemainingSearchesStore(
-    (s) => s.getRemainingSearches,
-  );
-
-  useEffect(() => {
-    if (!didInit) {
-      didInit = true;
-      getRemainingSearches();
-    }
-  }, [getRemainingSearches]);
 
   return (
     <div className="remaining-searches bold">

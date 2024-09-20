@@ -26,3 +26,6 @@ export const useRemainingSearchesStore = create<State & Action>()((set) => ({
     set({ status: STATUS.SUCCESS, remainingSearches });
   },
 }));
+
+// initialize store on module load
+useRemainingSearchesStore.getState().getRemainingSearches();
