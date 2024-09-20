@@ -9,21 +9,12 @@ type State = {
 };
 
 type Action = {
-  setRemainingSearches: (remainingSearches: number) => void;
-  setStatus: (status: Status) => void;
-  setError: (error: Error) => void;
-
   getRemainingSearches: () => Promise<void>;
 };
 
 export const useRemainingSearchesStore = create<State & Action>()((set) => ({
   remainingSearches: null,
   status: STATUS.IDLE,
-
-  setRemainingSearches: (remainingSearches: number) =>
-    set({ remainingSearches }),
-  setStatus: (status: Status) => set({ status }),
-  setError: (error: Error) => set({ error }),
 
   getRemainingSearches: async () => {
     set({ status: STATUS.LOADING });
