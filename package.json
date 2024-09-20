@@ -6,6 +6,7 @@
     "clean": "npkill",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "gen:vanilla": "hygen app vanilla",
+    "gen:react": "hygen app react",
     "gen:ssr": "hygen app ssr --ssr",
     "gen:service": "hygen service new"
   },

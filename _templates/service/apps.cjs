@@ -12,7 +12,7 @@ const getApps = (folders) =>
     .flat();
 
 // based on https://github.com/jondot/hygen/issues/395#issuecomment-1335110325
-const apps = getApps(["vanilla", "ssr"]).reduce((acc, dir) => {
+const apps = getApps(["vanilla", "ssr", "react"]).reduce((acc, dir) => {
   acc.push({ name: dir, value: dir });
   return acc;
 }, initialApps);
