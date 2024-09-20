@@ -1,32 +1,11 @@
 import { create } from "zustand";
-import { getJobs, type JobsServiceSuccess } from "@/services/jobs/client";
+import { getJobs } from "@/services/jobs/client";
 import { getMockedJobs } from "@/services/jobs/mock";
 import { getLocationOption } from "@/utils/geolocation";
 import { isJobsEmptyResultsError } from "@/services/jobs/service-error";
-import {
-  STATUS,
-  type PromiseWithError,
-  type FetchingState,
-} from "@lib/fetcher";
+import { STATUS } from "@lib/fetcher";
 import { isDev } from "@/config";
-import type { Simplify } from "@hrc/type-utils";
-import type { Job, Search, SetOptional } from "../types";
-
-type SearchResult = PromiseWithError<
-  Simplify<JobsServiceSuccess & { usedLocation: string; isCached?: boolean }>
->;
-type JobSearch = Simplify<
-  SetOptional<Search, "location"> & { clearCache?: boolean }
->;
-
-type StoreFetchingState = FetchingState<{ jobs: Job[] }>;
-type State = StoreFetchingState & {
-  cachedJobs: Job[][];
-};
-
-type Action = {
-  searchJobs: (search: JobSearch) => SearchResult;
-};
+import type { StoreFetchingState, State, Action } from "./jobs.types";
 
 const getJobsService = isDev ? getMockedJobs : getJobs;
 
