@@ -1,0 +1,16 @@
+---
+to: vanilla/<%= name %>/src/layouts/Layout.tsx
+---
+
+import { Footer, HeaderWithTheme as Header } from "@lib/components";
+import "./Layout.scss";
+
+export function Layout({ children }: React.PropsWithChildren) {
+  return (
+    <>
+      <Header />
+      {children}
+      <Footer />
+    </>
+  );
+}

@@ -1,0 +1,30 @@
+---
+to: vanilla/<%= name %>/src/layouts/Layout.scss
+---
+
+@use "@lib/sass-utils"; // font.scss and reset.scss
+
+:root {
+  --bg: #fff;
+  --text: #000;
+}
+
+[data-theme="dark"] {
+  --bg: #222;
+  --text: #fff;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+#root {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  min-height: 100vh;
+  min-height: 100svh;
+  padding-inline: 2rem;
+}

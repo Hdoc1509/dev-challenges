@@ -2,20 +2,14 @@
 to: vanilla/<%= name %>/src/App.tsx
 ---
 
-import { Footer, HeaderWithTheme as Header } from "@lib/components";
-<% if (locals.ssr == null) { -%>
-import "./App.scss";
-<% } -%>
+import { Layout } from "./layouts/Layout.tsx";
+import { Content } from "./components/Content.tsx";
 
 function App() {
   return (
-    <>
-      <Header title="<%= h.changeCase.title(name) %>" />
-      <main>
-        content
-      </main>
-      <Footer />
-    </>
+    <Layout>
+      <Content />
+    </Layout>
   );
 }
 
