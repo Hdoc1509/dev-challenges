@@ -1,4 +1,6 @@
 import { create } from "zustand";
+import { getQuestions } from "@/services/questions";
+import { STATUS } from "@/constants";
 import type { Question, Status } from "../types";
 
 type State = {
@@ -15,6 +17,8 @@ type Action = {
   selectAnswer: (questionId: number, answer: string) => void;
   goNextQuestion: () => void;
   reset: () => void;
+  loadQuestions: () => Promise<void>;
+  tryAgain: () => void;
 };
 
 const initialState: State = {
@@ -53,5 +57,23 @@ export const useQuestionStore = create<State & Action>()((set, get) => {
       }
     },
     reset: () => set(initialState),
+
+    loadQuestions: async () => {
+      set({ status: STATUS.LOADING });
+
+      const [error, questions] = await getQuestions(10);
+
+      if (error != null) return set({ status: STATUS.ERROR, error });
+
+      set({ status: STATUS.SUCCESS, questions });
+    },
+
+    tryAgain: () => {
+      set(initialState);
+      get().loadQuestions();
+    },
   };
 });
+
+// intitialize store on module load
+useQuestionStore.getState().loadQuestions();
