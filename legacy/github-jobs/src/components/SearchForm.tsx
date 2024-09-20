@@ -1,6 +1,6 @@
 import { useSearchStore } from "@/store/search";
 import { useJobs } from "@/hooks/useJobs";
-import { useRemainingSearches } from "@/hooks/useRemainingSearches";
+import { useRemainingSearchesStore } from "@/store/remaining-searches";
 import { isJobsEmptyResultsError } from "@/services/jobs/service-error";
 import { isSameSearch } from "@/utils/search";
 import { Button } from "@hrc/button";
@@ -12,7 +12,9 @@ import "./SearchForm.scss";
 
 export const SearchForm = () => {
   const { isLoading, searchJobs } = useJobs();
-  const { getRemainingSearches } = useRemainingSearches();
+  const getRemainingSearches = useRemainingSearchesStore(
+    (s) => s.getRemainingSearches,
+  );
   const search = useSearchStore((s) => s.search);
   const lastSearch = useSearchStore((s) => s.lastSearch);
   const userLocation = useSearchStore((s) => s.userLocation);

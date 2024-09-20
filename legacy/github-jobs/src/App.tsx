@@ -1,7 +1,7 @@
 import { useCallback, useEffect } from "react";
 import { useSearchStore } from "@/store/search";
 import { useJobs } from "@/hooks/useJobs";
-import { useRemainingSearches } from "./hooks/useRemainingSearches";
+import { useRemainingSearchesStore } from "./store/remaining-searches";
 import { isJobsEmptyResultsError } from "./services/jobs/service-error";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { Footer } from "@lib/components/Footer";
@@ -14,7 +14,9 @@ let didInit = false;
 
 function App() {
   const { searchJobs } = useJobs();
-  const { getRemainingSearches } = useRemainingSearches();
+  const getRemainingSearches = useRemainingSearchesStore(
+    (s) => s.getRemainingSearches,
+  );
   const setSearch = useSearchStore((s) => s.setSearch);
   const setUserLocation = useSearchStore((s) => s.setUserLocation);
   const setPages = useSearchStore((s) => s.setPages);
