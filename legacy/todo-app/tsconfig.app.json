@@ -1,7 +1,7 @@
 {
-  "extends": "../../tsconfig.app.json",
+  "extends": "../../tsconfig.app.react.json",
   "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo"
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.react.tsbuildinfo"
   },
   "include": ["src"]
 }
