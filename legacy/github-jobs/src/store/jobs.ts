@@ -3,7 +3,11 @@ import { getJobs, type JobsServiceSuccess } from "@/services/jobs/client";
 import { getMockedJobs } from "@/services/jobs/mock";
 import { getLocationOption } from "@/utils/geolocation";
 import { isJobsEmptyResultsError } from "@/services/jobs/service-error";
-import { STATUS, type PromiseWithError, type Status } from "@lib/fetcher";
+import {
+  STATUS,
+  type PromiseWithError,
+  type FetchingState,
+} from "@lib/fetcher";
 import { isDev } from "@/config";
 import type { Simplify } from "@hrc/type-utils";
 import type { Job, Search, SetOptional } from "../types";
@@ -15,11 +19,9 @@ type JobSearch = Simplify<
   SetOptional<Search, "location"> & { clearCache?: boolean }
 >;
 
-type State = {
-  jobs: Job[];
+type StoreFetchingState = FetchingState<{ jobs: Job[] }>;
+type State = StoreFetchingState & {
   cachedJobs: Job[][];
-  status: Status;
-  error?: Error;
 };
 
 type Action = {
@@ -29,7 +31,6 @@ type Action = {
 const getJobsService = isDev ? getMockedJobs : getJobs;
 
 export const useJobsStore = create<State & Action>()((set, get) => ({
-  jobs: [],
   cachedJobs: [],
   status: STATUS.IDLE,
 
@@ -81,3 +82,13 @@ export const useJobsStore = create<State & Action>()((set, get) => ({
     return [null, { ...jobsSearchResult, usedLocation: location }];
   },
 }));
+
+export const useJobsFetchingSelector = () =>
+  useJobsStore(
+    (s) =>
+      ({
+        status: s.status,
+        error: s.error,
+        jobs: s.jobs,
+      }) as StoreFetchingState,
+  );
