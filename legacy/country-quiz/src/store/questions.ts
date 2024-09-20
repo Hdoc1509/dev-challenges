@@ -11,13 +11,9 @@ type State = {
 };
 
 type Action = {
-  setStatus: (status: Status) => void;
-  setError: (error: Error) => void;
-  setQuestions: (questions: Question[]) => void;
   setQuestionsOver: () => void;
   selectAnswer: (questionId: number, answer: string) => void;
   goNextQuestion: () => void;
-  reset: () => void;
   loadQuestions: () => Promise<void>;
   tryAgain: () => void;
 };
@@ -32,9 +28,6 @@ export const useQuestionStore = create<State & Action>()((set, get) => {
   return {
     ...initialState,
 
-    setStatus: (status: Status) => set({ status }),
-    setError: (error: Error) => set({ error }),
-    setQuestions: (questions: Question[]) => set({ questions }),
     setQuestionsOver: () => set({ status: STATUS.OVER }),
     selectAnswer: (questionId: number, answer: string) => {
       const { questions } = get();
@@ -58,7 +51,6 @@ export const useQuestionStore = create<State & Action>()((set, get) => {
         set({ currentQuestionIndex: newQuestionIndex });
       }
     },
-    reset: () => set(initialState),
 
     loadQuestions: async () => {
       set({ status: STATUS.LOADING });
