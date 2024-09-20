@@ -48,6 +48,8 @@ export const useWeatherStore = create<State & Action>()((set, get) => ({
 
     if (userLocation != null) return getWeather(userLocation);
 
+    set({ weather: null, forecast: null });
+
     const [coordsError, coords] = await getCurrentCoords({ timeout: 8000 });
 
     if (coordsError) return set({ error: coordsError });
