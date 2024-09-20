@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { useSearchLocation } from "@/hooks/useSearchLocation";
+import { useSearchStore } from "@/store/search";
 import { Button } from "@hrc/button";
 import { Input } from "@hrc/input";
 import { Icon } from "@hrc/material-icons";
 import "./SearchForm.scss";
 
 export const SearchForm = ({ disabled }: { disabled: boolean }) => {
-  const { searchLocation } = useSearchLocation();
+  const searchLocation = useSearchStore((s) => s.searchLocation);
   const [search, setSearch] = useState("");
   const [lastSearch, setLastSearch] = useState("");
 

@@ -1,5 +1,5 @@
+import { useSearchStore } from "@/store/search";
 import { useWeatherStore } from "@/store/weather";
-import { useSearchLocation } from "@/hooks/useSearchLocation";
 import { Button } from "@hrc/button";
 import { Icon } from "@hrc/material-icons";
 import type { City } from "@/types";
@@ -8,10 +8,11 @@ import "./SearchResults.scss";
 type Props = {
   disabled: boolean;
   onClose: () => void;
+  results: City[];
 };
 
-export const SearchResults = ({ disabled, onClose }: Props) => {
-  const { results, removeResultById } = useSearchLocation();
+export const SearchResults = ({ results, disabled, onClose }: Props) => {
+  const removeResultById = useSearchStore((s) => s.removeResultById);
   const getWeather = useWeatherStore((s) => s.getWeather);
 
   const handleSelect = async ({ latitude, longitude, id }: City) => {
