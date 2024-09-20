@@ -1,3 +1,4 @@
+import { useSearchDrawerStore } from "@/store/search-drawer";
 import { useSearchStore } from "@/store/search";
 import { useWeatherStore } from "@/store/weather";
 import { Button } from "@hrc/button";
@@ -7,18 +8,18 @@ import "./SearchResults.scss";
 
 type Props = {
   disabled: boolean;
-  onClose: () => void;
   results: City[];
 };
 
-export const SearchResults = ({ results, disabled, onClose }: Props) => {
+export const SearchResults = ({ results, disabled }: Props) => {
+  const closeDrawer = useSearchDrawerStore((s) => s.closeDrawer);
   const removeResultById = useSearchStore((s) => s.removeResultById);
   const getWeather = useWeatherStore((s) => s.getWeather);
 
   const handleSelect = async ({ latitude, longitude, id }: City) => {
     const coords = { latitude, longitude };
 
-    onClose();
+    closeDrawer();
 
     const weatherError = await getWeather(coords);
 

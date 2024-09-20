@@ -24,11 +24,7 @@ export const SearchDrawer = () => {
       {status === STATUS.LOADING && <RingSpinner />}
       {status === STATUS.ERROR && <p>{error.message}</p>}
       {status === STATUS.SUCCESS && (
-        <SearchResults
-          results={results}
-          disabled={!isOpen}
-          onClose={closeDrawer}
-        />
+        <SearchResults results={results} disabled={!isOpen} />
       )}
     </div>
   );
