@@ -1,6 +1,7 @@
 ---
 to: <%= app %>/src/services/<%= service %>/schema.ts
 ---
+
 <%
   ServiceName = h.changeCase.pascal(service)
   ServiceResponseSchema = `${ServiceName}Schema`

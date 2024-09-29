@@ -1,4 +1,5 @@
 ---
 to: "<%= ! with_server ? `${app}/src/services/${service}/${h.isSSR(app) ? 'client' : 'request'}.http` : null %>"
 ---
+
 GET <%= api_url %>?param=value

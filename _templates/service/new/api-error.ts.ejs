@@ -2,6 +2,7 @@
 to: "<%= with_server ? `${app}/src/schemas/api-error.ts` : null %>"
 unless_exists: true
 ---
+
 import { z } from "zod";
 
 export const ApiErrorSchema = z.object({ error: z.string() });

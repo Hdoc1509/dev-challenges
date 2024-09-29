@@ -1,6 +1,7 @@
 ---
 to: "<%= `${app}/src/services/${service}/${h.isSSR(app) ? 'client' : 'index'}.ts` %>"
 ---
+
 <%
   ServiceName = h.changeCase.pascal(service)
   ServiceResponseSchema = `${ServiceName}Schema`
