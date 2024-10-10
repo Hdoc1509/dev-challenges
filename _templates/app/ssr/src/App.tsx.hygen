@@ -1,0 +1,5 @@
+---
+to: ssr/<%= name %>/src/App.tsx
+---
+
+<%- include(`${templates}/app/shared/App.tsx.hygen`) %>

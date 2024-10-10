@@ -1,0 +1,5 @@
+---
+to: ssr/<%= name %>/README.md
+---
+
+<%- include(`${templates}/app/shared/README.md.hygen`) %>

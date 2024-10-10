@@ -30,11 +30,7 @@ export const get<%= ServiceName %> = async (): PromiseWithError<<%= ServiceRespo
   const params = new URLSearchParams({ param: "value" })
 
   const [error, data] = await fetcher(`${API_URL}?${params.toString()}`, {
-<% if (!check_status) { -%>
-    schema: ResponseSchema,
-<% } else { -%>
-    schema: <%= ServiceResponseSchema %>,
-<% } -%>
+    schema: <%= ! check_status ? "ResponseSchema" : ServiceResponseSchema %>,
     serviceError: <%= ServiceError %>,
 <% if (!check_status) { -%>
     checkStatus: false, // allows to read api endpoint errors in response body

@@ -7,6 +7,7 @@ to: "<%= `${app}/src/services/${service}/${h.isSSR(app) ? 'client' : 'index'}.ts
   ServiceResponseSchema = `${ServiceName}Schema`
   ServiceParser = `parse${ServiceName}`
   ServiceError = `${ServiceName}Error`
+  ServiceURL = with_server ? `/api/${service}` : "${API_URL}"
 -%>
 import { ServiceError, fetcher, type PromiseWithError } from "@lib/fetcher";
 <% if (with_server) { -%>
@@ -19,20 +20,15 @@ import { <%= ServiceParser %> } from "./parser";
 <% if (!with_server) { -%>
 
 const API_URL = "<%= api_url %>";
-
 <% } -%>
 
 const ApiResponseSchema = <%= ServiceResponseSchema %>.or(ApiErrorSchema);
 const <%= ServiceError %> = new ServiceError("<%= ServiceName %>");
 
 export const get<%= ServiceName %> = async (): PromiseWithError<any> => {
-  const params = new URLSearchParams({ param: "value" })
+  const params = new URLSearchParams({ param: "value" });
 
-<% if (with_server) { -%>
-  const [error, data] = await fetcher(`/api/<%= service %>?${params.toString()}`, {
-<% } else { -%>
-  const [error, data] = await fetcher(`${API_URL}?${params.toString()}`, {
-<% } -%>
+  const [error, data] = await fetcher(`<%= ServiceURL %>?${params.toString()}`, {
     schema: ApiResponseSchema,
     serviceError: <%= ServiceError %>,
 <% if (with_server || !check_status) { -%>
@@ -40,15 +36,15 @@ export const get<%= ServiceName %> = async (): PromiseWithError<any> => {
 <% } -%>
   });
 
-  if (error) return [error]
+  if (error) return [error];
 
 <% if (with_server) { -%>
-  if ("error" in data) return [new Error(data.error)] // api endpoint error
+  if ("error" in data) return [new Error(data.error)]; // api endpoint error
 
 <% } -%>
 <% if (with_parser) { -%>
-  return [null, <%= ServiceParser %>(data)]
+  return [null, <%= ServiceParser %>(data)];
 <% } else { -%>
-  return [null, data]
+  return [null, data];
 <% } -%>
 }
