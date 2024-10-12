@@ -40,7 +40,7 @@ const LocationMenu = ({ options }: { options: Location[] }) => {
 };
 
 export const FilterLocation = ({ isSelected }: { isSelected?: boolean }) => {
-  const { options, status } = useLocationOptionsFetchingSelector();
+  const { options, status, error } = useLocationOptionsFetchingSelector();
   const { getOptions, resetStatus } = useLocationOptionsActions();
   const location = useFilterStore((state) => state.location);
   const setFilter = useFilterStore((state) => state.setFilter);
@@ -62,6 +62,11 @@ export const FilterLocation = ({ isSelected }: { isSelected?: boolean }) => {
       />
       {status === STATUS.LOADING && (
         <RingSpinner className="location-spinner" />
+      )}
+      {status === STATUS.ERROR && (
+        <p className="location-error">
+          <span>{error.message}</span>
+        </p>
       )}
       {status === STATUS.SUCCESS && <LocationMenu options={options} />}
     </>

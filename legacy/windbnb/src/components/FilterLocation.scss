@@ -47,3 +47,17 @@
   --spinner-size: 40px;
   margin: 30px auto;
 }
+
+.location-error > span {
+  background-color: rgba(255, 0, 0, var(--_error-opacity, 0.2));
+  border-radius: 4px;
+  padding: 0.1em 0.5em;
+
+  color: var(--_error-text, #5f2120);
+  font-weight: 500;
+
+  [data-theme="dark"] & {
+    --_error-opacity: 0.15;
+    --_error-text: #f4c7c7;
+  }
+}
