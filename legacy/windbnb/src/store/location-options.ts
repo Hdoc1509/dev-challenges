@@ -1,13 +1,10 @@
 import { create } from "zustand";
 import { getLocationOptions } from "@/services/location-options";
-import { STATUS, type Status } from "@lib/fetcher";
+import { STATUS, type FetchingState } from "@lib/fetcher";
 import type { Location } from "@/types";
 
-type State = {
-  options: Location[];
-  status: Status;
-  error?: Error;
-};
+type StoreFetchingState = FetchingState<{ options: Location[] }>;
+type State = StoreFetchingState;
 
 type Action = {
   getOptions: () => void;
@@ -15,7 +12,6 @@ type Action = {
 };
 
 const useLocationOptionsStore = create<State & Action>()((set) => ({
-  options: [],
   status: STATUS.IDLE,
 
   getOptions: async () => {
@@ -31,11 +27,14 @@ const useLocationOptionsStore = create<State & Action>()((set) => ({
 }));
 
 export const useLocationOptionsFetchingSelector = () =>
-  useLocationOptionsStore((s) => ({
-    status: s.status,
-    error: s.error,
-    options: s.options,
-  }));
+  useLocationOptionsStore(
+    (s) =>
+      ({
+        status: s.status,
+        error: s.error,
+        options: s.options,
+      }) as StoreFetchingState,
+  );
 
 export const useLocationOptionsActions = () =>
   useLocationOptionsStore((s) => ({
