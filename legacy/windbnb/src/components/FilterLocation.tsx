@@ -1,11 +1,15 @@
 import { useEffect } from "react";
-import { useLocationOptions } from "@/hooks/useLocationOptions";
+import {
+  useLocationOptionsActions,
+  useLocationOptionsFetchingSelector,
+} from "@/store/location-options";
 import { Button } from "@hrc/button";
 import { Icon } from "@hrc/material-icons";
 import { RingSpinner } from "@hrc/spinner/dist/RingSpinner";
 import { FilterInput } from "./FilterInput";
 import { FILTERS, useFilterStore } from "@/store/filter";
 import { stringifyLocation } from "@/utils";
+import { STATUS } from "@lib/fetcher";
 import type { Location } from "@/types";
 import "./FilterLocation.scss";
 
@@ -36,8 +40,8 @@ const LocationMenu = ({ options }: { options: Location[] }) => {
 };
 
 export const FilterLocation = ({ isSelected }: { isSelected?: boolean }) => {
-  const { options, isLoading, isSuccess, resetStatus, getOptions } =
-    useLocationOptions();
+  const { options, status } = useLocationOptionsFetchingSelector();
+  const { getOptions, resetStatus } = useLocationOptionsActions();
   const location = useFilterStore((state) => state.location);
   const setFilter = useFilterStore((state) => state.setFilter);
 
@@ -56,8 +60,10 @@ export const FilterLocation = ({ isSelected }: { isSelected?: boolean }) => {
         isSelected={isSelected}
         onClick={() => setFilter(FILTERS.LOCATION)}
       />
-      {isLoading && <RingSpinner className="location-spinner" />}
-      {isSuccess && <LocationMenu options={options} />}
+      {status === STATUS.LOADING && (
+        <RingSpinner className="location-spinner" />
+      )}
+      {status === STATUS.SUCCESS && <LocationMenu options={options} />}
     </>
   );
 };
