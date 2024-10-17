@@ -14,7 +14,7 @@
 
 ## Deploy status
 
-[![Deploy challenges](https://github.com/Hdoc1509/dev-challenges/actions/workflows/deploy.yml/badge.svg)](https://github.com/Hdoc1509/dev-challenges/actions/workflows/deploy.yml)
+[![Deploy challenges][deploy]](https://github.com/Hdoc1509/dev-challenges/actions/workflows/deploy.yml)
 
 ## Overview
 
@@ -61,3 +61,5 @@ cd dev-challenges && pnpm install
 cd apps/<%= name %>/
 pnpm run dev --open
 ```
+
+[deploy]: https://github.com/Hdoc1509/dev-challenges/actions/workflows/deploy.yml/badge.svg
