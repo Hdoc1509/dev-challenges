@@ -1,0 +1,56 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* font sizes */
+  --header-fs: 1.25rem;
+  --tab-text-fs: 0.875rem;
+  --body-text-fs: 1rem;
+  --label-text-fs: 0.75rem;
+
+  /* colors */
+  --primary: #652CD1;
+  --primary-light: #845EEE;
+  --text: #E5E7EB;
+  --label-text: #4D5562:
+  --placeholder-text: #A1A1A9;
+  --input-bg-selected: #394050;
+  --card-bg: #212936;
+  --card-max-width: 460px;
+  --card-padding: 40px; /* transform to rem */
+  --card-gap: 36px;
+
+  --options-gap: 24px;
+  --action-button-margin-top: auto;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}

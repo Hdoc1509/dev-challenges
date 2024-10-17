@@ -15,6 +15,9 @@ catalogs:
     '@astrojs/react':
       specifier: 3.3.4
       version: 3.3.4
+    '@fontsource-variable/inter':
+      specifier: 5.1.0
+      version: 5.1.0
     '@fontsource-variable/montserrat':
       specifier: 5.0.17
       version: 5.0.17
@@ -27,6 +30,9 @@ catalogs:
     '@fontsource-variable/raleway':
       specifier: 5.0.19
       version: 5.0.19
+    '@fontsource/inter':
+      specifier: 5.1.0
+      version: 5.1.0
     '@fontsource/montserrat':
       specifier: 5.0.17
       version: 5.0.17
@@ -801,6 +807,18 @@ importers:
         specifier: '*'
         version: 1.65.0
 
+  vanilla/multi-step-form:
+    devDependencies:
+      '@fontsource-variable/inter':
+        specifier: 'catalog:'
+        version: 5.1.0
+      '@fontsource/inter':
+        specifier: 'catalog:'
+        version: 5.1.0
+      vite:
+        specifier: 'catalog:'
+        version: 5.0.2(@types/node@20.5.0)(sass@1.65.0)
+
 packages:
 
   '@ampproject/remapping@2.2.1':
@@ -1431,6 +1449,9 @@ packages:
     resolution: {integrity: sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
+  '@fontsource-variable/inter@5.1.0':
+    resolution: {integrity: sha512-Wj2dUGP0vUpxRGQTXQTCNJO+aLcFcQm+gUPXfj/aS877bQkEPBPv9JvZJpwdm2vzelt8NTZ+ausKlBCJjh2XIg==}
+
   '@fontsource-variable/montserrat@5.0.17':
     resolution: {integrity: sha512-kRPFY+sLUPE4fGTkuHu6phebYTwizsbGVIvqYa2vysRLPKUxwoiy1lb9Z4Qul8qoVspXnl0b9zA5LSn0scD9vA==}
 
@@ -1442,6 +1463,9 @@ packages:
 
   '@fontsource-variable/raleway@5.0.19':
     resolution: {integrity: sha512-HR6JDmRqrjjkZnk0HhVR0vHCkDUuQdEwTaRz1nToWvej0gpC0riEdi7zmaQjaH12O7PBsO+bewqQFSUrA7tDhA==}
+
+  '@fontsource/inter@5.1.0':
+    resolution: {integrity: sha512-zKZR3kf1G0noIes1frLfOHP5EXVVm0M7sV/l9f/AaYf+M/DId35FO4LkigWjqWYjTJZGgplhdv4cB+ssvCqr5A==}
 
   '@fontsource/montserrat@5.0.17':
     resolution: {integrity: sha512-3V3F8GqeN8wawLmAkAfTCYsBYRKu+JLm6ivWWX/v0dCYYPcwtQX0h5Z8j68N1YumuT75MqrghqU42w9DnFHojQ==}
@@ -5021,6 +5045,8 @@ snapshots:
 
   '@eslint/js@8.57.0': {}
 
+  '@fontsource-variable/inter@5.1.0': {}
+
   '@fontsource-variable/montserrat@5.0.17': {}
 
   '@fontsource-variable/mulish@5.0.18': {}
@@ -5028,6 +5054,8 @@ snapshots:
   '@fontsource-variable/noto-sans-jp@5.0.19': {}
 
   '@fontsource-variable/raleway@5.0.19': {}
+
+  '@fontsource/inter@5.1.0': {}
 
   '@fontsource/montserrat@5.0.17': {}
 
