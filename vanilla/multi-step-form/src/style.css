@@ -18,6 +18,7 @@
   --primary: #652cd1;
   --primary-light: #845eee;
   --text: #e5e7eb;
+  --bg: #121826;
   --label-text: #4d5562;
   --placeholder-text: #a1a1a9;
 
@@ -40,6 +41,8 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
 }
 
 .stepper {
