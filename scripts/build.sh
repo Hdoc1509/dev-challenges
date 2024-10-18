@@ -1,5 +1,4 @@
-mkdir dist
-mkdir dist/legacy
+mkdir --parents dist/legacy
 
 build_cmd=(pnpm)
 # items refers to `name` field in package.json
