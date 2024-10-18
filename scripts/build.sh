@@ -15,6 +15,8 @@ if ! "${build_cmd[@]}"; then
   exit 1
 fi
 
+echo
+
 for dist in {legacy,vanilla}/*/dist; do
   app_name="$(basename "$(dirname "$dist")")"
 
