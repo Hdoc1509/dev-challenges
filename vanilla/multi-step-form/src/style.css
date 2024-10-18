@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Inter", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -29,6 +29,11 @@
 
   --options-gap: 24px;
   --action-button-margin-top: auto;
+}
+@supports (font-variation-settings: normal) {
+  :root {
+    font-family: "Inter Variable", sans-serif;
+  }
 }
 
 body {
