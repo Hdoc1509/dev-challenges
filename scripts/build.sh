@@ -15,17 +15,26 @@ if ! "${build_cmd[@]}"; then
   exit 1
 fi
 
+get_challenge_title() {
+  local app_path="$1"
+  head --lines=1 "$app_path/README.md" |
+    awk -F ">" '{ print $2 }' |
+    awk -F "<" '{ print $1 }'
+}
+
 echo
 
 for dist in {legacy,vanilla}/*/dist; do
-  app_name="$(basename "$(dirname "$dist")")"
+  app_path="$(dirname "$dist")"
+  app_dirname="$(basename "$app_path")"
+  challenge_title="$(get_challenge_title "$app_path")"
 
   if echo "$dist" | grep --quiet "legacy"; then
-    echo "App dirname: $app_name (legacy)"
-    mv --verbose "$dist" dist/legacy/"$app_name"
+    echo "[== $challenge_title ==] (legacy)"
+    mv --verbose "$dist" dist/legacy/"$app_dirname"
   else
-    echo "App dirname: $app_name"
-    mv --verbose "$dist" dist/"$app_name"
+    echo "[== $challenge_title ==]"
+    mv --verbose "$dist" dist/"$app_dirname"
   fi
 
   echo
