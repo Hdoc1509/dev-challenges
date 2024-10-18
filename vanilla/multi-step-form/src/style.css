@@ -17,12 +17,13 @@
   /* colors */
   --primary: #652cd1;
   --primary-light: #845eee;
+  --primary-transparent: #652cd160;
   --text: #e5e7eb;
   --bg: #121826;
   --label-text: #4d5562;
   --placeholder-text: #a1a1a9;
 
-  --input-bg-selected: #394050;
+  --checkbox-bg-selected: #394150;
   --card-bg: #212936;
   --card-max-width: 460px;
   --card-padding: 40px; /* transform to rem */
