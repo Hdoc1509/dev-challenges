@@ -54,28 +54,28 @@
         <button id="go-nex-step" class="action-button">Continue</button>
         <button class="hidden action-button" disabled>Confirm</button>
       </form>
-      <footer>
-        <p>Step <span id="current-step">1</span> of 3</p>
-        <ol class="stepper" role="list">
-          <li>
-            <span
-              class="stepper__step"
-              aria-current="step"
-              data-step="1"
-              data-current
-            >
-              Step 1
-            </span>
-          </li>
-          <li>
-            <span class="stepper__step" data-step="2">Step 2</span>
-          </li>
-          <li>
-            <span class="stepper__step" data-step="3">Step 3</span>
-          </li>
-        </ol>
-      </footer>
     </main>
+    <footer>
+      <p>Step <span id="current-step">1</span> of 3</p>
+      <ol class="stepper" role="list">
+        <li>
+          <span
+            class="stepper__step"
+            aria-current="step"
+            data-step="1"
+            data-current
+          >
+            Step 1
+          </span>
+        </li>
+        <li>
+          <span class="stepper__step" data-step="2">Step 2</span>
+        </li>
+        <li>
+          <span class="stepper__step" data-step="3">Step 3</span>
+        </li>
+      </ol>
+    </footer>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
