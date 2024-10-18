@@ -15,13 +15,16 @@ if ! "${build_cmd[@]}"; then
   exit 1
 fi
 
-for dist in legacy/*/dist; do
+for dist in {legacy,vanilla}/*/dist; do
   app_name="$(basename "$(dirname "$dist")")"
 
-  echo "Checking $dist"
-  echo "App (legacy) dirname: $app_name"
-
-  mv --verbose "$dist" dist/legacy/"$app_name"
+  if echo "$dist" | grep --quiet "legacy"; then
+    echo "App dirname: $app_name (legacy)"
+    mv --verbose "$dist" dist/legacy/"$app_name"
+  else
+    echo "App dirname: $app_name"
+    mv --verbose "$dist" dist/"$app_name"
+  fi
 
   echo
 done
