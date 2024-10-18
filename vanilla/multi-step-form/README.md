@@ -27,8 +27,8 @@ creating a 3-step registration form with distinct sections, allowing you to test
 and improve your JavaScript proficiency.
 
 - [ ] Create a multi-step registration page that matches the given design.
-- [ ] Use HTML to create the basic structure.
-- [ ] Add form, inputs, buttons, stepper,... according to the design.
+- [x] Use HTML to create the basic structure.
+- [x] Add form, inputs, buttons, stepper,... according to the design.
 - [ ] Add validations to the inputs: name and email input should be required and
       email input should only accept email format.
 - [ ] Use Vanilla JavaScript to add interactivity.
