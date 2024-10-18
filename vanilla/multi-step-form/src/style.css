@@ -77,6 +77,12 @@ body:after {
   background-position: bottom calc(var(--_img-size) * -0.5) right
     calc(var(--_img-size) * -0.5);
 }
+@media (max-width: 768px) {
+  body:before,
+  body:after {
+    --_img-size: 75vw;
+  }
+}
 
 .form-card {
   position: relative;
