@@ -68,7 +68,7 @@ git clone https://github.com/Hdoc1509/dev-challenges
 # install workspace dependencies
 cd dev-challenges && pnpm install
 
-# Run button-component in dev-mode
+# Run multi-step-form in dev-mode
 cd vanilla/multi-step-form
 pnpm run dev --open
 ```
