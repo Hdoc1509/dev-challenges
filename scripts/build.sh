@@ -1,7 +1,17 @@
 mkdir dist
 mkdir dist/legacy
 
-if ! pnpm --filter=!quote-generator --filter=!weather-app --filter=!github-jobs build; then
+build_cmd=(pnpm)
+# items refers to `name` field in package.json
+ignored_apps=(quote-generator weather-app github-jobs)
+
+for item in "${ignored_apps[@]}"; do
+  build_cmd+=(--filter=!"$item")
+done
+
+build_cmd+=(build)
+
+if ! "${build_cmd[@]}"; then
   echo "ERROR: failed while building. Aborting."
   exit 1
 fi
