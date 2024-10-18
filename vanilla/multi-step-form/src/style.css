@@ -15,11 +15,12 @@
   --label-text-fs: 0.75rem;
 
   /* colors */
-  --primary: #652CD1;
-  --primary-light: #845EEE;
-  --text: #E5E7EB;
-  --label-text: #4D5562:
-  --placeholder-text: #A1A1A9;
+  --primary: #652cd1;
+  --primary-light: #845eee;
+  --text: #e5e7eb;
+  --label-text: #4d5562;
+  --placeholder-text: #a1a1a9;
+
   --input-bg-selected: #394050;
   --card-bg: #212936;
   --card-max-width: 460px;
