@@ -44,6 +44,24 @@ body {
   background-color: var(--bg);
   color: var(--text);
 }
+body:before,
+body:after {
+  --_img-size: 750px;
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("/blur-radial.svg");
+  background-repeat: no-repeat;
+  background-size: var(--_img-size) var(--_img-size);
+}
+body:before {
+  background-position: top calc(var(--_img-size) * -0.5) left
+    calc(var(--_img-size) * -0.5);
+}
+body:after {
+  background-position: bottom calc(var(--_img-size) * -0.5) right
+    calc(var(--_img-size) * -0.5);
+}
 
 .stepper {
   list-style: none;
