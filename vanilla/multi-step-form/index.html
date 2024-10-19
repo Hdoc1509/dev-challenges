@@ -26,24 +26,26 @@
               />
             </label>
           </section>
-          <section class="step" data-step="2">
+          <section class="topics-step step" data-step="2">
             <h2 class="step__title">Which topics you are interested in?</h2>
-            <label class="topic-option">
-              Software Development
-              <input
-                type="checkbox"
-                name="topics"
-                value="software-development"
-              />
-            </label>
-            <label class="topic-option">
-              User Experience
-              <input type="checkbox" name="topics" value="user-experience" />
-            </label>
-            <label class="topic-option">
-              Graphic Design
-              <input type="checkbox" name="topcis" value="graphic-design" />
-            </label>
+            <div class="topics-step__group" aria-label="Topic options">
+              <label class="topic-option">
+                <input
+                  type="checkbox"
+                  name="topics"
+                  value="software-development"
+                />
+                <span class="topic-option__label">Software Development</span>
+              </label>
+              <label class="topic-option">
+                <input type="checkbox" name="topics" value="user-experience" />
+                <span class="topic-option__label">User Experience</span>
+              </label>
+              <label class="topic-option">
+                <input type="checkbox" name="topcis" value="graphic-design" />
+                <span class="topic-option__label">Graphic Design</span>
+              </label>
+            </div>
           </section>
           <section class="step" data-step="3">
             <h2 class="step__title">Summary</h2>

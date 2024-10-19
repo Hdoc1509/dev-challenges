@@ -23,7 +23,7 @@
   --label-text: #a1a1a9;
   --placeholder-text: #4d5562;
 
-  --checkbox-bg-selected: #394150;
+  --checkbox-bg: #394150;
   --card-bg: #212936;
   --card-max-width: 460px;
   --card-padding: 40px; /* transform to rem */
