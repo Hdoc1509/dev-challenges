@@ -13,3 +13,7 @@
 
   z-index: 10;
 }
+
+.step__title {
+  font-size: var(--header-fs);
+}
