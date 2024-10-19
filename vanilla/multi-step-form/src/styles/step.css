@@ -1,3 +1,24 @@
+.steps-container {
+  --_step-counter: 1;
+  --_step-offset: var(--step-offset, 0);
+  display: flex;
+  gap: var(--_step-offset);
+
+  transform: translateX(calc((var(--_step-counter) - 1) * -100%))
+    translateX(calc((var(--_step-counter) - 1) * var(--_step-offset) * -1));
+  transition: transform 0.3s ease-in-out;
+}
+
+.step {
+  width: 100%;
+  flex-shrink: 0;
+  visibility: hidden;
+
+  transition: visibility 0.3s ease-in-out;
+}
+.step--current {
+  visibility: visible;
+}
 .step__title {
   font-size: var(--header-fs);
   margin: 0;
@@ -38,3 +59,7 @@
   color: var(--placeholder-text);
   opacity: 1;
 }
+
+/* TODO: continue here */
+/* .topics-step { */
+/* } */

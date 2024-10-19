@@ -36,7 +36,7 @@ and improve your JavaScript proficiency.
       or the topic is not selected.
 - [ ] Users can continue to the next step if inputs are filled or topic is
       selected.
-- [ ] Users should know which step they are at.
+- [x] Users should know which step they are at.
 - [ ] When users click confirm, they should see an alert with '✅ Success'
       message.
 - [ ] The page should be responsive on different screen sizes.

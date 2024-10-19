@@ -9,50 +9,60 @@
   <body>
     <main>
       <form id="register-form" class="form-card">
-        <section class="step register-step" data-step="1">
-          <h2 class="step__title">Register</h2>
-          <label>
-            Name
-            <input name="name" placeholder="enter your name" required />
-          </label>
-          <label>
-            Email
-            <input
-              name="email"
-              type="email"
-              placeholder="example@gmail.com"
-              required
-            />
-          </label>
-        </section>
-        <section class="step" data-step="2">
-          <h2 class="step__title">Which topics you are interested in?</h2>
-          <label class="topic-option">
-            Software Development
-            <input type="checkbox" name="topics" value="software-development" />
-          </label>
-          <label class="topic-option">
-            User Experience
-            <input type="checkbox" name="topics" value="user-experience" />
-          </label>
-          <label class="topic-option">
-            Graphic Design
-            <input type="checkbox" name="topcis" value="graphic-design" />
-          </label>
-        </section>
-        <section class="step" data-step="3">
-          <h2 class="step__title">Summary</h2>
-          <section class="summary-register">
-            <p>Name: <span class="summary-register__name"></span></p>
-            <p>Email: <span class="summary-register__email"></span></p>
+        <div class="steps-container">
+          <section class="register-step step step--current" data-step="1">
+            <h2 class="step__title">Register</h2>
+            <label>
+              Name
+              <input name="name" placeholder="enter your name" required />
+            </label>
+            <label>
+              Email
+              <input
+                name="email"
+                type="email"
+                placeholder="example@gmail.com"
+                required
+              />
+            </label>
           </section>
-          <section class="summary-topics">
-            <h3>Topics:</h3>
-            <ul class="summary-topics__list"></ul>
+          <section class="step" data-step="2">
+            <h2 class="step__title">Which topics you are interested in?</h2>
+            <label class="topic-option">
+              Software Development
+              <input
+                type="checkbox"
+                name="topics"
+                value="software-development"
+              />
+            </label>
+            <label class="topic-option">
+              User Experience
+              <input type="checkbox" name="topics" value="user-experience" />
+            </label>
+            <label class="topic-option">
+              Graphic Design
+              <input type="checkbox" name="topcis" value="graphic-design" />
+            </label>
           </section>
-        </section>
-        <button id="go-nex-step" class="action-button">Continue</button>
-        <button class="hidden action-button" disabled>Confirm</button>
+          <section class="step" data-step="3">
+            <h2 class="step__title">Summary</h2>
+            <section class="summary-register">
+              <p>Name: <span class="summary-register__name"></span></p>
+              <p>Email: <span class="summary-register__email"></span></p>
+            </section>
+            <section class="summary-topics">
+              <h3>Topics:</h3>
+              <ul class="summary-topics__list"></ul>
+            </section>
+          </section>
+        </div>
+        <button id="go-nex-step" type="button" class="action-button">
+          Continue
+        </button>
+        <button id="submit-register" class="hidden action-button" disabled>
+          Confirm
+        </button>
       </form>
     </main>
     <section class="stepper">

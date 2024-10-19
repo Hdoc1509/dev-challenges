@@ -11,5 +11,8 @@
   border-radius: 12px;
   background-color: var(--card-bg);
 
+  overflow: hidden;
   z-index: 10;
+
+  --step-offset: var(--card-padding);
 }
