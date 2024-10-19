@@ -24,10 +24,14 @@
   padding: 16px 14px;
   border: 2px solid var(--placeholder-text);
   border-radius: 12px;
+  outline: none;
   background-color: transparent;
 
-  color: currentColor;
+  color: var(--text);
   font-size: inherit;
+}
+.register-step label input:focus {
+  border-color: var(--primary-light);
 }
 .register-step label input::placeholder {
   color: var(--placeholder-text);
