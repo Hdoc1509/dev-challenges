@@ -1,5 +1,6 @@
 .step__title {
   font-size: var(--header-fs);
+  margin: 0;
 }
 
 .register-step {
