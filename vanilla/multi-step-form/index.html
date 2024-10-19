@@ -65,19 +65,13 @@
         </button>
       </form>
     </main>
-    <section class="stepper">
+    <section class="stepper-indicator">
       <p>Step <span id="current-step">1</span> of 3</p>
-      <ol class="stepper-list" role="list">
-        <li class="stepper__step" data-current data-step="1">
-          <span aria-current="step" aria-label="Step 1"></span>
-        </li>
-        <li class="stepper__step" data-step="2">
-          <span aria-label="Step 2"></span>
-        </li>
-        <li class="stepper__step" data-step="3">
-          <span aria-label="Step 3"></span>
-        </li>
-      </ol>
+      <div class="stepper" aria-hidden="true">
+        <span class="stepper__step" data-current data-step="1"></span>
+        <span class="stepper__step" data-step="2"></span>
+        <span class="stepper__step" data-step="3"></span>
+      </div>
     </section>
     <script type="module" src="/src/main.js"></script>
   </body>
