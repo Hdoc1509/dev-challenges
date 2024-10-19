@@ -24,6 +24,9 @@
   border-radius: 50%;
   background-color: var(--card-bg);
 }
+.stepper__step[data-completed] {
+  background-color: var(--primary);
+}
 .stepper__step[data-current] {
   background-color: var(--primary);
   outline: 0.5rem solid var(--primary-transparent);

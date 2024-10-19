@@ -26,6 +26,7 @@ $goNextStepButton.addEventListener("click", () => {
     $currentStep.classList.remove("step--current");
     $currentStep.nextElementSibling.classList.add("step--current");
     $currentStepperItem.removeAttribute("data-current");
+    $currentStepperItem.setAttribute("data-completed", "");
     $currentStepperItem.nextElementSibling.setAttribute("data-current", "");
     $currentStepsLabel.innerText = currentStepCounter + 1;
   }
