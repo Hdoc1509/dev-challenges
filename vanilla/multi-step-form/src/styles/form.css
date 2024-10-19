@@ -7,7 +7,7 @@
 
   max-width: var(--card-max-width);
   padding: var(--card-padding);
-  border: 1px solid var(--label-text);
+  border: 1px solid #4d5562;
   border-radius: 12px;
   background-color: var(--card-bg);
 
