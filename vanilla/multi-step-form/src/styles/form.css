@@ -13,39 +13,3 @@
 
   z-index: 10;
 }
-
-.step__title {
-  font-size: var(--header-fs);
-}
-
-.register-step {
-  --_fields-gap: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: var(--_fields-gap);
-}
-.register-step label {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: flex-start;
-
-  color: var(--label-text);
-  font-size: var(--label-text-fs);
-  font-weight: 600;
-  line-height: normal;
-}
-.register-step label input {
-  width: 100%;
-  padding: 16px 14px;
-  border: 2px solid var(--placeholder-text);
-  border-radius: 12px;
-  background-color: transparent;
-
-  color: currentColor;
-  font-size: inherit;
-}
-.register-step label input::placeholder {
-  color: var(--placeholder-text);
-  opacity: 1;
-}

@@ -1,0 +1,11 @@
+.action-button {
+  margin-inline: auto;
+  padding: 12px 36px;
+  border: none;
+  border-radius: 9999px;
+  background: linear-gradient(var(--primary-light), var(--primary));
+
+  color: var(--text);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
