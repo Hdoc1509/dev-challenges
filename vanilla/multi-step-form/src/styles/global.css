@@ -83,3 +83,7 @@ body:after {
     --_img-size: 75vw;
   }
 }
+
+.hidden {
+  display: none;
+}
