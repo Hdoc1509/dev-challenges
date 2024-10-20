@@ -45,7 +45,6 @@ and improve your JavaScript proficiency.
 ### Built With
 
 - [Vite](https://vitejs.dev/)
-- [Sass](https://sass-lang.com/) _(pending to check if needed)_
 - [BEM](https://getbem.com/)
 - [fontsource](https://fontsource.org/) fonts:
   - [Inter](https://fontsource.org/fonts/inter)
