@@ -51,7 +51,8 @@ and improve your JavaScript proficiency.
 
 ### What I learned
 
-_WIP_
+- Create a stepper slider with CSS and JavaScript.
+  - Movement transition between steps.
 
 ## How To Use
 
