@@ -10,6 +10,7 @@
 .stepper-indicator p {
   margin: 0;
   color: #394150;
+  font-weight: 600;
 }
 
 .stepper {
