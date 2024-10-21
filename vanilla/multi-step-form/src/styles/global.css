@@ -9,8 +9,8 @@
   -moz-osx-font-smoothing: grayscale;
 
   /* font sizes */
-  --header-fs: 1.25rem;
-  --tab-text-fs: 0.875rem;
+  --step-heading-fs: 1.25rem;
+  --stepper-label-fs: 0.875rem;
   --body-text-fs: 1rem;
   --label-text-fs: 0.875rem;
 
@@ -20,17 +20,20 @@
   --primary-transparent: #652cd160;
   --text: #e5e7eb;
   --bg: #121826;
+  /* TODO: add --gray-[variant] colors */
   --label-text: #a1a1a9;
   --placeholder-text: #4d5562;
 
-  --checkbox-bg: #394150;
   --card-bg: #212936;
   --card-max-width: 460px;
   --card-padding: 2.5rem;
   --card-gap: 2.25rem;
 
-  --options-gap: 1.5rem;
-  --action-button-margin-top: auto;
+  --register-fields-gap: 1.5rem;
+
+  --topic-group-gap: 1.5rem;
+  --topic-option-bg: #394150;
+  --topic-option-text: #a1a1a9;
 }
 @supports (font-variation-settings: normal) {
   :root {

@@ -15,5 +15,6 @@
   overflow: hidden;
   z-index: 10;
 
+  /* TODO: Check if this is needed */
   --step-offset: var(--card-padding);
 }

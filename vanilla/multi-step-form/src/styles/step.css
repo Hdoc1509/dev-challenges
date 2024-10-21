@@ -1,3 +1,4 @@
+/* TODO: split into multiple files */
 .steps-container {
   --_step-counter: 1;
   --_step-offset: var(--step-offset, 0);
@@ -20,15 +21,14 @@
   visibility: visible;
 }
 .step__title {
-  font-size: var(--header-fs);
+  font-size: var(--step-heading-fs);
   margin: 0;
 }
 
 .register-step {
-  --_fields-gap: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: var(--_fields-gap);
+  gap: var(--register-fields-gap);
 }
 .register-step label {
   display: flex;
@@ -68,21 +68,24 @@
 .topics-step__group {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--topic-group-gap);
 }
 
 .topic-option {
   display: grid;
 }
 .topic-option__label {
+  --_bg: var(--topic-option-bg);
+  --_text: var(--topic-option-text);
+
   grid-area: 1 / 1;
 
   padding: 1rem;
   border-radius: 16px;
-  background-color: var(--option-label-bg, var(--checkbox-bg));
+  background-color: var(--_bg);
   box-shadow: 0 1px 2px 2px #12182640;
 
-  color: var(--option-label-text, var(--label-text));
+  color: var(--_text);
 }
 .topic-option input {
   grid-area: 1 / 1;
@@ -93,10 +96,10 @@
   cursor: pointer;
 }
 .topic-option input:hover + .topic-option__label {
-  --option-label-bg: var(--placeholder-text);
+  --_bg: var(--placeholder-text);
 }
 .topic-option input:checked + .topic-option__label {
-  --option-label-bg: var(--primary);
-  --option-label-text: var(--text);
+  --_bg: var(--primary);
+  --_text: var(--text);
   font-weight: 600;
 }
