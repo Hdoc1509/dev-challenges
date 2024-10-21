@@ -39,7 +39,7 @@ and improve your JavaScript proficiency.
 - [x] Users should know which step they are at.
 - [ ] When users click confirm, they should see an alert with '✅ Success'
       message.
-- [ ] The page should be responsive on different screen sizes.
+- [x] The page should be responsive on different screen sizes.
 - [ ] Deploy the solution and submit Repository URL and Demo URL.
 
 ### Built With

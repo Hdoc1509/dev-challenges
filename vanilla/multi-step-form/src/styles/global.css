@@ -78,6 +78,14 @@ body:after {
     calc(var(--_img-size) * -0.5);
 }
 @media (max-width: 768px) {
+  :root {
+    --card-padding: 24px;
+  }
+
+  body {
+    padding-inline: 2rem;
+  }
+
   body:before,
   body:after {
     --_img-size: 75vw;
