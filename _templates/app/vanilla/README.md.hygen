@@ -1,0 +1,5 @@
+---
+to: vanilla/<%= name %>/README.md
+---
+
+<%- include(`${templates}/app/shared/README.md.hygen`) %>
