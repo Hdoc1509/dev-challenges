@@ -21,7 +21,7 @@
   display: inline-block;
 
   aspect-ratio: 1;
-  width: 1rem;
+  width: 1em;
   border-radius: 50%;
   background-color: var(--card-bg);
 }
@@ -30,5 +30,5 @@
 }
 .stepper__step[data-current] {
   background-color: var(--primary);
-  outline: 0.5rem solid var(--primary-transparent);
+  outline: 0.5em solid var(--primary-transparent);
 }
