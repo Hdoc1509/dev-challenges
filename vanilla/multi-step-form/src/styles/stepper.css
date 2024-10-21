@@ -9,7 +9,7 @@
 }
 .stepper-indicator p {
   margin: 0;
-  color: #394150;
+  color: var(--secondary-450);
   font-weight: 600;
 }
 
@@ -23,7 +23,7 @@
   aspect-ratio: 1;
   width: 1em;
   border-radius: 50%;
-  background-color: var(--card-bg);
+  background-color: var(--secondary-450);
 }
 .stepper__step[data-completed] {
   background-color: var(--primary);

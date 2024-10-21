@@ -44,12 +44,12 @@
 .register-step label input {
   width: 100%;
   padding: 1rem 0.875rem;
-  border: 2px solid var(--placeholder-text);
+  border: 2px solid var(--secondary-400);
   border-radius: 12px;
   outline: none;
   background-color: transparent;
 
-  color: var(--text);
+  color: var(--secondary-200);
   font-size: inherit;
 }
 .register-step label input:focus {
@@ -83,7 +83,7 @@
   padding: 1rem;
   border-radius: 16px;
   background-color: var(--_bg);
-  box-shadow: 0 1px 2px 2px #12182640;
+  box-shadow: 0 1px 2px 2px var(--secondary-550-transparent);
 
   color: var(--_text);
 }
@@ -96,10 +96,10 @@
   cursor: pointer;
 }
 .topic-option input:hover + .topic-option__label {
-  --_bg: var(--placeholder-text);
+  --_bg: var(--secondary-400);
 }
 .topic-option input:checked + .topic-option__label {
   --_bg: var(--primary);
-  --_text: var(--text);
+  --_text: var(--secondary-200);
   font-weight: 600;
 }

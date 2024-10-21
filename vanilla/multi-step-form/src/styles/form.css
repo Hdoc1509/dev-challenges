@@ -8,7 +8,7 @@
   max-width: var(--card-max-width);
   margin-inline: auto;
   padding: var(--card-padding);
-  border: 1px solid #4d5562;
+  border: 1px solid var(--secondary-400);
   border-radius: 12px;
   background-color: var(--card-bg);
 
