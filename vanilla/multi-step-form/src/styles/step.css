@@ -25,7 +25,7 @@
 }
 
 .register-step {
-  --_fields-gap: 24px;
+  --_fields-gap: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: var(--_fields-gap);
@@ -33,7 +33,7 @@
 .register-step label {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.625rem;
   align-items: flex-start;
 
   color: var(--label-text);
@@ -43,7 +43,7 @@
 }
 .register-step label input {
   width: 100%;
-  padding: 16px 14px;
+  padding: 1rem 0.875rem;
   border: 2px solid var(--placeholder-text);
   border-radius: 12px;
   outline: none;
@@ -63,12 +63,12 @@
 .topics-step {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 1.5rem;
 }
 .topics-step__group {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 1rem;
 }
 
 .topic-option {
@@ -77,7 +77,7 @@
 .topic-option__label {
   grid-area: 1 / 1;
 
-  padding: 16px;
+  padding: 1rem;
   border-radius: 16px;
   background-color: var(--option-label-bg, var(--checkbox-bg));
   box-shadow: 0 1px 2px 2px #12182640;
