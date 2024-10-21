@@ -6,6 +6,7 @@
   gap: var(--card-gap);
 
   max-width: var(--card-max-width);
+  margin-inline: auto;
   padding: var(--card-padding);
   border: 1px solid #4d5562;
   border-radius: 12px;
