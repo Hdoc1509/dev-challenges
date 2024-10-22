@@ -29,7 +29,7 @@ and improve your JavaScript proficiency.
 - [ ] Create a multi-step registration page that matches the given design.
 - [x] Use HTML to create the basic structure.
 - [x] Add form, inputs, buttons, stepper,... according to the design.
-- [ ] Add validations to the inputs: name and email input should be required and
+- [x] Add validations to the inputs: name and email input should be required and
       email input should only accept email format.
 - [ ] Use Vanilla JavaScript to add interactivity.
 - [ ] Users should not be able to continue to the next step if inputs are empty
