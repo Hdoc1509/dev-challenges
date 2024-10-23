@@ -38,7 +38,7 @@ jobs:
     if: ${{ needs.changed-files.outputs.files != 'true' }}
     strategy:
       matrix:
-        node-version: [20]
+        node-version: [20.17.0]
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
