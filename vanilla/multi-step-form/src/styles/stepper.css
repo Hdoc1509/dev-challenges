@@ -24,6 +24,8 @@
   width: 1em;
   border-radius: 50%;
   background-color: var(--secondary-450);
+
+  transition: outline-width 0.15s linear;
 }
 .stepper__step[data-completed] {
   background-color: var(--primary);
