@@ -1,12 +1,6 @@
 import { $goNextStepButton, $submitRegisterButton } from "../buttons";
-import {
-  applyInputError,
-  applyTopicsError,
-  cleanInputError,
-  cleanTopicsError,
-  ERROR,
-} from "../errors";
-import { validateNameInput } from "../validation";
+import { applyTopicsError, cleanInputError, cleanTopicsError } from "../errors";
+import { validateEmailInput, validateNameInput } from "../validation";
 import {
   $emailInput,
   $emailInputError,
@@ -14,7 +8,6 @@ import {
   $nameInputError,
   $topicCheckboxes,
 } from "../form";
-import { EMAIL_REGEX } from "../regex";
 import { $currentStepsLabel, $stepsContainer, totalSteps } from "../steps";
 
 // TODO: split into multiple files
@@ -34,21 +27,9 @@ export const handleNameInput = () => {
 };
 
 export const handleEmailInput = () => {
-  const email = $emailInput.value;
+  const validation = validateEmailInput();
 
-  if (email === "")
-    return applyInputError({
-      $input: $emailInput,
-      $error: $emailInputError,
-      message: ERROR.EMAIL.MISSING,
-    });
-
-  if (email.match(EMAIL_REGEX) == null)
-    return applyInputError({
-      $input: $emailInput,
-      $error: $emailInputError,
-      message: ERROR.EMAIL.INVALID,
-    });
+  if (!validation.success) return validation.showError();
 
   cleanInputError({
     $input: $emailInput,
@@ -82,23 +63,11 @@ export const handleGoNextStep = () => {
         nameValidation.showError();
       }
 
-      const email = $emailInput.value;
+      const emailValidation = validateEmailInput();
 
-      if (email === "") {
+      if (!emailValidation.success) {
         hasErrors = true;
-        applyInputError({
-          $input: $emailInput,
-          $error: $emailInputError,
-          message: ERROR.EMAIL.MISSING,
-        });
-      }
-      if (email.match(EMAIL_REGEX) == null) {
-        hasErrors = true;
-        applyInputError({
-          $input: $emailInput,
-          $error: $emailInputError,
-          message: ERROR.EMAIL.INVALID,
-        });
+        emailValidation.showError();
       }
 
       if (hasErrors) return;

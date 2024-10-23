@@ -1,11 +1,13 @@
 import { applyInputError, ERROR } from "./errors";
 import {
+  $emailInput,
+  $emailInputError,
   $nameInput,
   $nameInputError,
   MAX_NAME_LENGTH,
   MIN_NAME_LENGTH,
 } from "./form";
-import { NAME_REGEX } from "./regex";
+import { EMAIL_REGEX, NAME_REGEX } from "./regex";
 
 /** @typedef {{ success: true }} ValidationResultSuccess */
 /** @typedef {{ success: false, showError: () => void }} ValidationResultError */
@@ -56,6 +58,35 @@ export const validateNameInput = () => {
           $input: $nameInput,
           $error: $nameInputError,
           message: ERROR.NAME.MAX_LENGTH,
+        }),
+    };
+
+  return { success: true };
+};
+
+/** @returns {ValidationResult} */
+export const validateEmailInput = () => {
+  const email = $emailInput.value;
+
+  if (email === "")
+    return {
+      success: false,
+      showError: () =>
+        applyInputError({
+          $input: $emailInput,
+          $error: $emailInputError,
+          message: ERROR.EMAIL.MISSING,
+        }),
+    };
+
+  if (email.match(EMAIL_REGEX) == null)
+    return {
+      success: false,
+      showError: () =>
+        applyInputError({
+          $input: $emailInput,
+          $error: $emailInputError,
+          message: ERROR.EMAIL.INVALID,
         }),
     };
 
