@@ -18,6 +18,8 @@ if (!($unsafeNameInputError instanceof HTMLElement))
   );
 export const $nameInput = $unsafeNameInput;
 export const $nameInputError = $unsafeNameInputError;
+export const MIN_NAME_LENGTH = 5;
+export const MAX_NAME_LENGTH = 15;
 
 const $unsafeEmailInput = $registerForm.querySelector("input[name='email']");
 const $unsafeEmailInputError = $registerForm.querySelector(

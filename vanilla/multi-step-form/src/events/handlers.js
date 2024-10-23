@@ -12,6 +12,8 @@ import {
   $nameInput,
   $nameInputError,
   $topicCheckboxes,
+  MAX_NAME_LENGTH,
+  MIN_NAME_LENGTH,
 } from "../form";
 import { EMAIL_REGEX, NAME_REGEX } from "../regex";
 import { $currentStepsLabel, $stepsContainer, totalSteps } from "../steps";
@@ -36,6 +38,20 @@ export const handleNameInput = () => {
       $input: $nameInput,
       $error: $nameInputError,
       message: ERROR.NAME.ONLY_LETTERS,
+    });
+
+  if (name.trim().length < MIN_NAME_LENGTH)
+    return applyInputError({
+      $input: $nameInput,
+      $error: $nameInputError,
+      message: ERROR.NAME.MIN_LENGTH,
+    });
+
+  if (name.trim().length > MAX_NAME_LENGTH)
+    return applyInputError({
+      $input: $nameInput,
+      $error: $nameInputError,
+      message: ERROR.NAME.MAX_LENGTH,
     });
 
   cleanInputError({
@@ -102,6 +118,22 @@ export const handleGoNextStep = () => {
           $input: $nameInput,
           $error: $nameInputError,
           message: ERROR.NAME.ONLY_LETTERS,
+        });
+      }
+      if (name.trim().length < MIN_NAME_LENGTH) {
+        hasErrors = true;
+        applyInputError({
+          $input: $nameInput,
+          $error: $nameInputError,
+          message: ERROR.NAME.MIN_LENGTH,
+        });
+      }
+      if (name.trim().length > MAX_NAME_LENGTH) {
+        hasErrors = true;
+        applyInputError({
+          $input: $nameInput,
+          $error: $nameInputError,
+          message: ERROR.NAME.MAX_LENGTH,
         });
       }
 

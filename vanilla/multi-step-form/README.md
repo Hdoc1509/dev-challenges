@@ -49,6 +49,13 @@ and improve your JavaScript proficiency.
 - [fontsource](https://fontsource.org/) fonts:
   - [Inter](https://fontsource.org/fonts/inter)
 
+### Extra Features
+
+- More validations for name input.
+  - Should be at least 5 characters.
+  - Should be at most 15 characters.
+  - Should only contain letters.
+
 ### What I learned
 
 - Create a stepper slider with CSS and JavaScript.

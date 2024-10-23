@@ -2,6 +2,8 @@ import { $topicsError } from "./form";
 
 export const ERROR = {
   NAME: {
+    MAX_LENGTH: "Name must be at most 15 characters",
+    MIN_LENGTH: "Name must be at least 5 characters",
     MISSING: "You must enter your name",
     ONLY_LETTERS: "Name must contain only letters",
   },
