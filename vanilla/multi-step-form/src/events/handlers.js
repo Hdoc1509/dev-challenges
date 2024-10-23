@@ -1,10 +1,17 @@
 import { $goNextStepButton, $submitRegisterButton } from "../buttons";
-import { applyInputError, cleanInputError, ERROR } from "../errors";
+import {
+  applyInputError,
+  applyTopicsError,
+  cleanInputError,
+  cleanTopicsError,
+  ERROR,
+} from "../errors";
 import {
   $emailInput,
   $emailInputError,
   $nameInput,
   $nameInputError,
+  $topicCheckboxes,
 } from "../form";
 import { EMAIL_REGEX, NAME_REGEX } from "../regex";
 import { $currentStepsLabel, $stepsContainer, totalSteps } from "../steps";
@@ -58,6 +65,16 @@ export const handleEmailInput = () => {
     $input: $emailInput,
     $error: $emailInputError,
   });
+};
+
+export const handleTopicCheckboxChange = () => {
+  const selectedTopics = $topicCheckboxes
+    .filter(($checkbox) => $checkbox.checked)
+    .map(($checkbox) => $checkbox.value);
+
+  if (selectedTopics.length === 0) return applyTopicsError();
+
+  cleanTopicsError();
 };
 
 export const handleGoNextStep = () => {
