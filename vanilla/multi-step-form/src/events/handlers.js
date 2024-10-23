@@ -65,12 +65,14 @@ export const handleGoNextStep = () => {
   if (!($currentStep instanceof HTMLElement))
     throw new Error(`missing '.step--current' element`);
   const currentStepCounter = Number($currentStep.dataset.step);
+  let hasErrors = false;
 
   if (currentStepCounter < totalSteps) {
     if ($currentStep.classList.contains("register-step")) {
       const name = $nameInput.value;
 
       if (name === "") {
+        hasErrors = true;
         applyInputError({
           $input: $nameInput,
           $error: $nameInputError,
@@ -81,12 +83,15 @@ export const handleGoNextStep = () => {
       const email = $emailInput.value;
 
       if (email === "") {
+        hasErrors = true;
         applyInputError({
           $input: $emailInput,
           $error: $emailInputError,
           message: ERROR.EMAIL.MISSING,
         });
       }
+
+      if (hasErrors) return;
     }
 
     const $currentStepperItem = document.querySelector(
