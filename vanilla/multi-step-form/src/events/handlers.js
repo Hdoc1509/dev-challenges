@@ -1,16 +1,9 @@
 import { $goNextStepButton, $submitRegisterButton } from "../buttons";
-import { removeInputError, removeTopicsError } from "../errors";
 import {
   validateEmailInput,
   validateNameInput,
   validateTopicCheckboxes,
 } from "../validation";
-import {
-  $emailInput,
-  $emailInputError,
-  $nameInput,
-  $nameInputError,
-} from "../form";
 import { $currentStepsLabel, $stepsContainer, totalSteps } from "../steps";
 
 // TODO: split into multiple files
@@ -23,10 +16,7 @@ export const handleNameInput = () => {
 
   if (!validation.success) return validation.showError();
 
-  removeInputError({
-    $input: $nameInput,
-    $error: $nameInputError,
-  });
+  validation.removeError();
 };
 
 export const handleEmailInput = () => {
@@ -34,10 +24,7 @@ export const handleEmailInput = () => {
 
   if (!validation.success) return validation.showError();
 
-  removeInputError({
-    $input: $emailInput,
-    $error: $emailInputError,
-  });
+  validation.removeError();
 };
 
 export const handleTopicCheckboxChange = () => {
@@ -45,7 +32,7 @@ export const handleTopicCheckboxChange = () => {
 
   if (!validation.success) return validation.showError();
 
-  removeTopicsError();
+  validation.removeError();
 };
 
 export const handleGoNextStep = () => {

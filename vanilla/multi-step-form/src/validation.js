@@ -1,4 +1,10 @@
-import { showInputError, showTopicsError, ERROR } from "./errors";
+import {
+  showInputError,
+  showTopicsError,
+  removeInputError,
+  removeTopicsError,
+  ERROR,
+} from "./errors";
 import {
   $emailInput,
   $emailInputError,
@@ -10,7 +16,7 @@ import {
 } from "./form";
 import { EMAIL_REGEX, NAME_REGEX } from "./regex";
 
-/** @typedef {{ success: true }} ValidationResultSuccess */
+/** @typedef {{ success: true, removeError: () => void }} ValidationResultSuccess */
 /** @typedef {{ success: false, showError: () => void }} ValidationResultError */
 /** @typedef {ValidationResultSuccess | ValidationResultError} ValidationResult */
 
@@ -62,7 +68,14 @@ export const validateNameInput = () => {
         }),
     };
 
-  return { success: true };
+  return {
+    success: true,
+    removeError: () =>
+      removeInputError({
+        $input: $nameInput,
+        $error: $nameInputError,
+      }),
+  };
 };
 
 /** @returns {ValidationResult} */
@@ -91,7 +104,14 @@ export const validateEmailInput = () => {
         }),
     };
 
-  return { success: true };
+  return {
+    success: true,
+    removeError: () =>
+      removeInputError({
+        $input: $emailInput,
+        $error: $emailInputError,
+      }),
+  };
 };
 
 /** @returns {ValidationResult} */
@@ -106,5 +126,8 @@ export const validateTopicCheckboxes = () => {
       showError: () => showTopicsError(),
     };
 
-  return { success: true };
+  return {
+    success: true,
+    removeError: () => removeTopicsError(),
+  };
 };
