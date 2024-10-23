@@ -31,3 +31,17 @@ if (!($unsafeEmailInputError instanceof HTMLElement))
   );
 export const $emailInput = $unsafeEmailInput;
 export const $emailInputError = $unsafeEmailInputError;
+
+export const TOPIC_CHECKBOX_SELECTOR = "input[type='checkbox'][name='topics']";
+/** @type {HTMLInputElement[]} */
+export const $topicCheckboxes = Array.from(
+  $registerForm.querySelectorAll(TOPIC_CHECKBOX_SELECTOR),
+);
+const $unsafeTopicsError = $registerForm.querySelector(
+  `.topics-step__group + .${ERROR_MESSAGE_CLASS}`,
+);
+if (!($unsafeTopicsError instanceof HTMLSpanElement))
+  throw new Error(
+    `missing '.${ERROR_MESSAGE_CLASS}' element for 'topics' field in '#${FORM_ID}' element`,
+  );
+export const $topicsError = $unsafeTopicsError;
