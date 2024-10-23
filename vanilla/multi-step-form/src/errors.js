@@ -22,7 +22,7 @@ export const ERROR = {
  * @param {Element} params.$error
  * @param {string} params.message
  */
-export const applyInputError = ({ $input, $error, message }) => {
+export const showInputError = ({ $input, $error, message }) => {
   $input.classList.add("input--with-error");
   $error.classList.remove("hidden");
   $error.textContent = message;
@@ -33,15 +33,15 @@ export const applyInputError = ({ $input, $error, message }) => {
  * @param {HTMLInputElement} params.$input
  * @param {Element} params.$error
  */
-export const cleanInputError = ({ $input, $error }) => {
+export const removeInputError = ({ $input, $error }) => {
   $input.classList.remove("input--with-error");
   $error.classList.add("hidden");
 };
 
-export const applyTopicsError = () => {
+export const showTopicsError = () => {
   $topicsError.classList.remove("hidden");
   $topicsError.textContent = ERROR.TOPICS.MISSING;
 };
-export const cleanTopicsError = () => {
+export const removeTopicsError = () => {
   $topicsError.classList.add("hidden");
 };

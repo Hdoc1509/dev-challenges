@@ -1,5 +1,5 @@
 import { $goNextStepButton, $submitRegisterButton } from "../buttons";
-import { cleanInputError, cleanTopicsError } from "../errors";
+import { removeInputError, removeTopicsError } from "../errors";
 import {
   validateEmailInput,
   validateNameInput,
@@ -23,7 +23,7 @@ export const handleNameInput = () => {
 
   if (!validation.success) return validation.showError();
 
-  cleanInputError({
+  removeInputError({
     $input: $nameInput,
     $error: $nameInputError,
   });
@@ -34,7 +34,7 @@ export const handleEmailInput = () => {
 
   if (!validation.success) return validation.showError();
 
-  cleanInputError({
+  removeInputError({
     $input: $emailInput,
     $error: $emailInputError,
   });
@@ -45,7 +45,7 @@ export const handleTopicCheckboxChange = () => {
 
   if (!validation.success) return validation.showError();
 
-  cleanTopicsError();
+  removeTopicsError();
 };
 
 export const handleGoNextStep = () => {

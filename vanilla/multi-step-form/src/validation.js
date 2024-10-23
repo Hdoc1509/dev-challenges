@@ -1,4 +1,4 @@
-import { applyInputError, applyTopicsError, ERROR } from "./errors";
+import { showInputError, showTopicsError, ERROR } from "./errors";
 import {
   $emailInput,
   $emailInputError,
@@ -22,7 +22,7 @@ export const validateNameInput = () => {
     return {
       success: false,
       showError: () =>
-        applyInputError({
+        showInputError({
           $input: $nameInput,
           $error: $nameInputError,
           message: ERROR.NAME.MISSING,
@@ -33,7 +33,7 @@ export const validateNameInput = () => {
     return {
       success: false,
       showError: () =>
-        applyInputError({
+        showInputError({
           $input: $nameInput,
           $error: $nameInputError,
           message: ERROR.NAME.ONLY_LETTERS,
@@ -44,7 +44,7 @@ export const validateNameInput = () => {
     return {
       success: false,
       showError: () =>
-        applyInputError({
+        showInputError({
           $input: $nameInput,
           $error: $nameInputError,
           message: ERROR.NAME.MIN_LENGTH,
@@ -55,7 +55,7 @@ export const validateNameInput = () => {
     return {
       success: false,
       showError: () =>
-        applyInputError({
+        showInputError({
           $input: $nameInput,
           $error: $nameInputError,
           message: ERROR.NAME.MAX_LENGTH,
@@ -73,7 +73,7 @@ export const validateEmailInput = () => {
     return {
       success: false,
       showError: () =>
-        applyInputError({
+        showInputError({
           $input: $emailInput,
           $error: $emailInputError,
           message: ERROR.EMAIL.MISSING,
@@ -84,7 +84,7 @@ export const validateEmailInput = () => {
     return {
       success: false,
       showError: () =>
-        applyInputError({
+        showInputError({
           $input: $emailInput,
           $error: $emailInputError,
           message: ERROR.EMAIL.INVALID,
@@ -103,7 +103,7 @@ export const validateTopicCheckboxes = () => {
   if (selectedTopics.length === 0)
     return {
       success: false,
-      showError: () => applyTopicsError(),
+      showError: () => showTopicsError(),
     };
 
   return { success: true };
