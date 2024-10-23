@@ -1,3 +1,5 @@
+import { $topicsError } from "./form";
+
 export const ERROR = {
   NAME: {
     MISSING: "You must enter your name",
@@ -6,6 +8,9 @@ export const ERROR = {
   EMAIL: {
     INVALID: "Email must be valid",
     MISSING: "You must enter your email",
+  },
+  TOPICS: {
+    MISSING: "You must select at least one topic",
   },
 };
 
@@ -29,4 +34,12 @@ export const applyInputError = ({ $input, $error, message }) => {
 export const cleanInputError = ({ $input, $error }) => {
   $input.classList.remove("input--with-error");
   $error.classList.add("hidden");
+};
+
+export const applyTopicsError = () => {
+  $topicsError.classList.remove("hidden");
+  $topicsError.textContent = ERROR.TOPICS.MISSING;
+};
+export const cleanTopicsError = () => {
+  $topicsError.classList.add("hidden");
 };
