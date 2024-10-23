@@ -96,6 +96,14 @@ export const handleGoNextStep = () => {
           message: ERROR.NAME.MISSING,
         });
       }
+      if (name.match(NAME_REGEX) == null) {
+        hasErrors = true;
+        applyInputError({
+          $input: $nameInput,
+          $error: $nameInputError,
+          message: ERROR.NAME.ONLY_LETTERS,
+        });
+      }
 
       const email = $emailInput.value;
 
@@ -105,6 +113,14 @@ export const handleGoNextStep = () => {
           $input: $emailInput,
           $error: $emailInputError,
           message: ERROR.EMAIL.MISSING,
+        });
+      }
+      if (email.match(EMAIL_REGEX) == null) {
+        hasErrors = true;
+        applyInputError({
+          $input: $emailInput,
+          $error: $emailInputError,
+          message: ERROR.EMAIL.INVALID,
         });
       }
 
