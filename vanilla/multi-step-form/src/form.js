@@ -12,7 +12,7 @@ const $unsafeNameInputError = $registerForm.querySelector(
 );
 if (!($unsafeNameInput instanceof HTMLInputElement))
   throw new Error(`missing 'name' field in '#${FORM_ID}' element`);
-if (!($unsafeNameInputError instanceof HTMLElement))
+if (!($unsafeNameInputError instanceof HTMLSpanElement))
   throw new Error(
     `missing '.${ERROR_MESSAGE_CLASS}' element for 'name' field in '#${FORM_ID}' element`,
   );
@@ -27,7 +27,7 @@ const $unsafeEmailInputError = $registerForm.querySelector(
 );
 if (!($unsafeEmailInput instanceof HTMLInputElement))
   throw new Error(`missing 'email' field in '#${FORM_ID}' element`);
-if (!($unsafeEmailInputError instanceof HTMLElement))
+if (!($unsafeEmailInputError instanceof HTMLSpanElement))
   throw new Error(
     `missing '.${ERROR_MESSAGE_CLASS}' element for 'email' field in '#${FORM_ID}' element`,
   );

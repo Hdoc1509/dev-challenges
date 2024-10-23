@@ -3,7 +3,7 @@ if (!($unsafeStepsContainer instanceof HTMLDivElement))
   throw new Error(`missing '.steps-container' element`);
 
 const $unsafeCurrentStepsLabel = document.getElementById("current-step-label");
-if (!($unsafeCurrentStepsLabel instanceof HTMLElement))
+if (!($unsafeCurrentStepsLabel instanceof HTMLSpanElement))
   throw new Error(`missing '#current-step-label' element`);
 
 export const $stepsContainer = $unsafeStepsContainer;
