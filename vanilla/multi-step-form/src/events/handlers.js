@@ -53,11 +53,11 @@ export const handleGoNextStep = () => {
   if (!($currentStep instanceof HTMLElement))
     throw new Error(`missing '.step--current' element`);
   const currentStepCounter = Number($currentStep.dataset.step);
-  let hasErrors = false;
 
   if (currentStepCounter < totalSteps) {
     if ($currentStep.classList.contains("register-step")) {
       const nameValidation = validateNameInput();
+      let hasErrors = false;
 
       if (!nameValidation.success) {
         hasErrors = true;
