@@ -1,12 +1,15 @@
 import { $goNextStepButton, $submitRegisterButton } from "../buttons";
-import { applyTopicsError, cleanInputError, cleanTopicsError } from "../errors";
-import { validateEmailInput, validateNameInput } from "../validation";
+import { cleanInputError, cleanTopicsError } from "../errors";
+import {
+  validateEmailInput,
+  validateNameInput,
+  validateTopicCheckboxes,
+} from "../validation";
 import {
   $emailInput,
   $emailInputError,
   $nameInput,
   $nameInputError,
-  $topicCheckboxes,
 } from "../form";
 import { $currentStepsLabel, $stepsContainer, totalSteps } from "../steps";
 
@@ -38,11 +41,9 @@ export const handleEmailInput = () => {
 };
 
 export const handleTopicCheckboxChange = () => {
-  const selectedTopics = $topicCheckboxes
-    .filter(($checkbox) => $checkbox.checked)
-    .map(($checkbox) => $checkbox.value);
+  const validation = validateTopicCheckboxes();
 
-  if (selectedTopics.length === 0) return applyTopicsError();
+  if (!validation.success) return validation.showError();
 
   cleanTopicsError();
 };
@@ -74,11 +75,9 @@ export const handleGoNextStep = () => {
     }
 
     if ($currentStep.classList.contains("topics-step")) {
-      const selectedTopics = $topicCheckboxes
-        .filter(($checkbox) => $checkbox.checked)
-        .map(($checkbox) => $checkbox.value);
+      const validation = validateTopicCheckboxes();
 
-      if (selectedTopics.length === 0) return applyTopicsError();
+      if (!validation.success) return validation.showError();
     }
 
     const $currentStepperItem = document.querySelector(

@@ -1,9 +1,10 @@
-import { applyInputError, ERROR } from "./errors";
+import { applyInputError, applyTopicsError, ERROR } from "./errors";
 import {
   $emailInput,
   $emailInputError,
   $nameInput,
   $nameInputError,
+  $topicCheckboxes,
   MAX_NAME_LENGTH,
   MIN_NAME_LENGTH,
 } from "./form";
@@ -88,6 +89,21 @@ export const validateEmailInput = () => {
           $error: $emailInputError,
           message: ERROR.EMAIL.INVALID,
         }),
+    };
+
+  return { success: true };
+};
+
+/** @returns {ValidationResult} */
+export const validateTopicCheckboxes = () => {
+  const selectedTopics = $topicCheckboxes
+    .filter(($checkbox) => $checkbox.checked)
+    .map(($checkbox) => $checkbox.value);
+
+  if (selectedTopics.length === 0)
+    return {
+      success: false,
+      showError: () => applyTopicsError(),
     };
 
   return { success: true };
