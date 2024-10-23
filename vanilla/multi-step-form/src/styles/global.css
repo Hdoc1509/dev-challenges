@@ -31,7 +31,7 @@
   --card-bg: var(--secondary-500);
   --card-max-width: 460px;
   --card-padding: 2.5rem;
-  --card-gap: 2.25rem;
+  --card-gap: 2rem;
 
   --register-fields-gap: 1.5rem;
   --label-text: var(--secondary-300);
