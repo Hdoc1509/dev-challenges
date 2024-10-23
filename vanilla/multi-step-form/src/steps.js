@@ -2,9 +2,9 @@ const $unsafeStepsContainer = document.querySelector(".steps-container");
 if (!($unsafeStepsContainer instanceof HTMLDivElement))
   throw new Error(`missing '.steps-container' element`);
 
-const $unsafeCurrentStepsLabel = document.getElementById("current-step");
+const $unsafeCurrentStepsLabel = document.getElementById("current-step-label");
 if (!($unsafeCurrentStepsLabel instanceof HTMLElement))
-  throw new Error(`missing '#current-step' element`);
+  throw new Error(`missing '#current-step-label' element`);
 
 export const $stepsContainer = $unsafeStepsContainer;
 export const $currentStepsLabel = $unsafeCurrentStepsLabel;
