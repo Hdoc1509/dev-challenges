@@ -6,16 +6,15 @@ import {
   cleanTopicsError,
   ERROR,
 } from "../errors";
+import { validateNameInput } from "../validation";
 import {
   $emailInput,
   $emailInputError,
   $nameInput,
   $nameInputError,
   $topicCheckboxes,
-  MAX_NAME_LENGTH,
-  MIN_NAME_LENGTH,
 } from "../form";
-import { EMAIL_REGEX, NAME_REGEX } from "../regex";
+import { EMAIL_REGEX } from "../regex";
 import { $currentStepsLabel, $stepsContainer, totalSteps } from "../steps";
 
 // TODO: split into multiple files
@@ -24,35 +23,9 @@ import { $currentStepsLabel, $stepsContainer, totalSteps } from "../steps";
 // - handlers/form
 
 export const handleNameInput = () => {
-  const name = $nameInput.value;
+  const validation = validateNameInput();
 
-  if (name === "")
-    return applyInputError({
-      $input: $nameInput,
-      $error: $nameInputError,
-      message: ERROR.NAME.MISSING,
-    });
-
-  if (name.match(NAME_REGEX) == null)
-    return applyInputError({
-      $input: $nameInput,
-      $error: $nameInputError,
-      message: ERROR.NAME.ONLY_LETTERS,
-    });
-
-  if (name.trim().length < MIN_NAME_LENGTH)
-    return applyInputError({
-      $input: $nameInput,
-      $error: $nameInputError,
-      message: ERROR.NAME.MIN_LENGTH,
-    });
-
-  if (name.trim().length > MAX_NAME_LENGTH)
-    return applyInputError({
-      $input: $nameInput,
-      $error: $nameInputError,
-      message: ERROR.NAME.MAX_LENGTH,
-    });
+  if (!validation.success) return validation.showError();
 
   cleanInputError({
     $input: $nameInput,
@@ -102,39 +75,11 @@ export const handleGoNextStep = () => {
 
   if (currentStepCounter < totalSteps) {
     if ($currentStep.classList.contains("register-step")) {
-      const name = $nameInput.value;
+      const nameValidation = validateNameInput();
 
-      if (name === "") {
+      if (!nameValidation.success) {
         hasErrors = true;
-        applyInputError({
-          $input: $nameInput,
-          $error: $nameInputError,
-          message: ERROR.NAME.MISSING,
-        });
-      }
-      if (name.match(NAME_REGEX) == null) {
-        hasErrors = true;
-        applyInputError({
-          $input: $nameInput,
-          $error: $nameInputError,
-          message: ERROR.NAME.ONLY_LETTERS,
-        });
-      }
-      if (name.trim().length < MIN_NAME_LENGTH) {
-        hasErrors = true;
-        applyInputError({
-          $input: $nameInput,
-          $error: $nameInputError,
-          message: ERROR.NAME.MIN_LENGTH,
-        });
-      }
-      if (name.trim().length > MAX_NAME_LENGTH) {
-        hasErrors = true;
-        applyInputError({
-          $input: $nameInput,
-          $error: $nameInputError,
-          message: ERROR.NAME.MAX_LENGTH,
-        });
+        nameValidation.showError();
       }
 
       const email = $emailInput.value;
