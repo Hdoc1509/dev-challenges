@@ -111,6 +111,14 @@ export const handleGoNextStep = () => {
       if (hasErrors) return;
     }
 
+    if ($currentStep.classList.contains("topics-step")) {
+      const selectedTopics = $topicCheckboxes
+        .filter(($checkbox) => $checkbox.checked)
+        .map(($checkbox) => $checkbox.value);
+
+      if (selectedTopics.length === 0) return applyTopicsError();
+    }
+
     const $currentStepperItem = document.querySelector(
       `.stepper__step[data-step="${currentStepCounter}"]`,
     );
