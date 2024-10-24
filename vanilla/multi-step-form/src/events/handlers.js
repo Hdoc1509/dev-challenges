@@ -1,8 +1,8 @@
-import { $goNextStepButton, $submitRegisterButton } from "../buttons";
-import { validateNameInput } from "../validation/register/name.js";
-import { validateEmailInput } from "../validation/register/email.js";
-import { validateTopicCheckboxes } from "../validation/topics.js";
-import { $currentStepsLabel, $stepsContainer, totalSteps } from "../steps";
+import { $goNextStepButton, $submitRegisterButton } from "@/buttons";
+import { validateNameInput } from "@/validation/register/name.js";
+import { validateEmailInput } from "@/validation/register/email.js";
+import { validateTopicCheckboxes } from "@/validation/topics.js";
+import { $currentStepsLabel, $stepsContainer, totalSteps } from "@/steps";
 
 // TODO: split into multiple files
 // - handlers/inputs

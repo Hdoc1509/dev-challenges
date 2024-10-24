@@ -10,8 +10,8 @@ import {
   $nameInput,
   $registerForm,
   TOPIC_CHECKBOX_SELECTOR,
-} from "../form";
-import { $goNextStepButton } from "../buttons";
+} from "@/form";
+import { $goNextStepButton } from "@/buttons";
 
 export function setupEventListeners() {
   document.addEventListener("change", ({ target }) => {

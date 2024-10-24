@@ -1,12 +1,12 @@
-import { showInputError, removeInputError, ERROR } from "../../errors.js";
+import { showInputError, removeInputError, ERROR } from "@/errors.js";
 import {
   $nameInput,
   $nameInputError,
   MAX_NAME_LENGTH,
   MIN_NAME_LENGTH,
-} from "../../form.js";
-import { NAME_REGEX } from "../../regex.js";
-/** @typedef {import("../../types").ValidationResult} ValidationResult */
+} from "@/form.js";
+import { NAME_REGEX } from "@/regex.js";
+/** @typedef {import("@/types").ValidationResult} ValidationResult */
 
 const errorOptions = { $input: $nameInput, $error: $nameInputError };
 

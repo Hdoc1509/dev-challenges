@@ -1,7 +1,7 @@
-import { showInputError, removeInputError, ERROR } from "../../errors.js";
-import { $emailInput, $emailInputError } from "../../form.js";
-import { EMAIL_REGEX } from "../../regex.js";
-/** @typedef {import("../../types").ValidationResult} ValidationResult */
+import { showInputError, removeInputError, ERROR } from "@/errors.js";
+import { $emailInput, $emailInputError } from "@/form.js";
+import { EMAIL_REGEX } from "@/regex.js";
+/** @typedef {import("@/types").ValidationResult} ValidationResult */
 
 const errorOptions = { $input: $emailInput, $error: $emailInputError };
 

@@ -1,7 +1,7 @@
-import { showTopicsError, removeTopicsError } from "../errors";
-import { $topicCheckboxes } from "../form";
+import { showTopicsError, removeTopicsError } from "@/errors";
+import { $topicCheckboxes } from "@/form";
 
-/** @typedef {import("../types").ValidationResult} ValidationResult */
+/** @typedef {import("@/types").ValidationResult} ValidationResult */
 
 /** @returns {ValidationResult} */
 export const validateTopicCheckboxes = () => {
