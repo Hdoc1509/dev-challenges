@@ -23,94 +23,64 @@ import { EMAIL_REGEX, NAME_REGEX } from "./regex";
 /** @returns {ValidationResult} */
 export const validateNameInput = () => {
   const name = $nameInput.value;
+  const errorOptions = { $input: $nameInput, $error: $nameInputError };
 
   if (name === "")
     return {
       success: false,
       showError: () =>
-        showInputError({
-          $input: $nameInput,
-          $error: $nameInputError,
-          message: ERROR.NAME.MISSING,
-        }),
+        showInputError({ ...errorOptions, message: ERROR.NAME.MISSING }),
     };
 
   if (name.match(NAME_REGEX) == null)
     return {
       success: false,
       showError: () =>
-        showInputError({
-          $input: $nameInput,
-          $error: $nameInputError,
-          message: ERROR.NAME.ONLY_LETTERS,
-        }),
+        showInputError({ ...errorOptions, message: ERROR.NAME.ONLY_LETTERS }),
     };
 
   if (name.trim().length < MIN_NAME_LENGTH)
     return {
       success: false,
       showError: () =>
-        showInputError({
-          $input: $nameInput,
-          $error: $nameInputError,
-          message: ERROR.NAME.MIN_LENGTH,
-        }),
+        showInputError({ ...errorOptions, message: ERROR.NAME.MIN_LENGTH }),
     };
 
   if (name.trim().length > MAX_NAME_LENGTH)
     return {
       success: false,
       showError: () =>
-        showInputError({
-          $input: $nameInput,
-          $error: $nameInputError,
-          message: ERROR.NAME.MAX_LENGTH,
-        }),
+        showInputError({ ...errorOptions, message: ERROR.NAME.MAX_LENGTH }),
     };
 
   return {
     success: true,
-    removeError: () =>
-      removeInputError({
-        $input: $nameInput,
-        $error: $nameInputError,
-      }),
+    removeError: () => removeInputError(errorOptions),
   };
 };
 
 /** @returns {ValidationResult} */
 export const validateEmailInput = () => {
   const email = $emailInput.value;
+  const errorOptions = { $input: $emailInput, $error: $emailInputError };
 
   if (email === "")
     return {
       success: false,
       showError: () =>
-        showInputError({
-          $input: $emailInput,
-          $error: $emailInputError,
-          message: ERROR.EMAIL.MISSING,
-        }),
+        showInputError({ ...errorOptions, message: ERROR.EMAIL.MISSING }),
     };
 
   if (email.match(EMAIL_REGEX) == null)
     return {
       success: false,
       showError: () =>
-        showInputError({
-          $input: $emailInput,
-          $error: $emailInputError,
-          message: ERROR.EMAIL.INVALID,
-        }),
+        showInputError({ ...errorOptions, message: ERROR.EMAIL.INVALID }),
     };
 
   return {
     success: true,
-    removeError: () =>
-      removeInputError({
-        $input: $emailInput,
-        $error: $emailInputError,
-      }),
+    removeError: () => removeInputError(errorOptions),
   };
 };
 
