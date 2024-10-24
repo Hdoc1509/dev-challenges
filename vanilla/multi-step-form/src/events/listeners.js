@@ -14,12 +14,13 @@ import {
 import { $goNextStepButton } from "../buttons";
 
 export function setupEventListeners() {
-  $nameInput.addEventListener("input", handleNameInput);
-  $emailInput.addEventListener("input", handleEmailInput);
-  document.addEventListener("change", (e) => {
-    if (e.target instanceof HTMLInputElement) {
-      if (e.target.matches(TOPIC_CHECKBOX_SELECTOR))
-        handleTopicCheckboxChange();
+  document.addEventListener("change", ({ target }) => {
+    if (target instanceof HTMLInputElement) {
+      if (target === $nameInput) handleNameInput();
+
+      if (target === $emailInput) handleEmailInput();
+
+      if (target.matches(TOPIC_CHECKBOX_SELECTOR)) handleTopicCheckboxChange();
     }
   });
 
