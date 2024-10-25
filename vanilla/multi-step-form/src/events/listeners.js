@@ -1,10 +1,10 @@
 import {
   handleNameInput,
   handleEmailInput,
-  handleGoNextStep,
-  handleSubmitRegister,
-  handleTopicCheckboxChange,
-} from "./handlers";
+} from "./handlers/register-inputs.js";
+import { handleTopicCheckboxChange } from "./handlers/topic-checkboxes.js";
+import { handleGoNextStep } from "./handlers/steps.js";
+import { handleSubmitRegister } from "./handlers/submit-register.js";
 import {
   $emailInput,
   $nameInput,

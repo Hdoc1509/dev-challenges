@@ -4,35 +4,6 @@ import { validateEmailInput } from "@/validation/register/email.js";
 import { validateTopicCheckboxes } from "@/validation/topics.js";
 import { $currentStepsLabel, $stepsContainer, totalSteps } from "@/steps";
 
-// TODO: split into multiple files
-// - handlers/inputs
-// - handlers/steps
-// - handlers/form
-
-export const handleNameInput = () => {
-  const validation = validateNameInput();
-
-  if (!validation.success) return validation.showError();
-
-  validation.removeError();
-};
-
-export const handleEmailInput = () => {
-  const validation = validateEmailInput();
-
-  if (!validation.success) return validation.showError();
-
-  validation.removeError();
-};
-
-export const handleTopicCheckboxChange = () => {
-  const validation = validateTopicCheckboxes();
-
-  if (!validation.success) return validation.showError();
-
-  validation.removeError();
-};
-
 export const handleGoNextStep = () => {
   const $currentStep = document.querySelector(".step--current");
   if (!($currentStep instanceof HTMLElement))
@@ -80,15 +51,11 @@ export const handleGoNextStep = () => {
     $currentStepperItem.removeAttribute("data-current");
     $currentStepperItem.setAttribute("data-completed", "");
     $currentStepperItem.nextElementSibling?.setAttribute("data-current", "");
-    $currentStepsLabel.innerText = `${currentStepCounter + 1}`;
+    $currentStepsLabel.textContent = `${currentStepCounter + 1}`;
   }
 
   if (currentStepCounter === totalSteps - 1) {
     $goNextStepButton.classList.add("hidden");
     $submitRegisterButton.classList.remove("hidden");
   }
-};
-
-export const handleSubmitRegister = () => {
-  console.log("submitting response");
 };
