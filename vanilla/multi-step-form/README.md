@@ -26,7 +26,7 @@ This challenge offers a great opportunity to enhance your JavaScript skills by
 creating a 3-step registration form with distinct sections, allowing you to test
 and improve your JavaScript proficiency.
 
-- [ ] Create a multi-step registration page that matches the given design.
+- [x] Create a multi-step registration page that matches the given design.
 - [x] Use HTML to create the basic structure.
 - [x] Add form, inputs, buttons, stepper,... according to the design.
 - [x] Add validations to the inputs: name and email input should be required and

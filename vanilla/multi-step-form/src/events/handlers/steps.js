@@ -3,6 +3,8 @@ import { validateNameInput } from "@/validation/register/name.js";
 import { validateEmailInput } from "@/validation/register/email.js";
 import { validateTopicCheckboxes } from "@/validation/topics.js";
 import { $currentStepsLabel, $stepsContainer, totalSteps } from "@/steps";
+import { $summaryEmail, $summaryName, $summaryTopicsList } from "@/summary";
+import { $emailInput, $nameInput, $topicCheckboxes } from "@/form";
 
 export const handleGoNextStep = () => {
   const $currentStep = document.querySelector(".step--current");
@@ -11,6 +13,7 @@ export const handleGoNextStep = () => {
   const currentStepCounter = Number($currentStep.dataset.step);
 
   if (currentStepCounter < totalSteps) {
+    // register step
     if ($currentStep.classList.contains("register-step")) {
       const nameValidation = validateNameInput();
       let hasErrors = false;
@@ -30,6 +33,7 @@ export const handleGoNextStep = () => {
       if (hasErrors) return;
     }
 
+    // topics step
     if ($currentStep.classList.contains("topics-step")) {
       const validation = validateTopicCheckboxes();
 
@@ -54,8 +58,27 @@ export const handleGoNextStep = () => {
     $currentStepsLabel.textContent = `${currentStepCounter + 1}`;
   }
 
+  // summary step (last step)
   if (currentStepCounter === totalSteps - 1) {
+    $summaryName.textContent = $nameInput.value;
+    $summaryEmail.textContent = $emailInput.value;
+
+    const selectedTopics = $topicCheckboxes
+      .filter(($checkbox) => $checkbox.checked)
+      .map(($checkbox) => $checkbox.nextElementSibling?.textContent);
+
+    selectedTopics.forEach((topic) => {
+      if (topic == null) return;
+
+      const $topicItem = document.createElement("li");
+
+      $topicItem.textContent = topic;
+      $summaryTopicsList.appendChild($topicItem);
+    });
+
     $goNextStepButton.classList.add("hidden");
+    $goNextStepButton.disabled = true;
     $submitRegisterButton.classList.remove("hidden");
+    $submitRegisterButton.disabled = false;
   }
 };
