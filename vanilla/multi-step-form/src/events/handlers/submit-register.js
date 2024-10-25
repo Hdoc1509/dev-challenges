@@ -1,3 +1,5 @@
+import { $restartButton, $submitRegisterButton } from "@/buttons";
+
 const $alert = document.querySelector("#alert");
 if (!($alert instanceof HTMLDivElement))
   throw new Error("'#alert' element not found");
@@ -45,5 +47,9 @@ const showAlert = ({ color, text }) => {
 };
 
 export const handleSubmitRegister = () => {
+  $submitRegisterButton.disabled = true;
+  $submitRegisterButton.classList.add("hidden");
+  $restartButton.disabled = false;
+  $restartButton.classList.remove("hidden");
   showAlert({ color: "success", text: "✅ Success" });
 };
