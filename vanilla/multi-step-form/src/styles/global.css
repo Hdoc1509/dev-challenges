@@ -40,6 +40,9 @@
   --topic-group-gap: 1.5rem;
   --topic-option-bg: var(--secondary-450);
   --topic-option-text: var(--secondary-300);
+
+  /* alerts */
+  --alert-time-bar-duration: 5s;
 }
 @supports (font-variation-settings: normal) {
   :root {

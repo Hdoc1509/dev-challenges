@@ -1,0 +1,48 @@
+.alert {
+  --_movement-duration: 0.5s;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+
+  font-weight: 600;
+
+  visibility: hidden;
+  overflow: hidden;
+  z-index: 20;
+
+  transform: translateX(100%) translate(1rem);
+  transition: transform var(--_movement-duration) ease-in-out;
+}
+.alert--success {
+  background-color: #1f3f3f;
+  color: var(--secondary-200);
+}
+.alert--open {
+  visibility: visible;
+  transform: translateX(0);
+  --_animation-state: running;
+}
+
+.alert__time-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  height: 4px;
+  width: 100%;
+  background: #77b255;
+
+  transform-origin: left center;
+
+  animation: alert-time-bar var(--alert-time-bar-duration) linear forwards
+    var(--_movement-duration) var(--_animation-state, paused);
+}
+
+@keyframes alert-time-bar {
+  to {
+    transform: scaleX(0);
+  }
+}
