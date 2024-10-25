@@ -55,11 +55,15 @@ and improve your JavaScript proficiency.
   - Should be at least 5 characters.
   - Should be at most 15 characters.
   - Should only contain letters.
+- Restart event.
 
 ### What I learned
 
 - Create a stepper slider with CSS and JavaScript.
   - Movement transition between steps.
+- Create an alert with CSS and JavaScript.
+  - Movement transition
+  - Time bar
 
 ## How To Use
 

@@ -5,13 +5,14 @@ import {
 import { handleTopicCheckboxChange } from "./handlers/topic-checkboxes.js";
 import { handleGoNextStep } from "./handlers/steps.js";
 import { handleSubmitRegister } from "./handlers/submit-register.js";
+import { handleRestart } from "./handlers/restart.js";
 import {
   $emailInput,
   $nameInput,
   $registerForm,
   TOPIC_CHECKBOX_SELECTOR,
 } from "@/form";
-import { $goNextStepButton } from "@/buttons";
+import { $goNextStepButton, $restartButton } from "@/buttons";
 
 export function setupEventListeners() {
   document.addEventListener("change", ({ target }) => {
@@ -29,4 +30,5 @@ export function setupEventListeners() {
     e.preventDefault();
     handleSubmitRegister();
   });
+  $restartButton.addEventListener("click", handleRestart);
 }

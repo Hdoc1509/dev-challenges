@@ -6,6 +6,10 @@ if (!($alert instanceof HTMLDivElement))
 const $alertText = document.querySelector(".alert__text");
 if (!($alertText instanceof HTMLSpanElement))
   throw new Error("'.alert__text' element not found");
+const $unsafeAlertTimebar = document.querySelector(".alert__time-bar");
+if (!($unsafeAlertTimebar instanceof HTMLDivElement))
+  throw new Error("'.alert__time-bar' element not found");
+export const $alertTimebar = $unsafeAlertTimebar;
 
 /** @param {string} time */
 const parseTime = (time) =>
