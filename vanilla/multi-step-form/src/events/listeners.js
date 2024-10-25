@@ -12,7 +12,7 @@ import {
   $registerForm,
   TOPIC_CHECKBOX_SELECTOR,
 } from "@/form";
-import { $goNextStepButton, $restartButton } from "@/buttons";
+import { $restartButton, $submitRegisterButton } from "@/buttons";
 
 export function setupEventListeners() {
   document.addEventListener("change", ({ target }) => {
@@ -25,10 +25,12 @@ export function setupEventListeners() {
     }
   });
 
-  $goNextStepButton.addEventListener("click", handleGoNextStep);
   $registerForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    handleSubmitRegister();
+
+    $submitRegisterButton.hasAttribute("data-last-step")
+      ? handleSubmitRegister()
+      : handleGoNextStep();
   });
   $restartButton.addEventListener("click", handleRestart);
 }

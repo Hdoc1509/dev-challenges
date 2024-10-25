@@ -1,4 +1,4 @@
-import { $goNextStepButton, $submitRegisterButton } from "@/buttons";
+import { $submitRegisterButton } from "@/buttons";
 import { validateNameInput } from "@/validation/register/name.js";
 import { validateEmailInput } from "@/validation/register/email.js";
 import { validateTopicCheckboxes } from "@/validation/topics.js";
@@ -76,9 +76,7 @@ export const handleGoNextStep = () => {
       $summaryTopicsList.appendChild($topicItem);
     });
 
-    $goNextStepButton.classList.add("hidden");
-    $goNextStepButton.disabled = true;
-    $submitRegisterButton.classList.remove("hidden");
-    $submitRegisterButton.disabled = false;
+    $submitRegisterButton.textContent = "Confirm";
+    $submitRegisterButton.setAttribute("data-last-step", "");
   }
 };

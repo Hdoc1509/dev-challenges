@@ -1,4 +1,4 @@
-import { $goNextStepButton, $restartButton } from "@/buttons";
+import { $restartButton, $submitRegisterButton } from "@/buttons";
 import { $registerForm } from "@/form";
 import { $stepsContainer } from "@/steps";
 import { $summaryTopicsList } from "@/summary";
@@ -30,10 +30,12 @@ export function handleRestart() {
     $item.removeAttribute("data-completed");
   });
 
+  $submitRegisterButton.classList.remove("hidden");
+  $submitRegisterButton.disabled = false;
+  $submitRegisterButton.textContent = "Continue";
+  $submitRegisterButton.removeAttribute("data-last-step");
   $restartButton.classList.add("hidden");
   $restartButton.disabled = true;
-  $goNextStepButton.classList.remove("hidden");
-  $goNextStepButton.disabled = false;
 
   resetAlertAnimation();
 }
