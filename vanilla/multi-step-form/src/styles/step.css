@@ -104,3 +104,36 @@
   --_text: var(--secondary-200);
   font-weight: 600;
 }
+
+.summary-step {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.summary-step__group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  font-weight: 600;
+}
+.summary-step__group * {
+  margin: 0;
+}
+.summary-step__group p {
+  color: var(--secondary-300);
+}
+.summary-register,
+.summary-topics,
+.summary-topics__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.summary-register__name,
+.summary-register__email {
+  color: var(--secondary-200);
+}
+.summary-topics__list {
+  padding-left: 1.5rem;
+}
