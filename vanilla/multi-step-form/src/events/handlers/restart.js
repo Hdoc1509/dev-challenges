@@ -2,7 +2,7 @@ import { $goNextStepButton, $restartButton } from "@/buttons";
 import { $registerForm } from "@/form";
 import { $stepsContainer } from "@/steps";
 import { $summaryTopicsList } from "@/summary";
-import { $alertTimebar } from "@/alert";
+import { resetAlertAnimation } from "@/alert";
 
 export function handleRestart() {
   const $currentStep = document.querySelector(".step--current");
@@ -35,8 +35,5 @@ export function handleRestart() {
   $goNextStepButton.classList.remove("hidden");
   $goNextStepButton.disabled = false;
 
-  // https://css-tricks.com/restart-css-animation/
-  $alertTimebar.classList.remove("alert__time-bar");
-  void $alertTimebar.offsetWidth;
-  $alertTimebar.classList.add("alert__time-bar");
+  resetAlertAnimation();
 }

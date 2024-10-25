@@ -6,16 +6,22 @@ const $alertText = document.querySelector(".alert__text");
 if (!($alertText instanceof HTMLSpanElement))
   throw new Error("'.alert__text' element not found");
 
-const $_alertTimebar = document.querySelector(".alert__time-bar");
-if (!($_alertTimebar instanceof HTMLDivElement))
+const $alertTimebar = document.querySelector(".alert__time-bar");
+if (!($alertTimebar instanceof HTMLDivElement))
   throw new Error("'.alert__time-bar' element not found");
-export const $alertTimebar = $_alertTimebar;
 
 /** @param {string} time */
 const parseTime = (time) =>
   time.includes("ms")
     ? Number(time.replace("ms", ""))
     : Number(time.replace("s", "")) * 1000;
+
+export const resetAlertAnimation = () => {
+  // https://css-tricks.com/restart-css-animation/
+  $alertTimebar.classList.remove("alert__time-bar");
+  void $alertTimebar.offsetWidth;
+  $alertTimebar.classList.add("alert__time-bar");
+};
 
 /** @type {number | null} */
 let animationDuration = null;
