@@ -99,6 +99,9 @@
 .topic-option input:focus + .topic-option__label {
   --_bg: var(--secondary-400);
 }
+.topic-option input:focus + .topic-option__label {
+  outline: 2px solid var(--secondary-200);
+}
 .topic-option input:checked + .topic-option__label {
   --_bg: var(--primary);
   --_text: var(--secondary-200);
