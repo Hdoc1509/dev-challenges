@@ -2,7 +2,7 @@ import { $goNextStepButton, $restartButton } from "@/buttons";
 import { $registerForm } from "@/form";
 import { $stepsContainer } from "@/steps";
 import { $summaryTopicsList } from "@/summary";
-import { $alertTimebar } from "./submit-register";
+import { $alertTimebar } from "@/alert";
 
 export function handleRestart() {
   const $currentStep = document.querySelector(".step--current");
