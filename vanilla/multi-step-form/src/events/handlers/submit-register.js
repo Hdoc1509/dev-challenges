@@ -40,10 +40,15 @@ const showAlert = ({ color, text }) => {
   $alert.classList.add(`alert--${color}`, "alert--open");
   $alertText.textContent = text;
 
-  setTimeout(
-    () => $alert.classList.remove("alert--open"),
-    animationDuration + movementDelay,
-  );
+  setTimeout(() => {
+    $alert.classList.remove("alert--open");
+    $alert.classList.add("alert--closing");
+
+    setTimeout(
+      () => $alert.classList.remove("alert--closing"),
+      /** @type {number} */ (movementDelay),
+    );
+  }, animationDuration + movementDelay);
 };
 
 export const handleSubmitRegister = () => {

@@ -25,6 +25,9 @@
   transform: translateX(0);
   --_animation-state: running;
 }
+.alert--closing {
+  visibility: visible;
+}
 
 .alert__time-bar {
   position: absolute;
