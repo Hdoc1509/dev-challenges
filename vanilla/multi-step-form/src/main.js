@@ -4,4 +4,6 @@ import "@fontsource/inter/400.css";
 import "@fontsource/inter/600.css";
 import "./styles/main.css";
 
-setupEventListeners();
+document.addEventListener("DOMContentLoaded", () => {
+  setupEventListeners();
+});
