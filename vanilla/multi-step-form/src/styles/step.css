@@ -95,7 +95,8 @@
 
   cursor: pointer;
 }
-.topic-option input:hover + .topic-option__label {
+.topic-option input:hover + .topic-option__label,
+.topic-option input:focus + .topic-option__label {
   --_bg: var(--secondary-400);
 }
 .topic-option input:checked + .topic-option__label {
