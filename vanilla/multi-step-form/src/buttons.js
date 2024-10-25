@@ -8,3 +8,8 @@ if (!($unsafeSubmitRegisterButton instanceof HTMLButtonElement))
 
 export const $goNextStepButton = $unsafeGoNextStepButton;
 export const $submitRegisterButton = $unsafeSubmitRegisterButton;
+
+export const $unsafeRestartButton = document.getElementById("restart");
+if (!($unsafeRestartButton instanceof HTMLButtonElement))
+  throw new Error(`missing '#restart' button element`);
+export const $restartButton = $unsafeRestartButton;
