@@ -25,5 +25,8 @@ export function setupEventListeners() {
   });
 
   $goNextStepButton.addEventListener("click", handleGoNextStep);
-  $registerForm.addEventListener("submit", handleSubmitRegister);
+  $registerForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    handleSubmitRegister();
+  });
 }
