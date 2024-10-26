@@ -11,6 +11,24 @@ if (!($alertTimebar instanceof HTMLDivElement))
   throw new Error("'.alert__time-bar' element not found");
 
 export const resetAlertAnimation = () => {
+  if ($alert.classList.contains("alert--open")) {
+    $alert.classList.remove("alert--open");
+    $alert.classList.add("alert--closing");
+
+    $alert.addEventListener(
+      "transitionend",
+      () => {
+        $alert.classList.remove("alert--closing");
+        $alertTimebar.classList.remove("alert__time-bar");
+        void $alertTimebar.offsetWidth;
+        $alertTimebar.classList.add("alert__time-bar");
+      },
+      { once: true },
+    );
+
+    return;
+  }
+
   // https://css-tricks.com/restart-css-animation/
   $alertTimebar.classList.remove("alert__time-bar");
   void $alertTimebar.offsetWidth;
