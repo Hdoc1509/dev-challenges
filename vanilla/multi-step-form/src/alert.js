@@ -2,13 +2,13 @@ const $alert = document.querySelector("#alert");
 if (!($alert instanceof HTMLDivElement))
   throw new Error("'#alert' element not found");
 
-const $alertText = document.querySelector(".alert__text");
+const $alertText = $alert.querySelector(".alert__text");
 if (!($alertText instanceof HTMLSpanElement))
-  throw new Error("'.alert__text' element not found");
+  throw new Error("'.alert__text' element not found in '#alert' element");
 
-const $alertTimebar = document.querySelector(".alert__time-bar");
+const $alertTimebar = $alert.querySelector(".alert__time-bar");
 if (!($alertTimebar instanceof HTMLDivElement))
-  throw new Error("'.alert__time-bar' element not found");
+  throw new Error("'.alert__time-bar' element not found in '#alert' element");
 
 /**
  * @param {Object} options
