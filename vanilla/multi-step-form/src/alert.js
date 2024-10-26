@@ -1,4 +1,4 @@
-const $alert = document.querySelector("#alert");
+const $alert = document.getElementById("alert");
 if (!($alert instanceof HTMLDivElement))
   throw new Error("'#alert' element not found");
 
