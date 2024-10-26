@@ -10,24 +10,32 @@ const $alertTimebar = document.querySelector(".alert__time-bar");
 if (!($alertTimebar instanceof HTMLDivElement))
   throw new Error("'.alert__time-bar' element not found");
 
-export const resetAlertAnimation = () => {
-  if ($alert.classList.contains("alert--open")) {
-    $alert.classList.remove("alert--open");
-    $alert.classList.add("alert--closing");
+/**
+ * @param {Object} options
+ * @param {() => void} [options.onClose]
+ */
+const closeAlert = ({ onClose } = {}) => {
+  $alert.classList.remove("alert--open");
+  $alert.classList.add("alert--closing");
+  $alert.addEventListener(
+    "transitionend",
+    () => {
+      $alert.classList.remove("alert--closing");
+      onClose?.();
+    },
+    { once: true },
+  );
+};
 
-    $alert.addEventListener(
-      "transitionend",
-      () => {
-        $alert.classList.remove("alert--closing");
+export const resetAlertAnimation = () => {
+  if ($alert.classList.contains("alert--open"))
+    return closeAlert({
+      onClose() {
         $alertTimebar.classList.remove("alert__time-bar");
         void $alertTimebar.offsetWidth;
         $alertTimebar.classList.add("alert__time-bar");
       },
-      { once: true },
-    );
-
-    return;
-  }
+    });
 
   // https://css-tricks.com/restart-css-animation/
   $alertTimebar.classList.remove("alert__time-bar");
@@ -43,18 +51,7 @@ export const resetAlertAnimation = () => {
 export const showAlert = ({ color, text }) => {
   $alert.classList.add(`alert--${color}`, "alert--open");
   $alertText.textContent = text;
-  $alertTimebar.addEventListener(
-    "animationend",
-    () => {
-      $alert.classList.remove("alert--open");
-      $alert.classList.add("alert--closing");
-
-      $alert.addEventListener(
-        "transitionend",
-        () => $alert.classList.remove("alert--closing"),
-        { once: true },
-      );
-    },
-    { once: true },
-  );
+  $alertTimebar.addEventListener("animationend", () => closeAlert(), {
+    once: true,
+  });
 };
