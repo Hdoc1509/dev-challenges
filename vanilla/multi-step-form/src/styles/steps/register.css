@@ -1,0 +1,38 @@
+.register-step {
+  display: flex;
+  flex-direction: column;
+  gap: var(--register-fields-gap);
+}
+.register-step label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  align-items: flex-start;
+
+  color: var(--label-text);
+  font-size: var(--label-text-fs);
+  font-weight: 600;
+  line-height: normal;
+}
+.register-step label input {
+  width: 100%;
+  padding: 1rem 0.875rem;
+  border: 2px solid var(--secondary-400);
+  border-radius: 12px;
+  outline: none;
+  background-color: transparent;
+
+  color: var(--secondary-200);
+  font-size: inherit;
+}
+.register-step label input:focus {
+  border-color: var(--primary-light);
+}
+.register-step label input::placeholder {
+  color: var(--placeholder-text);
+  opacity: 1;
+}
+.register-step .input--with-error,
+.register-step .input--with-error:focus {
+  border-color: rgba(255, 0, 0, 0.5);
+}
