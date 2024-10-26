@@ -2,7 +2,7 @@ import { $restartButton, $submitRegisterButton } from "@/buttons";
 import { $registerForm } from "@/form";
 import { $stepsContainer } from "@/steps";
 import { $summaryTopicsList } from "@/summary";
-import { resetAlertAnimation } from "@/alert";
+import { resetAlert } from "@/alert";
 
 export function handleRestart() {
   const $currentStep = document.querySelector(".step--current");
@@ -37,5 +37,5 @@ export function handleRestart() {
   $restartButton.classList.add("hidden");
   $restartButton.disabled = true;
 
-  resetAlertAnimation();
+  resetAlert();
 }

@@ -27,7 +27,7 @@ const closeAlert = ({ onClose } = {}) => {
   );
 };
 
-export const resetAlertAnimation = () => {
+export const resetAlert = () => {
   if ($alert.classList.contains("alert--open"))
     return closeAlert({
       onClose() {
