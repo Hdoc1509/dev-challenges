@@ -27,20 +27,18 @@ const closeAlert = ({ onClose } = {}) => {
   );
 };
 
-export const resetAlert = () => {
-  if ($alert.classList.contains("alert--open"))
-    return closeAlert({
-      onClose() {
-        $alertTimebar.classList.remove("alert__time-bar");
-        void $alertTimebar.offsetWidth;
-        $alertTimebar.classList.add("alert__time-bar");
-      },
-    });
-
+const resetAlertAnimation = () => {
   // https://css-tricks.com/restart-css-animation/
   $alertTimebar.classList.remove("alert__time-bar");
   void $alertTimebar.offsetWidth;
   $alertTimebar.classList.add("alert__time-bar");
+};
+
+export const resetAlert = () => {
+  if ($alert.classList.contains("alert--open"))
+    return closeAlert({ onClose: resetAlertAnimation });
+
+  resetAlertAnimation();
 };
 
 /**
