@@ -59,6 +59,10 @@
   color: var(--placeholder-text);
   opacity: 1;
 }
+.register-step .input--with-error,
+.register-step .input--with-error:focus {
+  border-color: rgba(255, 0, 0, 0.5);
+}
 
 .topics-step {
   display: flex;
