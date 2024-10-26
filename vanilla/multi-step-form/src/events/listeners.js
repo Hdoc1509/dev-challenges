@@ -25,6 +25,16 @@ export function setupEventListeners() {
     }
   });
 
+  document.addEventListener("input", ({ target }) => {
+    if (
+      target instanceof HTMLInputElement &&
+      target.matches(".input--with-error")
+    ) {
+      if (target === $nameInput) handleNameInput();
+      if (target === $emailInput) handleEmailInput();
+    }
+  });
+
   $registerForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
