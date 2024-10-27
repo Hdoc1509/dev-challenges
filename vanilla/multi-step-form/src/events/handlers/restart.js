@@ -1,4 +1,4 @@
-import { getElementBySelector } from "@/utils/dom.js";
+import { getAllElementsBySelector, getElementBySelector } from "@/utils/dom.js";
 import { $restartButton, $submitRegisterButton } from "@/buttons";
 import { $registerForm } from "@/form";
 import { $stepsContainer } from "@/steps";
@@ -8,8 +8,10 @@ import { resetAlert } from "@/alert";
 export function handleRestart() {
   const $currentStep = getElementBySelector(".step--current", HTMLElement);
   const $firstStep = getElementBySelector(".step", HTMLElement);
-  /** @type {HTMLSpanElement[]} */
-  const $stepperItems = Array.from(document.querySelectorAll(".stepper__step"));
+  const $stepperItems = getAllElementsBySelector(
+    ".stepper__step",
+    HTMLSpanElement,
+  );
 
   $registerForm.reset();
 

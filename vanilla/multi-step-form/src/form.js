@@ -1,4 +1,8 @@
-import { getElementById, getElementBySelector } from "./utils/dom.js";
+import {
+  getAllElementsBySelector,
+  getElementById,
+  getElementBySelector,
+} from "./utils/dom.js";
 
 const FORM_ID = "register-form";
 const ERROR_MESSAGE_CLASS = "error-message";
@@ -30,9 +34,10 @@ export const $emailInputError = getElementBySelector(
 );
 
 export const TOPIC_CHECKBOX_SELECTOR = "input[type='checkbox'][name='topics']";
-/** @type {HTMLInputElement[]} */
-export const $topicCheckboxes = Array.from(
-  $registerForm.querySelectorAll(TOPIC_CHECKBOX_SELECTOR),
+export const $topicCheckboxes = getAllElementsBySelector(
+  TOPIC_CHECKBOX_SELECTOR,
+  HTMLInputElement,
+  $registerForm,
 );
 export const $topicsError = getElementBySelector(
   `.topics-step__group + .${ERROR_MESSAGE_CLASS}`,

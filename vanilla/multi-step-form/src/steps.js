@@ -1,4 +1,8 @@
-import { getElementById, getElementBySelector } from "./utils/dom.js";
+import {
+  getAllElementsBySelector,
+  getElementById,
+  getElementBySelector,
+} from "./utils/dom.js";
 
 export const $stepsContainer = getElementBySelector(
   ".steps-container",
@@ -10,4 +14,8 @@ export const $currentStepsLabel = getElementById(
   HTMLSpanElement,
 );
 
-export const totalSteps = $stepsContainer.querySelectorAll(".step").length;
+export const totalSteps = getAllElementsBySelector(
+  ".step",
+  HTMLElement,
+  $stepsContainer,
+).length;
