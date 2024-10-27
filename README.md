@@ -8,7 +8,7 @@ There are some [packages](#packages) I created while completing them.
 
 ## Challenges
 
-- [ ] [Multi-step Register Form](/vanilla/multi-step-form/)
+- [x] [Multi-step Register Form](/vanilla/multi-step-form/)
 
 ### Legacy
 
