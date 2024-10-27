@@ -8,6 +8,10 @@ There are some [packages](#packages) I created while completing them.
 
 ## Challenges
 
+- [ ] [Multi-step Register Form](/vanilla/multi-step-form/)
+
+### Legacy
+
 - [x] [Button component](/legacy/button-component/)
 - [x] [Input component](/legacy/input-component/)
 - [x] [Windbnb](/legacy/windbnb/)
