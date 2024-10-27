@@ -10,7 +10,7 @@ export function getElementById(id, expectedInterface, $parent = document) {
   const $element = $parent.getElementById(id);
 
   if (!($element instanceof expectedInterface))
-    throw new Error(`${expectedInterface.name} with '#${id}' id not found`);
+    throw new Error(`${expectedInterface.name} with "${id}" id not found`);
 
   return $element;
 }
