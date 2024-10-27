@@ -1,3 +1,4 @@
+import { getElementBySelector } from "@/utils/dom.js";
 import { $submitRegisterButton } from "@/buttons";
 import { validateNameInput } from "@/validation/register/name.js";
 import { validateEmailInput } from "@/validation/register/email.js";
@@ -7,9 +8,7 @@ import { $summaryEmail, $summaryName, $summaryTopicsList } from "@/summary";
 import { $emailInput, $nameInput, $topicCheckboxes } from "@/form";
 
 export const handleGoNextStep = () => {
-  const $currentStep = document.querySelector(".step--current");
-  if (!($currentStep instanceof HTMLElement))
-    throw new Error(`missing '.step--current' element`);
+  const $currentStep = getElementBySelector(".step--current", HTMLElement);
   const currentStepCounter = Number($currentStep.dataset.step);
 
   if (currentStepCounter < totalSteps) {
@@ -40,11 +39,10 @@ export const handleGoNextStep = () => {
       if (!validation.success) return validation.showError();
     }
 
-    const $currentStepperItem = document.querySelector(
+    const $currentStepperItem = getElementBySelector(
       `.stepper__step[data-step="${currentStepCounter}"]`,
+      HTMLSpanElement,
     );
-    if (!($currentStepperItem instanceof HTMLSpanElement))
-      throw new Error(`missing '.stepper__step' element`);
 
     $stepsContainer.style.setProperty(
       "--_step-counter",

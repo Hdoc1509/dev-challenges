@@ -1,20 +1,16 @@
-const $unsafeSummaryName = document.querySelector(
+import { getElementBySelector } from "./utils/dom.js";
+
+export const $summaryName = getElementBySelector(
   ".summary-register__name",
+  HTMLSpanElement,
 );
-if (!($unsafeSummaryName instanceof HTMLSpanElement))
-  throw new Error(`missing '.summary-register__name' element`);
-export const $summaryName = $unsafeSummaryName;
 
-const $unsafeSummaryEmail = document.querySelector(
+export const $summaryEmail = getElementBySelector(
   ".summary-register__email",
+  HTMLSpanElement,
 );
-if (!($unsafeSummaryEmail instanceof HTMLSpanElement))
-  throw new Error(`missing '.summary-register__email' element`);
-export const $summaryEmail = $unsafeSummaryEmail;
 
-const $unsafeSummaryTopicsList = document.querySelector(
+export const $summaryTopicsList = getElementBySelector(
   ".summary-topics__list",
+  HTMLUListElement,
 );
-if (!($unsafeSummaryTopicsList instanceof HTMLUListElement))
-  throw new Error(`missing '.summary-topics__list' element`);
-export const $summaryTopicsList = $unsafeSummaryTopicsList;

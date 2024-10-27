@@ -1,18 +1,20 @@
-import { getElementById } from "./utils/dom.js";
+import { getElementById, getElementBySelector } from "./utils/dom.js";
 
 const ALERT_ID = "alert";
 
 const $alert = getElementById(ALERT_ID, HTMLDivElement);
 
-const $alertText = $alert.querySelector(".alert__text");
-if (!($alertText instanceof HTMLSpanElement))
-  throw new Error(`'.alert__text' element not found in '#${ALERT_ID}' element`);
+const $alertText = getElementBySelector(
+  ".alert__text",
+  HTMLSpanElement,
+  $alert,
+);
 
-const $alertTimebar = $alert.querySelector(".alert__time-bar");
-if (!($alertTimebar instanceof HTMLDivElement))
-  throw new Error(
-    `'.alert__time-bar' element not found in '#${ALERT_ID}' element`,
-  );
+const $alertTimebar = getElementBySelector(
+  ".alert__time-bar",
+  HTMLDivElement,
+  $alert,
+);
 
 /**
  * @param {Object} options

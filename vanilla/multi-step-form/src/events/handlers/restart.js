@@ -1,3 +1,4 @@
+import { getElementBySelector } from "@/utils/dom.js";
 import { $restartButton, $submitRegisterButton } from "@/buttons";
 import { $registerForm } from "@/form";
 import { $stepsContainer } from "@/steps";
@@ -5,15 +6,10 @@ import { $summaryTopicsList } from "@/summary";
 import { resetAlert } from "@/alert";
 
 export function handleRestart() {
-  const $currentStep = document.querySelector(".step--current");
-  const $firstStep = document.querySelector(".step");
+  const $currentStep = getElementBySelector(".step--current", HTMLElement);
+  const $firstStep = getElementBySelector(".step", HTMLElement);
   /** @type {HTMLSpanElement[]} */
   const $stepperItems = Array.from(document.querySelectorAll(".stepper__step"));
-
-  if (!($currentStep instanceof HTMLElement))
-    throw new Error(`missing '.step--current' element`);
-  if (!($firstStep instanceof HTMLElement))
-    throw new Error(`missing '.step' element`);
 
   $registerForm.reset();
 
