@@ -1,8 +1,8 @@
+import { getElementById } from "./utils/dom.js";
+
 const ALERT_ID = "alert";
 
-const $alert = document.getElementById(ALERT_ID);
-if (!($alert instanceof HTMLDivElement))
-  throw new Error(`'#${ALERT_ID}' element not found`);
+const $alert = getElementById(ALERT_ID, HTMLDivElement);
 
 const $alertText = $alert.querySelector(".alert__text");
 if (!($alertText instanceof HTMLSpanElement))

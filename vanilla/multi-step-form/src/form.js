@@ -1,10 +1,9 @@
+import { getElementById } from "./utils/dom.js";
+
 const FORM_ID = "register-form";
 const ERROR_MESSAGE_CLASS = "error-message";
 
-const $unsafeForm = document.getElementById(FORM_ID);
-if (!($unsafeForm instanceof HTMLFormElement))
-  throw new Error(`missing '#${FORM_ID}' element`);
-export const $registerForm = $unsafeForm;
+export const $registerForm = getElementById(FORM_ID, HTMLFormElement);
 
 const $unsafeNameInput = $registerForm.querySelector("input[name='name']");
 const $unsafeNameInputError = $registerForm.querySelector(

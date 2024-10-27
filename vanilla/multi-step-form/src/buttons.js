@@ -1,9 +1,8 @@
-const $unsafeSubmitRegisterButton = document.getElementById("submit-register");
-if (!($unsafeSubmitRegisterButton instanceof HTMLButtonElement))
-  throw new Error(`missing '#submit-register' button element`);
-export const $submitRegisterButton = $unsafeSubmitRegisterButton;
+import { getElementById } from "./utils/dom.js";
 
-export const $unsafeRestartButton = document.getElementById("restart");
-if (!($unsafeRestartButton instanceof HTMLButtonElement))
-  throw new Error(`missing '#restart' button element`);
-export const $restartButton = $unsafeRestartButton;
+export const $submitRegisterButton = getElementById(
+  "submit-register",
+  HTMLButtonElement,
+);
+
+export const $restartButton = getElementById("restart", HTMLButtonElement);
