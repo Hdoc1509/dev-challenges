@@ -24,6 +24,7 @@ export const ERROR = {
  */
 export const showInputError = ({ $input, $error, message }) => {
   $input.classList.add("input--with-error");
+  $input.setCustomValidity(message);
   $error.classList.remove("hidden");
   $error.textContent = message;
 };
@@ -35,9 +36,12 @@ export const showInputError = ({ $input, $error, message }) => {
  */
 export const removeInputError = ({ $input, $error }) => {
   $input.classList.remove("input--with-error");
+  $input.setCustomValidity("");
   $error.classList.add("hidden");
 };
 
+// TODO: improve accessibility of error messages. see:
+// https://cloudfour.com/thinks/progressively-enhanced-form-validation-part-3-validating-a-checkbox-group/
 export const showTopicsError = () => {
   $topicsError.classList.remove("hidden");
   $topicsError.textContent = ERROR.TOPICS.MISSING;
