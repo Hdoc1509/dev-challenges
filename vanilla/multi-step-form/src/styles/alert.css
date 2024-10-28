@@ -1,5 +1,5 @@
 .alert {
-  --_movement-duration: 0.5s;
+  --_movement-duration: 0.4s;
   position: fixed;
   top: 1rem;
   right: 1rem;
