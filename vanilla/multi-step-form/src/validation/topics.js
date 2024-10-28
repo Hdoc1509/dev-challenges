@@ -1,13 +1,13 @@
 import { showTopicsError, removeTopicsError } from "@/errors";
-import { $topicCheckboxes } from "@/form";
+import { $registerForm, TOPIC_CHECKBOX_NAME } from "@/form";
 
 /** @typedef {import("@/types").ValidationResult} ValidationResult */
 
 /** @returns {ValidationResult} */
 export const validateTopicCheckboxes = () => {
-  const selectedTopics = $topicCheckboxes
-    .filter(($checkbox) => $checkbox.checked)
-    .map(($checkbox) => $checkbox.value);
+  const selectedTopics = new FormData($registerForm).getAll(
+    TOPIC_CHECKBOX_NAME,
+  );
 
   if (selectedTopics.length === 0)
     return {

@@ -33,7 +33,8 @@ export const $emailInputError = getElementBySelector(
   $registerForm,
 );
 
-export const TOPIC_CHECKBOX_SELECTOR = "input[type='checkbox'][name='topics']";
+export const TOPIC_CHECKBOX_NAME = "topics";
+export const TOPIC_CHECKBOX_SELECTOR = `input[type='checkbox'][name='${TOPIC_CHECKBOX_NAME}']`;
 export const $topicCheckboxes = getAllElementsBySelector(
   TOPIC_CHECKBOX_SELECTOR,
   HTMLInputElement,
