@@ -1,8 +1,6 @@
 import { getElementById, getElementBySelector } from "./utils/dom.js";
 
-const ALERT_ID = "alert";
-
-const $alert = getElementById(ALERT_ID, HTMLDivElement);
+const $alert = getElementById("alert", HTMLDivElement);
 
 const $alertText = getElementBySelector(
   ".alert__text",
