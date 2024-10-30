@@ -114,6 +114,7 @@ main {
 }
 
 .error-message {
+  display: block;
   width: fit-content;
   padding: 0.25rem 0.5rem;
   border-radius: 6px;
