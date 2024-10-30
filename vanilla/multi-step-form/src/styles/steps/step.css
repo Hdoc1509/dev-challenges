@@ -14,14 +14,20 @@
   flex-shrink: 0;
   visibility: hidden;
 
+  padding: 0;
+  margin: 0;
+  border: none;
+
   transition: visibility 0.3s ease-in-out;
 }
 .step--current {
   visibility: visible;
 }
 .step__title {
-  font-size: var(--step-heading-fs);
   margin: 0;
+  padding: 0;
+  font-size: var(--step-heading-fs);
+  font-weight: 700;
 }
 
 .register-step {

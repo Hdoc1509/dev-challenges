@@ -1,7 +1,5 @@
-.topics-step {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+.topics-step .step__title {
+  margin-bottom: 2.5rem;
 }
 .topics-step__group {
   display: flex;

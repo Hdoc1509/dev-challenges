@@ -10,8 +10,8 @@
     <main>
       <form id="register-form" class="form-card" novalidate>
         <div class="steps-container">
-          <section class="register-step step step--current" data-step="1">
-            <h2 class="step__title">Register</h2>
+          <fieldset class="register-step step step--current" data-step="1">
+            <legend class="step__title">Register</legend>
             <label>
               <span>Name<span aria-hidden="true"> *</span></span>
               <input name="name" placeholder="enter your name" required />
@@ -27,9 +27,11 @@
               />
               <span class="error-message hidden"></span>
             </label>
-          </section>
-          <section class="topics-step step" data-step="2">
-            <h2 class="step__title">Which topics you are interested in?</h2>
+          </fieldset>
+          <fieldset class="topics-step step" data-step="2">
+            <legend class="step__title">
+              Which topics you are interested in?
+            </legend>
             <div class="topics-step__group" aria-label="Topic options">
               <label class="topic-option">
                 <input
@@ -49,7 +51,7 @@
               </label>
             </div>
             <span class="error-message hidden"></span>
-          </section>
+          </fieldset>
           <section class="summary-step step" data-step="3">
             <h2 class="step__title">Summary</h2>
             <div class="summary-step__group">

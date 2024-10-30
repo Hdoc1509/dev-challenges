@@ -1,7 +1,5 @@
-.register-step {
-  display: flex;
-  flex-direction: column;
-  gap: var(--register-fields-gap);
+.register-step > * + * {
+  margin-top: var(--register-fields-gap);
 }
 .register-step label {
   display: flex;
