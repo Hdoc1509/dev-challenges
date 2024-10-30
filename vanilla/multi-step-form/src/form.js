@@ -40,8 +40,17 @@ export const $topicCheckboxes = getAllElementsBySelector(
   HTMLInputElement,
   $registerForm,
 );
+export const $topicsFieldset = getElementBySelector(
+  ".topics-step",
+  HTMLFieldSetElement,
+  $registerForm,
+);
 export const $topicsError = getElementBySelector(
   `.topics-step__group + .${ERROR_MESSAGE_CLASS}`,
   HTMLSpanElement,
   $registerForm,
+);
+export const $topicsLegendError = getElementById(
+  "topics-legend-error",
+  HTMLSpanElement,
 );

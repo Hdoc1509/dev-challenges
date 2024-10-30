@@ -5,7 +5,12 @@ import { validateEmailInput } from "@/validation/register/email.js";
 import { validateTopicCheckboxes } from "@/validation/topics.js";
 import { $currentStepsLabel, $stepsContainer, totalSteps } from "@/steps";
 import { $summaryEmail, $summaryName, $summaryTopicsList } from "@/summary";
-import { $emailInput, $nameInput, $topicCheckboxes } from "@/form";
+import {
+  $emailInput,
+  $nameInput,
+  $topicCheckboxes,
+  TOPIC_CHECKBOX_SELECTOR,
+} from "@/form";
 
 export const handleGoNextStep = () => {
   const $currentStep = getElementBySelector(".step--current", HTMLElement);
@@ -16,6 +21,8 @@ export const handleGoNextStep = () => {
     if ($currentStep.classList.contains("register-step")) {
       const nameValidation = validateNameInput();
       let hasErrors = false;
+
+      // TODO: focus on the first invalid input
 
       if (!nameValidation.success) {
         hasErrors = true;
@@ -36,7 +43,11 @@ export const handleGoNextStep = () => {
     if ($currentStep.classList.contains("topics-step")) {
       const validation = validateTopicCheckboxes();
 
-      if (!validation.success) return validation.showError();
+      if (!validation.success) {
+        validation.showError();
+        $topicCheckboxes[0].focus();
+        return;
+      }
     }
 
     const $currentStepperItem = getElementBySelector(

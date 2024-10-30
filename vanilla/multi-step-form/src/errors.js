@@ -1,4 +1,4 @@
-import { $topicsError } from "./form";
+import { $topicsError, $topicsFieldset, $topicsLegendError } from "./form";
 
 export const ERROR = {
   NAME: {
@@ -23,6 +23,8 @@ export const ERROR = {
  * @param {string} params.message
  */
 export const showInputError = ({ $input, $error, message }) => {
+  // TODO: improve accessibility of error messages. see:
+  // https://cloudfour.com/thinks/progressively-enhanced-form-validation-part-2-layering-in-javascript/#using-a-custom-design-for-validation-error-messages
   $input.classList.add("input--with-error");
   $input.setCustomValidity(message);
   $error.classList.remove("hidden");
@@ -40,12 +42,14 @@ export const removeInputError = ({ $input, $error }) => {
   $error.classList.add("hidden");
 };
 
-// TODO: improve accessibility of error messages. see:
-// https://cloudfour.com/thinks/progressively-enhanced-form-validation-part-3-validating-a-checkbox-group/
 export const showTopicsError = () => {
+  $topicsFieldset.setAttribute("aria-invalid", "true");
   $topicsError.classList.remove("hidden");
   $topicsError.textContent = ERROR.TOPICS.MISSING;
+  $topicsLegendError.textContent = ERROR.TOPICS.MISSING;
 };
 export const removeTopicsError = () => {
+  $topicsFieldset.removeAttribute("aria-invalid");
   $topicsError.classList.add("hidden");
+  $topicsLegendError.textContent = "";
 };
