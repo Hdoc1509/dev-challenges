@@ -18,9 +18,7 @@
 
 ## Overview
 
-![multi-step-form screenshot](https://github.com/user-attachments/assets/6c516040-58cd-49e6-bf12-b08907b074b9)
-
-> Screenshot taken at 1280x720 resolution.
+![multi-step-form screenshot](https://github.com/user-attachments/assets/746617e3-521a-477d-906e-db12fa699ddf)
 
 This challenge offers a great opportunity to enhance your JavaScript skills by
 creating a 3-step registration form with distinct sections, allowing you to test
