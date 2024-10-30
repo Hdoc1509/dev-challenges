@@ -10,6 +10,8 @@ import {
   $emailInput,
   $nameInput,
   $registerForm,
+  $topicCheckboxes,
+  TOPIC_CHECKBOX_NAME,
   TOPIC_CHECKBOX_SELECTOR,
 } from "@/form";
 import { $restartButton, $submitRegisterButton } from "@/buttons";
@@ -33,6 +35,17 @@ export function setupEventListeners() {
       if (target === $nameInput) handleNameInput();
       if (target === $emailInput) handleEmailInput();
     }
+  });
+
+  $topicCheckboxes.forEach(($checkbox) => {
+    $checkbox.addEventListener("blur", (event) => {
+      const $activeElement = event.relatedTarget;
+
+      if (!($activeElement instanceof Element)) return;
+
+      if ($activeElement.getAttribute("name") !== TOPIC_CHECKBOX_NAME)
+        handleTopicCheckboxChange();
+    });
   });
 
   $registerForm.addEventListener("submit", (e) => {
