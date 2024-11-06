@@ -1,4 +1,4 @@
-import { handleNameInput } from "./handlers/register-inputs.js";
+import { validateNameInput } from "@/validation/register/name.js";
 import { validateEmailInput } from "@/validation/register/email.js";
 import { validateTopicCheckboxes } from "@/validation/topics.js";
 import { handleGoNextStep } from "./handlers/steps.js";
@@ -17,7 +17,7 @@ import { $restartButton, $submitRegisterButton } from "@/buttons";
 export function setupEventListeners() {
   document.addEventListener("change", ({ target }) => {
     if (target instanceof HTMLInputElement) {
-      if (target === $nameInput) handleNameInput();
+      if (target === $nameInput) validateNameInput();
 
       if (target === $emailInput) validateEmailInput();
 
@@ -30,7 +30,7 @@ export function setupEventListeners() {
       target instanceof HTMLInputElement &&
       target.matches(".input--with-error")
     ) {
-      if (target === $nameInput) handleNameInput();
+      if (target === $nameInput) validateNameInput();
       if (target === $emailInput) validateEmailInput();
     }
   });

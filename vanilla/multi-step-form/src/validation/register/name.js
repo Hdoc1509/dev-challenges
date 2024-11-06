@@ -6,44 +6,33 @@ import {
   MIN_NAME_LENGTH,
 } from "@/form.js";
 import { NAME_REGEX } from "@/regex.js";
-/** @typedef {import("@/types").ValidationResult} ValidationResult */
 
 const errorOptions = { $input: $nameInput, $error: $nameInputError };
 
-/** @returns {ValidationResult} */
+/** @returns {{ success: boolean }} */
 export const validateNameInput = () => {
   const name = $nameInput.value;
 
-  if (name === "")
-    return {
-      success: false,
-      showError: () =>
-        showInputError({ ...errorOptions, message: ERROR.NAME.MISSING }),
-    };
+  if (name === "") {
+    showInputError({ ...errorOptions, message: ERROR.NAME.MISSING });
+    return { success: false };
+  }
 
-  if (name.match(NAME_REGEX) == null)
-    return {
-      success: false,
-      showError: () =>
-        showInputError({ ...errorOptions, message: ERROR.NAME.ONLY_LETTERS }),
-    };
+  if (name.match(NAME_REGEX) == null) {
+    showInputError({ ...errorOptions, message: ERROR.NAME.ONLY_LETTERS });
+    return { success: false };
+  }
 
-  if (name.trim().length < MIN_NAME_LENGTH)
-    return {
-      success: false,
-      showError: () =>
-        showInputError({ ...errorOptions, message: ERROR.NAME.MIN_LENGTH }),
-    };
+  if (name.trim().length < MIN_NAME_LENGTH) {
+    showInputError({ ...errorOptions, message: ERROR.NAME.MIN_LENGTH });
+    return { success: false };
+  }
 
-  if (name.trim().length > MAX_NAME_LENGTH)
-    return {
-      success: false,
-      showError: () =>
-        showInputError({ ...errorOptions, message: ERROR.NAME.MAX_LENGTH }),
-    };
+  if (name.trim().length > MAX_NAME_LENGTH) {
+    showInputError({ ...errorOptions, message: ERROR.NAME.MAX_LENGTH });
+    return { success: false };
+  }
 
-  return {
-    success: true,
-    removeError: () => removeInputError(errorOptions),
-  };
+  removeInputError(errorOptions);
+  return { success: true };
 };

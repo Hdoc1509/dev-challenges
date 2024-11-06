@@ -15,18 +15,9 @@ export const handleGoNextStep = () => {
     // register step
     if ($currentStep.classList.contains("register-step")) {
       const nameValidation = validateNameInput();
-      let hasErrors = false;
-
-      if (!nameValidation.success) {
-        hasErrors = true;
-        nameValidation.showError();
-      }
-
       const emailValidation = validateEmailInput();
 
-      hasErrors = !emailValidation.success;
-
-      if (hasErrors) return;
+      if (!nameValidation.success || !emailValidation.success) return;
     }
 
     // topics step
