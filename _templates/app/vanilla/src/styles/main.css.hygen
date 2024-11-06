@@ -1,0 +1,5 @@
+---
+to: vanilla/<%= name %>/src/styles/main.css
+---
+
+@import "global.css";
