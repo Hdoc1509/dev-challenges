@@ -20,9 +20,13 @@
 
 <!-- TODO: Update screenshot once project has completed -->
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![<%= name %> screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
 
 <!-- Challenge Description -->
+
+## User Stories
+
+<!-- list here -->
 
 ### Built With
 
@@ -40,15 +44,20 @@
 - [fontsource](https://fontsource.org/)
 - [@material-design-icons/font](https://marella.me/material-design-icons/demo/font/)
 
+### Extra Features
+
+_WIP_
+
 ### What I learned
 
-WIP
+_WIP_
 
 ## How To Use
 
 To clone and run this application, you'll need [Git](https://git-scm.com),
-[Node.js](https://nodejs.org/en/download/) and [pnpm](https://pnpm.io/installation)
-installed on your computer. From your command line:
+[Node.js](https://nodejs.org/en/download/) and
+[pnpm](https://pnpm.io/installation) installed on your computer. From your
+command line:
 
 ```bash
 # Clone this repository
