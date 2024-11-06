@@ -24,10 +24,7 @@ export const handleGoNextStep = () => {
 
       const emailValidation = validateEmailInput();
 
-      if (!emailValidation.success) {
-        hasErrors = true;
-        emailValidation.showError();
-      }
+      hasErrors = !emailValidation.success;
 
       if (hasErrors) return;
     }

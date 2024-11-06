@@ -1,30 +1,23 @@
 import { showInputError, removeInputError, ERROR } from "@/errors.js";
 import { $emailInput, $emailInputError } from "@/form.js";
 import { EMAIL_REGEX } from "@/regex.js";
-/** @typedef {import("@/types").ValidationResult} ValidationResult */
 
 const errorOptions = { $input: $emailInput, $error: $emailInputError };
 
-/** @returns {ValidationResult} */
+/** @returns {{ success: boolean }} */
 export const validateEmailInput = () => {
   const email = $emailInput.value;
 
-  if (email === "")
-    return {
-      success: false,
-      showError: () =>
-        showInputError({ ...errorOptions, message: ERROR.EMAIL.MISSING }),
-    };
+  if (email === "") {
+    showInputError({ ...errorOptions, message: ERROR.EMAIL.MISSING });
+    return { success: false };
+  }
 
-  if (email.match(EMAIL_REGEX) == null)
-    return {
-      success: false,
-      showError: () =>
-        showInputError({ ...errorOptions, message: ERROR.EMAIL.INVALID }),
-    };
+  if (email.match(EMAIL_REGEX) == null) {
+    showInputError({ ...errorOptions, message: ERROR.EMAIL.INVALID });
+    return { success: false };
+  }
 
-  return {
-    success: true,
-    removeError: () => removeInputError(errorOptions),
-  };
+  removeInputError(errorOptions);
+  return { success: true };
 };
