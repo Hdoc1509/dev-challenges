@@ -1,0 +1,23 @@
+---
+to: vanilla/<%= name %>/jsconfig.json
+---
+
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "EsNext",
+
+    "moduleResolution": "bundler",
+
+    "allowJs": true,
+    "checkJs": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}
