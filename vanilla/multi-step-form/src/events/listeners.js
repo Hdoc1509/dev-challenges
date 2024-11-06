@@ -2,7 +2,7 @@ import {
   handleNameInput,
   handleEmailInput,
 } from "./handlers/register-inputs.js";
-import { handleTopicCheckboxChange } from "./handlers/topic-checkboxes.js";
+import { validateTopicCheckboxes } from "@/validation/topics.js";
 import { handleGoNextStep } from "./handlers/steps.js";
 import { handleSubmitRegister } from "./handlers/submit-register.js";
 import { handleRestart } from "./handlers/restart.js";
@@ -23,7 +23,7 @@ export function setupEventListeners() {
 
       if (target === $emailInput) handleEmailInput();
 
-      if (target.matches(TOPIC_CHECKBOX_SELECTOR)) handleTopicCheckboxChange();
+      if (target.matches(TOPIC_CHECKBOX_SELECTOR)) validateTopicCheckboxes();
     }
   });
 
@@ -44,7 +44,7 @@ export function setupEventListeners() {
       if (!($activeElement instanceof Element)) return;
 
       if ($activeElement.getAttribute("name") !== TOPIC_CHECKBOX_NAME)
-        handleTopicCheckboxChange();
+        validateTopicCheckboxes();
     });
   });
 

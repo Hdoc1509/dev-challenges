@@ -36,7 +36,7 @@ export const handleGoNextStep = () => {
     if ($currentStep.classList.contains("topics-step")) {
       const validation = validateTopicCheckboxes();
 
-      if (!validation.success) return validation.showError();
+      if (!validation.success) return;
     }
 
     const $currentStepperItem = getElementBySelector(
