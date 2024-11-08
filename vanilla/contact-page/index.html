@@ -8,14 +8,50 @@
   </head>
   <body>
     <header>
-      <h1>Title</h1>
+      <img class="logo" src="/logo.svg" alt="Becv Logo" />
     </header>
     <main>
-      Content
+      <h1>Interested in our business pricing?</h1>
+      <p>
+        Fill out the form to view details and we’ll contact you as soon as
+        possible.
+      </p>
+      <form class="form-card">
+        <div class="fields-grid">
+          <label>
+            Name
+            <input name="name" placeholder="Ethan Johnson" required />
+          </label>
+          <label>
+            Company Email
+            <input name="email" type="email" placeholder="ethan@johnson.com" />
+          </label>
+          <label>
+            Company Size
+            <select name="company-size">
+              <option value="50-100">50-100 employees</option>
+              <option value="100-200">100-200 employees</option>
+              <option value="200-500">200-500 employees</option>
+            </select>
+          </label>
+          <label>
+            Subject
+            <select name="subject">
+              <option value="building-landing-pages">
+                Building Landing pages
+              </option>
+              <option value="building-mobile-apps">Building mobile apps</option>
+              <option value="designing-websites">Designing websites</option>
+            </select>
+          </label>
+        </div>
+        <textarea
+          name="message"
+          placeholder="Write your message here"
+        ></textarea>
+        <button class="submit-button">Contact Sales</button>
+      </form>
     </main>
-    <footer>
-      Footer
-    </footer>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
