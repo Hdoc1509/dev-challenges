@@ -1,12 +1,12 @@
-<h1 align="center"><%= h.changeCase.title(name) %></h1>
+<h1 align="center">Contact Page</h1>
 
 <div align="center">
   <h3>
-    <a href="https://hdoc1509.github.io/dev-challenges/<%= name %>/">
+    <a href="https://hdoc1509.github.io/dev-challenges/contact-page/">
       Solution
     </a>
     <span> | </span>
-    <a href="<%= challenge_url %>">
+    <a href="https://devchallenges.io/challenge/contact-page">
       Challenge
     </a>
   </h3>
@@ -20,7 +20,7 @@
 
 <!-- TODO: Update screenshot once project has completed -->
 
-![<%= name %> screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![contact-page screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
 
 <!-- Challenge Description -->
 
@@ -30,7 +30,7 @@
 
 ### Built With
 
-<%# TODO: only include tools that are common to all project types %>
+
 
 - [React](https://reactjs.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
@@ -68,9 +68,10 @@ git clone https://github.com/Hdoc1509/dev-challenges
 # install all workspace dependencies
 cd dev-challenges && pnpm install
 
-# Run <%= name %> in dev-mode
-cd apps/<%= name %>/
+# Run contact-page in dev-mode
+cd apps/contact-page/
 pnpm run dev --open
 ```
 
 [deploy]: https://github.com/Hdoc1509/dev-challenges/actions/workflows/deploy.yml/badge.svg
+
