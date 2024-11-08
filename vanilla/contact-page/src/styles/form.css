@@ -1,0 +1,15 @@
+.form-card {
+  background-color: var(--card-bg);
+}
+
+.form-card input {
+  color: var(--field-text);
+}
+.form-card input::placeholder {
+  color: var(--placeholder-text);
+  opacity: 1;
+}
+
+.form-card .submit-button {
+  color: var(--submit-text);
+}

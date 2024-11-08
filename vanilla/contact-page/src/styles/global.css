@@ -7,6 +7,11 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --card-bg: #FFFFFF33;
+  --field-text: #111729;
+  --placeholder-text: #CDD5E0;
+  --submit-text: #4036A9;
 }
 
 *,
@@ -30,7 +35,7 @@ body {
   background-size: cover;
   padding: 2rem;
 
-  color: #000;
+  color: #fff;
 }
 @media (max-width: 767px) {
   body {
