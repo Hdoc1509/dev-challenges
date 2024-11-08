@@ -46,6 +46,12 @@ body {
 h1 {
   text-align: center;
   text-wrap: balance;
-  font-size: 2rem;
+  font-size: 4rem;
   line-height: 1.1;
+}
+
+.description {
+  text-align: center;
+  text-wrap: pretty;
+  font-size: 2rem;
 }
