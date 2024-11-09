@@ -63,6 +63,10 @@ select {
   font: inherit;
 }
 
+button {
+  cursor: pointer;
+}
+
 .description {
   text-align: center;
   text-wrap: pretty;
