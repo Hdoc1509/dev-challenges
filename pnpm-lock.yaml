@@ -819,10 +819,11 @@ importers:
         version: 1.65.0
 
   vanilla/contact-page:
-    devDependencies:
+    dependencies:
       '@fontsource/be-vietnam-pro':
         specifier: 'catalog:'
         version: 5.1.0
+    devDependencies:
       vite:
         specifier: 'catalog:'
         version: 5.0.2(@types/node@20.5.0)(sass@1.65.0)

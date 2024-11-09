@@ -8,8 +8,10 @@
     "build": "vite build",
     "preview": "vite preview"
   },
+  "dependencies": {
+    "@fontsource/be-vietnam-pro": "catalog:"
+  },
   "devDependencies": {
-    "@fontsource/be-vietnam-pro": "catalog:",
     "vite": "catalog:"
   }
 }
