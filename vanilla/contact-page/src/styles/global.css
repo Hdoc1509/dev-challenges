@@ -33,7 +33,7 @@ body {
 
   background-image: url("/background.svg");
   background-size: cover;
-  padding: var(--body-padding, 2rem);
+  padding: var(--body-padding, 1.25rem 4.5rem);
 
   color: #fff;
 }
@@ -45,6 +45,11 @@ body {
     --form-card-padding: 1.5rem 1rem;
     --form-field-columns: 1fr;
   }
+}
+
+main {
+  margin: 0 auto;
+  max-width: 810px;
 }
 
 h1 {
