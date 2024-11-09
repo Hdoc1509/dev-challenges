@@ -1,4 +1,4 @@
-import { showAlert } from "@/alert";
+import { showAlert } from "@lib/alert";
 import { $restartButton, $submitRegisterButton } from "@/buttons";
 
 export const handleSubmitRegister = () => {

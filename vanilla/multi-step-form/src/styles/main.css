@@ -3,4 +3,4 @@
 @import "steps/main.css";
 @import "buttons.css";
 @import "stepper.css";
-@import "alert.css";
+@import "@lib/alert/styles.css";

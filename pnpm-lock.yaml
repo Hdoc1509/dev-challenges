@@ -835,6 +835,9 @@ importers:
       '@fontsource/inter':
         specifier: 'catalog:'
         version: 5.1.0
+      '@lib/alert':
+        specifier: workspace:*
+        version: link:../../libs/alert
       '@lib/dom':
         specifier: workspace:*
         version: link:../../libs/dom

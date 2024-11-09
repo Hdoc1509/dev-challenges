@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@lib/alert": "workspace:*",
     "@lib/dom": "workspace:*",
     "@fontsource-variable/inter": "catalog:",
     "@fontsource/inter": "catalog:",

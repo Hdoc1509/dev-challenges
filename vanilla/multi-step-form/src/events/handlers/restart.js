@@ -3,7 +3,7 @@ import { $restartButton, $submitRegisterButton } from "@/buttons";
 import { $registerForm } from "@/form";
 import { $stepsContainer } from "@/steps";
 import { $summaryTopicsList } from "@/summary";
-import { resetAlert } from "@/alert";
+import { resetAlert } from "@lib/alert";
 
 export function handleRestart() {
   const $currentStep = getElementBySelector(".step--current", HTMLElement);
