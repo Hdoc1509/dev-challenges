@@ -782,6 +782,12 @@ importers:
         specifier: 'catalog:'
         version: 5.0.2(@types/node@20.5.0)(sass@1.65.0)
 
+  libs/alert:
+    dependencies:
+      '@lib/dom':
+        specifier: workspace:*
+        version: link:../dom
+
   libs/components:
     dependencies:
       '@hrc/material-icons':
