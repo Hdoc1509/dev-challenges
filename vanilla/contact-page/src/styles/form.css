@@ -32,6 +32,9 @@
   color: var(--placeholder-text);
   opacity: 1;
 }
+.form-card textarea {
+  resize: none;
+}
 
 .form-card .submit-button {
   padding: 1.5rem;
