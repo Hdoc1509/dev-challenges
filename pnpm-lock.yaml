@@ -823,6 +823,9 @@ importers:
       '@fontsource/be-vietnam-pro':
         specifier: 'catalog:'
         version: 5.1.0
+      '@lib/dom':
+        specifier: workspace:*
+        version: link:../../libs/dom
     devDependencies:
       vite:
         specifier: 'catalog:'

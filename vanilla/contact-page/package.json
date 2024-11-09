@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@lib/dom": "workspace:*",
     "@fontsource/be-vietnam-pro": "catalog:"
   },
   "devDependencies": {

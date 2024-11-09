@@ -46,7 +46,7 @@ form, inputs,..
 
 ### Extra Features
 
-_WIP_
+- Clear form on submit
 
 ### What I learned
 
