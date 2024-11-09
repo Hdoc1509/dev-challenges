@@ -24,7 +24,9 @@
   font-size: 0.875rem;
 }
 
-.form-card input, .form-card textarea, .form-card select {
+.form-card input,
+.form-card textarea,
+.form-card select {
   border-radius: 14px;
   border: none;
   padding: 1.5rem 1.125rem;
@@ -34,12 +36,28 @@
   font-size: 1rem;
   font-weight: 600;
 }
-.form-card input::placeholder, .form-card textarea::placeholder {
+.form-card input::placeholder,
+.form-card textarea::placeholder {
   color: var(--placeholder-text);
   opacity: 1;
 }
 .form-card textarea {
   resize: none;
+}
+.form-card .select {
+  position: relative;
+}
+.form-card .select__inner {
+  appearance: none;
+  width: 100%;
+}
+.form-card .select .dropdown-icon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 1.125rem; /* need to be the same as padding-inline */
+
+  margin: auto;
 }
 
 .form-card .submit-button {

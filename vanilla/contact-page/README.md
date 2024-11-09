@@ -30,7 +30,7 @@ form, inputs,..
 
 - [ ] Create a contact page that matches the given design.
 - [x] Use HTML to create the basic structure.
-- [ ] Add icon, heading, description, form, input, dropdown, button,.. according
+- [x] Add icon, heading, description, form, input, dropdown, button,.. according
       to the design.
 - [x] Inputs should have placeholders.
 - [x] Dropdown should have at least 2 options, it's up to you which more options
