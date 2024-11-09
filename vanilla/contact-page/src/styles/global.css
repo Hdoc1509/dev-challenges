@@ -8,10 +8,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --card-bg: #FFFFFF33;
+  --card-bg: #ffffff33;
   --field-text: #111729;
   --placeholder-text: #6e757f;
-  --submit-text: #4036A9;
+  --submit-text: #4036a9;
 }
 
 *,
@@ -50,9 +50,10 @@ h1 {
   line-height: 1.1;
 }
 
+button,
 input,
 textarea,
-select{
+select {
   font: inherit;
 }
 
