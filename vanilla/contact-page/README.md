@@ -28,32 +28,23 @@ form, inputs,..
 
 ## User Stories
 
-- [ ] Create a contact page that matches the given design.
+- [x] Create a contact page that matches the given design.
 - [x] Use HTML to create the basic structure.
 - [x] Add icon, heading, description, form, input, dropdown, button,.. according
       to the design.
 - [x] Inputs should have placeholders.
 - [x] Dropdown should have at least 2 options, it's up to you which more options
       to add but the default must be same as in the design.
-- [ ] Use CSS or CSS frameworks for styling.
+- [x] Use CSS or CSS frameworks for styling.
 - [x] The page should be responsive on different screen sizes.
 - [ ] Deploy the solution and submit Repository URL and Demo URL.
 
 ### Built With
 
-- [React](https://reactjs.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
 - [Vite](https://vitejs.dev/)
-- [Sass](https://sass-lang.com/)
-- [clsx](https://github.com/lukeed/clsx#readme)
 - [BEM](https://getbem.com/)
-- [@hrc/button](https://hdoc1509.github.io/hrc/packages/button/)
-- [@hrc/input](https://hdoc1509.github.io/hrc/packages/input/)
-- [@hrc/material-icons](https://hdoc1509.github.io/hrc/packages/material-icons/)
-- [@hrc/spinner](https://hdoc1509.github.io/hrc/packages/spinner/)
-- [@hrc/toggle-theme](https://hdoc1509.github.io/hrc/packages/toggle-theme/)
 - [fontsource](https://fontsource.org/)
-- [@material-design-icons/font](https://marella.me/material-design-icons/demo/font/)
+  - [Be Vietnam Pro](https://fontsource.org/fonts/be-vietnam-pro)
 
 ### Extra Features
 

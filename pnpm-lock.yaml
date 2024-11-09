@@ -30,6 +30,9 @@ catalogs:
     '@fontsource-variable/raleway':
       specifier: 5.0.19
       version: 5.0.19
+    '@fontsource/be-vietnam-pro':
+      specifier: 5.1.0
+      version: 5.1.0
     '@fontsource/inter':
       specifier: 5.1.0
       version: 5.1.0
@@ -809,6 +812,9 @@ importers:
 
   vanilla/contact-page:
     devDependencies:
+      '@fontsource/be-vietnam-pro':
+        specifier: 'catalog:'
+        version: 5.1.0
       vite:
         specifier: 'catalog:'
         version: 5.0.2(@types/node@20.5.0)(sass@1.65.0)
@@ -1469,6 +1475,9 @@ packages:
 
   '@fontsource-variable/raleway@5.0.19':
     resolution: {integrity: sha512-HR6JDmRqrjjkZnk0HhVR0vHCkDUuQdEwTaRz1nToWvej0gpC0riEdi7zmaQjaH12O7PBsO+bewqQFSUrA7tDhA==}
+
+  '@fontsource/be-vietnam-pro@5.1.0':
+    resolution: {integrity: sha512-7/bvo9Rxexnqh52W5JuLZWOV7JR6l71QJW360HQ89rTPZIY/qLMB212pfoYXGPYBTsttTBS+e22/wEurghp6oA==}
 
   '@fontsource/inter@5.1.0':
     resolution: {integrity: sha512-zKZR3kf1G0noIes1frLfOHP5EXVVm0M7sV/l9f/AaYf+M/DId35FO4LkigWjqWYjTJZGgplhdv4cB+ssvCqr5A==}
@@ -5060,6 +5069,8 @@ snapshots:
   '@fontsource-variable/noto-sans-jp@5.0.19': {}
 
   '@fontsource-variable/raleway@5.0.19': {}
+
+  '@fontsource/be-vietnam-pro@5.1.0': {}
 
   '@fontsource/inter@5.1.0': {}
 

@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@fontsource/be-vietnam-pro": "catalog:",
     "vite": "catalog:"
   }
 }
