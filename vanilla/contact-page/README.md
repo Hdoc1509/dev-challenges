@@ -35,7 +35,7 @@ form, inputs,..
       to add but the default must be same as in the design.
 - [x] Use CSS or CSS frameworks for styling.
 - [x] The page should be responsive on different screen sizes.
-- [ ] Deploy the solution and submit Repository URL and Demo URL.
+- [x] Deploy the solution and submit Repository URL and Demo URL.
 
 ### Built With
 
