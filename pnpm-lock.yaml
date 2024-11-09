@@ -794,6 +794,8 @@ importers:
         specifier: workspace:*
         version: link:../sass-utils
 
+  libs/dom: {}
+
   libs/fetcher:
     dependencies:
       zod:
