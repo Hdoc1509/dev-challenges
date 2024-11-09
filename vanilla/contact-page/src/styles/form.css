@@ -6,13 +6,13 @@
   max-width: 810px;
   border-radius: 18px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: var(--form-card-padding, 2rem);
   background-color: var(--card-bg);
 }
 
 .form-card .fields-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: var(--form-field-columns, 1fr 1fr);
   gap: 1.5rem 1.125rem;
 }
 

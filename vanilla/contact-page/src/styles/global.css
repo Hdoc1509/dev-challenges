@@ -33,13 +33,17 @@ body {
 
   background-image: url("/background.svg");
   background-size: cover;
-  padding: 2rem;
+  padding: var(--body-padding, 2rem);
 
   color: #fff;
 }
-@media (max-width: 767px) {
-  body {
-    padding: 1rem;
+@media (max-width: 640px) {
+  :root {
+    --body-padding: 1rem;
+    --header-fs: 2.5rem;
+    --description-fs: 1.5rem;
+    --form-card-padding: 1.5rem 1rem;
+    --form-field-columns: 1fr;
   }
 }
 
@@ -48,7 +52,7 @@ h1 {
 
   text-align: center;
   text-wrap: balance;
-  font-size: 4rem;
+  font-size: var(--header-fs, 4rem);
   line-height: 1.1;
 }
 
@@ -62,5 +66,5 @@ select {
 .description {
   text-align: center;
   text-wrap: pretty;
-  font-size: 2rem;
+  font-size: var(--description-fs, 2rem);
 }

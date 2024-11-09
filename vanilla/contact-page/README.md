@@ -36,7 +36,7 @@ form, inputs,..
 - [x] Dropdown should have at least 2 options, it's up to you which more options
       to add but the default must be same as in the design.
 - [ ] Use CSS or CSS frameworks for styling.
-- [ ] The page should be responsive on different screen sizes.
+- [x] The page should be responsive on different screen sizes.
 - [ ] Deploy the solution and submit Repository URL and Demo URL.
 
 ### Built With
