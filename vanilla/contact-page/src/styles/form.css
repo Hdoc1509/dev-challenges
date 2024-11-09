@@ -26,7 +26,7 @@
   color: var(--field-text);
   font-size: 1rem;
 }
-.form-card input::placeholder {
+.form-card input::placeholder, .form-card textarea::placeholder {
   color: var(--placeholder-text);
   opacity: 1;
 }
