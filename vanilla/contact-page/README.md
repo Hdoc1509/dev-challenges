@@ -18,9 +18,7 @@
 
 ## Overview
 
-<!-- TODO: Update screenshot once project has completed -->
-
-![contact-page screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![contact-page screenshot](https://github.com/user-attachments/assets/7c7abe31-3d79-4de6-b3e4-e3faa8bfea28)
 
 This challenge is to practice form and responsive design with HTML and CSS
 skills. The challenge is to create a contact page that you need to work with
@@ -52,7 +50,8 @@ _WIP_
 
 ### What I learned
 
-_WIP_
+- Create a contact page with HTML and CSS.
+- Set custom icon for `<select>` element
 
 ## How To Use
 
