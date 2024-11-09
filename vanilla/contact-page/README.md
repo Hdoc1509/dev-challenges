@@ -22,15 +22,22 @@
 
 ![contact-page screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
 
-<!-- Challenge Description -->
+This challenge is to practice form and responsive design with HTML and CSS
+skills. The challenge is to create a contact page that you need to work with
+form, inputs,..
 
 ## User Stories
 
-<!-- list here -->
+- [ ] Create a contact page that matches the given design.
+- [x] Use HTML to create the basic structure.
+- [ ] Add icon, heading, description, form, input, dropdown, button,.. according to the design.
+- [x] Inputs should have placeholders.
+- [ ] Dropdown should have at least 2 options, it's up to you which more options to add but the default must be same as in the design.
+- [ ] Use CSS or CSS frameworks for styling.
+- [ ] The page should be responsive on different screen sizes.
+- [ ] Deploy the solution and submit Repository URL and Demo URL.
 
 ### Built With
-
-
 
 - [React](https://reactjs.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
