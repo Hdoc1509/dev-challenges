@@ -828,7 +828,7 @@ importers:
         version: 5.0.2(@types/node@20.5.0)(sass@1.65.0)
 
   vanilla/multi-step-form:
-    devDependencies:
+    dependencies:
       '@fontsource-variable/inter':
         specifier: 'catalog:'
         version: 5.1.0
@@ -841,6 +841,7 @@ importers:
       '@lib/dom':
         specifier: workspace:*
         version: link:../../libs/dom
+    devDependencies:
       vite:
         specifier: 'catalog:'
         version: 5.0.2(@types/node@20.5.0)(sass@1.65.0)
