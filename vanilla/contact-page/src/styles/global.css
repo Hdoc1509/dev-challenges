@@ -50,6 +50,12 @@ h1 {
   line-height: 1.1;
 }
 
+input,
+textarea,
+select{
+  font: inherit;
+}
+
 .description {
   text-align: center;
   text-wrap: pretty;
