@@ -3,6 +3,9 @@
   flex-direction: column;
   gap: 1.5rem;
 
+  max-width: 810px;
+  border-radius: 18px;
+  margin: 0 auto;
   padding: 2rem;
   background-color: var(--card-bg);
 }
@@ -22,7 +25,10 @@
 }
 
 .form-card input, .form-card textarea, .form-card select {
+  border-radius: 14px;
+  border: none;
   padding: 1.5rem 1.125rem;
+  background-color: #fff;
 
   color: var(--field-text);
   font-size: 1rem;
@@ -37,7 +43,10 @@
 }
 
 .form-card .submit-button {
+  border-radius: 14px;
+  border: none;
   padding: 1.5rem;
+  background-color: #fff;
 
   color: var(--submit-text);
   font-size: 1.25rem;
