@@ -23,7 +23,7 @@
 body {
   display: grid;
   grid-template-rows: auto 1fr;
-  gap: 1rem;
+  gap: 2.75rem;
 
   margin: 0 auto;
   min-width: 320px;
@@ -68,6 +68,9 @@ button {
 }
 
 .description {
+  margin: 0;
+  margin-top: 1rem;
+
   text-align: center;
   text-wrap: pretty;
   font-size: var(--description-fs, 2rem);

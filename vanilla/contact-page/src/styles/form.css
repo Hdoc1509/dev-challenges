@@ -6,6 +6,7 @@
   max-width: 810px;
   border-radius: 18px;
   margin: 0 auto;
+  margin-top: 4.5rem;
   padding: var(--form-card-padding, 2rem);
   background-color: var(--card-bg);
 }
