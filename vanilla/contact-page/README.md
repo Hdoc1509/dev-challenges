@@ -30,9 +30,11 @@ form, inputs,..
 
 - [ ] Create a contact page that matches the given design.
 - [x] Use HTML to create the basic structure.
-- [ ] Add icon, heading, description, form, input, dropdown, button,.. according to the design.
+- [ ] Add icon, heading, description, form, input, dropdown, button,.. according
+      to the design.
 - [x] Inputs should have placeholders.
-- [ ] Dropdown should have at least 2 options, it's up to you which more options to add but the default must be same as in the design.
+- [x] Dropdown should have at least 2 options, it's up to you which more options
+      to add but the default must be same as in the design.
 - [ ] Use CSS or CSS frameworks for styling.
 - [ ] The page should be responsive on different screen sizes.
 - [ ] Deploy the solution and submit Repository URL and Demo URL.
@@ -81,4 +83,3 @@ pnpm run dev --open
 ```
 
 [deploy]: https://github.com/Hdoc1509/dev-challenges/actions/workflows/deploy.yml/badge.svg
-
