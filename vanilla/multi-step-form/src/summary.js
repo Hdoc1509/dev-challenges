@@ -1,4 +1,4 @@
-import { getElementBySelector } from "./utils/dom.js";
+import { getElementBySelector } from "@lib/dom";
 
 export const $summaryName = getElementBySelector(
   ".summary-register__name",

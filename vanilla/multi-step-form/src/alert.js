@@ -1,4 +1,4 @@
-import { getElementById, getElementBySelector } from "./utils/dom.js";
+import { getElementById, getElementBySelector } from "@lib/dom";
 
 const $alert = getElementById("alert", HTMLDivElement);
 

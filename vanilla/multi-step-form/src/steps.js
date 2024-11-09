@@ -2,7 +2,7 @@ import {
   getAllElementsBySelector,
   getElementById,
   getElementBySelector,
-} from "./utils/dom.js";
+} from "@lib/dom";
 
 export const $stepsContainer = getElementBySelector(
   ".steps-container",

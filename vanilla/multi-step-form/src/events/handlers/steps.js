@@ -1,4 +1,4 @@
-import { getElementBySelector } from "@/utils/dom.js";
+import { getElementBySelector } from "@lib/dom";
 import { $submitRegisterButton } from "@/buttons";
 import { validateNameInput } from "@/validation/register/name.js";
 import { validateEmailInput } from "@/validation/register/email.js";

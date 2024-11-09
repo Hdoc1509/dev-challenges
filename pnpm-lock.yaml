@@ -829,6 +829,9 @@ importers:
       '@fontsource/inter':
         specifier: 'catalog:'
         version: 5.1.0
+      '@lib/dom':
+        specifier: workspace:*
+        version: link:../../libs/dom
       vite:
         specifier: 'catalog:'
         version: 5.0.2(@types/node@20.5.0)(sass@1.65.0)

@@ -1,4 +1,4 @@
-import { getAllElementsBySelector, getElementBySelector } from "@/utils/dom.js";
+import { getAllElementsBySelector, getElementBySelector } from "@lib/dom";
 import { $restartButton, $submitRegisterButton } from "@/buttons";
 import { $registerForm } from "@/form";
 import { $stepsContainer } from "@/steps";

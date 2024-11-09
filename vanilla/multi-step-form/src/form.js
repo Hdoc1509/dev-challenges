@@ -2,7 +2,7 @@ import {
   getAllElementsBySelector,
   getElementById,
   getElementBySelector,
-} from "./utils/dom.js";
+} from "@lib/dom";
 
 const FORM_ID = "register-form";
 const ERROR_MESSAGE_CLASS = "error-message";
