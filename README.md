@@ -8,8 +8,25 @@ There are some [packages](#packages) I created while completing them.
 
 ## Challenges
 
+### Responsive Web Design
+
 - [x] [Contact Page](/vanilla/contact-page/)
+
+### JavaScript
+
 - [x] [Multi-step Register Form](/vanilla/multi-step-form/)
+- [ ] [Music Player](/vanilla/music-player/)
+- [ ] [Random Quote](/vanilla/quote-generator/)
+- [ ] [QR Code Generator](/vanilla/qr-code-generator/)
+- [ ] [Guess The Word Game](/vanilla/guess-the-word/)
+
+### Frontend Libraries
+
+- [ ] [Simple Coffee Listing](/frontend-dev/coffee-listing/)
+- [ ] [Translate app](/frontend-dev/translate-app/)
+- [ ] [Github Profile](/frontend-dev/github-profile/)
+- [ ] [Country Page - WorldRanks](/frontend-dev/country-page-worldranks/)
+- [ ] [Country Quiz](/frontend-dev/country-quiz/)
 
 ### Legacy
 
