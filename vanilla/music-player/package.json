@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@fontsource-variable/inter": "catalog:",
+    "@fontsource/inter": "catalog:",
     "vite": "catalog:"
   }
 }

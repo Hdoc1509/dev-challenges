@@ -44,7 +44,7 @@ using JavaScript.
 - [Vite](https://vitejs.dev/)
 - [BEM](https://getbem.com/)
 - [fontsource](https://fontsource.org/)
-- [@material-design-icons/font](https://marella.me/material-design-icons/demo/font/)
+  - [Inter](https://fontsource.org/fonts/inter)
 
 ### Extra Features
 
