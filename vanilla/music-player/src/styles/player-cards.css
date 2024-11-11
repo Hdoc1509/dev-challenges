@@ -6,3 +6,11 @@
   border-radius: 18px;
   background-color: var(--card-bg);
 }
+
+.card__cover {
+  margin: 0;
+}
+.card__cover img {
+  width: 100%;
+  border-radius: 18px;
+}
