@@ -14,3 +14,20 @@
   width: 100%;
   border-radius: 18px;
 }
+
+.card__info {
+  margin-top: 1rem;
+  text-align: center;
+}
+.card__info * {
+  margin: 0;
+}
+.card__title {
+  color: var(--text);
+  font-size: var(--song-title-fs);
+}
+.card__author {
+  margin-top: 0.25rem;
+  color: var(--text-secondary);
+  font-size: var(--author-fs);
+}
