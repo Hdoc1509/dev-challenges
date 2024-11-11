@@ -1,0 +1,8 @@
+.player-card {
+  max-width: 350px;
+  margin: 0 auto;
+  padding: 1.25rem;
+  padding-bottom: 1.75rem;
+  border-radius: 18px;
+  background-color: var(--card-bg);
+}
