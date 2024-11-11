@@ -42,7 +42,7 @@ body {
   min-height: 100vh;
   min-height: 100svh;
 
-  background-color: #fff;
+  background-image: url("/bg.jpg");
   padding: 2rem;
 
   color: #000;
