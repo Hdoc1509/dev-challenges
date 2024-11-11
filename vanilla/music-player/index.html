@@ -7,15 +7,39 @@
     <title>Music Player - DevChallenges</title>
   </head>
   <body>
-    <header>
-      <h1>Title</h1>
-    </header>
     <main>
-      Content
+      <div class="player-card">
+        <figure class="card__cover">
+          <img src="/cover-1.png" alt="Cover" />
+        </figure>
+        <header class="card__info">
+          <h2 class="card__title">Song Title</h2>
+          <p class="card__author">Author</p>
+        </header>
+        <section class="card__progress progress">
+          <!-- TODO: use the same logic and styles as <Meter /> from Legacy Weather App -->
+          <label class="progress__label">
+            <span class="progress__label-min">0:00</span>
+            <span class="progress__label-max">4:20</span>
+          </label>
+          <progress value="50" max="100"></progress>
+        </section>
+        <section class="card__controls">
+          <button class="player-control-prev">
+            <!-- TODO: use <svg> from Stop_and_play-1.svg -->
+            Previous
+          </button>
+          <button class="player-control-play">
+            <!-- TODO: use <svg> from Play_fill.svg -->
+            Play/Pause
+          </button>
+          <button class="player-control-next">
+            <!-- TODO: use <svg> from Stop_and_play_fill.svg -->
+            Next
+          </button>
+        </section>
+      </div>
     </main>
-    <footer>
-      Footer
-    </footer>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
