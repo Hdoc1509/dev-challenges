@@ -18,7 +18,7 @@
 
 ## Overview
 
-![contact-page screenshot](https://github.com/user-attachments/assets/02616a34-5501-4b38-b116-1449d43833e1)
+![contact-page screenshot](https://github.com/user-attachments/assets/c6c7cf2a-4ab8-4410-a023-6407c3005c57)
 
 This challenge is to practice form and responsive design with HTML and CSS
 skills. The challenge is to create a contact page that you need to work with
