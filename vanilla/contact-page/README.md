@@ -68,7 +68,7 @@ git clone https://github.com/Hdoc1509/dev-challenges
 cd dev-challenges && pnpm install
 
 # Run contact-page in dev-mode
-cd apps/contact-page/
+cd vanilla/contact-page/
 pnpm run dev --open
 ```
 
