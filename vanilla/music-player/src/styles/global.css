@@ -12,6 +12,12 @@
   --song-title-fs: 1rem;
   --author-fs: 0.75rem;
   --progress-label-fs: 0.625rem;
+
+  /* colors */
+  --primary: #c93b76;
+  --secondary: #212936;
+  --text: #e5e7eb;
+  --text-secondary: #4d5562;
 }
 @supports (font-variation-settings: normal) {
   :root {
