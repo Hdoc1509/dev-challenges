@@ -7,6 +7,11 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* font sizes */
+  --song-title-fs: 1rem;
+  --author-fs: 0.75rem;
+  --progress-label-fs: 0.625rem;
 }
 @supports (font-variation-settings: normal) {
   :root {
