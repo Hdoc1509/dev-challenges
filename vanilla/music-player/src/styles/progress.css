@@ -1,0 +1,29 @@
+.progress {
+  display: flex;
+  flex-direction: column;
+  gap: var(--progress-gap, 4px);
+
+  color: var(--progress-text);
+  font-size: var(--progress-font-size);
+  font-weight: var(--progress-font-weight);
+}
+.progress__marks {
+  display: flex;
+  justify-content: space-between;
+}
+.progress__bar {
+  display: flex;
+
+  height: var(--progress-height, 8px);
+  background-color: var(--progress-bg, #fff);
+  border-radius: var(--progress-radius, 8px);
+}
+.progress__bar::after {
+  content: "";
+  display: inline-block;
+
+  height: 100%;
+  width: var(--progress-value, 50%);
+  background-color: var(--progress-track-bg, #90cdf4);
+  border-radius: inherit;
+}

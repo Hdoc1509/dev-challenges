@@ -31,3 +31,13 @@
   color: var(--text-secondary);
   font-size: var(--author-fs);
 }
+
+.card__progress {
+  margin-top: 1.5rem;
+
+  --progress-font-size: var(--progress-label-fs);
+  --progress-text: var(--text-secondary);
+  --progress-bg: var(--text);
+  --progress-track-bg: var(--primary);
+  --progress-height: 4px;
+}
