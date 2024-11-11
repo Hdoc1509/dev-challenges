@@ -9,9 +9,9 @@
   -moz-osx-font-smoothing: grayscale;
 
   /* font sizes */
-  --song-title-fs: 1rem;
-  --author-fs: 0.75rem;
-  --progress-label-fs: 0.625rem;
+  --song-title-fs: 1.125rem;
+  --author-fs: 0.875rem;
+  --progress-label-fs: 0.75rem;
 
   /* colors */
   --primary: #c93b76;
