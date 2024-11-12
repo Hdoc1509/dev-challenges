@@ -54,6 +54,8 @@
   background-color: transparent;
   border: none;
   padding: 0;
+
+  cursor: pointer;
 }
 
 .card__controls .control-play-pause {
