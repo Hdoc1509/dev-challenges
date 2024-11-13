@@ -33,7 +33,8 @@
   width: var(--progress-thumb-size, 16px);
   background-color: var(--progress-thumb);
   border-radius: 50%;
-  border: 2px solid var(--progress-thumb-border);
+  border: 1px solid var(--progress-thumb-border);
+  box-shadow: var(--progress-thumb-shadow);
 }
 .progress__bar::-moz-range-thumb {
   height: var(--progress-thumb-size, 16px);
