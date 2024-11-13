@@ -41,7 +41,6 @@
   --progress-track-bg: var(--primary);
   /* --progress-track-shadow: var(--shadow-primary); */
   --progress-thumb: var(--primary);
-  --progress-thumb-border: var(--text);
   --progress-thumb-shadow: var(--shadow-primary);
   --progress-thumb-size: 12px;
   --progress-height: 4px;
