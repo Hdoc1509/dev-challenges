@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@fontsource-variable/inter": "catalog:",
-    "@fontsource/inter": "catalog:"
+    "@fontsource/inter": "catalog:",
+    "@lib/dom": "workspace:"
   },
   "devDependencies": {
     "vite": "catalog:"

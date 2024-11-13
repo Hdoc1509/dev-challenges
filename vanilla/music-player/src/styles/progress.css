@@ -20,6 +20,11 @@
   height: var(--progress-height, 8px);
   margin: 0;
   background-color: var(--progress-bg, #fff);
+  background: linear-gradient(
+    to right,
+    var(--progress-track-bg) var(--progress-value, 50%),
+    var(--progress-bg) var(--progress-value, 50%)
+  );
   border-radius: var(--progress-radius, 8px);
   outline: none;
 
@@ -43,11 +48,4 @@
   border-radius: 50%;
   border: 1px solid var(--progress-thumb-border);
   box-shadow: var(--progress-thumb-shadow);
-}
-/* TODO: check if something similar is needed for webkit */
-.progress__bar::-moz-range-progress {
-  background-color: var(--progress-track-bg);
-  border: 1px solid var(--progress-track-bg);
-  border-radius: var(--progress-radius, 8px);
-  box-shadow: var(--progress-track-shadow);
 }

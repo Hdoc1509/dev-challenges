@@ -39,7 +39,7 @@
   --progress-text: var(--text-secondary);
   --progress-bg: var(--text);
   --progress-track-bg: var(--primary);
-  --progress-track-shadow: var(--shadow-primary);
+  /* --progress-track-shadow: var(--shadow-primary); */
   --progress-thumb: var(--primary);
   --progress-thumb-border: var(--text);
   --progress-thumb-shadow: var(--shadow-primary);
