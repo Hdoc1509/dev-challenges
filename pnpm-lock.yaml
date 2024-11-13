@@ -851,13 +851,14 @@ importers:
         version: 5.0.2(@types/node@20.5.0)(sass@1.65.0)
 
   vanilla/music-player:
-    devDependencies:
+    dependencies:
       '@fontsource-variable/inter':
         specifier: 'catalog:'
         version: 5.1.0
       '@fontsource/inter':
         specifier: 'catalog:'
         version: 5.1.0
+    devDependencies:
       vite:
         specifier: 'catalog:'
         version: 5.0.2(@types/node@20.5.0)(sass@1.65.0)
