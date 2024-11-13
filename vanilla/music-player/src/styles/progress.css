@@ -11,19 +11,48 @@
   display: flex;
   justify-content: space-between;
 }
+/* based on https://blog.logrocket.com/creating-custom-css-range-slider-javascript-upgrades/ */
 .progress__bar {
-  display: flex;
+  -webkit-appearance: none;
+  appearance: none;
 
+  width: 100%;
   height: var(--progress-height, 8px);
+  margin: 0;
   background-color: var(--progress-bg, #fff);
   border-radius: var(--progress-radius, 8px);
-}
-.progress__bar::after {
-  content: "";
-  display: inline-block;
+  outline: none;
 
-  height: 100%;
-  width: var(--progress-value, 50%);
-  background-color: var(--progress-track-bg, #90cdf4);
-  border-radius: inherit;
+  cursor: pointer;
+}
+.progress__bar:hover, .progress__bar:focus {
+  --_thumb-scale: 1;
+}
+.progress__bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+
+  height: var(--progress-thumb-size, 16px);
+  width: var(--progress-thumb-size, 16px);
+  background-color: var(--progress-thumb);
+  border-radius: 50%;
+  border: 2px solid var(--progress-thumb-border);
+}
+.progress__bar::-moz-range-thumb {
+  height: var(--progress-thumb-size, 16px);
+  width: var(--progress-thumb-size, 16px);
+  background-color: var(--progress-thumb);
+  border-radius: 50%;
+  border: 1px solid var(--progress-thumb-border);
+  box-shadow: var(--progress-thumb-shadow);
+
+  transform: scale(var(--_thumb-scale, 0));
+  transition: transform 0.15s ease-in-out;
+}
+/* TODO: check if something similar is needed for webkit */
+.progress__bar::-moz-range-progress {
+  background-color: var(--progress-track-bg);
+  border: 1px solid var(--progress-track-bg);
+  border-radius: var(--progress-radius, 8px);
+  box-shadow: var(--progress-track-shadow);
 }

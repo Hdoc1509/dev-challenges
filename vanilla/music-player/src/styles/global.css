@@ -15,9 +15,13 @@
 
   /* colors */
   --primary: #c93b76;
+  --primary-transparent: #c93b7628;
   --card-bg: #121826a6;
   --text: #e5e7eb;
   --text-secondary: #4d5562;
+
+  /* shadows */
+  --shadow-primary: 0 0 4px 4px var(--primary-transparent);
 }
 @supports (font-variation-settings: normal) {
   :root {

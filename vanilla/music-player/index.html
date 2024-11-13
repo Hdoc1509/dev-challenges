@@ -21,7 +21,15 @@
             <span>0:00</span>
             <span>03:15</span>
           </span>
-          <span class="progress__bar"></span>
+          <input
+            aria-label="Play time progress"
+            id="progress-bar"
+            class="progress__bar"
+            type="range"
+            min="0"
+            max="100"
+            value="0"
+          />
         </section>
         <section class="player-card__controls">
           <button id="control-prev" class="player-card__control">

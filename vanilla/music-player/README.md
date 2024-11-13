@@ -29,8 +29,8 @@ using JavaScript.
 ## User Stories
 
 - [ ] Create a music player app that matches the given design.
-- [ ] Use HTML to create the basic structure.
-- [ ] Add image, title, author, progress bar, player button,... according to the
+- [x] Use HTML to create the basic structure.
+- [x] Add image, title, author, progress bar, player button,... according to the
       design.
 - [ ] Use vanilla JavaScript to add interactivity.
 - [ ] Users should be able to play and stop the current song.
