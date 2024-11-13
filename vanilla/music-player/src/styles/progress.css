@@ -25,9 +25,6 @@
 
   cursor: pointer;
 }
-.progress__bar:hover, .progress__bar:focus {
-  --_thumb-scale: 1;
-}
 .progress__bar::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -45,9 +42,6 @@
   border-radius: 50%;
   border: 1px solid var(--progress-thumb-border);
   box-shadow: var(--progress-thumb-shadow);
-
-  transform: scale(var(--_thumb-scale, 0));
-  transition: transform 0.15s ease-in-out;
 }
 /* TODO: check if something similar is needed for webkit */
 .progress__bar::-moz-range-progress {
