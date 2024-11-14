@@ -88,6 +88,8 @@
   border: none;
   border-radius: 50%;
 
+  color: var(--text);
+
   --_pause-icon-display: none;
 }
 #control-play-pause[data-status="playing"] {
@@ -102,4 +104,8 @@
 }
 #pause-icon {
   display: var(--_pause-icon-display);
+}
+
+#control-prev, #control-next {
+  color: var(--text-secondary);
 }
