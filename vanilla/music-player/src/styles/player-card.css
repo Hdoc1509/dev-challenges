@@ -71,8 +71,12 @@
 .player-card__control:focus:not(#control-play-pause) {
   transform: scale(1.15);
 }
+.player-card__control svg {
+  /* NOTE: needed when using event delegation */
+  pointer-events: none;
+}
 
-.player-card__control#control-play-pause {
+#control-play-pause {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,4 +87,19 @@
   background-color: var(--primary);
   border: none;
   border-radius: 50%;
+
+  --_pause-icon-display: none;
+}
+#control-play-pause[data-status="playing"] {
+  --_play-icon-display: none;
+  --_pause-icon-display: initial;
+}
+#control-play-pause[data-status="stop"] {
+  --_pause-icon-display: none;
+}
+#play-icon {
+  display: var(--_play-icon-display);
+}
+#pause-icon {
+  display: var(--_pause-icon-display);
 }

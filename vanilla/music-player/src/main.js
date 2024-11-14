@@ -20,6 +20,12 @@ const $song = getElementById("song", HTMLAudioElement);
 
 $song.volume = 0.25;
 
+const PLAY_STATUS = {
+  PLAYING: "playing",
+  IDLE: "idle",
+  STOP: "stop",
+};
+
 document.addEventListener("input", (e) => {
   const $target = e.target;
 
@@ -28,5 +34,24 @@ document.addEventListener("input", (e) => {
     const progress = (currentTime / Number($playProgress.max)) * 100;
 
     $playProgress.style.setProperty("--progress-value", `${progress}%`);
+  }
+});
+
+document.addEventListener("click", (e) => {
+  const $target = e.target;
+
+  if ($target === $playPauseControl) {
+    const currentStatus = $playPauseControl.dataset.status;
+
+    if (currentStatus == null || currentStatus === PLAY_STATUS.STOP) {
+      $playPauseControl.dataset.status = PLAY_STATUS.PLAYING;
+      $song.play();
+      return;
+    }
+    if (currentStatus === PLAY_STATUS.PLAYING) {
+      $playPauseControl.dataset.status = PLAY_STATUS.STOP;
+      $song.pause();
+      return;
+    }
   }
 });
