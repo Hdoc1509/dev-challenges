@@ -22,8 +22,8 @@
   background-color: var(--progress-bg, #fff);
   background: linear-gradient(
     to right,
-    var(--progress-track-bg) var(--progress-value, 50%),
-    var(--progress-bg) var(--progress-value, 50%)
+    var(--progress-track-bg) var(--progress-value, 0%),
+    var(--progress-bg) var(--progress-value, 0%)
   );
   border-radius: var(--progress-radius, 8px);
   outline: none;
