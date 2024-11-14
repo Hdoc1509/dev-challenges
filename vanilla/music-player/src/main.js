@@ -10,6 +10,12 @@ import "./styles/main.css";
 //  - https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio
 
 const $playProgress = getElementById("progress-bar", HTMLInputElement);
+const $playPauseControl = getElementById(
+  "control-play-pause",
+  HTMLButtonElement,
+);
+const $nextControl = getElementById("control-next", HTMLButtonElement);
+const $prevControl = getElementById("control-prev", HTMLButtonElement);
 
 document.addEventListener("input", (e) => {
   const $target = e.target;

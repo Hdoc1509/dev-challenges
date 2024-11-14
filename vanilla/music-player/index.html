@@ -51,15 +51,32 @@
               />
             </svg>
           </button>
-          <button id="control-play-pause" class="player-card__control">
+          <button
+            id="control-play-pause"
+            class="player-card__control"
+            data-status="idle"
+          >
             <svg
-              width="32"
-              height="32"
-              fill="none"
+              id="play-icon"
               xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
             >
               <path
-                d="m21.941 14.244-7.822-4.008C12.686 9.502 11 10.57 11 12.211v7.577c0 1.642 1.686 2.71 3.119 1.976l7.822-4.008c1.412-.724 1.412-2.789 0-3.512Z"
+                d="M6 4v16a1 1 0 0 0 1.524.852l13-8a1 1 0 0 0 0-1.704l-13-8A1 1 0 0 0 6 4z"
+                fill="#E5E7EB"
+              />
+            </svg>
+            <svg
+              id="pause-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+            >
+              <path
+                d="M9 4H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zM17 4h-2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"
                 fill="#E5E7EB"
               />
             </svg>
