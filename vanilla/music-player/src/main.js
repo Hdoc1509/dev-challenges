@@ -18,6 +18,8 @@ const $nextControl = getElementById("control-next", HTMLButtonElement);
 const $prevControl = getElementById("control-prev", HTMLButtonElement);
 const $song = getElementById("song", HTMLAudioElement);
 
+$song.volume = 0.25;
+
 document.addEventListener("input", (e) => {
   const $target = e.target;
 
