@@ -23,12 +23,10 @@ $song.volume = 0.25;
 document.addEventListener("input", (e) => {
   const $target = e.target;
 
-  if ($target instanceof HTMLInputElement) {
-    if ($target === $playProgress) {
-      const currentTime = $target.valueAsNumber;
-      const progress = (currentTime / Number($target.max)) * 100;
+  if ($target === $playProgress) {
+    const currentTime = $playProgress.valueAsNumber;
+    const progress = (currentTime / Number($playProgress.max)) * 100;
 
-      $target.style.setProperty("--progress-value", `${progress}%`);
-    }
+    $playProgress.style.setProperty("--progress-value", `${progress}%`);
   }
 });
