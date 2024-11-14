@@ -16,6 +16,7 @@ const $playPauseControl = getElementById(
 );
 const $nextControl = getElementById("control-next", HTMLButtonElement);
 const $prevControl = getElementById("control-prev", HTMLButtonElement);
+const $song = getElementById("song", HTMLAudioElement);
 
 document.addEventListener("input", (e) => {
   const $target = e.target;
