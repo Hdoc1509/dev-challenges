@@ -1,11 +1,6 @@
 import { $playPauseControl } from "@/controls.js";
 import { $song } from "@/song.js";
-
-const PLAY_STATUS = {
-  PLAYING: "playing",
-  IDLE: "idle",
-  STOP: "stop",
-};
+import { PLAY_STATUS } from "@/consts";
 
 export function handlePlayPause() {
   const currentStatus = $playPauseControl.dataset.status;

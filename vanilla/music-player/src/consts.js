@@ -17,3 +17,9 @@ export const songs = [
 ];
 
 export const totalSongs = songs.length;
+
+export const PLAY_STATUS = {
+  PLAYING: "playing",
+  IDLE: "idle",
+  STOP: "stop",
+};
