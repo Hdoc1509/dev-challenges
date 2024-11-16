@@ -1,8 +1,11 @@
 import { handlePlayPause } from "./handlers/play-pause";
-import { handleGoNextSong } from "./handlers/go-next-song";
+import {
+  handleGoNextSong,
+  handleGoPrevSong,
+} from "./handlers/go-next-prev-song.js";
 import { handleChangePlayTime } from "./handlers/change-play-time";
 import { handleSongChange } from "./handlers/song-change";
-import { $playPauseControl, $nextControl } from "@/controls.js";
+import { $playPauseControl, $nextControl, $prevControl } from "@/controls.js";
 import { $playProgress } from "@/progress.js";
 import { $song } from "@/song.js";
 
@@ -13,6 +16,8 @@ export function setupEventListeners() {
     if ($target === $playPauseControl) return handlePlayPause();
 
     if ($target === $nextControl) return handleGoNextSong();
+
+    if ($target === $prevControl) return handleGoPrevSong();
   });
 
   $playProgress.addEventListener("input", () => handleChangePlayTime());

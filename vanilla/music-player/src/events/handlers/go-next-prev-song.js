@@ -11,3 +11,12 @@ export function handleGoNextSong() {
 
   currentSongIdx = newSongIdx;
 }
+
+export function handleGoPrevSong() {
+  const newSongIdx = currentSongIdx === 0 ? totalSongs - 1 : currentSongIdx - 1;
+  const newSong = songs[newSongIdx];
+
+  renderSongData(newSong);
+
+  currentSongIdx = newSongIdx;
+}
