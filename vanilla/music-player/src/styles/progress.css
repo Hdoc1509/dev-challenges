@@ -19,7 +19,6 @@
   width: 100%;
   height: var(--progress-height, 8px);
   margin: 0;
-  background-color: var(--progress-bg, #fff);
   background: linear-gradient(
     to right,
     var(--progress-track-bg) var(--progress-value, 0%),
