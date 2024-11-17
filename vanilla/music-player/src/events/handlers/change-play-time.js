@@ -1,8 +1,8 @@
 import { $playProgress } from "@/progress.js";
+import { $song } from "@/song";
 
 export function handleChangePlayTime() {
   const currentTime = $playProgress.valueAsNumber;
-  const progress = (currentTime / Number($playProgress.max)) * 100;
 
-  $playProgress.style.setProperty("--progress-value", `${progress}%`);
+  $song.currentTime = currentTime;
 }
