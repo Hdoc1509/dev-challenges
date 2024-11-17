@@ -23,3 +23,8 @@ export const $songDuration = getElementBySelector(
   ".player-card__duration",
   HTMLSpanElement,
 );
+
+export const $songCurrentTime = getElementBySelector(
+  ".player-card__current-time",
+  HTMLSpanElement,
+);
