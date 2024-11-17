@@ -25,4 +25,5 @@ export function setupEventListeners() {
 
   $song.addEventListener("durationchange", () => handleSongChange());
   $song.addEventListener("timeupdate", () => handleSongTimeUpdate());
+  $song.addEventListener("ended", () => handleGoNextSong());
 }

@@ -51,7 +51,7 @@ using JavaScript.
 
 ### Extra Features
 
-_WIP_
+- Auto play the next song when the current song ends.
 
 ### What I learned
 
