@@ -15,3 +15,11 @@ export function renderSongData({ title, artist, url, cover }) {
   $songCover.src = cover;
   $song.src = url; // triggers `durationchange` event of $song element
 }
+
+/** @param {number} timeSeconds */
+export function formatTime(timeSeconds) {
+  const minutes = `${Math.floor(timeSeconds / 60)}`.padStart(2, "0");
+  const seconds = `${Math.round(timeSeconds % 60)}`.padStart(2, "0");
+
+  return `${minutes}:${seconds}`;
+}
