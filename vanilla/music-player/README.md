@@ -28,11 +28,11 @@ using JavaScript.
 
 ## User Stories
 
-- [ ] Create a music player app that matches the given design.
+- [x] Create a music player app that matches the given design.
 - [x] Use HTML to create the basic structure.
 - [x] Add image, title, author, progress bar, player button,... according to the
       design.
-- [ ] Use vanilla JavaScript to add interactivity.
+- [x] Use vanilla JavaScript to add interactivity.
 - [x] Users should be able to play and stop the current song.
 - [x] Users should be able to go to next and previous songs.
 - [x] Users should be able to change play time with the progress bar.
