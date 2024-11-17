@@ -35,6 +35,7 @@
 .player-card__progress {
   margin-top: 1.5rem;
 
+  --progress-gap: 8px;
   --progress-font-size: var(--progress-label-fs);
   --progress-text: var(--text-secondary);
   --progress-bg: var(--text);
