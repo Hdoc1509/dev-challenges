@@ -40,6 +40,8 @@
   border-radius: 50%;
   border: 1px solid var(--progress-thumb-border, var(--progress-thumb));
   box-shadow: var(--progress-thumb-shadow);
+
+  visibility: var(--progress-thumb-visibility);
 }
 .progress__bar::-moz-range-thumb {
   height: var(--progress-thumb-size, 16px);
@@ -48,4 +50,6 @@
   border-radius: 50%;
   border: 1px solid var(--progress-thumb-border, var(--progress-thumb));
   box-shadow: var(--progress-thumb-shadow);
+
+  visibility: var(--progress-thumb-visibility);
 }

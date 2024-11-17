@@ -43,7 +43,11 @@
   --progress-thumb: var(--primary);
   --progress-thumb-shadow: var(--shadow-primary);
   --progress-thumb-size: 12px;
+  --progress-thumb-visibility: hidden;
   --progress-height: 4px;
+}
+.player-card__progress .progress__bar:hover {
+  --progress-thumb-visibility: visible;
 }
 
 .player-card__controls {
