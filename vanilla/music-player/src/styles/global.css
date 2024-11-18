@@ -46,6 +46,7 @@ body {
   min-height: 100vh;
   min-height: 100svh;
 
+  background-color: #3d2e4d;
   background-image: url("/bg.jpg");
   padding: 2rem;
 
