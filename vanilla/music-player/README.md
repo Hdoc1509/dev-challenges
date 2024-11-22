@@ -57,7 +57,9 @@ using JavaScript.
 
 ### What I learned
 
-_WIP_
+- Create a music player with HTML, CSS, and JavaScript.
+- HTMLAudioElement API
+- Custom styles for `<input type="range">`
 
 ## How To Use
 
