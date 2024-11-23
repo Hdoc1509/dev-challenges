@@ -1,8 +1,15 @@
+<%
+  let is_ssr = locals.is_ssr ?? false;
+  let is_vanilla = locals.is_vanilla ?? false;
+  let app_url = is_ssr
+    ? `https://hdoc-${name}.netlify.app/`
+    : `https://hdoc1509.github.io/dev-challenges/${name}/`;
+-%>
 <h1 align="center"><%= h.changeCase.title(name) %></h1>
 
 <div align="center">
   <h3>
-    <a href="https://hdoc1509.github.io/dev-challenges/<%= name %>/">
+    <a href="<%= app_url %>">
       Solution
     </a>
     <span> | </span>
@@ -14,13 +21,13 @@
 
 ## Deploy status
 
-[![Deploy challenges][deploy]](https://github.com/Hdoc1509/dev-challenges/actions/workflows/deploy.yml)
+[![<%= is_ssr ? 'Netlify Status' : 'Deploy challenges' %>][deploy-status]][deploy-url]
 
 ## Overview
 
 <!-- TODO: Update screenshot once project has completed -->
 
-![<%= name %> screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![<%= name %> screenshot][screenshot-url]
 
 <!-- Challenge Description -->
 
@@ -30,21 +37,28 @@
 
 ### Built With
 
-<%# TODO: only include tools that are common to all project types %>
-
-- [React](https://reactjs.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
+<% if (is_vanilla) { -%>
 - [Vite](https://vitejs.dev/)
+- [BEM](https://getbem.com/)
+- [fontsource](https://fontsource.org/) fonts:
+  - _List of fonts used in the project_
+<% } -%>
+<% if (is_ssr) { -%>
+- [Astro](https://astro.build/)
+- [TypeScript](https://www.typescriptlang.org/)
 - [Sass](https://sass-lang.com/)
 - [clsx](https://github.com/lukeed/clsx#readme)
 - [BEM](https://getbem.com/)
+- [zod](https://zod.dev/)
 - [@hrc/button](https://hdoc1509.github.io/hrc/packages/button/)
 - [@hrc/input](https://hdoc1509.github.io/hrc/packages/input/)
 - [@hrc/material-icons](https://hdoc1509.github.io/hrc/packages/material-icons/)
 - [@hrc/spinner](https://hdoc1509.github.io/hrc/packages/spinner/)
 - [@hrc/toggle-theme](https://hdoc1509.github.io/hrc/packages/toggle-theme/)
-- [fontsource](https://fontsource.org/)
+- [fontsource](https://fontsource.org/) fonts:
+  - _List of fonts used in the project_
 - [@material-design-icons/font](https://marella.me/material-design-icons/demo/font/)
+<% } -%>
 
 ### Extra Features
 
@@ -71,7 +85,14 @@ pnpm install --filter "@hdoc/dev-challenges" --filter <%= name %>...
 
 # Run <%= name %> in dev-mode
 cd apps/<%= name %>/
-pnpm run dev --open
+pnpm run dev <%= is_ssr ? '' : '--open' %>
 ```
 
-[deploy]: https://github.com/Hdoc1509/dev-challenges/actions/workflows/deploy.yml/badge.svg
+<% if (is_ssr) { -%>
+[deploy-status]: https://api.netlify.com/api/v1/badges/id-here/deploy-status
+[deploy-url]: https://app.netlify.com/sites/hdoc-<%= name %>/deploys
+<% } else { -%>
+[deploy-status]: https://github.com/Hdoc1509/dev-challenges/actions/workflows/deploy.yml/badge.svg
+[deploy-url]: https://github.com/Hdoc1509/dev-challenges/actions/workflows/deploy.yml
+<% } -%>
+[screenshot-url]: https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png

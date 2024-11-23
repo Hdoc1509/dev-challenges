@@ -5,9 +5,9 @@
     "build": "bash ./scripts/build.sh",
     "clean": "npkill",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "gen:vanilla": "hygen app vanilla",
+    "gen:vanilla": "hygen app vanilla --is_vanilla=1",
     "gen:react": "hygen app react",
-    "gen:ssr": "hygen app ssr",
+    "gen:ssr": "hygen app ssr --is_ssr=1",
     "gen:service": "hygen service new"
   },
   "author": "Héctor Ochoa <hector.ochoa.dev@gmail.com>",
