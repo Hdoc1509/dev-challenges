@@ -70,8 +70,9 @@ command line:
 # Clone this repository
 git clone https://github.com/Hdoc1509/dev-challenges
 
-# install all workspace dependencies
-cd dev-challenges && pnpm install
+# install all required dependencies
+cd dev-challenges
+pnpm install --filter "@hdoc/dev-challenges" --filter music-player...
 
 # Run music-player in dev-mode
 cd vanilla/music-player/
