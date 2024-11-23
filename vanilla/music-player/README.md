@@ -35,7 +35,7 @@ using JavaScript.
 - [x] Users should be able to go to next and previous songs.
 - [x] Users should be able to change play time with the progress bar.
 - [x] The page should be responsive on different screen sizes.
-- [ ] Deploy the solution and submit Repository URL and Demo URL.
+- [x] Deploy the solution and submit Repository URL and Demo URL.
 
 ### Built With
 
