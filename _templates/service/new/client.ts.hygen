@@ -22,6 +22,7 @@ import { <%= ServiceParser %> } from "./parser";
 const API_URL = "<%= api_url %>";
 <% } -%>
 
+<%# TODO: check if ApiErrorSchema is always needed %>
 const ApiResponseSchema = <%= ServiceResponseSchema %>.or(ApiErrorSchema);
 const <%= ServiceError %> = new ServiceError("<%= ServiceName %>");
 
@@ -42,9 +43,5 @@ export const get<%= ServiceName %> = async (): PromiseWithError<any> => {
   if ("error" in data) return [new Error(data.error)]; // api endpoint error
 
 <% } -%>
-<% if (with_parser) { -%>
-  return [null, <%= ServiceParser %>(data)];
-<% } else { -%>
-  return [null, data];
-<% } -%>
+  return [null, <%= with_parser ? `${ServiceParser}(data)` : "data" %>];
 }
