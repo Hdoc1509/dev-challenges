@@ -18,7 +18,7 @@
 
 ## Overview
 
-![music-player screenshot](https://github.com/user-attachments/assets/ad4292f2-f09c-4337-afd5-ccf3fa87b940)
+![music-player screenshot](https://github.com/user-attachments/assets/74c496fc-dc78-4fbf-8982-6505ee0ed55f)
 
 This challenge is an excellent opportunity to enhance your JavaScript skills by
 creating a simple music player app that tests your data management capabilities
