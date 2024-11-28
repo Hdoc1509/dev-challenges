@@ -42,8 +42,7 @@
 - [BEM](https://getbem.com/)
 - [fontsource](https://fontsource.org/) fonts:
   - _List of fonts used in the project_
-<% } -%>
-<% else if (is_ssr) { -%>
+<% } else if (is_ssr) { -%>
 - [Astro](https://astro.build/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Sass](https://sass-lang.com/)
