@@ -12,6 +12,13 @@
   --author-fs: 1rem;
   --quote-fs: 1.5rem;
   --tag-fs: 0.625rem;
+
+  /* colors */
+  --card-bg: #20293a;
+  --tag-text: #6466e9;
+  --button-text: #4a5567;
+  --button-border: #20293a;
+  --quote-text: #97a3b6;
 }
 @supports (font-variation-settings: normal) {
   :root {
@@ -36,10 +43,10 @@ body {
   min-height: 100vh;
   min-height: 100svh;
 
-  background-color: #fff;
+  background-color: #111729;
   padding: 2rem;
 
-  color: #000;
+  color: #e5e7eb;
 }
 @media (max-width: 767px) {
   body {
