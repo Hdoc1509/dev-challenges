@@ -45,6 +45,7 @@ the use of an external API.
 - [BEM](https://getbem.com/)
 - [fontsource](https://fontsource.org/) fonts:
   - _List of fonts used in the project_
+- [svgomg](https://svgomg.net/)
 
 ### Extra Features
 
