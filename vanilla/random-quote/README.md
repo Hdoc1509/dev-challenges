@@ -44,7 +44,7 @@ the use of an external API.
 - [Vite](https://vitejs.dev/)
 - [BEM](https://getbem.com/)
 - [fontsource](https://fontsource.org/) fonts:
-  - _List of fonts used in the project_
+  - [Outfit](https://fontsource.org/fonts/outfit)
 - [svgomg](https://svgomg.net/)
 
 ### Extra Features

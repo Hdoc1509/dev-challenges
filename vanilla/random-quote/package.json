@@ -10,5 +10,9 @@
   },
   "devDependencies": {
     "vite": "catalog:"
+  },
+  "dependencies": {
+    "@fontsource-variable/outfit": "catalog:",
+    "@fontsource/outfit": "catalog:"
   }
 }
