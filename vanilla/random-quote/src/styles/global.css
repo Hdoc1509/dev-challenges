@@ -26,6 +26,10 @@
   }
 }
 
+* {
+  margin: 0;
+}
+
 *,
 *::before,
 *::after {
@@ -33,13 +37,12 @@
 }
 
 body {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  gap: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   margin: 0;
   min-width: 320px;
-  max-width: 1280px;
   min-height: 100vh;
   min-height: 100svh;
 
@@ -50,11 +53,7 @@ body {
 }
 @media (max-width: 767px) {
   body {
-    padding: 1rem;
+    padding: 3.125rem;
   }
 }
 
-h1 {
-  font-size: 2rem;
-  line-height: 1.1;
-}
