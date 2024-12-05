@@ -1,0 +1,55 @@
+.quote {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  background-color: var(--card-bg);
+  background-image: url("/bg-image-random-quote.svg");
+  background-size: cover;
+  border-radius: 10px;
+  padding: 2rem;
+  padding-bottom: 2.5rem;
+
+  text-align: center;
+}
+
+.quote__author {
+  font-size: var(--author-fs);
+}
+
+.quote__tags {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 0;
+
+  font-size: var(--tag-fs);
+
+  list-style: none;
+}
+.quote__tag {
+  padding: 4px 12px;
+  border-radius: 9999px;
+  color: var(--tag-text);
+  outline: 1px solid;
+}
+
+.quote__text {
+  font-size: var(--quote-fs);
+  color: var(--quote-text);
+}
+.quote__text::before {
+  content: "“";
+}
+.quote__text::after {
+  content: "”";
+}
+
+.api-attribution {
+  display: flex;
+  justify-content: center;
+}
+.api-attribution img {
+  filter: invert(70%);
+}
