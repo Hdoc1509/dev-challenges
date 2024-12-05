@@ -46,6 +46,7 @@ the use of an external API.
 - [fontsource](https://fontsource.org/) fonts:
   - [Outfit](https://fontsource.org/fonts/outfit)
 - [svgomg](https://svgomg.net/)
+- [PaperQuotes API (Free Quota)](https://paperquotes.com/)
 
 ### Extra Features
 
