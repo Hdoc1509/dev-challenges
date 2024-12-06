@@ -1,0 +1,22 @@
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+
+  margin-top: 16px;
+  padding: 0;
+
+  list-style: none;
+}
+
+.actions__btn {
+  display: flex;
+  align-items: center;
+
+  padding: 8px 12px;
+  background: transparent;
+  border: 2px solid var(--button-border);
+  border-radius: 10px;
+
+  color: var(--button-text);
+}
