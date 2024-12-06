@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@fontsource-variable/outfit": "catalog:",
-    "@fontsource/outfit": "catalog:"
+    "@fontsource/outfit": "catalog:",
+    "@lib/dom": "workspace:"
   }
 }
