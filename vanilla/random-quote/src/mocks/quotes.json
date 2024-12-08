@@ -1,5 +1,5 @@
 {
-  "next": "https://api.paperquotes.com/quotes/?curated=1&language=en&limit=5&offset=5",
+  "next": "https://api.paperquotes.com/quotes/?curated=1&language=en&limit=10&offset=10",
   "previous": null,
   "results": [
     {
@@ -105,6 +105,75 @@
         "motivation"
       ],
       "pk": 64757,
+      "image": null,
+      "language": "en"
+    },
+    {
+      "quote": "You don't get that good by doing nothing.",
+      "author": "Emma   Mills",
+      "likes": 0,
+      "tags": ["greatness", "success"],
+      "pk": 62158,
+      "image": null,
+      "language": "en"
+    },
+    {
+      "quote": "Gather all your effort to achieve a single goal and you will be bound to succeed",
+      "author": "Sunday Adelaja",
+      "likes": 0,
+      "tags": [
+        "effort",
+        "achievement",
+        "goal",
+        "succeed",
+        "greatness",
+        "success"
+      ],
+      "pk": 45550,
+      "image": null,
+      "language": "en"
+    },
+    {
+      "quote": "Being extraordinary is not reliant on talent. It's reliant on the consistent development of better serving practices.\r\n    \r\n    Wesam Fawzi",
+      "author": "Wesam Fawzi",
+      "likes": 0,
+      "tags": [
+        "winning",
+        "motivational",
+        "greatness",
+        "determination",
+        "skills"
+      ],
+      "pk": 34775,
+      "image": null,
+      "language": "en"
+    },
+    {
+      "quote": "Don't ever let someone else's lack of ambition or vision define you.",
+      "author": "Sope Agbelusi",
+      "likes": 0,
+      "tags": [
+        "selfbelief",
+        "inspiration",
+        "faith",
+        "motivational",
+        "mindset",
+        "confidence",
+        "successful",
+        "greatness",
+        "limitations",
+        "determined"
+      ],
+      "pk": 34582,
+      "image": null,
+      "language": "en"
+    },
+    {
+      "quote": "We have everything within us for our greatness and for our destruction. It comes back to what we think about.",
+      "author": "Tony Curl",
+      "likes": 1,
+      "tags": ["thoughts", "inspiration", "greatness"],
+      "pk": 30280,
       "image": null,
       "language": "en"
     }
