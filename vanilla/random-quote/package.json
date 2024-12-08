@@ -14,6 +14,7 @@
   "dependencies": {
     "@fontsource-variable/outfit": "catalog:",
     "@fontsource/outfit": "catalog:",
-    "@lib/dom": "workspace:"
+    "@lib/dom": "workspace:",
+    "zod": "catalog:"
   }
 }

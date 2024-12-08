@@ -43,10 +43,12 @@ the use of an external API.
 
 - [Vite](https://vitejs.dev/)
 - [BEM](https://getbem.com/)
+- [zod](https://zod.dev/)
 - [fontsource](https://fontsource.org/) fonts:
   - [Outfit](https://fontsource.org/fonts/outfit)
 - [svgomg](https://svgomg.net/)
 - [PaperQuotes API (Free Quota)](https://paperquotes.com/)
+- [quicktype](https://app.quicktype.io/)
 
 ### Extra Features
 
