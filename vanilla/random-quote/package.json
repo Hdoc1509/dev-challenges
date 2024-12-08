@@ -15,6 +15,7 @@
     "@fontsource-variable/outfit": "catalog:",
     "@fontsource/outfit": "catalog:",
     "@lib/dom": "workspace:",
+    "@lib/fetcher": "workspace:",
     "zod": "catalog:"
   }
 }

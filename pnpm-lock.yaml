@@ -889,6 +889,9 @@ importers:
       '@lib/dom':
         specifier: 'workspace:'
         version: link:../../libs/dom
+      '@lib/fetcher':
+        specifier: 'workspace:'
+        version: link:../../libs/fetcher
       zod:
         specifier: 'catalog:'
         version: 3.22.4
