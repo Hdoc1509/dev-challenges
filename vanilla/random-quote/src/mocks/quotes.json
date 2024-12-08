@@ -1,0 +1,112 @@
+{
+  "next": "https://api.paperquotes.com/quotes/?curated=1&language=en&limit=5&offset=5",
+  "previous": null,
+  "results": [
+    {
+      "quote": "Direct your attention to people; love, help, and care for them.",
+      "author": "Sunday Adelaja",
+      "likes": 5,
+      "tags": [
+        "honoring-people",
+        "time",
+        "god",
+        "loving-people",
+        "destiny",
+        "care",
+        "money",
+        "serving-people",
+        "kingdom",
+        "helping-people",
+        "love",
+        "purpose",
+        "caring-for-people",
+        "people",
+        "worship",
+        "life",
+        "work"
+      ],
+      "pk": 32931,
+      "image": null,
+      "language": "en"
+    },
+    {
+      "quote": "Negative thoughts about ourselves steal our energy.",
+      "author": "Sunday Adelaja",
+      "likes": 0,
+      "tags": [
+        "thoughts",
+        "energy",
+        "calling",
+        "goal",
+        "purpose",
+        "steals",
+        "life",
+        "negative",
+        "mission"
+      ],
+      "pk": 29614,
+      "image": null,
+      "language": "en"
+    },
+    {
+      "quote": "Even if things aren't going the way we want right now, we will always get through it.",
+      "author": "Stacey T. Hunt",
+      "likes": 14,
+      "tags": [
+        "always",
+        "we",
+        "going",
+        "hope",
+        "faith",
+        "through",
+        "willpower",
+        "want",
+        "right-now",
+        "way",
+        "things-that-matter",
+        "will",
+        "things"
+      ],
+      "pk": 46022,
+      "image": null,
+      "language": "en"
+    },
+    {
+      "quote": "Some people are troubled by their mediocrity. Some, by their greatness.",
+      "author": "",
+      "likes": 0,
+      "tags": [
+        "fame",
+        "talented",
+        "gifted",
+        "famous",
+        "mediocre",
+        "greatness",
+        "peace-of-mind",
+        "success",
+        "mediocrity",
+        "talent"
+      ],
+      "pk": 64787,
+      "image": null,
+      "language": "en"
+    },
+    {
+      "quote": "He who make no enemies makes no difference.",
+      "author": "",
+      "likes": 0,
+      "tags": [
+        "suffering",
+        "hardship",
+        "inspiration",
+        "adversity",
+        "greatness",
+        "opposition",
+        "motivation"
+      ],
+      "pk": 64757,
+      "image": null,
+      "language": "en"
+    }
+  ]
+}
