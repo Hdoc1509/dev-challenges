@@ -1,0 +1,1 @@
+GET https://api.paperquotes.com/quotes/?curated=1&language=en&limit=10
