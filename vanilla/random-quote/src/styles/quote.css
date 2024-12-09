@@ -4,6 +4,7 @@
   gap: 12px;
 
   max-width: 540px;
+  min-width: 320px;
   background-color: var(--card-bg);
   background-image: url("/bg-image-random-quote.svg");
   background-size: cover;
