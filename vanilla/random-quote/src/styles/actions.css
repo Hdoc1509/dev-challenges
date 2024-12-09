@@ -1,7 +1,6 @@
 .actions {
   display: flex;
   justify-content: center;
-  gap: 12px;
 
   margin-top: 16px;
   padding: 0;
@@ -19,4 +18,14 @@
   border-radius: 10px;
 
   color: var(--button-text);
+}
+.actions__btn#random-quote {
+  border-right-width: 1px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.actions__btn#copy-quote {
+  border-left-width: 1px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
