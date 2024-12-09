@@ -19,6 +19,15 @@
 .quote[data-status="LOADED"] {
   --spinner-display: none;
 }
+.quote[data-status="ERROR"] {
+  --quote-error-display: block;
+  --quote-content-display: none;
+  --spinner-display: none;
+}
+
+.quote__error {
+  display: var(--quote-error-display, none);
+}
 
 .quote__loader {
   margin: 0 auto;
