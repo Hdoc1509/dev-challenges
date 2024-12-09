@@ -24,6 +24,9 @@
 .actions__btn:hover {
   background: var(--button-border);
 }
+.actions__btn:disabled {
+  cursor: not-allowed;
+}
 .actions__btn#random-quote {
   border-right-width: 1px;
   border-top-right-radius: 0;

@@ -7,6 +7,8 @@ import { showAlert } from "@lib/alert";
 export function setupListeners() {
   $randomQuote.addEventListener("click", () => {
     $quote.setAttribute("data-status", "LOADING");
+    $copyQuote.disabled = true;
+
     getMockedRandomQuote().then(([error, quote]) => {
       if (error) {
         renderError(error.message);
@@ -15,6 +17,7 @@ export function setupListeners() {
       }
 
       $quote.setAttribute("data-status", "LOADED");
+      $copyQuote.disabled = false;
       renderQuote(quote);
     });
   });
