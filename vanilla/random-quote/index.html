@@ -8,15 +8,23 @@
   </head>
   <body>
     <main>
-      <div class="quote">
-        <h2 class="quote__author">George Bernard Shaw</h2>
-        <ul class="quote__tags">
-          <li class="quote__tag">Famous Quotes</li>
-          <li class="quote__tag">Inspirational</li>
-        </ul>
-        <p class="quote__text">
-          Learn from yesterday, live for today, hope for tomorrow.
-        </p>
+      <div class="quote" data-status="LOADING">
+        <div class="spinner quote__loader">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="quote__content">
+          <h2 class="quote__author">George Bernard Shaw</h2>
+          <ul class="quote__tags">
+            <li class="quote__tag">Famous Quotes</li>
+            <li class="quote__tag">Inspirational</li>
+          </ul>
+          <p class="quote__text">
+            Learn from yesterday, live for today, hope for tomorrow.
+          </p>
+        </div>
         <span class="api-attribution" style="z-index: 50; font-size: 0.9em">
           <img
             src="http://api.paperquotes.com/static/images/paperquotes.png"

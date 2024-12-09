@@ -13,6 +13,22 @@
 
   text-align: center;
 }
+.quote[data-status="LOADING"] {
+  --quote-content-display: none;
+}
+.quote[data-status="LOADED"] {
+  --spinner-display: none;
+}
+
+.quote__loader {
+  margin: 0 auto;
+}
+
+.quote__content {
+  display: var(--quote-content-display, flex);
+  flex-direction: column;
+  gap: inherit;
+}
 
 .quote__author {
   font-size: var(--author-fs);
