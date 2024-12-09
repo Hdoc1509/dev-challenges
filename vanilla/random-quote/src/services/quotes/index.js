@@ -1,6 +1,6 @@
 import { ServiceError, fetcher } from "@lib/fetcher";
 import { QuotesResponseSchema, QuotesErrorResponseSchema } from "./schema";
-import { parseQuote } from "./parse";
+import { parseQuotes } from "./parse";
 import { randomElement } from "@/utils";
 import quotesMock from "@/mocks/quotes.json";
 
@@ -46,10 +46,10 @@ export const getRandomQuote = async () => {
 
   if ("errno" in data) return [QuotesError.generic(data.errmsg)];
 
-  return [null, parseQuote(data.results[0])];
+  return [null, parseQuotes(data.results)[0]];
 };
 
 /** @returns {QuoteServiceResult} */
 export const getMockedRandomQuote = async () => {
-  return [null, parseQuote(randomElement(quotesMock.results))];
+  return [null, randomElement(parseQuotes(quotesMock.results))];
 };
