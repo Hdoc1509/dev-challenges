@@ -1,7 +1,8 @@
 import { getMockedRandomQuote } from "@/services/quotes";
-import { $randomQuote } from "@/ui/actions";
-import { $quote } from "@/ui/quote/elements";
+import { $copyQuote, $randomQuote } from "@/ui/actions";
+import { $quote, $text } from "@/ui/quote/elements";
 import { renderError, renderQuote } from "@/ui/quote/render";
+import { showAlert } from "@lib/alert";
 
 export function setupListeners() {
   $randomQuote.addEventListener("click", () => {
@@ -16,5 +17,12 @@ export function setupListeners() {
       $quote.setAttribute("data-status", "LOADED");
       renderQuote(quote);
     });
+  });
+
+  $copyQuote.addEventListener("click", () => {
+    if ($text.textContent == null) return;
+
+    navigator.clipboard.writeText($text.textContent);
+    showAlert({ color: "success", text: "✅ Quote copied to clipboard!" });
   });
 }

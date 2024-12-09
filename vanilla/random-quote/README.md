@@ -35,7 +35,7 @@ the use of an external API.
 - [ ] Use vanilla JavaScript to add interactivity.
 - [x] Users can see a random quote when they first visit the page.
 - [x] Users can see a random quote after they select the random button.
-- [ ] Users can copy the quote to the clipboard.
+- [x] Users can copy the quote to the clipboard.
 - [ ] The page should be responsive on different screen sizes.
 - [ ] Deploy the solution and submit Repository URL and Demo URL.
 
@@ -52,7 +52,7 @@ the use of an external API.
 
 ### Extra Features
 
-_WIP_
+- Alert when quote copied to clipboard
 
 ### What I learned
 

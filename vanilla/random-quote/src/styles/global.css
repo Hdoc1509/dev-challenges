@@ -19,6 +19,8 @@
   --button-text: #4a5567;
   --button-border: #20293a;
   --quote-text: #97a3b6;
+
+  --alert-time-bar-duration: 2.5s;
 }
 @supports (font-variation-settings: normal) {
   :root {
