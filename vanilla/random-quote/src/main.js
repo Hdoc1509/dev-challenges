@@ -5,8 +5,11 @@ import "@fontsource-variable/outfit";
 import "@fontsource/outfit/400.css";
 import "@fontsource/outfit/600.css";
 import "./styles/main.css";
+import { setupListeners } from "./events/listeners";
 
 document.addEventListener("DOMContentLoaded", () => {
+  setupListeners();
+
   getMockedRandomQuote().then(([error, quote]) => {
     if (error) {
       renderError(error.message);
