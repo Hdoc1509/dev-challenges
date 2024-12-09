@@ -18,6 +18,11 @@
   border-radius: 10px;
 
   color: var(--button-text);
+
+  cursor: pointer;
+}
+.actions__btn:hover {
+  background: var(--button-border);
 }
 .actions__btn#random-quote {
   border-right-width: 1px;
