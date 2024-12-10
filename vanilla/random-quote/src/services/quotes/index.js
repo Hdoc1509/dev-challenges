@@ -1,7 +1,7 @@
 import { ServiceError, fetcher } from "@lib/fetcher";
 import { QuotesResponseSchema, QuotesErrorResponseSchema } from "./schema";
 import { parseQuotes } from "./parse";
-import { randomElement } from "@/utils";
+import { randomElement, randomInt } from "@/utils";
 import quotesMock from "@/mocks/quotes.json";
 
 /**
@@ -17,18 +17,22 @@ const API_URL = "https://api.paperquotes.com";
 const ApiResponseSchema = QuotesResponseSchema.or(QuotesErrorResponseSchema);
 const QuotesError = new ServiceError("Quotes");
 
+const OFFSET_MAX = 21_769;
+
 const PARAMS = {
   LIMIT: "10",
   LANG: "en",
   CURATED: "1",
 };
 
+const getRandomOffset = () => randomInt(0, OFFSET_MAX) * Number(PARAMS.LIMIT);
+
 /** @returns {QuoteServiceResult} */
 export const getRandomQuote = async () => {
   const params = new URLSearchParams(
     /** @satisfies {QuoteParams} */ ({
       limit: PARAMS.LIMIT,
-      offset: Math.floor(Math.random() * 21_770).toString(),
+      offset: getRandomOffset().toString(),
       lang: PARAMS.LANG,
       curated: PARAMS.CURATED,
     }),
