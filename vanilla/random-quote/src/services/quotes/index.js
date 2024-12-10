@@ -18,7 +18,7 @@ const ApiResponseSchema = QuotesResponseSchema.or(QuotesErrorResponseSchema);
 const QuotesError = new ServiceError("Quotes");
 
 const PARAMS = {
-  LIMIT: "1",
+  LIMIT: "10",
   LANG: "en",
   CURATED: "1",
 };
@@ -28,7 +28,7 @@ export const getRandomQuote = async () => {
   const params = new URLSearchParams(
     /** @satisfies {QuoteParams} */ ({
       limit: PARAMS.LIMIT,
-      offset: Math.floor(Math.random() * 217_699).toString(),
+      offset: Math.floor(Math.random() * 21_770).toString(),
       lang: PARAMS.LANG,
       curated: PARAMS.CURATED,
     }),
