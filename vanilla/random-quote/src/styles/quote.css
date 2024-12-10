@@ -6,6 +6,7 @@
   background-color: var(--card-bg);
   background-image: url("/bg-image-random-quote.svg");
   background-size: cover;
+  background-position-x: right;
   border-radius: 10px;
   padding: 2rem;
 
