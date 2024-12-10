@@ -47,15 +47,13 @@ body {
   min-width: 320px;
   min-height: 100vh;
   min-height: 100svh;
-
   background-color: #111729;
-  padding: 2rem;
 
   color: #e5e7eb;
 }
-@media (max-width: 767px) {
+@media (max-width: 640px) {
   body {
-    padding: 3.125rem;
+    padding: 1.5rem;
   }
 }
 
