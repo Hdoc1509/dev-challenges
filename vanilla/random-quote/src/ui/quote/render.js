@@ -20,6 +20,7 @@ export function renderQuote(quote) {
     $tag.textContent = tag;
     $tags.appendChild($tag);
   });
+  $quote.setAttribute("data-status", "LOADED");
 }
 
 /** @param {string} error */

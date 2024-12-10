@@ -14,13 +14,8 @@ export function handleRandomQuote() {
   $copyQuote.disabled = true;
 
   quoteService().then(([error, quote]) => {
-    if (error) {
-      renderError(error.message);
-      $quote.setAttribute("data-status", "ERROR");
-      return;
-    }
+    if (error) return renderError(error.message);
 
-    $quote.setAttribute("data-status", "LOADED");
     $copyQuote.disabled = false;
     renderQuote(quote);
   });
