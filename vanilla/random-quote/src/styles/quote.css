@@ -26,6 +26,13 @@
 
 .quote__error {
   display: var(--quote-error-display, none);
+
+  background-color: rgba(255, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 0.2em 0.5em;
+
+  color: #f4c7c7;
+  font-size: var(--quote-fs);
 }
 
 .quote__loader {
