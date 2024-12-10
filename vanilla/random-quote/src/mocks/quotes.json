@@ -1,5 +1,5 @@
 {
-  "next": "https://api.paperquotes.com/quotes/?curated=1&language=en&limit=10&offset=10",
+  "next": "https://api.paperquotes.com/quotes/?curated=1&language=en&limit=10",
   "previous": null,
   "results": [
     {
