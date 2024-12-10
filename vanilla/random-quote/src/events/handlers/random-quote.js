@@ -1,4 +1,5 @@
 import { getRandomQuote, getMockedRandomQuote } from "@/services/quotes";
+import { resetAlert } from "@lib/alert";
 import { renderError, renderQuote } from "@/ui/quote/render";
 import { $copyQuote } from "@/ui/actions";
 import { $quote } from "@/ui/quote/elements";
@@ -8,6 +9,7 @@ const quoteService = import.meta.env.DEV
   : getRandomQuote;
 
 export function handleRandomQuote() {
+  resetAlert();
   $quote.setAttribute("data-status", "LOADING");
   $copyQuote.disabled = true;
 
