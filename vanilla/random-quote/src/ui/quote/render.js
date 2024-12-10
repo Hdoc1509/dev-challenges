@@ -25,6 +25,6 @@ export function renderQuote(quote) {
 
 /** @param {string} error */
 export function renderError(error) {
-  $quote.setAttribute("data-status", "ERROR");
   $error.textContent = error;
+  $quote.setAttribute("data-status", "ERROR");
 }
