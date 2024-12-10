@@ -11,6 +11,7 @@ import quotesMock from "@/mocks/quotes.json";
  * @typedef {import("@lib/fetcher").ParamOptions<QuoteServiceParamList>} QuoteParams
  */
 
+// https://paperquotes.com/api-docs/
 const API_URL = "https://api.paperquotes.com";
 
 const ApiResponseSchema = QuotesResponseSchema.or(QuotesErrorResponseSchema);
