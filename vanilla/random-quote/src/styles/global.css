@@ -52,6 +52,9 @@ body {
   color: #e5e7eb;
 }
 @media (max-width: 640px) {
+  :root {
+    --quote-padding: 1.25rem;
+  }
   body {
     padding: 1.5rem;
   }
