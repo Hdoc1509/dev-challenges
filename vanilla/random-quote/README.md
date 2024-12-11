@@ -53,10 +53,11 @@ the use of an external API.
 ### Extra Features
 
 - Alert when quote copied to clipboard
+- Error handling
 
 ### What I learned
 
-_WIP_
+- Handle errors or `Clipboard API`
 
 ## How To Use
 

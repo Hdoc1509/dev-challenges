@@ -24,7 +24,7 @@
   --spinner-display: none;
 }
 
-.quote__error {
+.error {
   display: var(--quote-error-display, none);
 
   background-color: rgba(255, 0, 0, 0.2);
@@ -33,6 +33,29 @@
 
   color: #f4c7c7;
   font-size: var(--quote-fs);
+}
+.quote__error {
+  margin-bottom: 0.5rem;
+}
+.error #copy-error {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+
+  border: none;
+  border-radius: inherit;
+  background-color: rgba(255, 0, 0, 0.35);
+  padding: 0.25em 0.75em;
+  margin-inline: auto;
+  margin-bottom: 0.5rem;
+
+  color: inherit;
+  font-size: 1.125rem;
+
+  cursor: pointer;
+}
+.error #copy-error:hover {
+  background-color: rgba(255, 0, 0, 0.5);
 }
 
 .quote__loader {
