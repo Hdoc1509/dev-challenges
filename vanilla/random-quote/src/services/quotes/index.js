@@ -56,6 +56,6 @@ export const getRandomQuote = async () => {
 
 /** @returns {QuoteServiceResult} */
 export const getMockedRandomQuote = async () => {
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+  await new Promise((resolve) => setTimeout(resolve, randomInt(1000, 3000)));
   return [null, randomElement(parseQuotes(quotesMock.results))];
 };
