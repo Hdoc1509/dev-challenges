@@ -19,3 +19,23 @@ export const randomInt = (min, max) =>
 /** @param {import("@lib/fetcher").Status} status */
 export const setFetchingStatus = (status) =>
   $quote.setAttribute("data-status", status);
+
+/** @param {unknown} error */
+const isNotAllowedError = (error) =>
+  error instanceof DOMException && error.name === "NotAllowedError";
+
+/**
+ * @param {string} text
+ * @returns {Promise<Error | void>}
+ */
+export const copyToClipboard = async (text) => {
+  try {
+    await navigator.clipboard.writeText(text);
+    return;
+  } catch (error) {
+    if (isNotAllowedError(error))
+      return new Error("Clipboard Error: Access not allowed.");
+  }
+
+  return new Error("Clipboard Error: An unknown error occurred. Try again.");
+};

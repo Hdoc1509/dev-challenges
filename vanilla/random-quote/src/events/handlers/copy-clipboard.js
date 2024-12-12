@@ -1,18 +1,18 @@
 import { resetAlert, showAlert } from "@lib/alert";
-import { $text } from "@/ui/quote/elements";
 import { renderError } from "@/ui/quote/render";
+import { copyToClipboard } from "@/utils";
+import { $text } from "@/ui/quote/elements";
 
 export async function handleCopyToClipboard() {
-  if ($text.textContent == null) return;
+  const text = $text.textContent;
+
+  if (text == null) return;
+
   resetAlert();
 
-  try {
-    await navigator.clipboard.writeText($text.textContent);
-    showAlert({ color: "success", text: "✅ Quote copied to clipboard!" });
-  } catch (error) {
-    if (error instanceof DOMException && error.name === "NotAllowedError")
-      return renderError("😔 Clipboard access is not allowed.");
+  const clipboardError = await copyToClipboard(text);
 
-    renderError("Something went wrong while copying the quote to clipboard.");
-  }
+  if (clipboardError != null) return renderError(clipboardError.message);
+
+  showAlert({ color: "success", text: "✅ Quote copied to clipboard!" });
 }
