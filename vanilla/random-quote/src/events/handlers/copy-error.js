@@ -1,12 +1,11 @@
 import { showAlert } from "@lib/alert";
 import { renderError } from "@/ui/quote/render";
-/** @typedef {import('@lib/fetcher').ValidationError} ValidationError */
 
 /** @param {unknown} error */
 const isNotAllowedError = (error) =>
   error instanceof DOMException && error.name === "NotAllowedError";
 
-/** @param {ValidationError} error */
+/** @param {import("@lib/fetcher").ValidationError} error */
 export async function handleCopyValidationError(error) {
   try {
     await navigator.clipboard.writeText(
