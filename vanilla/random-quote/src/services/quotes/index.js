@@ -3,6 +3,7 @@ import { QuotesResponseSchema, QuotesErrorResponseSchema } from "./schema";
 import { parseQuotes } from "./parse";
 import { randomElement, randomInt } from "@/utils";
 import quotesMock from "@/mocks/quotes.json";
+import { validationErrorMock } from "@/mocks/validation-error";
 
 /**
  * @typedef {"limit"|"offset"|"lang"|"curated"} QuoteServiceParamList
@@ -57,6 +58,11 @@ export const getRandomQuote = async () => {
 
 /** @returns {QuoteServiceResult} */
 export const getMockedRandomQuote = async () => {
-  await new Promise((resolve) => setTimeout(resolve, randomInt(1000, 3000)));
+  const randomDelay = randomInt(1000, 3000);
+
+  await new Promise((resolve) => setTimeout(resolve, randomDelay));
+
+  if (randomDelay <= 1500) return [validationErrorMock];
+
   return [null, randomElement(parseQuotes(quotesMock.results))];
 };
