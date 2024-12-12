@@ -1,4 +1,5 @@
-import { $author, $tags, $text, $quote, $error } from "./elements";
+import { setFetchingStatus } from "@/utils";
+import { $author, $tags, $text, $error } from "./elements";
 import { STATUS } from "@lib/fetcher";
 /** @typedef {import('@/types').Quote} Quote */
 
@@ -21,11 +22,11 @@ export function renderQuote(quote) {
     $tag.textContent = tag;
     $tags.appendChild($tag);
   });
-  $quote.setAttribute("data-status", STATUS.SUCCESS);
+  setFetchingStatus(STATUS.SUCCESS);
 }
 
 /** @param {string} error */
 export function renderError(error) {
   $error.textContent = error;
-  $quote.setAttribute("data-status", STATUS.ERROR);
+  setFetchingStatus(STATUS.ERROR);
 }

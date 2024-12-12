@@ -1,11 +1,11 @@
 import { ValidationError, STATUS } from "@lib/fetcher";
 import { getRandomQuote, getMockedRandomQuote } from "@/services/quotes";
+import { setFetchingStatus } from "@/utils";
 import { resetAlert } from "@lib/alert";
 import { renderError, renderQuote } from "@/ui/quote/render";
 import { getElementById } from "@lib/dom";
 import { handleCopyValidationError } from "./copy-error";
 import { $copyQuote } from "@/ui/actions";
-import { $quote } from "@/ui/quote/elements";
 
 let copyErrorHandler = () => {};
 
@@ -18,7 +18,7 @@ const $copyError = getElementById("copy-error", HTMLButtonElement);
 export function handleRandomQuote() {
   resetAlert();
   $copyError.removeEventListener("click", copyErrorHandler);
-  $quote.setAttribute("data-status", STATUS.LOADING);
+  setFetchingStatus(STATUS.LOADING);
   $copyQuote.disabled = true;
 
   quoteService().then(([error, quote]) => {

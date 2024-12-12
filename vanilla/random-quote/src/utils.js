@@ -1,3 +1,5 @@
+import { $quote } from "./ui/quote/elements";
+
 /**
  * @template T
  * @param {T[]} arr
@@ -13,3 +15,7 @@ export const randomElement = (arr) =>
  */
 export const randomInt = (min, max) =>
   Math.floor(Math.random() * (max - min + 1) + min);
+
+/** @param {import("@lib/fetcher").Status} status */
+export const setFetchingStatus = (status) =>
+  $quote.setAttribute("data-status", status);
