@@ -12,13 +12,13 @@
 
   text-align: center;
 }
-.quote[data-status="LOADING"] {
+.quote[data-status="loading"] {
   --quote-content-display: none;
 }
-.quote[data-status="LOADED"] {
+.quote[data-status="success"] {
   --spinner-display: none;
 }
-.quote[data-status="ERROR"] {
+.quote[data-status="error"] {
   --quote-error-display: block;
   --quote-content-display: none;
   --spinner-display: none;
