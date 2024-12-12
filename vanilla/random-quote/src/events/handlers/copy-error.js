@@ -1,9 +1,11 @@
-import { showAlert } from "@lib/alert";
+import { resetAlert, showAlert } from "@lib/alert";
 import { renderError } from "@/ui/quote/render";
 import { copyToClipboard } from "@/utils";
 
 /** @param {import("@lib/fetcher").ValidationError} error */
 export async function handleCopyValidationError(error) {
+  resetAlert();
+
   const text = JSON.stringify(error.error.issues, null, "  ");
   const clipboardError = await copyToClipboard(text);
 
