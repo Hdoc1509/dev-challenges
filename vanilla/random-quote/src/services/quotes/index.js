@@ -17,7 +17,8 @@ const API_URL = "https://api.paperquotes.com";
 const ApiResponseSchema = QuotesResponseSchema.or(QuotesErrorResponseSchema);
 const QuotesError = new ServiceError("Quotes");
 
-const OFFSET_MAX = 21_769;
+// https://api.paperquotes.com/quotes/?curated=1&lang=en&limit=10&offset=20100
+const OFFSET_MAX = 2_010;
 
 const PARAMS = {
   LIMIT: "10",
