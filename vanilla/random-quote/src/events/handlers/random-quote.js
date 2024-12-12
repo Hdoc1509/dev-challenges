@@ -6,6 +6,7 @@ import { renderError, renderQuote } from "@/ui/quote/render";
 import { getElementById } from "@lib/dom";
 import { handleCopyValidationError } from "./copy-error";
 import { $copyQuote } from "@/ui/actions";
+import { $quote } from "@/ui/quote/elements";
 
 let copyErrorHandler = () => {};
 
@@ -19,12 +20,14 @@ export function handleRandomQuote() {
   resetAlert();
   $copyError.removeEventListener("click", copyErrorHandler);
   setFetchingStatus(STATUS.LOADING);
+  $quote.setAttribute("data-error", "");
   $copyQuote.disabled = true;
 
   quoteService().then(([error, quote]) => {
     if (error) {
       if (error instanceof ValidationError) {
         copyErrorHandler = () => handleCopyValidationError(error);
+        $quote.setAttribute("data-error", "validation");
         $copyError.addEventListener("click", copyErrorHandler);
       }
 

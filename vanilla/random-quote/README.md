@@ -32,7 +32,7 @@ the use of an external API.
 - [ ] Create a random quote app that matches the given design.
 - [x] Use HTML to create the basic structure.
 - [x] Add author name, quote, tag,.. according to the design.
-- [ ] Use vanilla JavaScript to add interactivity.
+- [x] Use vanilla JavaScript to add interactivity.
 - [x] Users can see a random quote when they first visit the page.
 - [x] Users can see a random quote after they select the random button.
 - [x] Users can copy the quote to the clipboard.
