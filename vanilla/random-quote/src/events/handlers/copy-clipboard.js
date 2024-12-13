@@ -12,7 +12,8 @@ export async function handleCopyToClipboard() {
 
   const clipboardError = await copyToClipboard(text);
 
-  if (clipboardError != null) return renderError(clipboardError.message);
+  if (clipboardError != null)
+    return renderError(clipboardError.message, { replaceQuote: false });
 
   showAlert({ color: "success", text: "✅ Quote copied to clipboard!" });
 }

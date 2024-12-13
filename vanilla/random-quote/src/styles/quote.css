@@ -18,7 +18,7 @@
 .quote:not(.quote[data-status="loading"]) {
   --spinner-display: none;
 }
-.quote[data-status="error"] {
+.quote[data-status="error"][data-error-replace="true"] {
   --quote-content-display: none;
 }
 .quote:not(.quote[data-status="error"]) {
@@ -26,6 +26,9 @@
 }
 .quote[data-status="error"]:not(.quote[data-error="validation"]) {
   --copy-error-display: none;
+}
+.quote[data-status="error"][data-error="validation"] {
+  --quote-content-display: none;
 }
 
 .error {

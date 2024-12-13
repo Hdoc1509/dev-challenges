@@ -1,5 +1,5 @@
 import { setFetchingStatus } from "@/utils/status";
-import { $author, $tags, $text, $error } from "./elements";
+import { $author, $tags, $text, $error, $quote } from "./elements";
 import { STATUS } from "@lib/fetcher";
 /** @typedef {import('@/types').Quote} Quote */
 
@@ -26,7 +26,8 @@ export function renderQuote(quote) {
 }
 
 /** @param {string} error */
-export function renderError(error) {
+export function renderError(error, { replaceQuote = true } = {}) {
   $error.textContent = error;
   setFetchingStatus(STATUS.ERROR);
+  $quote.setAttribute("data-error-replace", replaceQuote.toString());
 }
