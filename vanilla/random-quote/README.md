@@ -29,7 +29,7 @@ the use of an external API.
 
 ## User Stories
 
-- [ ] Create a random quote app that matches the given design.
+- [x] Create a random quote app that matches the given design.
 - [x] Use HTML to create the basic structure.
 - [x] Add author name, quote, tag,.. according to the design.
 - [x] Use vanilla JavaScript to add interactivity.
