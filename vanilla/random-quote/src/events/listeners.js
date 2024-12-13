@@ -1,9 +1,9 @@
 import { handleRandomQuote } from "./handlers/random-quote";
-import { handleCopyToClipboard } from "./handlers/copy-clipboard";
+import { handleCopyQuote } from "./handlers/copy-quote";
 import { $copyQuote, $randomQuote } from "@/ui/actions";
 
 export function setupListeners() {
   $randomQuote.addEventListener("click", () => handleRandomQuote());
 
-  $copyQuote.addEventListener("click", () => handleCopyToClipboard());
+  $copyQuote.addEventListener("click", () => handleCopyQuote());
 }

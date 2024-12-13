@@ -3,7 +3,7 @@ import { renderError } from "@/ui/quote/render";
 import { copyToClipboard } from "@/utils/clipboard";
 import { $text } from "@/ui/quote/elements";
 
-export async function handleCopyToClipboard() {
+export async function handleCopyQuote() {
   const text = $text.textContent;
 
   if (text == null) return;
