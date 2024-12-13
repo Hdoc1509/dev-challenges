@@ -4,7 +4,7 @@ import { setFetchingStatus } from "@/utils";
 import { resetAlert } from "@lib/alert";
 import { renderError, renderQuote } from "@/ui/quote/render";
 import { handleCopyValidationError } from "./copy-error";
-import { $copyError, $copyQuote } from "@/ui/actions";
+import { $copyError, $copyQuote, $randomQuote } from "@/ui/actions";
 import { $quote } from "@/ui/quote/elements";
 
 let copyErrorHandler = () => {};
@@ -19,6 +19,7 @@ export function handleRandomQuote() {
   setFetchingStatus(STATUS.LOADING);
   $quote.setAttribute("data-error", "");
   $copyQuote.disabled = true;
+  $randomQuote.disabled = true;
 
   quoteService().then(([error, quote]) => {
     if (error) {
@@ -28,10 +29,12 @@ export function handleRandomQuote() {
         $copyError.addEventListener("click", copyErrorHandler);
       }
 
+      $randomQuote.disabled = false;
       return renderError(error.message);
     }
 
     $copyQuote.disabled = false;
+    $randomQuote.disabled = false;
     renderQuote(quote);
   });
 }
