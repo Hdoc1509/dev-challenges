@@ -3,9 +3,8 @@ import { getRandomQuote, getMockedRandomQuote } from "@/services/quotes";
 import { setFetchingStatus } from "@/utils";
 import { resetAlert } from "@lib/alert";
 import { renderError, renderQuote } from "@/ui/quote/render";
-import { getElementById } from "@lib/dom";
 import { handleCopyValidationError } from "./copy-error";
-import { $copyQuote } from "@/ui/actions";
+import { $copyError, $copyQuote } from "@/ui/actions";
 import { $quote } from "@/ui/quote/elements";
 
 let copyErrorHandler = () => {};
@@ -13,8 +12,6 @@ let copyErrorHandler = () => {};
 const quoteService = import.meta.env.DEV
   ? getMockedRandomQuote
   : getRandomQuote;
-
-const $copyError = getElementById("copy-error", HTMLButtonElement);
 
 export function handleRandomQuote() {
   resetAlert();
