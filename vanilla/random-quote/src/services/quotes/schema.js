@@ -2,7 +2,7 @@ import { z } from "zod";
 
 const ResultSchema = z.object({
   quote: z.string(),
-  author: z.string(),
+  author: z.string().nullable(),
   tags: z.array(z.string()),
   pk: z.number(),
 });

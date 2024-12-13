@@ -13,7 +13,7 @@ const parseTags = (tags) =>
   );
 
 /** @param {QuotesResponse["results"][number]} quote */
-const quoteFilter = (quote) => quote.author !== "";
+const quoteFilter = (quote) => quote.author != null && quote.author !== "";
 
 /** @param {string} text */
 const parseText = (text) => text.split(LINE_BREAK_REGEX)[0];
@@ -28,7 +28,8 @@ function parseQuote(quote) {
   return {
     id: pk,
     text: parseText(quote.quote),
-    author,
+    // TODO: improve filter typing and remove this type cast
+    author: /** @type {string} */ (author),
     tags: parseTags(tags),
   };
 }
