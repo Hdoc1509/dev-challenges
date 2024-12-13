@@ -62,6 +62,7 @@ export const getMockedRandomQuote = async () => {
 
   await new Promise((resolve) => setTimeout(resolve, randomDelay));
 
+  if (randomDelay <= 1250) return [QuotesError.generic("Mock example error")];
   if (randomDelay <= 1500) return [validationErrorMock];
 
   return [null, randomElement(parseQuotes(quotesMock.results))];
