@@ -1,4 +1,4 @@
-import { setFetchingStatus } from "@/utils";
+import { setFetchingStatus } from "@/utils/status";
 import { $author, $tags, $text, $error } from "./elements";
 import { STATUS } from "@lib/fetcher";
 /** @typedef {import('@/types').Quote} Quote */

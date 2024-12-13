@@ -1,6 +1,6 @@
 import { ValidationError, STATUS } from "@lib/fetcher";
 import { getRandomQuote, getMockedRandomQuote } from "@/services/quotes";
-import { setFetchingStatus } from "@/utils";
+import { setFetchingStatus } from "@/utils/status";
 import { resetAlert } from "@lib/alert";
 import { renderError, renderQuote } from "@/ui/quote/render";
 import { handleCopyValidationError } from "./copy-error";

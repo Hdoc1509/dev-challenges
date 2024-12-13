@@ -1,7 +1,7 @@
 import { ServiceError, fetcher } from "@lib/fetcher";
 import { QuotesResponseSchema, QuotesErrorResponseSchema } from "./schema";
 import { parseQuotes } from "./parse";
-import { randomElement, randomInt } from "@/utils";
+import { randomElement, randomInt } from "@/utils/random";
 import quotesMock from "@/mocks/quotes.json";
 import { validationErrorMock } from "@/mocks/validation-error";
 

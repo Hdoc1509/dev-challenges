@@ -1,6 +1,6 @@
 import { resetAlert, showAlert } from "@lib/alert";
 import { renderError } from "@/ui/quote/render";
-import { copyToClipboard } from "@/utils";
+import { copyToClipboard } from "@/utils/clipboard";
 
 /** @param {import("@lib/fetcher").ValidationError} error */
 export async function handleCopyValidationError(error) {
