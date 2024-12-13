@@ -15,20 +15,21 @@
 .quote[data-status="loading"] {
   --quote-content-display: none;
 }
-.quote[data-status="success"] {
+.quote:not(.quote[data-status="loading"]) {
   --spinner-display: none;
 }
 .quote[data-status="error"] {
-  --quote-error-display: block;
   --quote-content-display: none;
-  --spinner-display: none;
 }
-.quote[data-status="error"][data-error="validation"] {
-  --copy-error-display: flex;
+.quote:not(.quote[data-status="error"]) {
+  --quote-error-display: none;
+}
+.quote[data-status="error"]:not(.quote[data-error="validation"]) {
+  --copy-error-display: none;
 }
 
 .error {
-  display: var(--quote-error-display, none);
+  display: var(--quote-error-display);
 
   background-color: rgba(255, 0, 0, 0.2);
   border-radius: 8px;
@@ -41,7 +42,7 @@
   margin-bottom: 0.5rem;
 }
 .error #copy-error {
-  display: var(--copy-error-display, none);
+  display: var(--copy-error-display, flex);
   align-items: center;
   gap: 0.5em;
 
