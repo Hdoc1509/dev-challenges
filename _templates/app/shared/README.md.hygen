@@ -25,9 +25,15 @@
 
 ## Overview
 
-<!-- TODO: Update screenshot once project has completed -->
+<!-- TODO: Update screenshot and its aspect ratio once project has completed -->
 
-![<%= name %> screenshot][screenshot-url]
+<p align="center">
+  <img
+    src="https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png"
+    alt="<%= name %> screenshot"
+    style="aspect-ratio: 16 / 9"
+  />
+</p>
 
 <!-- Challenge Description -->
 
@@ -94,4 +100,3 @@ pnpm run dev <%= is_ssr ? '' : '--open' %>
 [deploy-status]: https://github.com/Hdoc1509/dev-challenges/actions/workflows/deploy.yml/badge.svg
 [deploy-url]: https://github.com/Hdoc1509/dev-challenges/actions/workflows/deploy.yml
 <% } -%>
-[screenshot-url]: https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png
