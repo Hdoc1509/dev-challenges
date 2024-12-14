@@ -46,6 +46,8 @@ the use of an external API.
 - [zod](https://zod.dev/)
 - [fontsource](https://fontsource.org/) fonts:
   - [Outfit](https://fontsource.org/fonts/outfit)
+- [tabler icons](https://tabler-icons.io/)
+  - [quote](https://tabler.io/icons/icon/quote)
 - [svgomg](https://svgomg.net/)
 - [PaperQuotes API (Free Quota)](https://paperquotes.com/)
 - [quicktype](https://app.quicktype.io/)
