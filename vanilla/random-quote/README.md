@@ -18,9 +18,13 @@
 
 ## Overview
 
-<!-- TODO: Update screenshot once project has completed -->
-
-![random-quote screenshot][screenshot-url]
+<p align="center">
+  <img
+    src="https://github.com/user-attachments/assets/98d5c5c1-fe70-42e3-922d-cb4f1c5b80f2"
+    alt="random-quote screenshot"
+    style="aspect-ratio: 146 / 247"
+  />
+</p>
 
 This challenge is an excellent opportunity to gain practical experience in
 utilizing external APIs within your application. The task involves creating a
@@ -51,6 +55,8 @@ the use of an external API.
 - [svgomg](https://svgomg.net/)
 - [PaperQuotes API (Free Quota)](https://paperquotes.com/)
 - [quicktype](https://app.quicktype.io/)
+- [Online Image Compressor](https://imagecompressor.com/) and [Aspect Ratio
+  Calculator](https://aspectratiocalculator.com) for screenshot
 
 ### Extra Features
 
@@ -83,4 +89,3 @@ pnpm run dev --open
 
 [deploy-status]: https://github.com/Hdoc1509/dev-challenges/actions/workflows/deploy.yml/badge.svg
 [deploy-url]: https://github.com/Hdoc1509/dev-challenges/actions/workflows/deploy.yml
-[screenshot-url]: https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png
