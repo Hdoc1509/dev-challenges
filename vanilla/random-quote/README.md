@@ -65,6 +65,7 @@ the use of an external API.
 
 ### What I learned
 
+- Create a random quote app with HTML, CSS, and JavaScript.
 - Handle errors or `Clipboard API`
 
 ## How To Use
