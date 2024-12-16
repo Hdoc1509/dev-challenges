@@ -45,6 +45,7 @@ and improve your JavaScript proficiency.
 ### Built With
 
 - [Vite](https://vitejs.dev/)
+- [vite-plugin-html](https://github.com/vbenjs/vite-plugin-html)
 - [BEM](https://getbem.com/)
 - [fontsource](https://fontsource.org/) fonts:
   - [Inter](https://fontsource.org/fonts/inter)

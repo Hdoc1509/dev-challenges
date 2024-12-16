@@ -46,6 +46,7 @@ the use of an external API.
 ### Built With
 
 - [Vite](https://vitejs.dev/)
+- [vite-plugin-html](https://github.com/vbenjs/vite-plugin-html)
 - [BEM](https://getbem.com/)
 - [zod](https://zod.dev/)
 - [fontsource](https://fontsource.org/) fonts:

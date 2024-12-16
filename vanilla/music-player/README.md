@@ -40,6 +40,7 @@ using JavaScript.
 ### Built With
 
 - [Vite](https://vitejs.dev/)
+- [vite-plugin-html](https://github.com/vbenjs/vite-plugin-html)
 - [BEM](https://getbem.com/)
 - [fontsource](https://fontsource.org/)
   - [Inter](https://fontsource.org/fonts/inter)

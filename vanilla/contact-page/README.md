@@ -40,6 +40,7 @@ form, inputs,..
 ### Built With
 
 - [Vite](https://vitejs.dev/)
+- [vite-plugin-html](https://github.com/vbenjs/vite-plugin-html)
 - [BEM](https://getbem.com/)
 - [fontsource](https://fontsource.org/)
   - [Be Vietnam Pro](https://fontsource.org/fonts/be-vietnam-pro)
