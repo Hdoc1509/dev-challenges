@@ -9,7 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@lib/dom": "workspace:"
+    "@lib/dom": "workspace:",
+    "qrcodejs": "catalog:"
   },
   "devDependencies": {
     "vite": "catalog:",
