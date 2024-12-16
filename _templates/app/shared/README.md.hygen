@@ -51,11 +51,13 @@
   - _List of fonts used in the project_
 <% } else if (is_ssr) { -%>
 - [Astro](https://astro.build/)
+- [React](https://reactjs.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Sass](https://sass-lang.com/)
 - [clsx](https://github.com/lukeed/clsx#readme)
 - [BEM](https://getbem.com/)
 - [zod](https://zod.dev/)
+- [zustand](https://zustand.docs.pmnd.rs/getting-started/introduction)
 - [@hrc/button](https://hdoc1509.github.io/hrc/packages/button/)
 - [@hrc/input](https://hdoc1509.github.io/hrc/packages/input/)
 - [@hrc/material-icons](https://hdoc1509.github.io/hrc/packages/material-icons/)
