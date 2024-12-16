@@ -12,6 +12,9 @@ to: vanilla/<%= name %>/package.json
     "build": "vite build",
     "preview": "vite preview"
   },
+  "dependencies": {
+    "@lib/dom": "workspace:",
+  },
   "devDependencies": {
     "vite": "catalog:"
   }
