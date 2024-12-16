@@ -62,6 +62,8 @@ the use of an external API.
 
 - Alert when quote copied to clipboard
 - Error handling
+  - Fetch API
+  - Clipboard API
 
 ### What I learned
 
