@@ -16,7 +16,7 @@ There are some [packages](#packages) I created while completing them.
 
 - [x] [Multi-step Register Form](/vanilla/multi-step-form/)
 - [x] [Music Player](/vanilla/music-player/)
-- [ ] [Random Quote](/vanilla/random-quote/)
+- [x] [Random Quote](/vanilla/random-quote/)
 - [ ] [QR Code Generator](/vanilla/qr-code-generator/)
 - [ ] [Guess The Word Game](/vanilla/guess-the-word/)
 
