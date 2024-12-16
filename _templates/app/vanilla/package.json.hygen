@@ -16,6 +16,7 @@ to: vanilla/<%= name %>/package.json
     "@lib/dom": "workspace:",
   },
   "devDependencies": {
-    "vite": "catalog:"
+    "vite": "catalog:",
+    "vite-plugin-html": "catalog:"
   }
 }
