@@ -839,6 +839,9 @@ importers:
       vite:
         specifier: 'catalog:'
         version: 5.0.2(@types/node@20.5.0)(sass@1.65.0)(terser@5.36.0)
+      vite-plugin-html:
+        specifier: 'catalog:'
+        version: 3.2.2(vite@5.0.2(@types/node@20.5.0)(sass@1.65.0)(terser@5.36.0))
 
   vanilla/multi-step-form:
     dependencies:
@@ -858,6 +861,9 @@ importers:
       vite:
         specifier: 'catalog:'
         version: 5.0.2(@types/node@20.5.0)(sass@1.65.0)(terser@5.36.0)
+      vite-plugin-html:
+        specifier: 'catalog:'
+        version: 3.2.2(vite@5.0.2(@types/node@20.5.0)(sass@1.65.0)(terser@5.36.0))
 
   vanilla/music-player:
     dependencies:
@@ -902,6 +908,9 @@ importers:
       vite:
         specifier: 'catalog:'
         version: 5.0.2(@types/node@20.5.0)(sass@1.65.0)(terser@5.36.0)
+      vite-plugin-html:
+        specifier: 'catalog:'
+        version: 3.2.2(vite@5.0.2(@types/node@20.5.0)(sass@1.65.0)(terser@5.36.0))
 
 packages:
 

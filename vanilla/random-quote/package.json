@@ -8,9 +8,6 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-  "devDependencies": {
-    "vite": "catalog:"
-  },
   "dependencies": {
     "@fontsource-variable/outfit": "catalog:",
     "@fontsource/outfit": "catalog:",
@@ -18,5 +15,9 @@
     "@lib/dom": "workspace:",
     "@lib/fetcher": "workspace:",
     "zod": "catalog:"
+  },
+  "devDependencies": {
+    "vite": "catalog:",
+    "vite-plugin-html": "catalog:"
   }
 }
