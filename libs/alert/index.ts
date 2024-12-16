@@ -14,6 +14,18 @@ const $alertTimebar = getElementBySelector(
   $alert,
 );
 
+// NOTE: without timeout, the computed styles are empty empty on dev server
+setTimeout(() => {
+  const timeBarDuration = getComputedStyle($alertTimebar).getPropertyValue(
+    "--alert-time-bar-duration",
+  );
+
+  if (timeBarDuration === "")
+    throw new Error(
+      `Missing "--alert-time-bar-duration" CSS variable for ".alert__time-bar" element`,
+    );
+}, 0);
+
 type CloseOptions = { onClose?: () => void };
 const closeAlert = ({ onClose }: CloseOptions = {}) => {
   $alert.classList.remove("alert--open");
