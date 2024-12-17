@@ -53,6 +53,7 @@ of an external library.
 - [qrcodejs](https://github.com/llyys/qrcodejs)
 - [fontsource](https://fontsource.org/) fonts:
   - _List of fonts used in the project_
+- [svgomg](https://svgomg.net/) for svg assets optimization
 
 ### Extra Features
 
