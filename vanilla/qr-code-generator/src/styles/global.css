@@ -10,6 +10,12 @@
 
   /* fonts */
   --text-fs: 1rem;
+
+  /* colors */
+  --primary: #3662e3;
+  --primary-transparent: #4e80ee33;
+  --input-bg: #030617;
+  --input-placeholder: #364153;
 }
 @supports (font-variation-settings: normal) {
   :root {
@@ -34,10 +40,10 @@ body {
   min-height: 100vh;
   min-height: 100svh;
 
-  background-color: #fff;
+  background-color: #111729;
   padding: 2rem;
 
-  color: #000;
+  color: #f2f5f9;
   font-size: var(--text-fs);
 }
 @media (max-width: 767px) {
