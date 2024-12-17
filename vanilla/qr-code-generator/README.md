@@ -52,7 +52,7 @@ of an external library.
 - [BEM](https://getbem.com/)
 - [qrcodejs](https://github.com/llyys/qrcodejs)
 - [fontsource](https://fontsource.org/) fonts:
-  - _List of fonts used in the project_
+  - [Outfit](https://fontsource.org/fonts/outfit)
 - [svgomg](https://svgomg.net/) for svg assets optimization
 
 ### Extra Features

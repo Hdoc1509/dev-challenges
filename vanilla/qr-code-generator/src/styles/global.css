@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Outfit", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -10,6 +10,11 @@
 
   /* fonts */
   --text-fs: 1rem;
+}
+@supports (font-variation-settings: normal) {
+  :root {
+    font-family: "Outfit Variable", sans-serif;
+  }
 }
 
 *,

@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource-variable/outfit": "catalog:",
+    "@fontsource/outfit": "catalog:",
     "@lib/dom": "workspace:",
     "qrcodejs": "catalog:"
   },

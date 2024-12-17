@@ -889,6 +889,12 @@ importers:
 
   vanilla/qr-code-generator:
     dependencies:
+      '@fontsource-variable/outfit':
+        specifier: 'catalog:'
+        version: 5.1.0
+      '@fontsource/outfit':
+        specifier: 'catalog:'
+        version: 5.1.0
       '@lib/dom':
         specifier: 'workspace:'
         version: link:../../libs/dom
