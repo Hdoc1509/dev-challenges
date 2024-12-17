@@ -7,6 +7,9 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* fonts */
+  --text-fs: 1rem;
 }
 
 *,
@@ -30,6 +33,7 @@ body {
   padding: 2rem;
 
   color: #000;
+  font-size: var(--text-fs);
 }
 @media (max-width: 767px) {
   body {
