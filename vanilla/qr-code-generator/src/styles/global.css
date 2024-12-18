@@ -13,8 +13,9 @@
 
   /* colors */
   --primary: #3662e3;
+  --primary-hover: #1c48ca;
   --primary-transparent: #4e80ee33;
-  --input-bg: #030617;
+  --form-bg: #030617;
   --input-placeholder: #364153;
 }
 @supports (font-variation-settings: normal) {
@@ -30,16 +31,16 @@
 }
 
 body {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  gap: 1rem;
-
-  margin: 0;
+  margin: 0 auto;
   min-width: 320px;
   max-width: 1280px;
   min-height: 100vh;
   min-height: 100svh;
 
+  background-image: url("/bg-illustration.svg");
+  background-repeat: no-repeat;
+  background-position-x: right 5vw;
+  background-position-y: center;
   background-color: #111729;
   padding: 2rem;
 
@@ -55,4 +56,13 @@ body {
 h1 {
   font-size: 2rem;
   line-height: 1.1;
+}
+
+button {
+  color: inherit;
+}
+
+button,
+input {
+  font: inherit;
 }

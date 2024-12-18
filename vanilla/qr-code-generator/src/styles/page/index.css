@@ -1,0 +1,51 @@
+body {
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
+  place-items: center;
+  gap: 2rem;
+}
+
+header {
+  margin-top: auto;
+}
+
+main {
+  width: min(610px, 100%);
+}
+
+form {
+  display: flex;
+  gap: 1rem;
+
+  border: 2px solid var(--primary);
+  border-radius: 16px;
+  padding: 0.5rem;
+  padding-left: 2rem;
+  background-color: var(--form-bg);
+}
+
+button {
+  flex-shrink: 0;
+
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary);
+  padding: 1rem 2.5rem;
+}
+button:hover,
+button:focus {
+  background-color: var(--primary-hover);
+}
+
+input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+
+  color: inherit;
+}
+input::placeholder {
+  opacity: 1;
+  color: var(--input-placeholder);
+}
