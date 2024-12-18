@@ -6,6 +6,14 @@ import { defineConfig } from "vite";
 export default defineConfig({
   // plugins: [createHtmlPlugin({ minify: true })],
   base: "/dev-challenges/qr-code-generator",
+  build: {
+    rollupOptions: {
+      input: {
+        main: "index.html",
+        qr_code: "qr-code/index.html",
+      },
+    },
+  },
   resolve: {
     alias: {
       // https://nodejs.org/api/esm.html#importmetadirname

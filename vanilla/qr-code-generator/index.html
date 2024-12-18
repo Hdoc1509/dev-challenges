@@ -8,14 +8,20 @@
   </head>
   <body>
     <header>
-      <h1>Title</h1>
+      <img src="/logo-qr-generator.svg" alt="QR Code Generator logo" />
     </header>
     <main>
-      Content
+      <form action="/dev-challenges/qr-code-generator/qr-code/" method="get">
+        <input
+          aria-label="URL"
+          type="url"
+          name="url"
+          placeholder="Enter a url"
+          required
+        />
+        <button>QR code</button>
+      </form>
     </main>
-    <footer>
-      Footer
-    </footer>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
