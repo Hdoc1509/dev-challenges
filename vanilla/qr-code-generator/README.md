@@ -53,7 +53,8 @@ of an external library.
 - [qrcodejs](https://github.com/llyys/qrcodejs)
 - [fontsource](https://fontsource.org/) fonts:
   - [Outfit](https://fontsource.org/fonts/outfit)
-- [svgomg](https://svgomg.net/) for svg assets optimization
+- [Boxy SVG](https://boxy-svg.com/) to create `Share` and `Download` icons
+- [svgomg](https://svgomg.net/) for optimization of svg assets and inline svg
 
 ### Extra Features
 
