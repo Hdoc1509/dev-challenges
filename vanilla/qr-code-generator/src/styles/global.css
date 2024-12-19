@@ -60,6 +60,7 @@ h1 {
 
 button {
   color: inherit;
+  cursor: pointer;
 }
 
 button,
