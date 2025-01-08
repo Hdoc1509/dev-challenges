@@ -14,15 +14,19 @@ main {
 picture {
   width: min(300px, 100%);
   aspect-ratio: 1;
+  padding: 2rem;
   background-color: var(--primary-transparent);
   border-radius: 50%;
 
   text-align: center;
 }
 
-picture img {
+picture img, picture canvas {
   width: 100%;
   aspect-ratio: 1;
+
+  border: 2rem solid;
+  border-radius: 30px;
 }
 
 menu {
