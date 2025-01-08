@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD033 -->
 <h1 align="center">QR Code Generator</h1>
 
 <div align="center">
@@ -58,10 +59,12 @@ of an external library.
 
 ### Extra Features
 
+<!-- markdownlint-disable-next-line MD036 -->
 _WIP_
 
 ### What I learned
 
+<!-- markdownlint-disable-next-line MD036 -->
 _WIP_
 
 ## How To Use
