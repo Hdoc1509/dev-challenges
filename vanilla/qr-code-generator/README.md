@@ -42,7 +42,7 @@ of an external library.
 - [x] Users can enter a URL.
 - [x] User can see a QR quote after selecting the QR code button.
 - [x] User can download QR quote image by selecting download button.
-- [ ] User can copy Quote to the clipboard by selecting Share button.
+- [x] User can copy Quote to the clipboard by selecting Share button.
 - [ ] The page should be responsive on different screen sizes.
 - [ ] Deploy the solution and submit Repository URL and Demo URL.
 

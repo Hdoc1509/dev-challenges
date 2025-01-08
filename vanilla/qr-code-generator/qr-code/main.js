@@ -1,4 +1,5 @@
 import { getElementById, getElementBySelector } from "@lib/dom";
+import { copyToClipboard } from "@/utils/clipboard";
 import "@fontsource-variable/outfit";
 import "@fontsource/outfit/400.css";
 import "@fontsource/outfit/600.css";
@@ -8,10 +9,12 @@ import "@/styles/page/qr-code.css";
 const urlParam = new URL(location.href).searchParams.get("url");
 
 if (!urlParam) {
+  // TODO: redirect to home page
   throw new Error("Url param is required");
 }
 
 const $picture = getElementById("qr-code-image", HTMLPictureElement);
+const QR_QUOTE = $picture.title;
 
 // eslint-disable-next-line no-undef
 new QRCode($picture, {
@@ -21,17 +24,30 @@ new QRCode($picture, {
 });
 
 const $downloadQRImage = getElementById("download-qr-image", HTMLButtonElement);
+const $shareQRQuote = getElementById("share-qr-quote", HTMLButtonElement);
 const $qrImg = getElementBySelector("img", HTMLImageElement, $picture);
 // const $qrCanvas = getElementBySelector("canvas", HTMLCanvasElement, $picture);
 
 const handleDownload = () => {
+  // TODO: use html2canvas to download image
+  // https://html2canvas.hertzen.com/
+  // - use `canvas.toDataURL("image/png")` to set image source
+  // - it will allow to include white border/background on image
+  // - and removes the need to access image or canvas elements conditionally
   const $anchor = document.createElement("a");
 
   $anchor.href = $qrImg.src;
   $anchor.download = "qr-code.png";
   $anchor.click();
-}
+};
+
+const handleCopy = () => {
+  copyToClipboard(QR_QUOTE);
+  // TODO: show alert
+};
 
 document.addEventListener("click", (e) => {
   if (e.target === $downloadQRImage) handleDownload();
+
+  if (e.target === $shareQRQuote) handleCopy();
 });
