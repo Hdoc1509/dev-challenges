@@ -39,8 +39,8 @@ of an external library.
 - [x] Use HTML to create the basic structure.
 - [ ] Add inputs, buttons,.. according to the design.
 - [ ] Use vanilla JavaScript to add interactivity.
-- [ ] Users can enter a URL.
-- [ ] User can see a QR quote after selecting the QR code button.
+- [x] Users can enter a URL.
+- [x] User can see a QR quote after selecting the QR code button.
 - [ ] User can download QR quote image by selecting download button.
 - [ ] User can copy Quote to the clipboard by selecting Share button.
 - [ ] The page should be responsive on different screen sizes.
