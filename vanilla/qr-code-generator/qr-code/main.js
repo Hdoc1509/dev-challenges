@@ -14,13 +14,14 @@ if (!urlParam) {
 }
 
 const $picture = getElementById("qr-code-image", HTMLPictureElement);
-const QR_QUOTE = $picture.title;
 
 new window.QRCode($picture, {
   text: urlParam,
   colorDark: "#111729",
   colorLight: "#f2f5f9",
 });
+
+const QR_QUOTE = $picture.title;
 
 const $downloadQRImage = getElementById("download-qr-image", HTMLButtonElement);
 const $shareQRQuote = getElementById("share-qr-quote", HTMLButtonElement);
