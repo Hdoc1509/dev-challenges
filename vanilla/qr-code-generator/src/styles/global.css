@@ -67,3 +67,8 @@ button,
 input {
   font: inherit;
 }
+
+button svg {
+  /* NOTE: allows to trigger click event on button */
+  pointer-events: none;
+}
