@@ -11,7 +11,7 @@ main {
   gap: 4rem;
 }
 
-picture {
+#qr-code-image {
   width: min(300px, 100%);
   aspect-ratio: 1;
   padding: 2rem;
@@ -21,7 +21,7 @@ picture {
   text-align: center;
 }
 
-picture img, picture canvas {
+#qr-code-image img, #qr-code-image canvas {
   width: 100%;
   aspect-ratio: 1;
 
