@@ -16,8 +16,7 @@ if (!urlParam) {
 const $picture = getElementById("qr-code-image", HTMLPictureElement);
 const QR_QUOTE = $picture.title;
 
-// eslint-disable-next-line no-undef
-new QRCode($picture, {
+new window.QRCode($picture, {
   text: urlParam,
   colorDark: "#111729",
   colorLight: "#f2f5f9",

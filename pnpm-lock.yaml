@@ -902,6 +902,9 @@ importers:
         specifier: 'catalog:'
         version: 1.0.0
     devDependencies:
+      '@types/qrcodejs':
+        specifier: 1.0.4
+        version: 1.0.4
       vite:
         specifier: 'catalog:'
         version: 5.0.2(@types/node@20.5.0)(sass@1.65.0)(terser@5.36.0)
@@ -2054,6 +2057,9 @@ packages:
 
   '@types/prop-types@15.7.12':
     resolution: {integrity: sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q==}
+
+  '@types/qrcodejs@1.0.4':
+    resolution: {integrity: sha512-beXPZlCp8TtY4zXl3gEx+vYJqrpcYZwKJ1faYd0zDrfZVj3vZGdTrRp2aAIXEkSTRSn549KGlS+8PvF+ZOaUBQ==}
 
   '@types/react-dom@18.2.25':
     resolution: {integrity: sha512-o/V48vf4MQh7juIKZU2QGDfli6p1+OOi5oXx36Hffpc9adsHeXjVp8rHuPkjd8VT8sOJ2Zp05HR7CdpGTIUFUA==}
@@ -5716,6 +5722,8 @@ snapshots:
   '@types/node@20.5.0': {}
 
   '@types/prop-types@15.7.12': {}
+
+  '@types/qrcodejs@1.0.4': {}
 
   '@types/react-dom@18.2.25':
     dependencies:

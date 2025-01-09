@@ -15,6 +15,5 @@
     "paths": {
       "@/*": ["./src/*"]
     }
-  },
-  "include": ["./node_modules/qrcodejs/qrcode.js"]
+  }
 }
