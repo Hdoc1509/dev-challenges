@@ -1,4 +1,4 @@
-<!-- markdownlint-disable MD033 -->
+<!-- markdownlint-disable MD033 MD034 -->
 <h1 align="center">QR Code Generator</h1>
 
 <div align="center">
@@ -55,6 +55,7 @@ of an external library.
 - [fontsource](https://fontsource.org/) fonts:
   - [Outfit](https://fontsource.org/fonts/outfit)
 - [Boxy SVG](https://boxy-svg.com/) to create `Share` and `Download` icons
+  before using them from https://github.com/devchallenges-io/qr-code-generator
 - [svgomg](https://svgomg.net/) for optimization of svg assets and inline svg
 
 ### Extra Features
