@@ -12,7 +12,7 @@
     "@fontsource-variable/outfit": "catalog:",
     "@fontsource/outfit": "catalog:",
     "@lib/dom": "workspace:",
-    "qrcodejs": "catalog:"
+    "qrcodejs": "1.0.0"
   },
   "devDependencies": {
     "@types/qrcodejs": "1.0.4",

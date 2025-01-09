@@ -135,9 +135,6 @@ catalogs:
     prettier-plugin-astro:
       specifier: 0.13.0
       version: 0.13.0
-    qrcodejs:
-      specifier: 1.0.0
-      version: 1.0.0
     react:
       specifier: 18.2.0
       version: 18.2.0
@@ -899,7 +896,7 @@ importers:
         specifier: 'workspace:'
         version: link:../../libs/dom
       qrcodejs:
-        specifier: 'catalog:'
+        specifier: 1.0.0
         version: 1.0.0
     devDependencies:
       '@types/qrcodejs':
