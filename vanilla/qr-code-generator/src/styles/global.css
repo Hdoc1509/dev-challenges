@@ -12,11 +12,11 @@
   --text-fs: 1rem;
 
   /* colors */
-  --primary: #3662e3;
+  --primary: #263fa9;
   --primary-hover: #1c48ca;
-  --primary-transparent: #4e80ee33;
   --form-bg: #030617;
   --input-placeholder: #364153;
+  --qr-image-bg: #f8fafc1a;
 }
 @supports (font-variation-settings: normal) {
   :root {
@@ -44,7 +44,7 @@ body {
   background-color: #111729;
   padding: 2rem;
 
-  color: #f2f5f9;
+  color: #fafaf9;
   font-size: var(--text-fs);
 }
 @media (max-width: 767px) {

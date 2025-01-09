@@ -15,7 +15,7 @@ main {
   width: min(300px, 100%);
   aspect-ratio: 1;
   padding: 2rem;
-  background-color: var(--primary-transparent);
+  background-color: var(--qr-image-bg);
   border-radius: 50%;
 
   text-align: center;
