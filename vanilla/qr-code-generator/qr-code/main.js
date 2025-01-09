@@ -8,9 +8,9 @@ import "@/styles/page/qr-code.css";
 
 const urlParam = new URL(location.href).searchParams.get("url");
 
-if (!urlParam) {
-  // TODO: redirect to home page
-  throw new Error("Url param is required");
+if (urlParam == null) {
+  window.location.href = "../";
+  throw new Error("URL parameter is missing. Redirecting to index page.");
 }
 
 const $picture = getElementById("qr-code-image", HTMLPictureElement);
