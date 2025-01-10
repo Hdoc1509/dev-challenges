@@ -5,6 +5,14 @@ import { defineConfig } from "vite";
 const BASE_URL = "/dev-challenges/qr-code-generator";
 const QR_CODE_PAGE_TITLE = "Qr Code Generator | QR Code - DevChallenges";
 
+const redirectTagScript = /** @type {const} */ ({
+  tag: "script",
+  attrs: {
+    src: `${BASE_URL}/redirect.js`,
+  },
+  injectTo: "head-prepend",
+});
+
 /** @param {string} html */
 const isQRCodePage = (html) =>
   html.includes(`<title>${QR_CODE_PAGE_TITLE}</title>`);
@@ -14,7 +22,7 @@ export default defineConfig({
   // plugins: [createHtmlPlugin({ minify: true })],
   plugins: [
     {
-      name: "qrcodejs-script-server",
+      name: "server-inject-scripts",
       apply: "serve",
       transformIndexHtml(html) {
         if (!isQRCodePage(html)) return;
@@ -22,6 +30,7 @@ export default defineConfig({
         return {
           html,
           tags: [
+            redirectTagScript,
             {
               tag: "script",
               attrs: {
@@ -34,7 +43,7 @@ export default defineConfig({
       },
     },
     {
-      name: "qrcodejs-script-build",
+      name: "build-inject-scripts",
       apply: "build",
       transformIndexHtml(html) {
         if (!isQRCodePage(html)) return;
@@ -42,6 +51,7 @@ export default defineConfig({
         return {
           html,
           tags: [
+            redirectTagScript,
             {
               tag: "script",
               attrs: {

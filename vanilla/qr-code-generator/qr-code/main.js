@@ -6,12 +6,10 @@ import "@fontsource/outfit/600.css";
 import "@/styles/global.css";
 import "@/styles/page/qr-code.css";
 
-const urlParam = new URL(location.href).searchParams.get("url");
-
-if (urlParam == null) {
-  window.location.href = "../";
-  throw new Error("URL parameter is missing. Redirecting to index page.");
-}
+// NOTE: presence of `?url=` parameter is handled by redirect.js
+const urlParam = /** @type {string} */ (
+  new URL(location.href).searchParams.get("url")
+);
 
 const $picture = getElementById("qr-code-image", HTMLPictureElement);
 
