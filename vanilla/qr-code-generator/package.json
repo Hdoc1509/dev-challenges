@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "@types/qrcodejs": "1.0.4",
+    "html2canvas": "1.4.1",
     "vite": "catalog:",
     "vite-plugin-html": "catalog:"
   }

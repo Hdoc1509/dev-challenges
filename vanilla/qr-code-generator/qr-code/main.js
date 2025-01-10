@@ -1,4 +1,5 @@
-import { getElementById, getElementBySelector } from "@lib/dom";
+import html2canvas from "html2canvas";
+import { getElementById } from "@lib/dom";
 import { copyToClipboard } from "@/utils/clipboard";
 import "@fontsource-variable/outfit";
 import "@fontsource/outfit/400.css";
@@ -23,18 +24,13 @@ const QR_QUOTE = $picture.title;
 
 const $downloadQRImage = getElementById("download-qr-image", HTMLButtonElement);
 const $shareQRQuote = getElementById("share-qr-quote", HTMLButtonElement);
-const $qrImg = getElementBySelector("img", HTMLImageElement, $picture);
-// const $qrCanvas = getElementBySelector("canvas", HTMLCanvasElement, $picture);
 
-const handleDownload = () => {
-  // TODO: use html2canvas to download image
-  // https://html2canvas.hertzen.com/
-  // - use `canvas.toDataURL("image/png")` to set image source
-  // - it will allow to include white border/background on image
-  // - and removes the need to access image or canvas elements conditionally
+const handleDownload = async () => {
   const $anchor = document.createElement("a");
+  const canvas = await html2canvas($picture);
+  const source = canvas.toDataURL("image/png");
 
-  $anchor.href = $qrImg.src;
+  $anchor.href = source;
   $anchor.download = "qr-code.png";
   $anchor.click();
 };
