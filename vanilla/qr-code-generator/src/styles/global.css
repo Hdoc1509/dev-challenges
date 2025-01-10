@@ -39,7 +39,7 @@ body {
 
   background-image: url("/bg-illustration.svg");
   background-repeat: no-repeat;
-  background-position-x: right 5vw;
+  background-position-x: 50vw;
   background-position-y: center;
   background-color: #111729;
   padding: 2rem;
