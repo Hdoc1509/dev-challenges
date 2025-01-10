@@ -1,71 +1,17 @@
 import { resolve } from "node:path";
 import { defineConfig } from "vite";
+import {
+  buildInjectScripts,
+  serverInjectScripts,
+} from "./plugin/inject-scripts";
 // import { createHtmlPlugin } from "vite-plugin-html";
 
 const BASE_URL = "/dev-challenges/qr-code-generator";
-const QR_CODE_PAGE_TITLE = "Qr Code Generator | QR Code - DevChallenges";
-
-const redirectTagScript = /** @type {const} */ ({
-  tag: "script",
-  attrs: {
-    src: `${BASE_URL}/redirect.js`,
-  },
-  injectTo: "head-prepend",
-});
-
-/** @param {string} html */
-const isQRCodePage = (html) =>
-  html.includes(`<title>${QR_CODE_PAGE_TITLE}</title>`);
 
 // https://vite.dev/config/
 export default defineConfig({
   // plugins: [createHtmlPlugin({ minify: true })],
-  plugins: [
-    {
-      name: "server-inject-scripts",
-      apply: "serve",
-      transformIndexHtml(html) {
-        if (!isQRCodePage(html)) return;
-
-        return {
-          html,
-          tags: [
-            redirectTagScript,
-            {
-              tag: "script",
-              attrs: {
-                src: `${BASE_URL}/node_modules/qrcodejs/qrcode.min.js`,
-              },
-              injectTo: "head-prepend",
-            },
-          ],
-        };
-      },
-    },
-    {
-      name: "build-inject-scripts",
-      apply: "build",
-      transformIndexHtml(html) {
-        if (!isQRCodePage(html)) return;
-
-        return {
-          html,
-          tags: [
-            redirectTagScript,
-            {
-              tag: "script",
-              attrs: {
-                // NOTE: ./scripts/copy-qrcodejs.sh is the responsible for
-                // copying the file to the build folder.
-                src: `${BASE_URL}/assets/qrcode.min.js`,
-              },
-              injectTo: "head-prepend",
-            },
-          ],
-        };
-      },
-    },
-  ],
+  plugins: [serverInjectScripts(), buildInjectScripts()],
   base: BASE_URL,
   build: {
     rollupOptions: {
