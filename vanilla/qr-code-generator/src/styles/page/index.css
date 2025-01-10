@@ -13,7 +13,7 @@ main {
   width: min(610px, 100%);
 }
 
-form {
+.qr-form {
   display: flex;
   gap: 1rem;
 
@@ -24,7 +24,7 @@ form {
   background-color: var(--form-bg);
 }
 
-button {
+.qr-form__trigger {
   flex-shrink: 0;
 
   border: none;
@@ -32,12 +32,12 @@ button {
   background-color: var(--primary);
   padding: 1rem 2.5rem;
 }
-button:hover,
-button:focus {
+.qr-form__trigger:hover,
+.qr-form__trigger:focus {
   background-color: var(--primary-hover);
 }
 
-input {
+.qr-form__url {
   width: 100%;
   border: none;
   outline: none;
@@ -45,7 +45,7 @@ input {
 
   color: inherit;
 }
-input::placeholder {
+.qr-form__url::placeholder {
   opacity: 1;
   color: var(--input-placeholder);
 }

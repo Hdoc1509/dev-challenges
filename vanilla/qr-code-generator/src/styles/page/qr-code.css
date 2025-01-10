@@ -29,7 +29,7 @@ main {
   border-radius: 30px;
 }
 
-menu {
+.qr-menu {
   display: flex;
   justify-content: center;
   gap: 2rem;
@@ -41,7 +41,7 @@ menu {
   list-style: none;
 }
 
-menu button {
+.qr-menu__action {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,7 +55,7 @@ menu button {
   font-weight: 600;
 }
 
-menu button:hover,
-menu button:focus {
+.qr-menu__action:hover,
+.qr-menu__action:focus {
   background-color: var(--primary-hover);
 }

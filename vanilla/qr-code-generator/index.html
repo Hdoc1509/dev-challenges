@@ -16,15 +16,20 @@
       </a>
     </header>
     <main>
-      <form action="/dev-challenges/qr-code-generator/qr-code/" method="get">
+      <form
+        class="qr-form"
+        action="/dev-challenges/qr-code-generator/qr-code/"
+        method="get"
+      >
         <input
+          class="qr-form__url"
           aria-label="URL"
           type="url"
           name="url"
           placeholder="Enter a url"
           required
         />
-        <button>QR code</button>
+        <button class="qr-form__trigger button">QR code</button>
       </form>
     </main>
     <script type="module" src="/src/main.js"></script>
