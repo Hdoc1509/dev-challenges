@@ -3,6 +3,11 @@ import { defineConfig } from "vite";
 // import { createHtmlPlugin } from "vite-plugin-html";
 
 const BASE_URL = "/dev-challenges/qr-code-generator";
+const QR_CODE_PAGE_TITLE = "Qr Code Generator | QR Code - DevChallenges";
+
+/** @param {string} html */
+const isQRCodePage = (html) =>
+  html.includes(`<title>${QR_CODE_PAGE_TITLE}</title>`);
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -12,6 +17,8 @@ export default defineConfig({
       name: "qrcodejs-script-server",
       apply: "serve",
       transformIndexHtml(html) {
+        if (!isQRCodePage(html)) return;
+
         return {
           html,
           tags: [
@@ -30,6 +37,8 @@ export default defineConfig({
       name: "qrcodejs-script-build",
       apply: "build",
       transformIndexHtml(html) {
+        if (!isQRCodePage(html)) return;
+
         return {
           html,
           tags: [
