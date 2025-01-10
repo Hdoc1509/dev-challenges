@@ -1,0 +1,9 @@
+.button {
+  border: none;
+  border-radius: 12px;
+  background-color: var(--primary);
+  padding: 1rem 2.5rem;
+}
+.button:hover {
+  background-color: var(--primary-hover);
+}

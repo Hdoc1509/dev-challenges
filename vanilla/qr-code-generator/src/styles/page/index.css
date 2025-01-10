@@ -26,15 +26,6 @@ main {
 
 .qr-form__trigger {
   flex-shrink: 0;
-
-  border: none;
-  border-radius: 8px;
-  background-color: var(--primary);
-  padding: 1rem 2.5rem;
-}
-.qr-form__trigger:hover,
-.qr-form__trigger:focus {
-  background-color: var(--primary-hover);
 }
 
 .qr-form__url {

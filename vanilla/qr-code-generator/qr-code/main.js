@@ -4,7 +4,7 @@ import { copyToClipboard } from "@/utils/clipboard";
 import "@fontsource-variable/outfit";
 import "@fontsource/outfit/400.css";
 import "@fontsource/outfit/600.css";
-import "@/styles/global.css";
+import "@/styles/main.css";
 import "@/styles/page/qr-code.css";
 
 // NOTE: presence of `?url=` parameter is handled by redirect.js
