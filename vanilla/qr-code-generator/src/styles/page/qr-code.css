@@ -1,6 +1,11 @@
 body {
   display: grid;
   grid-template-rows: auto 1fr;
+  padding-block: 3rem;
+}
+
+header {
+  margin: 0 auto;
 }
 
 main {

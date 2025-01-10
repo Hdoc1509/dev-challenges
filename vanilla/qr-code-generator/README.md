@@ -35,9 +35,9 @@ of an external library.
 
 ## User Stories
 
-- [ ] Create a QR code generator app that matches the given design.
+- [x] Create a QR code generator app that matches the given design.
 - [x] Use HTML to create the basic structure.
-- [ ] Add inputs, buttons,.. according to the design.
+- [x] Add inputs, buttons,.. according to the design.
 - [x] Use vanilla JavaScript to add interactivity.
 - [x] Users can enter a URL.
 - [x] User can see a QR quote after selecting the QR code button.
