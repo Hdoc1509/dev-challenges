@@ -47,7 +47,7 @@ body {
   color: #fafaf9;
   font-size: var(--text-fs);
 }
-@media (max-width: 767px) {
+@media (max-width: 640px) {
   body {
     padding: 1rem;
   }
