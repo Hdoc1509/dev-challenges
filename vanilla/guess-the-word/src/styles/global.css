@@ -17,6 +17,11 @@
 
   --buttons-top-margin: 3rem;
   --buttons-gap: 18px;
+
+  --word-fs: 2rem;
+  --title-fs: 1.25rem;
+  --legend-fs: 0.75rem;
+  --button-fs: 0.875rem;
 }
 @supports (font-variation-settings: normal) {
   :root {
