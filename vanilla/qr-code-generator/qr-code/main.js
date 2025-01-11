@@ -1,5 +1,5 @@
 import html2canvas from "html2canvas";
-import { getElementById } from "@lib/dom";
+import { getElementById, getElementBySelector } from "@lib/dom";
 import { copyToClipboard } from "@/utils/clipboard";
 import "@fontsource-variable/outfit";
 import "@fontsource/outfit/400.css";
@@ -13,6 +13,17 @@ const urlParam = /** @type {string} */ (
 );
 
 const $picture = getElementById("qr-code-image", HTMLPictureElement);
+const $errorDialog = getElementBySelector(".error", HTMLDialogElement);
+const $errorMessage = getElementBySelector(
+  ".error__message",
+  HTMLParagraphElement,
+  $errorDialog,
+);
+const $errorClose = getElementBySelector(
+  ".error__close",
+  HTMLButtonElement,
+  $errorDialog,
+);
 
 new window.QRCode($picture, {
   text: urlParam,
@@ -35,8 +46,15 @@ const handleDownload = async () => {
   $anchor.click();
 };
 
-const handleCopy = () => {
-  copyToClipboard(QR_QUOTE);
+const handleCopy = async () => {
+  const error = await copyToClipboard(QR_QUOTE);
+
+  if (error != null) {
+    $errorMessage.textContent = error.message;
+    $errorDialog.showModal();
+    return;
+  }
+
   // TODO: show alert
 };
 
@@ -44,4 +62,6 @@ document.addEventListener("click", (e) => {
   if (e.target === $downloadQRImage) handleDownload();
 
   if (e.target === $shareQRQuote) handleCopy();
+
+  if (e.target === $errorClose) $errorDialog.close();
 });

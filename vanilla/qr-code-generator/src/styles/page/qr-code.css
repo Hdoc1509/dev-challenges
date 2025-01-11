@@ -55,3 +55,34 @@ main {
 
   font-weight: 600;
 }
+
+.error[open] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  width: min(450px, 100%);
+  background: #891f33;
+  padding: 1rem;
+  color: #f8dcdc;
+  border-color: #391313;
+  border-radius: 12px;
+
+  font-weight: bold;
+}
+.error::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.error__message {
+  margin: 0;
+  font-size: 1.5rem;
+}
+.error__close {
+  padding: 0.75rem 2rem;
+  background-color: transparent;
+  border: 2px solid #eb9c9c;
+}
+.error__close:hover {
+  background: #eb9c9c3f;
+}
