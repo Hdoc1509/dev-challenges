@@ -1,3 +1,9 @@
+@import "@lib/alert/styles.css";
+
+:root {
+  --alert-time-bar-duration: 3.5s;
+}
+
 body {
   display: grid;
   grid-template-rows: auto 1fr;

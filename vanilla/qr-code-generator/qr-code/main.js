@@ -1,4 +1,5 @@
 import html2canvas from "html2canvas";
+import { resetAlert, showAlert } from "@lib/alert";
 import { getElementById, getElementBySelector } from "@lib/dom";
 import { copyToClipboard } from "@/utils/clipboard";
 import "@fontsource-variable/outfit";
@@ -55,7 +56,8 @@ const handleCopy = async () => {
     return;
   }
 
-  // TODO: show alert
+  resetAlert();
+  showAlert({ text: "✅ QR quote copied to clipboard!", color: "success" });
 };
 
 document.addEventListener("click", (e) => {
