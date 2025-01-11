@@ -21,10 +21,13 @@
 
 ![screenshot](https://github.com/Hdoc1509/dev-challenges/assets/72316111/f210689f-25ba-4266-9664-dcba6d19f243)
 
-**Challenge**: Create a small version of Airbnb - Windbnb with given data. Use Front-end libraries like React or Vue. Don’t look at the existing solution. Fulfill user stories below:
+**Challenge**: Create a small version of Airbnb - Windbnb with given data. Use
+Front-end libraries like React or Vue. Don’t look at the existing solution.
+Fulfill user stories below:
 
 - [x] User story: I can see a list of properties
-- [x] User story: I can see the property card with a name, rating, apartment type, and super host
+- [x] User story: I can see the property card with a name, rating, apartment type,
+      and super host
 - [x] User story: I can open the filter drawer
 - [x] User story: I can filter properties by location and number of guests
 - [x] User story: I can see the number of filtered items
@@ -61,7 +64,9 @@
 
 ## How To Use
 
-To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/download/) and [pnpm](https://pnpm.io/installation) installed on your computer. From your command line:
+To clone and run this application, you'll need [Git](https://git-scm.com),
+[Node.js](https://nodejs.org/en/download/) and [pnpm](https://pnpm.io/installation)
+installed on your computer. From your command line:
 
 ```bash
 # Clone this repository

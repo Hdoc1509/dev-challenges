@@ -21,7 +21,8 @@
 
 ![screenshot](https://github.com/Hdoc1509/dev-challenges/assets/72316111/1eb8fd1b-7a1f-4d84-8997-e7ba092ac217)
 
-**Challenge**: Create a quote generator app. Use Front-end libraries like React or Vue. Don’t look at the existing solution. Fulfill user stories below:
+**Challenge**: Create a quote generator app. Use Front-end libraries like React
+or Vue. Don’t look at the existing solution. Fulfill user stories below:
 
 - [x] User story: I can see a random quote
 - [x] User story: I generate a new random quote
@@ -58,7 +59,9 @@
 
 ## How To Use
 
-To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/download/) and [pnpm](https://pnpm.io/installation) installed on your computer. From your command line:
+To clone and run this application, you'll need [Git](https://git-scm.com),
+[Node.js](https://nodejs.org/en/download/) and [pnpm](https://pnpm.io/installation)
+installed on your computer. From your command line:
 
 ```bash
 # Clone this repository

@@ -64,9 +64,8 @@ using JavaScript.
 ## How To Use
 
 To clone and run this application, you'll need [Git](https://git-scm.com),
-[Node.js](https://nodejs.org/en/download/) and
-[pnpm](https://pnpm.io/installation) installed on your computer. From your
-command line:
+[Node.js](https://nodejs.org/en/download/) and [pnpm](https://pnpm.io/installation)
+installed on your computer. From your command line:
 
 ```bash
 # Clone this repository

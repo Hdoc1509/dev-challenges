@@ -21,9 +21,11 @@
 
 ![screenshot](https://github.com/Hdoc1509/dev-challenges/assets/72316111/75381dba-c873-419d-90b1-bbd9755447b5)
 
-**Challenge**: Create a country quiz app using an API. Use Front-end libraries like React or Vue. Don’t look at the existing solution. Fulfill user stories below:
+**Challenge**: Create a country quiz app using an API. Use Front-end libraries
+like React or Vue. Don’t look at the existing solution. Fulfill user stories below:
 
-- [x] User story: I can see at least 2 types of questions: a city is the capital of.. or a flag belong to country..
+- [x] User story: I can see at least 2 types of questions: a city is the capital
+      of.. or a flag belong to country..
 - [x] User story: I can see select an answer
 - [x] User story: I can see if my answer is correct or incorrect
 - [x] User story: When I answer correctly, I can move on to the next question
@@ -62,7 +64,9 @@
 
 ## How To Use
 
-To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/download/) and [pnpm](https://pnpm.io/installation) installed on your computer. From your command line:
+To clone and run this application, you'll need [Git](https://git-scm.com),
+[Node.js](https://nodejs.org/en/download/) and [pnpm](https://pnpm.io/installation)
+installed on your computer. From your command line:
 
 ```bash
 # Clone this repository

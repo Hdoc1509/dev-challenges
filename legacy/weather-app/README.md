@@ -21,7 +21,8 @@
 
 ![screenshot](https://github.com/Hdoc1509/dev-challenges/assets/72316111/fdadff8d-c42a-41ac-ad47-c1d9cb6efdbe)
 
-**Challenge**: Create a weather app using an API. Use Front-end libraries like React or Vue. Don’t look at the existing solution. Fulfill user stories below:
+**Challenge**: Create a weather app using an API. Use Front-end libraries like
+React or Vue. Don’t look at the existing solution. Fulfill user stories below:
 
 - [x] User story: I can see city weather as default, preferably my current location
 - [x] User story: I can search for city
@@ -34,7 +35,8 @@
 - [x] User story: I can see a visibility indicator
 - [x] User story: I can see the air pressure number
 - [x] User story(optional): I can request my current location weather
-- [x] User story(optional): I can convert temperature in Celcius to Fahrenheit and vice versa
+- [x] User story(optional): I can convert temperature in Celcius to Fahrenheit
+      and vice versa
 
 ### Built With
 
@@ -73,7 +75,9 @@
 
 ## How To Use
 
-To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/download/) and [pnpm](https://pnpm.io/installation) installed on your computer. From your command line:
+To clone and run this application, you'll need [Git](https://git-scm.com),
+[Node.js](https://nodejs.org/en/download/) and [pnpm](https://pnpm.io/installation)
+installed on your computer. From your command line:
 
 ```bash
 # Clone this repository

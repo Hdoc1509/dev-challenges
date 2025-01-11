@@ -21,17 +21,22 @@
 
 ![screenshot](https://github.com/Hdoc1509/dev-challenges/assets/72316111/0867cd5e-2883-4af0-b9a4-e4557bd69d0c)
 
-Challenge: Create a job search using an API. Use Front-end libraries like React or Vue. Don’t look at the existing solution. Fulfill user stories below:
+Challenge: Create a job search using an API. Use Front-end libraries like React
+or Vue. Don’t look at the existing solution. Fulfill user stories below:
 
 - [x] User story: I can see a list of jobs in a city by default
 - [x] User story: I can search for jobs with a given keyword
 - [x] User story: I can search for jobs with a city name, zip code, or other location
 - [x] User story: I can select one option from at least 4 pre-defined options
 - [x] User story: I can search for a full-time job only
-- [x] User story: I can see a list of jobs with their logo, company name, location, and posted time.
-- [x] User story: When I select a job, I can see job descriptions and how to apply like the given design.
-- [x] User story: When I am on the job details page, I can go back to the search page
-- [x] User story (optional): I can see a list of jobs in the closest city from my location by default
+- [x] User story: I can see a list of jobs with their logo, company name, location,
+      and posted time.
+- [x] User story: When I select a job, I can see job descriptions and how to apply
+      like the given design.
+- [x] User story: When I am on the job details page, I can go back to the search
+      page
+- [x] User story (optional): I can see a list of jobs in the closest city from
+      my location by default
 - [x] User story (optional): I can see jobs on different pages, 5 items on each page
 
   **NOTE: The used API for jobs returns up to 10 items per page**
@@ -72,7 +77,9 @@ Challenge: Create a job search using an API. Use Front-end libraries like React 
 
 ## How To Use
 
-To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/download/) and [pnpm](https://pnpm.io/installation) installed on your computer. From your command line:
+To clone and run this application, you'll need [Git](https://git-scm.com),
+[Node.js](https://nodejs.org/en/download/) and [pnpm](https://pnpm.io/installation)
+installed on your computer. From your command line:
 
 ```bash
 # Clone this repository

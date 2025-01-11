@@ -21,13 +21,15 @@
 
 ![screenshot](https://github.com/Hdoc1509/dev-challenges/assets/72316111/e05c90cb-a4c8-4fdf-9fae-8e7dbd84d58f)
 
-**Challenge**: Create a todo app following given designs. Use Front-end libraries like React or Vue. Don’t look at the existing solution. Fulfill user stories below:
+**Challenge**: Create a todo app following given designs. Use Front-end libraries
+like React or Vue. Don’t look at the existing solution. Fulfill user stories below:
 
 - [x] User story: I can add a new task
 - [x] User story: I can complete a task
 - [x] User story: I can toggle between All, Active and Completed
 - [x] User story: I can remove one or all tasks under the Completed tab
-- [x] User story (optional): Store the data in local storage that when I refresh the page I can still see my progress
+- [x] User story (optional): Store the data in local storage that when I refresh
+      the page I can still see my progress
 
 ### Built With
 
@@ -52,7 +54,9 @@
 
 ## How To Use
 
-To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/download/) and [pnpm](https://pnpm.io/installation) installed on your computer. From your command line:
+To clone and run this application, you'll need [Git](https://git-scm.com),
+[Node.js](https://nodejs.org/en/download/) and [pnpm](https://pnpm.io/installation)
+installed on your computer. From your command line:
 
 ```bash
 # Clone this repository
