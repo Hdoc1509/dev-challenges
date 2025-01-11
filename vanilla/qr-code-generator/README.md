@@ -19,11 +19,9 @@
 
 ## Overview
 
-<!-- TODO: Update screenshot and its aspect ratio once project has completed -->
-
 <p align="center">
   <img
-    src="https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png"
+    src="https://github.com/user-attachments/assets/7f666ecf-2059-4501-983a-1ef11e8f20b6"
     alt="qr-code-generator screenshot"
     style="aspect-ratio: 16 / 9"
   />
@@ -60,13 +58,14 @@ of an external library.
 
 ### Extra Features
 
-<!-- markdownlint-disable-next-line MD036 -->
-_WIP_
+- Redirect to home page if `url` is not provided
+- Error handling for `Clipboard API`
+- Alert when QR quote copied to clipboard
 
 ### What I learned
 
-<!-- markdownlint-disable-next-line MD036 -->
-_WIP_
+- Create a QR code generator app with HTML, CSS, and JavaScript.
+- Download an image from canvas
 
 ## How To Use
 
