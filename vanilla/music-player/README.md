@@ -44,7 +44,7 @@ using JavaScript.
 - [BEM](https://getbem.com/)
 - [fontsource](https://fontsource.org/)
   - [Inter](https://fontsource.org/fonts/inter)
-- [tabler icons](https://tabler-icons.io/)
+- [tabler icons](https://tabler.io/icons)
   - [music](https://tabler.io/icons/icon/music)
   - [player-play filled](https://tabler.io/icons/icon/player-play)
   - [player-pause filled](https://tabler.io/icons/icon/player-pause)
