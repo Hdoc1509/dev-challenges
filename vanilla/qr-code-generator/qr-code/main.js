@@ -39,7 +39,7 @@ const $shareQRQuote = getElementById("share-qr-quote", HTMLButtonElement);
 
 const handleDownload = async () => {
   const $anchor = document.createElement("a");
-  const canvas = await html2canvas($picture);
+  const canvas = await html2canvas($picture, { logging: import.meta.env.DEV });
   const source = canvas.toDataURL("image/png");
 
   $anchor.href = source;
