@@ -1,22 +1,24 @@
 /** @typedef {import("vite").Plugin} Plugin */
+/** @typedef {(baseUrl: string) => Plugin} InjectScriptPlugin */
 
-const BASE_URL = "/dev-challenges/qr-code-generator";
 const QR_CODE_PAGE_TITLE = "Qr Code Generator | QR Code - DevChallenges";
 
-const redirectTagScript = /** @type {const} */ ({
-  tag: "script",
-  attrs: {
-    src: `${BASE_URL}/redirect.js`,
-  },
-  injectTo: "head-prepend",
-});
+/** @param {string} baseUrl */
+const redirectTagScript = (baseUrl) =>
+  /** @type {const} */ ({
+    tag: "script",
+    attrs: {
+      src: `${baseUrl}/redirect.js`,
+    },
+    injectTo: "head-prepend",
+  });
 
 /** @param {string} html */
 const isQRCodePage = (html) =>
   html.includes(`<title>${QR_CODE_PAGE_TITLE}</title>`);
 
-/** @returns {Plugin} */
-export const serverInjectScripts = () => ({
+/** @type {InjectScriptPlugin} */
+export const serverInjectScripts = (baseUrl) => ({
   name: "server-inject-scripts",
   apply: "serve",
   transformIndexHtml(html) {
@@ -25,11 +27,11 @@ export const serverInjectScripts = () => ({
     return {
       html,
       tags: [
-        redirectTagScript,
+        redirectTagScript(baseUrl),
         {
           tag: "script",
           attrs: {
-            src: `${BASE_URL}/node_modules/qrcodejs/qrcode.min.js`,
+            src: `${baseUrl}/node_modules/qrcodejs/qrcode.min.js`,
           },
           injectTo: "head-prepend",
         },
@@ -38,8 +40,8 @@ export const serverInjectScripts = () => ({
   },
 });
 
-/** @returns {Plugin} */
-export const buildInjectScripts = () => ({
+/** @type {InjectScriptPlugin} */
+export const buildInjectScripts = (baseUrl) => ({
   name: "build-inject-scripts",
   apply: "build",
   transformIndexHtml(html) {
@@ -48,13 +50,13 @@ export const buildInjectScripts = () => ({
     return {
       html,
       tags: [
-        redirectTagScript,
+        redirectTagScript(baseUrl),
         {
           tag: "script",
           attrs: {
             // NOTE: scripts/copy-qrcodejs.sh is the responsible for
             // copying the file to the build folder.
-            src: `${BASE_URL}/assets/qrcode.min.js`,
+            src: `${baseUrl}/assets/qrcode.min.js`,
           },
           injectTo: "head-prepend",
         },

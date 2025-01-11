@@ -11,7 +11,7 @@ const BASE_URL = "/dev-challenges/qr-code-generator";
 // https://vite.dev/config/
 export default defineConfig({
   // plugins: [createHtmlPlugin({ minify: true })],
-  plugins: [serverInjectScripts(), buildInjectScripts()],
+  plugins: [serverInjectScripts(BASE_URL), buildInjectScripts(BASE_URL)],
   base: BASE_URL,
   build: {
     rollupOptions: {
