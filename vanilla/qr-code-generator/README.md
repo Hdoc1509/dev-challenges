@@ -1,4 +1,4 @@
-<!-- markdownlint-disable MD033 MD034 -->
+<!-- markdownlint-disable MD033 -->
 <h1 align="center">QR Code Generator</h1>
 
 <div align="center">
@@ -56,7 +56,7 @@ of an external library.
 - [tabler icons](https://tabler.io/icons)
   - [qrcode](https://tabler.io/icons/icon/qrcode)
 - [Boxy SVG](https://boxy-svg.com/) to create `Share` and `Download` icons
-  before using them from https://github.com/devchallenges-io/qr-code-generator
+  before using them from [QR code generator repo](https://github.com/devchallenges-io/qr-code-generator)
 - [svgomg](https://svgomg.net/) for optimization of svg assets and inline svg
 
 ### Extra Features
