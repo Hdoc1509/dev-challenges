@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD033 -->
 <h1 align="center">Country Quiz</h1>
 
 <div align="center">

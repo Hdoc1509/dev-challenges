@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD033 -->
 <h1 align="center">Multi-step Register Form</h1>
 
 <div align="center">
