@@ -53,6 +53,8 @@ of an external library.
 - [qrcodejs](https://github.com/llyys/qrcodejs)
 - [fontsource](https://fontsource.org/) fonts:
   - [Outfit](https://fontsource.org/fonts/outfit)
+- [tabler icons](https://tabler.io/icons)
+  - [qrcode](https://tabler.io/icons/icon/qrcode)
 - [Boxy SVG](https://boxy-svg.com/) to create `Share` and `Download` icons
   before using them from https://github.com/devchallenges-io/qr-code-generator
 - [svgomg](https://svgomg.net/) for optimization of svg assets and inline svg
