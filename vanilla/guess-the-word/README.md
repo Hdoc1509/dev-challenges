@@ -56,7 +56,7 @@ create a small game that tests your data management and DOM manipulation with Ja
 - [vite-plugin-html](https://github.com/vbenjs/vite-plugin-html)
 - [BEM](https://getbem.com/)
 - [fontsource](https://fontsource.org/) fonts:
-  - _List of fonts used in the project_
+  - [Outfit](https://fontsource.org/fonts/outfit)
 
 ### Extra Features
 

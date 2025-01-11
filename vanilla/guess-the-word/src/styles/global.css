@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Outfit", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -17,6 +17,11 @@
 
   --buttons-top-margin: 3rem;
   --buttons-gap: 18px;
+}
+@supports (font-variation-settings: normal) {
+  :root {
+    font-family: "Outfit Variable", sans-serif;
+  }
 }
 
 *,
