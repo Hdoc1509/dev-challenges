@@ -49,6 +49,7 @@ of an external library.
 - [Vite](https://vitejs.dev/)
 - [vite-plugin-html](https://github.com/vbenjs/vite-plugin-html)
 - [BEM](https://getbem.com/)
+- [html2canvas](https://html2canvas.hertzen.com/)
 - [qrcodejs](https://github.com/llyys/qrcodejs)
 - [fontsource](https://fontsource.org/) fonts:
   - [Outfit](https://fontsource.org/fonts/outfit)
