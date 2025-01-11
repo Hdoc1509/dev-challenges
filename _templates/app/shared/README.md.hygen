@@ -5,6 +5,7 @@
     ? `https://hdoc-${name}.netlify.app/`
     : `https://hdoc1509.github.io/dev-challenges/${name}/`;
 -%>
+<!-- markdownlint-disable MD033 -->
 <h1 align="center"><%= h.changeCase.title(name) %></h1>
 
 <div align="center">
@@ -70,18 +71,19 @@
 
 ### Extra Features
 
+<!-- markdownlint-disable-next-line MD036 -->
 _WIP_
 
 ### What I learned
 
+<!-- markdownlint-disable-next-line MD036 -->
 _WIP_
 
 ## How To Use
 
 To clone and run this application, you'll need [Git](https://git-scm.com),
-[Node.js](https://nodejs.org/en/download/) and
-[pnpm](https://pnpm.io/installation) installed on your computer. From your
-command line:
+[Node.js](https://nodejs.org/en/download/) and [pnpm](https://pnpm.io/installation)
+installed on your computer. From your command line:
 
 ```bash
 # Clone this repository
