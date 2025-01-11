@@ -1,7 +1,9 @@
 import html2canvas from "html2canvas";
 import { resetAlert, showAlert } from "@lib/alert";
-import { getElementById, getElementBySelector } from "@lib/dom";
 import { copyToClipboard } from "@/utils/clipboard";
+import { $downloadQRImage, $shareQRQuote } from "@/ui/actions";
+import { $errorDialog, $errorMessage, $errorClose } from "@/ui/error";
+import { $picture } from "@/ui/qr";
 import "@fontsource-variable/outfit";
 import "@fontsource/outfit/400.css";
 import "@fontsource/outfit/600.css";
@@ -13,19 +15,6 @@ const urlParam = /** @type {string} */ (
   new URL(location.href).searchParams.get("url")
 );
 
-const $picture = getElementById("qr-code-image", HTMLPictureElement);
-const $errorDialog = getElementBySelector(".error", HTMLDialogElement);
-const $errorMessage = getElementBySelector(
-  ".error__message",
-  HTMLParagraphElement,
-  $errorDialog,
-);
-const $errorClose = getElementBySelector(
-  ".error__close",
-  HTMLButtonElement,
-  $errorDialog,
-);
-
 new window.QRCode($picture, {
   text: urlParam,
   colorDark: "#111729",
@@ -33,9 +22,6 @@ new window.QRCode($picture, {
 });
 
 const QR_QUOTE = $picture.title;
-
-const $downloadQRImage = getElementById("download-qr-image", HTMLButtonElement);
-const $shareQRQuote = getElementById("share-qr-quote", HTMLButtonElement);
 
 const handleDownload = async () => {
   const $anchor = document.createElement("a");
