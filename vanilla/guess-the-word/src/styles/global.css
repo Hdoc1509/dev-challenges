@@ -7,6 +7,16 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --card-padding: 1.5rem;
+  --card-gap: 1.5rem;
+  --card-max-width: 370px;
+  --word-padding: 12px;
+  --letters-gap: 10px;
+  --letter-padding: 8px 14px;
+
+  --buttons-top-margin: 3rem;
+  --buttons-gap: 18px;
 }
 
 *,
