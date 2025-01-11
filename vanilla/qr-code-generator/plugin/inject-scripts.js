@@ -1,7 +1,7 @@
 /** @typedef {import("vite").Plugin} Plugin */
 /** @typedef {(baseUrl: string) => Plugin} InjectScriptPlugin */
 
-const QR_CODE_PAGE_TITLE = "Qr Code Generator | QR Code - DevChallenges";
+const QR_CODE_PAGE_TITLE = "QR Code Generator | QR Code - DevChallenges";
 
 /** @param {string} baseUrl */
 const redirectTagScript = (baseUrl) =>
