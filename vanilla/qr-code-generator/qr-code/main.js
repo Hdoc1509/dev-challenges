@@ -1,8 +1,7 @@
-import html2canvas from "html2canvas";
-import { resetAlert, showAlert } from "@lib/alert";
-import { copyToClipboard } from "@/utils/clipboard";
+import { handleDownloadQRImage } from "@/events/handlers/download-image";
+import { handleCopyQRQuote } from "@/events/handlers/copy-quote";
 import { $downloadQRImage, $shareQRQuote } from "@/ui/actions";
-import { $errorDialog, $errorMessage, $errorClose } from "@/ui/error";
+import { $errorDialog, $errorClose } from "@/ui/error";
 import { $picture } from "@/ui/qr";
 import "@fontsource-variable/outfit";
 import "@fontsource/outfit/400.css";
@@ -23,33 +22,10 @@ new window.QRCode($picture, {
 
 const QR_QUOTE = $picture.title;
 
-const handleDownload = async () => {
-  const $anchor = document.createElement("a");
-  const canvas = await html2canvas($picture, { logging: import.meta.env.DEV });
-  const source = canvas.toDataURL("image/png");
-
-  $anchor.href = source;
-  $anchor.download = "qr-code.png";
-  $anchor.click();
-};
-
-const handleCopy = async () => {
-  const error = await copyToClipboard(QR_QUOTE);
-
-  if (error != null) {
-    $errorMessage.textContent = error.message;
-    $errorDialog.showModal();
-    return;
-  }
-
-  resetAlert();
-  showAlert({ text: "✅ QR quote copied to clipboard!", color: "success" });
-};
-
 document.addEventListener("click", (e) => {
-  if (e.target === $downloadQRImage) handleDownload();
+  if (e.target === $downloadQRImage) handleDownloadQRImage();
 
-  if (e.target === $shareQRQuote) handleCopy();
+  if (e.target === $shareQRQuote) handleCopyQRQuote(QR_QUOTE);
 
   if (e.target === $errorClose) $errorDialog.close();
 });
