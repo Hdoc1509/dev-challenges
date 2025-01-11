@@ -898,6 +898,9 @@ importers:
       '@lib/dom':
         specifier: 'workspace:'
         version: link:../../libs/dom
+      html2canvas:
+        specifier: 1.4.1
+        version: 1.4.1
       qrcodejs:
         specifier: 1.0.0
         version: 1.0.0
@@ -905,9 +908,6 @@ importers:
       '@types/qrcodejs':
         specifier: 1.0.4
         version: 1.0.4
-      html2canvas:
-        specifier: 1.4.1
-        version: 1.4.1
       vite:
         specifier: 'catalog:'
         version: 5.0.2(@types/node@20.5.0)(sass@1.65.0)(terser@5.36.0)

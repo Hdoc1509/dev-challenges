@@ -13,11 +13,11 @@
     "@fontsource/outfit": "catalog:",
     "@lib/alert": "workspace:",
     "@lib/dom": "workspace:",
+    "html2canvas": "1.4.1",
     "qrcodejs": "1.0.0"
   },
   "devDependencies": {
     "@types/qrcodejs": "1.0.4",
-    "html2canvas": "1.4.1",
     "vite": "catalog:",
     "vite-plugin-html": "catalog:"
   }
