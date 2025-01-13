@@ -35,7 +35,7 @@ create a small game that tests your data management and DOM manipulation with Ja
 ## User Stories
 
 - [ ] Create a guess the word game that matches the given design.
-- [ ] Use HTML to create the basic structure.
+- [x] Use HTML to create the basic structure.
 - [ ] Use Vanilla JavaScript to add interactivity.
 - [ ] Users can see a random scrambled word when the page is first loaded or after
       users click the random button.

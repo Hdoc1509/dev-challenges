@@ -8,14 +8,37 @@
   </head>
   <body>
     <header>
-      <h1>Title</h1>
+      <img src="/word-scramblle-logo.svg" alt="Word Scramblle logo" />
     </header>
     <main>
-      Content
+      <input id="word" class="word" readonly />
+      <section class="info">
+        <section class="tries">
+          <p class="tries__description">
+            Tries (
+            <span id="current-tries">0</span>
+            /
+            <span id="max-tries">5</span>
+            )<span aria-hidden="true">:</span>
+          </p>
+          <div class="tries__indicator stepper" aria-hidden="true">
+            <span class="stepper__step" data-step="1"></span>
+            <span class="stepper__step" data-step="2"></span>
+            <span class="stepper__step" data-step="3"></span>
+            <span class="stepper__step" data-step="4"></span>
+            <span class="stepper__step" data-step="5"></span>
+          </div>
+        </section>
+        <section class="mistakes">
+          <p>Mistakes: <span id="mistaken-letters">-</span></p>
+        </section>
+      </section>
+      <section id="typing" class="typing"></section>
+      <section class="actions">
+        <button id="random" class="actions__control">Random</button>
+        <button id="reset" class="actions__control">Reset</button>
+      </section>
     </main>
-    <footer>
-      Footer
-    </footer>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
