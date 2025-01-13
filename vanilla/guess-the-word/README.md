@@ -57,6 +57,7 @@ create a small game that tests your data management and DOM manipulation with Ja
 - [BEM](https://getbem.com/)
 - [fontsource](https://fontsource.org/) fonts:
   - [Outfit](https://fontsource.org/fonts/outfit)
+- [Online Image Compressor](https://imagecompressor.com/)
 
 ### Extra Features
 
