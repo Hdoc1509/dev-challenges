@@ -58,7 +58,10 @@ body {
   min-height: 100vh;
   min-height: 100svh;
 
-  background-color: #fff;
+  background: url("/bg-guess-the-word.jpg") no-repeat,
+    linear-gradient(to right, var(--primary), var(--secondary));
+  background-size: cover;
+  background-position: center;
   padding: 2rem;
 
   color: var(--text);
