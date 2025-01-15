@@ -86,3 +86,7 @@ h1 {
   padding: var(--card-padding);
   border-radius: 12px;
 }
+
+.game-card header {
+  margin-inline: auto;
+}
