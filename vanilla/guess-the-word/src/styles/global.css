@@ -21,7 +21,7 @@
   --card-padding: 1.5rem;
   --card-gap: 1.5rem;
   --card-max-width: 370px;
-  --card-bg: #171E30;
+  --card-bg: #171e30;
   --word-padding: 12px;
   --letters-gap: 10px;
   --letters-margin-block: 2.5rem;
@@ -62,7 +62,8 @@ body {
   min-height: 100vh;
   min-height: 100svh;
 
-  background: url("/bg-guess-the-word.jpg") no-repeat,
+  background:
+    url("/bg-guess-the-word.jpg") no-repeat,
     linear-gradient(to right, var(--primary), var(--secondary));
   background-size: cover;
   background-position: center;
