@@ -74,3 +74,15 @@ h1 {
   font-size: 2rem;
   line-height: 1.1;
 }
+
+.game-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--card-gap);
+
+  margin: auto;
+  width: min(var(--card-max-width), 100%);
+  background-color: var(--card-bg);
+  padding: var(--card-padding);
+  border-radius: 12px;
+}
