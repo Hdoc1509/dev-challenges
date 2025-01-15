@@ -90,3 +90,17 @@ h1 {
 .game-card header {
   margin-inline: auto;
 }
+
+.game-card .word {
+  background-color: var(--word-bg);
+  padding: var(--word-padding);
+  border-radius: 8px;
+  border: none;
+  box-shadow: var(--word-shadow);
+
+  color: inherit;
+  font-size: var(--word-fs);
+  text-align: center;
+  letter-spacing: 1ch;
+  pointer-events: none;
+}
