@@ -49,6 +49,11 @@
   margin: 0;
 }
 
+button, input {
+  color: inherit;
+  font: inherit;
+}
+
 body {
   display: flex;
 
@@ -99,7 +104,6 @@ h1 {
   border: none;
   box-shadow: var(--word-shadow);
 
-  color: inherit;
   font-size: var(--word-fs);
   text-align: center;
   letter-spacing: 1ch;
