@@ -24,6 +24,7 @@
   --card-bg: #171E30;
   --word-padding: 12px;
   --letters-gap: 10px;
+  --letters-margin-block: 2.5rem;
   --letter-padding: 8px 14px;
 
   --buttons-top-margin: 3rem;
@@ -135,4 +136,29 @@ h1 {
 }
 .stepper__step[data-completed] {
   background-color: var(--step-color-completed);
+}
+
+.game-card .typing {
+  display: flex;
+  gap: var(--letters-gap);
+  justify-content: center;
+  flex-wrap: wrap;
+
+  font-size: var(--letter-fs);
+}
+.game-card .typing .typing__letter {
+  display: grid;
+  place-items: center;
+
+  width: 4ch;
+  height: 4ch;
+  border: 2px solid var(--letter-border);
+  border-radius: 10px;
+  margin-block: var(--letters-margin-block);
+
+  text-align: center;
+  color: inherit;
+}
+.game-card .typing .typing__letter--current {
+  border-color: var(--letter-border-current);
 }
