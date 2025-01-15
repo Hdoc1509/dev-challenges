@@ -112,3 +112,27 @@ h1 {
   font-size: var(--info-fs);
   font-weight: 600;
 }
+
+.game-card .info .tries {
+  display: flex;
+  gap: 1em;
+}
+.game-card .info .tries__indicator {
+  --step-color: var(--word-bg);
+  --step-color-completed: var(--primary);
+}
+
+.stepper {
+  display: flex;
+  gap: var(--stepper-gap, 0.5em);
+  align-items: center;
+}
+.stepper__step {
+  aspect-ratio: 1;
+  width: var(--step-size, 0.5em);
+  border-radius: 50%;
+  background-color: var(--step-color);
+}
+.stepper__step[data-completed] {
+  background-color: var(--step-color-completed);
+}
