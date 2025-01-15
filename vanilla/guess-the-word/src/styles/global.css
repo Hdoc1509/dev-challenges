@@ -166,3 +166,19 @@ h1 {
 .game-card .typing .typing__letter--current {
   border-color: var(--letter-border-current);
 }
+
+.game-card .actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--buttons-gap);
+}
+.game-card .actions__control {
+  padding: 0.5em 2.5em;
+  background-color: var(--secondary);
+  border: none;
+  border-radius: 12px;
+
+  font-weight: 600;
+
+  filter: var(--button-shadow);
+}
