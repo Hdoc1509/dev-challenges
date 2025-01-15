@@ -32,7 +32,7 @@
   /* font sizes */
   --word-fs: 2rem;
   --title-fs: 1.25rem;
-  --legend-fs: 0.75rem;
+  --legend-fs: 0.875rem;
   --button-fs: 0.875rem;
 }
 @supports (font-variation-settings: normal) {
