@@ -104,3 +104,11 @@ h1 {
   letter-spacing: 1ch;
   pointer-events: none;
 }
+
+.game-card .info {
+  display: flex;
+  justify-content: space-between;
+
+  font-size: var(--info-fs);
+  font-weight: 600;
+}
