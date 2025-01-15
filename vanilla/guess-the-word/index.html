@@ -7,19 +7,17 @@
     <title>Guess The Word Game - DevChallenges</title>
   </head>
   <body>
-    <header>
-      <img src="/word-scramblle-logo.svg" alt="Word Scramblle logo" />
-    </header>
-    <main>
-      <input id="word" class="word" readonly />
+    <main class="game-card">
+      <header>
+        <img src="/word-scramblle-logo.svg" alt="Word Scramblle logo" />
+      </header>
+      <input id="word" class="word" value="relowf" readonly disabled />
       <section class="info">
         <section class="tries">
           <p class="tries__description">
-            Tries (
-            <span id="current-tries">0</span>
-            /
-            <span id="max-tries">5</span>
-            )<span aria-hidden="true">:</span>
+            Tries (<span id="current-tries">4</span>/<span id="max-tries"
+              >5</span
+            >)<span aria-hidden="true">:</span>
           </p>
           <div class="tries__indicator stepper" aria-hidden="true">
             <span class="stepper__step" data-step="1"></span>
@@ -30,10 +28,17 @@
           </div>
         </section>
         <section class="mistakes">
-          <p>Mistakes: <span id="mistaken-letters">-</span></p>
+          <p>Mistakes: <span id="mistaken-letters">a,e,w,t</span></p>
         </section>
       </section>
-      <section id="typing" class="typing"></section>
+      <section id="typing" class="typing">
+        <span class="typing__letter">f</span>
+        <span class="typing__letter">l</span>
+        <span class="typing__letter">o</span>
+        <span class="typing__letter">w</span>
+        <span class="typing__letter typing__letter--current">_</span>
+        <span class="typing__letter">&nbsp;</span>
+      </section>
       <section class="actions">
         <button id="random" class="actions__control">Random</button>
         <button id="reset" class="actions__control">Reset</button>
