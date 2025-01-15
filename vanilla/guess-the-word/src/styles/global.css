@@ -157,9 +157,11 @@ h1 {
 
   width: 4ch;
   height: 4ch;
-  border: 2px solid var(--letter-border);
   border-radius: 10px;
   margin-block: var(--letters-margin-block);
+  border: 2px solid var(--letter-border);
+  background-color: transparent;
+  outline: none;
 
   text-align: center;
   color: inherit;
