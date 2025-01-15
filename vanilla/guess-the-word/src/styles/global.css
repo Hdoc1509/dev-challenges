@@ -15,8 +15,8 @@
   --letter-border: #97a3b6;
   --letter-border-current: #672171;
   --word-bg: #4a5567;
+  --word-shadow: 0px 4px 0px 0px #030616;
   --button-shadow: drop-shadow(0px 4px 0px #7b248a); /* filter: [value] */
-  --text-shadow: 0px 4px 0px 0px #030616;
 
   --card-padding: 1.5rem;
   --card-gap: 1.5rem;
