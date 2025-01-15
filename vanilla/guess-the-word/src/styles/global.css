@@ -151,7 +151,7 @@ h1 {
 
   font-size: var(--letter-fs);
 }
-.game-card .typing .typing__letter {
+.game-card .typing__letter {
   display: grid;
   place-items: center;
 
@@ -166,7 +166,7 @@ h1 {
   text-align: center;
   color: inherit;
 }
-.game-card .typing .typing__letter--current {
+.game-card .typing__letter--current {
   border-color: var(--letter-border-current);
 }
 
