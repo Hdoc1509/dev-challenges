@@ -98,6 +98,11 @@ h1 {
 }
 
 .game-card .word {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 1ch;
+
   background-color: var(--word-bg);
   padding: var(--word-padding);
   border-radius: 8px;
@@ -105,8 +110,6 @@ h1 {
   box-shadow: var(--word-shadow);
 
   font-size: var(--word-fs);
-  text-align: center;
-  letter-spacing: 1ch;
   pointer-events: none;
 }
 
