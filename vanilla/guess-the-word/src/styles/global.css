@@ -110,7 +110,7 @@ h1 {
   box-shadow: var(--word-shadow);
 
   font-size: var(--word-fs);
-  pointer-events: none;
+  user-select: none;
 }
 
 .game-card .info {
