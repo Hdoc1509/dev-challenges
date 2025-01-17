@@ -7,6 +7,8 @@ import "./styles/main.css";
 const $word = getElementById("word", HTMLDivElement);
 const $typing = getElementById("typing", HTMLElement);
 
+const $randomWord = getElementById("random", HTMLButtonElement);
+
 const words = [
   "example",
   "javascript",
@@ -66,3 +68,9 @@ const handleLetterInput = () => {};
 const resetGame = () => {};
 
 document.addEventListener("DOMContentLoaded", () => generateRandomWord());
+
+document.addEventListener("click", (e) => {
+  const $target = e.target;
+
+  if ($target === $randomWord) generateRandomWord();
+});
