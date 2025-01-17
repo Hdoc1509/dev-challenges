@@ -39,7 +39,7 @@ create a small game that tests your data management and DOM manipulation with Ja
 - [ ] Use Vanilla JavaScript to add interactivity.
 - [x] Users can see a random scrambled word when the page is first loaded or after
       users click the random button.
-- [ ] Users can enter one letter at a time. After each attempt, the input should
+- [x] Users can enter one letter at a time. After each attempt, the input should
       automatically focus on the next input if it exists.
 - [ ] Users can see the number of wrong answers (tries) and which answers are
       wrong (mistakes).

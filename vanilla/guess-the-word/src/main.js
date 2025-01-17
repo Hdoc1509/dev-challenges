@@ -1,4 +1,4 @@
-import { getElementById } from "@lib/dom";
+import { getElementById, getElementBySelector } from "@lib/dom";
 import "@fontsource-variable/outfit";
 import "@fontsource/outfit/400.css";
 import "@fontsource/outfit/600.css";
@@ -9,6 +9,7 @@ const $typing = getElementById("typing", HTMLElement);
 
 const $randomWord = getElementById("random", HTMLButtonElement);
 
+// TODO: allow user to create a list of words and use them
 const words = [
   "example",
   "javascript",
@@ -64,7 +65,22 @@ const generateRandomWord = () => {
   createLetterFields(currentWord.length);
 };
 
-const handleLetterInput = () => {};
+const handleLetterInput = () => {
+  const $currentLetter = getElementBySelector(
+    ".typing__letter--current",
+    HTMLInputElement,
+  );
+  const $nextSibling = $currentLetter.nextElementSibling;
+
+  $currentLetter.disabled = true;
+  $currentLetter.classList.remove("typing__letter--current");
+
+  if ($nextSibling instanceof HTMLInputElement) {
+    $nextSibling.classList.add("typing__letter--current");
+    $nextSibling.disabled = false;
+    $nextSibling.focus();
+  }
+};
 
 const resetGame = () => {};
 
@@ -74,4 +90,11 @@ document.addEventListener("click", (e) => {
   const $target = e.target;
 
   if ($target === $randomWord) generateRandomWord();
+});
+
+document.addEventListener("input", (e) => {
+  const $target = e.target;
+
+  if ($target instanceof HTMLInputElement && $target.matches(".typing__letter"))
+    handleLetterInput();
 });
