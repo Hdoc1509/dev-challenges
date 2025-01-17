@@ -9,6 +9,10 @@ const $typing = getElementById("typing", HTMLElement);
 
 const $randomWord = getElementById("random", HTMLButtonElement);
 
+const CLASSES = Object.freeze({
+  TYPING_LETTER_CURRENT: "typing__letter--current",
+});
+
 // TODO: allow user to create a list of words and use them
 const words = [
   "example",
@@ -45,7 +49,7 @@ const createLetterFields = (quantity) => {
     $typing.firstElementChild
   );
 
-  $firstLetter.classList.add("typing__letter--current");
+  $firstLetter.classList.add(CLASSES.TYPING_LETTER_CURRENT);
   $firstLetter.disabled = false;
 };
 
@@ -70,10 +74,10 @@ const handleLetterInput = ($currentLetter) => {
   const $nextSibling = $currentLetter.nextElementSibling;
 
   $currentLetter.disabled = true;
-  $currentLetter.classList.remove("typing__letter--current");
+  $currentLetter.classList.remove(CLASSES.TYPING_LETTER_CURRENT);
 
   if ($nextSibling instanceof HTMLInputElement) {
-    $nextSibling.classList.add("typing__letter--current");
+    $nextSibling.classList.add(CLASSES.TYPING_LETTER_CURRENT);
     $nextSibling.disabled = false;
     $nextSibling.focus();
   }
