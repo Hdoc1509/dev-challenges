@@ -65,11 +65,8 @@ const generateRandomWord = () => {
   createLetterFields(currentWord.length);
 };
 
-const handleLetterInput = () => {
-  const $currentLetter = getElementBySelector(
-    ".typing__letter--current",
-    HTMLInputElement,
-  );
+/** @param {HTMLInputElement} $currentLetter */
+const handleLetterInput = ($currentLetter) => {
   const $nextSibling = $currentLetter.nextElementSibling;
 
   $currentLetter.disabled = true;
@@ -95,6 +92,9 @@ document.addEventListener("click", (e) => {
 document.addEventListener("input", (e) => {
   const $target = e.target;
 
-  if ($target instanceof HTMLInputElement && $target.matches(".typing__letter"))
-    handleLetterInput();
+  if (
+    $target instanceof HTMLInputElement &&
+    $target.matches(".typing__letter--current")
+  )
+    handleLetterInput($target);
 });
