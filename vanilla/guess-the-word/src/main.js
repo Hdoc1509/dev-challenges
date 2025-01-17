@@ -52,6 +52,7 @@ const generateRandomWord = () => {
   const randomWord = words[Math.floor(Math.random() * words.length)];
 
   currentWord = scrambleWord(randomWord);
+  while ($word.firstChild) $word.removeChild($word.firstChild);
   currentWord.split("").forEach((letter) => {
     const $letter = document.createElement("span");
 
