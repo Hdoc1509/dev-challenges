@@ -148,6 +148,8 @@ h1 {
   justify-content: center;
   flex-wrap: wrap;
 
+  margin-block: var(--letters-margin-block);
+
   font-size: var(--letter-fs);
 }
 .game-card .typing__letter {
@@ -157,7 +159,6 @@ h1 {
   width: 4ch;
   height: 4ch;
   border-radius: 10px;
-  margin-block: var(--letters-margin-block);
   border: 2px solid var(--letter-border);
   background-color: transparent;
   outline: none;
