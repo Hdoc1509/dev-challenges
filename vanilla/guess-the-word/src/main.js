@@ -5,6 +5,7 @@ import "@fontsource/outfit/600.css";
 import "./styles/main.css";
 
 const $word = getElementById("word", HTMLDivElement);
+const $typing = getElementById("typing", HTMLElement);
 
 const words = [
   "example",
@@ -26,20 +27,39 @@ const scrambleWord = (word) => {
   return scrambledLetter.join("");
 };
 
+/** @param {number} quantity */
+const createLetterFields = (quantity) => {
+  for (let i = 0; i < quantity; i++) {
+    const $field = document.createElement("input");
+
+    $field.classList.add("typing__letter");
+    $field.setAttribute("data-letter-index", `${i}`);
+    $field.disabled = true;
+    $typing.appendChild($field);
+  }
+
+  const $firstLetter = /** @type {HTMLInputElement} */ (
+    $typing.firstElementChild
+  );
+
+  $firstLetter.classList.add("typing__letter--current");
+  $firstLetter.disabled = false;
+};
+
 const generateRandomWord = () => {
   const randomWord = words[Math.floor(Math.random() * words.length)];
 
   currentWord = scrambleWord(randomWord);
-  currentWord.split("").forEach(letter => {
+  currentWord.split("").forEach((letter) => {
     const $letter = document.createElement("span");
 
     $letter.textContent = letter;
     $word.appendChild($letter);
   });
-};
 
-/** @param {number} quantity */
-const createLetterFields = (quantity) => {};
+  while ($typing.firstChild) $typing.removeChild($typing.firstChild);
+  createLetterFields(currentWord.length);
+};
 
 const handleLetterInput = () => {};
 
