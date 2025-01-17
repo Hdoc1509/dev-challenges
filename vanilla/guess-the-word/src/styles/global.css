@@ -49,6 +49,10 @@
   margin: 0;
 }
 
+button {
+  cursor: pointer;
+}
+
 button, input {
   color: inherit;
   font: inherit;
