@@ -85,7 +85,7 @@ cd dev-challenges
 pnpm install --filter "@hdoc/dev-challenges" --filter qr-code-generator...
 
 # Run qr-code-generator in dev-mode
-cd apps/qr-code-generator/
+cd vanilla/qr-code-generator/
 pnpm run dev --open
 ```
 

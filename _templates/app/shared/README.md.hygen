@@ -1,6 +1,11 @@
 <%
   const is_ssr = locals.is_ssr ?? false;
   const is_vanilla = locals.is_vanilla ?? false;
+  const path = (() => {
+    if (is_vanilla) return 'vanilla';
+    if (is_ssr) return 'ssr';
+    return 'apps';
+  });
   const app_url = is_ssr
     ? `https://hdoc-${name}.netlify.app/`
     : `https://hdoc1509.github.io/dev-challenges/${name}/`;
@@ -94,7 +99,7 @@ cd dev-challenges
 pnpm install --filter "@hdoc/dev-challenges" --filter <%= name %>...
 
 # Run <%= name %> in dev-mode
-cd apps/<%= name %>/
+cd <%= path %>/<%= name %>/
 pnpm run dev <%= is_ssr ? '' : '--open' %>
 ```
 

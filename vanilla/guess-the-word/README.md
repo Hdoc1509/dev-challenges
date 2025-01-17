@@ -84,7 +84,7 @@ cd dev-challenges
 pnpm install --filter "@hdoc/dev-challenges" --filter guess-the-word...
 
 # Run guess-the-word in dev-mode
-cd apps/guess-the-word/
+cd vanilla/guess-the-word/
 pnpm run dev --open
 ```
 

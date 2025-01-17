@@ -87,7 +87,7 @@ cd dev-challenges
 pnpm install --filter "@hdoc/dev-challenges" --filter random-quote...
 
 # Run random-quote in dev-mode
-cd apps/random-quote/
+cd vanilla/random-quote/
 pnpm run dev --open
 ```
 
