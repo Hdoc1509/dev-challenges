@@ -1,7 +1,7 @@
 <%
-  let is_ssr = locals.is_ssr ?? false;
-  let is_vanilla = locals.is_vanilla ?? false;
-  let app_url = is_ssr
+  const is_ssr = locals.is_ssr ?? false;
+  const is_vanilla = locals.is_vanilla ?? false;
+  const app_url = is_ssr
     ? `https://hdoc-${name}.netlify.app/`
     : `https://hdoc1509.github.io/dev-challenges/${name}/`;
 -%>
