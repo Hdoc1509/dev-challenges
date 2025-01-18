@@ -201,7 +201,6 @@ h1 {
 }
 .game-card .typing__letter--current {
   border-color: var(--letter-border-current);
-  border-width: 3px;
   --caret-visibility: visible;
 }
 .game-card .typing__letter--current > input:focus + .typing__caret {
