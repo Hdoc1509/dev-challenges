@@ -6,6 +6,7 @@ import "./styles/main.css";
 
 const $word = getElementById("word", HTMLDivElement);
 const $typing = getElementById("typing", HTMLElement);
+const $letterTemplate = getElementById("letter-template", HTMLTemplateElement);
 
 const $randomWord = getElementById("random", HTMLButtonElement);
 
@@ -37,19 +38,18 @@ const scrambleWord = (word) => {
 /** @param {number} quantity */
 const createLetterFields = (quantity) => {
   for (let i = 0; i < quantity; i++) {
-    // TODO: use a <template> instead
-    // - add .typing__caret as <span> element
-    const $letter = document.createElement("span");
-    const $field = document.createElement("input");
-    const $caret = document.createElement("span");
+    const $letterClone = /** @type {DocumentFragment} */ (
+      $letterTemplate.content.cloneNode(true)
+    );
+    const $letter = getElementBySelector(
+      ".typing__letter",
+      HTMLSpanElement,
+      $letterClone,
+    );
 
-    $letter.classList.add("typing__letter");
     $letter.setAttribute("data-letter-index", `${i}`);
-    $field.disabled = true;
-    $caret.classList.add("typing__caret");
 
-    $letter.append($field, $caret);
-    $typing.appendChild($letter);
+    $typing.appendChild($letterClone);
   }
 
   const $firstLetter = /** @type {HTMLSpanElement} */ (
