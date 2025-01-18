@@ -160,9 +160,6 @@ h1 {
   font-size: var(--letter-fs);
 }
 .game-card .typing__letter {
-  display: grid;
-  place-items: center;
-
   width: 4ch;
   height: 4ch;
   border-radius: 10px;
