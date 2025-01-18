@@ -41,11 +41,14 @@ const createLetterFields = (quantity) => {
     // - add .typing__caret as <span> element
     const $letter = document.createElement("span");
     const $field = document.createElement("input");
+    const $caret = document.createElement("span");
 
     $letter.classList.add("typing__letter");
     $letter.setAttribute("data-letter-index", `${i}`);
     $field.disabled = true;
-    $letter.appendChild($field);
+    $caret.classList.add("typing__caret");
+
+    $letter.append($field, $caret);
     $typing.appendChild($letter);
   }
 
@@ -58,7 +61,6 @@ const createLetterFields = (quantity) => {
 
   $firstLetter.classList.add(CLASSES.TYPING_LETTER_CURRENT);
   $firstField.disabled = false;
-  $firstField.value = "_";
 };
 
 const generateRandomWord = () => {
@@ -117,3 +119,4 @@ document.addEventListener("input", (e) => {
   )
     handleLetterInput($target);
 });
+// NOTE: should I reset animation of letter input on blur?
