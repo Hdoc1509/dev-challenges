@@ -87,6 +87,7 @@ const handleLetterInput = ($currentField) => {
   const $nextLetter = $currentLetter.nextElementSibling;
 
   $currentField.disabled = true;
+  $currentField.readOnly = true;
   $currentLetter.classList.remove(CLASSES.TYPING_LETTER_CURRENT);
 
   if ($nextLetter instanceof HTMLSpanElement) {
