@@ -176,6 +176,9 @@ h1 {
 .game-card .typing__letter--current {
   border-color: var(--letter-border-current);
 }
+.game-card .typing__letter:disabled {
+  pointer-events: none;
+}
 
 .game-card .actions {
   display: flex;
