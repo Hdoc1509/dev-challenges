@@ -37,20 +37,28 @@ const scrambleWord = (word) => {
 /** @param {number} quantity */
 const createLetterFields = (quantity) => {
   for (let i = 0; i < quantity; i++) {
+    // TODO: use a <template> instead
+    // - add .typing__caret as <span> element
+    const $letter = document.createElement("span");
     const $field = document.createElement("input");
 
-    $field.classList.add("typing__letter");
-    $field.setAttribute("data-letter-index", `${i}`);
+    $letter.classList.add("typing__letter");
+    $letter.setAttribute("data-letter-index", `${i}`);
     $field.disabled = true;
-    $typing.appendChild($field);
+    $letter.appendChild($field);
+    $typing.appendChild($letter);
   }
 
-  const $firstLetter = /** @type {HTMLInputElement} */ (
+  const $firstLetter = /** @type {HTMLSpanElement} */ (
     $typing.firstElementChild
+  );
+  const $firstField = /** @type {HTMLInputElement} */ (
+    $firstLetter.firstElementChild
   );
 
   $firstLetter.classList.add(CLASSES.TYPING_LETTER_CURRENT);
-  $firstLetter.disabled = false;
+  $firstField.disabled = false;
+  $firstField.value = "_";
 };
 
 const generateRandomWord = () => {
@@ -69,17 +77,24 @@ const generateRandomWord = () => {
   createLetterFields(currentWord.length);
 };
 
-/** @param {HTMLInputElement} $currentLetter */
-const handleLetterInput = ($currentLetter) => {
-  const $nextSibling = $currentLetter.nextElementSibling;
+/** @param {HTMLInputElement} $currentField */
+const handleLetterInput = ($currentField) => {
+  const $currentLetter = /** @type {HTMLSpanElement} */ (
+    $currentField.parentElement
+  );
+  const $nextLetter = $currentLetter.nextElementSibling;
 
-  $currentLetter.disabled = true;
+  $currentField.disabled = true;
   $currentLetter.classList.remove(CLASSES.TYPING_LETTER_CURRENT);
 
-  if ($nextSibling instanceof HTMLInputElement) {
-    $nextSibling.classList.add(CLASSES.TYPING_LETTER_CURRENT);
-    $nextSibling.disabled = false;
-    $nextSibling.focus();
+  if ($nextLetter instanceof HTMLSpanElement) {
+    const $nextField = /** @type {HTMLInputElement} */ (
+      $nextLetter.firstElementChild
+    );
+
+    $nextLetter.classList.add(CLASSES.TYPING_LETTER_CURRENT);
+    $nextField.disabled = false;
+    $nextField.focus();
   }
 };
 
@@ -98,7 +113,7 @@ document.addEventListener("input", (e) => {
 
   if (
     $target instanceof HTMLInputElement &&
-    $target.matches(".typing__letter--current")
+    $target.matches(".typing__letter--current > input")
   )
     handleLetterInput($target);
 });
