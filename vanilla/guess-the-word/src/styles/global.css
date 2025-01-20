@@ -228,8 +228,8 @@ h1 {
 
   transition: transform 0.2s ease;
 }
-.game-card .actions__control:enabled:hover,
-.game-card .actions__control:enabled:focus {
+.game-card .actions__control:hover,
+.game-card .actions__control:focus {
   transform: translateY(-4px) scale(1.05);
 }
 .game-card .actions__control:disabled {
