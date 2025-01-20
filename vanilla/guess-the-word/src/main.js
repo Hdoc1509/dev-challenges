@@ -15,8 +15,11 @@ const $tries = getElementById("current-tries", HTMLSpanElement);
 const $mistakenLetters = getElementById("mistaken-letters", HTMLSpanElement);
 /** @type {HTMLSpanElement[]} */
 let $triesIndicators;
+/** @type {HTMLInputElement[]} */
+let $letterFields;
 
 const $randomWord = getElementById("random", HTMLButtonElement);
+const $reset = getElementById("reset", HTMLButtonElement);
 
 const CLASSES = Object.freeze({
   TYPING_LETTER_CURRENT: "typing__letter--current",
@@ -89,6 +92,10 @@ const generateRandomWord = () => {
 
   while ($typing.firstChild) $typing.removeChild($typing.firstChild);
   createLetterFields(currentWord.length);
+  $letterFields = getAllElementsBySelector(
+    ".typing__letter > input",
+    HTMLInputElement,
+  );
 };
 
 /** @param {HTMLInputElement} $currentField */
@@ -125,7 +132,28 @@ const handleLetterInput = ($currentField) => {
   }
 };
 
-const resetGame = () => {};
+const resetGame = () => {
+  const $firstField = $letterFields[0];
+  const $currentLetter = getElementBySelector(
+    `.${CLASSES.TYPING_LETTER_CURRENT}`,
+    HTMLSpanElement,
+  );
+
+  tries = 0;
+  mistakes = "";
+
+  $tries.textContent = "0";
+  $triesIndicators.forEach(($item) => $item.removeAttribute("data-completed"));
+  $mistakenLetters.textContent = "-";
+  $currentLetter.classList.remove(CLASSES.TYPING_LETTER_CURRENT);
+  $letterFields.forEach(($field) => {
+    $field.readOnly = false;
+    $field.disabled = false;
+    $field.value = "";
+  });
+  $firstField.parentElement?.classList.add(CLASSES.TYPING_LETTER_CURRENT);
+  $firstField.focus();
+};
 
 document.addEventListener("DOMContentLoaded", () => {
   generateRandomWord();
@@ -139,6 +167,7 @@ document.addEventListener("click", (e) => {
   const $target = e.target;
 
   if ($target === $randomWord) generateRandomWord();
+  if ($target === $reset) resetGame();
 });
 
 document.addEventListener("input", (e) => {
