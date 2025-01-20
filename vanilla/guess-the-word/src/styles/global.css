@@ -232,6 +232,10 @@ h1 {
 .game-card .actions__control:enabled:focus {
   transform: translateY(-4px) scale(1.05);
 }
+.game-card .actions__control:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
 
 @keyframes blink {
   0%,
