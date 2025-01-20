@@ -61,6 +61,7 @@ const createLetterFields = (quantity) => {
 
   $firstLetter.classList.add(CLASSES.TYPING_LETTER_CURRENT);
   $firstField.disabled = false;
+  $firstField.focus();
 };
 
 const generateRandomWord = () => {
