@@ -5,7 +5,7 @@ import {
 } from "@lib/dom";
 
 const FORM_ID = "register-form";
-const ERROR_MESSAGE_CLASS = "error-message";
+const ERROR_MESSAGE_CLASS = ".error-message";
 
 export const $registerForm = getElementById(FORM_ID, HTMLFormElement);
 
@@ -15,7 +15,7 @@ export const $nameInput = getElementBySelector(
   $registerForm,
 );
 export const $nameInputError = getElementBySelector(
-  `input[name='name'] + .${ERROR_MESSAGE_CLASS}`,
+  `input[name='name'] + ${ERROR_MESSAGE_CLASS}`,
   HTMLSpanElement,
   $registerForm,
 );
@@ -28,7 +28,7 @@ export const $emailInput = getElementBySelector(
   $registerForm,
 );
 export const $emailInputError = getElementBySelector(
-  `input[name='email'] + .${ERROR_MESSAGE_CLASS}`,
+  `input[name='email'] + ${ERROR_MESSAGE_CLASS}`,
   HTMLSpanElement,
   $registerForm,
 );
@@ -46,7 +46,7 @@ export const $topicsFieldset = getElementBySelector(
   $registerForm,
 );
 export const $topicsError = getElementBySelector(
-  `.topics-step__group + .${ERROR_MESSAGE_CLASS}`,
+  `.topics-step__group + ${ERROR_MESSAGE_CLASS}`,
   HTMLSpanElement,
   $registerForm,
 );
