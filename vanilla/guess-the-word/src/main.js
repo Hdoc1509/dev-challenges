@@ -67,14 +67,17 @@ const createLetterFields = (quantity) => {
 const generateRandomWord = () => {
   const randomWord = words[Math.floor(Math.random() * words.length)];
 
-  currentWord = scrambleWord(randomWord);
-  while ($word.firstChild) $word.removeChild($word.firstChild);
-  currentWord.split("").forEach((letter) => {
-    const $letter = document.createElement("span");
+  currentWord = randomWord;
 
-    $letter.textContent = letter;
-    $word.appendChild($letter);
-  });
+  while ($word.firstChild) $word.removeChild($word.firstChild);
+  scrambleWord(currentWord)
+    .split("")
+    .forEach((letter) => {
+      const $letter = document.createElement("span");
+
+      $letter.textContent = letter;
+      $word.appendChild($letter);
+    });
 
   while ($typing.firstChild) $typing.removeChild($typing.firstChild);
   createLetterFields(currentWord.length);
