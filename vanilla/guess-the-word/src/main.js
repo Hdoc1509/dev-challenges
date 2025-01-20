@@ -25,7 +25,7 @@ const words = [
 ];
 let currentWord = "";
 let tries = 0;
-let mistakes = 0;
+let mistakes = "";
 
 /** @param {string} word */
 const scrambleWord = (word) => {
