@@ -120,6 +120,7 @@ const handleLetterInput = ($currentField) => {
     $mistakenLetters.textContent = mistakes;
   }
 
+  $reset.disabled = false;
   $currentField.disabled = true;
   $currentField.readOnly = true;
   $currentLetter.classList.remove(CLASSES.TYPING_LETTER_CURRENT);
@@ -156,6 +157,7 @@ const resetGame = () => {
   });
   $firstField.parentElement?.classList.add(CLASSES.TYPING_LETTER_CURRENT);
   $firstField.focus();
+  $reset.disabled = true;
 };
 
 document.addEventListener("DOMContentLoaded", () => {
