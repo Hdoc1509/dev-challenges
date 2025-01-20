@@ -109,6 +109,9 @@ const handleLetterInput = ($currentField) => {
 
   if (enteredLetter !== currentWord[letterIndex]) {
     tries++;
+
+    if (tries === 6) return resetGame();
+
     mistakes =
       mistakes === "" ? enteredLetter : `${mistakes}, ${enteredLetter}`;
 
