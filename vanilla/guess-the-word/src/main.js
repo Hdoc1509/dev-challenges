@@ -1,4 +1,8 @@
-import { getElementById, getElementBySelector } from "@lib/dom";
+import {
+  getAllElementsBySelector,
+  getElementById,
+  getElementBySelector,
+} from "@lib/dom";
 import "@fontsource-variable/outfit";
 import "@fontsource/outfit/400.css";
 import "@fontsource/outfit/600.css";
@@ -7,6 +11,10 @@ import "./styles/main.css";
 const $word = getElementById("word", HTMLDivElement);
 const $typing = getElementById("typing", HTMLElement);
 const $letterTemplate = getElementById("letter-template", HTMLTemplateElement);
+const $tries = getElementById("current-tries", HTMLSpanElement);
+const $mistakenLetters = getElementById("mistaken-letters", HTMLSpanElement);
+/** @type {HTMLSpanElement[]} */
+let $triesIndicators;
 
 const $randomWord = getElementById("random", HTMLButtonElement);
 
@@ -89,6 +97,18 @@ const handleLetterInput = ($currentField) => {
     $currentField.parentElement
   );
   const $nextLetter = $currentLetter.nextElementSibling;
+  const letterIndex = Number($currentLetter.dataset.letterIndex);
+  const enteredLetter = $currentField.value;
+
+  if (enteredLetter !== currentWord[letterIndex]) {
+    tries++;
+    mistakes =
+      mistakes === "" ? enteredLetter : `${mistakes}, ${enteredLetter}`;
+
+    $tries.textContent = `${tries}`;
+    $triesIndicators[tries - 1].setAttribute("data-completed", "");
+    $mistakenLetters.textContent = mistakes;
+  }
 
   $currentField.disabled = true;
   $currentField.readOnly = true;
@@ -107,7 +127,13 @@ const handleLetterInput = ($currentField) => {
 
 const resetGame = () => {};
 
-document.addEventListener("DOMContentLoaded", () => generateRandomWord());
+document.addEventListener("DOMContentLoaded", () => {
+  generateRandomWord();
+  $triesIndicators = getAllElementsBySelector(
+    ".tries__indicator > .stepper__step",
+    HTMLSpanElement,
+  );
+});
 
 document.addEventListener("click", (e) => {
   const $target = e.target;

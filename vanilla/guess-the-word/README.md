@@ -41,7 +41,7 @@ create a small game that tests your data management and DOM manipulation with Ja
       users click the random button.
 - [x] Users can enter one letter at a time. After each attempt, the input should
       automatically focus on the next input if it exists.
-- [ ] Users can see the number of wrong answers (tries) and which answers are
+- [x] Users can see the number of wrong answers (tries) and which answers are
       wrong (mistakes).
 - [ ] Users can regenerate a new scrambled word by selecting the random button.
 - [ ] Users can reset all inputs, mistakes, and tries by selecting the reset button.
