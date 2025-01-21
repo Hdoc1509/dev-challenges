@@ -96,6 +96,7 @@ const generateRandomWord = () => {
     ".typing__letter > input",
     HTMLInputElement,
   );
+  $reset.disabled = false;
 };
 
 /** @param {HTMLInputElement} $currentField */
