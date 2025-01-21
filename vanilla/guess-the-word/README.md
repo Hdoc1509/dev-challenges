@@ -61,8 +61,7 @@ create a small game that tests your data management and DOM manipulation with Ja
 
 ### Extra Features
 
-<!-- markdownlint-disable-next-line MD036 -->
-_WIP_
+- Case insensitive check for entered letter.
 
 ### What I learned
 

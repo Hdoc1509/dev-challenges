@@ -110,8 +110,9 @@ const handleLetterInput = ($currentField) => {
   const $nextLetter = $currentLetter.nextElementSibling;
   const letterIndex = Number($currentLetter.dataset.letterIndex);
   const enteredLetter = $currentField.value;
+  const matches = new RegExp(currentWord[letterIndex], "i").test(enteredLetter);
 
-  if (enteredLetter !== currentWord[letterIndex]) {
+  if (!matches) {
     tries++;
 
     if (tries === 6) return resetGame();
