@@ -47,7 +47,7 @@ create a small game that tests your data management and DOM manipulation with Ja
 - [x] Users can reset all inputs, mistakes, and tries by selecting the reset button.
 - [x] When the number of tries or mistakes reaches 6, the game should be reset.
 - [x] When the user completes the game, it should show a '🎉 Success' alert.
-- [ ] The page should be responsive on different screen sizes.
+- [x] The page should be responsive on different screen sizes.
 - [ ] Deploy the solution and submit Repository URL and Demo URL.
 
 ### Built With

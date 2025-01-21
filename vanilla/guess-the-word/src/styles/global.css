@@ -37,10 +37,17 @@
   --button-fs: 0.875rem;
 
   --alert-time-bar-duration: 3s;
+
+  --bg-image-url: url("/bg-guess-the-word.jpg");
 }
 @supports (font-variation-settings: normal) {
   :root {
     font-family: "Outfit Variable", sans-serif;
+  }
+}
+@media (max-width: 640px) {
+  :root {
+    --bg-image-url: url("/bg-guess-the-word-small.jpg");
   }
 }
 
@@ -69,7 +76,7 @@ body {
   min-height: 100svh;
 
   background:
-    url("/bg-guess-the-word.jpg") no-repeat,
+    var(--bg-image-url) no-repeat,
     linear-gradient(to right, var(--primary), var(--secondary));
   background-size: cover;
   background-position: center;
