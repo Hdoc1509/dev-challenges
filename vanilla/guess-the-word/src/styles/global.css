@@ -77,7 +77,8 @@ body {
 
   background:
     var(--bg-image-url) no-repeat,
-    linear-gradient(to right, var(--primary), var(--secondary));
+    linear-gradient(to right, var(--primary), var(--secondary)),
+    var(--card-bg) /* navigation bar buttons */;
   background-size: cover;
   background-position: center;
   padding: 2rem;
