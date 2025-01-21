@@ -258,3 +258,18 @@ h1 {
     opacity: 0;
   }
 }
+
+/* TODO: add to @lib/alert class `.alert--top` */
+/* it should be positioned at the top of the screen */
+.alert {
+  left: 0;
+  right: 0;
+
+  margin-inline: auto;
+  width: fit-content;
+
+  transform: translateY(-100%) translateY(-1rem);
+}
+.alert--open {
+  transform: translateY(0);
+}
