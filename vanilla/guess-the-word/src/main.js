@@ -138,9 +138,8 @@ const handleLetterInput = ($currentField) => {
 
 const resetGame = () => {
   const $firstField = $letterFields[0];
-  const $currentLetter = getElementBySelector(
-    `.${CLASSES.TYPING_LETTER_CURRENT}`,
-    HTMLSpanElement,
+  const $currentLetter = /** @type {HTMLSpanElement | null} */ (
+    document.querySelector(`.${CLASSES.TYPING_LETTER_CURRENT}`)
   );
 
   tries = 0;
@@ -149,7 +148,7 @@ const resetGame = () => {
   $tries.textContent = "0";
   $triesIndicators.forEach(($item) => $item.removeAttribute("data-completed"));
   $mistakenLetters.textContent = "-";
-  $currentLetter.classList.remove(CLASSES.TYPING_LETTER_CURRENT);
+  $currentLetter?.classList.remove(CLASSES.TYPING_LETTER_CURRENT);
   $letterFields.forEach(($field) => {
     $field.readOnly = false;
     $field.disabled = false;
