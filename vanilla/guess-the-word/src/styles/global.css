@@ -35,6 +35,8 @@
   --letter-fs: 1.25rem;
   --info-fs: 0.875rem;
   --button-fs: 0.875rem;
+
+  --alert-time-bar-duration: 3s;
 }
 @supports (font-variation-settings: normal) {
   :root {

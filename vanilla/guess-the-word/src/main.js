@@ -1,8 +1,10 @@
+import { resetAlert, showAlert } from "@lib/alert";
 import {
   getAllElementsBySelector,
   getElementById,
   getElementBySelector,
 } from "@lib/dom";
+import "@lib/alert/styles.css";
 import "@fontsource-variable/outfit";
 import "@fontsource/outfit/400.css";
 import "@fontsource/outfit/600.css";
@@ -97,6 +99,7 @@ const generateRandomWord = () => {
     HTMLInputElement,
   );
   $reset.disabled = false;
+  resetAlert();
 };
 
 /** @param {HTMLInputElement} $currentField */
@@ -134,6 +137,9 @@ const handleLetterInput = ($currentField) => {
     $nextLetter.classList.add(CLASSES.TYPING_LETTER_CURRENT);
     $nextField.disabled = false;
     $nextField.focus();
+  } else if (tries === 0) {
+    showAlert({ color: "success", text: "🎉 Success!" });
+    $reset.disabled = true;
   }
 };
 

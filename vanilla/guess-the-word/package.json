@@ -11,6 +11,7 @@
   "dependencies": {
     "@fontsource-variable/outfit": "catalog:",
     "@fontsource/outfit": "catalog:",
+    "@lib/alert": "workspace:",
     "@lib/dom": "workspace:"
   },
   "devDependencies": {
