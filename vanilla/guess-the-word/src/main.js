@@ -1,5 +1,5 @@
-import { resetAlert, showAlert } from "@lib/alert";
-import { setCurrentWord, currentWord } from "./state/current-word";
+import { showAlert } from "@lib/alert";
+import { currentWord } from "./state/current-word";
 import {
   hasReachedMaxTries,
   increaseTries,
@@ -12,40 +12,16 @@ import {
   setMistakes,
   mistakes,
 } from "./state/mistakes";
-import { scrambleWord } from "./utils/scramble";
-import { createLetterFields } from "./utils/letter-fields";
-import { $word } from "./ui/word";
+import { generateRandomWord } from "./events/handlers/random-word";
 import { $mistakenLetters, $tries, $triesIndicators } from "./ui/info";
-import { $letterFields, $typing, updateLetterFields } from "./ui/typing";
+import { $letterFields } from "./ui/typing";
 import { $randomWord, $reset } from "./ui/actions";
-import { CLASSES, words } from "./consts";
+import { CLASSES } from "./consts";
 import "@lib/alert/styles.css";
 import "@fontsource-variable/outfit";
 import "@fontsource/outfit/400.css";
 import "@fontsource/outfit/600.css";
 import "./styles/main.css";
-
-const generateRandomWord = () => {
-  const randomWord = words[Math.floor(Math.random() * words.length)];
-
-  setCurrentWord(randomWord);
-
-  while ($word.firstChild) $word.removeChild($word.firstChild);
-  scrambleWord(currentWord)
-    .split("")
-    .forEach((letter) => {
-      const $letter = document.createElement("span");
-
-      $letter.textContent = letter;
-      $word.appendChild($letter);
-    });
-
-  while ($typing.firstChild) $typing.removeChild($typing.firstChild);
-  createLetterFields(currentWord.length);
-  updateLetterFields();
-  $reset.disabled = false;
-  resetAlert();
-};
 
 /** @param {HTMLInputElement} $currentField */
 const handleLetterInput = ($currentField) => {
