@@ -1,14 +1,9 @@
 import { resetAlert, showAlert } from "@lib/alert";
-import { getElementBySelector } from "@lib/dom";
 import { scrambleWord } from "./utils/scramble";
+import { createLetterFields } from "./utils/letter-fields";
 import { $word } from "./ui/word";
 import { $mistakenLetters, $tries, $triesIndicators } from "./ui/info";
-import {
-  $letterFields,
-  $letterTemplate,
-  $typing,
-  updateLetterFields,
-} from "./ui/typing";
+import { $letterFields, $typing, updateLetterFields } from "./ui/typing";
 import { $randomWord, $reset } from "./ui/actions";
 import { CLASSES, words } from "./consts";
 import "@lib/alert/styles.css";
@@ -20,35 +15,6 @@ import "./styles/main.css";
 let currentWord = "";
 let tries = 0;
 let mistakes = "";
-
-/** @param {number} quantity */
-const createLetterFields = (quantity) => {
-  for (let i = 0; i < quantity; i++) {
-    const $letterClone = /** @type {DocumentFragment} */ (
-      $letterTemplate.content.cloneNode(true)
-    );
-    const $letter = getElementBySelector(
-      ".typing__letter",
-      HTMLSpanElement,
-      $letterClone,
-    );
-
-    $letter.setAttribute("data-letter-index", `${i}`);
-
-    $typing.appendChild($letterClone);
-  }
-
-  const $firstLetter = /** @type {HTMLSpanElement} */ (
-    $typing.firstElementChild
-  );
-  const $firstField = /** @type {HTMLInputElement} */ (
-    $firstLetter.firstElementChild
-  );
-
-  $firstLetter.classList.add(CLASSES.TYPING_LETTER_CURRENT);
-  $firstField.disabled = false;
-  $firstField.focus();
-};
 
 const generateRandomWord = () => {
   const randomWord = words[Math.floor(Math.random() * words.length)];
