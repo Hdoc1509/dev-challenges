@@ -9,25 +9,13 @@ import {
   updateLetterFields,
 } from "./ui/typing";
 import { $randomWord, $reset } from "./ui/actions";
+import { CLASSES, words } from "./consts";
 import "@lib/alert/styles.css";
 import "@fontsource-variable/outfit";
 import "@fontsource/outfit/400.css";
 import "@fontsource/outfit/600.css";
 import "./styles/main.css";
 
-const CLASSES = Object.freeze({
-  TYPING_LETTER_CURRENT: "typing__letter--current",
-});
-
-// TODO: allow user to create a list of words and use them
-const words = [
-  "example",
-  "javascript",
-  "coding",
-  "challenge",
-  "flower",
-  "adventure",
-];
 let currentWord = "";
 let tries = 0;
 let mistakes = "";
