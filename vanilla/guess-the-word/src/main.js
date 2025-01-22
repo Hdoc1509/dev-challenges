@@ -1,4 +1,17 @@
 import { resetAlert, showAlert } from "@lib/alert";
+import { setCurrentWord, currentWord } from "./state/current-word";
+import {
+  hasReachedMaxTries,
+  increaseTries,
+  resetTries,
+  tries,
+} from "./state/tries";
+import {
+  hasNoMistakes,
+  resetMistakes,
+  setMistakes,
+  mistakes,
+} from "./state/mistakes";
 import { scrambleWord } from "./utils/scramble";
 import { createLetterFields } from "./utils/letter-fields";
 import { $word } from "./ui/word";
@@ -12,14 +25,10 @@ import "@fontsource/outfit/400.css";
 import "@fontsource/outfit/600.css";
 import "./styles/main.css";
 
-let currentWord = "";
-let tries = 0;
-let mistakes = "";
-
 const generateRandomWord = () => {
   const randomWord = words[Math.floor(Math.random() * words.length)];
 
-  currentWord = randomWord;
+  setCurrentWord(randomWord);
 
   while ($word.firstChild) $word.removeChild($word.firstChild);
   scrambleWord(currentWord)
@@ -49,12 +58,13 @@ const handleLetterInput = ($currentField) => {
   const matches = new RegExp(currentWord[letterIndex], "i").test(enteredLetter);
 
   if (!matches) {
-    tries++;
+    increaseTries();
 
-    if (tries === 6) return resetGame();
+    if (hasReachedMaxTries()) return resetGame();
 
-    mistakes =
-      mistakes === "" ? enteredLetter : `${mistakes}, ${enteredLetter}`;
+    setMistakes(
+      hasNoMistakes() ? enteredLetter : `${mistakes}, ${enteredLetter}`,
+    );
 
     $tries.textContent = `${tries}`;
     $triesIndicators[tries - 1].setAttribute("data-completed", "");
@@ -74,7 +84,7 @@ const handleLetterInput = ($currentField) => {
     $nextLetter.classList.add(CLASSES.TYPING_LETTER_CURRENT);
     $nextField.disabled = false;
     $nextField.focus();
-  } else if (tries === 0) {
+  } else if (hasNoMistakes()) {
     showAlert({ color: "success", text: "🎉 Success!" });
     $reset.disabled = true;
   }
@@ -86,8 +96,8 @@ const resetGame = () => {
     document.querySelector(`.${CLASSES.TYPING_LETTER_CURRENT}`)
   );
 
-  tries = 0;
-  mistakes = "";
+  resetTries();
+  resetMistakes();
 
   $tries.textContent = "0";
   $triesIndicators.forEach(($item) => $item.removeAttribute("data-completed"));

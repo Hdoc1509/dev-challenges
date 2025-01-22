@@ -65,8 +65,9 @@ create a small game that tests your data management and DOM manipulation with Ja
 
 ### What I learned
 
-<!-- markdownlint-disable-next-line MD036 -->
-_WIP_
+- Create state management by using modules
+  <!-- markdownlint-disable-next-line MD034 -->
+  - see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#imported_values_can_only_be_modified_by_the_exporter
 
 ## How To Use
 
