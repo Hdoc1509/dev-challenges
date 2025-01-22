@@ -1,29 +1,19 @@
 import { resetAlert, showAlert } from "@lib/alert";
+import { getElementBySelector } from "@lib/dom";
+import { $word } from "./ui/word";
+import { $mistakenLetters, $tries, $triesIndicators } from "./ui/info";
 import {
-  getAllElementsBySelector,
-  getElementById,
-  getElementBySelector,
-} from "@lib/dom";
+  $letterFields,
+  $letterTemplate,
+  $typing,
+  updateLetterFields,
+} from "./ui/typing";
+import { $randomWord, $reset } from "./ui/actions";
 import "@lib/alert/styles.css";
 import "@fontsource-variable/outfit";
 import "@fontsource/outfit/400.css";
 import "@fontsource/outfit/600.css";
 import "./styles/main.css";
-
-const $word = getElementById("word", HTMLDivElement);
-const $typing = getElementById("typing", HTMLElement);
-const $letterTemplate = getElementById("letter-template", HTMLTemplateElement);
-const $tries = getElementById("current-tries", HTMLSpanElement);
-const $mistakenLetters = getElementById("mistaken-letters", HTMLSpanElement);
-const $triesIndicators = getAllElementsBySelector(
-  ".tries__indicator > .stepper__step",
-  HTMLSpanElement,
-);
-/** @type {HTMLInputElement[]} */
-let $letterFields;
-
-const $randomWord = getElementById("random", HTMLButtonElement);
-const $reset = getElementById("reset", HTMLButtonElement);
 
 const CLASSES = Object.freeze({
   TYPING_LETTER_CURRENT: "typing__letter--current",
@@ -96,10 +86,7 @@ const generateRandomWord = () => {
 
   while ($typing.firstChild) $typing.removeChild($typing.firstChild);
   createLetterFields(currentWord.length);
-  $letterFields = getAllElementsBySelector(
-    ".typing__letter > input",
-    HTMLInputElement,
-  );
+  updateLetterFields();
   $reset.disabled = false;
   resetAlert();
 };
