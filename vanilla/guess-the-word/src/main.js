@@ -15,8 +15,10 @@ const $typing = getElementById("typing", HTMLElement);
 const $letterTemplate = getElementById("letter-template", HTMLTemplateElement);
 const $tries = getElementById("current-tries", HTMLSpanElement);
 const $mistakenLetters = getElementById("mistaken-letters", HTMLSpanElement);
-/** @type {HTMLSpanElement[]} */
-let $triesIndicators;
+const $triesIndicators = getAllElementsBySelector(
+  ".tries__indicator > .stepper__step",
+  HTMLSpanElement,
+);
 /** @type {HTMLInputElement[]} */
 let $letterFields;
 
@@ -167,13 +169,7 @@ const resetGame = () => {
   $reset.disabled = true;
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-  generateRandomWord();
-  $triesIndicators = getAllElementsBySelector(
-    ".tries__indicator > .stepper__step",
-    HTMLSpanElement,
-  );
-});
+document.addEventListener("DOMContentLoaded", () => generateRandomWord());
 
 document.addEventListener("click", (e) => {
   const $target = e.target;
