@@ -1,5 +1,6 @@
 import { resetAlert, showAlert } from "@lib/alert";
 import { getElementBySelector } from "@lib/dom";
+import { scrambleWord } from "./utils/scramble";
 import { $word } from "./ui/word";
 import { $mistakenLetters, $tries, $triesIndicators } from "./ui/info";
 import {
@@ -19,14 +20,6 @@ import "./styles/main.css";
 let currentWord = "";
 let tries = 0;
 let mistakes = "";
-
-/** @param {string} word */
-const scrambleWord = (word) => {
-  const letters = word.split("");
-  const scrambledLetter = letters.sort(() => Math.random() - 0.5);
-
-  return scrambledLetter.join("");
-};
 
 /** @param {number} quantity */
 const createLetterFields = (quantity) => {
