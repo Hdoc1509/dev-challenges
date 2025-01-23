@@ -20,10 +20,11 @@ export function resetGame() {
   $currentLetter?.classList.remove(CLASSES.TYPING_LETTER_CURRENT);
   $letterFields.forEach(($field) => {
     $field.readOnly = false;
-    $field.disabled = false;
+    $field.disabled = true;
     $field.value = "";
   });
   $firstField.parentElement?.classList.add(CLASSES.TYPING_LETTER_CURRENT);
+  $firstField.disabled = false;
   $firstField.focus();
   $reset.disabled = true;
 }
