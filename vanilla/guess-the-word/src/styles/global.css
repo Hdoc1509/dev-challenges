@@ -1,3 +1,4 @@
+/* TODO: split into separate files */
 :root {
   font-family: "Outfit", sans-serif;
   line-height: 1.5;
@@ -108,8 +109,44 @@ h1 {
   border-radius: 12px;
 }
 
-.game-card header {
-  margin-inline: auto;
+.game-card__header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-areas: ". logo menu-trigger";
+  align-items: center;
+
+  --menu-trigger-bg: var(--primary);
+  --menu-trigger-size: 1.75rem;
+}
+
+.game-card__logo {
+  grid-area: logo;
+}
+
+.menu-trigger {
+  grid-area: menu-trigger;
+
+  display: grid;
+  place-items: center;
+
+  background-color: var(--menu-trigger-bg);
+  border: none;
+  border-radius: 7px;
+  margin-left: auto;
+  padding: var(--menu-trigger-padding, 0.075em 0.15em);
+
+  transition: transform 0.2s ease;
+}
+.menu-trigger:hover {
+  transform: scale(1.125);
+}
+.menu-trigger > svg {
+  width: 1em;
+  height: 1em;
+
+  font-size: var(--menu-trigger-size, 1rem);
+
+  pointer-events: none;
 }
 
 .game-card .word {

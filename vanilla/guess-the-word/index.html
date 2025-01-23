@@ -8,8 +8,29 @@
   </head>
   <body>
     <main class="game-card">
-      <header>
-        <img src="/word-scramblle-logo.svg" alt="Word Scramblle logo" />
+      <header class="game-card__header">
+        <img
+          class="game-card__logo"
+          src="/word-scramblle-logo.svg"
+          alt="Word Scramblle logo"
+        />
+        <button
+          id="menu-open"
+          class="menu-trigger"
+          aria-label="Open menu"
+          data-menu="app-menu"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M4 6h16M7 12h13M10 18h10" />
+          </svg>
+        </button>
       </header>
       <div class="word" id="word" aria-label="Scrambled word"></div>
       <section class="info">
