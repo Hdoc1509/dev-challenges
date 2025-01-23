@@ -1,0 +1,59 @@
+.game-card .typing {
+  display: flex;
+  gap: var(--letters-gap);
+  justify-content: center;
+  flex-wrap: wrap;
+
+  margin-block: var(--letters-margin-block);
+
+  font-size: var(--letter-fs);
+
+  --caret-blink-duration: 2.25s;
+}
+.game-card .typing__letter {
+  position: relative;
+
+  width: 4ch;
+  height: 4ch;
+  border-radius: 10px;
+  border: 2px solid var(--letter-border);
+
+  overflow: hidden;
+}
+.game-card .typing__letter > input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  border: none;
+  background-color: transparent;
+
+  text-align: center;
+  color: inherit;
+
+  caret-color: transparent;
+}
+.game-card .typing__caret {
+  position: absolute;
+  bottom: 1ch;
+  left: 0;
+  right: 0;
+
+  width: 1ch;
+  height: 2px;
+  margin: 0 auto;
+  background-color: currentColor;
+
+  animation: blink infinite both;
+  -webkit-animation: blink infinite both;
+  visibility: var(--caret-visibility, hidden);
+}
+.game-card .typing__letter--current {
+  border-color: var(--letter-border-current);
+  --caret-visibility: visible;
+}
+.game-card .typing__letter--current > input:focus + .typing__caret {
+  animation-duration: var(--caret-blink-duration);
+}
+.game-card .typing__letter > input:disabled {
+  pointer-events: none;
+}

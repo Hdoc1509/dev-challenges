@@ -1,0 +1,25 @@
+.game-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--card-gap);
+
+  margin: auto;
+  width: min(var(--card-max-width), 100%);
+  background-color: var(--card-bg);
+  padding: var(--card-padding);
+  border-radius: 12px;
+}
+
+.game-card__header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-areas: ". logo menu-trigger";
+  align-items: center;
+
+  --menu-trigger-bg: var(--primary);
+  --menu-trigger-size: 1.75rem;
+}
+
+.game-card__logo {
+  grid-area: logo;
+}

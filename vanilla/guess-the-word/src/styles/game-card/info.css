@@ -1,0 +1,16 @@
+.game-card .info {
+  display: flex;
+  justify-content: space-between;
+
+  font-size: var(--info-fs);
+  font-weight: 600;
+}
+
+.game-card .info .tries {
+  display: flex;
+  gap: 1em;
+}
+.game-card .info .tries__indicator {
+  --step-color: var(--word-bg);
+  --step-color-completed: var(--primary);
+}

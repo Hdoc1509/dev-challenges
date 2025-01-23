@@ -1,0 +1,49 @@
+.menu {
+  --menu-max-width: 300px;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  width: min(var(--menu-max-width), 100%);
+  margin: auto;
+  background-color: #212529;
+
+  padding: 1rem;
+
+  border-radius: 12px;
+}
+.menu__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  color: var(--text);
+}
+
+.menu-trigger {
+  grid-area: menu-trigger;
+
+  display: grid;
+  place-items: center;
+
+  background-color: var(--menu-trigger-bg);
+  border: none;
+  border-radius: 7px;
+  margin-left: auto;
+  padding: var(--menu-trigger-padding, 0.075em 0.15em);
+
+  transition: transform 0.2s ease;
+}
+.menu-trigger:hover {
+  transform: scale(1.125);
+}
+.menu-trigger > svg {
+  width: 1em;
+  height: 1em;
+
+  font-size: var(--menu-trigger-size, 1rem);
+
+  pointer-events: none;
+}

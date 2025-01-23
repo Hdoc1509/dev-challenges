@@ -1,0 +1,23 @@
+/* TODO: add to @lib/alert class `.alert--top` */
+/* it should be positioned at the top of the screen */
+.alert {
+  left: 0;
+  right: 0;
+
+  margin-inline: auto;
+  width: fit-content;
+
+  font-size: var(--letter-fs);
+
+  transform: translateY(-100%) translateY(-1rem);
+}
+.alert--open {
+  transform: translateY(0);
+}
+
+.menu .menu-trigger {
+  --menu-trigger-bg: var(--primary);
+  --menu-trigger-size: 1.75rem;
+  --menu-trigger-padding: 0.075em;
+  color: var(--text);
+}

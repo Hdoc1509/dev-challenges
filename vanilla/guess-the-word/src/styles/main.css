@@ -1,1 +1,6 @@
 @import "global.css";
+@import "game-card/main.css";
+@import "menu.css";
+@import "tabs.css";
+@import "stepper.css";
+@import "overrides.css";

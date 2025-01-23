@@ -1,0 +1,38 @@
+.game-card .actions {
+  display: flex;
+  justify-content: center;
+  gap: var(--buttons-gap);
+}
+.game-card .actions__control {
+  padding: 0.5em 2.5em;
+  background-color: var(--secondary);
+  border: none;
+  border-radius: 12px;
+  outline: none;
+
+  font-weight: 600;
+
+  filter: var(--button-shadow);
+
+  transition: transform 0.2s ease;
+}
+.game-card .actions__control:hover,
+.game-card .actions__control:focus {
+  transform: translateY(-4px) scale(1.05);
+}
+.game-card .actions__control:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}

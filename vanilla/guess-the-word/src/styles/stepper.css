@@ -1,0 +1,14 @@
+.stepper {
+  display: flex;
+  gap: var(--stepper-gap, 0.5em);
+  align-items: center;
+}
+.stepper__step {
+  aspect-ratio: 1;
+  width: var(--step-size, 0.5em);
+  border-radius: 50%;
+  background-color: var(--step-color);
+}
+.stepper__step[data-completed] {
+  background-color: var(--step-color-completed);
+}
