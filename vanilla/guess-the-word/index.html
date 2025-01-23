@@ -68,6 +68,40 @@
         <span class="typing__caret"></span>
       </span>
     </template>
+    <dialog class="menu" data-menu="app-menu" open>
+      <button id="menu-close" class="menu-trigger" aria-label="Close menu">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M18 6 6 18M6 6l12 12" />
+        </svg>
+      </button>
+      <div class="menu__content">
+        <ul class="tab-nav">
+          <li class="tab-nav__item" data-tab-active>
+            <button class="tab-nav__link" data-tab="words">Words</button>
+          </li>
+          <li class="tab-nav__item">
+            <button class="tab-nav__link" data-tab="difficulty">
+              Difficulty
+            </button>
+          </li>
+        </ul>
+        <section class="tab-content">
+          <div class="tab-content__item" data-tab="words" data-content-active>
+            Words tab content
+          </div>
+          <div class="tab-content__item" data-tab="difficulty">
+            Difficulty tab content
+          </div>
+        </section>
+      </div>
+    </dialog>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
