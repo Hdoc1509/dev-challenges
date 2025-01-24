@@ -1,7 +1,7 @@
 import { generateRandomWord } from "./handlers/random-word";
 import { handleLetterInput } from "./handlers/letter-input";
 import { resetGame } from "./handlers/reset-game";
-import { $menu, $menuClose, $menuOpen } from "@/ui/menu";
+import { $menu, $menuClose, $menuOpen, MenuTabs } from "@/ui/menu";
 import { $randomWord, $reset } from "@/ui/actions";
 import { CLASSES } from "@/consts";
 
@@ -16,6 +16,8 @@ export function setupEventListeners() {
 
     if ($target === $menuOpen) $menu.showModal();
     if ($target === $menuClose) $menu.close();
+
+    if (MenuTabs.isTabLink($target)) MenuTabs.selectTab($target);
   });
 
   // NOTE: should I reset animation of letter input on blur?
