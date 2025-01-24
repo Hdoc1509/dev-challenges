@@ -71,8 +71,8 @@
     <dialog id="app-menu" class="menu" open>
       <div class="menu__content">
         <header class="menu__header">
-          <ul class="tab-nav" role="tablist">
-            <li class="tab-nav__item" role="presentation" data-tab-active>
+          <nav>
+            <div class="tab-nav" role="tablist">
               <button
                 id="words-tab"
                 class="tab-nav__link"
@@ -80,11 +80,10 @@
                 aria-controls="words-tab-content"
                 aria-selected="true"
                 data-tab="words"
+                data-tab-active
               >
                 Words
               </button>
-            </li>
-            <li class="tab-nav__item" role="presentation">
               <button
                 id="difficulty-tab"
                 class="tab-nav__link"
@@ -95,8 +94,8 @@
               >
                 Difficulty
               </button>
-            </li>
-          </ul>
+            </div>
+          </nav>
           <button id="menu-close" class="menu-trigger" aria-label="Close menu">
             <svg
               viewBox="0 0 24 24"
