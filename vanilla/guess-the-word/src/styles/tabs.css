@@ -36,10 +36,10 @@
 
   width: 100%;
   height: 3px;
-  background-color: var(--tab-item-selected-highlight);
+  background-color: var(--tab-item-highlight);
 }
 .tab-nav__item[data-tab-active] {
-  --tab-item-selected-highlight: var(--primary);
+  --tab-item-highlight: var(--primary);
   --tab-link-font-weight: bold;
 }
 .tab-nav__link {
