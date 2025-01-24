@@ -21,3 +21,10 @@
   --menu-trigger-padding: 0.075em;
   color: var(--text);
 }
+.menu .menu-trigger#menu-close {
+  margin: unset;
+}
+
+.tab-nav {
+  flex-grow: 1;
+}

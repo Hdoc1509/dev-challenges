@@ -16,6 +16,11 @@
 .menu[open] {
   display: flex;
 }
+.menu__header {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
 .menu__content {
   display: flex;
   flex-direction: column;
