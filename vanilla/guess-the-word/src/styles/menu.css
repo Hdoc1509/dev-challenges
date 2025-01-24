@@ -1,5 +1,5 @@
 .menu {
-  --menu-max-width: 300px;
+  --menu-max-width: 370px;
   position: fixed;
   inset: 0;
   flex-direction: column;
