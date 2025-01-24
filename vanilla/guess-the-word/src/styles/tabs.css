@@ -27,7 +27,6 @@
 }
 .tab-nav__item {
   position: relative;
-  padding: 0.5em 1em;
 }
 .tab-nav__item::after {
   content: "";
@@ -48,6 +47,7 @@
   border: none;
   outline: none;
   font-weight: var(--tab-link-font-weight);
+  padding: 0.5em 1em;
 }
 
 .tab-content {
