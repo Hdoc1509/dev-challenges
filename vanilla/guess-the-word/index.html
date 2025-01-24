@@ -71,12 +71,28 @@
     <dialog id="app-menu" class="menu" open>
       <div class="menu__content">
         <header class="menu__header">
-          <ul class="tab-nav">
-            <li class="tab-nav__item" data-tab-active>
-              <button class="tab-nav__link" data-tab="words">Words</button>
+          <ul class="tab-nav" role="tablist">
+            <li class="tab-nav__item" role="presentation" data-tab-active>
+              <button
+                id="words-tab"
+                class="tab-nav__link"
+                role="tab"
+                aria-controls="words-tab-content"
+                aria-selected="true"
+                data-tab="words"
+              >
+                Words
+              </button>
             </li>
-            <li class="tab-nav__item">
-              <button class="tab-nav__link" data-tab="difficulty">
+            <li class="tab-nav__item" role="presentation">
+              <button
+                id="difficulty-tab"
+                class="tab-nav__link"
+                role="tab"
+                aria-controls="difficulty-tab-content"
+                aria-selected="false"
+                data-tab="difficulty"
+              >
                 Difficulty
               </button>
             </li>
@@ -95,10 +111,23 @@
           </button>
         </header>
         <section class="tab-content">
-          <div class="tab-content__item" data-tab="words" data-content-active>
+          <div
+            id="words-tab-content"
+            class="tab-content__item"
+            role="tabpanel"
+            aria-labelledby="words-tab"
+            data-tab="words"
+            data-content-active
+          >
             Words tab content
           </div>
-          <div class="tab-content__item" data-tab="difficulty">
+          <div
+            id="difficulty-tab-content"
+            class="tab-content__item"
+            role="tabpanel"
+            aria-labelledby="difficulty-tab"
+            data-tab="difficulty"
+          >
             Difficulty tab content
           </div>
         </section>
