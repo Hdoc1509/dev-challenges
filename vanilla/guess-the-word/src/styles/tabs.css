@@ -26,13 +26,19 @@
 }
 .tab-nav__link {
   position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
 
   background-color: transparent;
   border: none;
   outline: none;
   padding: 0.5em 1em;
 
+  font-size: 1.125rem;
   font-weight: var(--tab-link-font-weight);
+
+  --icon-size: 1.25em;
 }
 .tab-nav__link::after {
   content: "";
