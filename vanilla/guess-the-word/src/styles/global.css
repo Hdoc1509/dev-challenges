@@ -59,16 +59,6 @@
   margin: 0;
 }
 
-button {
-  cursor: pointer;
-}
-
-button,
-input {
-  color: inherit;
-  font: inherit;
-}
-
 body {
   display: flex;
 
@@ -90,4 +80,14 @@ body {
   body {
     padding: 1rem;
   }
+}
+
+button,
+input {
+  color: inherit;
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
 }
