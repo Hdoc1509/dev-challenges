@@ -50,6 +50,9 @@
   --tab-item-highlight: var(--primary);
   --tab-link-font-weight: bold;
 }
+.tab-nav__link:not([data-tab-active]) {
+  color: var(--_right-border);
+}
 .tab-nav__link:not([data-tab-active]):hover {
   --tab-item-highlight: var(--_right-border);
 }
