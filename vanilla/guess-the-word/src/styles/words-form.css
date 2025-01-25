@@ -1,0 +1,37 @@
+.words-form {
+  display: flex;
+  gap: 1rem;
+}
+
+.words-form__field {
+  flex-grow: 1;
+
+  padding: 0.5em 1em;
+  border-radius: 12px;
+  border: 1px solid #828282;
+  background-color: transparent;
+}
+.words-form__field:hover {
+  border-color: #ccc;
+}
+.words-form__field:focus {
+  border-color: var(--primary);
+  outline: 1px solid var(--primary);
+}
+.words-form__field::placeholder {
+  opacity: 1;
+  color: #828282;
+}
+
+.words-form__add {
+  padding: 0.5em 1em;
+  border-radius: 12px;
+  background-color: var(--secondary);
+  border: none;
+
+  font-weight: bold;
+}
+.words-form__add:hover,
+.words-form__add:focus {
+  background-color: var(--secondary-dark);
+}

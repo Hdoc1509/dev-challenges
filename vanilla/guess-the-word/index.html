@@ -143,7 +143,15 @@
             data-tab="words"
             data-content-active
           >
-            Words tab content
+            <form class="words-form">
+              <input
+                class="words-form__field"
+                name="word"
+                placeholder="Enter a word"
+                required
+              />
+              <button class="words-form__add">Add</button>
+            </form>
           </div>
           <div
             id="difficulty-tab-content"
@@ -152,7 +160,15 @@
             aria-labelledby="difficulty-tab"
             data-tab="difficulty"
           >
+            <!-- TODO: add content similar to <RadioGroup /> from <hrc /> -->
             Difficulty tab content
+            <!-- easy: green -->
+            <!-- normal: lightblue -->
+            <!-- hard: yellow -->
+            <!-- master: orange -->
+            <!-- extreme: red -->
+            <!-- insane: purple -->
+            <!-- why?: black -->
           </div>
         </section>
       </div>
