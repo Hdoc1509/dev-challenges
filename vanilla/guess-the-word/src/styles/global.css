@@ -91,6 +91,9 @@ input {
 button {
   cursor: pointer;
 }
+button:disabled {
+  pointer-events: none;
+}
 button > svg {
   width: 1em;
   height: 1em;
