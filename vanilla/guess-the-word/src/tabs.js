@@ -93,9 +93,11 @@ export class Tabs {
 
     $currentTab.setAttribute(ATTRIBUTES.TAB.SELECTED, "false");
     $currentTab.removeAttribute(ATTRIBUTES.TAB.ACTIVE);
+    $currentTab.disabled = false;
     $currentContent.removeAttribute(ATTRIBUTES.CONTENT.ACTIVE);
     $targetTab.setAttribute(ATTRIBUTES.TAB.SELECTED, "true");
     $targetTab.setAttribute(ATTRIBUTES.TAB.ACTIVE, "");
+    $targetTab.disabled = true;
     $targetContent.setAttribute(ATTRIBUTES.CONTENT.ACTIVE, "");
 
     this.#currentTab = tab;
