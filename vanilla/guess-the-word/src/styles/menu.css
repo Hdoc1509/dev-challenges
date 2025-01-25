@@ -45,15 +45,9 @@
   padding: var(--menu-trigger-padding, 0.075em 0.15em);
 
   transition: transform 0.2s ease;
+
+  --icon-size: var(--menu-trigger-size, 1rem);
 }
 .menu-trigger:hover {
   transform: scale(1.125);
-}
-.menu-trigger > svg {
-  width: 1em;
-  height: 1em;
-
-  font-size: var(--menu-trigger-size, 1rem);
-
-  pointer-events: none;
 }
