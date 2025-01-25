@@ -91,3 +91,11 @@ input {
 button {
   cursor: pointer;
 }
+button > svg {
+  width: 1em;
+  height: 1em;
+
+  font-size: var(--icon-size, 1rem);
+
+  pointer-events: none;
+}
