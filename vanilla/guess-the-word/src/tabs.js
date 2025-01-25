@@ -83,12 +83,20 @@ export class Tabs {
     const $targetTab = this.#$TABS.get(tab);
     const $targetContent = this.#$CONTENTS.get(tab);
 
-    $currentTab?.setAttribute(ATTRIBUTES.TAB.SELECTED, "false");
-    $currentTab?.removeAttribute(ATTRIBUTES.TAB.ACTIVE);
-    $currentContent?.removeAttribute(ATTRIBUTES.CONTENT.ACTIVE);
-    $targetTab?.setAttribute(ATTRIBUTES.TAB.SELECTED, "true");
-    $targetTab?.setAttribute(ATTRIBUTES.TAB.ACTIVE, "");
-    $targetContent?.setAttribute(ATTRIBUTES.CONTENT.ACTIVE, "");
+    if (
+      $currentTab == null ||
+      $currentContent == null ||
+      $targetTab == null ||
+      $targetContent == null
+    )
+      return;
+
+    $currentTab.setAttribute(ATTRIBUTES.TAB.SELECTED, "false");
+    $currentTab.removeAttribute(ATTRIBUTES.TAB.ACTIVE);
+    $currentContent.removeAttribute(ATTRIBUTES.CONTENT.ACTIVE);
+    $targetTab.setAttribute(ATTRIBUTES.TAB.SELECTED, "true");
+    $targetTab.setAttribute(ATTRIBUTES.TAB.ACTIVE, "");
+    $targetContent.setAttribute(ATTRIBUTES.CONTENT.ACTIVE, "");
 
     this.#currentTab = tab;
   }
