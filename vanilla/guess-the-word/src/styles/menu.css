@@ -48,6 +48,7 @@
 
   --icon-size: var(--menu-trigger-size, 1rem);
 }
-.menu-trigger:hover {
+.menu-trigger:hover,
+.menu-trigger:focus {
   transform: scale(1.125);
 }
