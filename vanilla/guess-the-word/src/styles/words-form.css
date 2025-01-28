@@ -25,12 +25,12 @@
 .words-form__add {
   padding: 0.5em 1em;
   border-radius: 12px;
-  background-color: var(--secondary);
+  background-color: #c23be4;
   border: none;
 
   font-weight: bold;
 }
 .words-form__add:hover,
 .words-form__add:focus {
-  background-color: var(--secondary-dark);
+  background-color: #ab1dcf;
 }
