@@ -4,8 +4,7 @@
 }
 
 .words-form__field {
-  flex-grow: 1;
-
+  width: 100%;
   padding: 0.5em 1em;
   border-radius: 12px;
   border: 1px solid #828282;
