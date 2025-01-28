@@ -5,10 +5,11 @@ import { scrambleWord } from "@/utils/scramble";
 import { $word } from "@/ui/word";
 import { captureLetterFields, setLetterFields, $typing } from "@/ui/typing";
 import { $reset } from "@/ui/actions";
-import { words } from "@/consts";
+import { DEFAULT_WORDS } from "@/consts";
 
 export function generateRandomWord() {
-  const randomWord = words[Math.floor(Math.random() * words.length)];
+  const randomWord =
+    DEFAULT_WORDS[Math.floor(Math.random() * DEFAULT_WORDS.length)];
 
   setCurrentWord(randomWord);
 

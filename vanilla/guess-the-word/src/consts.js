@@ -1,5 +1,5 @@
 // TODO: allow user to create a list of words and use them
-export const words = [
+export const DEFAULT_WORDS = [
   "example",
   "javascript",
   "coding",
