@@ -15,15 +15,6 @@
   height: 3px;
   background-color: var(--tab-nav-bottom-border, var(--_bottom-border));
 }
-.tab-nav::after {
-  content: "";
-  position: absolute;
-  right: 0;
-
-  width: 4px;
-  height: 100%;
-  background-color: var(--tab-nav-right-border, var(--_right-border));
-}
 .tab-nav__link {
   position: relative;
   display: flex;
