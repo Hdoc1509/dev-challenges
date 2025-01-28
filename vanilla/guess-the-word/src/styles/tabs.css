@@ -68,8 +68,11 @@
   display: flex;
 }
 .tab-content__item {
-  width: 100%;
+  display: grid;
+  gap: 1rem;
+
   flex-shrink: 0;
+  width: 100%;
 }
 .tab-content__item:not([data-content-active]) {
   display: none;
