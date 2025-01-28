@@ -61,6 +61,7 @@
 .tab-content__item {
   display: grid;
   gap: 1rem;
+  width: 100%;
 }
 .tab-content__item:not([data-content-active]) {
   display: none;
