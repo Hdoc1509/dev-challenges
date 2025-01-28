@@ -23,11 +23,14 @@
 
   background-color: transparent;
   border: none;
+  border-radius: 12px 12px 0 0;
   outline: none;
   padding: 0.5em 1em;
 
   font-size: 1.125rem;
   font-weight: var(--tab-link-font-weight);
+
+  transition: background-color 0.3s ease;
 
   --icon-size: 1.25em;
 }
@@ -46,6 +49,7 @@
 .tab-nav__link[data-tab-active] {
   --tab-item-highlight: var(--primary);
   --tab-link-font-weight: bold;
+  background-color: rgba(100, 100, 100, 0.15);
 }
 .tab-nav__link:not([data-tab-active]) {
   color: var(--_right-border);
