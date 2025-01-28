@@ -3,7 +3,7 @@ import { currentWord, setCurrentWord } from "@/state/current-word";
 import { createLetterFields } from "@/utils/letter-fields";
 import { scrambleWord } from "@/utils/scramble";
 import { $word } from "@/ui/word";
-import { $typing, updateLetterFields } from "@/ui/typing";
+import { captureLetterFields, setLetterFields, $typing } from "@/ui/typing";
 import { $reset } from "@/ui/actions";
 import { words } from "@/consts";
 
@@ -24,7 +24,7 @@ export function generateRandomWord() {
 
   while ($typing.firstChild) $typing.removeChild($typing.firstChild);
   createLetterFields(currentWord.length);
-  updateLetterFields();
+  setLetterFields(captureLetterFields());
   $reset.disabled = false;
   resetAlert();
 }

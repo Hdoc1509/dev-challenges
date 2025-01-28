@@ -9,9 +9,8 @@ export const $letterTemplate = getElementById(
 /** @type {HTMLInputElement[]} */
 export let $letterFields;
 
-export function updateLetterFields() {
-  $letterFields = getAllElementsBySelector(
-    ".typing__letter > input",
-    HTMLInputElement,
-  );
-}
+/** @param {HTMLInputElement[]} $fields */
+export const setLetterFields = ($fields) => ($letterFields = $fields);
+
+export const captureLetterFields = () =>
+  getAllElementsBySelector(".typing__letter > input", HTMLInputElement);
