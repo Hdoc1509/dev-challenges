@@ -24,4 +24,5 @@
 
 .menu__header nav {
   flex-grow: 1;
+  overflow-x: scroll;
 }
