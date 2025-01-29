@@ -4,7 +4,6 @@ import { createLetterFields } from "@/utils/letter-fields";
 import { scrambleWord } from "@/utils/scramble";
 import { $word } from "@/ui/word";
 import { captureLetterFields, setLetterFields, $typing } from "@/ui/typing";
-import { $reset } from "@/ui/actions";
 import { DEFAULT_WORDS } from "@/consts";
 
 export function generateRandomWord() {
@@ -26,6 +25,5 @@ export function generateRandomWord() {
   while ($typing.firstChild) $typing.removeChild($typing.firstChild);
   createLetterFields(currentWord.length);
   setLetterFields(captureLetterFields());
-  $reset.disabled = false;
   resetAlert();
 }
