@@ -1,0 +1,22 @@
+.label {
+  --_text-focus: var(--label-text-focus);
+  display: inline-flex;
+  gap: var(--label-gap, 0.25rem);
+  align-items: center;
+  justify-content: start;
+
+  font-family: var(--label-font-family, inherit);
+  font-size: var(--label-font-size, 0.75rem);
+  font-weight: var(--label-font-weight, 400);
+  color: var(--label-text, #333);
+}
+.label:focus-within {
+  color: var(--_text-focus);
+}
+.label[data-type="radio"] {
+  font-size: var(--label-font-size, 1rem);
+  cursor: pointer;
+}
+.label[data-type="radio"]:focus-within {
+  color: var(--label-text, #333);
+}

@@ -26,3 +26,33 @@
   flex-grow: 1;
   overflow-x: scroll;
 }
+
+#difficulty-tab-content {
+  --radio-group-gap: 0.25rem;
+  --label-text: var(--text);
+  --label-font-size: 1.125rem;
+}
+#difficulty-tab-content .radio {
+  --radio-size: 1.25rem;
+}
+#difficulty-tab-content .label[data-difficulty="easy"] .radio {
+  --radio-color: green;
+}
+#difficulty-tab-content .label[data-difficulty="normal"] .radio {
+  --radio-color: lightblue;
+}
+#difficulty-tab-content .label[data-difficulty="hard"] .radio {
+  --radio-color: yellow;
+}
+#difficulty-tab-content .label[data-difficulty="master"] .radio {
+  --radio-color: orange;
+}
+#difficulty-tab-content .label[data-difficulty="extreme"] .radio {
+  --radio-color: red;
+}
+#difficulty-tab-content .label[data-difficulty="insane"] .radio {
+  --radio-color: purple;
+}
+#difficulty-tab-content .label[data-difficulty="why"] .radio {
+  --radio-color: black;
+}
