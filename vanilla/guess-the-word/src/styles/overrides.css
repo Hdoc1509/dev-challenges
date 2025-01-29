@@ -32,6 +32,9 @@
   --label-text: var(--text);
   --label-font-size: 1.125rem;
 }
+#difficulty-tab-content .label {
+  width: fit-content;
+}
 #difficulty-tab-content .radio {
   --radio-size: 1.25rem;
 }
