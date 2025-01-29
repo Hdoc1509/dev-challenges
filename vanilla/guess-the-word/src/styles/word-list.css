@@ -39,7 +39,7 @@
   --icon-size: 1.5em;
 }
 .word-list__action[data-edit] {
-  /* from tetradic colors https://www.colorhexa.com/c23be4 */
+  /* from tetradic colors https://www.colorhexa.com/c23be4#schemes */
   --_bg: #3b5de4;
 }
 .word-list__action[data-delete] {
