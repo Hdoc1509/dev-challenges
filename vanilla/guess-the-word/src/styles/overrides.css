@@ -21,7 +21,9 @@
   --menu-trigger-padding: 0.075em;
   color: var(--text);
 }
-
+.menu .tab-content {
+  overflow-y: auto;
+}
 .menu__header nav {
   flex-grow: 1;
   overflow-x: scroll;
