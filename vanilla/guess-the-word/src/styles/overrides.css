@@ -34,36 +34,47 @@
   --label-text: var(--text);
   --label-font-size: 1.125rem;
 }
+#difficulty-tab-content .difficulty-name {
+  font-weight: bold;
+  color: var(--difficulty-text);
+}
 #difficulty-tab-content .label {
   width: fit-content;
 }
 #difficulty-tab-content .radio {
   --radio-size: 1.25rem;
 }
-#difficulty-tab-content .label[data-difficulty="easy"] .radio {
+#difficulty-tab-content .label[data-difficulty="easy"] {
   /* from "tetradic" colors https://www.colorhexa.com/c23be4#schemes */
   --radio-color: #5de43b;
+  --difficulty-text: #5de43b;
 }
-#difficulty-tab-content .label[data-difficulty="normal"] .radio {
+#difficulty-tab-content .label[data-difficulty="normal"] {
   /* from "split complementary" colors https://www.colorhexa.com/e4c23b#schemes */
   --radio-color: #3bb2e4;
+  --difficulty-text: #3bb2e4;
 }
-#difficulty-tab-content .label[data-difficulty="hard"] .radio {
+#difficulty-tab-content .label[data-difficulty="hard"] {
   /* from "tetradic" colors https://www.colorhexa.com/c23be4#schemes */
   --radio-color: #e4c23b;
+  --difficulty-text: #e4c23b;
 }
-#difficulty-tab-content .label[data-difficulty="master"] .radio {
+#difficulty-tab-content .label[data-difficulty="master"] {
   /* from "analogous" colors https://www.colorhexa.com/e4c23b#schemes */
   --radio-color: #e46e3b;
+  --difficulty-text: #e46e3b;
 }
-#difficulty-tab-content .label[data-difficulty="extreme"] .radio {
+#difficulty-tab-content .label[data-difficulty="extreme"] {
   /* from "monochromatic" colors https://www.colorhexa.com/e43b5d#schemes */
   --radio-color: #cf1d41;
+  --difficulty-text: #cf1d41;
 }
-#difficulty-tab-content .label[data-difficulty="insane"] .radio {
+#difficulty-tab-content .label[data-difficulty="insane"] {
   /* from "analogous" colors https://www.colorhexa.com/c23be4#schemes */
   --radio-color: #6e3be4;
+  --difficulty-text: #6e3be4;
 }
-#difficulty-tab-content .label[data-difficulty="why"] .radio {
-  --radio-color: #000;
+#difficulty-tab-content .label[data-difficulty="why"] {
+  --radio-color: var(--primary);
+  --difficulty-text: var(--primary);
 }
