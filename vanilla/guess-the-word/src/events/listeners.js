@@ -1,14 +1,14 @@
 import { generateRandomWord } from "./handlers/random-word";
 import { handleLetterInput } from "./handlers/letter-input";
 import { resetGame } from "./handlers/reset-game";
-import { $menu, $menuClose, $menuOpen, MenuTabs } from "@/ui/menu";
-import { generateWordList } from "@/ui/word-list";
+import { $menu, $menuClose, $menuOpen /* , MenuTabs */ } from "@/ui/menu";
+// import { generateWordList } from "@/ui/word-list";
 import { $randomWord, $reset } from "@/ui/actions";
 import { CLASSES } from "@/consts";
 
 export function setupEventListeners() {
   generateRandomWord();
-  generateWordList();
+  // generateWordList();
 
   document.addEventListener("click", (e) => {
     const $target = e.target;
@@ -19,7 +19,7 @@ export function setupEventListeners() {
     if ($target === $menuOpen) $menu.showModal();
     if ($target === $menuClose) $menu.close();
 
-    if (MenuTabs.isTabLink($target)) MenuTabs.selectTab($target);
+    // if (MenuTabs.isTabLink($target)) MenuTabs.selectTab($target);
   });
 
   // NOTE: should I reset animation of letter input on blur?
