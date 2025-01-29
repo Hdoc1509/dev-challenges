@@ -63,6 +63,7 @@ create a small game that tests your data management and DOM manipulation with Ja
   - [list-letters](https://tabler.io/icons/icon/list-letters)
   - [trash](https://tabler.io/icons/icon/trash)
   - [versions](https://tabler.io/icons/icon/versions)
+- [colorhexa](https://www.colorhexa.com/)
 - [Online Image Compressor](https://imagecompressor.com/)
 
 ### Extra Features
