@@ -102,3 +102,9 @@ button > svg {
 
   pointer-events: none;
 }
+
+.not-implemented-yet {
+  color: var(--secondary);
+  font-size: 1.25rem;
+  text-align: center;
+}
