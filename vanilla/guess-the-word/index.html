@@ -211,15 +211,199 @@
           data-tab="difficulty"
           data-content-active
         >
-          <!-- TODO: add content similar to <RadioGroup /> from <hrc /> -->
-          Difficulty tab content
-          <!-- easy: green -->
-          <!-- normal: lightblue -->
-          <!-- hard: yellow -->
-          <!-- master: orange -->
-          <!-- extreme: red -->
-          <!-- insane: purple -->
-          <!-- why?: black -->
+          <form>
+            <div class="radio-group">
+              <label class="label" data-type="radio" data-difficulty="easy">
+                <span class="radio">
+                  <input
+                    class="radio__inner"
+                    type="radio"
+                    name="difficulty"
+                    value="easy"
+                  />
+                  <span class="radio__icon" aria-hidden="true">
+                    <svg
+                      class="radio__icon-unchecked"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <use href="/icon/radio-unchecked.svg#path" />
+                    </svg>
+                    <svg
+                      class="radio__icon-checked"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <use href="/icon/radio-checked.svg#path" />
+                    </svg>
+                  </span>
+                </span>
+                Easy
+              </label>
+              <label class="label" data-type="radio" data-difficulty="normal">
+                <span class="radio">
+                  <input
+                    class="radio__inner"
+                    type="radio"
+                    name="difficulty"
+                    value="normal"
+                  />
+                  <span class="radio__icon" aria-hidden="true">
+                    <svg
+                      class="radio__icon-unchecked"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <use href="/icon/radio-unchecked.svg#path" />
+                    </svg>
+                    <svg
+                      class="radio__icon-checked"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <use href="/icon/radio-checked.svg#path" />
+                    </svg>
+                  </span>
+                </span>
+                Normal
+              </label>
+              <label class="label" data-type="radio" data-difficulty="hard">
+                <span class="radio">
+                  <input
+                    class="radio__inner"
+                    type="radio"
+                    name="difficulty"
+                    value="hard"
+                  />
+                  <span class="radio__icon" aria-hidden="true">
+                    <svg
+                      class="radio__icon-unchecked"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <use href="/icon/radio-unchecked.svg#path" />
+                    </svg>
+                    <svg
+                      class="radio__icon-checked"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <use href="/icon/radio-checked.svg#path" />
+                    </svg>
+                  </span>
+                </span>
+                Hard
+              </label>
+              <label class="label" data-type="radio" data-difficulty="master">
+                <span class="radio">
+                  <input
+                    class="radio__inner"
+                    type="radio"
+                    name="difficulty"
+                    value="master"
+                  />
+                  <span class="radio__icon" aria-hidden="true">
+                    <svg
+                      class="radio__icon-unchecked"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <use href="/icon/radio-unchecked.svg#path" />
+                    </svg>
+                    <svg
+                      class="radio__icon-checked"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <use href="/icon/radio-checked.svg#path" />
+                    </svg>
+                  </span>
+                </span>
+                Master
+              </label>
+              <label class="label" data-type="radio" data-difficulty="extreme">
+                <span class="radio">
+                  <input
+                    class="radio__inner"
+                    type="radio"
+                    name="difficulty"
+                    value="extreme"
+                  />
+                  <span class="radio__icon" aria-hidden="true">
+                    <svg
+                      class="radio__icon-unchecked"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <use href="/icon/radio-unchecked.svg#path" />
+                    </svg>
+                    <svg
+                      class="radio__icon-checked"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <use href="/icon/radio-checked.svg#path" />
+                    </svg>
+                  </span>
+                </span>
+                Extreme
+              </label>
+              <label class="label" data-type="radio" data-difficulty="insane">
+                <span class="radio">
+                  <input
+                    class="radio__inner"
+                    type="radio"
+                    name="difficulty"
+                    value="insane"
+                  />
+                  <span class="radio__icon" aria-hidden="true">
+                    <svg
+                      class="radio__icon-unchecked"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <use href="/icon/radio-unchecked.svg#path" />
+                    </svg>
+                    <svg
+                      class="radio__icon-checked"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <use href="/icon/radio-checked.svg#path" />
+                    </svg>
+                  </span>
+                </span>
+                Insane
+              </label>
+              <label class="label" data-type="radio" data-difficulty="why">
+                <span class="radio">
+                  <input
+                    class="radio__inner"
+                    type="radio"
+                    name="difficulty"
+                    value="why"
+                  />
+                  <span class="radio__icon" aria-hidden="true">
+                    <svg
+                      class="radio__icon-unchecked"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <use href="/icon/radio-unchecked.svg#path" />
+                    </svg>
+                    <svg
+                      class="radio__icon-checked"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <use href="/icon/radio-checked.svg#path" />
+                    </svg>
+                  </span>
+                </span>
+                Why?
+              </label>
+            </div>
+          </form>
         </div>
       </section>
     </dialog>
