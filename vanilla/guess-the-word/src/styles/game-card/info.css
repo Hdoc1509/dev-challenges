@@ -15,9 +15,6 @@
   --step-color-completed: var(--primary);
 }
 
-.mistakes #mistaken-letters {
-  display: inline-flex;
-}
 .mistakes__letter {
   color: var(--mistaken-letter-text);
 }

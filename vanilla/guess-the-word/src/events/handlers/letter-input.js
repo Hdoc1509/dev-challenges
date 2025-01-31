@@ -23,7 +23,7 @@ export function handleLetterInput($currentField) {
 
     if (hasReachedMaxTries()) return resetGame();
 
-    const $mistakenLetter = document.createElement("div");
+    const $mistakenLetter = document.createElement("span");
 
     if (hasNoMistakes()) $mistakenLetters.textContent = "";
 
