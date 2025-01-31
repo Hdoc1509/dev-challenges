@@ -1,14 +1,20 @@
+import { getAllElementsBySelector } from "@lib/dom";
 import { resetTries } from "@/state/tries";
 import { resetMistakes } from "@/state/mistakes";
 import { $mistakenLetters, $tries, $triesIndicators } from "@/ui/info";
-import { $letterFields } from "@/ui/typing";
+import { $letterFields, $typing } from "@/ui/typing";
 import { $reset } from "@/ui/actions";
-import { CLASSES } from "@/consts";
+import { CLASSES, CSS_VARIABLES } from "@/consts";
 
 export function resetGame() {
   const $firstField = $letterFields[0];
   const $currentLetter = /** @type {HTMLSpanElement | null} */ (
     document.querySelector(`.${CLASSES.TYPING.LETTER.CURRENT}`)
+  );
+  const $typingMistakenLetters = getAllElementsBySelector(
+    `.${CLASSES.TYPING.LETTER.MISTAKEN}`,
+    HTMLSpanElement,
+    $typing,
   );
 
   resetTries();
@@ -18,9 +24,10 @@ export function resetGame() {
   $triesIndicators.forEach(($item) => $item.removeAttribute("data-completed"));
   $mistakenLetters.textContent = "-";
   $currentLetter?.classList.remove(CLASSES.TYPING.LETTER.CURRENT);
-  // TODO: remove "--letter-border-mistaken" from all letters
-  // TODO: use a constant for this
-  // $currentLetter.style.removeProperty("--letter-border-mistaken");
+  $typingMistakenLetters.forEach(($letter) => {
+    $letter.classList.remove(CLASSES.TYPING.LETTER.MISTAKEN);
+    $letter.style.removeProperty(CSS_VARIABLES.LETTER_BORDER.MISTAKEN);
+  });
   $letterFields.forEach(($field) => {
     $field.readOnly = false;
     $field.disabled = true;
