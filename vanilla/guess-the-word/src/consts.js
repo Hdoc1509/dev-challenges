@@ -20,3 +20,4 @@ export const DIFFICULTY = Object.freeze({
   INSANE: "insane",
   WHY: "why",
 });
+/** @typedef {DIFFICULTY[keyof DIFFICULTY]} Difficulty */
