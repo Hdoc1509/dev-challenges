@@ -10,4 +10,13 @@ export const DEFAULT_WORDS = [
 
 export const CLASSES = Object.freeze({
   TYPING_LETTER_CURRENT: "typing__letter--current",
+
+export const DIFFICULTY = Object.freeze({
+  EASY: "easy",
+  NORMAL: "normal",
+  HARD: "hard",
+  MASTER: "master",
+  EXTREME: "extreme",
+  INSANE: "insane",
+  WHY: "why",
 });
