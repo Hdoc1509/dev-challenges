@@ -36,12 +36,12 @@ export function handleLetterInput($currentField) {
     $triesIndicators[tries - 1].setAttribute("data-completed", "");
 
     if (difficulty === DIFFICULTY.EASY) {
-      $mistakenLetter.classList.add(CLASSES.MISTAKES_LETTER);
+      $mistakenLetter.classList.add(CLASSES.MISTAKES.LETTER);
       $mistakenLetter.style.setProperty(
         "--mistaken-letter-text", // TODO: add a constant for this
         "var(--primary)", // TODO: use css variable that matches difficulty name colors
       );
-      $currentLetter.classList.add(CLASSES.TYPING_LETTER_MISTAKEN);
+      $currentLetter.classList.add(CLASSES.TYPING.LETTER.MISTAKEN);
       $currentLetter.style.setProperty(
         "--letter-border-mistaken", // TODO: add a constant for this
         "var(--primary)", // TODO: use same css variable as above
@@ -55,14 +55,14 @@ export function handleLetterInput($currentField) {
   $reset.disabled = false;
   $currentField.disabled = true;
   $currentField.readOnly = true;
-  $currentLetter.classList.remove(CLASSES.TYPING_LETTER_CURRENT);
+  $currentLetter.classList.remove(CLASSES.TYPING.LETTER.CURRENT);
 
   if ($nextLetter instanceof HTMLSpanElement) {
     const $nextField = /** @type {HTMLInputElement} */ (
       $nextLetter.firstElementChild
     );
 
-    $nextLetter.classList.add(CLASSES.TYPING_LETTER_CURRENT);
+    $nextLetter.classList.add(CLASSES.TYPING.LETTER.CURRENT);
     $nextField.disabled = false;
     $nextField.focus();
   } else if (hasNoMistakes()) {

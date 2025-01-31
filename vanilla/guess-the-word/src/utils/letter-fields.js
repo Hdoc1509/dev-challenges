@@ -26,7 +26,7 @@ export function createLetterFields(quantity) {
     $firstLetter.firstElementChild
   );
 
-  $firstLetter.classList.add(CLASSES.TYPING_LETTER_CURRENT);
+  $firstLetter.classList.add(CLASSES.TYPING.LETTER.CURRENT);
   $firstField.disabled = false;
   $firstField.focus();
 }

@@ -8,7 +8,7 @@ import { CLASSES } from "@/consts";
 export function resetGame() {
   const $firstField = $letterFields[0];
   const $currentLetter = /** @type {HTMLSpanElement | null} */ (
-    document.querySelector(`.${CLASSES.TYPING_LETTER_CURRENT}`)
+    document.querySelector(`.${CLASSES.TYPING.LETTER.CURRENT}`)
   );
 
   resetTries();
@@ -17,7 +17,7 @@ export function resetGame() {
   $tries.textContent = "0";
   $triesIndicators.forEach(($item) => $item.removeAttribute("data-completed"));
   $mistakenLetters.textContent = "-";
-  $currentLetter?.classList.remove(CLASSES.TYPING_LETTER_CURRENT);
+  $currentLetter?.classList.remove(CLASSES.TYPING.LETTER.CURRENT);
   // TODO: remove "--letter-border-mistaken" from all letters
   // TODO: use a constant for this
   // $currentLetter.style.removeProperty("--letter-border-mistaken");
@@ -26,7 +26,7 @@ export function resetGame() {
     $field.disabled = true;
     $field.value = "";
   });
-  $firstField.parentElement?.classList.add(CLASSES.TYPING_LETTER_CURRENT);
+  $firstField.parentElement?.classList.add(CLASSES.TYPING.LETTER.CURRENT);
   $firstField.disabled = false;
   $firstField.focus();
   $reset.disabled = true;
