@@ -2,11 +2,11 @@ import { showAlert } from "@lib/alert";
 import { currentWord } from "@/state/current-word";
 import { hasReachedMaxTries, increaseTries, tries } from "@/state/tries";
 import { hasNoMistakes, mistakes, setMistakes } from "@/state/mistakes";
+import { difficulty } from "@/state/difficulty";
 import { resetGame } from "./reset-game";
 import { $mistakenLetters, $tries, $triesIndicators } from "@/ui/info";
 import { $reset } from "@/ui/actions";
-import { CLASSES, DIFFICULTY } from "@/consts";
-import { difficulty } from "@/state/difficulty";
+import { CLASSES, CSS_VARIABLES, DIFFICULTY } from "@/consts";
 
 /** @param {HTMLInputElement} $currentField */
 export function handleLetterInput($currentField) {
@@ -38,12 +38,12 @@ export function handleLetterInput($currentField) {
     if (difficulty === DIFFICULTY.EASY) {
       $mistakenLetter.classList.add(CLASSES.MISTAKES.LETTER);
       $mistakenLetter.style.setProperty(
-        "--mistaken-letter-text", // TODO: add a constant for this
+        CSS_VARIABLES.MISTAKEN_LETTER.TEXT,
         "var(--primary)", // TODO: use css variable that matches difficulty name colors
       );
       $currentLetter.classList.add(CLASSES.TYPING.LETTER.MISTAKEN);
       $currentLetter.style.setProperty(
-        "--letter-border-mistaken", // TODO: add a constant for this
+        CSS_VARIABLES.LETTER_BORDER.MISTAKEN,
         "var(--primary)", // TODO: use same css variable as above
       );
     }
