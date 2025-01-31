@@ -36,15 +36,17 @@ export function handleLetterInput($currentField) {
     $triesIndicators[tries - 1].setAttribute("data-completed", "");
 
     if (difficulty === DIFFICULTY.EASY) {
+      // TODO: use css variable that matches difficulty name colors
+      const color = "var(--primary)";
       $mistakenLetter.classList.add(CLASSES.MISTAKES.LETTER);
       $mistakenLetter.style.setProperty(
         CSS_VARIABLES.MISTAKEN_LETTER.TEXT,
-        "var(--primary)", // TODO: use css variable that matches difficulty name colors
+        color,
       );
       $currentLetter.classList.add(CLASSES.TYPING.LETTER.MISTAKEN);
       $currentLetter.style.setProperty(
         CSS_VARIABLES.LETTER_BORDER.MISTAKEN,
-        "var(--primary)", // TODO: use same css variable as above
+        color,
       );
     }
     $mistakenLetter.textContent = enteredLetter;
