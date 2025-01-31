@@ -48,7 +48,7 @@ export function handleLetterInput($currentField) {
       );
     }
     $mistakenLetter.textContent = enteredLetter;
-    if (tries >= 2) $mistakenLetters.children[tries - 2].textContent += ",";
+    if (tries >= 2) $mistakenLetters.append(", ");
     $mistakenLetters.appendChild($mistakenLetter);
   }
 
