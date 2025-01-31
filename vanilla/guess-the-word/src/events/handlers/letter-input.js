@@ -5,7 +5,8 @@ import { hasNoMistakes, mistakes, setMistakes } from "@/state/mistakes";
 import { resetGame } from "./reset-game";
 import { $mistakenLetters, $tries, $triesIndicators } from "@/ui/info";
 import { $reset } from "@/ui/actions";
-import { CLASSES } from "@/consts";
+import { CLASSES, DIFFICULTY } from "@/consts";
+import { difficulty } from "@/state/difficulty";
 
 /** @param {HTMLInputElement} $currentField */
 export function handleLetterInput($currentField) {
@@ -22,13 +23,33 @@ export function handleLetterInput($currentField) {
 
     if (hasReachedMaxTries()) return resetGame();
 
+    const $mistakenLetter = document.createElement("div");
+
+    if (hasNoMistakes()) $mistakenLetters.textContent = "";
+
+    // NOTE: it seems that i can only use `tries` and remove `mistakes` from the state
     setMistakes(
-      hasNoMistakes() ? enteredLetter : `${mistakes}, ${enteredLetter}`,
+      hasNoMistakes() ? enteredLetter : `${mistakes}${enteredLetter}`,
     );
 
     $tries.textContent = `${tries}`;
     $triesIndicators[tries - 1].setAttribute("data-completed", "");
-    $mistakenLetters.textContent = mistakes;
+
+    if (difficulty === DIFFICULTY.EASY) {
+      $mistakenLetter.classList.add(CLASSES.MISTAKES_LETTER);
+      $mistakenLetter.style.setProperty(
+        "--mistaken-letter-text", // TODO: add a constant for this
+        "var(--primary)", // TODO: use css variable that matches difficulty name colors
+      );
+      $currentLetter.classList.add(CLASSES.TYPING_LETTER_MISTAKEN);
+      $currentLetter.style.setProperty(
+        "--letter-border-mistaken", // TODO: add a constant for this
+        "var(--primary)", // TODO: use same css variable as above
+      );
+    }
+    $mistakenLetter.textContent = enteredLetter;
+    if (tries >= 2) $mistakenLetters.children[tries - 2].textContent += ",";
+    $mistakenLetters.appendChild($mistakenLetter);
   }
 
   $reset.disabled = false;

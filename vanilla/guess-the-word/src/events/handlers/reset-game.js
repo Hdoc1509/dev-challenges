@@ -18,6 +18,9 @@ export function resetGame() {
   $triesIndicators.forEach(($item) => $item.removeAttribute("data-completed"));
   $mistakenLetters.textContent = "-";
   $currentLetter?.classList.remove(CLASSES.TYPING_LETTER_CURRENT);
+  // TODO: remove "--letter-border-mistaken" from all letters
+  // TODO: use a constant for this
+  // $currentLetter.style.removeProperty("--letter-border-mistaken");
   $letterFields.forEach(($field) => {
     $field.readOnly = false;
     $field.disabled = true;

@@ -51,6 +51,9 @@
   border-color: var(--letter-border-current);
   --caret-visibility: visible;
 }
+.game-card .typing__letter--mistaken {
+  border-color: var(--letter-border-mistaken);
+}
 .game-card .typing__letter--current > input:focus + .typing__caret {
   animation-duration: var(--caret-blink-duration);
 }

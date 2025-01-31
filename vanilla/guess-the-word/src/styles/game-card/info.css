@@ -14,3 +14,11 @@
   --step-color: var(--word-bg);
   --step-color-completed: var(--primary);
 }
+
+.mistakes #mistaken-letters {
+  display: inline-flex;
+  gap: 0.5ch;
+}
+.mistakes__letter {
+  color: var(--mistaken-letter-text);
+}
