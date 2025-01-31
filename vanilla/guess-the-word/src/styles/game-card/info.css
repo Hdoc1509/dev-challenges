@@ -17,8 +17,10 @@
 
 .mistakes #mistaken-letters {
   display: inline-flex;
-  gap: 0.5ch;
 }
 .mistakes__letter {
   color: var(--mistaken-letter-text);
+}
+.mistakes__letter + .mistakes__letter {
+  margin-left: 0.5ch;
 }
