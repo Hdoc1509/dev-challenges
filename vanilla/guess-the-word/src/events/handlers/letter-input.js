@@ -3,10 +3,11 @@ import { currentWord } from "@/state/current-word";
 import { hasReachedMaxTries, increaseTries, tries } from "@/state/tries";
 import { hasNoMistakes, mistakes, setMistakes } from "@/state/mistakes";
 import { difficulty } from "@/state/difficulty";
+import { gameSate, setGameState } from "@/state/game-state";
 import { resetGame } from "./reset-game";
 import { $mistakenLetters, $tries, $triesIndicators } from "@/ui/info";
 import { $reset } from "@/ui/actions";
-import { CLASSES, CSS_VARIABLES, DIFFICULTY } from "@/consts";
+import { CLASSES, CSS_VARIABLES, DIFFICULTY, GAME_STATE } from "@/consts";
 
 /** @param {HTMLInputElement} $currentField */
 export function handleLetterInput($currentField) {
@@ -17,6 +18,8 @@ export function handleLetterInput($currentField) {
   const letterIndex = Number($currentLetter.dataset.letterIndex);
   const enteredLetter = $currentField.value;
   const matches = new RegExp(currentWord[letterIndex], "i").test(enteredLetter);
+
+  if (gameSate !== GAME_STATE.PLAYING) setGameState(GAME_STATE.PLAYING);
 
   if (!matches) {
     increaseTries();
