@@ -39,3 +39,9 @@ export const DIFFICULTY = Object.freeze({
   WHY: "why",
 });
 /** @typedef {DIFFICULTY[keyof DIFFICULTY]} Difficulty */
+
+export const GAME_STATE = Object.freeze({
+  READY: "ready",
+  PLAYING: "playing",
+});
+/** @typedef {GAME_STATE[keyof GAME_STATE]} GameState */
