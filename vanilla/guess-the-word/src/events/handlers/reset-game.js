@@ -1,5 +1,10 @@
 import { resetTries } from "@/state/tries";
 import { resetMistakes } from "@/state/mistakes";
+import {
+  nextDifficulty,
+  setDifficulty,
+  setNextDifficulty,
+} from "@/state/difficulty";
 import { setGameState } from "@/state/game-state";
 import { $mistakenLetters, $tries, $triesIndicators } from "@/ui/info";
 import { $letterFields, $typing } from "@/ui/typing";
@@ -20,6 +25,10 @@ export function resetGame() {
   resetMistakes();
   setGameState(GAME_STATE.READY);
 
+  if (nextDifficulty != null) {
+    setDifficulty(nextDifficulty);
+    setNextDifficulty(null);
+  }
   $tries.textContent = "0";
   $triesIndicators.forEach(($item) => $item.removeAttribute("data-completed"));
   $mistakenLetters.textContent = "-";
