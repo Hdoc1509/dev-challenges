@@ -1,19 +1,20 @@
+import { IS_DEV } from "@/config";
 import { DIFFICULTY } from "@/consts";
 
 /** @type {import("@/consts").Difficulty} */
 export let difficulty = DIFFICULTY.NORMAL;
 
 /** @param {import("@/consts").Difficulty} newDifficulty */
-export const setDifficulty = (newDifficulty, { debug = false } = {}) => {
+export const setDifficulty = (newDifficulty) => {
   difficulty = newDifficulty;
-  if (debug) console.log({ difficulty });
+  if (IS_DEV) console.log({ difficulty });
 };
 
 /** @type {import("@/consts").Difficulty | null} */
 export let nextDifficulty = null;
 
 /** @param {import("@/consts").Difficulty | null} newDifficulty */
-export const setNextDifficulty = (newDifficulty, { debug = false } = {}) => {
+export const setNextDifficulty = (newDifficulty) => {
   nextDifficulty = newDifficulty;
-  if (debug) console.log({ nextDifficulty });
+  if (IS_DEV) console.log({ nextDifficulty });
 };
