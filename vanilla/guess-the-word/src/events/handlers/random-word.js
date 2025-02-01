@@ -1,10 +1,11 @@
 import { resetAlert } from "@lib/alert";
 import { currentWord, setCurrentWord } from "@/state/current-word";
+import { setGameState } from "@/state/game-state";
 import { createLetterFields } from "@/utils/letter-fields";
 import { scrambleWord } from "@/utils/scramble";
 import { $word } from "@/ui/word";
 import { captureLetterFields, setLetterFields, $typing } from "@/ui/typing";
-import { DEFAULT_WORDS } from "@/consts";
+import { DEFAULT_WORDS, GAME_STATE } from "@/consts";
 
 export function generateRandomWord() {
   const randomWord =
@@ -26,4 +27,5 @@ export function generateRandomWord() {
   createLetterFields(currentWord.length);
   setLetterFields(captureLetterFields());
   resetAlert();
+  setGameState(GAME_STATE.READY);
 }
