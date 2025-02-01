@@ -1,4 +1,3 @@
-import { getAllElementsBySelector } from "@lib/dom";
 import { resetTries } from "@/state/tries";
 import { resetMistakes } from "@/state/mistakes";
 import { $mistakenLetters, $tries, $triesIndicators } from "@/ui/info";
@@ -11,10 +10,9 @@ export function resetGame() {
   const $currentLetter = /** @type {HTMLSpanElement | null} */ (
     document.querySelector(`.${CLASSES.TYPING.LETTER.CURRENT}`)
   );
-  const $typingMistakenLetters = getAllElementsBySelector(
+  /** @type {NodeListOf<HTMLSpanElement>} */
+  const $typingMistakenLetters = $typing.querySelectorAll(
     `.${CLASSES.TYPING.LETTER.MISTAKEN}`,
-    HTMLSpanElement,
-    $typing,
   );
 
   resetTries();
