@@ -1,5 +1,10 @@
 import { resetAlert } from "@lib/alert";
 import { currentWord, setCurrentWord } from "@/state/current-word";
+import {
+  nextDifficulty,
+  setDifficulty,
+  setNextDifficulty,
+} from "@/state/difficulty";
 import { setGameState } from "@/state/game-state";
 import { createLetterFields } from "@/utils/letter-fields";
 import { scrambleWord } from "@/utils/scramble";
@@ -27,5 +32,9 @@ export function generateRandomWord() {
   createLetterFields(currentWord.length);
   setLetterFields(captureLetterFields());
   resetAlert();
+  if (nextDifficulty != null) {
+    setDifficulty(nextDifficulty);
+    setNextDifficulty(null);
+  }
   setGameState(GAME_STATE.READY);
 }
