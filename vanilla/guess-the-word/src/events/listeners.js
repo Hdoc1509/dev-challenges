@@ -41,6 +41,8 @@ export function setupEventListeners() {
       $target instanceof HTMLInputElement &&
       $target.matches("#difficulty-form input[type=radio][name=difficulty]")
     )
-      return handleDifficultyChange($target.value);
+      return handleDifficultyChange(
+        /** @type {import("@/consts").Difficulty} */ ($target.value),
+      );
   });
 }
