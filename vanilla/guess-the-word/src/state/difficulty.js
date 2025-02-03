@@ -1,8 +1,8 @@
+import { getSelectedDifficulty } from "@/ui/difficulty-form";
 import { IS_DEV } from "@/config";
-import { DIFFICULTY } from "@/consts";
 
 /** @type {import("@/consts").Difficulty} */
-export let difficulty = DIFFICULTY.NORMAL;
+export let difficulty = getSelectedDifficulty();
 
 /** @param {import("@/consts").Difficulty} newDifficulty */
 export const setDifficulty = (newDifficulty) => {
