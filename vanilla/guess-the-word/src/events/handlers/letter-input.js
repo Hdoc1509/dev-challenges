@@ -1,7 +1,6 @@
 import { showAlert } from "@lib/alert";
 import { currentWord } from "@/state/current-word";
 import { hasReachedMaxTries, increaseTries, tries } from "@/state/tries";
-import { hasNoMistakes, mistakes, setMistakes } from "@/state/mistakes";
 import { difficulty } from "@/state/difficulty";
 import { gameSate, setGameState } from "@/state/game-state";
 import { resetGame } from "./reset-game";
@@ -28,12 +27,7 @@ export function handleLetterInput($currentField) {
 
     const $mistakenLetter = document.createElement("span");
 
-    if (hasNoMistakes()) $mistakenLetters.textContent = "";
-
-    // NOTE: it seems that i can only use `tries` and remove `mistakes` from the state
-    setMistakes(
-      hasNoMistakes() ? enteredLetter : `${mistakes}${enteredLetter}`,
-    );
+    if (tries === 1) $mistakenLetters.textContent = "";
 
     $tries.textContent = `${tries}`;
     $triesIndicators[tries - 1].setAttribute("data-completed", "");
@@ -65,7 +59,7 @@ export function handleLetterInput($currentField) {
     $nextLetter.classList.add(CLASSES.TYPING.LETTER.CURRENT);
     $nextField.disabled = false;
     $nextField.focus();
-  } else if (hasNoMistakes()) {
+  } else if (tries === 0) {
     showAlert({ color: "success", text: "🎉 Success!" });
     $reset.disabled = true;
   }

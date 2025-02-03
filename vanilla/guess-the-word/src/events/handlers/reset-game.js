@@ -1,5 +1,4 @@
 import { resetTries } from "@/state/tries";
-import { resetMistakes } from "@/state/mistakes";
 import {
   nextDifficulty,
   setDifficulty,
@@ -22,7 +21,6 @@ export function resetGame() {
   );
 
   resetTries();
-  resetMistakes();
   setGameState(GAME_STATE.READY);
 
   if (nextDifficulty != null) {
