@@ -15,7 +15,6 @@ export function handleLetterInput($currentField) {
   const $currentLetter = /** @type {HTMLSpanElement} */ (
     $currentField.parentElement
   );
-  const $nextLetter = $currentLetter.nextElementSibling;
   const letterIndex = Number($currentLetter.dataset.letterIndex);
   const enteredLetter = $currentField.value;
   const matches = new RegExp(currentWord[letterIndex], "i").test(enteredLetter);
@@ -50,6 +49,8 @@ export function handleLetterInput($currentField) {
     if (tries >= 2) $mistakenLetters.append(", ");
     $mistakenLetters.appendChild($mistakenLetter);
   }
+
+  const $nextLetter = $currentLetter.nextElementSibling;
 
   $reset.disabled = false;
   $currentField.disabled = true;
