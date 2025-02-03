@@ -38,6 +38,15 @@ export const DIFFICULTY = Object.freeze({
   INSANE: "insane",
   WHY: "why",
 });
+export const DIFFICULTIES = Object.freeze([
+  DIFFICULTY.EASY,
+  DIFFICULTY.NORMAL,
+  DIFFICULTY.HARD,
+  DIFFICULTY.MASTER,
+  DIFFICULTY.EXTREME,
+  DIFFICULTY.INSANE,
+  DIFFICULTY.WHY,
+]);
 /** @typedef {DIFFICULTY[keyof DIFFICULTY]} Difficulty */
 
 export const GAME_STATE = Object.freeze({

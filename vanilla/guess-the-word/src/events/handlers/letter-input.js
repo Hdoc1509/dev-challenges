@@ -7,7 +7,13 @@ import { gameSate, setGameState } from "@/state/game-state";
 import { resetGame } from "./reset-game";
 import { $mistakenLetters, $tries, $triesIndicators } from "@/ui/info";
 import { $reset } from "@/ui/actions";
-import { CLASSES, CSS_VARIABLES, DIFFICULTY, GAME_STATE } from "@/consts";
+import {
+  CLASSES,
+  CSS_VARIABLES,
+  DIFFICULTIES,
+  DIFFICULTY,
+  GAME_STATE,
+} from "@/consts";
 
 /** @param {HTMLInputElement} $currentField */
 export function handleLetterInput($currentField) {
@@ -39,8 +45,8 @@ export function handleLetterInput($currentField) {
     $triesIndicators[tries - 1].setAttribute("data-completed", "");
 
     if (difficulty === DIFFICULTY.EASY) {
-      // TODO: use css variable that matches difficulty name colors
-      const color = "var(--primary)";
+      const difficultyIdx = tries - 1;
+      const color = `var(--difficulty-${DIFFICULTIES[difficultyIdx]})`;
       $mistakenLetter.classList.add(CLASSES.MISTAKES.LETTER);
       $mistakenLetter.style.setProperty(
         CSS_VARIABLES.MISTAKEN_LETTER.TEXT,
