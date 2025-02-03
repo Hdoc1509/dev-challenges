@@ -116,3 +116,8 @@ button > svg {
   font-size: 1.25rem;
   text-align: center;
 }
+
+.plus-sign {
+  color: var(--secondary);
+  font-size: 1.25em;
+}
