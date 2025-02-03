@@ -5,15 +5,10 @@ import { hasNoMistakes, mistakes, setMistakes } from "@/state/mistakes";
 import { difficulty } from "@/state/difficulty";
 import { gameSate, setGameState } from "@/state/game-state";
 import { resetGame } from "./reset-game";
+import { applyEasyDifficulty } from "@/utils/difficulty/easy";
 import { $mistakenLetters, $tries, $triesIndicators } from "@/ui/info";
 import { $reset } from "@/ui/actions";
-import {
-  CLASSES,
-  CSS_VARIABLES,
-  DIFFICULTIES,
-  DIFFICULTY,
-  GAME_STATE,
-} from "@/consts";
+import { CLASSES, DIFFICULTY, GAME_STATE } from "@/consts";
 
 /** @param {HTMLInputElement} $currentField */
 export function handleLetterInput($currentField) {
@@ -44,20 +39,13 @@ export function handleLetterInput($currentField) {
     $tries.textContent = `${tries}`;
     $triesIndicators[tries - 1].setAttribute("data-completed", "");
 
-    if (difficulty === DIFFICULTY.EASY) {
-      const difficultyIdx = tries - 1;
-      const color = `var(--difficulty-${DIFFICULTIES[difficultyIdx]})`;
-      $mistakenLetter.classList.add(CLASSES.MISTAKES.LETTER);
-      $mistakenLetter.style.setProperty(
-        CSS_VARIABLES.MISTAKEN_LETTER.TEXT,
-        color,
-      );
-      $currentLetter.classList.add(CLASSES.TYPING.LETTER.MISTAKEN);
-      $currentLetter.style.setProperty(
-        CSS_VARIABLES.LETTER_BORDER.MISTAKEN,
-        color,
-      );
-    }
+    if (difficulty === DIFFICULTY.EASY)
+      applyEasyDifficulty({
+        $mistakenLetter,
+        $currentLetter,
+        currentTries: tries,
+      });
+
     $mistakenLetter.textContent = enteredLetter;
     if (tries >= 2) $mistakenLetters.append(", ");
     $mistakenLetters.appendChild($mistakenLetter);
