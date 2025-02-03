@@ -7,14 +7,7 @@ import { resetGame } from "./reset-game";
 import { applyEasyDifficulty } from "@/utils/difficulty/easy";
 import { $mistakenLetters, $tries, $triesIndicators } from "@/ui/info";
 import { $reset } from "@/ui/actions";
-import {
-  CLASSES,
-  DIFFICULTY,
-  FIRST_TRY,
-  GAME_STATE,
-  MAX_TRIES,
-  NO_TRIES,
-} from "@/consts";
+import { CLASSES, DIFFICULTY, GAME_STATE, TRIES } from "@/consts";
 
 /** @param {HTMLInputElement} $currentField */
 export function handleLetterInput($currentField) {
@@ -30,11 +23,11 @@ export function handleLetterInput($currentField) {
   if (!matches) {
     increaseTries();
 
-    if (tries === MAX_TRIES) return resetGame();
+    if (tries === TRIES.MAX) return resetGame();
 
     const $mistakenLetter = document.createElement("span");
 
-    if (tries === FIRST_TRY) $mistakenLetters.textContent = "";
+    if (tries === TRIES.FIRST) $mistakenLetters.textContent = "";
 
     $tries.textContent = `${tries}`;
     $triesIndicators[tries - 1].setAttribute("data-completed", "");
@@ -66,7 +59,7 @@ export function handleLetterInput($currentField) {
     $nextLetter.classList.add(CLASSES.TYPING.LETTER.CURRENT);
     $nextField.disabled = false;
     $nextField.focus();
-  } else if (tries === NO_TRIES) {
+  } else if (tries === TRIES.NONE) {
     showAlert({ color: "success", text: "🎉 Success!" });
     $reset.disabled = true;
   }
