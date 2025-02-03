@@ -1,13 +1,20 @@
 import { showAlert } from "@lib/alert";
 import { currentWord } from "@/state/current-word";
-import { hasReachedMaxTries, increaseTries, tries } from "@/state/tries";
+import { increaseTries, tries } from "@/state/tries";
 import { difficulty } from "@/state/difficulty";
 import { gameSate, setGameState } from "@/state/game-state";
 import { resetGame } from "./reset-game";
 import { applyEasyDifficulty } from "@/utils/difficulty/easy";
 import { $mistakenLetters, $tries, $triesIndicators } from "@/ui/info";
 import { $reset } from "@/ui/actions";
-import { CLASSES, DIFFICULTY, GAME_STATE } from "@/consts";
+import {
+  CLASSES,
+  DIFFICULTY,
+  FIRST_TRY,
+  GAME_STATE,
+  MAX_TRIES,
+  NO_TRIES,
+} from "@/consts";
 
 /** @param {HTMLInputElement} $currentField */
 export function handleLetterInput($currentField) {
@@ -23,11 +30,11 @@ export function handleLetterInput($currentField) {
   if (!matches) {
     increaseTries();
 
-    if (hasReachedMaxTries()) return resetGame();
+    if (tries === MAX_TRIES) return resetGame();
 
     const $mistakenLetter = document.createElement("span");
 
-    if (tries === 1) $mistakenLetters.textContent = "";
+    if (tries === FIRST_TRY) $mistakenLetters.textContent = "";
 
     $tries.textContent = `${tries}`;
     $triesIndicators[tries - 1].setAttribute("data-completed", "");
@@ -59,7 +66,7 @@ export function handleLetterInput($currentField) {
     $nextLetter.classList.add(CLASSES.TYPING.LETTER.CURRENT);
     $nextField.disabled = false;
     $nextField.focus();
-  } else if (tries === 0) {
+  } else if (tries === NO_TRIES) {
     showAlert({ color: "success", text: "🎉 Success!" });
     $reset.disabled = true;
   }

@@ -56,3 +56,5 @@ export const GAME_STATE = Object.freeze({
 /** @typedef {GAME_STATE[keyof GAME_STATE]} GameState */
 
 export const MAX_TRIES = 6;
+export const FIRST_TRY = 1;
+export const NO_TRIES = 0;
