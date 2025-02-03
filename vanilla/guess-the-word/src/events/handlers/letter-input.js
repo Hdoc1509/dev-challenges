@@ -25,7 +25,7 @@ export function handleLetterInput($currentField) {
 
     if (tries === TRIES.MAX) return resetGame();
 
-    const $mistakenLetter = document.createElement("span");
+    const $newMistakenLetter = document.createElement("span");
 
     if (tries === TRIES.FIRST) $mistakenLetters.textContent = "";
 
@@ -34,14 +34,14 @@ export function handleLetterInput($currentField) {
 
     if (difficulty === DIFFICULTY.EASY)
       applyEasyDifficulty({
-        $mistakenLetter,
+        $mistakenLetter: $newMistakenLetter,
         $currentLetter,
         currentTries: tries,
       });
 
-    $mistakenLetter.textContent = enteredLetter;
+    $newMistakenLetter.textContent = enteredLetter;
     if (tries > TRIES.FIRST) $mistakenLetters.append(", ");
-    $mistakenLetters.appendChild($mistakenLetter);
+    $mistakenLetters.appendChild($newMistakenLetter);
   }
 
   const $nextLetter = $currentLetter.nextElementSibling;
