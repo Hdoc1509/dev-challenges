@@ -27,7 +27,7 @@ const generateTriesIndicators = () => {
 generateTriesIndicators();
 
 export const $triesIndicators = getAllElementsBySelector(
-  ".tries__indicator > .stepper__step",
+  `.${CLASSES.TRIES.INDICATOR} > .${CLASSES.TRIES.STEP}`,
   HTMLSpanElement,
 );
 
