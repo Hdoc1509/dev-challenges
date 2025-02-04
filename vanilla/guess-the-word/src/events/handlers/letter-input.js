@@ -5,7 +5,7 @@ import { difficulty } from "@/state/difficulty";
 import { gameSate, setGameState } from "@/state/game-state";
 import { resetGame } from "./reset-game";
 import { applyEasyDifficulty } from "@/utils/difficulty/easy";
-import { $mistakenLetters, $tries, $triesIndicators } from "@/ui/info";
+import { $mistakenLetters, $currentTries, $triesIndicators } from "@/ui/info";
 import { $reset } from "@/ui/actions";
 import { CLASSES, DIFFICULTY, GAME_STATE, TRIES } from "@/consts";
 
@@ -35,7 +35,7 @@ export function handleLetterInput($currentField) {
 
     if (tries === TRIES.FIRST) $mistakenLetters.textContent = "";
 
-    $tries.textContent = `${tries}`;
+    $currentTries.textContent = `${tries}`;
     $triesIndicators[tries - 1].setAttribute("data-completed", "");
 
     if (difficulty === DIFFICULTY.EASY)

@@ -5,7 +5,7 @@ import {
   setNextDifficulty,
 } from "@/state/difficulty";
 import { setGameState } from "@/state/game-state";
-import { $mistakenLetters, $tries, $triesIndicators } from "@/ui/info";
+import { $mistakenLetters, $currentTries, $triesIndicators } from "@/ui/info";
 import { $letterFields, $typing } from "@/ui/typing";
 import { $reset } from "@/ui/actions";
 import { CLASSES, CSS_VARIABLES, GAME_STATE } from "@/consts";
@@ -27,7 +27,7 @@ export function resetGame() {
     setDifficulty(nextDifficulty);
     setNextDifficulty(null);
   }
-  $tries.textContent = "0";
+  $currentTries.textContent = "0";
   $triesIndicators.forEach(($item) => $item.removeAttribute("data-completed"));
   $mistakenLetters.textContent = "-";
   $currentLetter?.classList.remove(CLASSES.TYPING.LETTER.CURRENT);

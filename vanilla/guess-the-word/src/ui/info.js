@@ -6,7 +6,7 @@ import {
   getElementBySelector,
 } from "@lib/dom";
 
-export const $tries = getElementById("current-tries", HTMLSpanElement);
+export const $currentTries = getElementById("current-tries", HTMLSpanElement);
 const $triesIndicator = getElementBySelector(
   `.${CLASSES.TRIES.INDICATOR}.stepper`,
   HTMLDivElement,
