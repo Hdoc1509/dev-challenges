@@ -1,6 +1,8 @@
 .game-card .info {
   display: flex;
   justify-content: space-between;
+  align-items: start;
+  gap: 6px;
 
   font-size: var(--info-fs);
   font-weight: 600;
@@ -8,13 +10,24 @@
 
 .game-card .info .tries {
   display: flex;
-  gap: 1em;
+  gap: 1ch;
+  flex-wrap: wrap;
 }
 .game-card .info .tries__indicator {
   --step-color: var(--word-bg);
   --step-color-completed: var(--primary);
 }
 
+.mistakes {
+  display: flex;
+  column-gap: 6px;
+}
+@media (max-width: 640px) {
+  .mistakes {
+    flex-wrap: wrap;
+    flex-basis: min-content;
+  }
+}
 .mistakes__letter {
   color: var(--mistaken-letter-text);
 }
