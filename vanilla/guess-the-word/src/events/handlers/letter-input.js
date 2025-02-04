@@ -16,6 +16,12 @@ export function handleLetterInput($currentField) {
   );
   const letterIndex = Number($currentLetter.dataset.letterIndex);
   const enteredLetter = $currentField.value;
+
+  if (enteredLetter === " ") {
+    $currentField.value = "";
+    return;
+  }
+
   const matches = new RegExp(currentWord[letterIndex], "i").test(enteredLetter);
 
   if (gameSate !== GAME_STATE.PLAYING) setGameState(GAME_STATE.PLAYING);
