@@ -18,6 +18,10 @@ export const CLASSES = Object.freeze({
   MISTAKES: Object.freeze({
     LETTER: "mistakes__letter",
   }),
+  TRIES: Object.freeze({
+    INDICATOR: "tries__indicator",
+    STEP: "stepper__step",
+  }),
 });
 
 export const CSS_VARIABLES = Object.freeze({
