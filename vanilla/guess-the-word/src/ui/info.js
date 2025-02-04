@@ -7,6 +7,10 @@ import {
 } from "@lib/dom";
 
 export const $currentTries = getElementById("current-tries", HTMLSpanElement);
+export const $maxTries = getElementById("max-tries", HTMLSpanElement);
+
+$maxTries.textContent = `${maxTries}`;
+
 const $triesIndicator = getElementBySelector(
   `.${CLASSES.TRIES.INDICATOR}.stepper`,
   HTMLDivElement,
