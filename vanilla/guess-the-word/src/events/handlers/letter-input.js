@@ -1,6 +1,6 @@
 import { showAlert } from "@lib/alert";
 import { currentWord } from "@/state/current-word";
-import { increaseTries, tries } from "@/state/tries";
+import { increaseTries, maxTries, tries } from "@/state/tries";
 import { difficulty } from "@/state/difficulty";
 import { gameSate, setGameState } from "@/state/game-state";
 import { resetGame } from "./reset-game";
@@ -29,7 +29,7 @@ export function handleLetterInput($currentField) {
   if (!matches) {
     increaseTries();
 
-    if (tries === TRIES.MAX) return resetGame();
+    if (tries === maxTries) return resetGame();
 
     const $newMistakenLetter = document.createElement("span");
 
