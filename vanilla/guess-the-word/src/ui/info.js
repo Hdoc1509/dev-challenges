@@ -1,4 +1,5 @@
-import { CLASSES, TRIES } from "@/consts";
+import { CLASSES } from "@/consts";
+import { maxTries } from "@/state/tries";
 import {
   getAllElementsBySelector,
   getElementById,
@@ -14,7 +15,7 @@ const $triesIndicator = getElementBySelector(
 const generateTriesIndicators = () => {
   const $fragment = document.createDocumentFragment();
 
-  for (let i = 0; i < TRIES.MAX; i++) {
+  for (let i = 0; i < maxTries - 1; i++) {
     const $item = document.createElement("span");
 
     $item.classList.add(CLASSES.TRIES.STEP);
