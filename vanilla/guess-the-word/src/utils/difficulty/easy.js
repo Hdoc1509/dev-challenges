@@ -14,7 +14,6 @@ export function applyEasyDifficulty({
   const difficultyIdx = currentTries - 1;
   const color = `var(--difficulty-${DIFFICULTIES[difficultyIdx]})`;
 
-  $mistakenLetter.classList.add(CLASSES.MISTAKES.LETTER);
   $mistakenLetter.style.setProperty(CSS_VARIABLES.MISTAKEN_LETTER.TEXT, color);
 
   $currentLetter.classList.add(CLASSES.TYPING.LETTER.MISTAKEN);

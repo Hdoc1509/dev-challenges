@@ -39,6 +39,7 @@ export function handleLetterInput($currentField) {
         currentTries: tries,
       });
 
+    $newMistakenLetter.classList.add(CLASSES.MISTAKES.LETTER);
     $newMistakenLetter.textContent = enteredLetter;
     if (tries > TRIES.FIRST) $mistakenLetters.append(",");
     $mistakenLetters.appendChild($newMistakenLetter);
