@@ -16,13 +16,14 @@ const $triesIndicator = getElementBySelector(
   HTMLDivElement,
 );
 
-const generateTriesIndicators = () => {
+/** @param {number} quantity */
+const generateTriesIndicators = (quantity) => {
   while ($triesIndicator.firstChild)
     $triesIndicator.removeChild($triesIndicator.firstChild);
 
   const $fragment = document.createDocumentFragment();
 
-  for (let i = 0; i < maxTries - 1; i++) {
+  for (let i = 0; i < quantity - 1; i++) {
     const $item = document.createElement("span");
 
     $item.classList.add(CLASSES.TRIES.STEP);
@@ -32,7 +33,7 @@ const generateTriesIndicators = () => {
   $triesIndicator.appendChild($fragment);
 };
 
-generateTriesIndicators();
+generateTriesIndicators(maxTries);
 
 // TODO: $triesIndicators should be retrieved dynamically
 export const $triesIndicators = getAllElementsBySelector(
