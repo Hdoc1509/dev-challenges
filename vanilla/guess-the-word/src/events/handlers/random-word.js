@@ -8,9 +8,10 @@ import {
 import { setGameState } from "@/state/game-state";
 import { createLetterFields } from "@/utils/letter-fields";
 import { scrambleWord } from "@/utils/scramble";
+import { applyHardDifficulty } from "@/utils/difficulty/hard";
 import { $word } from "@/ui/word";
 import { captureLetterFields, setLetterFields, $typing } from "@/ui/typing";
-import { DEFAULT_WORDS, GAME_STATE } from "@/consts";
+import { DEFAULT_WORDS, DIFFICULTY, GAME_STATE } from "@/consts";
 
 export function generateRandomWord() {
   const randomWord =
@@ -32,7 +33,10 @@ export function generateRandomWord() {
   createLetterFields(currentWord.length);
   setLetterFields(captureLetterFields());
   resetAlert();
+  // TODO: move logic to separate function
+  // it should be called in reset-game.js too
   if (nextDifficulty != null) {
+    if (nextDifficulty === DIFFICULTY.HARD) applyHardDifficulty();
     setDifficulty(nextDifficulty);
     setNextDifficulty(null);
   }
