@@ -1,5 +1,5 @@
 ---
-to: apps/<%= name %>/src/componets/Content.scss
+to: apps/<%= name %>/src/components/Content.scss
 ---
 
 main {
