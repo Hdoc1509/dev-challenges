@@ -17,6 +17,9 @@ const $triesIndicator = getElementBySelector(
 );
 
 const generateTriesIndicators = () => {
+  while ($triesIndicator.firstChild)
+    $triesIndicator.removeChild($triesIndicator.firstChild);
+
   const $fragment = document.createDocumentFragment();
 
   for (let i = 0; i < maxTries - 1; i++) {
@@ -31,6 +34,7 @@ const generateTriesIndicators = () => {
 
 generateTriesIndicators();
 
+// TODO: $triesIndicators should be retrieved dynamically
 export const $triesIndicators = getAllElementsBySelector(
   `.${CLASSES.TRIES.INDICATOR} > .${CLASSES.TRIES.STEP}`,
   HTMLSpanElement,
