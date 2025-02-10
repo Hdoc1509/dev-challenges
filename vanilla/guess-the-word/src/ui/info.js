@@ -17,7 +17,7 @@ const $triesIndicator = getElementBySelector(
 );
 
 /** @param {number} quantity */
-const generateTriesIndicators = (quantity) => {
+export const generateTriesIndicators = (quantity) => {
   while ($triesIndicator.firstChild)
     $triesIndicator.removeChild($triesIndicator.firstChild);
 
@@ -35,11 +35,17 @@ const generateTriesIndicators = (quantity) => {
 
 generateTriesIndicators(maxTries);
 
-// TODO: $triesIndicators should be retrieved dynamically
-export const $triesIndicators = getAllElementsBySelector(
-  `.${CLASSES.TRIES.INDICATOR} > .${CLASSES.TRIES.STEP}`,
-  HTMLSpanElement,
-);
+export const captureTriesIndicators = () =>
+  getAllElementsBySelector(
+    `.${CLASSES.TRIES.INDICATOR} > .${CLASSES.TRIES.STEP}`,
+    HTMLSpanElement,
+  );
+
+export let $triesIndicators = captureTriesIndicators();
+
+/** @param {HTMLSpanElement[]} $newTriesIndicators */
+export const setTriesIndicators = ($newTriesIndicators) =>
+  ($triesIndicators = $newTriesIndicators);
 
 export const $mistakenLetters = getElementById(
   "mistaken-letters",
