@@ -34,7 +34,7 @@ export function generateRandomWord() {
   setLetterFields(captureLetterFields());
   resetAlert();
   // TODO: move logic to separate function
-  // it should be called in reset-game.js too
+  // it should be called in reset-game.js and difficulty-change too
   if (nextDifficulty != null) {
     if (nextDifficulty === DIFFICULTY.HARD) applyHardDifficulty();
     setDifficulty(nextDifficulty);

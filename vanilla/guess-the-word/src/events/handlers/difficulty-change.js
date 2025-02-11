@@ -1,7 +1,9 @@
 import { setDifficulty, setNextDifficulty } from "@/state/difficulty";
 import { gameSate } from "@/state/game-state";
+import { maxTries } from "@/state/tries";
 import { applyHardDifficulty } from "@/utils/difficulty/hard";
-import { DIFFICULTY, GAME_STATE } from "@/consts";
+import { applyNormalDifficulty } from "@/utils/difficulty/normal";
+import { DIFFICULTY, GAME_STATE, TRIES } from "@/consts";
 
 /** @param {import("@/consts").Difficulty} difficulty */
 export function handleDifficultyChange(difficulty) {
@@ -9,12 +11,12 @@ export function handleDifficultyChange(difficulty) {
     setDifficulty(difficulty);
     setNextDifficulty(null);
 
-    // TODO: if difficulty is easy or normal
-    // - set maxTries to TRIES.MAX
-    // - update $maxTries to TRIES.MAX)
-    // - generate tries indicators
-    // - update $triesIndicators
-    if (difficulty === DIFFICULTY.HARD) return applyHardDifficulty();
+    if (
+      (difficulty === DIFFICULTY.EASY || difficulty === DIFFICULTY.NORMAL) &&
+      maxTries !== TRIES.MAX
+    )
+      applyNormalDifficulty();
+    else if (difficulty === DIFFICULTY.HARD) applyHardDifficulty();
   } else if (gameSate === GAME_STATE.PLAYING) {
     setNextDifficulty(difficulty);
   } else {

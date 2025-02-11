@@ -25,7 +25,7 @@ export function resetGame() {
   setGameState(GAME_STATE.READY);
 
   // TODO: move logic to separate function
-  // it should be called in random-word.js too
+  // it should be called in random-word.js and difficulty-change too
   if (nextDifficulty != null) {
     if (nextDifficulty === DIFFICULTY.HARD) applyHardDifficulty();
     setDifficulty(nextDifficulty);
