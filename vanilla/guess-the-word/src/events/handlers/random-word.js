@@ -1,17 +1,13 @@
 import { resetAlert } from "@lib/alert";
 import { currentWord, setCurrentWord } from "@/state/current-word";
-import {
-  nextDifficulty,
-  setDifficulty,
-  setNextDifficulty,
-} from "@/state/difficulty";
+import { nextDifficulty } from "@/state/difficulty";
 import { setGameState } from "@/state/game-state";
+import { handleGameReady } from "./game-ready";
 import { createLetterFields } from "@/utils/letter-fields";
 import { scrambleWord } from "@/utils/scramble";
-import { applyHardDifficulty } from "@/utils/difficulty/hard";
 import { $word } from "@/ui/word";
 import { captureLetterFields, setLetterFields, $typing } from "@/ui/typing";
-import { DEFAULT_WORDS, DIFFICULTY, GAME_STATE } from "@/consts";
+import { DEFAULT_WORDS, GAME_STATE } from "@/consts";
 
 export function generateRandomWord() {
   const randomWord =
@@ -33,12 +29,10 @@ export function generateRandomWord() {
   createLetterFields(currentWord.length);
   setLetterFields(captureLetterFields());
   resetAlert();
-  // TODO: move logic to separate function
-  // it should be called in reset-game.js and difficulty-change too
-  if (nextDifficulty != null) {
-    if (nextDifficulty === DIFFICULTY.HARD) applyHardDifficulty();
-    setDifficulty(nextDifficulty);
-    setNextDifficulty(null);
-  }
+  // FIX:
+  // - reset tries
+  // - reset tries indicators
+
   setGameState(GAME_STATE.READY);
+  if (nextDifficulty != null) handleGameReady({ difficulty: nextDifficulty });
 }

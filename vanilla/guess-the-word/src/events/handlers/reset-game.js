@@ -1,15 +1,11 @@
 import { resetTries } from "@/state/tries";
-import {
-  nextDifficulty,
-  setDifficulty,
-  setNextDifficulty,
-} from "@/state/difficulty";
+import { nextDifficulty } from "@/state/difficulty";
 import { setGameState } from "@/state/game-state";
-import { applyHardDifficulty } from "@/utils/difficulty/hard";
+import { handleGameReady } from "./game-ready";
 import { $mistakenLetters, $currentTries, $triesIndicators } from "@/ui/info";
 import { $letterFields, $typing } from "@/ui/typing";
 import { $reset } from "@/ui/actions";
-import { CLASSES, CSS_VARIABLES, DIFFICULTY, GAME_STATE } from "@/consts";
+import { CLASSES, CSS_VARIABLES, GAME_STATE } from "@/consts";
 
 export function resetGame() {
   const $firstField = $letterFields[0];
@@ -24,13 +20,8 @@ export function resetGame() {
   resetTries();
   setGameState(GAME_STATE.READY);
 
-  // TODO: move logic to separate function
-  // it should be called in random-word.js and difficulty-change too
-  if (nextDifficulty != null) {
-    if (nextDifficulty === DIFFICULTY.HARD) applyHardDifficulty();
-    setDifficulty(nextDifficulty);
-    setNextDifficulty(null);
-  }
+  if (nextDifficulty != null) handleGameReady({ difficulty: nextDifficulty });
+
   $currentTries.textContent = "0";
   $triesIndicators.forEach(($item) => $item.removeAttribute("data-completed"));
   $mistakenLetters.textContent = "-";
