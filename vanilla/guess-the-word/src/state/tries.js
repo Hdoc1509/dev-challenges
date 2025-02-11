@@ -2,10 +2,10 @@ import { getSelectedDifficulty } from "@/ui/difficulty-form";
 import { DIFFICULTY, TRIES } from "@/consts";
 import { IS_DEV } from "@/config";
 
-export let tries = 0;
+export let tries = TRIES.NONE;
 
 export const resetTries = () => {
-  tries = 0;
+  tries = TRIES.NONE;
   if (IS_DEV) console.log({ tries });
 };
 
