@@ -5,6 +5,7 @@ import { IS_DEV } from "@/config";
 export let tries = TRIES.NONE;
 
 export const resetTries = () => {
+  if (tries === TRIES.NONE) return;
   tries = TRIES.NONE;
   if (IS_DEV) console.log({ tries });
 };
