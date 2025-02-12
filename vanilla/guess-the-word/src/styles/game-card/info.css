@@ -1,36 +1,35 @@
 .game-card .info {
-  display: flex;
-  justify-content: space-between;
-  align-items: start;
-  gap: 6px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.75rem;
 
   font-size: var(--info-fs);
   font-weight: 600;
 }
 
-.game-card .info .tries {
+.game-card .info .tries,
+.game-card .info .resets {
   display: flex;
-  gap: 1ch;
+  column-gap: 1ch;
+  row-gap: 0.25rem;
   flex-wrap: wrap;
 }
-.game-card .info .tries__indicator {
+.game-card .info .tries__indicator,
+.game-card .info .resets__indicator {
   --step-color: var(--word-bg);
   --step-color-completed: var(--primary);
 }
 
-.mistakes {
-  display: flex;
-  column-gap: 6px;
-}
-@media (max-width: 640px) {
-  .mistakes {
-    flex-wrap: wrap;
-    flex-basis: min-content;
-  }
-}
 .mistakes__letter {
   color: var(--mistaken-letter-text);
 }
 .mistakes__letter + .mistakes__letter {
   margin-left: 0.5ch;
+}
+
+.game-card .info .resets {
+  display: none;
+}
+.game-card .info .resets[data-active] {
+  display: flex;
 }
