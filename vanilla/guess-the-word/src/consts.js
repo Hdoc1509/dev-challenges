@@ -22,6 +22,10 @@ export const CLASSES = Object.freeze({
     INDICATOR: "tries__indicator",
     STEP: "stepper__step",
   }),
+  RESETS: Object.freeze({
+    INDICATOR: "resets__indicator",
+    STEP: "stepper__step",
+  }),
 });
 
 export const CSS_VARIABLES = Object.freeze({

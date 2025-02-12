@@ -16,6 +16,7 @@ const $triesIndicator = getElementBySelector(
   HTMLDivElement,
 );
 
+// TODO: add custom library for this logic, like used for tabs.js
 /** @param {number} quantity */
 export const generateTriesIndicators = (quantity) => {
   while ($triesIndicator.firstChild)
@@ -51,3 +52,41 @@ export const $mistakenLetters = getElementById(
   "mistaken-letters",
   HTMLSpanElement,
 );
+
+export const $resetsContainer = getElementBySelector(
+  ".game-card .info .resets",
+  HTMLElement,
+);
+
+const $resetsIndicatorsContainer = getElementBySelector(
+  `.${CLASSES.RESETS.INDICATOR}`,
+  HTMLDivElement,
+);
+
+/** @param {number} quantity */
+export const generateResetsIndicators = (quantity) => {
+  while ($resetsIndicatorsContainer.firstChild)
+    $resetsIndicatorsContainer.removeChild(
+      $resetsIndicatorsContainer.firstChild,
+    );
+
+  for (let i = 0; i < quantity; i++) {
+    const $item = document.createElement("span");
+
+    $item.classList.add(CLASSES.RESETS.STEP);
+    $resetsIndicatorsContainer.appendChild($item);
+  }
+};
+
+export const captureResetsIndicators = () =>
+  getAllElementsBySelector(
+    `.${CLASSES.RESETS.INDICATOR} > .${CLASSES.RESETS.STEP}`,
+    HTMLSpanElement,
+  );
+
+/** @type {HTMLSpanElement[]} */
+export let $resetsIndicators = [];
+
+/** @param {HTMLSpanElement[]} $newResetsIndicators */
+export const setResetsIndicators = ($newResetsIndicators) =>
+  ($resetsIndicators = $newResetsIndicators);
