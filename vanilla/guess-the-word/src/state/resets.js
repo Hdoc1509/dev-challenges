@@ -7,12 +7,12 @@ export let gameResets = RESETS.NONE;
 
 export const resetGameResets = () => {
   gameResets = RESETS.NONE;
-  if (IS_DEV) console.log({ resets: gameResets });
+  if (IS_DEV) console.log({ gameResets });
 };
 
 export const increaseGameResets = () => {
   gameResets++;
-  if (IS_DEV) console.log({ resets: gameResets });
+  if (IS_DEV) console.log({ gameResets });
 };
 
 export let maxResets = (() => {
