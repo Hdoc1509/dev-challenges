@@ -1,11 +1,14 @@
 import { showAlert } from "@lib/alert";
 import { currentWord } from "@/state/current-word";
+import { difficulty } from "@/state/difficulty";
 import { increaseTries, maxTries, tries } from "@/state/tries";
+import { maxResets, gameResets } from "@/state/resets";
 import { gameState, setGameState } from "@/state/game-state";
 import { handleLetterMistake } from "./letter-mistake";
 import { resetGame } from "./reset-game";
+import { handleGameOver } from "./game-over";
 import { $reset } from "@/ui/actions";
-import { CLASSES, GAME_STATE, TRIES } from "@/consts";
+import { CLASSES, DIFFICULTY, GAME_STATE, TRIES } from "@/consts";
 
 /** @param {HTMLInputElement} $currentField */
 export function handleLetterInput($currentField) {
@@ -27,7 +30,12 @@ export function handleLetterInput($currentField) {
   if (!matches) {
     increaseTries();
 
-    if (tries === maxTries) return resetGame();
+    if (tries === maxTries) {
+      if (difficulty === DIFFICULTY.MASTER && gameResets === maxResets)
+        return handleGameOver({ $currentField, $currentLetter });
+
+      return resetGame();
+    }
 
     handleLetterMistake({ $currentLetter, enteredLetter });
   }
