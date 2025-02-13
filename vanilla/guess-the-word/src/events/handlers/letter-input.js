@@ -1,13 +1,11 @@
 import { showAlert } from "@lib/alert";
 import { currentWord } from "@/state/current-word";
 import { increaseTries, maxTries, tries } from "@/state/tries";
-import { difficulty } from "@/state/difficulty";
 import { gameState, setGameState } from "@/state/game-state";
+import { handleLetterMistake } from "./letter-mistake";
 import { resetGame } from "./reset-game";
-import { applyEasyDifficulty } from "@/utils/difficulty/easy";
-import { $mistakenLetters, $currentTries, $triesIndicators } from "@/ui/info";
 import { $reset } from "@/ui/actions";
-import { CLASSES, DIFFICULTY, GAME_STATE, TRIES } from "@/consts";
+import { CLASSES, GAME_STATE, TRIES } from "@/consts";
 
 /** @param {HTMLInputElement} $currentField */
 export function handleLetterInput($currentField) {
@@ -31,24 +29,7 @@ export function handleLetterInput($currentField) {
 
     if (tries === maxTries) return resetGame();
 
-    const $newMistakenLetter = document.createElement("span");
-
-    if (tries === TRIES.FIRST) $mistakenLetters.textContent = "";
-
-    $currentTries.textContent = `${tries}`;
-    $triesIndicators[tries - 1].setAttribute("data-completed", "");
-
-    if (difficulty === DIFFICULTY.EASY)
-      applyEasyDifficulty({
-        $mistakenLetter: $newMistakenLetter,
-        $currentLetter,
-        currentTries: tries,
-      });
-
-    $newMistakenLetter.classList.add(CLASSES.MISTAKES.LETTER);
-    $newMistakenLetter.textContent = enteredLetter;
-    if (tries > TRIES.FIRST) $mistakenLetters.append(",");
-    $mistakenLetters.appendChild($newMistakenLetter);
+    handleLetterMistake({ $currentLetter, enteredLetter });
   }
 
   const $nextLetter = $currentLetter.nextElementSibling;
