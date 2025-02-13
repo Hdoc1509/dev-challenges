@@ -18,10 +18,11 @@ export const CLASSES = Object.freeze({
   }),
   TRIES: Object.freeze({
     INDICATOR: "tries__indicator",
-    STEP: "stepper__step",
   }),
   RESETS: Object.freeze({
     INDICATOR: "resets__indicator",
+  }),
+  STEPPER: Object.freeze({
     STEP: "stepper__step",
   }),
 });

@@ -27,7 +27,7 @@ export const generateTriesIndicators = (quantity) => {
   for (let i = 0; i < quantity - 1; i++) {
     const $item = document.createElement("span");
 
-    $item.classList.add(CLASSES.TRIES.STEP);
+    $item.classList.add(CLASSES.STEPPER.STEP);
     $fragment.appendChild($item);
   }
 
@@ -38,7 +38,7 @@ generateTriesIndicators(maxTries);
 
 export const captureTriesIndicators = () =>
   getAllElementsBySelector(
-    `.${CLASSES.TRIES.INDICATOR} > .${CLASSES.TRIES.STEP}`,
+    `.${CLASSES.TRIES.INDICATOR} > .${CLASSES.STEPPER.STEP}`,
     HTMLSpanElement,
   );
 
@@ -73,14 +73,14 @@ export const generateResetsIndicators = (quantity) => {
   for (let i = 0; i < quantity; i++) {
     const $item = document.createElement("span");
 
-    $item.classList.add(CLASSES.RESETS.STEP);
+    $item.classList.add(CLASSES.STEPPER.STEP);
     $resetsIndicatorsContainer.appendChild($item);
   }
 };
 
 export const captureResetsIndicators = () =>
   getAllElementsBySelector(
-    `.${CLASSES.RESETS.INDICATOR} > .${CLASSES.RESETS.STEP}`,
+    `.${CLASSES.RESETS.INDICATOR} > .${CLASSES.STEPPER.STEP}`,
     HTMLSpanElement,
   );
 
