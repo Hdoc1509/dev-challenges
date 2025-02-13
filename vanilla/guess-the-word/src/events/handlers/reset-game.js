@@ -1,11 +1,12 @@
 import { resetTries } from "@/state/tries";
-import { nextDifficulty } from "@/state/difficulty";
+import { difficulty, nextDifficulty } from "@/state/difficulty";
 import { setGameState } from "@/state/game-state";
+import { increaseResets } from "@/state/resets";
 import { handleGameReady } from "./game-ready";
 import { $mistakenLetters, $currentTries, $triesIndicators } from "@/ui/info";
 import { $letterFields, $typing } from "@/ui/typing";
 import { $reset } from "@/ui/actions";
-import { CLASSES, CSS_VARIABLES, GAME_STATE } from "@/consts";
+import { CLASSES, CSS_VARIABLES, DIFFICULTY, GAME_STATE } from "@/consts";
 
 export function resetGame() {
   const $firstField = $letterFields[0];
@@ -18,6 +19,7 @@ export function resetGame() {
   );
 
   resetTries();
+  if (difficulty === DIFFICULTY.MASTER) increaseResets();
   setGameState(GAME_STATE.READY);
 
   if (nextDifficulty != null) handleGameReady({ difficulty: nextDifficulty });
