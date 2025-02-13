@@ -56,7 +56,8 @@ export const resetAlert = () => {
 
 type ShowOptions = { color: "success" | "error"; text: string };
 export const showAlert = ({ color, text }: ShowOptions) => {
-  $alert.classList.add(`alert--${color}`, "alert--open");
+  $alert.classList.add("alert--open");
+  $alert.setAttribute("data-color", color);
   $alertText.textContent = text;
   $alertTimebar.addEventListener("animationend", () => closeAlert(), {
     once: true,

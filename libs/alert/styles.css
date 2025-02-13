@@ -1,12 +1,14 @@
 .alert {
   --_movement-duration: 0.4s;
+  --_bg: var(--alert-bg);
+  --_time-bar-bg: var(--alert-time-bar-bg);
   position: fixed;
   top: 1rem;
   right: 1rem;
 
   border-radius: 12px;
   padding: 0.75rem 1rem;
-  background-color: var(--alert-bg, #1f3f3f);
+  background-color: var(--_bg);
   color: var(--alert-text, #e5e7eb);
 
   font-weight: 600;
@@ -26,6 +28,10 @@
 .alert--closing {
   visibility: visible;
 }
+.alert[data-color="success"] {
+  --_bg: #1f3f3f;
+  --_time-bar-bg: #77b255;
+}
 
 .alert__time-bar {
   position: absolute;
@@ -34,7 +40,7 @@
 
   height: 4px;
   width: 100%;
-  background: var(--alert-time-bar-bg, #77b255);
+  background: var(--_time-bar-bg);
 
   transform-origin: left center;
 
