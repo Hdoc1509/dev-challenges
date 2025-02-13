@@ -1,7 +1,7 @@
 import { resetTries } from "@/state/tries";
 import { difficulty, nextDifficulty } from "@/state/difficulty";
 import { setGameState } from "@/state/game-state";
-import { increaseResets } from "@/state/resets";
+import { increaseGameResets } from "@/state/resets";
 import { handleGameReady } from "./game-ready";
 import { $mistakenLetters, $currentTries, $triesIndicators } from "@/ui/info";
 import { $letterFields, $typing } from "@/ui/typing";
@@ -19,7 +19,7 @@ export function resetGame() {
   );
 
   resetTries();
-  if (difficulty === DIFFICULTY.MASTER) increaseResets();
+  if (difficulty === DIFFICULTY.MASTER) increaseGameResets();
   setGameState(GAME_STATE.READY);
 
   if (nextDifficulty != null) handleGameReady({ difficulty: nextDifficulty });

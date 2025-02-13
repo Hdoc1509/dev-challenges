@@ -3,16 +3,16 @@ import { IS_DEV } from "@/config";
 import { DIFFICULTY, RESETS } from "@/consts";
 
 /** @type {number} */
-export let resets = RESETS.NONE;
+export let gameResets = RESETS.NONE;
 
-export const resetResets = () => {
-  resets = RESETS.NONE;
-  if (IS_DEV) console.log({ resets });
+export const resetGameResets = () => {
+  gameResets = RESETS.NONE;
+  if (IS_DEV) console.log({ resets: gameResets });
 };
 
-export const increaseResets = () => {
-  resets++;
-  if (IS_DEV) console.log({ resets });
+export const increaseGameResets = () => {
+  gameResets++;
+  if (IS_DEV) console.log({ resets: gameResets });
 };
 
 export let maxResets = (() => {
