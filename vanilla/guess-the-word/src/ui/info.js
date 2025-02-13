@@ -1,10 +1,11 @@
-import { CLASSES } from "@/consts";
-import { maxTries } from "@/state/tries";
 import {
   getAllElementsBySelector,
   getElementById,
   getElementBySelector,
 } from "@lib/dom";
+import { maxResets } from "@/state/resets";
+import { maxTries } from "@/state/tries";
+import { CLASSES } from "@/consts";
 
 export const $currentTries = getElementById("current-tries", HTMLSpanElement);
 export const $maxTries = getElementById("max-tries", HTMLSpanElement);
@@ -52,6 +53,10 @@ export const $mistakenLetters = getElementById(
   "mistaken-letters",
   HTMLSpanElement,
 );
+
+export const $maxResets = getElementById("max-resets", HTMLSpanElement);
+
+$maxResets.textContent = `${maxResets}`;
 
 export const $resetsContainer = getElementBySelector(
   ".game-card .info .resets",
