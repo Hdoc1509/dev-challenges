@@ -23,5 +23,8 @@ export function handleGameReady({ difficulty }) {
   } else if (difficulty === DIFFICULTY.HARD) {
     applyHardDifficulty();
     $resetsContainer.removeAttribute("data-active");
-  } else if (difficulty === DIFFICULTY.MASTER) applyMasterDifficulty();
+  } else if (difficulty === DIFFICULTY.MASTER) {
+    applyHardDifficulty();
+    applyMasterDifficulty();
+  }
 }
