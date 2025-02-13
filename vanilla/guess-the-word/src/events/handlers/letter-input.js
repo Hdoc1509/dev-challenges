@@ -2,7 +2,7 @@ import { showAlert } from "@lib/alert";
 import { currentWord } from "@/state/current-word";
 import { increaseTries, maxTries, tries } from "@/state/tries";
 import { difficulty } from "@/state/difficulty";
-import { gameSate, setGameState } from "@/state/game-state";
+import { gameState, setGameState } from "@/state/game-state";
 import { resetGame } from "./reset-game";
 import { applyEasyDifficulty } from "@/utils/difficulty/easy";
 import { $mistakenLetters, $currentTries, $triesIndicators } from "@/ui/info";
@@ -24,7 +24,7 @@ export function handleLetterInput($currentField) {
 
   const matches = new RegExp(currentWord[letterIndex], "i").test(enteredLetter);
 
-  if (gameSate !== GAME_STATE.PLAYING) setGameState(GAME_STATE.PLAYING);
+  if (gameState !== GAME_STATE.PLAYING) setGameState(GAME_STATE.PLAYING);
 
   if (!matches) {
     increaseTries();
