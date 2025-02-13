@@ -28,7 +28,7 @@ export function resetGame() {
   $currentLetter?.classList.remove(CLASSES.TYPING.LETTER__CURRENT);
   $typingMistakenLetters.forEach(($letter) => {
     $letter.classList.remove(CLASSES.TYPING.LETTER__MISTAKEN);
-    $letter.style.removeProperty(CSS_VARIABLES.LETTER_BORDER.MISTAKEN);
+    $letter.style.removeProperty(CSS_VARIABLES.LETTER_BORDER_MISTAKEN);
   });
   $letterFields.forEach(($field) => {
     $field.readOnly = false;

@@ -27,12 +27,8 @@ export const CLASSES = Object.freeze({
 });
 
 export const CSS_VARIABLES = Object.freeze({
-  MISTAKEN_LETTER: Object.freeze({
-    TEXT: "--mistaken-letter-text",
-  }),
-  LETTER_BORDER: Object.freeze({
-    MISTAKEN: "--letter-border-mistaken",
-  }),
+  MISTAKEN_LETTER_TEXT: "--mistaken-letter-text",
+  LETTER_BORDER_MISTAKEN: "--letter-border-mistaken",
 });
 
 export const DIFFICULTY = Object.freeze({
