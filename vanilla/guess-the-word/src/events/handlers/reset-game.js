@@ -10,11 +10,11 @@ import { CLASSES, CSS_VARIABLES, GAME_STATE } from "@/consts";
 export function resetGame() {
   const $firstField = $letterFields[0];
   const $currentLetter = /** @type {HTMLSpanElement | null} */ (
-    document.querySelector(`.${CLASSES.TYPING.LETTER.CURRENT}`)
+    document.querySelector(`.${CLASSES.TYPING.LETTER__CURRENT}`)
   );
   /** @type {NodeListOf<HTMLSpanElement>} */
   const $typingMistakenLetters = $typing.querySelectorAll(
-    `.${CLASSES.TYPING.LETTER.MISTAKEN}`,
+    `.${CLASSES.TYPING.LETTER__MISTAKEN}`,
   );
 
   resetTries();
@@ -25,9 +25,9 @@ export function resetGame() {
   $currentTries.textContent = "0";
   $triesIndicators.forEach(($item) => $item.removeAttribute("data-completed"));
   $mistakenLetters.textContent = "-";
-  $currentLetter?.classList.remove(CLASSES.TYPING.LETTER.CURRENT);
+  $currentLetter?.classList.remove(CLASSES.TYPING.LETTER__CURRENT);
   $typingMistakenLetters.forEach(($letter) => {
-    $letter.classList.remove(CLASSES.TYPING.LETTER.MISTAKEN);
+    $letter.classList.remove(CLASSES.TYPING.LETTER__MISTAKEN);
     $letter.style.removeProperty(CSS_VARIABLES.LETTER_BORDER.MISTAKEN);
   });
   $letterFields.forEach(($field) => {
@@ -35,7 +35,7 @@ export function resetGame() {
     $field.disabled = true;
     $field.value = "";
   });
-  $firstField.parentElement?.classList.add(CLASSES.TYPING.LETTER.CURRENT);
+  $firstField.parentElement?.classList.add(CLASSES.TYPING.LETTER__CURRENT);
   $firstField.disabled = false;
   $firstField.focus();
   $reset.disabled = true;

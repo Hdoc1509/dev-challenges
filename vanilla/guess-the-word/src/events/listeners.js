@@ -29,7 +29,7 @@ export function setupEventListeners() {
 
     if (
       $target instanceof HTMLInputElement &&
-      $target.matches(`.${CLASSES.TYPING.LETTER.CURRENT} > input`)
+      $target.matches(`.${CLASSES.TYPING.LETTER__CURRENT} > input`)
     )
       handleLetterInput($target);
   });

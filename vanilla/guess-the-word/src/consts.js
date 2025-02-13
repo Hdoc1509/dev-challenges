@@ -10,10 +10,8 @@ export const DEFAULT_WORDS = [
 
 export const CLASSES = Object.freeze({
   TYPING: Object.freeze({
-    LETTER: Object.freeze({
-      CURRENT: "typing__letter--current",
-      MISTAKEN: "typing__letter--mistaken",
-    }),
+    LETTER__CURRENT: "typing__letter--current",
+    LETTER__MISTAKEN: "typing__letter--mistaken",
   }),
   MISTAKES: Object.freeze({
     LETTER: "mistakes__letter",

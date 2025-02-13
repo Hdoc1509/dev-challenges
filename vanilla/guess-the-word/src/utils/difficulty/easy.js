@@ -16,6 +16,6 @@ export function applyEasyDifficulty({
 
   $mistakenLetter.style.setProperty(CSS_VARIABLES.MISTAKEN_LETTER.TEXT, color);
 
-  $currentLetter.classList.add(CLASSES.TYPING.LETTER.MISTAKEN);
+  $currentLetter.classList.add(CLASSES.TYPING.LETTER__MISTAKEN);
   $currentLetter.style.setProperty(CSS_VARIABLES.LETTER_BORDER.MISTAKEN, color);
 }

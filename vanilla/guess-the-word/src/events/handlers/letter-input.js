@@ -56,14 +56,14 @@ export function handleLetterInput($currentField) {
   $reset.disabled = false;
   $currentField.disabled = true;
   $currentField.readOnly = true;
-  $currentLetter.classList.remove(CLASSES.TYPING.LETTER.CURRENT);
+  $currentLetter.classList.remove(CLASSES.TYPING.LETTER__CURRENT);
 
   if ($nextLetter instanceof HTMLSpanElement) {
     const $nextField = /** @type {HTMLInputElement} */ (
       $nextLetter.firstElementChild
     );
 
-    $nextLetter.classList.add(CLASSES.TYPING.LETTER.CURRENT);
+    $nextLetter.classList.add(CLASSES.TYPING.LETTER__CURRENT);
     $nextField.disabled = false;
     $nextField.focus();
   } else if (tries === TRIES.NONE) {
