@@ -2,6 +2,7 @@ import { getSelectedDifficulty } from "@/ui/difficulty-form";
 import { IS_DEV } from "@/config";
 import { DIFFICULTY, RESETS } from "@/consts";
 
+/** @type {number} */
 export let resets = RESETS.NONE;
 
 export const resetResets = () => {
