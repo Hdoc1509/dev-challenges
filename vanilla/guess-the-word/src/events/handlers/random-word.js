@@ -39,6 +39,9 @@ export function generateRandomWord() {
   $triesIndicators.forEach(($item) => $item.removeAttribute("data-completed"));
   $mistakenLetters.textContent = "-";
 
-  if (difficulty === DIFFICULTY.MASTER) applyMasterDifficulty();
+  if (difficulty === DIFFICULTY.MASTER) {
+    applyHardDifficulty();
+    applyMasterDifficulty();
+  }
   if (nextDifficulty != null) handleGameReady({ difficulty: nextDifficulty });
 }
