@@ -32,6 +32,10 @@
   --_bg: #1f3f3f;
   --_time-bar-bg: #77b255;
 }
+.alert[data-color="error"] {
+  --_bg: #642d41;
+  --_time-bar-bg: #b25577;
+}
 
 .alert__time-bar {
   position: absolute;
