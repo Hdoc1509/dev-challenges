@@ -10,6 +10,6 @@ import { RESETS } from "@/consts";
 export function applyMasterDifficulty() {
   setMaxResets(RESETS.MAX.MASTER);
   $resetsContainer.setAttribute("data-active", "");
-  generateResetsIndicators(2);
+  generateResetsIndicators(RESETS.MAX.MASTER);
   setResetsIndicators(captureResetsIndicators());
 }
