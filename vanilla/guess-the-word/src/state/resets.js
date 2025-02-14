@@ -6,6 +6,7 @@ import { DIFFICULTY, RESETS } from "@/consts";
 export let gameResets = RESETS.NONE;
 
 export const resetGameResets = () => {
+  if (gameResets === RESETS.NONE) return;
   gameResets = RESETS.NONE;
   if (IS_DEV) console.log({ gameResets });
 };
