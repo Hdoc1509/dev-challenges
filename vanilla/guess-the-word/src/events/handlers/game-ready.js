@@ -3,7 +3,7 @@ import { maxTries } from "@/state/tries";
 import { applyHardDifficulty } from "@/utils/difficulty/hard";
 import { applyNormalDifficulty } from "@/utils/difficulty/normal";
 import { applyMasterDifficulty } from "@/utils/difficulty/master";
-import { $resetsContainer } from "@/ui/info";
+import { $resetsContainer } from "@/ui/resets";
 import { DIFFICULTY, TRIES } from "@/consts";
 
 /**

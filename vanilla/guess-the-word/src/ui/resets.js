@@ -4,55 +4,7 @@ import {
   getElementBySelector,
 } from "@lib/dom";
 import { maxResets } from "@/state/resets";
-import { maxTries } from "@/state/tries";
 import { CLASSES } from "@/consts";
-
-export const $currentTries = getElementById("current-tries", HTMLSpanElement);
-export const $maxTries = getElementById("max-tries", HTMLSpanElement);
-
-$maxTries.textContent = `${maxTries}`;
-
-const $triesIndicator = getElementBySelector(
-  `.${CLASSES.TRIES.INDICATOR}.stepper`,
-  HTMLDivElement,
-);
-
-// TODO: add custom library for this logic, like used for tabs.js
-/** @param {number} quantity */
-export const generateTriesIndicators = (quantity) => {
-  while ($triesIndicator.firstChild)
-    $triesIndicator.removeChild($triesIndicator.firstChild);
-
-  const $fragment = document.createDocumentFragment();
-
-  for (let i = 0; i < quantity - 1; i++) {
-    const $item = document.createElement("span");
-
-    $item.classList.add(CLASSES.STEPPER.STEP);
-    $fragment.appendChild($item);
-  }
-
-  $triesIndicator.appendChild($fragment);
-};
-
-generateTriesIndicators(maxTries);
-
-export const captureTriesIndicators = () =>
-  getAllElementsBySelector(
-    `.${CLASSES.TRIES.INDICATOR} > .${CLASSES.STEPPER.STEP}`,
-    HTMLSpanElement,
-  );
-
-export let $triesIndicators = captureTriesIndicators();
-
-/** @param {HTMLSpanElement[]} $newTriesIndicators */
-export const setTriesIndicators = ($newTriesIndicators) =>
-  ($triesIndicators = $newTriesIndicators);
-
-export const $mistakenLetters = getElementById(
-  "mistaken-letters",
-  HTMLSpanElement,
-);
 
 export const $currentResets = getElementById("current-resets", HTMLSpanElement);
 export const $maxResets = getElementById("max-resets", HTMLSpanElement);

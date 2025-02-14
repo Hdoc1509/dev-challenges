@@ -1,7 +1,8 @@
 import { tries } from "@/state/tries";
 import { difficulty } from "@/state/difficulty";
 import { applyEasyDifficulty } from "@/utils/difficulty/easy";
-import { $currentTries, $mistakenLetters, $triesIndicators } from "@/ui/info";
+import { $currentTries, $triesIndicators } from "@/ui/tries";
+import { $mistakenLetters } from "@/ui/mistakes";
 import { CLASSES, DIFFICULTY, TRIES } from "@/consts";
 
 /**

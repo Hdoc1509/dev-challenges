@@ -4,7 +4,7 @@ import {
   captureTriesIndicators,
   generateTriesIndicators,
   setTriesIndicators,
-} from "@/ui/info";
+} from "@/ui/tries";
 import { TRIES } from "@/consts";
 
 export function applyHardDifficulty() {

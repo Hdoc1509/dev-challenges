@@ -10,7 +10,8 @@ import { scrambleWord } from "@/utils/scramble";
 import { applyHardDifficulty } from "@/utils/difficulty/hard";
 import { applyMasterDifficulty } from "@/utils/difficulty/master";
 import { $word } from "@/ui/word";
-import { $currentTries, $mistakenLetters, $triesIndicators } from "@/ui/info";
+import { $currentTries, $triesIndicators } from "@/ui/tries";
+import { $mistakenLetters } from "@/ui/mistakes";
 import { captureLetterFields, setLetterFields, $typing } from "@/ui/typing";
 import { DEFAULT_WORDS, DIFFICULTY, GAME_STATE } from "@/consts";
 

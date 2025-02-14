@@ -2,7 +2,7 @@ import { showAlert } from "@lib/alert";
 import { difficulty } from "@/state/difficulty";
 import { tries } from "@/state/tries";
 import { $reset } from "@/ui/actions";
-import { $currentTries } from "@/ui/info";
+import { $currentTries } from "@/ui/tries";
 import { CLASSES, DIFFICULTY } from "@/consts";
 
 /**

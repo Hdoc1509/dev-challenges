@@ -4,7 +4,7 @@ import {
   captureResetsIndicators,
   generateResetsIndicators,
   setResetsIndicators,
-} from "@/ui/info";
+} from "@/ui/resets";
 import { RESETS } from "@/consts";
 
 export function applyMasterDifficulty() {

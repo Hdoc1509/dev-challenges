@@ -3,13 +3,9 @@ import { difficulty, nextDifficulty } from "@/state/difficulty";
 import { setGameState } from "@/state/game-state";
 import { gameResets, increaseGameResets } from "@/state/resets";
 import { handleGameReady } from "./game-ready";
-import {
-  $mistakenLetters,
-  $currentTries,
-  $triesIndicators,
-  $resetsIndicators,
-  $currentResets,
-} from "@/ui/info";
+import { $currentTries, $triesIndicators } from "@/ui/tries";
+import { $mistakenLetters } from "@/ui/mistakes";
+import { $currentResets, $resetsIndicators } from "@/ui/resets";
 import { $letterFields, $typing } from "@/ui/typing";
 import { $reset } from "@/ui/actions";
 import { CLASSES, CSS_VARIABLES, DIFFICULTY, GAME_STATE } from "@/consts";
