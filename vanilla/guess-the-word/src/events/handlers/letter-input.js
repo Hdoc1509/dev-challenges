@@ -45,7 +45,7 @@ export function handleLetterInput($currentField) {
 
   const $nextLetter = $currentLetter.nextElementSibling;
 
-  $reset.disabled = false;
+  if (gameResets < maxResets) $reset.disabled = false;
   $currentField.disabled = true;
   $currentField.readOnly = true;
   $currentLetter.classList.remove(CLASSES.TYPING.LETTER__CURRENT);
