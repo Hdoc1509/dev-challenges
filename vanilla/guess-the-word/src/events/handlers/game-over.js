@@ -1,6 +1,9 @@
 import { showAlert } from "@lib/alert";
+import { difficulty } from "@/state/difficulty";
+import { tries } from "@/state/tries";
 import { $reset } from "@/ui/actions";
-import { CLASSES } from "@/consts";
+import { $currentTries } from "@/ui/info";
+import { CLASSES, DIFFICULTY } from "@/consts";
 
 /**
  * @param {Object} params
@@ -13,4 +16,5 @@ export function handleGameOver({ $currentField, $currentLetter }) {
   $currentField.disabled = true;
   $currentField.readOnly = true;
   $currentLetter.classList.remove(CLASSES.TYPING.LETTER__CURRENT);
+  if (difficulty === DIFFICULTY.MASTER) $currentTries.textContent = `${tries}`;
 }
