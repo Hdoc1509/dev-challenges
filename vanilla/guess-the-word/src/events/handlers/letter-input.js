@@ -31,8 +31,11 @@ export function handleLetterInput($currentField) {
     increaseTries();
 
     if (tries === maxTries) {
-      if (difficulty === DIFFICULTY.MASTER && gameResets === maxResets)
-        return handleGameOver({ $currentField, $currentLetter });
+      if (difficulty === DIFFICULTY.MASTER && gameResets === maxResets) {
+        handleLetterMistake({ $currentLetter, enteredLetter });
+        handleGameOver({ $currentField, $currentLetter });
+        return;
+      }
 
       return resetGame();
     }

@@ -15,7 +15,8 @@ export function handleLetterMistake({ $currentLetter, enteredLetter }) {
   if (tries === TRIES.FIRST) $mistakenLetters.textContent = "";
 
   $currentTries.textContent = `${tries}`;
-  $triesIndicators[tries - 1].setAttribute("data-completed", "");
+  // NOTE: can be undefined if difficulty === MASTER
+  $triesIndicators[tries - 1]?.setAttribute("data-completed", "");
 
   if (difficulty === DIFFICULTY.EASY)
     applyEasyDifficulty({
