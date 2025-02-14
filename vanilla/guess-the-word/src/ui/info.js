@@ -54,6 +54,7 @@ export const $mistakenLetters = getElementById(
   HTMLSpanElement,
 );
 
+export const $currentResets = getElementById("current-resets", HTMLSpanElement);
 export const $maxResets = getElementById("max-resets", HTMLSpanElement);
 
 $maxResets.textContent = `${maxResets}`;
