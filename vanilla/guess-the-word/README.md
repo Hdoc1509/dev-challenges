@@ -69,7 +69,7 @@ create a small game that tests your data management and DOM manipulation with Ja
 ### Extra Features
 
 - Case insensitive check for entered letter
-- Difficulty levels: easy, normal, hard
+- Difficulty levels: easy, normal, hard, master
 
 ### What I learned
 
