@@ -3,7 +3,7 @@ import { currentWord, setCurrentWord } from "@/state/current-word";
 import { difficulty, nextDifficulty } from "@/state/difficulty";
 import { setGameState } from "@/state/game-state";
 import { resetTries } from "@/state/tries";
-import { resetGameResets } from "@/state/resets";
+import { gameResets, resetGameResets } from "@/state/resets";
 import { handleGameReady } from "./game-ready";
 import { createLetterFields } from "@/utils/letter-fields";
 import { scrambleWord } from "@/utils/scramble";
@@ -12,6 +12,7 @@ import { applyMasterDifficulty } from "@/utils/difficulty/master";
 import { $word } from "@/ui/word";
 import { $currentTries, $triesIndicators } from "@/ui/tries";
 import { $mistakenLetters } from "@/ui/mistakes";
+import { $currentResets } from "@/ui/resets";
 import { captureLetterFields, setLetterFields, $typing } from "@/ui/typing";
 import { DEFAULT_WORDS, DIFFICULTY, GAME_STATE } from "@/consts";
 
@@ -46,6 +47,7 @@ export function generateRandomWord() {
     resetGameResets();
     applyHardDifficulty();
     applyMasterDifficulty();
+    $currentResets.textContent = `${gameResets}`;
   }
   if (nextDifficulty != null) handleGameReady({ difficulty: nextDifficulty });
 }
