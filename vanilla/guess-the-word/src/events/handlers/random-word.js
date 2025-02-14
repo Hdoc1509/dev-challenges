@@ -21,7 +21,6 @@ export function generateRandomWord() {
   setCurrentWord(randomWord);
   resetAlert();
   resetTries();
-  if (difficulty === DIFFICULTY.MASTER) resetGameResets();
   setGameState(GAME_STATE.READY);
 
   while ($word.firstChild) $word.removeChild($word.firstChild);
@@ -43,6 +42,7 @@ export function generateRandomWord() {
   $mistakenLetters.textContent = "-";
 
   if (difficulty === DIFFICULTY.MASTER) {
+    resetGameResets();
     applyHardDifficulty();
     applyMasterDifficulty();
   }
