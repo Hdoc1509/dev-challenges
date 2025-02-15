@@ -1,4 +1,10 @@
+import ALL_WORDS from "@/mocks/all-words.json";
+import MIN_TEN_LETTERS from "@/mocks/min-10-letters.json";
+
 // TODO: allow user to choose quantity of words to be used
+// - 10, 25, 50, 75, 100
+// - these should be randomly chosen from the list of words
+// - add `words` state
 // - add these words to mocks
 export const DEFAULT_WORDS = [
   "example",
@@ -8,6 +14,20 @@ export const DEFAULT_WORDS = [
   "flower",
   "adventure",
 ];
+
+const CUSTOM_WORDS = [
+  "example",
+  "javascript",
+  "coding",
+  "challenge",
+  "flower",
+  "adventure",
+];
+
+export const WORDS = Object.freeze({
+  ALL: Object.freeze(ALL_WORDS.concat(CUSTOM_WORDS)),
+  MIN_TEN_LETTERS: Object.freeze(MIN_TEN_LETTERS.concat(CUSTOM_WORDS)),
+});
 
 export const CLASSES = Object.freeze({
   TYPING: Object.freeze({
