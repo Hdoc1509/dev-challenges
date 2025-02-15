@@ -59,10 +59,10 @@ create a small game that tests your data management and DOM manipulation with Ja
   - [Outfit](https://fontsource.org/fonts/outfit)
 - [tabler icons](https://tabler.io/icons)
   - [edit](https://tabler.io/icons/icon/edit)
-  - [keyboard](https://tabler.io/icons/icon/keyboard)
   - [list-letters](https://tabler.io/icons/icon/list-letters)
   - [trash](https://tabler.io/icons/icon/trash)
   - [versions](https://tabler.io/icons/icon/versions)
+  - [writing-sign](https://tabler.io/icons/icon/writing-sign)
 - [colorhexa](https://www.colorhexa.com/)
 - [Online Image Compressor](https://imagecompressor.com/)
 - [Words API](https://wordsapi.com/) for mocked words
