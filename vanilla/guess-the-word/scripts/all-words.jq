@@ -2,6 +2,6 @@
 
 . | [
   keys[] |
-    select(test("^[a-z]{4,}$")) |
-    select(test("porn") | not)
+  select(test("porn") | not) |
+    select(test("^[a-z]{4,}$"))
 ]
