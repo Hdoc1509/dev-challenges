@@ -1,4 +1,5 @@
-// TODO: allow user to create a list of words and use them
+// TODO: allow user to choose quantity of words to be used
+// - add these words to mocks
 export const DEFAULT_WORDS = [
   "example",
   "javascript",
