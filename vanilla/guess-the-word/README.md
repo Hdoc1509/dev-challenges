@@ -65,6 +65,8 @@ create a small game that tests your data management and DOM manipulation with Ja
   - [versions](https://tabler.io/icons/icon/versions)
 - [colorhexa](https://www.colorhexa.com/)
 - [Online Image Compressor](https://imagecompressor.com/)
+- [Words API](https://wordsapi.com/) for mocked words
+  - Sample data taken from [Pricing](https://wordsapi.com/#pricing) section
 
 ### Extra Features
 
