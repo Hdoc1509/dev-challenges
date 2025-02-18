@@ -18,7 +18,7 @@ export function handleLetterInput($currentField) {
   const letterIndex = Number($currentLetter.dataset.letterIndex);
   const enteredLetter = $currentField.value;
 
-  if (enteredLetter === " ") {
+  if (enteredLetter === " " || !/[a-z]/i.test(enteredLetter)) {
     $currentField.value = "";
     return;
   }
