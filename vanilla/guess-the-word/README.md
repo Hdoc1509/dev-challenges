@@ -60,9 +60,11 @@ create a small game that tests your data management and DOM manipulation with Ja
 - [tabler icons](https://tabler.io/icons)
   - [edit](https://tabler.io/icons/icon/edit)
   - [list-letters](https://tabler.io/icons/icon/list-letters)
+  - [menu-deep](https://tabler.io/icons/icon/menu-deep)
   - [trash](https://tabler.io/icons/icon/trash)
   - [versions](https://tabler.io/icons/icon/versions)
   - [writing-sign](https://tabler.io/icons/icon/writing-sign)
+  - [x](https://tabler.io/icons/icon/x)
 - [colorhexa](https://www.colorhexa.com/)
 - [Online Image Compressor](https://imagecompressor.com/)
 - [Words API](https://wordsapi.com/) for mocked words
