@@ -1,7 +1,11 @@
-# NOTE: filter words that are not family friendly
-
-. | [
+to_entries |
+map(select(.value | has("definitions"))) |
+from_entries | [
   keys[] |
+  # NOTE: filter words that are not family friendly
   select(test("porn") | not) |
-    select(test("^[a-z]{10,}$"))
+  # filter roman numbers
+  select(test("^(xxii|xxxiv)$") | not) |
+  select(test("[aeiou]")) |
+  select(test("^[a-z]{\($MIN_LENGTH),}$"))
 ]
