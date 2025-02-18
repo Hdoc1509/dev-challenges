@@ -23,11 +23,13 @@ export function handleLetterInput($currentField) {
     return;
   }
 
-  const matches = new RegExp(currentWord[letterIndex], "i").test(enteredLetter);
+  const hasMatched = new RegExp(currentWord[letterIndex], "i").test(
+    enteredLetter,
+  );
 
   if (gameState !== GAME_STATE.PLAYING) setGameState(GAME_STATE.PLAYING);
 
-  if (!matches) {
+  if (!hasMatched) {
     increaseTries();
 
     if (tries === maxTries) {
