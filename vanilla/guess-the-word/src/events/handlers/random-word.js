@@ -1,4 +1,5 @@
 import { resetAlert } from "@lib/alert";
+import { words } from "@/state/words";
 import { currentWord, setCurrentWord } from "@/state/current-word";
 import { difficulty, nextDifficulty } from "@/state/difficulty";
 import { setGameState } from "@/state/game-state";
@@ -14,11 +15,10 @@ import { $currentTries, $triesIndicators } from "@/ui/tries";
 import { $mistakenLetters } from "@/ui/mistakes";
 import { $currentResets } from "@/ui/resets";
 import { captureLetterFields, setLetterFields, $typing } from "@/ui/typing";
-import { DEFAULT_WORDS, DIFFICULTY, GAME_STATE } from "@/consts";
+import { DIFFICULTY, GAME_STATE } from "@/consts";
 
 export function generateRandomWord() {
-  const randomWord =
-    DEFAULT_WORDS[Math.floor(Math.random() * DEFAULT_WORDS.length)];
+  const randomWord = words[Math.floor(Math.random() * words.length)];
 
   setCurrentWord(randomWord);
   resetAlert();
