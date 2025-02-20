@@ -1,8 +1,7 @@
 import { resetTries } from "@/state/tries";
-import { difficulty, nextDifficulty } from "@/state/difficulty";
+import { difficulty } from "@/state/difficulty";
 import { setGameState } from "@/state/game-state";
 import { gameResets, increaseGameResets } from "@/state/resets";
-import { handleGameReady } from "./game-ready";
 import { $currentTries, $triesIndicators } from "@/ui/tries";
 import { $mistakenLetters } from "@/ui/mistakes";
 import { $currentResets, $resetsIndicators } from "@/ui/resets";
@@ -22,8 +21,6 @@ export function resetGame() {
 
   resetTries();
   setGameState(GAME_STATE.READY);
-
-  if (nextDifficulty != null) handleGameReady({ difficulty: nextDifficulty });
 
   $currentTries.textContent = "0";
   $triesIndicators.forEach(($item) => $item.removeAttribute("data-completed"));

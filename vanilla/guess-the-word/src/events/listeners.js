@@ -1,13 +1,16 @@
+import { difficulty } from "@/state/difficulty";
 import { generateRandomWord } from "./handlers/random-word";
 import { handleLetterInput } from "./handlers/letter-input";
 import { resetGame } from "./handlers/reset-game";
 import { handleDifficultyChange } from "./handlers/difficulty-change";
+import { applyDifficulty } from "@/utils/difficulty/apply";
 import { $menu, $menuClose, $menuOpen /* , MenuTabs */ } from "@/ui/menu";
 // import { generateWordList } from "@/ui/word-list";
 import { $randomWord, $reset } from "@/ui/actions";
 import { CLASSES } from "@/consts";
 
 export function setupEventListeners() {
+  applyDifficulty(difficulty);
   generateRandomWord();
   // generateWordList();
 

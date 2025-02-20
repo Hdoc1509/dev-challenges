@@ -1,31 +1,26 @@
 import { resetAlert } from "@lib/alert";
 import { words } from "@/state/words";
 import { currentWord, setCurrentWord } from "@/state/current-word";
-import { difficulty, nextDifficulty } from "@/state/difficulty";
 import { setGameState } from "@/state/game-state";
 import { resetTries } from "@/state/tries";
 import { gameResets, resetGameResets } from "@/state/resets";
-import { handleGameReady } from "./game-ready";
 import { createLetterFields } from "@/utils/letter-fields";
 import { scrambleWord } from "@/utils/scramble";
-import { applyHardDifficulty } from "@/utils/difficulty/hard";
-import { applyMasterDifficulty } from "@/utils/difficulty/master";
-import { applyExtremeDifficulty } from "@/utils/difficulty/extreme";
 import { $word } from "@/ui/word";
 import { $currentTries, $triesIndicators } from "@/ui/tries";
 import { $mistakenLetters } from "@/ui/mistakes";
-import { $currentResets } from "@/ui/resets";
 import { captureLetterFields, setLetterFields, $typing } from "@/ui/typing";
-import { DIFFICULTY, GAME_STATE } from "@/consts";
+import { $currentResets } from "@/ui/resets";
+import { $reset } from "@/ui/actions";
+import { GAME_STATE } from "@/consts";
 
 export function generateRandomWord() {
-  if (difficulty === DIFFICULTY.EXTREME) applyExtremeDifficulty();
-
   const randomWord = words[Math.floor(Math.random() * words.length)];
 
   setCurrentWord(randomWord);
   resetAlert();
   resetTries();
+  resetGameResets();
   setGameState(GAME_STATE.READY);
 
   while ($word.firstChild) $word.removeChild($word.firstChild);
@@ -45,12 +40,6 @@ export function generateRandomWord() {
   $currentTries.textContent = "0";
   $triesIndicators.forEach(($item) => $item.removeAttribute("data-completed"));
   $mistakenLetters.textContent = "-";
-
-  if (difficulty === DIFFICULTY.MASTER) {
-    resetGameResets();
-    applyHardDifficulty();
-    applyMasterDifficulty();
-    $currentResets.textContent = `${gameResets}`;
-  }
-  if (nextDifficulty != null) handleGameReady({ difficulty: nextDifficulty });
+  $currentResets.textContent = `${gameResets}`;
+  $reset.disabled = true;
 }
