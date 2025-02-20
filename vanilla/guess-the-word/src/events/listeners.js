@@ -18,12 +18,10 @@ export function setupEventListeners() {
     const $target = e.target;
 
     if ($target === $randomWord) generateRandomWord();
-    if ($target === $reset) resetGame();
-
-    if ($target === $menuOpen) $menu.showModal();
-    if ($target === $menuClose) $menu.close();
-
-    // if (MenuTabs.isTabLink($target)) MenuTabs.selectTab($target);
+    else if ($target === $reset) resetGame();
+    else if ($target === $menuOpen) $menu.showModal();
+    else if ($target === $menuClose) $menu.close();
+    // else if (MenuTabs.isTabLink($target)) MenuTabs.selectTab($target);
   });
 
   // NOTE: should I reset animation of letter input on blur?
