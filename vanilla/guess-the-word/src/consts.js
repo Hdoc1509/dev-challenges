@@ -11,9 +11,15 @@ const CUSTOM_WORDS = [
 ];
 
 export const WORDS = Object.freeze({
-  // TODO: these words should have max lenght of 10 letters
-  ALL: Object.freeze(ALL_WORDS.concat(CUSTOM_WORDS)),
-  MIN_TEN_LETTERS: Object.freeze(MIN_TEN_LETTERS.concat(CUSTOM_WORDS)),
+  // TODO: replace with `NORMAL` and `MASTER` properties
+  // - `NORMAL` words should have max lenght of 9 letters
+  // - `MASTER` words should have min lenght of 10 letters
+  ALL: Object.freeze(
+    ALL_WORDS.concat(CUSTOM_WORDS.filter((word) => word.length < 10)),
+  ),
+  MIN_TEN_LETTERS: Object.freeze(
+    MIN_TEN_LETTERS.concat(CUSTOM_WORDS.filter((word) => word.length >= 10)),
+  ),
 });
 
 export const CLASSES = Object.freeze({
