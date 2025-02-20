@@ -74,12 +74,6 @@ export const DIFFICULTIES = Object.freeze([
 ]);
 /** @typedef {DIFFICULTY[keyof DIFFICULTY]} Difficulty */
 
-export const GAME_STATE = Object.freeze({
-  READY: "ready",
-  PLAYING: "playing",
-});
-/** @typedef {GAME_STATE[keyof GAME_STATE]} GameState */
-
 export const TRIES = Object.freeze({
   MAX: 6,
   MAX_HARD: 3,

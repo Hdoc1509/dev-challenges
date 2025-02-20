@@ -1,13 +1,12 @@
 import { resetTries } from "@/state/tries";
 import { difficulty } from "@/state/difficulty";
-import { setGameState } from "@/state/game-state";
 import { gameResets, increaseGameResets } from "@/state/resets";
 import { $currentTries, $triesIndicators } from "@/ui/tries";
 import { $mistakenLetters } from "@/ui/mistakes";
 import { $currentResets, $resetsIndicators } from "@/ui/resets";
 import { $letterFields, $typing } from "@/ui/typing";
 import { $reset } from "@/ui/actions";
-import { CLASSES, CSS_VARIABLES, DIFFICULTY, GAME_STATE } from "@/consts";
+import { CLASSES, CSS_VARIABLES, DIFFICULTY } from "@/consts";
 
 export function resetGame() {
   const $firstField = $letterFields[0];
@@ -20,7 +19,6 @@ export function resetGame() {
   );
 
   resetTries();
-  setGameState(GAME_STATE.READY);
 
   $currentTries.textContent = "0";
   $triesIndicators.forEach(($item) => $item.removeAttribute("data-completed"));

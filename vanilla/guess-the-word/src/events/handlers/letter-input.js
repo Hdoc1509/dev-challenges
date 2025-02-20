@@ -3,12 +3,11 @@ import { currentWord } from "@/state/current-word";
 import { difficulty } from "@/state/difficulty";
 import { increaseTries, maxTries, tries } from "@/state/tries";
 import { maxResets, gameResets } from "@/state/resets";
-import { gameState, setGameState } from "@/state/game-state";
 import { handleLetterMistake } from "./letter-mistake";
 import { resetGame } from "./reset-game";
 import { handleGameOver } from "./game-over";
 import { $reset } from "@/ui/actions";
-import { CLASSES, DIFFICULTY, GAME_STATE, TRIES } from "@/consts";
+import { CLASSES, DIFFICULTY, TRIES } from "@/consts";
 
 /** @param {HTMLInputElement} $currentField */
 export function handleLetterInput($currentField) {
@@ -26,8 +25,6 @@ export function handleLetterInput($currentField) {
   const hasMatched = new RegExp(currentWord[letterIndex], "i").test(
     enteredLetter,
   );
-
-  if (gameState !== GAME_STATE.PLAYING) setGameState(GAME_STATE.PLAYING);
 
   if (!hasMatched) {
     increaseTries();

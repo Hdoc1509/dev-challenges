@@ -1,7 +1,6 @@
 import { resetAlert } from "@lib/alert";
 import { words } from "@/state/words";
 import { currentWord, setCurrentWord } from "@/state/current-word";
-import { setGameState } from "@/state/game-state";
 import { resetTries } from "@/state/tries";
 import { gameResets, resetGameResets } from "@/state/resets";
 import { createLetterFields } from "@/utils/letter-fields";
@@ -12,7 +11,6 @@ import { $mistakenLetters } from "@/ui/mistakes";
 import { captureLetterFields, setLetterFields, $typing } from "@/ui/typing";
 import { $currentResets } from "@/ui/resets";
 import { $reset } from "@/ui/actions";
-import { GAME_STATE } from "@/consts";
 
 export function generateRandomWord() {
   const randomWord = words[Math.floor(Math.random() * words.length)];
@@ -21,7 +19,6 @@ export function generateRandomWord() {
   resetAlert();
   resetTries();
   resetGameResets();
-  setGameState(GAME_STATE.READY);
 
   while ($word.firstChild) $word.removeChild($word.firstChild);
   scrambleWord(currentWord)
