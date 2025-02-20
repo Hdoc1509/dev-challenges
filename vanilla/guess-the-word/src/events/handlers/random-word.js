@@ -10,6 +10,7 @@ import { createLetterFields } from "@/utils/letter-fields";
 import { scrambleWord } from "@/utils/scramble";
 import { applyHardDifficulty } from "@/utils/difficulty/hard";
 import { applyMasterDifficulty } from "@/utils/difficulty/master";
+import { applyExtremeDifficulty } from "@/utils/difficulty/extreme";
 import { $word } from "@/ui/word";
 import { $currentTries, $triesIndicators } from "@/ui/tries";
 import { $mistakenLetters } from "@/ui/mistakes";
@@ -18,6 +19,8 @@ import { captureLetterFields, setLetterFields, $typing } from "@/ui/typing";
 import { DIFFICULTY, GAME_STATE } from "@/consts";
 
 export function generateRandomWord() {
+  if (difficulty === DIFFICULTY.EXTREME) applyExtremeDifficulty();
+
   const randomWord = words[Math.floor(Math.random() * words.length)];
 
   setCurrentWord(randomWord);

@@ -25,6 +25,7 @@ const CUSTOM_WORDS = [
 ];
 
 export const WORDS = Object.freeze({
+  // TODO: these words should have max lenght of 10 letters
   ALL: Object.freeze(ALL_WORDS.concat(CUSTOM_WORDS)),
   MIN_TEN_LETTERS: Object.freeze(MIN_TEN_LETTERS.concat(CUSTOM_WORDS)),
 });
