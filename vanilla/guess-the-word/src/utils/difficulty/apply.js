@@ -10,16 +10,16 @@ import { applyExtremeDifficulty } from "./extreme";
 export function applyDifficulty(difficulty) {
   if (difficulty === DIFFICULTY.EASY || difficulty === DIFFICULTY.NORMAL) {
     applyNormalDifficulty();
-    setWords(WORDS.ALL);
+    setWords(WORDS.NORMAL);
     $resetsContainer.removeAttribute("data-active");
   } else if (difficulty === DIFFICULTY.HARD) {
     applyHardDifficulty();
-    setWords(WORDS.ALL);
+    setWords(WORDS.NORMAL);
     $resetsContainer.removeAttribute("data-active");
   } else if (difficulty === DIFFICULTY.MASTER) {
     applyHardDifficulty();
     applyMasterDifficulty();
-    setWords(WORDS.ALL);
+    setWords(WORDS.NORMAL);
   } else if (difficulty === DIFFICULTY.EXTREME) {
     applyHardDifficulty();
     applyMasterDifficulty();
