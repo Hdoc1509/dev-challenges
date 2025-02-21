@@ -47,6 +47,9 @@
 
   --alert-time-bar-duration: 3s;
 
+  --timer-bg: var(--word-bg);
+  --timer-bar-bg: var(--secondary);
+
   --bg-image-url: url("/bg-guess-the-word.jpg");
 }
 @supports (font-variation-settings: normal) {

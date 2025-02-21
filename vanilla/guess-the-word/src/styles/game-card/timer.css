@@ -1,0 +1,38 @@
+.timer {
+  --_bg: var(--timer-bg);
+  --_bar-bg: var(--timer-bar-bg);
+  grid-row: 3;
+  grid-column: 1 / -1;
+
+  position: relative;
+
+  border-radius: 12px;
+  background-color: var(--_bg);
+  height: 8px;
+
+  display: none;
+}
+.timer--active {
+  display: block;
+}
+
+.timer__bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  background: var(--_bar-bg);
+
+  transform-origin: left center;
+
+  animation: timer-bar var(--timer-bar-duration) linear forwards;
+}
+
+@keyframes timer-bar {
+  to {
+    transform: scaleX(0);
+  }
+}
