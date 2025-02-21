@@ -7,5 +7,5 @@ from_entries | [
   # filter roman numbers
   select(test("^(xxii|xxxiv)$") | not) |
   select(test("[aeiou]")) |
-  select(test("^[a-z]{\($MIN_LENGTH),}$"))
+  select(test("^[a-z]{\($MIN_LENGTH),\($MAX_LENGTH)}$"))
 ]
