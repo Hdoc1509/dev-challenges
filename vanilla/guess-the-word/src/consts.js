@@ -1,4 +1,6 @@
 import ALL_WORDS from "@/mocks/all-words.json";
+import WORDS_NORMAL from "@/mocks/words/normal.json";
+import WORDS_EXTREME from "@/mocks/words/extreme.json";
 import MIN_TEN_LETTERS from "@/mocks/min-10-letters.json";
 
 const CUSTOM_WORDS = [
@@ -11,9 +13,12 @@ const CUSTOM_WORDS = [
 ];
 
 export const WORDS = Object.freeze({
-  // TODO: replace with `NORMAL` and `MASTER` properties
-  // - `NORMAL` words should have max lenght of 9 letters
-  // - `MASTER` words should have min lenght of 10 letters
+  NORMAL: Object.freeze(
+    WORDS_NORMAL.concat(CUSTOM_WORDS.filter((word) => word.length < 10)),
+  ),
+  EXTREME: Object.freeze(
+    WORDS_EXTREME.concat(CUSTOM_WORDS.filter((word) => word.length >= 10)),
+  ),
   ALL: Object.freeze(
     ALL_WORDS.concat(CUSTOM_WORDS.filter((word) => word.length < 10)),
   ),
