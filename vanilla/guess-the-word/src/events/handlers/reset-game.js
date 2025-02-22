@@ -22,7 +22,7 @@ export function resetGame() {
 
   $currentTries.textContent = "0";
   $triesIndicators.forEach(($item) => $item.removeAttribute("data-completed"));
-  if (difficulty === DIFFICULTY.MASTER) {
+  if (difficulty === DIFFICULTY.MASTER || difficulty === DIFFICULTY.EXTREME) {
     increaseGameResets();
     $currentResets.textContent = `${gameResets}`;
     $resetsIndicators[gameResets - 1].setAttribute("data-completed", "");
