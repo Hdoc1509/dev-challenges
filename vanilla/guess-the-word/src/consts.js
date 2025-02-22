@@ -26,6 +26,7 @@ export const CLASSES = Object.freeze({
   }),
   MISTAKES: Object.freeze({
     LETTER: "mistakes__letter",
+    LETTER__EMPTY: "mistakes__letter--empty",
   }),
   TRIES: Object.freeze({
     INDICATOR: "tries__indicator",

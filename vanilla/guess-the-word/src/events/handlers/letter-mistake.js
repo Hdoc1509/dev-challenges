@@ -27,7 +27,9 @@ export function handleLetterMistake({ $currentLetter, enteredLetter }) {
     });
 
   $newMistakenLetter.classList.add(CLASSES.MISTAKES.LETTER);
-  $newMistakenLetter.textContent = enteredLetter;
+  $newMistakenLetter.textContent = enteredLetter === "" ? "-" : enteredLetter;
+  if (enteredLetter === "")
+    $newMistakenLetter.classList.add(CLASSES.MISTAKES.LETTER__EMPTY);
   if (tries > TRIES.FIRST) $mistakenLetters.append(",");
   $mistakenLetters.appendChild($newMistakenLetter);
 }
