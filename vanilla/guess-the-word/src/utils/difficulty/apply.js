@@ -5,6 +5,7 @@ import { $resetsContainer } from "@/ui/resets";
 import { applyHardDifficulty } from "./hard";
 import { applyMasterDifficulty } from "./master";
 import { applyExtremeDifficulty } from "./extreme";
+import { applyInsaneDifficulty } from "./insane";
 
 /** @param {import("@/consts").Difficulty} difficulty */
 export function applyDifficulty(difficulty) {
@@ -24,5 +25,10 @@ export function applyDifficulty(difficulty) {
     applyHardDifficulty();
     applyMasterDifficulty();
     applyExtremeDifficulty();
+  } else if (difficulty === DIFFICULTY.INSANE) {
+    applyHardDifficulty();
+    applyMasterDifficulty();
+    applyExtremeDifficulty();
+    applyInsaneDifficulty();
   }
 }
