@@ -26,6 +26,11 @@ export const showTimer = () => $timer.classList.add(CSS.CLASSES.TIMER__ACTIVE);
 export const hideTimer = () =>
   $timer.classList.remove(CSS.CLASSES.TIMER__ACTIVE);
 
-/** @param {number} duration Timer duration in seconds */
-export const setTimerDuration = (duration) =>
+/**
+ * @param {number} duration Timer duration in seconds
+ * @param {() => void} onEnd
+ */
+export const setTimerDuration = (duration, onEnd) => {
   $timerBar.style.setProperty(CSS.VARIABLES.TIME_BAR_DURATION, `${duration}s`);
+  $timerBar.addEventListener("animationend", onEnd, { once: true });
+};
