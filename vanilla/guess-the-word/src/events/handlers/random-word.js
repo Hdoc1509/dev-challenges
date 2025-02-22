@@ -9,7 +9,7 @@ import { $word } from "@/ui/word";
 import { $currentTries, $triesIndicators } from "@/ui/tries";
 import { $mistakenLetters } from "@/ui/mistakes";
 import { captureLetterFields, setLetterFields, $typing } from "@/ui/typing";
-import { $currentResets } from "@/ui/resets";
+import { $currentResets, $resetsIndicators } from "@/ui/resets";
 import { $reset } from "@/ui/actions";
 
 export function generateRandomWord() {
@@ -36,6 +36,7 @@ export function generateRandomWord() {
 
   $currentTries.textContent = "0";
   $triesIndicators.forEach(($item) => $item.removeAttribute("data-completed"));
+  $resetsIndicators.forEach(($item) => $item.removeAttribute("data-completed"));
   $mistakenLetters.textContent = "-";
   $currentResets.textContent = `${gameResets}`;
   $reset.disabled = true;
