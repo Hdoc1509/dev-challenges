@@ -30,3 +30,8 @@ export function createLetterFields(quantity) {
   $firstField.disabled = false;
   $firstField.focus();
 }
+
+/** @type {($target: EventTarget | null) => $target is HTMLInputElement} */
+export const isValidLetterField = ($target) =>
+  $target instanceof HTMLInputElement &&
+  $target.matches(`.${CLASSES.TYPING.LETTER} > input`);
