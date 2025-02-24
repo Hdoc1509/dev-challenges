@@ -24,7 +24,13 @@ export function resetGame() {
 
   $currentTries.textContent = "0";
   $triesIndicators.forEach(($item) => $item.removeAttribute("data-completed"));
-  if (difficulty === DIFFICULTY.MASTER || difficulty === DIFFICULTY.EXTREME) {
+  // TODO: add util implementsMasterDifficulty()
+  // also use it in `handleLetterInput()`
+  if (
+    difficulty === DIFFICULTY.MASTER ||
+    difficulty === DIFFICULTY.EXTREME ||
+    difficulty === DIFFICULTY.INSANE
+  ) {
     increaseGameResets();
     $currentResets.textContent = `${gameResets}`;
     $resetsIndicators[gameResets - 1].setAttribute("data-completed", "");

@@ -6,6 +6,7 @@ import { maxResets, gameResets } from "@/state/resets";
 import { handleLetterMistake } from "./letter-mistake";
 import { resetGame } from "./reset-game";
 import { handleGameOver } from "./game-over";
+import { hideTimerBar } from "@/ui/timer";
 import { $reset } from "@/ui/actions";
 import { CLASSES, DIFFICULTY, TRIES } from "@/consts";
 
@@ -35,11 +36,13 @@ export function handleLetterInput($currentField) {
     if (tries === maxTries) {
       if (
         (difficulty === DIFFICULTY.MASTER ||
-          difficulty === DIFFICULTY.EXTREME) &&
+          difficulty === DIFFICULTY.EXTREME ||
+          difficulty === DIFFICULTY.INSANE) &&
         gameResets === maxResets
       ) {
         handleLetterMistake({ $currentLetter, enteredLetter });
         handleGameOver({ $currentField, $currentLetter });
+        hideTimerBar();
         return;
       }
 
