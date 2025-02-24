@@ -1,13 +1,14 @@
 import { resetTries } from "@/state/tries";
 import { difficulty } from "@/state/difficulty";
 import { gameResets, increaseGameResets } from "@/state/resets";
+import { implementsMasterDifficulty } from "@/utils/difficulty/master";
 import { $currentTries, $triesIndicators } from "@/ui/tries";
 import { $mistakenLetters } from "@/ui/mistakes";
 import { $currentResets, $resetsIndicators } from "@/ui/resets";
 import { hideTimerBar } from "@/ui/timer";
 import { $letterFields, $typing } from "@/ui/typing";
 import { $reset } from "@/ui/actions";
-import { CLASSES, CSS_VARIABLES, DIFFICULTY } from "@/consts";
+import { CLASSES, CSS_VARIABLES } from "@/consts";
 
 export function resetGame() {
   const $firstField = $letterFields[0];
@@ -24,13 +25,7 @@ export function resetGame() {
 
   $currentTries.textContent = "0";
   $triesIndicators.forEach(($item) => $item.removeAttribute("data-completed"));
-  // TODO: add util implementsMasterDifficulty()
-  // also use it in `handleLetterInput()`
-  if (
-    difficulty === DIFFICULTY.MASTER ||
-    difficulty === DIFFICULTY.EXTREME ||
-    difficulty === DIFFICULTY.INSANE
-  ) {
+  if (implementsMasterDifficulty({ difficulty })) {
     increaseGameResets();
     $currentResets.textContent = `${gameResets}`;
     $resetsIndicators[gameResets - 1].setAttribute("data-completed", "");
