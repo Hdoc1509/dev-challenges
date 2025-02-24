@@ -10,6 +10,7 @@ import { $currentTries, $triesIndicators } from "@/ui/tries";
 import { $mistakenLetters } from "@/ui/mistakes";
 import { captureLetterFields, setLetterFields, $typing } from "@/ui/typing";
 import { $currentResets, $resetsIndicators } from "@/ui/resets";
+import { hideTimerBar } from "@/ui/timer";
 import { $reset } from "@/ui/actions";
 
 export function generateRandomWord() {
@@ -39,5 +40,6 @@ export function generateRandomWord() {
   $resetsIndicators.forEach(($item) => $item.removeAttribute("data-completed"));
   $mistakenLetters.textContent = "-";
   $currentResets.textContent = `${gameResets}`;
+  hideTimerBar();
   $reset.disabled = true;
 }
