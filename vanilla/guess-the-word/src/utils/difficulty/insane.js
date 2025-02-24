@@ -1,5 +1,6 @@
 import { handleLetterInput } from "@/events/handlers/letter-input";
 import {
+  hideTimer,
   resetTimer,
   setTimerDuration,
   showTimer,
@@ -31,6 +32,10 @@ const handleLetterFocus = (e) => {
 
 export function applyInsaneDifficulty() {
   showTimer();
-  // TODO: remove `focusin` listener is difficulty do not implements `insane` difficulty
   document.addEventListener("focusin", handleLetterFocus);
+}
+
+export function unapplyInsaneDifficulty() {
+  hideTimer();
+  document.removeEventListener("focusin", handleLetterFocus);
 }
