@@ -20,7 +20,6 @@ const isValidLetterInput = ($target) =>
 /** @param {FocusEvent} e */
 const handleLetterFocus = (e) => {
   const $target = e.target;
-  setTimerDuration(0, () => {});
 
   if (!isValidLetterInput($target)) return;
 
