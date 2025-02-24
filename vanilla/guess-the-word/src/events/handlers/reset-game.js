@@ -4,6 +4,7 @@ import { gameResets, increaseGameResets } from "@/state/resets";
 import { $currentTries, $triesIndicators } from "@/ui/tries";
 import { $mistakenLetters } from "@/ui/mistakes";
 import { $currentResets, $resetsIndicators } from "@/ui/resets";
+import { hideTimerBar } from "@/ui/timer";
 import { $letterFields, $typing } from "@/ui/typing";
 import { $reset } from "@/ui/actions";
 import { CLASSES, CSS_VARIABLES, DIFFICULTY } from "@/consts";
@@ -19,6 +20,7 @@ export function resetGame() {
   );
 
   resetTries();
+  hideTimerBar();
 
   $currentTries.textContent = "0";
   $triesIndicators.forEach(($item) => $item.removeAttribute("data-completed"));

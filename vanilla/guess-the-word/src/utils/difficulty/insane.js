@@ -1,5 +1,10 @@
 import { handleLetterInput } from "@/events/handlers/letter-input";
-import { resetTimer, setTimerDuration, showTimer } from "@/ui/timer";
+import {
+  resetTimer,
+  setTimerDuration,
+  showTimer,
+  showTimerBar,
+} from "@/ui/timer";
 import { CLASSES } from "@/consts";
 
 /** @type {HTMLInputElement | null} */
@@ -20,17 +25,14 @@ const handleLetterFocus = (e) => {
   if (!isValidLetterInput($target)) return;
 
   const $currentLetter = /** @type {HTMLSpanElement} */ ($target.parentElement);
+  const letterIdx = $currentLetter.dataset.letterIndex;
 
-  if (
-    $currentLetter.dataset.letterIndex === "0" ||
-    lastFocusedInput === $target
-  )
-    return;
+  if (letterIdx === "0" || lastFocusedInput === $target) return;
+  if (letterIdx === "1") showTimerBar();
 
   lastFocusedInput = $target;
   resetTimer();
   // TODO: duration should be 3, 4 or 5 seconds
-  // FIX: timer is not aborting on reset caused by mistaken letters
   setTimerDuration(3, () => handleLetterInput($target));
 };
 
