@@ -5,23 +5,17 @@ import {
   showTimer,
   showTimerBar,
 } from "@/ui/timer";
-import { CLASSES } from "@/consts";
+import { isValidLetterField } from "../letter-fields";
 
 /** @type {HTMLInputElement | null} */
 // NOTE: avoids weird behaviors when focusing more than once on the same input
 let $lastFocusedInput = null;
 
-/** @type {($target: EventTarget | null) => $target is HTMLInputElement} */
-// TODO: use it for `input` event in listeners.js
-const isValidLetterInput = ($target) =>
-  $target instanceof HTMLInputElement &&
-  $target.matches(`.${CLASSES.TYPING.LETTER__CURRENT} > input`);
-
 /** @param {FocusEvent} e */
 const handleLetterFocus = (e) => {
   const $target = e.target;
 
-  if (!isValidLetterInput($target)) return;
+  if (!isValidLetterField($target)) return;
 
   const $currentLetter = /** @type {HTMLSpanElement} */ ($target.parentElement);
   const letterIdx = $currentLetter.dataset.letterIndex;
@@ -37,5 +31,6 @@ const handleLetterFocus = (e) => {
 
 export function applyInsaneDifficulty() {
   showTimer();
+  // TODO: remove `focusin` listener is difficulty do not implements `insane` difficulty
   document.addEventListener("focusin", handleLetterFocus);
 }

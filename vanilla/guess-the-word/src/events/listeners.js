@@ -4,10 +4,10 @@ import { handleLetterInput } from "./handlers/letter-input";
 import { resetGame } from "./handlers/reset-game";
 import { handleDifficultyChange } from "./handlers/difficulty-change";
 import { applyDifficulty } from "@/utils/difficulty/apply";
+import { isValidLetterField } from "@/utils/letter-fields";
 import { $menu, $menuClose, $menuOpen /* , MenuTabs */ } from "@/ui/menu";
 // import { generateWordList } from "@/ui/word-list";
 import { $randomWord, $reset } from "@/ui/actions";
-import { CLASSES } from "@/consts";
 
 export function setupEventListeners() {
   applyDifficulty(difficulty);
@@ -28,11 +28,7 @@ export function setupEventListeners() {
   document.addEventListener("input", (e) => {
     const $target = e.target;
 
-    if (
-      $target instanceof HTMLInputElement &&
-      $target.matches(`.${CLASSES.TYPING.LETTER__CURRENT} > input`)
-    )
-      handleLetterInput($target);
+    if (isValidLetterField($target)) handleLetterInput($target);
   });
 
   document.addEventListener("change", (e) => {
