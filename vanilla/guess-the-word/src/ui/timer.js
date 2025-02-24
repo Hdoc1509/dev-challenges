@@ -26,6 +26,11 @@ export const showTimer = () => $timer.classList.add(CSS.CLASSES.TIMER__ACTIVE);
 export const hideTimer = () =>
   $timer.classList.remove(CSS.CLASSES.TIMER__ACTIVE);
 
+export const showTimerBar = () =>
+  $timerBar.style.setProperty("display", "block");
+export const hideTimerBar = () =>
+  $timerBar.style.setProperty("display", "none");
+
 /**
  * @param {number} duration Timer duration in seconds
  * @param {() => void} onEnd
