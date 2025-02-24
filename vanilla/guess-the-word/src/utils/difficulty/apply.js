@@ -5,7 +5,7 @@ import { $resetsContainer } from "@/ui/resets";
 import { applyHardDifficulty } from "./hard";
 import { applyMasterDifficulty } from "./master";
 import { applyExtremeDifficulty } from "./extreme";
-import { applyInsaneDifficulty, unapplyInsaneDifficulty } from "./insane";
+import { InsaneDifficulty } from "./insane";
 
 /** @param {import("@/consts").Difficulty} difficulty */
 export function applyDifficulty(difficulty) {
@@ -13,26 +13,26 @@ export function applyDifficulty(difficulty) {
     applyNormalDifficulty();
     setWords(WORDS.NORMAL);
     $resetsContainer.removeAttribute("data-active");
-    unapplyInsaneDifficulty();
+    InsaneDifficulty.unapply();
   } else if (difficulty === DIFFICULTY.HARD) {
     applyHardDifficulty();
     setWords(WORDS.NORMAL);
     $resetsContainer.removeAttribute("data-active");
-    unapplyInsaneDifficulty();
+    InsaneDifficulty.unapply();
   } else if (difficulty === DIFFICULTY.MASTER) {
     applyHardDifficulty();
     applyMasterDifficulty();
     setWords(WORDS.NORMAL);
-    unapplyInsaneDifficulty();
+    InsaneDifficulty.unapply();
   } else if (difficulty === DIFFICULTY.EXTREME) {
     applyHardDifficulty();
     applyMasterDifficulty();
     applyExtremeDifficulty();
-    unapplyInsaneDifficulty();
+    InsaneDifficulty.unapply();
   } else if (difficulty === DIFFICULTY.INSANE) {
     applyHardDifficulty();
     applyMasterDifficulty();
     applyExtremeDifficulty();
-    applyInsaneDifficulty();
+    InsaneDifficulty.apply();
   }
 }

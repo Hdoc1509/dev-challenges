@@ -30,12 +30,15 @@ const handleLetterFocus = (e) => {
   setTimerDuration(3, () => handleLetterInput($target));
 };
 
-export function applyInsaneDifficulty() {
-  showTimer();
-  document.addEventListener("focusin", handleLetterFocus);
-}
-
-export function unapplyInsaneDifficulty() {
-  hideTimer();
-  document.removeEventListener("focusin", handleLetterFocus);
-}
+/** @type {import("@/types").DifficultyVariant} */
+// TODO: use the same logic for the other difficulty variants
+export const InsaneDifficulty = Object.freeze({
+  apply() {
+    showTimer();
+    document.addEventListener("focusin", handleLetterFocus);
+  },
+  unapply() {
+    hideTimer();
+    document.removeEventListener("focusin", handleLetterFocus);
+  },
+});
