@@ -7,9 +7,11 @@ import {
 } from "@/ui/tries";
 import { TRIES } from "@/consts";
 
-export function applyHardDifficulty() {
-  setMaxTries(TRIES.MAX_HARD);
-  $maxTries.textContent = `${TRIES.MAX_HARD}`;
-  generateTriesIndicators(TRIES.MAX_HARD);
-  setTriesIndicators(captureTriesIndicators());
-}
+export const HardDifficulty = Object.freeze({
+  apply() {
+    setMaxTries(TRIES.MAX_HARD);
+    $maxTries.textContent = `${TRIES.MAX_HARD}`;
+    generateTriesIndicators(TRIES.MAX_HARD);
+    setTriesIndicators(captureTriesIndicators());
+  },
+});
