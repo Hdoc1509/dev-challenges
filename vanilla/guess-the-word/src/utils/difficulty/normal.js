@@ -7,9 +7,11 @@ import {
 } from "@/ui/tries";
 import { TRIES } from "@/consts";
 
-export function applyNormalDifficulty() {
-  setMaxTries(TRIES.MAX);
-  $maxTries.textContent = `${TRIES.MAX}`;
-  generateTriesIndicators(TRIES.MAX);
-  setTriesIndicators(captureTriesIndicators());
-}
+export const NormalDifficulty = Object.freeze({
+  apply() {
+    setMaxTries(TRIES.MAX);
+    $maxTries.textContent = `${TRIES.MAX}`;
+    generateTriesIndicators(TRIES.MAX);
+    setTriesIndicators(captureTriesIndicators());
+  },
+});
