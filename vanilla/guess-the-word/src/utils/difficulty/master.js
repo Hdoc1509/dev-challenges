@@ -8,10 +8,13 @@ import {
 } from "@/ui/resets";
 import { RESETS } from "@/consts";
 
-export function applyMasterDifficulty() {
-  setMaxResets(RESETS.MAX.MASTER);
-  generateResetsIndicators(RESETS.MAX.MASTER);
-  setResetsIndicators(captureResetsIndicators());
-  $resetsContainer.setAttribute("data-active", "");
-  $maxResets.textContent = `${RESETS.MAX.MASTER}`;
-}
+export const MasterDifficulty = Object.freeze({
+  apply() {
+    setMaxResets(RESETS.MAX.MASTER);
+    generateResetsIndicators(RESETS.MAX.MASTER);
+    setResetsIndicators(captureResetsIndicators());
+    $resetsContainer.setAttribute("data-active", "");
+    $maxResets.textContent = `${RESETS.MAX.MASTER}`;
+  },
+  unapply: () => $resetsContainer.removeAttribute("data-active"),
+});
