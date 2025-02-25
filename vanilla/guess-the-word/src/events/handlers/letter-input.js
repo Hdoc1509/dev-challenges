@@ -9,7 +9,7 @@ import { handleGameOver } from "./game-over";
 import { implementsMasterDifficulty } from "@/utils/difficulty/master";
 import { hideTimerBar } from "@/ui/timer";
 import { $reset } from "@/ui/actions";
-import { CLASSES, TRIES } from "@/consts";
+import { CLASSES, DIFFICULTY, TRIES } from "@/consts";
 
 /** @param {HTMLInputElement} $currentField */
 export function handleLetterInput($currentField) {
@@ -35,7 +35,16 @@ export function handleLetterInput($currentField) {
     increaseTries();
 
     if (tries === maxTries) {
+      if (difficulty === DIFFICULTY.WHY && gameResets === maxResets) {
+        handleLetterMistake({ $currentLetter, enteredLetter });
+        handleGameOver({ $currentField, $currentLetter });
+        hideTimerBar();
+        return;
+      }
+
       if (
+        // TODO: rename to implementsMaxResets()
+        // it will allow to include check for `why` difficulty
         implementsMasterDifficulty({ difficulty }) &&
         gameResets === maxResets
       ) {
@@ -58,6 +67,7 @@ export function handleLetterInput($currentField) {
   $currentField.readOnly = true;
   $currentLetter.classList.remove(CLASSES.TYPING.LETTER__CURRENT);
 
+  // TODO: also check if matches '.typing__letter' class
   if ($nextLetter instanceof HTMLSpanElement) {
     const $nextField = /** @type {HTMLInputElement} */ (
       $nextLetter.firstElementChild

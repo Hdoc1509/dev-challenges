@@ -6,6 +6,7 @@ import { applyHardDifficulty } from "./hard";
 import { applyMasterDifficulty } from "./master";
 import { applyExtremeDifficulty } from "./extreme";
 import { InsaneDifficulty } from "./insane";
+import { WhyDifficulty } from "./why";
 
 /** @param {import("@/consts").Difficulty} difficulty */
 export function applyDifficulty(difficulty) {
@@ -34,5 +35,12 @@ export function applyDifficulty(difficulty) {
     applyMasterDifficulty();
     applyExtremeDifficulty();
     InsaneDifficulty.apply();
+  } else if (difficulty === DIFFICULTY.WHY) {
+    applyHardDifficulty();
+    applyExtremeDifficulty();
+    InsaneDifficulty.apply();
+    WhyDifficulty.apply();
+    // TODO: use this for MasterDifficulty.unapply()
+    $resetsContainer.removeAttribute("data-active");
   }
 }
