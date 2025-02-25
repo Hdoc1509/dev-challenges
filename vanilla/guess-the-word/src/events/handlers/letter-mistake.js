@@ -1,6 +1,6 @@
 import { tries } from "@/state/tries";
 import { difficulty } from "@/state/difficulty";
-import { applyEasyDifficulty } from "@/utils/difficulty/easy";
+import { EasyDifficulty } from "@/utils/difficulty/easy";
 import { $currentTries, $triesIndicators } from "@/ui/tries";
 import { $mistakenLetters } from "@/ui/mistakes";
 import { CLASSES, DIFFICULTY, TRIES } from "@/consts";
@@ -20,7 +20,7 @@ export function handleLetterMistake({ $currentLetter, enteredLetter }) {
   $triesIndicators[tries - 1]?.setAttribute("data-completed", "");
 
   if (difficulty === DIFFICULTY.EASY)
-    applyEasyDifficulty({
+    EasyDifficulty.apply({
       $mistakenLetter: $newMistakenLetter,
       $currentLetter,
       currentTries: tries,

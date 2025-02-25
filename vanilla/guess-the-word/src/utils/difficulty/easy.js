@@ -6,11 +6,7 @@ import { CLASSES, CSS_VARIABLES, DIFFICULTIES } from "@/consts";
  * @param {HTMLSpanElement} params.$currentLetter
  * @param {number} params.currentTries
  */
-export function applyEasyDifficulty({
-  $mistakenLetter,
-  $currentLetter,
-  currentTries,
-}) {
+const apply = ({ $mistakenLetter, $currentLetter, currentTries }) => {
   const difficultyIdx = currentTries - 1;
   const color = `var(--difficulty-${DIFFICULTIES[difficultyIdx]})`;
 
@@ -18,4 +14,6 @@ export function applyEasyDifficulty({
 
   $currentLetter.classList.add(CLASSES.TYPING.LETTER__MISTAKEN);
   $currentLetter.style.setProperty(CSS_VARIABLES.LETTER_BORDER_MISTAKEN, color);
-}
+};
+
+export const EasyDifficulty = Object.freeze({ apply });
