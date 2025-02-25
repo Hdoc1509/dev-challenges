@@ -6,7 +6,7 @@ import {
   generateResetsIndicators,
   setResetsIndicators,
 } from "@/ui/resets";
-import { DIFFICULTY, RESETS } from "@/consts";
+import { RESETS } from "@/consts";
 
 export function applyMasterDifficulty() {
   setMaxResets(RESETS.MAX.MASTER);
@@ -15,12 +15,3 @@ export function applyMasterDifficulty() {
   $resetsContainer.setAttribute("data-active", "");
   $maxResets.textContent = `${RESETS.MAX.MASTER}`;
 }
-
-/**
- * @param {Object} params
- * @param {import("@/consts").Difficulty} params.difficulty
- */
-export const implementsMasterDifficulty = ({ difficulty }) =>
-  difficulty === DIFFICULTY.MASTER ||
-  difficulty === DIFFICULTY.EXTREME ||
-  difficulty === DIFFICULTY.INSANE;

@@ -6,10 +6,10 @@ import { maxResets, gameResets } from "@/state/resets";
 import { handleLetterMistake } from "./letter-mistake";
 import { resetGame } from "./reset-game";
 import { handleGameOver } from "./game-over";
-import { implementsMasterDifficulty } from "@/utils/difficulty/master";
+import { implementsMaxResets } from "@/utils/max-resets";
 import { hideTimerBar } from "@/ui/timer";
 import { $reset } from "@/ui/actions";
-import { CLASSES, DIFFICULTY, TRIES } from "@/consts";
+import { CLASSES, TRIES } from "@/consts";
 
 /** @param {HTMLInputElement} $currentField */
 export function handleLetterInput($currentField) {
@@ -35,19 +35,7 @@ export function handleLetterInput($currentField) {
     increaseTries();
 
     if (tries === maxTries) {
-      if (difficulty === DIFFICULTY.WHY && gameResets === maxResets) {
-        handleLetterMistake({ $currentLetter, enteredLetter });
-        handleGameOver({ $currentField, $currentLetter });
-        hideTimerBar();
-        return;
-      }
-
-      if (
-        // TODO: rename to implementsMaxResets()
-        // it will allow to include check for `why` difficulty
-        implementsMasterDifficulty({ difficulty }) &&
-        gameResets === maxResets
-      ) {
+      if (implementsMaxResets({ difficulty }) && gameResets === maxResets) {
         handleLetterMistake({ $currentLetter, enteredLetter });
         handleGameOver({ $currentField, $currentLetter });
         hideTimerBar();
