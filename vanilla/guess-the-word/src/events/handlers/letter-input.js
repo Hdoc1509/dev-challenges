@@ -68,6 +68,7 @@ export function handleLetterInput($currentField) {
     $nextField.focus();
   } else if (tries === TRIES.NONE) {
     showAlert({ color: "success", text: "🎉 Success!" });
+    hideTimerBar();
     $reset.disabled = true;
   }
 }
