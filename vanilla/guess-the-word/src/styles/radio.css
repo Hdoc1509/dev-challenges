@@ -9,7 +9,7 @@
 }
 .radio:hover,
 .radio:focus-within {
-  background-color: var(--radio-bg-hover, rgb(0 0 0 / 10%));
+  background-color: var(--radio-bg-hover, rgb(100 100 100 / 20%));
 }
 
 .radio__inner {
