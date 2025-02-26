@@ -6,6 +6,7 @@ import { maxResets, gameResets } from "@/state/resets";
 import { handleLetterMistake } from "./letter-mistake";
 import { resetGame } from "./reset-game";
 import { handleGameOver } from "./game-over";
+import { setWordCompleted, useLetter } from "@/ui/word";
 import { implementsMaxResets } from "@/utils/max-resets";
 import { hideTimerBar } from "@/ui/timer";
 import { $reset } from "@/ui/actions";
@@ -46,6 +47,8 @@ export function handleLetterInput($currentField) {
     }
 
     handleLetterMistake({ $currentLetter, enteredLetter });
+  } else {
+    useLetter(enteredLetter);
   }
 
   const $nextLetter = $currentLetter.nextElementSibling;
@@ -68,5 +71,6 @@ export function handleLetterInput($currentField) {
     showAlert({ color: "success", text: "🎉 Success!" });
     hideTimerBar();
     $reset.disabled = true;
+    setWordCompleted();
   }
 }

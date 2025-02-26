@@ -5,7 +5,7 @@ import { resetTries } from "@/state/tries";
 import { gameResets, resetGameResets } from "@/state/resets";
 import { createLetterFields } from "@/utils/letter-fields";
 import { scrambleWord } from "@/utils/scramble";
-import { $word } from "@/ui/word";
+import { $word, captureWordLetters, setWordLetters } from "@/ui/word";
 import { $currentTries, $triesIndicators } from "@/ui/tries";
 import { $mistakenLetters } from "@/ui/mistakes";
 import { captureLetterFields, setLetterFields, $typing } from "@/ui/typing";
@@ -28,8 +28,11 @@ export function generateRandomWord() {
       const $letter = document.createElement("span");
 
       $letter.textContent = letter;
+      $letter.classList.add("word__letter");
       $word.appendChild($letter);
     });
+  setWordLetters(captureWordLetters());
+  $word.removeAttribute("data-completed");
 
   while ($typing.firstChild) $typing.removeChild($typing.firstChild);
   createLetterFields(currentWord.length);

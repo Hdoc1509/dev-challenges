@@ -14,3 +14,7 @@
   font-weight: bold;
   user-select: none;
 }
+
+.game-card .word:not(.word[data-completed]) .word__letter[data-used] {
+  color: var(--black);
+}
