@@ -11,5 +11,6 @@
   box-shadow: var(--word-shadow);
 
   font-size: var(--word-fs);
+  font-weight: bold;
   user-select: none;
 }
