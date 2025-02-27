@@ -17,7 +17,7 @@ MOCKS_DIR="$PROJECT_ROOT"/src/mocks
 JQ_SCRIPT="$PROJECT_ROOT"/scripts/filter-words.jq
 
 if [[ -z $file_name ]]; then
-  echo "Missing --file argument"
+  echo "Missing --name argument"
   exit 1
 fi
 
