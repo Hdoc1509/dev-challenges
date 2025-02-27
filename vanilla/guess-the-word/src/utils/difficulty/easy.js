@@ -1,19 +1,8 @@
-import { CLASSES, CSS_VARIABLES, DIFFICULTIES } from "@/consts";
+import { setWords } from "@/state/words";
+import { WORDS } from "@/consts";
 
-/**
- * @param {Object} params
- * @param {HTMLSpanElement} params.$mistakenLetter
- * @param {HTMLSpanElement} params.$currentLetter
- * @param {number} params.currentTries
- */
-const apply = ({ $mistakenLetter, $currentLetter, currentTries }) => {
-  const difficultyIdx = currentTries - 1;
-  const color = `var(--difficulty-${DIFFICULTIES[difficultyIdx]})`;
-
-  $mistakenLetter.style.setProperty(CSS_VARIABLES.MISTAKEN_LETTER_TEXT, color);
-
-  $currentLetter.classList.add(CLASSES.TYPING.LETTER__MISTAKEN);
-  $currentLetter.style.setProperty(CSS_VARIABLES.LETTER_BORDER_MISTAKEN, color);
-};
-
-export const EasyDifficulty = Object.freeze({ apply });
+export const EasyDifficulty = Object.freeze({
+  apply() {
+    setWords(WORDS.EASY);
+  },
+});

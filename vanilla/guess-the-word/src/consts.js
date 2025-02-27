@@ -1,3 +1,4 @@
+import WORDS_EASY from "@/mocks/words/easy.json";
 import WORDS_NORMAL from "@/mocks/words/normal.json";
 import WORDS_EXTREME from "@/mocks/words/extreme.json";
 
@@ -11,8 +12,13 @@ const CUSTOM_WORDS = [
 ];
 
 export const WORDS = Object.freeze({
+  EASY: Object.freeze(
+    WORDS_EASY.concat(CUSTOM_WORDS.filter((word) => word.length <= 6)),
+  ),
   NORMAL: Object.freeze(
-    WORDS_NORMAL.concat(CUSTOM_WORDS.filter((word) => word.length < 10)),
+    WORDS_NORMAL.concat(
+      CUSTOM_WORDS.filter((word) => word.length >= 7 && word.length <= 9),
+    ),
   ),
   EXTREME: Object.freeze(
     WORDS_EXTREME.concat(CUSTOM_WORDS.filter((word) => word.length >= 10)),

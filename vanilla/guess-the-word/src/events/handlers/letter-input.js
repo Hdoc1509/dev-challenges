@@ -37,7 +37,7 @@ export function handleLetterInput($currentField) {
 
     if (tries === maxTries) {
       if (implementsMaxResets({ difficulty }) && gameResets === maxResets) {
-        handleLetterMistake({ $currentLetter, enteredLetter });
+        handleLetterMistake(enteredLetter);
         handleGameOver({ $currentField, $currentLetter });
         hideTimerBar();
         return;
@@ -46,7 +46,7 @@ export function handleLetterInput($currentField) {
       return resetGame();
     }
 
-    handleLetterMistake({ $currentLetter, enteredLetter });
+    handleLetterMistake(enteredLetter);
   } else {
     useLetter(enteredLetter);
   }
