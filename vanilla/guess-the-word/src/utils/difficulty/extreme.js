@@ -7,5 +7,4 @@ export function applyExtremeDifficulty() {
 
 export const ExtremeDifficulty = Object.freeze({
   apply: () => setWords(WORDS.EXTREME),
-  unapply: () => setWords(WORDS.NORMAL),
 });
