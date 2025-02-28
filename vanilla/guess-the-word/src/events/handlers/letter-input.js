@@ -19,20 +19,19 @@ export function handleLetterInput($currentField) {
   );
   const letterIndex = Number($currentLetter.dataset.letterIndex);
   const enteredLetter = $currentField.value;
+  const lowercaseLetter = enteredLetter.toLowerCase();
 
   if (
     enteredLetter !== "" &&
-    (enteredLetter === " " || !/[a-z]/i.test(enteredLetter))
+    (enteredLetter === " " || !/[a-z]/.test(lowercaseLetter))
   ) {
     $currentField.value = "";
     return;
   }
 
-  const hasMatched = new RegExp(currentWord[letterIndex], "i").test(
-    enteredLetter,
-  );
+  const isMatch = currentWord[letterIndex] === lowercaseLetter;
 
-  if (!hasMatched) {
+  if (!isMatch) {
     increaseTries();
 
     if (tries === maxTries) {
@@ -48,7 +47,7 @@ export function handleLetterInput($currentField) {
 
     handleLetterMistake(enteredLetter);
   } else {
-    useLetter(enteredLetter);
+    useLetter(lowercaseLetter);
   }
 
   const $nextLetter = $currentLetter.nextElementSibling;
