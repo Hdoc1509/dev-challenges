@@ -2,6 +2,7 @@ import { resetTries } from "@/state/tries";
 import { difficulty } from "@/state/difficulty";
 import { gameResets, increaseGameResets } from "@/state/resets";
 import { implementsMaxResets } from "@/utils/max-resets";
+import { $wordLetters } from "@/ui/word";
 import { $currentTries, $triesIndicators } from "@/ui/tries";
 import { $mistakenLetters } from "@/ui/mistakes";
 import { $currentResets, $resetsIndicators } from "@/ui/resets";
@@ -23,6 +24,7 @@ export function resetGame() {
   resetTries();
   hideTimerBar();
 
+  $wordLetters.forEach(($letter) => $letter.removeAttribute("data-used"));
   $currentTries.textContent = "0";
   $triesIndicators.forEach(($item) => $item.removeAttribute("data-completed"));
   if (implementsMaxResets({ difficulty })) {
