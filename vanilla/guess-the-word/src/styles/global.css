@@ -46,7 +46,7 @@
   --info-fs: 0.875rem;
   --button-fs: 0.875rem;
 
-  --alert-time-bar-duration: 3s;
+  --alert-time-bar-duration: 4s;
 
   --timer-bg: var(--word-bg);
   --timer-bar-bg: var(--secondary);
