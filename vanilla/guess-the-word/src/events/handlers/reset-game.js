@@ -9,7 +9,7 @@ import { $currentResets, $resetsIndicators } from "@/ui/resets";
 import { hideTimerBar } from "@/ui/timer";
 import { $letterFields, $typing } from "@/ui/typing";
 import { $reset } from "@/ui/actions";
-import { CLASSES, CSS_VARIABLES } from "@/consts";
+import { CLASSES } from "@/consts";
 
 export function resetGame() {
   const $firstField = $letterFields[0];
@@ -17,9 +17,7 @@ export function resetGame() {
     document.querySelector(`.${CLASSES.TYPING.LETTER__CURRENT}`)
   );
   /** @type {NodeListOf<HTMLSpanElement>} */
-  const $typingMistakenLetters = $typing.querySelectorAll(
-    `.${CLASSES.TYPING.LETTER__MISTAKEN}`,
-  );
+  const $typingLetters = $typing.querySelectorAll(`.${CLASSES.TYPING.LETTER}`);
 
   resetTries();
   hideTimerBar();
@@ -34,9 +32,11 @@ export function resetGame() {
   }
   $mistakenLetters.textContent = "-";
   $currentLetter?.classList.remove(CLASSES.TYPING.LETTER__CURRENT);
-  $typingMistakenLetters.forEach(($letter) => {
-    $letter.classList.remove(CLASSES.TYPING.LETTER__MISTAKEN);
-    $letter.style.removeProperty(CSS_VARIABLES.LETTER_BORDER_MISTAKEN);
+  $typingLetters.forEach(($letter) => {
+    $letter.classList.remove(
+      CLASSES.TYPING.LETTER__MISTAKEN,
+      CLASSES.TYPING.LETTER__CORRECT,
+    );
   });
   $letterFields.forEach(($field) => {
     $field.readOnly = false;

@@ -75,6 +75,7 @@ create a small game that tests your data management and DOM manipulation with Ja
 - Case insensitive check for entered letter
 - Difficulty levels: easy, normal, hard, master, extreme, insane and why
 - Change color of used letters
+- Add border colors to correct and wrong entered letters
 
 ### What I learned
 

@@ -30,6 +30,7 @@ export const CLASSES = Object.freeze({
     LETTER: "typing__letter",
     LETTER__CURRENT: "typing__letter--current",
     LETTER__MISTAKEN: "typing__letter--mistaken",
+    LETTER__CORRECT: "typing__letter--correct",
   }),
   TRIES: Object.freeze({
     INDICATOR: "tries__indicator",
@@ -40,10 +41,6 @@ export const CLASSES = Object.freeze({
   STEPPER: Object.freeze({
     STEP: "stepper__step",
   }),
-});
-
-export const CSS_VARIABLES = Object.freeze({
-  LETTER_BORDER_MISTAKEN: "--letter-border-mistaken",
 });
 
 export const DIFFICULTY = Object.freeze({

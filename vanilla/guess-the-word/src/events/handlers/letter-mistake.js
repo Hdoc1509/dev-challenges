@@ -1,13 +1,14 @@
 import { $currentTries, $triesIndicators } from "@/ui/tries";
 import { $mistakenLetters } from "@/ui/mistakes";
-import { TRIES } from "@/consts";
+import { CLASSES, TRIES } from "@/consts";
 
 /**
  * @param {Object} params
+ * @param {HTMLSpanElement} params.$currentLetter
  * @param {string} params.enteredLetter
  * @param {number} params.tries
  */
-export function handleLetterMistake({ enteredLetter, tries }) {
+export function handleLetterMistake({ $currentLetter, enteredLetter, tries }) {
   const mistakes = $mistakenLetters.textContent;
 
   $mistakenLetters.textContent =
@@ -16,4 +17,5 @@ export function handleLetterMistake({ enteredLetter, tries }) {
   $currentTries.textContent = `${tries}`;
   // NOTE: can be undefined if difficulty === MASTER
   $triesIndicators[tries - 1]?.setAttribute("data-completed", "");
+  $currentLetter.classList.add(CLASSES.TYPING.LETTER__MISTAKEN);
 }

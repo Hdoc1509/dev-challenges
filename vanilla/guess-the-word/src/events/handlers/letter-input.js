@@ -36,7 +36,7 @@ export function handleLetterInput($currentField) {
 
     if (tries === maxTries) {
       if (implementsMaxResets({ difficulty }) && gameResets === maxResets) {
-        handleLetterMistake({ enteredLetter, tries });
+        handleLetterMistake({ $currentLetter, enteredLetter, tries });
         handleGameOver({ $currentField, $currentLetter });
         hideTimerBar();
         return;
@@ -45,9 +45,11 @@ export function handleLetterInput($currentField) {
       return resetGame();
     }
 
-    handleLetterMistake({ enteredLetter, tries });
+    handleLetterMistake({ $currentLetter, enteredLetter, tries });
   } else {
+    // TODO: move to handleLetterCorrect() in another file
     useLetter(lowercaseLetter);
+    $currentLetter.classList.add(CLASSES.TYPING.LETTER__CORRECT);
   }
 
   const $nextLetter = $currentLetter.nextElementSibling;
@@ -67,6 +69,7 @@ export function handleLetterInput($currentField) {
     $nextField.disabled = false;
     $nextField.focus();
   } else if (tries === TRIES.NONE) {
+    // TODO: move to another file
     showAlert({ color: "success", text: "🎉 Success!" });
     hideTimerBar();
     $reset.disabled = true;

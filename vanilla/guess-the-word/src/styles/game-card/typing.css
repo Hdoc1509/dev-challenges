@@ -53,7 +53,10 @@
   --caret-visibility: visible;
 }
 .game-card .typing__letter--mistaken {
-  border-color: var(--letter-border-mistaken);
+  border-color: var(--difficulty-extreme);
+}
+.game-card .typing__letter--correct {
+  border-color: var(--difficulty-easy);
 }
 .game-card .typing__letter--current > input:focus + .typing__caret {
   animation-duration: var(--caret-blink-duration);
