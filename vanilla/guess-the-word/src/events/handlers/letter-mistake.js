@@ -1,10 +1,13 @@
-import { tries } from "@/state/tries";
 import { $currentTries, $triesIndicators } from "@/ui/tries";
 import { $mistakenLetters } from "@/ui/mistakes";
 import { CLASSES, TRIES } from "@/consts";
 
-/** @param {string} enteredLetter */
-export function handleLetterMistake(enteredLetter) {
+/**
+ * @param {Object} params
+ * @param {string} params.enteredLetter
+ * @param {number} params.tries
+ */
+export function handleLetterMistake({ enteredLetter, tries }) {
   const $newMistakenLetter = document.createElement("span");
 
   if (tries === TRIES.FIRST) $mistakenLetters.textContent = "";
