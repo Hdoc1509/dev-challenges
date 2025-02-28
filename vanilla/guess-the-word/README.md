@@ -76,6 +76,7 @@ create a small game that tests your data management and DOM manipulation with Ja
 - Difficulty levels: easy, normal, hard, master, extreme, insane and why
 - Change color of used letters
 - Add border colors to correct and wrong entered letters
+- Show correct word when winning or losing
 
 ### What I learned
 

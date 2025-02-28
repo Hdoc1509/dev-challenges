@@ -6,7 +6,7 @@ import { maxResets, gameResets } from "@/state/resets";
 import { handleLetterMistake } from "./letter-mistake";
 import { resetGame } from "./reset-game";
 import { handleGameOver } from "./game-over";
-import { setWordCompleted, useLetter } from "@/ui/word";
+import { setWordCompleted, showCorrectWord, useLetter } from "@/ui/word";
 import { implementsMaxResets } from "@/utils/max-resets";
 import { hideTimerBar } from "@/ui/timer";
 import { $reset } from "@/ui/actions";
@@ -38,6 +38,7 @@ export function handleLetterInput($currentField) {
       if (implementsMaxResets({ difficulty }) && gameResets === maxResets) {
         handleLetterMistake({ $currentLetter, enteredLetter, tries });
         handleGameOver({ $currentField, $currentLetter });
+        showCorrectWord();
         hideTimerBar();
         return;
       }
@@ -74,5 +75,6 @@ export function handleLetterInput($currentField) {
     hideTimerBar();
     $reset.disabled = true;
     setWordCompleted();
+    showCorrectWord();
   }
 }

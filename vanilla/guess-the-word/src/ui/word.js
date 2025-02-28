@@ -1,4 +1,5 @@
 import { getAllElementsBySelector, getElementById } from "@lib/dom";
+import { currentWord } from "@/state/current-word";
 
 const ATTRIBUTRES = Object.freeze({
   WORD: Object.freeze({
@@ -31,3 +32,15 @@ export const useLetter = (letter) => {
 
 export const setWordCompleted = () =>
   $word.setAttribute(ATTRIBUTRES.WORD.COMPLETED, "");
+
+export const showCorrectWord = async () => {
+  for (let i = 0; i < currentWord.length; i++) {
+    const letter = currentWord[i];
+    const $letter = $wordLetters[i];
+
+    if ($letter.textContent !== letter) {
+      $letter.textContent = letter;
+      await new Promise((resolve) => setTimeout(resolve, 250));
+    }
+  }
+};
