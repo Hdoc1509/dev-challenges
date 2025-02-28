@@ -31,10 +31,6 @@ export const CLASSES = Object.freeze({
     LETTER__CURRENT: "typing__letter--current",
     LETTER__MISTAKEN: "typing__letter--mistaken",
   }),
-  MISTAKES: Object.freeze({
-    LETTER: "mistakes__letter",
-    LETTER__EMPTY: "mistakes__letter--empty",
-  }),
   TRIES: Object.freeze({
     INDICATOR: "tries__indicator",
   }),
@@ -47,7 +43,6 @@ export const CLASSES = Object.freeze({
 });
 
 export const CSS_VARIABLES = Object.freeze({
-  MISTAKEN_LETTER_TEXT: "--mistaken-letter-text",
   LETTER_BORDER_MISTAKEN: "--letter-border-mistaken",
 });
 

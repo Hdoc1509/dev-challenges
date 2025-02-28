@@ -1,6 +1,6 @@
 import { $currentTries, $triesIndicators } from "@/ui/tries";
 import { $mistakenLetters } from "@/ui/mistakes";
-import { CLASSES, TRIES } from "@/consts";
+import { TRIES } from "@/consts";
 
 /**
  * @param {Object} params
@@ -8,18 +8,12 @@ import { CLASSES, TRIES } from "@/consts";
  * @param {number} params.tries
  */
 export function handleLetterMistake({ enteredLetter, tries }) {
-  const $newMistakenLetter = document.createElement("span");
+  const mistakes = $mistakenLetters.textContent;
 
-  if (tries === TRIES.FIRST) $mistakenLetters.textContent = "";
+  $mistakenLetters.textContent =
+    tries === TRIES.FIRST ? enteredLetter : `${mistakes}, ${enteredLetter}`;
 
   $currentTries.textContent = `${tries}`;
   // NOTE: can be undefined if difficulty === MASTER
   $triesIndicators[tries - 1]?.setAttribute("data-completed", "");
-
-  $newMistakenLetter.classList.add(CLASSES.MISTAKES.LETTER);
-  $newMistakenLetter.textContent = enteredLetter === "" ? "-" : enteredLetter;
-  if (enteredLetter === "")
-    $newMistakenLetter.classList.add(CLASSES.MISTAKES.LETTER__EMPTY);
-  if (tries > TRIES.FIRST) $mistakenLetters.append(",");
-  $mistakenLetters.appendChild($newMistakenLetter);
 }

@@ -20,13 +20,6 @@
   --step-color-completed: var(--primary);
 }
 
-.mistakes__letter {
-  color: var(--mistaken-letter-text);
-}
-.mistakes__letter + .mistakes__letter {
-  margin-left: 0.5ch;
-}
-
 .game-card .info .resets {
   display: none;
 }
