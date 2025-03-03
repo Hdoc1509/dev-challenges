@@ -21,6 +21,6 @@ if [[ -z $file_name ]]; then
   exit 1
 fi
 
-jq --arg MIN_LENGTH "$min" --arg MAX_LENGTH "$max" --compact-output --from-file "$JQ_SCRIPT" \
-  "$MOCKS_DIR"/wordsapi_sample.json \
+jq --arg MIN_LENGTH "$min" --arg MAX_LENGTH "$max"  --from-file "$JQ_SCRIPT" \
+  "$MOCKS_DIR"/wordsapi_sample.json | jq --compact-output '[keys[]]' \
   >"$MOCKS_DIR"/words/"$file_name".json

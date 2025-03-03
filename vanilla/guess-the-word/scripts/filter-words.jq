@@ -8,6 +8,4 @@ map(
   select(.key | test("[aeiou]")) |
   select(.key | test("^[a-z]{\($MIN_LENGTH),\($MAX_LENGTH)}$"))
 ) |
-from_entries | [
-  keys[]
-]
+from_entries
