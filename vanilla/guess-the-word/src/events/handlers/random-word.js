@@ -12,6 +12,7 @@ import { captureLetterFields, setLetterFields, $typing } from "@/ui/typing";
 import { $currentResets, $resetsIndicators } from "@/ui/resets";
 import { hideTimerBar } from "@/ui/timer";
 import { $reset } from "@/ui/actions";
+import { $definition } from "@/ui/definition";
 
 export function generateRandomWord() {
   const randomWord = words[Math.floor(Math.random() * words.length)];
@@ -44,5 +45,6 @@ export function generateRandomWord() {
   $mistakenLetters.textContent = "-";
   $currentResets.textContent = `${gameResets}`;
   hideTimerBar();
+  $definition.removeAttribute("data-active");
   $reset.disabled = true;
 }

@@ -9,6 +9,7 @@ import { handleGameOver } from "./game-over";
 import { setWordCompleted, showCorrectWord, useLetter } from "@/ui/word";
 import { implementsMaxResets } from "@/utils/max-resets";
 import { hideTimerBar } from "@/ui/timer";
+import { $definition } from "@/ui/definition";
 import { $reset } from "@/ui/actions";
 import { CLASSES, TRIES } from "@/consts";
 
@@ -76,5 +77,6 @@ export function handleLetterInput($currentField) {
     $reset.disabled = true;
     setWordCompleted();
     showCorrectWord();
+    $definition.setAttribute("data-active", "");
   }
 }
