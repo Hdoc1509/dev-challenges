@@ -26,3 +26,23 @@
 .game-card .info .resets[data-active] {
   display: flex;
 }
+
+.game-card .info .definition {
+  grid-column: 1 / -1;
+}
+.game-card .info .definition:not([data-active]) {
+  display: none;
+}
+
+.game-card .info .definition__open {
+  /* .menu-trigger */
+  --menu-trigger-bg: var(--primary);
+  --menu-trigger-padding: 0.5em 0.75em;
+  --menu-trigger-scale: 1.075;
+  --menu-trigger-size: 1.5em;
+
+  display: flex;
+  gap: 4px;
+
+  margin: 0 auto;
+}

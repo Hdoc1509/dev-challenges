@@ -41,7 +41,8 @@
 
   --icon-size: var(--menu-trigger-size, 1rem);
 }
+/* TODO: use same hover/focus rules as <Button /> from @hrc/button */
 .menu-trigger:hover,
 .menu-trigger:focus {
-  transform: scale(1.125);
+  transform: scale(var(--menu-trigger-scale, 1.125));
 }
