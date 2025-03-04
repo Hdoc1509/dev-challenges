@@ -13,7 +13,7 @@ export function handleShowDefinition() {
   // - retrieve word definition from 'definitions' state
   // - if found, show definition
   // - else:
-  //   - retrieve definition from /api/definition/<word>
+  //   - retrieve definition from `CONSTS.DEFINITIONS` constant
   //   - show definition
   //   - add 'word' to 'definitions' state
   //   - save it to localStorage

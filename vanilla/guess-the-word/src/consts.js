@@ -6,7 +6,7 @@ const CUSTOM_WORDS = [
   "example",
   "javascript",
   "coding",
-  "challenge",
+  "challenge", // has definitions in mock
   "flower",
   "adventure",
 ];
