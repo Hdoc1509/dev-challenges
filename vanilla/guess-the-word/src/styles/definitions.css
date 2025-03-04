@@ -1,0 +1,16 @@
+.definitions-list {
+  display: grid;
+  gap: 4px;
+
+  padding: 0;
+
+  list-style: none;
+}
+
+.definition__label {
+  font-weight: bold;
+  cursor: pointer;
+}
+.definition__content {
+  padding-left: 1rem;
+}
