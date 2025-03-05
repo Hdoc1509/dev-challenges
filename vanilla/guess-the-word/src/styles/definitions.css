@@ -6,6 +6,9 @@
 
   list-style: none;
 }
+.definitions-list hr {
+  color: rgb(175, 175, 175);
+}
 
 .definition__label {
   font-weight: bold;
