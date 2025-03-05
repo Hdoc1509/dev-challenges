@@ -3,14 +3,6 @@ import WORDS_NORMAL from "@/mocks/words/normal.json";
 import WORDS_EXTREME from "@/mocks/words/extreme.json";
 import DEFINITIONS_MOCK from "@/mocks/definitions.json";
 
-const CUSTOM_WORDS = [
-  "example",
-  "javascript",
-  "coding",
-  "challenge", // has definitions in mock
-  "flower",
-  "adventure",
-];
 const CUSTOM_DEFINITIONS = {
   example: [
     "A representative form or pattern",
@@ -35,6 +27,7 @@ const CUSTOM_DEFINITIONS = {
     "A wild and exciting undertaking (not necessarily lawful",
   ],
 };
+const CUSTOM_WORDS = ["challenge", ...Object.keys(CUSTOM_DEFINITIONS)];
 
 export const DEFINITIONS = Object.freeze({
   ...DEFINITIONS_MOCK,
