@@ -60,6 +60,7 @@ export const renderDefinition = (
     $itemClone,
   );
   const $separator = document.createElement("hr");
+
   /** @type {string[]} */
   const definitions = DEFINITIONS[word];
 
@@ -82,6 +83,13 @@ export const renderDefinition = (
   } else {
     if ($definitionslist.childElementCount >= 1)
       $definitionslist.prepend($separator);
+
+    const $badge = document.createElement("span");
+
+    $badge.classList.add("definition__badge");
+    $badge.textContent = "New";
+    $label.appendChild($badge);
+
     $definitionslist.prepend($itemClone);
   }
 };

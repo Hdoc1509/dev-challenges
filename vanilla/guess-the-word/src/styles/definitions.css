@@ -17,3 +17,12 @@
 .definition__content {
   padding-left: 1rem;
 }
+.definition__badge {
+  margin-left: 0.5em;
+  padding: 0.125em 0.5em;
+  border: 1px solid;
+  border-radius: 6px;
+
+  font-size: 0.8125em;
+  color: var(--secondary);
+}
