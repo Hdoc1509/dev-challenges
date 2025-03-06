@@ -25,7 +25,7 @@ export const $definitionslist = getElementBySelector(
 const capitalize = (word) => word[0].toUpperCase() + word.slice(1);
 
 /** @param {Array<keyof DEFINITIONS>} words */
-export const renderDefinitions = (words) => {
+export const renderSavedDefinitions = (words) => {
   if (words.length === 0) return;
 
   const $notYet = $definitionslist.querySelector(".not-yet");
