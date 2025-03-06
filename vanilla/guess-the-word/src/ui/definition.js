@@ -60,6 +60,10 @@ export const renderDefinition = (word, { lastWord, initialRender = false }) => {
   /** @type {string[]} */
   const definitions = DEFINITIONS[word];
 
+  const $notYet = $definitionslist.querySelector(".not-yet");
+
+  if ($notYet != null) $notYet.remove();
+
   $label.textContent = capitalize(word);
 
   for (const definition of definitions) {
@@ -73,6 +77,8 @@ export const renderDefinition = (word, { lastWord, initialRender = false }) => {
     $definitionslist.appendChild($itemClone);
     if (word !== lastWord) $definitionslist.appendChild($separator);
   } else {
-    $definitionslist.prepend($itemClone, $separator);
+    if ($definitionslist.childElementCount >= 1)
+      $definitionslist.prepend($separator);
+    $definitionslist.prepend($itemClone);
   }
 };
