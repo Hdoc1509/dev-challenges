@@ -15,7 +15,9 @@ import { $reset } from "@/ui/actions";
 import { $definition } from "@/ui/definition";
 
 export function generateRandomWord() {
-  const randomWord = words[Math.floor(Math.random() * words.length)];
+  const randomWord = /** @type {import("@/consts").DefinitionWord } */ (
+    words[Math.floor(Math.random() * words.length)]
+  );
 
   setCurrentWord(randomWord);
   resetAlert();
