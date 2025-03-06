@@ -1,8 +1,9 @@
 import { IS_DEV } from "@/config";
+/** @typedef {import("@/consts").DefinitionWord} DefinitionWord */
 
-export let currentWord = "";
+export let currentWord = /** @type {DefinitionWord} */ ("");
 
-/** @param {string} newWord */
+/** @param {DefinitionWord} newWord */
 export const setCurrentWord = (newWord) => {
   currentWord = newWord;
   if (IS_DEV) console.log({ currentWord });
