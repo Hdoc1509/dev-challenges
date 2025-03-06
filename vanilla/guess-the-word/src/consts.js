@@ -33,6 +33,7 @@ export const DEFINITIONS = Object.freeze({
   ...DEFINITIONS_MOCK,
   ...CUSTOM_DEFINITIONS,
 });
+/** @typedef {keyof DEFINITIONS} DefinitionWord */
 
 export const WORDS = Object.freeze({
   EASY: Object.freeze(
