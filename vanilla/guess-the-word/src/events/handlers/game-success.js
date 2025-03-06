@@ -1,19 +1,22 @@
 import { showAlert } from "@lib/alert";
+import { discoveredWords, saveDiscoveredWords } from "@/state/discovered-words";
+import { currentWord } from "@/state/current-word";
 import { setWordCompleted, showCorrectWord } from "@/ui/word";
 import { hideTimerBar } from "@/ui/timer";
-import { $definition } from "@/ui/definition";
+import { $definition, renderDefinition } from "@/ui/definition";
 import { $reset } from "@/ui/actions";
 
 export function handleGameSuccess() {
-  // TODO: move to another file
   showAlert({ color: "success", text: "🎉 Success!" });
   hideTimerBar();
   $reset.disabled = true;
   setWordCompleted();
   showCorrectWord();
+  // TODO: only show definition button if word is not in discoveredWords
   $definition.setAttribute("data-active", "");
-  // check if the word is in discoveredWords Set
-  // if not, add it to discoveredWords Set
-  // render the new word definition id $definitionsList
-  // save the discoveredWords Set to localStorage
+  if (discoveredWords.has(currentWord)) return;
+
+  discoveredWords.add(currentWord);
+  renderDefinition(currentWord, {});
+  saveDiscoveredWords();
 }
