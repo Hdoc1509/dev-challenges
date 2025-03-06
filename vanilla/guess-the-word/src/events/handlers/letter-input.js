@@ -1,4 +1,3 @@
-import { showAlert } from "@lib/alert";
 import { currentWord } from "@/state/current-word";
 import { difficulty } from "@/state/difficulty";
 import { increaseTries, maxTries, tries } from "@/state/tries";
@@ -6,10 +5,10 @@ import { maxResets, gameResets } from "@/state/resets";
 import { handleLetterMistake } from "./letter-mistake";
 import { resetGame } from "./reset-game";
 import { handleGameOver } from "./game-over";
-import { setWordCompleted, showCorrectWord, useLetter } from "@/ui/word";
+import { handleGameSuccess } from "./game-success";
+import { showCorrectWord, useLetter } from "@/ui/word";
 import { implementsMaxResets } from "@/utils/max-resets";
 import { hideTimerBar } from "@/ui/timer";
-import { $definition } from "@/ui/definition";
 import { $reset } from "@/ui/actions";
 import { CLASSES, TRIES } from "@/consts";
 
@@ -71,12 +70,6 @@ export function handleLetterInput($currentField) {
     $nextField.disabled = false;
     $nextField.focus();
   } else if (tries === TRIES.NONE) {
-    // TODO: move to another file
-    showAlert({ color: "success", text: "🎉 Success!" });
-    hideTimerBar();
-    $reset.disabled = true;
-    setWordCompleted();
-    showCorrectWord();
-    $definition.setAttribute("data-active", "");
+    handleGameSuccess();
   }
 }
