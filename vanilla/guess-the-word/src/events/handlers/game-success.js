@@ -12,10 +12,10 @@ export function handleGameSuccess() {
   $reset.disabled = true;
   setWordCompleted();
   showCorrectWord();
-  // TODO: only show definition button if word is not in discoveredWords
-  $definition.setAttribute("data-active", "");
+
   if (discoveredWords.has(currentWord)) return;
 
+  $definition.setAttribute("data-active", "");
   discoveredWords.add(currentWord);
   renderDefinition(currentWord, {});
   saveDiscoveredWords();
