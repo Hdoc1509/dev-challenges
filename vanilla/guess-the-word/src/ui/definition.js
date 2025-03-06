@@ -34,36 +34,45 @@ export const renderSavedDefinitions = (words) => {
 
   const lastWord = words[words.length - 1];
 
-  for (const word of words) {
-    const $itemClone = /** @type {DocumentFragment} */ (
-      $definitionTemplate.content.cloneNode(true)
-    );
-    const $label = getElementBySelector(
-      ".definition__label",
-      HTMLElement,
-      $itemClone,
-    );
-    const $content = getElementBySelector(
-      ".definition__content",
-      HTMLElement,
-      $itemClone,
-    );
-    /** @type {string[]} */
-    const definitions = DEFINITIONS[word];
+  for (const word of words)
+    renderDefinition(word, { lastWord, initialRender: true });
+};
 
-    $label.textContent = capitalize(word);
+/**
+ * @param {keyof DEFINITIONS} word
+ * @param {{ lastWord?: string, initialRender?: boolean }} options
+ */
+export const renderDefinition = (word, { lastWord, initialRender = false }) => {
+  const $itemClone = /** @type {DocumentFragment} */ (
+    $definitionTemplate.content.cloneNode(true)
+  );
+  const $label = getElementBySelector(
+    ".definition__label",
+    HTMLElement,
+    $itemClone,
+  );
+  const $content = getElementBySelector(
+    ".definition__content",
+    HTMLElement,
+    $itemClone,
+  );
+  const $separator = document.createElement("hr");
+  /** @type {string[]} */
+  const definitions = DEFINITIONS[word];
 
-    for (const definition of definitions) {
-      const $definition = document.createElement("p");
+  $label.textContent = capitalize(word);
 
-      $definition.textContent = `${definition}.`;
-      $content.appendChild($definition);
-    }
+  for (const definition of definitions) {
+    const $definition = document.createElement("p");
 
+    $definition.textContent = `${definition}.`;
+    $content.appendChild($definition);
+  }
+
+  if (initialRender) {
     $definitionslist.appendChild($itemClone);
-    if (word !== lastWord) {
-      const $separator = document.createElement("hr");
-      $definitionslist.appendChild($separator);
-    }
+    if (word !== lastWord) $definitionslist.appendChild($separator);
+  } else {
+    $definitionslist.prepend($itemClone, $separator);
   }
 };
