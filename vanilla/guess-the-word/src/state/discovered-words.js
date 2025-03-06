@@ -14,3 +14,10 @@ export let discoveredWords = (() => {
 
   return list;
 })();
+
+export const saveDiscoveredWords = () => {
+  localStorage.setItem(
+    LOCAL_STORAGE_KEY,
+    JSON.stringify(Array.from(discoveredWords)),
+  );
+};
