@@ -9,7 +9,11 @@ import { applyDifficulty } from "@/utils/difficulty/apply";
 import { isValidLetterField } from "@/utils/letter-fields";
 import { $menu, $menuClose, $menuOpen, MenuTabs } from "@/ui/menu";
 // import { generateWordList } from "@/ui/word-list";
-import { $showDefinition, renderSavedDefinitions } from "@/ui/definition";
+import {
+  $showDefinition,
+  clearNewDefinitionStatus,
+  renderSavedDefinitions,
+} from "@/ui/definition";
 import { $randomWord, $reset } from "@/ui/actions";
 
 export function setupEventListeners() {
@@ -46,5 +50,9 @@ export function setupEventListeners() {
       return handleDifficultyChange(
         /** @type {import("@/consts").Difficulty} */ ($target.value),
       );
+  });
+
+  $menu.addEventListener("close", () => {
+    clearNewDefinitionStatus();
   });
 }

@@ -95,3 +95,10 @@ export const renderDefinition = (
     $definitionslist.prepend($itemClone);
   }
 };
+
+export const clearNewDefinitionStatus = () => {
+  const $definition = document.querySelector(".definition[data-status=new]");
+
+  $definition?.removeAttribute("data-status");
+  $definition?.querySelector(".definition__badge")?.remove();
+};
