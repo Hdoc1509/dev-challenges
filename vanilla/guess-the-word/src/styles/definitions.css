@@ -10,6 +10,9 @@
   color: rgb(175, 175, 175);
 }
 
+.definition[data-status="new"] {
+  --definition-badge-text: var(--secondary);
+}
 .definition__label {
   font-weight: bold;
   cursor: pointer;
@@ -24,5 +27,5 @@
   border-radius: 6px;
 
   font-size: 0.8125em;
-  color: var(--secondary);
+  color: var(--definition-badge-text);
 }

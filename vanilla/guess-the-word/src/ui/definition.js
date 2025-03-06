@@ -49,6 +49,7 @@ export const renderDefinition = (
   const $itemClone = /** @type {DocumentFragment} */ (
     $definitionTemplate.content.cloneNode(true)
   );
+  const $item = getElementBySelector(".definition", HTMLLIElement, $itemClone);
   const $label = getElementBySelector(
     ".definition__label",
     HTMLElement,
@@ -89,6 +90,7 @@ export const renderDefinition = (
     $badge.classList.add("definition__badge");
     $badge.textContent = "New";
     $label.appendChild($badge);
+    $item.dataset.status = "new";
 
     $definitionslist.prepend($itemClone);
   }
