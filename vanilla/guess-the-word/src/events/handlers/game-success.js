@@ -17,6 +17,6 @@ export function handleGameSuccess() {
 
   $definition.setAttribute("data-active", "");
   discoveredWords.add(currentWord);
-  renderDefinition(currentWord, {});
+  renderDefinition(currentWord);
   saveDiscoveredWords();
 }

@@ -42,7 +42,10 @@ export const renderSavedDefinitions = (words) => {
  * @param {import("@/consts").DefinitionWord} word
  * @param {{ lastWord?: string, initialRender?: boolean }} options
  */
-export const renderDefinition = (word, { lastWord, initialRender = false }) => {
+export const renderDefinition = (
+  word,
+  { lastWord, initialRender = false } = {},
+) => {
   const $itemClone = /** @type {DocumentFragment} */ (
     $definitionTemplate.content.cloneNode(true)
   );
