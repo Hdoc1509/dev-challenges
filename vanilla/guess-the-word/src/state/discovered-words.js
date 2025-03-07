@@ -5,7 +5,7 @@ const LOCAL_STORAGE_KEY = "discovered-words";
 /** @type {DefinitionWord[]} */
 const wordsToSave = [];
 
-export let discoveredWords = (() => {
+export const discoveredWords = (() => {
   /** @type {Set<DefinitionWord>} */
   const list = new Set();
   const savedWords = localStorage.getItem(LOCAL_STORAGE_KEY);
