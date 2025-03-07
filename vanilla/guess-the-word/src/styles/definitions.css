@@ -11,7 +11,7 @@
   color: rgb(175, 175, 175);
 }
 
-.definition {
+.definition:not(.info .definition) {
   padding-left: 0.75rem;
   border-left: 3px solid var(--definition-border-color, var(--word-bg));
 }
