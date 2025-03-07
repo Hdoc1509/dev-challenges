@@ -6,9 +6,10 @@ import { handleLetterMistake } from "./letter-mistake";
 import { resetGame } from "./reset-game";
 import { handleGameOver } from "./game-over";
 import { handleGameSuccess } from "./game-success";
-import { showCorrectWord, useLetter } from "@/ui/word";
 import { implementsMaxResets } from "@/utils/max-resets";
+import { showCorrectWord, useLetter } from "@/ui/word";
 import { hideTimerBar } from "@/ui/timer";
+import { $notes } from "@/ui/notes";
 import { $reset } from "@/ui/actions";
 import { CLASSES, TRIES } from "@/consts";
 
@@ -52,6 +53,9 @@ export function handleLetterInput($currentField) {
     useLetter(lowercaseLetter);
     $currentLetter.classList.add(CLASSES.TYPING.LETTER__CORRECT);
   }
+
+  if (tries <= TRIES.FIRST && gameResets <= maxResets)
+    $notes.setAttribute("data-active", "");
 
   const $nextLetter = $currentLetter.nextElementSibling;
 

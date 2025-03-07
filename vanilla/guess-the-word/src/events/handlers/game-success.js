@@ -5,6 +5,7 @@ import { setWordCompleted, showCorrectWord } from "@/ui/word";
 import { hideTimerBar } from "@/ui/timer";
 import { $definition, renderDefinition } from "@/ui/definition";
 import { $reset } from "@/ui/actions";
+import { $notes } from "@/ui/notes";
 
 export function handleGameSuccess() {
   showAlert({ color: "success", text: "🎉 Success!" });
@@ -12,6 +13,7 @@ export function handleGameSuccess() {
   $reset.disabled = true;
   setWordCompleted();
   showCorrectWord();
+  $notes.removeAttribute("data-active");
 
   if (discoveredWords.has(currentWord)) return;
 
