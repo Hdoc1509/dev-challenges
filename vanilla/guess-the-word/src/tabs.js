@@ -53,7 +53,10 @@ export class Tabs {
       const $content = $contents[i];
 
       this.#$TABS.set(/** @type {string} */ ($tab.dataset.tab), $tab);
-      this.#$CONTENTS.set(/** @type {string} */ ($tab.dataset.tab), $content);
+      this.#$CONTENTS.set(
+        /** @type {string} */ ($content.dataset.tab),
+        $content,
+      );
     }
 
     this.#currentTab = /** @type {string} */ ($tabs[0].dataset.tab);
