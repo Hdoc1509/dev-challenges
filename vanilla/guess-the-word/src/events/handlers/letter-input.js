@@ -9,7 +9,7 @@ import { handleGameSuccess } from "./game-success";
 import { implementsMaxResets } from "@/utils/max-resets";
 import { showCorrectWord, useLetter } from "@/ui/word";
 import { hideTimerBar } from "@/ui/timer";
-import { $hints } from "@/ui/notes";
+import { $hints } from "@/ui/hints";
 import { $reset } from "@/ui/actions";
 import { CLASSES, TRIES } from "@/consts";
 

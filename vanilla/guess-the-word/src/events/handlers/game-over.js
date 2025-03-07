@@ -2,9 +2,9 @@ import { showAlert } from "@lib/alert";
 import { difficulty } from "@/state/difficulty";
 import { tries } from "@/state/tries";
 import { $wordLetters } from "@/ui/word";
-import { $reset } from "@/ui/actions";
 import { $currentTries } from "@/ui/tries";
-import { $hints } from "@/ui/notes";
+import { $hints } from "@/ui/hints";
+import { $reset } from "@/ui/actions";
 import { CLASSES, DIFFICULTY } from "@/consts";
 
 /**

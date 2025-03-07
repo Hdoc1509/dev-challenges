@@ -4,8 +4,8 @@ import { currentWord } from "@/state/current-word";
 import { setWordCompleted, showCorrectWord } from "@/ui/word";
 import { hideTimerBar } from "@/ui/timer";
 import { $definition, renderDefinition } from "@/ui/definition";
+import { $hints } from "@/ui/hints";
 import { $reset } from "@/ui/actions";
-import { $hints } from "@/ui/notes";
 
 export function handleGameSuccess() {
   showAlert({ color: "success", text: "🎉 Success!" });
