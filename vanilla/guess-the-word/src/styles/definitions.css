@@ -7,14 +7,27 @@
   list-style: none;
 }
 .definitions-list hr {
+  margin-block: 0.25rem;
   color: rgb(175, 175, 175);
 }
 
+.definition {
+  padding-left: 0.75rem;
+  border-left: 3px solid var(--definition-border-color, var(--word-bg));
+}
 .definition[data-status="new"] {
   --definition-badge-text: var(--secondary);
 }
+.definition:hover,
+.definition:focus-within {
+  --definition-border-color: var(--primary);
+  --definition-label-text: var(--secondary);
+}
 .definition__label {
+  outline: none;
+
   font-weight: bold;
+  color: var(--definition-label-text);
   cursor: pointer;
 }
 .definition__content {
