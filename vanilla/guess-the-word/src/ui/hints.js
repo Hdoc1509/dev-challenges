@@ -7,8 +7,13 @@ export const $openHints = getElementBySelector(
   HTMLButtonElement,
   $hints,
 );
+export const $openHintsLabel = getElementBySelector(
+  ".menu-trigger__label",
+  HTMLSpanElement,
+  $openHints,
+);
 
-const $hintsContent = getElementBySelector(
+export const $hintsContent = getElementBySelector(
   ".info .hints__content",
   HTMLElement,
   $hints,
