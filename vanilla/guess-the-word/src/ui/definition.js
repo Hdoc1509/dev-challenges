@@ -6,8 +6,8 @@ export const $definition = getElementBySelector(
   HTMLElement,
 );
 
-export const $showDefinition = getElementById(
-  "show-definition",
+export const $showDefinition = getElementBySelector(
+  ".info .definition__open",
   HTMLButtonElement,
 );
 
