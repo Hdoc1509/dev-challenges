@@ -31,7 +31,10 @@
   cursor: pointer;
 }
 .definition__content {
-  padding-left: 1rem;
+  padding-left: 0.875rem;
+}
+.definition__content > p + p {
+  margin-top: 0.5em;
 }
 .definition__badge {
   margin-left: 0.5em;
