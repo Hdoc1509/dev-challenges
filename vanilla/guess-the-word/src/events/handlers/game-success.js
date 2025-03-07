@@ -1,5 +1,5 @@
 import { showAlert } from "@lib/alert";
-import { discoveredWords, saveDiscoveredWords } from "@/state/discovered-words";
+import { addDiscoveredWord, discoveredWords } from "@/state/discovered-words";
 import { currentWord } from "@/state/current-word";
 import { setWordCompleted, showCorrectWord } from "@/ui/word";
 import { hideTimerBar } from "@/ui/timer";
@@ -16,7 +16,6 @@ export function handleGameSuccess() {
   if (discoveredWords.has(currentWord)) return;
 
   $definition.setAttribute("data-active", "");
-  discoveredWords.add(currentWord);
+  addDiscoveredWord(currentWord);
   renderDefinition(currentWord);
-  saveDiscoveredWords();
 }

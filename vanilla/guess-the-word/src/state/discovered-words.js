@@ -2,6 +2,9 @@
 
 const LOCAL_STORAGE_KEY = "discovered-words";
 
+/** @type {DefinitionWord[]} */
+const wordsToSave = [];
+
 export let discoveredWords = (() => {
   /** @type {Set<DefinitionWord>} */
   const list = new Set();
@@ -9,15 +12,18 @@ export let discoveredWords = (() => {
   const parsedWords = JSON.parse(savedWords ?? "[]");
 
   if (Array.isArray(parsedWords)) {
-    for (const word of parsedWords) list.add(word);
+    for (const word of parsedWords) {
+      list.add(word);
+      wordsToSave.push(word);
+    }
   }
 
   return list;
 })();
 
-export const saveDiscoveredWords = () => {
-  localStorage.setItem(
-    LOCAL_STORAGE_KEY,
-    JSON.stringify(Array.from(discoveredWords)),
-  );
+/** @param {DefinitionWord} word */
+export const addDiscoveredWord = (word) => {
+  discoveredWords.add(word);
+  wordsToSave.unshift(word);
+  localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(wordsToSave));
 };
