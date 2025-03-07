@@ -69,6 +69,7 @@ export const renderDefinition = (
 
   if ($notYet != null) $notYet.remove();
 
+  $item.dataset.word = word;
   $label.textContent = capitalize(word);
 
   for (const definition of definitions) {
