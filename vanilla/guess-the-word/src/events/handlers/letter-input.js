@@ -9,7 +9,7 @@ import { handleGameSuccess } from "./game-success";
 import { implementsMaxResets } from "@/utils/max-resets";
 import { showCorrectWord, useLetter } from "@/ui/word";
 import { hideTimerBar } from "@/ui/timer";
-import { $notes } from "@/ui/notes";
+import { $hints } from "@/ui/notes";
 import { $reset } from "@/ui/actions";
 import { CLASSES, TRIES } from "@/consts";
 
@@ -55,7 +55,7 @@ export function handleLetterInput($currentField) {
   }
 
   if (tries <= TRIES.FIRST && gameResets <= maxResets)
-    $notes.setAttribute("data-active", "");
+    $hints.setAttribute("data-active", "");
 
   const $nextLetter = $currentLetter.nextElementSibling;
 

@@ -28,16 +28,16 @@
 }
 
 .game-card .info .definition,
-.game-card .info .notes {
+.game-card .info .hints {
   grid-column: 1 / -1;
 }
 .game-card .info .definition:not([data-active]),
-.game-card .info .notes:not([data-active]) {
+.game-card .info .hints:not([data-active]) {
   display: none;
 }
 
 .game-card .info .definition__open,
-.game-card .info .notes__open {
+.game-card .info .hints__open {
   /* .menu-trigger */
   --menu-trigger-bg: var(--primary);
   --menu-trigger-padding: 0.5em 0.75em;
@@ -48,4 +48,13 @@
   gap: 4px;
 
   margin: 0 auto;
+}
+
+.game-card .info .hints {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.game-card .info .hints__content:not([data-active]) {
+  display: none;
 }
