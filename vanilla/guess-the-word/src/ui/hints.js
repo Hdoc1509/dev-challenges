@@ -1,22 +1,26 @@
 import { getElementBySelector } from "@lib/dom";
 
+const ATTRIBUTE = {
+  MENU: "data-menu=hints",
+  CLOSE: "data-menu-close",
+  OPEN: "data-menu-open",
+};
+
 export const $hints = getElementBySelector(".info .hints", HTMLElement);
 
-export const $openHints = getElementBySelector(
-  ".info .hints__open",
-  HTMLButtonElement,
-  $hints,
-);
-export const $openHintsLabel = getElementBySelector(
-  ".menu-trigger__label",
-  HTMLSpanElement,
-  $openHints,
+export const $hintsDialog = getElementBySelector(
+  `.menu[${ATTRIBUTE.MENU}]`,
+  HTMLDialogElement,
 );
 
-export const $hintsContent = getElementBySelector(
-  ".info .hints__content",
-  HTMLElement,
-  $hints,
+export const $openHints = getElementBySelector(
+  `.menu-trigger[${ATTRIBUTE.MENU}][${ATTRIBUTE.OPEN}]`,
+  HTMLButtonElement,
+);
+
+export const $closeHints = getElementBySelector(
+  `.menu-trigger[${ATTRIBUTE.MENU}][${ATTRIBUTE.CLOSE}]`,
+  HTMLButtonElement,
 );
 
 // TODO:

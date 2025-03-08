@@ -78,8 +78,8 @@
           </button>
         </section>
         <section class="hints">
-          <button class="hints__open menu-trigger">
-            <span class="menu-trigger__label">Show Hints</span>
+          <button class="menu-trigger" data-menu="hints" data-menu-open>
+            Hints
             <!-- notes icon -->
             <svg
               focusable="false"
@@ -96,10 +96,6 @@
               />
             </svg>
           </button>
-          <section class="hints__content">
-            <p class="not-yet">- Not implemented yet -</p>
-            <p class="not-yet">- No hints yet -</p>
-          </section>
         </section>
       </section>
       <section id="typing" class="typing"></section>
@@ -126,6 +122,80 @@
         </details>
       </li>
     </template>
+    <dialog data-menu="hints" class="menu">
+      <header class="menu__header">
+        <nav>
+          <div id="hints-nav" class="tab-nav" role="tablist">
+            <!--
+              TODO:
+              apply styles based on aria-selected instead of
+              data-tab-active
+            -->
+            <button
+              id="all-hints-tab"
+              class="tab-nav__link"
+              role="tab"
+              aria-controls="all-hints-tab-content"
+              aria-selected="true"
+              data-tab="all"
+              data-tab-active
+              disabled
+            >
+              All
+            </button>
+            <button
+              id="correct-hints-tab"
+              class="tab-nav__link"
+              role="tab"
+              aria-controls="correct-hints-tab-content"
+              aria-selected="false"
+              data-tab="correct"
+            >
+              Correct
+            </button>
+          </div>
+        </nav>
+        <button
+          class="menu-trigger"
+          aria-label="Close menu"
+          data-menu="hints"
+          data-menu-close
+        >
+          <!-- x icon -->
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M18 6 6 18M6 6l12 12" />
+          </svg>
+        </button>
+      </header>
+      <section id="hints-menu-content" class="tab-content">
+        <div
+          id="all-hints-tab-content"
+          class="tab-content__item"
+          role="tabpanel"
+          aria-labelledby="all-hints-tab"
+          data-tab="all"
+          data-content-active
+        >
+          <p class="not-yet">- Not implemented yet -</p>
+        </div>
+        <div
+          id="correct-hints-tab-content"
+          class="tab-content__item"
+          role="tabpanel"
+          aria-labelledby="correct-hints-tab"
+          data-tab="correct"
+        >
+          <p class="not-yet">- Not implemented yet -</p>
+        </div>
+      </section>
+    </dialog>
     <dialog id="app-menu" class="menu">
       <header class="menu__header">
         <nav>

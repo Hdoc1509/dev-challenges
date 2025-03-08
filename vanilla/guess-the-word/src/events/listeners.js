@@ -5,7 +5,6 @@ import { handleShowDefinition } from "./handlers/show-definition";
 import { handleLetterInput } from "./handlers/letter-input";
 import { resetGame } from "./handlers/reset-game";
 import { handleDifficultyChange } from "./handlers/difficulty-change";
-import { handleShowHints } from "./handlers/show-hints";
 import { applyDifficulty } from "@/utils/difficulty/apply";
 import { isValidLetterField } from "@/utils/letter-fields";
 import { $menu, $menuClose, $menuOpen, MenuTabs } from "@/ui/menu";
@@ -15,7 +14,7 @@ import {
   clearNewDefinitionStatus,
   renderSavedDefinitions,
 } from "@/ui/definition";
-import { $openHints } from "@/ui/hints";
+import { $closeHints, $hintsDialog, $openHints } from "@/ui/hints";
 import { $randomWord, $reset } from "@/ui/actions";
 
 export function setupEventListeners() {
@@ -32,7 +31,8 @@ export function setupEventListeners() {
     else if ($target === $menuOpen) $menu.showModal();
     else if ($target === $menuClose) $menu.close();
     else if ($target === $showDefinition) handleShowDefinition();
-    else if ($target === $openHints) handleShowHints();
+    else if ($target === $openHints) $hintsDialog.showModal();
+    else if ($target === $closeHints) $hintsDialog.close();
     else if (MenuTabs.isTabLink($target)) MenuTabs.selectTab($target);
   });
 
