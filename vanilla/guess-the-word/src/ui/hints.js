@@ -1,4 +1,6 @@
 import { getElementById, getElementBySelector } from "@lib/dom";
+import { gameResets } from "@/state/resets";
+import { currentWord } from "@/state/current-word";
 import { Tabs } from "@/tabs";
 
 const ATTRIBUTE = {
@@ -32,18 +34,74 @@ export const HintsTabs = new Tabs({
   $content: $hintsTabContent,
 });
 
-// TODO:
-// - click on $openHints:
-//   - allows display of $hintsContent
-//   - change $openHints text to "Hide hints"
-// - $hintsContent should render a table-like structure:
-//   - each row should have cells as the word length
-//   - use same render logic as .typing section
-//   - it will have 2 tabs:
-//     - all guesses, wrong and correct. will have a row per (resets - 1)
-//     - correct guesses along unknown letters, single row
-// - for each letter input, the letter will be added to the respective row:
-//   - remove $notYet element if present
-//   - if correct, add green text and border
-//   -  else, add red text and border
-// - on game success/over: clean $hintsContent
+const $allHintsContent = getElementById(
+  "all-hints-tab-content",
+  HTMLDivElement,
+);
+const $allHintsList = getElementBySelector(
+  "#all-hints-tab-content > .hints-list",
+  HTMLUListElement,
+);
+const $correctHintsContent = getElementById(
+  "correct-hints-tab-content",
+  HTMLDivElement,
+);
+const $correctHintsList = getElementBySelector(
+  "#correct-hints-tab-content > .hints-list",
+  HTMLUListElement,
+);
+
+/** @param {number} lettersCount */
+const createHintsGroup = (lettersCount) => {
+  const $item = document.createElement("li");
+
+  $item.classList.add("hint-group");
+
+  for (let i = 0; i < lettersCount; i++) {
+    const $letter = document.createElement("span");
+
+    $letter.classList.add("hint");
+    $item.appendChild($letter);
+  }
+
+  return $item;
+};
+
+/**
+ * @param {string} enteredLetter
+ * @param {{ letterIndex: number, isCorrect: boolean }} options
+ */
+export const addHint = (enteredLetter, { letterIndex, isCorrect }) => {
+  // TODO: remove '.not-yet' logic once fully implemented
+  const $notYetAll = $allHintsContent.querySelector(".not-yet");
+  const $notYetCorrect = $correctHintsContent.querySelector(".not-yet");
+
+  if ($notYetAll != null) $notYetAll.remove();
+  if ($notYetCorrect != null) $notYetCorrect.remove();
+
+  const $allHintsInitialItem = $allHintsList.children[gameResets];
+  const $correctHintsInitialItem = $correctHintsList.firstElementChild;
+  const lettersCount = currentWord.length;
+
+  if ($allHintsInitialItem == null)
+    $allHintsList.appendChild(createHintsGroup(lettersCount));
+
+  if ($correctHintsInitialItem == null)
+    $correctHintsList.appendChild(createHintsGroup(lettersCount));
+
+  const $allHintsItem = $allHintsList.children[gameResets];
+  const $allHintsLetter = $allHintsItem.children[letterIndex];
+
+  $allHintsLetter.textContent = enteredLetter;
+  $allHintsLetter.classList.add(`hint--${isCorrect ? "correct" : "wrong"}`);
+
+  if (isCorrect) {
+    const $correctHintsItem = /** @type {HTMLLIElement} */ (
+      $correctHintsList.firstElementChild
+    );
+    const $correctHintsLetter = $correctHintsItem.children[letterIndex];
+
+    $correctHintsLetter.textContent = enteredLetter;
+    $correctHintsLetter.classList.add("hint--correct");
+  }
+};

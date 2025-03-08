@@ -25,8 +25,8 @@ export function resetGame() {
   $wordLetters.forEach(($letter) => $letter.removeAttribute("data-used"));
   $currentTries.textContent = "0";
   $triesIndicators.forEach(($item) => $item.removeAttribute("data-completed"));
+  increaseGameResets();
   if (implementsMaxResets({ difficulty })) {
-    increaseGameResets();
     $currentResets.textContent = `${gameResets}`;
     $resetsIndicators[gameResets - 1].setAttribute("data-completed", "");
   }

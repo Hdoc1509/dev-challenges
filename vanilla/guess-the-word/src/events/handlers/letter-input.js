@@ -9,7 +9,7 @@ import { handleGameSuccess } from "./game-success";
 import { implementsMaxResets } from "@/utils/max-resets";
 import { showCorrectWord, useLetter } from "@/ui/word";
 import { hideTimerBar } from "@/ui/timer";
-import { $hints } from "@/ui/hints";
+import { $hints, addHint } from "@/ui/hints";
 import { $reset } from "@/ui/actions";
 import { CLASSES, TRIES } from "@/consts";
 
@@ -34,6 +34,7 @@ export function handleLetterInput($currentField) {
 
   if (!isMatch) {
     increaseTries();
+    addHint(enteredLetter, { letterIndex, isCorrect: isMatch });
 
     if (tries === maxTries) {
       if (implementsMaxResets({ difficulty }) && gameResets === maxResets) {
@@ -52,6 +53,7 @@ export function handleLetterInput($currentField) {
     // TODO: move to handleLetterCorrect() in another file
     useLetter(lowercaseLetter);
     $currentLetter.classList.add(CLASSES.TYPING.LETTER__CORRECT);
+    addHint(enteredLetter, { letterIndex, isCorrect: isMatch });
   }
 
   if (tries <= TRIES.FIRST && gameResets <= maxResets)
