@@ -14,7 +14,7 @@ import {
   clearNewDefinitionStatus,
   renderSavedDefinitions,
 } from "@/ui/definition";
-import { $closeHints, $hintsDialog, $openHints } from "@/ui/hints";
+import { $closeHints, $hintsDialog, $openHints, HintsTabs } from "@/ui/hints";
 import { $randomWord, $reset } from "@/ui/actions";
 
 export function setupEventListeners() {
@@ -34,6 +34,7 @@ export function setupEventListeners() {
     else if ($target === $openHints) $hintsDialog.showModal();
     else if ($target === $closeHints) $hintsDialog.close();
     else if (MenuTabs.isTabLink($target)) MenuTabs.selectTab($target);
+    else if (HintsTabs.isTabLink($target)) HintsTabs.selectTab($target);
   });
 
   // NOTE: should I reset animation of letter input on blur?

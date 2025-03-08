@@ -1,4 +1,5 @@
-import { getElementBySelector } from "@lib/dom";
+import { getElementById, getElementBySelector } from "@lib/dom";
+import { Tabs } from "@/tabs";
 
 const ATTRIBUTE = {
   MENU: "data-menu=hints",
@@ -22,6 +23,14 @@ export const $closeHints = getElementBySelector(
   `.menu-trigger[${ATTRIBUTE.MENU}][${ATTRIBUTE.CLOSE}]`,
   HTMLButtonElement,
 );
+
+const $hintsTabNav = getElementById("hints-nav", HTMLElement);
+const $hintsTabContent = getElementById("hints-menu-content", HTMLElement);
+
+export const HintsTabs = new Tabs({
+  $nav: $hintsTabNav,
+  $content: $hintsTabContent,
+});
 
 // TODO:
 // - click on $openHints:
