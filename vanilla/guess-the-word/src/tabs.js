@@ -70,8 +70,7 @@ export class Tabs {
     return (
       $element instanceof HTMLButtonElement &&
       this.#$nav.contains($element) &&
-      $element.matches(`.${CLASSES.TAB_LINK}`) &&
-      $element.hasAttribute(ATTRIBUTES.TAB.NAME)
+      $element.matches(`.${CLASSES.TAB_LINK}[${ATTRIBUTES.TAB.NAME}]`)
     );
   }
 
