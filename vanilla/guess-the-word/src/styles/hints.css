@@ -1,0 +1,48 @@
+.hints-list {
+  display: grid;
+  gap: 1ch;
+
+  padding: 0;
+
+  font-size: 1.25rem;
+
+  list-style: none;
+
+  counter-reset: hints-counter;
+}
+
+.hint-group {
+  display: flex;
+  gap: 0.75ch;
+  flex-wrap: wrap;
+
+  counter-increment: hints-counter;
+}
+#all-hints-tab-content .hint-group::before {
+  content: counter(hints-counter);
+  color: var(--secondary);
+  width: 1ch;
+}
+#correct-hints-tab-content .hint-group {
+  justify-content: center;
+}
+
+.hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 2.5ch;
+  height: 2.5ch;
+  border: 2px solid;
+  border-radius: 6px;
+
+  text-align: center;
+  color: var(--word-bg);
+}
+.hint--correct {
+  color: var(--difficulty-easy);
+}
+.hint--wrong {
+  color: var(--difficulty-extreme);
+}
