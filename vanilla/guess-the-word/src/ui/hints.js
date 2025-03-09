@@ -3,27 +3,23 @@ import { gameResets } from "@/state/resets";
 import { currentWord } from "@/state/current-word";
 import { Tabs } from "@/tabs";
 
-const ATTRIBUTE = {
-  MENU: "data-menu=hints",
-  CLOSE: "data-menu-close",
-  OPEN: "data-menu-open",
-};
-
 export const $hints = getElementBySelector(".info .hints", HTMLElement);
 
-export const $hintsDialog = getElementBySelector(
-  `.menu[${ATTRIBUTE.MENU}]`,
-  HTMLDialogElement,
+export const $hintsTrigger = getElementBySelector(
+  ".menu-trigger",
+  HTMLButtonElement,
+  $hints,
+);
+export const $hintsTriggerLabel = getElementBySelector(
+  ".menu-trigger__label",
+  HTMLElement,
+  $hintsTrigger,
 );
 
-export const $openHints = getElementBySelector(
-  `.menu-trigger[${ATTRIBUTE.MENU}][${ATTRIBUTE.OPEN}]`,
-  HTMLButtonElement,
-);
-
-export const $closeHints = getElementBySelector(
-  `.menu-trigger[${ATTRIBUTE.MENU}][${ATTRIBUTE.CLOSE}]`,
-  HTMLButtonElement,
+export const $hintsContent = getElementBySelector(
+  ".hints__content",
+  HTMLElement,
+  $hints,
 );
 
 const $hintsTabNav = getElementById("hints-nav", HTMLElement);

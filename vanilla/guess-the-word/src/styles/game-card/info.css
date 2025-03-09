@@ -37,7 +37,7 @@
 }
 
 .game-card .info .definition__open,
-.game-card .info .menu-trigger[data-menu] {
+.game-card .info .menu-trigger {
   /* .menu-trigger */
   --menu-trigger-bg: var(--primary);
   --menu-trigger-padding: 0.5em 0.75em;
@@ -55,6 +55,18 @@
   flex-direction: column;
   gap: 1rem;
 }
+.game-card .hints .menu-trigger__label {
+  pointer-events: none;
+}
 .game-card .info .hints__content:not([data-active]) {
   display: none;
+}
+.game-card .hints__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.game-card .hints__content .tab-nav,
+.game-card .hints__content .tab-content__item {
+  justify-content: center;
 }
