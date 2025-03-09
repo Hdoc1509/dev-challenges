@@ -13,7 +13,12 @@ import { $currentResets, $resetsIndicators } from "@/ui/resets";
 import { hideTimerBar } from "@/ui/timer";
 import { $reset } from "@/ui/actions";
 import { $definition } from "@/ui/definition";
-import { $hints, $hintsContent, clearHints } from "@/ui/hints";
+import {
+  $hints,
+  $hintsContent,
+  $hintsTriggerLabel,
+  clearHints,
+} from "@/ui/hints";
 
 export function generateRandomWord() {
   const randomWord = /** @type {import("@/consts").DefinitionWord } */ (
@@ -51,6 +56,7 @@ export function generateRandomWord() {
   $definition.removeAttribute("data-active");
   $hints.removeAttribute("data-active");
   $hintsContent.removeAttribute("data-active");
+  $hintsTriggerLabel.textContent = "Show hints";
   clearHints();
   $reset.disabled = true;
 }
