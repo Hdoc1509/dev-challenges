@@ -3,7 +3,7 @@ import { difficulty } from "@/state/difficulty";
 import { tries } from "@/state/tries";
 import { $wordLetters } from "@/ui/word";
 import { $currentTries } from "@/ui/tries";
-import { $hints } from "@/ui/hints";
+import { $hints, $hintsContent } from "@/ui/hints";
 import { $reset } from "@/ui/actions";
 import { CLASSES, DIFFICULTY } from "@/consts";
 
@@ -20,5 +20,6 @@ export function handleGameOver({ $currentField, $currentLetter }) {
   $currentLetter.classList.remove(CLASSES.TYPING.LETTER__CURRENT);
   $wordLetters.forEach(($letter) => $letter.removeAttribute("data-used"));
   $hints.removeAttribute("data-active");
+  $hintsContent.removeAttribute("data-active");
   if (difficulty === DIFFICULTY.MASTER) $currentTries.textContent = `${tries}`;
 }

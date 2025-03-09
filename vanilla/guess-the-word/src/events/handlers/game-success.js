@@ -4,7 +4,7 @@ import { currentWord } from "@/state/current-word";
 import { setWordCompleted, showCorrectWord } from "@/ui/word";
 import { hideTimerBar } from "@/ui/timer";
 import { $definition, renderDefinition } from "@/ui/definition";
-import { $hints } from "@/ui/hints";
+import { $hints, $hintsContent } from "@/ui/hints";
 import { $reset } from "@/ui/actions";
 
 export function handleGameSuccess() {
@@ -14,6 +14,7 @@ export function handleGameSuccess() {
   setWordCompleted();
   showCorrectWord();
   $hints.removeAttribute("data-active");
+  $hintsContent.removeAttribute("data-active");
 
   if (discoveredWords.has(currentWord)) return;
 
