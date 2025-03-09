@@ -62,6 +62,7 @@ create a small game that tests your data management and DOM manipulation with Ja
   - [edit](https://tabler.io/icons/icon/edit)
   - [list-letters](https://tabler.io/icons/icon/list-letters)
   - [menu-deep](https://tabler.io/icons/icon/menu-deep)
+  - [progress-help](https://tabler.io/icons/icon/progress-help)
   - [trash](https://tabler.io/icons/icon/trash)
   - [versions](https://tabler.io/icons/icon/versions)
   - [writing-sign](https://tabler.io/icons/icon/writing-sign)
