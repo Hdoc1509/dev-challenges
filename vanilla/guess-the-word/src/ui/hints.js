@@ -105,3 +105,10 @@ export const addHint = (enteredLetter, { letterIndex, isCorrect }) => {
     $correctHintsLetter.classList.add("hint--correct");
   }
 };
+
+export const clearHints = () => {
+  while ($allHintsList.firstChild)
+    $allHintsList.removeChild($allHintsList.firstChild);
+  while ($correctHintsList.firstChild)
+    $correctHintsList.removeChild($correctHintsList.firstChild);
+};
