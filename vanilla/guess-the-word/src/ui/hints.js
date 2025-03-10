@@ -68,13 +68,6 @@ const createHintsGroup = (lettersCount) => {
  * @param {{ letterIndex: number, isCorrect: boolean }} options
  */
 export const addHint = (enteredLetter, { letterIndex, isCorrect }) => {
-  // TODO: remove '.not-yet' logic once fully implemented
-  const $notYetAll = $allHintsContent.querySelector(".not-yet");
-  const $notYetCorrect = $correctHintsContent.querySelector(".not-yet");
-
-  if ($notYetAll != null) $notYetAll.remove();
-  if ($notYetCorrect != null) $notYetCorrect.remove();
-
   const $allHintsInitialItem = $allHintsList.children[gameResets];
   const $correctHintsInitialItem = $correctHintsList.firstElementChild;
   const lettersCount = currentWord.length;
