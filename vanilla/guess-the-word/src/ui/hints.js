@@ -30,17 +30,9 @@ export const HintsTabs = new Tabs({
   $content: $hintsTabContent,
 });
 
-const $allHintsContent = getElementById(
-  "all-hints-tab-content",
-  HTMLDivElement,
-);
 const $allHintsList = getElementBySelector(
   "#all-hints-tab-content > .hints-list",
   HTMLUListElement,
-);
-const $correctHintsContent = getElementById(
-  "correct-hints-tab-content",
-  HTMLDivElement,
 );
 const $correctHintsList = getElementBySelector(
   "#correct-hints-tab-content > .hints-list",
