@@ -10,7 +10,7 @@ export function handleShowDefinition() {
     $definitionslist,
   );
 
+  $menu.showModal();
   MenuTabs.selectTab($definitionsTab);
   $details.open = true;
-  $menu.showModal();
 }
