@@ -40,17 +40,23 @@ const $correctHintsList = getElementBySelector(
 );
 
 /** @param {number} lettersCount */
-const createHintsGroup = (lettersCount) => {
+const createHintsGroup = (lettersCount, { noCounter = false } = {}) => {
   const $item = document.createElement("li");
+  const $content = document.createElement("section");
 
   $item.classList.add("hint-group");
+  $content.classList.add("hint-group__content");
+
+  if (noCounter) $item.classList.add("hint-group--no-counter");
 
   for (let i = 0; i < lettersCount; i++) {
     const $letter = document.createElement("span");
 
     $letter.classList.add("hint");
-    $item.appendChild($letter);
+    $content.appendChild($letter);
   }
+
+  $item.appendChild($content);
 
   return $item;
 };
@@ -68,19 +74,23 @@ export const addHint = (enteredLetter, { letterIndex, isCorrect }) => {
     $allHintsList.appendChild(createHintsGroup(lettersCount));
 
   if ($correctHintsInitialItem == null)
-    $correctHintsList.appendChild(createHintsGroup(lettersCount));
+    $correctHintsList.appendChild(
+      createHintsGroup(lettersCount, { noCounter: true }),
+    );
 
-  const $allHintsItem = $allHintsList.children[gameResets];
-  const $allHintsLetter = $allHintsItem.children[letterIndex];
+  const $allHintsGroup = $allHintsList.children[gameResets];
+  const $allHintsContent = $allHintsGroup.children[0];
+  const $allHintsLetter = $allHintsContent.children[letterIndex];
 
   $allHintsLetter.textContent = enteredLetter;
   $allHintsLetter.classList.add(`hint--${isCorrect ? "correct" : "wrong"}`);
 
   if (isCorrect) {
-    const $correctHintsItem = /** @type {HTMLLIElement} */ (
+    const $correctHintsGroup = /** @type {HTMLLIElement} */ (
       $correctHintsList.firstElementChild
     );
-    const $correctHintsLetter = $correctHintsItem.children[letterIndex];
+    const $correctHintsContent = $correctHintsGroup.children[0];
+    const $correctHintsLetter = $correctHintsContent.children[letterIndex];
 
     $correctHintsLetter.textContent = enteredLetter;
     $correctHintsLetter.classList.add("hint--correct");
