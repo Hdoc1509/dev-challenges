@@ -30,8 +30,6 @@ const handleLetterFocus = (e) => {
   setTimerDuration(3, () => handleLetterInput($target));
 };
 
-/** @type {import("@/types").DifficultyVariant} */
-// TODO: use the same logic for the other difficulty variants
 export const InsaneDifficulty = Object.freeze({
   apply() {
     showTimer();
