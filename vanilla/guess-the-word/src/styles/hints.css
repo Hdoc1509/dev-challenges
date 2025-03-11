@@ -1,3 +1,8 @@
+#hints-menu-content {
+  max-height: 240px;
+  overflow-y: auto;
+}
+
 .hints-list {
   display: grid;
   gap: 1ch;
