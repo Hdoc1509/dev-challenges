@@ -5,7 +5,7 @@ import { $definitionslist } from "@/ui/definition";
 
 export function handleShowDefinition() {
   const $details = getElementBySelector(
-    `.definition[data-word=${currentWord}] > details`,
+    `.definition[data-word=${currentWord}]`,
     HTMLDetailsElement,
     $definitionslist,
   );
@@ -13,4 +13,5 @@ export function handleShowDefinition() {
   $menu.showModal();
   MenuTabs.selectTab($definitionsTab);
   $details.open = true;
+  $details.focus();
 }

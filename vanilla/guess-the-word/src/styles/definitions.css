@@ -18,6 +18,7 @@
 .definition[data-status="new"] {
   --definition-badge-text: var(--secondary);
 }
+.definition[open],
 .definition:hover,
 .definition:focus-within {
   --definition-border-color: var(--primary);

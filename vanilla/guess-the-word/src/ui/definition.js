@@ -49,7 +49,11 @@ export const renderDefinition = (
   const $itemClone = /** @type {DocumentFragment} */ (
     $definitionTemplate.content.cloneNode(true)
   );
-  const $item = getElementBySelector(".definition", HTMLLIElement, $itemClone);
+  const $item = getElementBySelector(
+    ".definition",
+    HTMLDetailsElement,
+    $itemClone,
+  );
   const $label = getElementBySelector(
     ".definition__label",
     HTMLElement,
