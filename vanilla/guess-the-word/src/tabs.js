@@ -100,6 +100,7 @@ export class Tabs {
     $targetTab.setAttribute(ATTRIBUTES.TAB.SELECTED, "true");
     $targetTab.setAttribute(ATTRIBUTES.TAB.ACTIVE, "");
     $targetTab.disabled = true;
+    $targetTab.scrollIntoView();
     $targetContent.setAttribute(ATTRIBUTES.CONTENT.ACTIVE, "");
 
     this.#currentTab = tab;
