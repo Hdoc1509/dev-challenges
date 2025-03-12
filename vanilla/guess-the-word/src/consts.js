@@ -34,6 +34,7 @@ export const DEFINITIONS = Object.freeze({
   ...CUSTOM_DEFINITIONS,
 });
 /** @typedef {keyof typeof DEFINITIONS} DefinitionWord */
+export const TOTAL_WORDS = Object.keys(DEFINITIONS).length;
 
 export const WORDS = Object.freeze({
   EASY: Object.freeze(

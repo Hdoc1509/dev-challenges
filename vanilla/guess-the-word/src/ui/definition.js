@@ -1,5 +1,5 @@
 import { getElementById, getElementBySelector } from "@lib/dom";
-import { DEFINITIONS } from "@/consts";
+import { DEFINITIONS, TOTAL_WORDS } from "@/consts";
 
 export const $definition = getElementBySelector(
   ".info .definition",
@@ -19,6 +19,9 @@ const $definitionsTotal = getElementBySelector(
   ".definitions-count__total",
   HTMLSpanElement,
 );
+
+$definitionsTotal.textContent = TOTAL_WORDS.toString();
+
 export const $showDefinition = getElementBySelector(
   ".info .definition__open",
   HTMLButtonElement,
@@ -36,6 +39,14 @@ export const $definitionslist = getElementBySelector(
 
 /** @param {string} word */
 const capitalize = (word) => word[0].toUpperCase() + word.slice(1);
+
+/** @param {number} count */
+export const renderDefinitionsCount = (count) => {
+  const percent = ((count / TOTAL_WORDS) * 100).toFixed(8);
+
+  $definitionsProgress.style.setProperty("--definitions-count", `${percent}%`);
+  $definitionsCurrent.textContent = count.toString();
+};
 
 /** @param {Array<keyof DEFINITIONS>} words */
 export const renderSavedDefinitions = (words) => {

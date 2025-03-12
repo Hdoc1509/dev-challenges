@@ -13,6 +13,7 @@ import { $menu, $menuClose, $menuOpen, MenuTabs } from "@/ui/menu";
 import {
   $showDefinition,
   clearNewDefinitionStatus,
+  renderDefinitionsCount,
   renderSavedDefinitions,
 } from "@/ui/definition";
 import { $hintsTrigger, HintsTabs } from "@/ui/hints";
@@ -22,6 +23,7 @@ export function setupEventListeners() {
   applyDifficulty(difficulty);
   generateRandomWord();
   renderSavedDefinitions(Array.from(discoveredWords));
+  renderDefinitionsCount(discoveredWords.size);
   // generateWordList();
 
   document.addEventListener("click", (e) => {
