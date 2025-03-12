@@ -3,7 +3,11 @@ import { addDiscoveredWord, discoveredWords } from "@/state/discovered-words";
 import { currentWord } from "@/state/current-word";
 import { setWordCompleted, showCorrectWord } from "@/ui/word";
 import { hideTimerBar } from "@/ui/timer";
-import { $definition, renderDefinition } from "@/ui/definition";
+import {
+  $definition,
+  renderDefinition,
+  renderDefinitionsCount,
+} from "@/ui/definition";
 import { $hints, $hintsContent } from "@/ui/hints";
 import { $reset } from "@/ui/actions";
 
@@ -21,4 +25,5 @@ export function handleGameSuccess() {
   $definition.setAttribute("data-active", "");
   addDiscoveredWord(currentWord);
   renderDefinition(currentWord);
+  renderDefinitionsCount(discoveredWords.size);
 }
