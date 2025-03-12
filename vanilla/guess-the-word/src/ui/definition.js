@@ -6,6 +6,19 @@ export const $definition = getElementBySelector(
   HTMLElement,
 );
 
+export const $definitionsProgress = getElementBySelector(
+  ".definitions-count__progress",
+  HTMLDivElement,
+);
+export const $definitionsCurrent = getElementBySelector(
+  ".definitions-count__current",
+  HTMLSpanElement,
+);
+
+const $definitionsTotal = getElementBySelector(
+  ".definitions-count__total",
+  HTMLSpanElement,
+);
 export const $showDefinition = getElementBySelector(
   ".info .definition__open",
   HTMLButtonElement,
