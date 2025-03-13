@@ -12,6 +12,8 @@ import { isValidLetterField } from "../letter-fields";
 /** @type {HTMLInputElement | null} */
 // NOTE: avoids weird behaviors when focusing more than once on the same input
 let $lastFocusedInput = null;
+/** @type {AbortController | null} */
+let controller = null;
 
 /** @param {FocusEvent} e */
 const handleLetterFocus = (e) => {
@@ -27,9 +29,15 @@ const handleLetterFocus = (e) => {
 
   const timerDuration = Random.intBetween(3, 5);
 
+  controller?.abort();
+
+  controller = new AbortController();
+
   $lastFocusedInput = $target;
   resetTimer();
-  setTimerDuration(timerDuration, () => handleLetterInput($target));
+  setTimerDuration(timerDuration, () => handleLetterInput($target), {
+    controller,
+  });
 };
 
 export const InsaneDifficulty = Object.freeze({

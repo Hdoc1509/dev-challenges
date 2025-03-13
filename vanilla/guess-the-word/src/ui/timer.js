@@ -34,8 +34,12 @@ export const hideTimerBar = () =>
 /**
  * @param {number} duration Timer duration in seconds
  * @param {() => void} onEnd
+ * @param {{ controller: AbortController }} options
  */
-export const setTimerDuration = (duration, onEnd) => {
+export const setTimerDuration = (duration, onEnd, { controller }) => {
   $timerBar.style.setProperty(CSS.VARIABLES.TIME_BAR_DURATION, `${duration}s`);
-  $timerBar.addEventListener("animationend", onEnd, { once: true });
+  $timerBar.addEventListener("animationend", onEnd, {
+    once: true,
+    signal: controller.signal,
+  });
 };
