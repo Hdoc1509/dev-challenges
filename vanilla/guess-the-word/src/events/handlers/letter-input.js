@@ -32,9 +32,10 @@ export function handleLetterInput($currentField) {
 
   const isMatch = currentWord[letterIndex] === lowercaseLetter;
 
+  addHint(enteredLetter, { letterIndex, isCorrect: isMatch });
+
   if (!isMatch) {
     increaseTries();
-    addHint(enteredLetter, { letterIndex, isCorrect: isMatch });
 
     if (tries === maxTries) {
       if (implementsMaxResets({ difficulty }) && gameResets === maxResets) {
@@ -53,7 +54,6 @@ export function handleLetterInput($currentField) {
     // TODO: move to handleLetterCorrect() in another file
     useLetter(lowercaseLetter);
     $currentLetter.classList.add(CLASSES.TYPING.LETTER__CORRECT);
-    addHint(enteredLetter, { letterIndex, isCorrect: isMatch });
   }
 
   if (tries <= TRIES.FIRST && gameResets <= maxResets)
