@@ -1,11 +1,8 @@
 import { showAlert } from "@lib/alert";
-import { difficulty } from "@/state/difficulty";
-import { tries } from "@/state/tries";
 import { $wordLetters } from "@/ui/word";
-import { $currentTries } from "@/ui/tries";
 import { $hints, $hintsContent } from "@/ui/hints";
 import { $reset } from "@/ui/actions";
-import { CLASSES, DIFFICULTY } from "@/consts";
+import { CLASSES } from "@/consts";
 
 /**
  * @param {Object} params
@@ -21,5 +18,4 @@ export function handleGameOver({ $currentField, $currentLetter }) {
   $wordLetters.forEach(($letter) => $letter.removeAttribute("data-used"));
   $hints.removeAttribute("data-active");
   $hintsContent.removeAttribute("data-active");
-  if (difficulty === DIFFICULTY.MASTER) $currentTries.textContent = `${tries}`;
 }
