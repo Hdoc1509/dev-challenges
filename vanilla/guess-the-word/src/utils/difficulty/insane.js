@@ -6,6 +6,7 @@ import {
   showTimer,
   showTimerBar,
 } from "@/ui/timer";
+import { Random } from "../random";
 import { isValidLetterField } from "../letter-fields";
 
 /** @type {HTMLInputElement | null} */
@@ -24,10 +25,11 @@ const handleLetterFocus = (e) => {
   if (letterIdx === "0" || $lastFocusedInput === $target) return;
   if (letterIdx === "1") showTimerBar();
 
+  const timerDuration = Random.intBetween(3, 5);
+
   $lastFocusedInput = $target;
   resetTimer();
-  // TODO: duration should be 3, 4 or 5 seconds
-  setTimerDuration(3, () => handleLetterInput($target));
+  setTimerDuration(timerDuration, () => handleLetterInput($target));
 };
 
 export const InsaneDifficulty = Object.freeze({
