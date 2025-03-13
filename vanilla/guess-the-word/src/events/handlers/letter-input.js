@@ -36,10 +36,10 @@ export function handleLetterInput($currentField) {
 
   if (!isMatch) {
     increaseTries();
+    handleLetterMistake({ $currentLetter, enteredLetter, tries });
 
     if (tries === maxTries) {
       if (implementsMaxResets({ difficulty }) && gameResets === maxResets) {
-        handleLetterMistake({ $currentLetter, enteredLetter, tries });
         handleGameOver({ $currentField, $currentLetter });
         showCorrectWord();
         hideTimerBar();
@@ -48,8 +48,6 @@ export function handleLetterInput($currentField) {
 
       return resetGame();
     }
-
-    handleLetterMistake({ $currentLetter, enteredLetter, tries });
   } else {
     // TODO: move to handleLetterCorrect() in another file
     useLetter(lowercaseLetter);
