@@ -1,6 +1,7 @@
 import WORDS_EASY from "@/mocks/words/easy.json";
 import WORDS_NORMAL from "@/mocks/words/normal.json";
 import WORDS_EXTREME from "@/mocks/words/extreme.json";
+import WORDS_WHY from "@/mocks/words/why.json";
 import DEFINITIONS_MOCK from "@/mocks/definitions.json";
 
 const CUSTOM_DEFINITIONS = {
@@ -36,6 +37,8 @@ export const DEFINITIONS = Object.freeze({
 /** @typedef {keyof typeof DEFINITIONS} DefinitionWord */
 export const TOTAL_WORDS = Object.keys(DEFINITIONS).length;
 
+// TODO: can I use Set() as property value?
+// or have `.array` and `.set` sub-properties?
 export const WORDS = Object.freeze({
   EASY: Object.freeze(
     WORDS_EASY.concat(CUSTOM_WORDS.filter((word) => word.length <= 6)),
@@ -48,6 +51,7 @@ export const WORDS = Object.freeze({
   EXTREME: Object.freeze(
     WORDS_EXTREME.concat(CUSTOM_WORDS.filter((word) => word.length >= 10)),
   ),
+  WHY: Object.freeze(WORDS_WHY),
 });
 
 export const CLASSES = Object.freeze({
@@ -90,7 +94,7 @@ export const RESETS = Object.freeze({
   MAX: Object.freeze({
     DEFAULT: Infinity,
     MASTER: 2,
-    WHY: 0,
+    // WHY: 0,
   }),
   NONE: 0,
 });

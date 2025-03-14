@@ -48,13 +48,13 @@ export function generateRandomWord() {
   createLetterFields(currentWord.length);
   setLetterFields(captureLetterFields());
 
-  if (maxResets === RESETS.MAX.WHY) {
+  /* if (maxResets === RESETS.MAX.WHY) {
     $mistakesContainer.removeAttribute("data-active");
     $triesContainer.removeAttribute("data-active");
   } else {
     $mistakesContainer.setAttribute("data-active", "");
     $triesContainer.setAttribute("data-active", "");
-  }
+  } */
   $currentTries.textContent = "0";
   $triesIndicators.forEach(($item) => $item.removeAttribute("data-completed"));
   $resetsIndicators.forEach(($item) => $item.removeAttribute("data-completed"));

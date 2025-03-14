@@ -38,7 +38,6 @@ export function applyDifficulty(difficulty) {
   } else if (difficulty === DIFFICULTY.WHY) {
     HardDifficulty.apply();
     MasterDifficulty.unapply();
-    ExtremeDifficulty.apply();
     InsaneDifficulty.apply();
     WhyDifficulty.apply();
   }

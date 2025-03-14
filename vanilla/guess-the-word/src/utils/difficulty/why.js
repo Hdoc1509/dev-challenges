@@ -1,8 +1,8 @@
-import { setMaxResets } from "@/state/resets";
-import { RESETS } from "@/consts";
+import { setWords } from "@/state/words";
+import { WORDS } from "@/consts";
 
 export const WhyDifficulty = Object.freeze({
   apply() {
-    setMaxResets(RESETS.MAX.WHY);
+    setWords(WORDS.WHY);
   },
 });
