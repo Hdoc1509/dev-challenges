@@ -31,4 +31,4 @@ generate_mock() {
 
 generate_mock --max-length 6 --name easy
 generate_mock --min-length 7 --max-length 9 --name normal
-generate_mock --min-length 10 --name extreme
+generate_mock --min-length 10 --max-length 12 --name extreme
