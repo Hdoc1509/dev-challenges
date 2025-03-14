@@ -1,7 +1,7 @@
 import { getSelectedDifficulty } from "@/ui/difficulty-form";
 import { IS_DEV } from "@/config";
-import { TRIES } from "@/consts";
 import { DIFFICULTY } from "@/consts/difficulty";
+import { TRIES } from "@/consts/tries";
 
 /** @type {number} */
 export let tries = TRIES.NONE;

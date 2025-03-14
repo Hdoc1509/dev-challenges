@@ -1,7 +1,7 @@
 import { $currentTries, $triesIndicators } from "@/ui/tries";
 import { $mistakenLetters } from "@/ui/mistakes";
-import { TRIES } from "@/consts";
 import { CLASSES } from "@/consts/css-classes";
+import { TRIES } from "@/consts/tries";
 
 /**
  * @param {Object} params

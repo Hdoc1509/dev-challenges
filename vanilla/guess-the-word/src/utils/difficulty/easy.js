@@ -6,8 +6,8 @@ import {
   generateTriesIndicators,
   setTriesIndicators,
 } from "@/ui/tries";
-import { TRIES } from "@/consts";
 import { WORDS } from "@/consts/words";
+import { TRIES } from "@/consts/tries";
 
 export const EasyDifficulty = Object.freeze({
   apply() {
