@@ -1,4 +1,4 @@
-import { WORDS } from "@/consts";
+import { WORDS } from "@/consts/words";
 
 export let words = WORDS.NORMAL;
 
