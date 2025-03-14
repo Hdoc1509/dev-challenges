@@ -5,9 +5,9 @@ import { MasterDifficulty } from "./master";
 import { ExtremeDifficulty } from "./extreme";
 import { InsaneDifficulty } from "./insane";
 import { WhyDifficulty } from "./why";
-import { DIFFICULTY } from "@/consts";
+import { DIFFICULTY } from "@/consts/difficulty";
 
-/** @param {import("@/consts").Difficulty} difficulty */
+/** @param {import("@/consts/difficulty").Difficulty} difficulty */
 export function applyDifficulty(difficulty) {
   if (difficulty === DIFFICULTY.EASY) {
     EasyDifficulty.apply();

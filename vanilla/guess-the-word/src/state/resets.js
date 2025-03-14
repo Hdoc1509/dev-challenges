@@ -1,6 +1,7 @@
 import { getSelectedDifficulty } from "@/ui/difficulty-form";
 import { IS_DEV } from "@/config";
-import { DIFFICULTY, RESETS } from "@/consts";
+import { RESETS } from "@/consts";
+import { DIFFICULTY } from "@/consts/difficulty";
 
 /** @type {number} */
 export let gameResets = RESETS.NONE;
