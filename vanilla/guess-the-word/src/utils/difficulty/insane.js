@@ -27,7 +27,7 @@ const handleLetterFocus = (e) => {
   if (letterIdx === "0" || $lastFocusedInput === $target) return;
   if (letterIdx === "1") showTimerBar();
 
-  const timerDuration = Random.intBetween(3, 5);
+  const timerDuration = Random.intInRange(3, 5);
 
   controller?.abort();
 
