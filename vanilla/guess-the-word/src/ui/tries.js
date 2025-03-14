@@ -6,6 +6,10 @@ import {
 import { maxTries } from "@/state/tries";
 import { CLASSES } from "@/consts";
 
+export const $triesContainer = getElementBySelector(
+  ".info > .tries",
+  HTMLElement,
+);
 export const $currentTries = getElementById("current-tries", HTMLSpanElement);
 export const $maxTries = getElementById("max-tries", HTMLSpanElement);
 

@@ -35,7 +35,7 @@
       </header>
       <div class="word" id="word" aria-label="Scrambled word"></div>
       <section class="info">
-        <section class="tries">
+        <section class="tries" data-active>
           <p class="tries__description">
             Tries (<span id="current-tries">0</span>/<span id="max-tries"
               >?</span
@@ -43,7 +43,7 @@
           </p>
           <div class="tries__indicator stepper" aria-hidden="true"></div>
         </section>
-        <section class="mistakes">
+        <section class="mistakes" data-active>
           <span>Mistakes:</span>
           <span id="mistaken-letters">-</span>
         </section>

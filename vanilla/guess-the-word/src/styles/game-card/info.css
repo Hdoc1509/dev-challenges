@@ -14,6 +14,10 @@
   row-gap: 0.25rem;
   flex-wrap: wrap;
 }
+.game-card .info .tries:not([data-active]),
+.game-card .info .mistakes:not([data-active]) {
+  display: none;
+}
 .game-card .info .tries__indicator,
 .game-card .info .resets__indicator {
   --step-color: var(--word-bg);

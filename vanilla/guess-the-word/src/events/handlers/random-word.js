@@ -2,12 +2,12 @@ import { resetAlert } from "@lib/alert";
 import { words } from "@/state/words";
 import { currentWord, setCurrentWord } from "@/state/current-word";
 import { resetTries } from "@/state/tries";
-import { gameResets, resetGameResets } from "@/state/resets";
+import { gameResets, maxResets, resetGameResets } from "@/state/resets";
 import { createLetterFields } from "@/utils/letter-fields";
 import { scrambleWord } from "@/utils/scramble";
 import { $word, captureWordLetters, setWordLetters } from "@/ui/word";
-import { $currentTries, $triesIndicators } from "@/ui/tries";
-import { $mistakenLetters } from "@/ui/mistakes";
+import { $currentTries, $triesContainer, $triesIndicators } from "@/ui/tries";
+import { $mistakenLetters, $mistakesContainer } from "@/ui/mistakes";
 import { captureLetterFields, setLetterFields, $typing } from "@/ui/typing";
 import { $currentResets, $resetsIndicators } from "@/ui/resets";
 import { hideTimerBar } from "@/ui/timer";
@@ -19,6 +19,7 @@ import {
   $hintsTriggerLabel,
   clearHints,
 } from "@/ui/hints";
+import { RESETS } from "@/consts";
 
 export function generateRandomWord() {
   const randomWord = /** @type {import("@/consts").DefinitionWord } */ (
@@ -47,6 +48,13 @@ export function generateRandomWord() {
   createLetterFields(currentWord.length);
   setLetterFields(captureLetterFields());
 
+  if (maxResets === RESETS.MAX.WHY) {
+    $mistakesContainer.removeAttribute("data-active");
+    $triesContainer.removeAttribute("data-active");
+  } else {
+    $mistakesContainer.setAttribute("data-active", "");
+    $triesContainer.setAttribute("data-active", "");
+  }
   $currentTries.textContent = "0";
   $triesIndicators.forEach(($item) => $item.removeAttribute("data-completed"));
   $resetsIndicators.forEach(($item) => $item.removeAttribute("data-completed"));
