@@ -1,6 +1,6 @@
 import { getSelectedDifficulty } from "@/ui/difficulty-form";
 import { IS_DEV } from "@/config";
-import { RESETS } from "@/consts";
+import { RESETS } from "@/consts/resets";
 import { DIFFICULTY } from "@/consts/difficulty";
 
 /** @type {number} */

@@ -6,7 +6,7 @@ import {
   generateResetsIndicators,
   setResetsIndicators,
 } from "@/ui/resets";
-import { RESETS } from "@/consts";
+import { RESETS } from "@/consts/resets";
 
 export const MasterDifficulty = Object.freeze({
   apply() {

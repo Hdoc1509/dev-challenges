@@ -19,7 +19,7 @@ import {
   $hintsTriggerLabel,
   clearHints,
 } from "@/ui/hints";
-import { RESETS } from "@/consts";
+import { RESETS } from "@/consts/resets";
 
 export function generateRandomWord() {
   const randomWord =
