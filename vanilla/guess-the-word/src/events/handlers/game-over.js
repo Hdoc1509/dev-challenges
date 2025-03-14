@@ -2,7 +2,7 @@ import { showAlert } from "@lib/alert";
 import { $wordLetters } from "@/ui/word";
 import { $hints, $hintsContent } from "@/ui/hints";
 import { $reset } from "@/ui/actions";
-import { CLASSES } from "@/consts";
+import { CLASSES } from "@/consts/css-classes";
 
 /**
  * @param {Object} params

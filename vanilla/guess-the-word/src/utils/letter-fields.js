@@ -1,6 +1,6 @@
 import { getElementBySelector } from "@lib/dom";
 import { $letterTemplate, $typing } from "@/ui/typing";
-import { CLASSES } from "@/consts";
+import { CLASSES } from "@/consts/css-classes";
 
 /** @param {number} quantity */
 export function createLetterFields(quantity) {

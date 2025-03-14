@@ -11,7 +11,8 @@ import { showCorrectWord, useLetter } from "@/ui/word";
 import { hideTimerBar } from "@/ui/timer";
 import { $hints, addHint } from "@/ui/hints";
 import { $reset } from "@/ui/actions";
-import { CLASSES, TRIES } from "@/consts";
+import { TRIES } from "@/consts";
+import { CLASSES } from "@/consts/css-classes";
 
 /** @param {HTMLInputElement} $currentField */
 export function handleLetterInput($currentField) {

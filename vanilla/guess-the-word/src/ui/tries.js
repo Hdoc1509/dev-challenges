@@ -4,7 +4,7 @@ import {
   getElementBySelector,
 } from "@lib/dom";
 import { maxTries } from "@/state/tries";
-import { CLASSES } from "@/consts";
+import { CLASSES } from "@/consts/css-classes";
 
 export const $triesContainer = getElementBySelector(
   ".info > .tries",

@@ -4,7 +4,7 @@ import {
   getElementBySelector,
 } from "@lib/dom";
 import { maxResets } from "@/state/resets";
-import { CLASSES } from "@/consts";
+import { CLASSES } from "@/consts/css-classes";
 
 export const $currentResets = getElementById("current-resets", HTMLSpanElement);
 export const $maxResets = getElementById("max-resets", HTMLSpanElement);

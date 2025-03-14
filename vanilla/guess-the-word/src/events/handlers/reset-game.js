@@ -9,7 +9,7 @@ import { $currentResets, $resetsIndicators } from "@/ui/resets";
 import { hideTimerBar } from "@/ui/timer";
 import { $letterFields, $typing } from "@/ui/typing";
 import { $reset } from "@/ui/actions";
-import { CLASSES } from "@/consts";
+import { CLASSES } from "@/consts/css-classes";
 
 export function resetGame() {
   const $firstField = $letterFields[0];
