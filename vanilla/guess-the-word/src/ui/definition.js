@@ -1,5 +1,5 @@
 import { getElementById, getElementBySelector } from "@lib/dom";
-import { DEFINITIONS, TOTAL_WORDS } from "@/consts";
+import { DEFINITIONS, TOTAL_WORDS } from "@/consts/definitions";
 
 export const $definition = getElementBySelector(
   ".info .definition",
@@ -63,7 +63,7 @@ export const renderSavedDefinitions = (words) => {
 };
 
 /**
- * @param {import("@/consts").DefinitionWord} word
+ * @param {import("@/consts/definitions").DefinitionWord} word
  * @param {{ lastWord?: string, initialRender?: boolean }} options
  */
 export const renderDefinition = (

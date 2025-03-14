@@ -1,4 +1,4 @@
-/** @typedef {import("@/consts").DefinitionWord} DefinitionWord */
+/** @typedef {import("@/consts/definitions").DefinitionWord} DefinitionWord */
 
 const LOCAL_STORAGE_KEY = "discovered-words";
 

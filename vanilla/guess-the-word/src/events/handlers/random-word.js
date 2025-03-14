@@ -22,9 +22,10 @@ import {
 import { RESETS } from "@/consts";
 
 export function generateRandomWord() {
-  const randomWord = /** @type {import("@/consts").DefinitionWord } */ (
-    words[Math.floor(Math.random() * words.length)]
-  );
+  const randomWord =
+    /** @type {import("@/consts/definitions").DefinitionWord } */ (
+      words[Math.floor(Math.random() * words.length)]
+    );
 
   setCurrentWord(randomWord);
   resetAlert();
