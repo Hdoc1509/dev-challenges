@@ -54,7 +54,7 @@ export async function setupEventListeners() {
       $target.matches("#difficulty-form input[type=radio][name=difficulty]")
     )
       return handleDifficultyChange(
-        /** @type {import("@/consts").Difficulty} */ ($target.value),
+        /** @type {import("@/consts/difficulty").Difficulty} */ ($target.value),
       );
   });
 
