@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "words": "bash ./scripts/words.bash",
     "defs": "bash ./scripts/definitions.bash"
+    "prepare-data": "bash ./scripts/prepare-data.bash"
   },
   "dependencies": {
     "@fontsource-variable/outfit": "catalog:",
