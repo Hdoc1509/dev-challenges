@@ -14,7 +14,6 @@ export default defineConfig({
           if (id.includes("src/events")) return "events";
           if (id.includes("src/constants")) return "constants";
           if (id.includes("mocks/words/normal")) return "words-normal";
-          if (id.includes("mocks/words/extreme")) return "words-extreme";
           if (id.includes("mocks/words/why")) return "words-why";
           if (id.includes("mocks/definitions")) return "definitions";
         },
