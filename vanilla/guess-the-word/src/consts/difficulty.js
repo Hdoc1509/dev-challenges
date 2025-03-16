@@ -6,5 +6,6 @@ export const DIFFICULTY = Object.freeze({
   EXTREME: "extreme",
   INSANE: "insane",
   WHY: "why",
+  VOID: "void"
 });
 /** @typedef {DIFFICULTY[keyof DIFFICULTY]} Difficulty */
