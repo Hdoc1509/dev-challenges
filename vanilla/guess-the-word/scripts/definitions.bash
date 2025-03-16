@@ -6,7 +6,13 @@ MOCKS_DIR="$PROJECT_ROOT"/src/mocks
 JQ_FILTER_SCRIPT="$PROJECT_ROOT"/scripts/filter-words.jq
 JQ_PARSE_SCRIPT="$PROJECT_ROOT"/scripts/parse-definitions.jq
 
+NOCOLOR='\033[0m'
+GREEN='\033[0;32m'
+
 jq --arg MIN_LENGTH "4" --arg MAX_LENGTH "" --from-file "$JQ_FILTER_SCRIPT" \
   "$MOCKS_DIR"/all-words-data.json |
   jq --compact-output --from-file "$JQ_PARSE_SCRIPT" \
   >"$MOCKS_DIR"/definitions.json
+
+echo
+echo -e "${GREEN}[defs]: Generated definitions.json!${NOCOLOR}"
