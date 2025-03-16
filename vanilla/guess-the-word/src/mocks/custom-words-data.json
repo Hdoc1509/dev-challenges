@@ -1,0 +1,40 @@
+{
+  "example": {
+    "definitions": [
+      { "definition": "A representative form or pattern" },
+      { "definition": "Something to be imitated" },
+      { "definition": "An occurrrence of something" }
+    ]
+  },
+  "javascript": {
+    "definitions": [
+      {
+        "definition": "A cross-platform, object-oriented scripting language used to make webpages interactive"
+      },
+      {
+        "definition": "A lightweight interpreted (or just-in-time compiled) programming language with first-class functions"
+      }
+    ]
+  },
+  "coding": {
+    "definitions": [{ "definition": "Act of writing in code or cipher" }]
+  },
+  "flower": {
+    "definitions": [
+      { "definition": "A plant cultivated for its blooms or blossoms" },
+      { "definition": "The period of greatest prosperity or productivity" },
+      {
+        "definition": "Reproductive organ of angiosperm plants especially one having showy or colorful parts"
+      }
+    ]
+  },
+  "adventure": {
+    "definitions": [
+      { "definition": "Take a risk in the hope of a favorable outcome" },
+      { "definition": "Put at risk" },
+      {
+        "definition": "A wild and exciting undertaking (not necessarily lawful)"
+      }
+    ]
+  }
+}
