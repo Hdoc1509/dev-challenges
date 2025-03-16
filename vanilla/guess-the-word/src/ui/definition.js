@@ -1,5 +1,8 @@
 import { getElementById, getElementBySelector } from "@lib/dom";
-import { DEFINITIONS, TOTAL_WORDS } from "@/consts/definitions";
+import { getMockedDefinition } from "@/services/definition";
+import { TOTAL_WORDS } from "@/consts/definitions";
+
+/** @typedef {import("@/consts/definitions").DefinitionWord} DefinitionWord */
 
 export const $definition = getElementBySelector(
   ".info .definition",
@@ -48,7 +51,8 @@ export const renderDefinitionsCount = (count) => {
   $definitionsCurrent.textContent = count.toString();
 };
 
-/** @param {Array<keyof DEFINITIONS>} words */
+/** @param {Array<DefinitionWord>} words */
+// TODO: remove this function
 export const renderSavedDefinitions = (words) => {
   if (words.length === 0) return;
 
@@ -66,7 +70,18 @@ export const renderSavedDefinitions = (words) => {
  * @param {import("@/consts/definitions").DefinitionWord} word
  * @param {{ lastWord?: string, initialRender?: boolean }} options
  */
-export const renderDefinition = (
+// TODO: call only when opening its `<details>` element
+// - if data-status="success", do nothing
+// - if data-status="idle":
+//   - set data-status="loading", render loading spinner
+//   - call service
+//   - if error:
+//     - set data-status="error"
+//     - render try again button
+//   - if success:
+//     - set data-status="success"
+//     - render definition
+export const renderDefinition = async (
   word,
   { lastWord, initialRender = false } = {},
 ) => {
@@ -90,8 +105,7 @@ export const renderDefinition = (
   );
   const $separator = document.createElement("hr");
 
-  /** @type {string[]} */
-  const definitions = DEFINITIONS[word];
+  const definitions = await getMockedDefinition(word);
 
   const $notYet = $definitionslist.querySelector(".not-yet");
 
