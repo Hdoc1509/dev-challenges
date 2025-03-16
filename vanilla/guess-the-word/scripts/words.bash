@@ -25,7 +25,7 @@ generate_mock() {
   fi
 
   jq --arg MIN_LENGTH "$min" --arg MAX_LENGTH "$max" --from-file "$JQ_SCRIPT" \
-    "$MOCKS_DIR"/wordsapi_sample.json | jq --compact-output '[keys[]]' \
+    "$MOCKS_DIR"/all-words-data.json | jq --compact-output '[keys[]]' \
     >"$MOCKS_DIR"/words/"$file_name".json
 }
 
