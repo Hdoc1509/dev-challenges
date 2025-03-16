@@ -21,7 +21,7 @@ export let maxResets = (() => {
   const difficulty = getSelectedDifficulty();
 
   if (difficulty === DIFFICULTY.MASTER) return RESETS.MAX.MASTER;
-  // if (difficulty === DIFFICULTY.WHY) return RESETS.MAX.WHY;
+  if (difficulty === DIFFICULTY.VOID) return RESETS.MAX.VOID;
   return RESETS.MAX.DEFAULT;
 })();
 
