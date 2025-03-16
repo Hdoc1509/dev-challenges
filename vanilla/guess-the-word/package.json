@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "words": "pnpm run prepare-data && bash ./scripts/words.bash",
-    "defs": "bash ./scripts/definitions.bash"
+    "defs": "pnpm run prepare-data && bash ./scripts/definitions.bash",
     "prepare-data": "bash ./scripts/prepare-data.bash"
   },
   "dependencies": {
