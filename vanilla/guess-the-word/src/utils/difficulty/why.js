@@ -1,8 +1,7 @@
 import { setWords } from "@/state/words";
-import { WORDS } from "@/consts/words";
 
 export const WhyDifficulty = Object.freeze({
-  apply() {
-    setWords(WORDS.WHY);
+  async apply() {
+    setWords(await import("@/consts/words/why").then((mod) => mod.default));
   },
 });
