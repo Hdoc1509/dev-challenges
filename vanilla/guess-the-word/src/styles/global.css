@@ -26,6 +26,7 @@
   --difficulty-extreme: #cf1d41;
   --difficulty-insane: #6e3be4;
   --difficulty-why: var(--primary);
+  --difficulty-void: var(--secondary);
 
   --card-padding: 1.5rem;
   --card-gap: 1.5rem;

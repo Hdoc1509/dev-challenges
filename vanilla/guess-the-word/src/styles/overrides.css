@@ -78,3 +78,7 @@
   --radio-color: var(--difficulty-why);
   --difficulty-text: var(--difficulty-why);
 }
+#difficulty-tab-content .label[data-difficulty="void"] {
+  --radio-color: var(--difficulty-void);
+  --difficulty-text: var(--difficulty-void);
+}
