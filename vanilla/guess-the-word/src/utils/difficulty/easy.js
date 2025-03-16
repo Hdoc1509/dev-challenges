@@ -6,12 +6,11 @@ import {
   generateTriesIndicators,
   setTriesIndicators,
 } from "@/ui/tries";
-import { WORDS } from "@/consts/words";
 import { TRIES } from "@/consts/tries";
 
 export const EasyDifficulty = Object.freeze({
-  apply() {
-    setWords(WORDS.EASY);
+  async apply() {
+    setWords(await import("@/consts/words/easy").then((mod) => mod.default));
     setMaxTries(TRIES.MAX);
     $maxTries.textContent = `${TRIES.MAX}`;
     generateTriesIndicators(TRIES.MAX);
