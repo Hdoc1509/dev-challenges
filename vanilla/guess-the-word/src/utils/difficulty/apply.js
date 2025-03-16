@@ -5,6 +5,7 @@ import { MasterDifficulty } from "./master";
 import { ExtremeDifficulty } from "./extreme";
 import { InsaneDifficulty } from "./insane";
 import { WhyDifficulty } from "./why";
+import { VoidDifficulty } from "./void";
 import { DIFFICULTY } from "@/consts/difficulty";
 
 /** @param {import("@/consts/difficulty").Difficulty} difficulty */
@@ -40,5 +41,11 @@ export function applyDifficulty(difficulty) {
     MasterDifficulty.unapply();
     InsaneDifficulty.apply();
     WhyDifficulty.apply();
+  } else if (difficulty === DIFFICULTY.VOID) {
+    HardDifficulty.apply();
+    MasterDifficulty.unapply();
+    InsaneDifficulty.unapply();
+    WhyDifficulty.apply();
+    VoidDifficulty.apply();
   }
 }
