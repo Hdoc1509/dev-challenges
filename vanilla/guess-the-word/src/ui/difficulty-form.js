@@ -12,5 +12,5 @@ export const getSelectedDifficulty = () => {
   if (typeof difficulty !== "string")
     throw new Error("Difficulty is not a string");
 
-  return /** @type {import("@/consts").Difficulty} */ (difficulty);
+  return /** @type {import("@/consts/difficulty").Difficulty} */ (difficulty);
 };
