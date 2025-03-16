@@ -8,4 +8,5 @@ export const implementsMaxResets = ({ difficulty }) =>
   difficulty === DIFFICULTY.MASTER ||
   difficulty === DIFFICULTY.EXTREME ||
   difficulty === DIFFICULTY.INSANE ||
-  difficulty === DIFFICULTY.WHY;
+  difficulty === DIFFICULTY.WHY ||
+  difficulty === DIFFICULTY.VOID;
