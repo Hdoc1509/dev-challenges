@@ -77,7 +77,7 @@ create a small game that tests your data management and DOM manipulation with Ja
 ### Extra Features
 
 - Case insensitive check for entered letter
-- Difficulty levels: easy, normal, hard, master, extreme, insane and why
+- Difficulty levels: easy, normal, hard, master, extreme, insane, why and void
 - Change color of used letters
 - Add border colors to correct and wrong entered letters
 - Show correct word when winning or losing
