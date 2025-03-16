@@ -19,8 +19,8 @@ import {
 import { $hintsTrigger, HintsTabs } from "@/ui/hints";
 import { $randomWord, $reset } from "@/ui/actions";
 
-export function setupEventListeners() {
-  applyDifficulty(difficulty);
+export async function setupEventListeners() {
+  await applyDifficulty(difficulty);
   generateRandomWord();
   renderSavedDefinitions(Array.from(discoveredWords));
   renderDefinitionsCount(discoveredWords.size);

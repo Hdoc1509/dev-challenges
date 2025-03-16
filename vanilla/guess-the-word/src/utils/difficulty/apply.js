@@ -9,9 +9,9 @@ import { VoidDifficulty } from "./void";
 import { DIFFICULTY } from "@/consts/difficulty";
 
 /** @param {import("@/consts/difficulty").Difficulty} difficulty */
-export function applyDifficulty(difficulty) {
+export async function applyDifficulty(difficulty) {
   if (difficulty === DIFFICULTY.EASY) {
-    EasyDifficulty.apply();
+    await EasyDifficulty.apply();
     MasterDifficulty.unapply();
     InsaneDifficulty.unapply();
   } else if (difficulty === DIFFICULTY.NORMAL) {
@@ -29,7 +29,7 @@ export function applyDifficulty(difficulty) {
   } else if (difficulty === DIFFICULTY.EXTREME) {
     HardDifficulty.apply();
     MasterDifficulty.apply();
-    ExtremeDifficulty.apply();
+    await ExtremeDifficulty.apply();
     InsaneDifficulty.unapply();
   } else if (difficulty === DIFFICULTY.INSANE) {
     HardDifficulty.apply();
@@ -40,12 +40,12 @@ export function applyDifficulty(difficulty) {
     HardDifficulty.apply();
     MasterDifficulty.unapply();
     InsaneDifficulty.apply();
-    WhyDifficulty.apply();
+    await WhyDifficulty.apply();
   } else if (difficulty === DIFFICULTY.VOID) {
     HardDifficulty.apply();
     MasterDifficulty.unapply();
     InsaneDifficulty.unapply();
-    WhyDifficulty.apply();
+    await WhyDifficulty.apply();
     VoidDifficulty.apply();
   }
 }

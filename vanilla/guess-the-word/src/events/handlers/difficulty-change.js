@@ -3,8 +3,8 @@ import { generateRandomWord } from "./random-word";
 import { applyDifficulty } from "@/utils/difficulty/apply";
 
 /** @param {import("@/consts").Difficulty} difficulty */
-export function handleDifficultyChange(difficulty) {
+export async function handleDifficultyChange(difficulty) {
   setDifficulty(difficulty);
-  applyDifficulty(difficulty);
+  await applyDifficulty(difficulty);
   generateRandomWord();
 }
