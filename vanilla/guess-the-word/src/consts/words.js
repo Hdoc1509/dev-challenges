@@ -4,7 +4,7 @@ import WORDS_EXTREME from "@/mocks/words/extreme.json";
 import WORDS_WHY from "@/mocks/words/why.json";
 import { CUSTOM_DEFINITIONS } from "./definitions";
 
-const CUSTOM_WORDS = ["challenge", ...Object.keys(CUSTOM_DEFINITIONS)];
+const CUSTOM_WORDS = Object.keys(CUSTOM_DEFINITIONS);
 
 // TODO: can I use Set() as property value?
 // or have `.array` and `.set` sub-properties?
