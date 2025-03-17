@@ -55,6 +55,8 @@ export const renderDefinitionsCount = (count) => {
 export const renderSavedDefinitions = (words) => {
   if (words.length === 0) return;
 
+  renderDefinitionsCount(words.length);
+
   const $notYet = $definitionslist.querySelector(".not-yet");
 
   if ($notYet != null) $notYet.remove();
