@@ -15,7 +15,9 @@
     "@fontsource-variable/outfit": "catalog:",
     "@fontsource/outfit": "catalog:",
     "@lib/alert": "workspace:",
-    "@lib/dom": "workspace:"
+    "@lib/dom": "workspace:",
+    "@lib/fetcher": "workspace:",
+    "zod": "catalog:"
   },
   "devDependencies": {
     "vite": "catalog:",
