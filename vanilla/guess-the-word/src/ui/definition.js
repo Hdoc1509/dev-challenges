@@ -140,8 +140,12 @@ export const renderDefinition = async (
 };
 
 export const clearNewDefinitionStatus = () => {
-  const $definition = document.querySelector(".definition[data-status=new]");
+  const $definitions = document.querySelectorAll(
+    ".definition[data-status=new]",
+  );
 
-  $definition?.removeAttribute("data-status");
-  $definition?.querySelector(".definition__badge")?.remove();
+  $definitions.forEach(($definition) => {
+    $definition.removeAttribute("data-status");
+    $definition.querySelector(".definition__badge")?.remove();
+  });
 };
