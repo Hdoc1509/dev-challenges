@@ -1,6 +1,6 @@
 import { getElementById, getElementBySelector } from "@lib/dom";
 import { getMockedDefinition } from "@/services/definition";
-import { TOTAL_WORDS } from "@/consts/definitions";
+import { DEFINITIONS_PER_PAGE, TOTAL_WORDS } from "@/consts/definitions";
 
 /** @typedef {import("@/consts/definitions").DefinitionWord} DefinitionWord */
 
@@ -52,7 +52,6 @@ export const renderDefinitionsCount = (count) => {
 };
 
 /** @param {Array<DefinitionWord>} words */
-// TODO: remove this function
 export const renderSavedDefinitions = (words) => {
   if (words.length === 0) return;
 
@@ -60,10 +59,24 @@ export const renderSavedDefinitions = (words) => {
 
   if ($notYet != null) $notYet.remove();
 
-  const lastWord = words[words.length - 1];
+  const wordsToRender = words.slice(0, DEFINITIONS_PER_PAGE);
+  const lastWord = wordsToRender[wordsToRender.length - 1];
+  const pages = Math.ceil(words.length / DEFINITIONS_PER_PAGE);
 
-  for (const word of words)
+  for (const word of wordsToRender)
     renderDefinition(word, { lastWord, initialRender: true });
+
+  if (words.length > DEFINITIONS_PER_PAGE) {
+    // TODO: render pagination section
+    // - go-prev button:
+    //   - if only one previous page, show number
+    //   - if no previous page, disable
+    // - current page
+    // - go-next button
+    //   - if only one next page, show number
+    //   - if no next page, disable
+    console.log("render pagination section", pages, "pages");
+  }
 };
 
 /**
