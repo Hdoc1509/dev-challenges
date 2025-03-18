@@ -9,6 +9,11 @@ const CLASSES = Object.freeze({
 const ATTRIBUTES = Object.freeze({
   STEP: Object.freeze({
     COMPLETED: "data-completed",
+    // TODO: can I use aria-current?
+    // CURRENT: Object.freeze({
+    //   NAME: "aria-current",
+    //   VALUE: "step",
+    // })
   }),
 });
 const STEP = Object.freeze({
