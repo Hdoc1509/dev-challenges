@@ -316,6 +316,54 @@
           <ul class="definitions-list" aria-label="Discovered words">
             <p class="not-yet">- No discovered words yet -</p>
           </ul>
+          <nav aria-label="Definition pages">
+            <menu class="pagination">
+              <li class="pagination__item">
+                <button class="pagination__link" aria-label="Previous page">
+                  <!-- arrow-badge-left icon-->
+                  <svg
+                    focusable="false"
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M11 17h6l-4-5 4-5h-6l-4 5z" />
+                  </svg>
+                </button>
+              </li>
+              <li class="pagination__item" aria-current="page">
+                <input
+                  type="number"
+                  class="pagination__current"
+                  min="1"
+                  value="1"
+                  aria-label="Page 1 of 1"
+                />
+                <span aria-hidden="true">
+                  / <span class="pagination__total">1</span>
+                </span>
+              </li>
+              <li class="pagination__item">
+                <button class="pagination__link" aria-label="Next page">
+                  <!-- arrow-badge-right icon -->
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M13 7H7l4 5-4 5h6l4-5z" />
+                  </svg>
+                </button>
+              </li>
+            </menu>
+          </nav>
         </div>
         <div
           id="difficulty-tab-content"
