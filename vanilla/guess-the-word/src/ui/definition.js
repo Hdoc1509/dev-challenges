@@ -2,6 +2,10 @@ import { getElementById, getElementBySelector } from "@lib/dom";
 import { getMockedDefinition } from "@/services/definition";
 import { DEFINITIONS_PER_PAGE, TOTAL_WORDS } from "@/consts/definitions";
 
+// TODO: split into multiple files
+// - elements.js
+// - render.js
+
 /** @typedef {import("@/consts/definitions").DefinitionWord} DefinitionWord */
 
 export const $definition = getElementBySelector(
@@ -71,11 +75,9 @@ export const renderSavedDefinitions = (words) => {
   if (words.length > DEFINITIONS_PER_PAGE) {
     // TODO: render pagination section
     // - go-prev button:
-    //   - if only one previous page, show number
     //   - if no previous page, disable
     // - current page
     // - go-next button
-    //   - if only one next page, show number
     //   - if no next page, disable
     console.log("render pagination section", pages, "pages");
   }
@@ -86,16 +88,17 @@ export const renderSavedDefinitions = (words) => {
  * @param {{ lastWord?: string, initialRender?: boolean }} options
  */
 // TODO: call only when opening its `<details>` element
-// - if data-status="success", do nothing
-// - if data-status="idle":
+// - if data-status="success" or data-status="loading", do nothing
+// - if data-status="idle" or data-status="error":
 //   - set data-status="loading", render loading spinner
 //   - call service
 //   - if error:
 //     - set data-status="error"
-//     - render try again button
+//     - render error and try again button
 //   - if success:
 //     - set data-status="success"
 //     - render definition
+// take reference from: https://github.com/Hdoc1509/dev-challenges/blob/master/vanilla/random-quote/src/events/handlers/random-quote.js
 export const renderDefinition = async (
   word,
   { lastWord, initialRender = false } = {},
