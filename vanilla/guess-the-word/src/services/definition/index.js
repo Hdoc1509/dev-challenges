@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { ServiceError, fetcher } from "@lib/fetcher";
 import { DEFINITIONS } from "@/consts/definitions";
+import { Random } from "@/utils/random";
 
 /**
  * @callback DefinitionService
@@ -12,7 +13,9 @@ import { DEFINITIONS } from "@/consts/definitions";
 export const getMockedDefinition = async (word) => {
   /** @type {string[]} */
   const definitions = DEFINITIONS[word];
+  const delay = Random.intInRange(1500, 3000);
 
+  await new Promise((resolve) => setTimeout(resolve, delay));
   return [null, definitions];
 };
 
