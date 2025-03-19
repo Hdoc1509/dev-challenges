@@ -106,7 +106,7 @@ export const renderDefinition = async (
   const $itemClone = /** @type {DocumentFragment} */ (
     $definitionTemplate.content.cloneNode(true)
   );
-  const $item = getElementBySelector(
+  const $details = getElementBySelector(
     ".definition",
     HTMLDetailsElement,
     $itemClone,
@@ -129,7 +129,7 @@ export const renderDefinition = async (
 
   if ($notYet != null) $notYet.remove();
 
-  $item.dataset.word = word;
+  $details.dataset.word = word;
   $label.textContent = capitalize(word);
 
   for (const definition of definitions) {
@@ -151,7 +151,7 @@ export const renderDefinition = async (
     $badge.classList.add("definition__badge");
     $badge.textContent = "New";
     $label.appendChild($badge);
-    $item.dataset.status = "new";
+    $details.dataset.status = "new";
 
     $definitionslist.prepend($itemClone);
   }
