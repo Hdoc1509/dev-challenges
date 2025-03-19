@@ -1,5 +1,5 @@
 .pagination {
-  --_hover: #4a55675f;
+  --_hover: var(--black);
 
   display: flex;
   justify-content: center;
