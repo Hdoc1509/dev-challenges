@@ -1,5 +1,5 @@
 import { getElementById, getElementBySelector } from "@lib/dom";
-import { getMockedDefinition } from "@/services/definition";
+import { handleDefinitionOpen } from "@/events/handlers/definition-open";
 import { DEFINITIONS_PER_PAGE, TOTAL_WORDS } from "@/consts/definitions";
 
 // TODO: split into multiple files
@@ -92,18 +92,6 @@ export const renderSavedDefinitions = (words) => {
  * @param {import("@/consts/definitions").DefinitionWord} word
  * @param {{ lastWord?: string, initialRender?: boolean }} options
  */
-// TODO: call only when opening its `<details>` element
-// - if data-status="success" or data-status="loading", do nothing
-// - if data-status="idle" or data-status="error":
-//   - set data-status="loading", render loading spinner
-//   - call service
-//   - if error:
-//     - set data-status="error"
-//     - render error and try again button
-//   - if success:
-//     - set data-status="success"
-//     - render definition
-// take reference from: https://github.com/Hdoc1509/dev-challenges/blob/master/vanilla/random-quote/src/events/handlers/random-quote.js
 export const renderDefinition = async (
   word,
   { lastWord, initialRender = false } = {},
@@ -129,6 +117,9 @@ export const renderDefinition = async (
   $details.dataset.word = word;
   $label.textContent = capitalize(word);
 
+  $details.addEventListener("toggle", () => {
+    if ($details.open) handleDefinitionOpen($details);
+  });
 
   if (initialRender) {
     $definitionslist.appendChild($itemClone);

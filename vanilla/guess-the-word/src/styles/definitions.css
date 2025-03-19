@@ -35,6 +35,8 @@
 .definition:not(.info .definition) {
   padding-left: 0.75rem;
   border-left: 3px solid var(--definition-border-color, var(--word-bg));
+
+  --spinner-size: 2.25rem;
 }
 .definition[data-new] {
   --definition-badge-text: var(--secondary);
@@ -44,6 +46,21 @@
 .definition:focus-within {
   --definition-border-color: var(--primary);
   --definition-label-text: var(--secondary);
+}
+.definition[data-status="loading"] .definition__content {
+  --error-display: none;
+  --retry-display: none;
+  display: flex;
+  justify-content: center;
+  padding: 0.25rem 0;
+}
+.definition[data-status="error"] {
+  --spinner-display: none;
+}
+.definition[data-status="success"] {
+  --spinner-display: none;
+  --error-display: none;
+  --retry-display: none;
 }
 .definition__label {
   outline: none;
@@ -57,6 +74,9 @@
 }
 .definition__content > p + p {
   margin-top: 0.5em;
+}
+.definition__error {
+  display: var(--error-display);
 }
 .definition__retry {
   display: var(--retry-display);
