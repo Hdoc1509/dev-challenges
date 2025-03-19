@@ -151,19 +151,17 @@ export const renderDefinition = async (
     $badge.classList.add("definition__badge");
     $badge.textContent = "New";
     $label.appendChild($badge);
-    $details.dataset.status = "new";
+    $details.dataset.new = "";
 
     $definitionslist.prepend($itemClone);
   }
 };
 
 export const clearNewDefinitionStatus = () => {
-  const $definitions = document.querySelectorAll(
-    ".definition[data-status=new]",
-  );
+  const $definitions = document.querySelectorAll(".definition[data-new]");
 
   $definitions.forEach(($definition) => {
-    $definition.removeAttribute("data-status");
+    $definition.removeAttribute("data-new");
     $definition.querySelector(".definition__badge")?.remove();
   });
 };

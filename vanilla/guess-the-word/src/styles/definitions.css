@@ -36,7 +36,7 @@
   padding-left: 0.75rem;
   border-left: 3px solid var(--definition-border-color, var(--word-bg));
 }
-.definition[data-status="new"] {
+.definition[data-new] {
   --definition-badge-text: var(--secondary);
 }
 .definition[open],
