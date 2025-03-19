@@ -116,15 +116,7 @@ export const renderDefinition = async (
     HTMLElement,
     $itemClone,
   );
-  const $content = getElementBySelector(
-    ".definition__content",
-    HTMLElement,
-    $itemClone,
-  );
   const $separator = document.createElement("hr");
-
-  const definitions = await getMockedDefinition(word);
-
   const $notYet = $definitionslist.querySelector(".not-yet");
 
   if ($notYet != null) $notYet.remove();
@@ -132,12 +124,6 @@ export const renderDefinition = async (
   $details.dataset.word = word;
   $label.textContent = capitalize(word);
 
-  for (const definition of definitions) {
-    const $definition = document.createElement("p");
-
-    $definition.textContent = `${definition}.`;
-    $content.appendChild($definition);
-  }
 
   if (initialRender) {
     $definitionslist.appendChild($itemClone);
