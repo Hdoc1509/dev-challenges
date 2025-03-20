@@ -42,7 +42,7 @@ export async function handleDefinitionOpen($definitionDetails) {
       const $newRetry = document.createElement("button");
 
       $newRetry.classList.add("definition__retry");
-      $newRetry.textContent = "Try again";
+      $newRetry.textContent = "Retry";
       $newRetry.dataset.word = word;
       $content.appendChild($newRetry);
     }
