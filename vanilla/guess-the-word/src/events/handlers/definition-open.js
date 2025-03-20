@@ -58,6 +58,8 @@ export async function handleDefinitionOpen($definitionDetails, { controller }) {
   }
 
   controller.abort();
+  $definitionDetails.removeAttribute("data-word");
+  $definitionDetails.removeAttribute("data-status");
   $content.querySelector(".definition__error")?.remove();
   $content.querySelector(".definition__retry")?.remove();
   $content.querySelector(".spinner")?.remove();
