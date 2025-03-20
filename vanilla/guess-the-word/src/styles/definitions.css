@@ -33,7 +33,6 @@
 }
 
 .definition:not(.info .definition) {
-  padding-left: 0.75rem;
   border-left: 3px solid var(--definition-border-color, var(--word-bg));
 
   --spinner-size: 2.25rem;
@@ -64,6 +63,7 @@
 }
 .definition__label {
   outline: none;
+  padding-left: 0.75rem;
 
   font-weight: bold;
   color: var(--definition-label-text);
@@ -74,7 +74,7 @@
   flex-direction: column;
   gap: 0.5em;
 
-  padding-left: 0.875rem;
+  padding: 0.25rem 0.875rem;
 }
 .definition__error {
   display: var(--error-display);
