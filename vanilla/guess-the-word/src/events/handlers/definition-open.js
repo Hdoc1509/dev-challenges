@@ -1,5 +1,6 @@
 import { getMockedDefinition } from "@/services/definition";
 import { getElementBySelector } from "@lib/dom";
+import { createRetryButton } from "@/ui/definition";
 import { createSpinner } from "@/ui/spinner";
 
 /** @param {HTMLDetailsElement} $definitionDetails */
@@ -37,15 +38,8 @@ export async function handleDefinitionOpen($definitionDetails) {
       $content.appendChild($newError);
     }
 
-    if ($retry == null) {
-      // TODO: add listener with event delegation
-      const $newRetry = document.createElement("button");
-
-      $newRetry.classList.add("definition__retry");
-      $newRetry.textContent = "Retry";
-      $newRetry.dataset.word = word;
-      $content.appendChild($newRetry);
-    }
+    // TODO: add listener with event delegation
+    if ($retry == null) $content.appendChild(createRetryButton(word));
 
     return;
   }

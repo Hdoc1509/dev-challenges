@@ -87,9 +87,13 @@
   font-weight: bold;
   text-align: center;
 }
+/* TODO: create button[data-variant="secondary"] with these styles */
+/* almost all of these is also used for menu buttons */
 .definition__retry {
-  display: var(--retry-display);
+  display: var(--retry-display, flex);
   align-self: center;
+  align-items: center;
+  gap: 4px;
 
   border-radius: 8px;
   border: none;
@@ -100,6 +104,8 @@
   font-weight: bold;
 
   transition: transform 0.2s ease;
+
+  --icon-size: 1.25em;
 }
 .definition__retry:hover,
 .definition__retry:focus {

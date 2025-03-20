@@ -13,6 +13,27 @@ export const $definition = getElementBySelector(
   HTMLElement,
 );
 
+const $definitionRetryTemplate = getElementById(
+  "definition-retry-template",
+  HTMLTemplateElement,
+);
+
+/** @param {DefinitionWord} word */
+export const createRetryButton = (word) => {
+  const $clone = /** @type {DocumentFragment} */ (
+    $definitionRetryTemplate.content.cloneNode(true)
+  );
+  const $retry = getElementBySelector(
+    ".definition__retry",
+    HTMLButtonElement,
+    $clone,
+  );
+
+  $retry.dataset.word = word;
+
+  return $retry;
+};
+
 export const $definitionsProgress = getElementBySelector(
   ".definitions-count__progress",
   HTMLDivElement,
