@@ -14,7 +14,6 @@ export async function handleDefinitionOpen($definitionDetails) {
     $definitionDetails,
   );
   let $error = $content.querySelector(".definition__error");
-  /** @type {HTMLButtonElement | null} */
   let $retry = $content.querySelector(".definition__retry");
   /** @type {HTMLDivElement | null} */
   let $spinner = $content.querySelector(".spinner");
@@ -42,11 +41,12 @@ export async function handleDefinitionOpen($definitionDetails) {
 
     if ($retry == null) {
       // TODO: add listener with event delegation
-      $retry = document.createElement("button");
-      $retry.classList.add("definition__retry");
-      $retry.textContent = "Try again";
-      $retry.dataset.word = word;
-      $content.appendChild($retry);
+      const $newRetry = document.createElement("button");
+
+      $newRetry.classList.add("definition__retry");
+      $newRetry.textContent = "Try again";
+      $newRetry.dataset.word = word;
+      $content.appendChild($newRetry);
     }
 
     return;
