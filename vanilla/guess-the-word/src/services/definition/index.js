@@ -15,6 +15,8 @@ export const getMockedDefinition = async (word) => {
   const definitions = DEFINITIONS[word];
   const delay = Random.intInRange(1500, 3000);
 
+  if (delay <= 2000) return [new Error("Mocked error")];
+
   await new Promise((resolve) => setTimeout(resolve, delay));
   return [null, definitions];
 };
