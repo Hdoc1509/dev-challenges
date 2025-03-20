@@ -1,4 +1,4 @@
-import { getMockedDefinition } from "@/services/definition";
+import { getDefinition } from "@/services/definition";
 import { getElementBySelector } from "@lib/dom";
 import { createRetryButton } from "@/ui/definition";
 import { createSpinner } from "@/ui/spinner";
@@ -28,7 +28,7 @@ export async function handleDefinitionOpen($definitionDetails, { controller }) {
   if ($spinner == null) $content.appendChild(createSpinner());
 
   $definitionDetails.dataset.status = "loading";
-  const [error, definitions] = await getMockedDefinition(word);
+  const [error, definitions] = await getDefinition(word);
 
   if (error != null) {
     $definitionDetails.dataset.status = "error";
