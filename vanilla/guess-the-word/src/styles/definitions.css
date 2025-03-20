@@ -51,7 +51,7 @@
   --error-display: none;
   --retry-display: none;
   display: flex;
-  justify-content: center;
+  align-items: center;
   padding: 0.25rem 0;
 }
 .definition[data-status="error"] {
@@ -70,16 +70,40 @@
   cursor: pointer;
 }
 .definition__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+
   padding-left: 0.875rem;
-}
-.definition__content > p + p {
-  margin-top: 0.5em;
 }
 .definition__error {
   display: var(--error-display);
+
+  align-self: center;
+  padding: 0.2em 0.5em;
+  border-radius: 8px;
+  background-color: rgba(255, 10, 10, 0.35);
+
+  font-weight: bold;
+  text-align: center;
 }
 .definition__retry {
   display: var(--retry-display);
+  align-self: center;
+
+  border-radius: 8px;
+  border: none;
+  padding: 0.25em 0.75em;
+  background-color: var(--primary);
+  margin-top: 0.5em;
+
+  font-weight: bold;
+
+  transition: transform 0.2s ease;
+}
+.definition__retry:hover,
+.definition__retry:focus {
+  transform: scale(var(--menu-trigger-scale, 1.125));
 }
 .definition__badge {
   margin-left: 0.5em;
