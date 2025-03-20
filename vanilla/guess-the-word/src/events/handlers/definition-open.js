@@ -41,8 +41,10 @@ export async function handleDefinitionOpen($definitionDetails, { controller }) {
       $content.appendChild($newError);
     }
 
-    // TODO: add listener with event delegation
-    if ($retry == null) $content.appendChild(createRetryButton(word));
+    if ($retry == null)
+      $content.appendChild(
+        createRetryButton({ $definitionDetails, controller }),
+      );
 
     return;
   }

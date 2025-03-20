@@ -18,8 +18,12 @@ const $definitionRetryTemplate = getElementById(
   HTMLTemplateElement,
 );
 
-/** @param {DefinitionWord} word */
-export const createRetryButton = (word) => {
+/**
+ * @param {Object} params
+ * @param {HTMLDetailsElement} params.$definitionDetails
+ * @param {AbortController} params.controller
+ */
+export const createRetryButton = ({ $definitionDetails, controller }) => {
   const $clone = /** @type {DocumentFragment} */ (
     $definitionRetryTemplate.content.cloneNode(true)
   );
@@ -29,7 +33,11 @@ export const createRetryButton = (word) => {
     $clone,
   );
 
-  $retry.dataset.word = word;
+  $retry.addEventListener(
+    "click",
+    () => handleDefinitionOpen($definitionDetails, { controller }),
+    { signal: controller.signal },
+  );
 
   return $retry;
 };
