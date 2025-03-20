@@ -13,11 +13,6 @@ export const $definition = getElementBySelector(
   HTMLElement,
 );
 
-export const $definitionRetryTemplate = getElementById(
-  "definition-retry-template",
-  HTMLTemplateElement,
-);
-
 export const $definitionsProgress = getElementBySelector(
   ".definitions-count__progress",
   HTMLDivElement,

@@ -1,7 +1,6 @@
 import { getMockedDefinition } from "@/services/definition";
-import { $definitionRetryTemplate } from "@/ui/definition";
-import { $spinnerTemplate } from "@/ui/spinner";
 import { getElementBySelector } from "@lib/dom";
+import { $spinnerTemplate } from "@/ui/spinner";
 
 /** @param {HTMLDetailsElement} $definitionDetails */
 export async function handleDefinitionOpen($definitionDetails) {
@@ -15,6 +14,7 @@ export async function handleDefinitionOpen($definitionDetails) {
     $definitionDetails,
   );
   let $error = $content.querySelector(".definition__error");
+  /** @type {HTMLButtonElement | null} */
   let $retry = $content.querySelector(".definition__retry");
   /** @type {HTMLDivElement | null} */
   let $spinner = $content.querySelector(".spinner");
@@ -42,8 +42,11 @@ export async function handleDefinitionOpen($definitionDetails) {
 
     if ($retry == null) {
       // TODO: add listener with event delegation
-      const $retryClone = $definitionRetryTemplate.content.cloneNode(true);
-      $content.appendChild($retryClone);
+      $retry = document.createElement("button");
+      $retry.classList.add("definition__retry");
+      $retry.textContent = "Try again";
+      $retry.dataset.word = word;
+      $content.appendChild($retry);
     }
 
     return;
