@@ -60,7 +60,7 @@ export async function handleDefinitionOpen($definitionDetails) {
     $content.appendChild($definition);
   }
 
-  $definitionDetails.querySelector(".definition__error")?.remove();
-  $definitionDetails.querySelector(".definition__retry")?.remove();
-  $definitionDetails.querySelector(".spinner")?.remove();
+  $content.querySelector(".definition__error")?.remove();
+  $content.querySelector(".definition__retry")?.remove();
+  $content.querySelector(".spinner")?.remove();
 }
