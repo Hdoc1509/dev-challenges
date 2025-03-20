@@ -1,6 +1,6 @@
 import { getMockedDefinition } from "@/services/definition";
 import { getElementBySelector } from "@lib/dom";
-import { $spinnerTemplate } from "@/ui/spinner";
+import { createSpinner } from "@/ui/spinner";
 
 /** @param {HTMLDetailsElement} $definitionDetails */
 export async function handleDefinitionOpen($definitionDetails) {
@@ -21,10 +21,7 @@ export async function handleDefinitionOpen($definitionDetails) {
     $definitionDetails.dataset.word
   );
 
-  if ($spinner == null) {
-    const $spinnerClone = $spinnerTemplate.content.cloneNode(true);
-    $content.appendChild($spinnerClone);
-  }
+  if ($spinner == null) $content.appendChild(createSpinner());
 
   $definitionDetails.dataset.status = "loading";
   const [error, definitions] = await getMockedDefinition(word);
