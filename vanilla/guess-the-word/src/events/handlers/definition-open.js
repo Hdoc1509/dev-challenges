@@ -33,10 +33,11 @@ export async function handleDefinitionOpen($definitionDetails) {
     $definitionDetails.dataset.status = "error";
 
     if ($error == null) {
-      $error = document.createElement("p");
-      $error.classList.add("definition__error");
-      $error.textContent = error.message;
-      $content.appendChild($error);
+      const $newError = document.createElement("p");
+
+      $newError.classList.add("definition__error");
+      $newError.textContent = error.message;
+      $content.appendChild($newError);
     }
 
     if ($retry == null) {
