@@ -3,8 +3,11 @@ import { getElementBySelector } from "@lib/dom";
 import { createRetryButton } from "@/ui/definition";
 import { createSpinner } from "@/ui/spinner";
 
-/** @param {HTMLDetailsElement} $definitionDetails */
-export async function handleDefinitionOpen($definitionDetails) {
+/**
+ * @param {HTMLDetailsElement} $definitionDetails
+ * @param {{ controller: AbortController }} extraParams
+ */
+export async function handleDefinitionOpen($definitionDetails, { controller }) {
   const status = $definitionDetails.dataset.status;
 
   if (status === "success" || status === "loading") return;
@@ -52,6 +55,7 @@ export async function handleDefinitionOpen($definitionDetails) {
     $content.appendChild($definition);
   }
 
+  controller.abort();
   $content.querySelector(".definition__error")?.remove();
   $content.querySelector(".definition__retry")?.remove();
   $content.querySelector(".spinner")?.remove();

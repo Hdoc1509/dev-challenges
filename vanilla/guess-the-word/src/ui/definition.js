@@ -127,15 +127,20 @@ export const renderDefinition = async (
   );
   const $separator = document.createElement("hr");
   const $notYet = $definitionslist.querySelector(".not-yet");
+  const controller = new AbortController();
 
   if ($notYet != null) $notYet.remove();
 
   $details.dataset.word = word;
   $label.textContent = capitalize(word);
 
-  $details.addEventListener("toggle", () => {
-    if ($details.open) handleDefinitionOpen($details);
-  });
+  $details.addEventListener(
+    "toggle",
+    () => {
+      if ($details.open) handleDefinitionOpen($details, { controller });
+    },
+    { signal: controller.signal },
+  );
 
   if (initialRender) {
     $definitionslist.appendChild($itemClone);
