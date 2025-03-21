@@ -11,7 +11,7 @@ import { isValidLetterField } from "@/utils/letter-fields";
 import { $menu, $menuClose, $menuOpen, MenuTabs } from "@/ui/menu";
 // import { generateWordList } from "@/ui/word-list";
 import { renderSavedDefinitions } from "@/ui/definition/render/definition";
-import { clearNewDefinitionStatus } from "@/ui/definition/new";
+import { removeAllNewBadges } from "@/ui/definition/new";
 import { $showDefinition } from "@/ui/definition/elements";
 import { $hintsTrigger, HintsTabs } from "@/ui/hints";
 import { $randomWord, $reset } from "@/ui/actions";
@@ -54,7 +54,5 @@ export async function setupEventListeners() {
       );
   });
 
-  $menu.addEventListener("close", () => {
-    clearNewDefinitionStatus();
-  });
+  $menu.addEventListener("close", () => removeAllNewBadges());
 }

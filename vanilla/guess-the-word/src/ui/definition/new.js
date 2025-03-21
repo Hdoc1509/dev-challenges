@@ -1,6 +1,6 @@
 import { $definitionslist } from "./elements";
 
-export const clearNewDefinitionStatus = () => {
+export const removeAllNewBadges = () => {
   const $definitions = $definitionslist.querySelectorAll(
     ".definition[data-new]",
   );
@@ -16,7 +16,7 @@ export const clearNewDefinitionStatus = () => {
  * @param {HTMLDetailsElement} params.$details
  * @param {HTMLElement} params.$label
  */
-export const setNewDefinitionStatus = ({ $details, $label }) => {
+export const addNewBadge = ({ $details, $label }) => {
   const $badge = document.createElement("span");
 
   $badge.classList.add("definition__badge");

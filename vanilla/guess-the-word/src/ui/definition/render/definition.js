@@ -1,7 +1,7 @@
 import { getElementById, getElementBySelector } from "@lib/dom";
 import { handleDefinitionOpen } from "@/events/handlers/definition-open";
 import { renderDefinitionsCount } from "./count";
-import { setNewDefinitionStatus } from "../new";
+import { addNewBadge } from "../new";
 import { $definitionslist } from "../elements";
 import { DEFINITIONS_PER_PAGE } from "@/consts/definitions";
 /** @typedef {import("@/consts/definitions").DefinitionWord} DefinitionWord */
@@ -87,7 +87,7 @@ export const renderDefinition = async (
     if ($definitionslist.childElementCount >= 1)
       $definitionslist.prepend($separator);
 
-    setNewDefinitionStatus({ $details, $label });
+    addNewBadge({ $details, $label });
     $definitionslist.prepend($itemClone);
   }
 };
