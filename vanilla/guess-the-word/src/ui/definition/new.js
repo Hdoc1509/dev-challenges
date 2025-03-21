@@ -10,3 +10,17 @@ export const clearNewDefinitionStatus = () => {
     $definition.querySelector(".definition__badge")?.remove();
   });
 };
+
+/**
+ * @param {Object} params
+ * @param {HTMLDetailsElement} params.$details
+ * @param {HTMLElement} params.$label
+ */
+export const setNewDefinitionStatus = ({ $details, $label }) => {
+  const $badge = document.createElement("span");
+
+  $badge.classList.add("definition__badge");
+  $badge.textContent = "New";
+  $label.appendChild($badge);
+  $details.dataset.new = "";
+};
