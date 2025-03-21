@@ -1,7 +1,7 @@
 import { getElementBySelector } from "@lib/dom";
 import { currentWord } from "@/state/current-word";
 import { $definitionsTab, $menu, MenuTabs } from "@/ui/menu";
-import { $definitionslist } from "@/ui/definition/elements";
+import { $definition, $definitionslist } from "@/ui/definition/elements";
 
 export function handleShowDefinition() {
   const $details = getElementBySelector(
@@ -10,6 +10,7 @@ export function handleShowDefinition() {
     $definitionslist,
   );
 
+  $definition.removeAttribute("data-active");
   $menu.showModal();
   MenuTabs.selectTab($definitionsTab);
   $details.open = true;
