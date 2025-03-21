@@ -1,6 +1,9 @@
+import { $definitionslist } from "./elements";
+
 export const clearNewDefinitionStatus = () => {
-  // TODO: use $definitionslist.querySelectorAll() instead
-  const $definitions = document.querySelectorAll(".definition[data-new]");
+  const $definitions = $definitionslist.querySelectorAll(
+    ".definition[data-new]",
+  );
 
   $definitions.forEach(($definition) => {
     $definition.removeAttribute("data-new");
