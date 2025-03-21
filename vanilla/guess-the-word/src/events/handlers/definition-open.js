@@ -1,6 +1,6 @@
 import { getDefinition } from "@/services/definition";
 import { getElementBySelector } from "@lib/dom";
-import { createRetryButton } from "@/ui/definition";
+import { createRetryButton } from "@/ui/definition/retry";
 import { createSpinner } from "@/ui/spinner";
 
 /**

@@ -3,11 +3,9 @@ import { addDiscoveredWord, discoveredWords } from "@/state/discovered-words";
 import { currentWord } from "@/state/current-word";
 import { setWordCompleted, showCorrectWord } from "@/ui/word";
 import { hideTimerBar } from "@/ui/timer";
-import {
-  $definition,
-  renderDefinition,
-  renderDefinitionsCount,
-} from "@/ui/definition";
+import { renderDefinition } from "@/ui/definition/render/definition";
+import { renderDefinitionsCount } from "@/ui/definition/render/count";
+import { $definition } from "@/ui/definition/elements";
 import { $hints, $hintsContent } from "@/ui/hints";
 import { $reset } from "@/ui/actions";
 

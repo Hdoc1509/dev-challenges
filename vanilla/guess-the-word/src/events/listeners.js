@@ -10,11 +10,9 @@ import { applyDifficulty } from "@/utils/difficulty/apply";
 import { isValidLetterField } from "@/utils/letter-fields";
 import { $menu, $menuClose, $menuOpen, MenuTabs } from "@/ui/menu";
 // import { generateWordList } from "@/ui/word-list";
-import {
-  $showDefinition,
-  clearNewDefinitionStatus,
-  renderSavedDefinitions,
-} from "@/ui/definition";
+import { renderSavedDefinitions } from "@/ui/definition/render/definition";
+import { clearNewDefinitionStatus } from "@/ui/definition/new";
+import { $showDefinition } from "@/ui/definition/elements";
 import { $hintsTrigger, HintsTabs } from "@/ui/hints";
 import { $randomWord, $reset } from "@/ui/actions";
 

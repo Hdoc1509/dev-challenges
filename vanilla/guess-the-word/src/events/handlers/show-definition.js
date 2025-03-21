@@ -1,7 +1,7 @@
 import { getElementBySelector } from "@lib/dom";
 import { currentWord } from "@/state/current-word";
 import { $definitionsTab, $menu, MenuTabs } from "@/ui/menu";
-import { $definitionslist } from "@/ui/definition";
+import { $definitionslist } from "@/ui/definition/elements";
 
 export function handleShowDefinition() {
   const $details = getElementBySelector(

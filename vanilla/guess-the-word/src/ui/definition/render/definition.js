@@ -1,88 +1,17 @@
 import { getElementById, getElementBySelector } from "@lib/dom";
 import { handleDefinitionOpen } from "@/events/handlers/definition-open";
-import { DEFINITIONS_PER_PAGE, TOTAL_WORDS } from "@/consts/definitions";
-
-// TODO: split into multiple files
-// - elements.js
-// - render.js
-
+import { renderDefinitionsCount } from "./count";
+import { $definitionslist } from "../elements";
+import { DEFINITIONS_PER_PAGE } from "@/consts/definitions";
 /** @typedef {import("@/consts/definitions").DefinitionWord} DefinitionWord */
-
-export const $definition = getElementBySelector(
-  ".info .definition",
-  HTMLElement,
-);
-
-const $definitionRetryTemplate = getElementById(
-  "definition-retry-template",
-  HTMLTemplateElement,
-);
-
-/**
- * @param {Object} params
- * @param {HTMLDetailsElement} params.$definitionDetails
- * @param {AbortController} params.controller
- */
-export const createRetryButton = ({ $definitionDetails, controller }) => {
-  const $clone = /** @type {DocumentFragment} */ (
-    $definitionRetryTemplate.content.cloneNode(true)
-  );
-  const $retry = getElementBySelector(
-    ".definition__retry",
-    HTMLButtonElement,
-    $clone,
-  );
-
-  $retry.addEventListener(
-    "click",
-    () => handleDefinitionOpen($definitionDetails, { controller }),
-    { signal: controller.signal },
-  );
-
-  return $retry;
-};
-
-const $definitionsProgress = getElementBySelector(
-  ".definitions-count__progress",
-  HTMLDivElement,
-);
-const $definitionsCurrent = getElementBySelector(
-  ".definitions-count__current",
-  HTMLSpanElement,
-);
-
-const $definitionsTotal = getElementBySelector(
-  ".definitions-count__total",
-  HTMLSpanElement,
-);
-
-$definitionsTotal.textContent = TOTAL_WORDS.toString();
-
-export const $showDefinition = getElementBySelector(
-  ".info .definition__open",
-  HTMLButtonElement,
-);
 
 const $definitionTemplate = getElementById(
   "definition-template",
   HTMLTemplateElement,
 );
 
-export const $definitionslist = getElementBySelector(
-  "#definitions-tab-content > .definitions-list",
-  HTMLUListElement,
-);
-
 /** @param {string} word */
 const capitalize = (word) => word[0].toUpperCase() + word.slice(1);
-
-/** @param {number} count */
-export const renderDefinitionsCount = (count) => {
-  const percent = ((count / TOTAL_WORDS) * 100).toFixed(8);
-
-  $definitionsProgress.style.setProperty("--definitions-count", `${percent}%`);
-  $definitionsCurrent.textContent = count.toString();
-};
 
 /** @param {Array<DefinitionWord>} words */
 export const renderSavedDefinitions = (words) => {
@@ -157,6 +86,7 @@ export const renderDefinition = async (
     if ($definitionslist.childElementCount >= 1)
       $definitionslist.prepend($separator);
 
+    // TODO: create setNewDefinitionStatus({ $details, $label }) util in ../new.js
     const $badge = document.createElement("span");
 
     $badge.classList.add("definition__badge");
@@ -166,13 +96,4 @@ export const renderDefinition = async (
 
     $definitionslist.prepend($itemClone);
   }
-};
-
-export const clearNewDefinitionStatus = () => {
-  const $definitions = document.querySelectorAll(".definition[data-new]");
-
-  $definitions.forEach(($definition) => {
-    $definition.removeAttribute("data-new");
-    $definition.querySelector(".definition__badge")?.remove();
-  });
 };

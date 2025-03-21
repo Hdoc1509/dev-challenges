@@ -12,7 +12,7 @@ import { captureLetterFields, setLetterFields, $typing } from "@/ui/typing";
 import { $currentResets, $resetsIndicators } from "@/ui/resets";
 import { hideTimerBar } from "@/ui/timer";
 import { $reset } from "@/ui/actions";
-import { $definition } from "@/ui/definition";
+import { $definition } from "@/ui/definition/elements";
 import {
   $hints,
   $hintsContent,
