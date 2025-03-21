@@ -1,7 +1,6 @@
 import { getElementBySelector } from "@lib/dom";
 
-// TODO: rename to $definitionSection
-export const $definition = getElementBySelector(
+export const $definitionSection = getElementBySelector(
   ".info .definition",
   HTMLElement,
 );

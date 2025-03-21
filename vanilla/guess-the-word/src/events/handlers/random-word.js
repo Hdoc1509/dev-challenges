@@ -12,7 +12,7 @@ import { captureLetterFields, setLetterFields, $typing } from "@/ui/typing";
 import { $currentResets, $resetsIndicators } from "@/ui/resets";
 import { hideTimerBar } from "@/ui/timer";
 import { $reset } from "@/ui/actions";
-import { $definition } from "@/ui/definition/elements";
+import { $definitionSection } from "@/ui/definition/elements";
 import {
   $hints,
   $hintsContent,
@@ -62,7 +62,7 @@ export function generateRandomWord() {
   $mistakenLetters.textContent = "-";
   $currentResets.textContent = `${gameResets}`;
   hideTimerBar();
-  $definition.removeAttribute("data-active");
+  $definitionSection.removeAttribute("data-active");
   $hints.removeAttribute("data-active");
   $hintsContent.removeAttribute("data-active");
   $hintsTriggerLabel.textContent = "Show hints";

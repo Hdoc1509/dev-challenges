@@ -5,7 +5,7 @@ import { setWordCompleted, showCorrectWord } from "@/ui/word";
 import { hideTimerBar } from "@/ui/timer";
 import { renderDefinition } from "@/ui/definition/render/definition";
 import { renderDefinitionsCount } from "@/ui/definition/render/count";
-import { $definition } from "@/ui/definition/elements";
+import { $definitionSection } from "@/ui/definition/elements";
 import { $hints, $hintsContent } from "@/ui/hints";
 import { $reset } from "@/ui/actions";
 
@@ -20,7 +20,7 @@ export function handleGameSuccess() {
 
   if (discoveredWords.has(currentWord)) return;
 
-  $definition.setAttribute("data-active", "");
+  $definitionSection.setAttribute("data-active", "");
   addDiscoveredWord(currentWord);
   renderDefinition(currentWord);
   renderDefinitionsCount(discoveredWords.size);
