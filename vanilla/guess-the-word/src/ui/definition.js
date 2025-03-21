@@ -42,11 +42,11 @@ export const createRetryButton = ({ $definitionDetails, controller }) => {
   return $retry;
 };
 
-export const $definitionsProgress = getElementBySelector(
+const $definitionsProgress = getElementBySelector(
   ".definitions-count__progress",
   HTMLDivElement,
 );
-export const $definitionsCurrent = getElementBySelector(
+const $definitionsCurrent = getElementBySelector(
   ".definitions-count__current",
   HTMLSpanElement,
 );
@@ -63,7 +63,7 @@ export const $showDefinition = getElementBySelector(
   HTMLButtonElement,
 );
 
-export const $definitionTemplate = getElementById(
+const $definitionTemplate = getElementById(
   "definition-template",
   HTMLTemplateElement,
 );
