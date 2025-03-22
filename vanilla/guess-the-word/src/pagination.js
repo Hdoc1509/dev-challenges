@@ -47,7 +47,7 @@ export class Pagination {
       HTMLSpanElement,
       $pagination,
     );
-    this.#current = 1;
+    this.#current = Number(this.#$input.value);
     this.#pages = pages;
     this.#onPageChange = onPageChange;
     this.#onPagesQuantity = onPagesQuantity;
