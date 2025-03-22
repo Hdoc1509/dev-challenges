@@ -52,6 +52,7 @@ export class Pagination {
     this.#onPageChange = onPageChange;
     this.#onPagesQuantity = onPagesQuantity;
 
+    this.#$total.textContent = pages.toString();
     onPagesQuantity(pages);
   }
 
