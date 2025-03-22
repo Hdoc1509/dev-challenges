@@ -52,22 +52,26 @@ export class Pagination {
     this.#$total.textContent = initialPages.toString();
   }
 
-  goNextPage() {
-    if (this.#current === this.#pages) return console.warn("No more pages");
+  /** @param {number} page */
+  #setPage(page) {
+    this.#$input.value = page.toString();
+    if (this.#current !== page) {
+      this.#current = page;
+      this.#onPageChange(page);
+    }
+    this.#$input.blur();
+  }
 
-    // TODO: handle disabled state for $pageNext and $pagePrev
-    this.#current++;
-    this.#$input.value = this.#current.toString();
-    this.#onPageChange(this.#current);
+  // TODO: handle disabled state for $pageNext and $pagePrev
+
+  goNextPage() {
+    if (this.#current === this.#pages) console.warn("No more pages");
+    else this.#setPage(this.#current + 1);
   }
 
   goPrevPage() {
-    if (this.#current === 1) return console.warn("No previous page");
-
-    // TODO: handle disabled state for $pageNext and $pagePrev
-    this.#current--;
-    this.#$input.value = this.#current.toString();
-    this.#onPageChange(this.#current);
+    if (this.#current === 1) console.warn("No previous page");
+    else this.#setPage(this.#current - 1);
   }
 
   /** @param {number} newPages */
@@ -111,28 +115,8 @@ export class Pagination {
 
     const pageNumber = Number(page);
 
-    if (pageNumber < 1) {
-      $input.value = "1";
-      if (this.#current !== 1) {
-        this.#current = 1;
-        this.#onPageChange(1);
-      }
-      $input.blur();
-      return;
-    }
-
-    if (pageNumber > this.#pages) {
-      $input.value = this.#pages.toString();
-      if (this.#current !== this.#pages) {
-        this.#current = this.#pages;
-        this.#onPageChange(this.#pages);
-      }
-      $input.blur();
-      return;
-    }
-
-    this.#current = pageNumber;
-    this.#onPageChange(this.#current);
-    $input.blur();
+    if (pageNumber < 1) this.#setPage(1);
+    else if (pageNumber > this.#pages) this.#setPage(this.#pages);
+    else this.#setPage(pageNumber);
   }
 }
