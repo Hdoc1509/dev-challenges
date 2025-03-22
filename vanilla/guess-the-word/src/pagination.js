@@ -17,10 +17,10 @@ export class Pagination {
   /**
    * @param {HTMLMenuElement} $pagination
    * @param {Object} extraParams
-   * @param {number} extraParams.pages
+   * @param {number} extraParams.initialPages
    * @param {(newPage: number) => void} extraParams.onPageChange
    */
-  constructor($pagination, { pages, onPageChange }) {
+  constructor($pagination, { initialPages, onPageChange }) {
     if ($pagination == null) error('"$pagination" argument is required');
     if (!($pagination instanceof HTMLMenuElement))
       error('"$pagination" argument must be an instance of HTMLMenuElement');
@@ -46,10 +46,10 @@ export class Pagination {
       $pagination,
     );
     this.#current = Number(this.#$input.value);
-    this.#pages = pages;
+    this.#pages = initialPages;
     this.#onPageChange = onPageChange;
 
-    this.#$total.textContent = pages.toString();
+    this.#$total.textContent = initialPages.toString();
   }
 
   goNextPage() {
