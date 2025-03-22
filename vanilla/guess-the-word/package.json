@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
+    "dev": "pnpm run words && vite",
+    "build": "pnpm run words && vite build",
+    "preview": "pnpm run words && vite preview",
     "words": "pnpm run prepare-data && bash ./scripts/words.bash",
     "defs": "pnpm run prepare-data && bash ./scripts/definitions.bash",
     "prepare-data": "bash ./scripts/prepare-data.bash"
