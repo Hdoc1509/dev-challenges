@@ -19,10 +19,6 @@ export const renderSavedDefinitions = (words) => {
 
   renderDefinitionsCount(words.length);
 
-  const $notYet = $definitionslist.querySelector(".not-yet");
-
-  if ($notYet != null) $notYet.remove();
-
   const wordsToRender = words.slice(0, DEFINITIONS_PER_PAGE);
   const lastWord = wordsToRender[wordsToRender.length - 1];
   const pages = Math.ceil(words.length / DEFINITIONS_PER_PAGE);
