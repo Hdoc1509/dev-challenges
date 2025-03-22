@@ -101,7 +101,7 @@ export class Pagination {
   /** @param {HTMLInputElement} $input */
   handleInputChange($input) {
     const page = $input.value;
-    const isValid = /^\d+$/.test(page);
+    const isValid = /^-?\d+$/.test(page);
 
     if (!isValid) {
       $input.value = this.#current.toString();
