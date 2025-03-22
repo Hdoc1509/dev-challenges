@@ -38,6 +38,10 @@
 .pagination__trigger:focus {
   outline-color: var(--primary-transparent);
 }
+.pagination__trigger[disabled] {
+  border-color: var(--word-bg);
+  color: var(--word-bg);
+}
 
 .pagination__current {
   height: 100%;
