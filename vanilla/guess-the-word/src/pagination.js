@@ -7,7 +7,6 @@ const error = (message) => {
 
 export class Pagination {
   #onPageChange;
-  #onPagesQuantity;
   #$pagePrev;
   #$pageNext;
   #$input;
@@ -20,9 +19,8 @@ export class Pagination {
    * @param {Object} extraParams
    * @param {number} extraParams.pages
    * @param {(newPage: number) => void} extraParams.onPageChange
-   * @param {(pagesQuantity: number) => void} extraParams.onPagesQuantity
    */
-  constructor($pagination, { pages, onPageChange, onPagesQuantity }) {
+  constructor($pagination, { pages, onPageChange }) {
     if ($pagination == null) error('"$pagination" argument is required');
     if (!($pagination instanceof HTMLMenuElement))
       error('"$pagination" argument must be an instance of HTMLMenuElement');
@@ -50,10 +48,8 @@ export class Pagination {
     this.#current = Number(this.#$input.value);
     this.#pages = pages;
     this.#onPageChange = onPageChange;
-    this.#onPagesQuantity = onPagesQuantity;
 
     this.#$total.textContent = pages.toString();
-    onPagesQuantity(pages);
   }
 
   goNextPage() {
@@ -82,7 +78,6 @@ export class Pagination {
   setPages(newPages) {
     this.#pages = newPages;
     this.#$total.textContent = newPages.toString();
-    this.#onPagesQuantity(newPages);
   }
 
   /**
