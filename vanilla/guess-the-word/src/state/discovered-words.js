@@ -1,12 +1,10 @@
-/** @typedef {import("@/consts/definitions").DefinitionWord} DefinitionWord */
-
 const LOCAL_STORAGE_KEY = "discovered-words";
 
-/** @type {DefinitionWord[]} */
+/** @type {string[]} */
 const wordsToSave = [];
 
 export const discoveredWords = (() => {
-  /** @type {Set<DefinitionWord>} */
+  /** @type {Set<string>} */
   const list = new Set();
   const savedWords = localStorage.getItem(LOCAL_STORAGE_KEY);
   const parsedWords = JSON.parse(savedWords ?? "[]");
@@ -21,7 +19,7 @@ export const discoveredWords = (() => {
   return list;
 })();
 
-/** @param {DefinitionWord} word */
+/** @param {string} word */
 export const addDiscoveredWord = (word) => {
   discoveredWords.add(word);
   wordsToSave.unshift(word);

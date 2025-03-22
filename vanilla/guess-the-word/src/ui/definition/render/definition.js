@@ -4,7 +4,6 @@ import { renderDefinitionsCount } from "./count";
 import { addNewBadge } from "../new";
 import { $definitionslist } from "../elements";
 import { DEFINITIONS_PER_PAGE } from "@/consts/definitions";
-/** @typedef {import("@/consts/definitions").DefinitionWord} DefinitionWord */
 
 const $definitionTemplate = getElementById(
   "definition-template",
@@ -14,7 +13,7 @@ const $definitionTemplate = getElementById(
 /** @param {string} word */
 const capitalize = (word) => word[0].toUpperCase() + word.slice(1);
 
-/** @param {Array<DefinitionWord>} words */
+/** @param {Array<string>} words */
 export const renderSavedDefinitions = (words) => {
   if (words.length === 0) return;
 
@@ -43,7 +42,7 @@ export const renderSavedDefinitions = (words) => {
 };
 
 /**
- * @param {import("@/consts/definitions").DefinitionWord} word
+ * @param {string} word
  * @param {{ lastWord?: string, initialRender?: boolean }} options
  */
 export const renderDefinition = async (

@@ -21,9 +21,7 @@ export async function handleDefinitionOpen($definitionDetails, { controller }) {
   let $retry = $content.querySelector(".definition__retry");
   /** @type {HTMLDivElement | null} */
   let $spinner = $content.querySelector(".spinner");
-  const word = /** @type {import("@/consts/definitions").DefinitionWord} */ (
-    $definitionDetails.dataset.word
-  );
+  const word = /** @type {string} */ ($definitionDetails.dataset.word);
 
   if ($spinner == null) $content.appendChild(createSpinner());
 

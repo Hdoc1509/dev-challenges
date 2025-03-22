@@ -3,7 +3,7 @@ import { ServiceError, fetcher } from "@lib/fetcher";
 
 /**
  * @callback DefinitionService
- * @param {import("@/consts/definitions").DefinitionWord} word
+ * @param {string} word
  * @returns {import("@lib/fetcher").PromiseWithError<string[]>}
  */
 
