@@ -50,6 +50,23 @@ export class Pagination {
     this.#onPageChange = onPageChange;
 
     this.#$total.textContent = initialPages.toString();
+    this.#checkTriggers();
+  }
+
+  #checkTriggers() {
+    if (this.#pages === 1) {
+      this.#$pagePrev.disabled = true;
+      this.#$pageNext.disabled = true;
+    } else if (this.#current === 1) {
+      this.#$pagePrev.disabled = true;
+      this.#$pageNext.disabled = false;
+    } else if (this.#current === this.#pages) {
+      this.#$pagePrev.disabled = false;
+      this.#$pageNext.disabled = true;
+    } else {
+      this.#$pagePrev.disabled = false;
+      this.#$pageNext.disabled = false;
+    }
   }
 
   /** @param {number} page */
@@ -57,12 +74,11 @@ export class Pagination {
     this.#$input.value = page.toString();
     if (this.#current !== page) {
       this.#current = page;
+      this.#checkTriggers();
       this.#onPageChange(page);
     }
     this.#$input.blur();
   }
-
-  // TODO: handle disabled state for $pageNext and $pagePrev
 
   goNextPage() {
     if (this.#current === this.#pages) console.warn("No more pages");
