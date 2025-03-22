@@ -17,7 +17,7 @@
   font-weight: bold;
 }
 
-.pagination__link {
+.pagination__trigger {
   display: grid;
   place-items: center;
 
@@ -31,11 +31,11 @@
   color: var(--secondary);
   --icon-size: 1.25em;
 }
-.pagination__link:hover,
-.pagination__link:focus {
+.pagination__trigger:hover,
+.pagination__trigger:focus {
   background-color: var(--_hover);
 }
-.pagination__link:focus {
+.pagination__trigger:focus {
   outline-color: var(--primary-transparent);
 }
 

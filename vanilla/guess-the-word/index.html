@@ -346,9 +346,13 @@
             <p class="not-yet">- No discovered words yet -</p>
           </ul>
           <nav aria-label="Definition pages">
-            <menu class="pagination">
+            <menu id="definition-pagination" class="pagination">
               <li class="pagination__item">
-                <button class="pagination__link" aria-label="Previous page">
+                <button
+                  class="pagination__trigger"
+                  aria-label="Previous page"
+                  data-page-prev
+                >
                   <!-- arrow-badge-left icon-->
                   <svg
                     focusable="false"
@@ -376,7 +380,11 @@
                 </span>
               </li>
               <li class="pagination__item">
-                <button class="pagination__link" aria-label="Next page">
+                <button
+                  class="pagination__trigger"
+                  aria-label="Next page"
+                  data-page-next
+                >
                   <!-- arrow-badge-right icon -->
                   <svg
                     focusable="false"
