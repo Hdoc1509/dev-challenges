@@ -11,6 +11,6 @@ export const $showDefinition = getElementBySelector(
 );
 
 export const $definitionslist = getElementBySelector(
-  "#definitions-tab-content > .definitions-list",
+  "#definitions-tab-content .definitions-list",
   HTMLUListElement,
 );
