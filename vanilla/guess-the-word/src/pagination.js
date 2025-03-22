@@ -132,8 +132,6 @@ export class Pagination {
       return;
     }
 
-    if (pageNumber === this.#current) return;
-
     this.#current = pageNumber;
     this.#onPageChange(this.#current);
   }
