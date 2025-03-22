@@ -61,10 +61,6 @@ export class Pagination {
     this.#onPageChange(this.#current);
   }
 
-  get pages() {
-    return this.#pages;
-  }
-
   goPrevPage() {
     if (this.#current === 1) return console.warn("No previous page");
 
