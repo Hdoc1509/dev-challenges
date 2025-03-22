@@ -41,3 +41,6 @@ generate_mock --max-length 6 --name easy
 generate_mock --min-length 7 --max-length 9 --name normal
 generate_mock --min-length 10 --max-length 12 --name extreme
 generate_mock --min-length 13 --name why
+
+jq 'length' "$MOCKS_DIR"/definitions.json >"$MOCKS_DIR"/words-total.json
+echo -e "${GREEN}[words]: Generated words-total.json!${NOCOLOR}"

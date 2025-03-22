@@ -1,9 +1,7 @@
-import DEFINITIONS_MOCK from "@/mocks/definitions.json";
+import WORDS_TOTAL_MOCK from "@/mocks/words-total.json";
 
 // NOTE: update `npoint` bin whenever definitions.json changes
 
-export const DEFINITIONS = Object.freeze(DEFINITIONS_MOCK);
-
-export const TOTAL_WORDS = Object.keys(DEFINITIONS).length;
+export const TOTAL_WORDS = WORDS_TOTAL_MOCK;
 
 export const DEFINITIONS_PER_PAGE = 10;
