@@ -21,7 +21,9 @@ fi
 jq --arg MIN_LENGTH "4" --arg MAX_LENGTH "" --from-file "$JQ_FILTER_SCRIPT" \
   "$MOCKS_DIR"/all-words-data.json |
   jq --compact-output --from-file "$JQ_PARSE_SCRIPT" \
-  >"$MOCKS_DIR"/definitions.json
+    >"$MOCKS_DIR"/definitions.json
 
 echo
 echo -e "${GREEN}[defs]: Generated definitions.json!${NOCOLOR}"
+echo -e "${YELLOW}[defs]: DO NOT FORGET to update 'npoint' bin!!!${NOCOLOR}"
+sleep 8
