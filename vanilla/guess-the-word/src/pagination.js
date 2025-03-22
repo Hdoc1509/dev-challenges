@@ -121,14 +121,18 @@ export class Pagination {
 
     if (pageNumber < 1) {
       $input.value = "1";
-      this.#current = 1;
-      this.#onPageChange(1);
+      if (this.#current !== 1) {
+        this.#current = 1;
+        this.#onPageChange(1);
+      }
       return;
     }
     if (pageNumber > this.#pages) {
       $input.value = this.#pages.toString();
-      this.#current = this.#pages;
-      this.#onPageChange(this.#pages);
+      if (this.#current !== this.#pages) {
+        this.#current = this.#pages;
+        this.#onPageChange(this.#pages);
+      }
       return;
     }
 
