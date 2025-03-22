@@ -29,6 +29,10 @@
   overflow-x: scroll;
 }
 
+#definitions-tab-content {
+  grid-template-rows: auto 1fr auto;
+}
+
 #difficulty-tab-content {
   --radio-group-gap: 0.25rem;
   --label-text: var(--text);
