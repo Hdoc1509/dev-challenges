@@ -8,6 +8,15 @@ JQ_SCRIPT="$PROJECT_ROOT"/scripts/filter-words.jq
 NOCOLOR='\033[0m'
 GREEN='\033[0;32m'
 RED='\033[0;31m'
+YELLOW='\033[1;33m'
+
+if git diff --quiet origin/master HEAD "$JQ_SCRIPT" &&
+  git diff --quiet "$JQ_SCRIPT"; then
+  echo
+  echo -e "${YELLOW}[words]: Filter script is up to date"
+  echo -e "[words]: Skipping generation...${NOCOLOR}"
+  exit 0
+fi
 
 generate_mock() {
   local min=4
