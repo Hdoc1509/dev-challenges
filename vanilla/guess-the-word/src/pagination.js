@@ -114,6 +114,7 @@ export class Pagination {
 
     if (!isValid) {
       $input.value = this.#current.toString();
+      $input.blur();
       return;
     }
 
@@ -125,18 +126,22 @@ export class Pagination {
         this.#current = 1;
         this.#onPageChange(1);
       }
+      $input.blur();
       return;
     }
+
     if (pageNumber > this.#pages) {
       $input.value = this.#pages.toString();
       if (this.#current !== this.#pages) {
         this.#current = this.#pages;
         this.#onPageChange(this.#pages);
       }
+      $input.blur();
       return;
     }
 
     this.#current = pageNumber;
     this.#onPageChange(this.#current);
+    $input.blur();
   }
 }
