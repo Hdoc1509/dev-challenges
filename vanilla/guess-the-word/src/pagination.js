@@ -28,20 +28,20 @@ export class Pagination {
       error('"$pagination" argument must have "pagination" class');
 
     this.#$pagePrev = getElementBySelector(
-      ".pagination__item > .pagination__trigger[data-page-prev]",
+      "li.pagination__item > .pagination__trigger[data-page-prev]",
       HTMLButtonElement,
     );
     this.#$pageNext = getElementBySelector(
-      ".pagination__item > .pagination__trigger[data-page-next]",
+      "li.pagination__item > .pagination__trigger[data-page-next]",
       HTMLButtonElement,
     );
     this.#$input = getElementBySelector(
-      ".pagination__item > .pagination__current",
+      "li.pagination__item[aria-current=page] > .pagination__current",
       HTMLInputElement,
       $pagination,
     );
     this.#$total = getElementBySelector(
-      ".pagination__item .pagination__total",
+      "li.pagination__item[aria-current=page] .pagination__total",
       HTMLSpanElement,
       $pagination,
     );
