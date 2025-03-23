@@ -15,6 +15,7 @@ import { removeAllNewBadges } from "@/ui/definition/new";
 import { $showDefinition } from "@/ui/definition/elements";
 import { $hintsTrigger, HintsTabs } from "@/ui/hints";
 import { $randomWord, $reset } from "@/ui/actions";
+import { DefinitionPagination } from "@/ui/definition/pagination";
 
 export async function setupEventListeners() {
   await applyDifficulty(difficulty);
@@ -33,6 +34,8 @@ export async function setupEventListeners() {
     else if ($target === $hintsTrigger) handleShowHints();
     else if (MenuTabs.isTabLink($target)) MenuTabs.selectTab($target);
     else if (HintsTabs.isTabLink($target)) HintsTabs.selectTab($target);
+    else if (DefinitionPagination.isTrigger($target))
+      DefinitionPagination.handleTrigger($target);
   });
 
   // NOTE: should I reset animation of letter input on blur?
@@ -52,6 +55,8 @@ export async function setupEventListeners() {
       return handleDifficultyChange(
         /** @type {import("@/consts/difficulty").Difficulty} */ ($target.value),
       );
+    else if (DefinitionPagination.isInput($target))
+      DefinitionPagination.handleInputChange($target);
   });
 
   $menu.addEventListener("close", () => removeAllNewBadges());
