@@ -122,16 +122,14 @@ export class Pagination {
     const page = $input.value;
     const isValid = /^-?\d+$/.test(page);
 
-    if (!isValid) {
-      $input.value = this.#current.toString();
-      $input.blur();
-      return;
+    if (!isValid) $input.value = this.#current.toString();
+    else {
+      const pageNumber = Number(page);
+
+      if (pageNumber < 1) this.#selectPage(1);
+      else if (pageNumber > this.#pages) this.#selectPage(this.#pages);
+      else this.#selectPage(pageNumber);
     }
-
-    const pageNumber = Number(page);
-
-    if (pageNumber < 1) this.#selectPage(1);
-    else if (pageNumber > this.#pages) this.#selectPage(this.#pages);
-    else this.#selectPage(pageNumber);
+    $input.blur();
   }
 }
