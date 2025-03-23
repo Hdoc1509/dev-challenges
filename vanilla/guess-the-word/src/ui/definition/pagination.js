@@ -4,6 +4,6 @@ import { Pagination } from "@/pagination";
 const $pagination = getElementById("definition-pagination", HTMLMenuElement);
 
 export const DefinitionPagination = new Pagination($pagination, {
-  pages: 1,
+  initialPages: 1,
   onPageChange: (newPage) => console.log({ newPage }),
 });
