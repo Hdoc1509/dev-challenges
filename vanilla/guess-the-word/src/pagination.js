@@ -57,6 +57,7 @@ export class Pagination {
     if (this.#pages === 1) {
       this.#$pagePrev.disabled = true;
       this.#$pageNext.disabled = true;
+      this.#$input.disabled = true;
     } else if (this.#current === 1) {
       this.#$pagePrev.disabled = true;
       this.#$pageNext.disabled = false;
