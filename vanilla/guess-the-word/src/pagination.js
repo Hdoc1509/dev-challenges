@@ -77,7 +77,6 @@ export class Pagination {
       this.#checkTriggers();
       this.#onPageChange(page);
     }
-    this.#$input.blur();
   }
 
   goNextPage() {
