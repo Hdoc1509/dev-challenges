@@ -70,7 +70,7 @@ export class Pagination {
   }
 
   /** @param {number} page */
-  #setPage(page) {
+  #selectPage(page) {
     this.#$input.value = page.toString();
     if (this.#current !== page) {
       this.#current = page;
@@ -82,12 +82,12 @@ export class Pagination {
 
   goNextPage() {
     if (this.#current === this.#pages) console.warn("No more pages");
-    else this.#setPage(this.#current + 1);
+    else this.#selectPage(this.#current + 1);
   }
 
   goPrevPage() {
     if (this.#current === 1) console.warn("No previous page");
-    else this.#setPage(this.#current - 1);
+    else this.#selectPage(this.#current - 1);
   }
 
   /** @param {number} newPages */
@@ -131,8 +131,8 @@ export class Pagination {
 
     const pageNumber = Number(page);
 
-    if (pageNumber < 1) this.#setPage(1);
-    else if (pageNumber > this.#pages) this.#setPage(this.#pages);
-    else this.#setPage(pageNumber);
+    if (pageNumber < 1) this.#selectPage(1);
+    else if (pageNumber > this.#pages) this.#selectPage(this.#pages);
+    else this.#selectPage(pageNumber);
   }
 }
