@@ -79,11 +79,6 @@ export class Pagination {
     else this.#selectPage(this.#current - 1);
   }
 
-  /** @param {number} newPages */
-  setPages(newPages) {
-    this.#pages = newPages;
-  }
-
   /**
    * @param {EventTarget | null} $element
    * @returns {$element is HTMLButtonElement}
