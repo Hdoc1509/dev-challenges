@@ -36,7 +36,7 @@ export class Pages {
         $template.querySelector("ul")
       );
       const items = this.#pages[page - 1];
-      const totalItems = this.#pages.length;
+      const totalItems = items.length;
 
       if (totalItems === 0) {
         $newPage.appendChild(this.#renderEmpty());
