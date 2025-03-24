@@ -3,7 +3,7 @@ import { addDiscoveredWord, discoveredWords } from "@/state/discovered-words";
 import { currentWord } from "@/state/current-word";
 import { setWordCompleted, showCorrectWord } from "@/ui/word";
 import { hideTimerBar } from "@/ui/timer";
-import { renderDefinition } from "@/ui/definition/render/definition";
+// import { renderDefinition } from "@/ui/definition/render/definition";
 import { renderDefinitionsCount } from "@/ui/definition/render/count";
 import { $definitionSection } from "@/ui/definition/elements";
 import { $hints, $hintsContent } from "@/ui/hints";
@@ -22,6 +22,7 @@ export function handleGameSuccess() {
 
   $definitionSection.setAttribute("data-active", "");
   addDiscoveredWord(currentWord);
-  renderDefinition(currentWord);
+  // TODO: call DefinitionPages.prepend(currentWord);
+  // renderDefinition(currentWord);
   renderDefinitionsCount(discoveredWords.size);
 }
