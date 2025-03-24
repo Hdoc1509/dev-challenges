@@ -6,7 +6,6 @@ const error = (message) => {
 };
 
 export class Pagination {
-  #onPageChange;
   #$pagePrev;
   #$pageNext;
   #$input;
@@ -17,9 +16,8 @@ export class Pagination {
    * @param {HTMLMenuElement} $pagination
    * @param {Object} extraParams
    * @param {number} extraParams.initialPages
-   * @param {(newPage: number) => void} extraParams.onPageChange
    */
-  constructor($pagination, { initialPages, onPageChange }) {
+  constructor($pagination, { initialPages }) {
     if ($pagination == null) error('"$pagination" argument is required');
     if (!($pagination instanceof HTMLMenuElement))
       error('"$pagination" argument must be an instance of HTMLMenuElement');
@@ -41,7 +39,6 @@ export class Pagination {
     );
     this.#current = Number(this.#$input.value);
     this.#pages = initialPages;
-    this.#onPageChange = onPageChange;
 
     this.#checkTriggers();
   }
@@ -69,7 +66,6 @@ export class Pagination {
     if (this.#current !== page) {
       this.#current = page;
       this.#checkTriggers();
-      this.#onPageChange(page);
     }
   }
 

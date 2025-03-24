@@ -5,5 +5,4 @@ const $pagination = getElementById("definition-pagination", HTMLMenuElement);
 
 export const DefinitionPagination = new Pagination($pagination, {
   initialPages: 1,
-  onPageChange: (newPage) => console.log({ newPage }),
 });
