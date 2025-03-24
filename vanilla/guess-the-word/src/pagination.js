@@ -10,7 +10,6 @@ export class Pagination {
   #$pagePrev;
   #$pageNext;
   #$input;
-  #$total;
   #pages;
   #current;
 
@@ -40,16 +39,10 @@ export class Pagination {
       HTMLInputElement,
       $pagination,
     );
-    this.#$total = getElementBySelector(
-      "li.pagination__item[aria-current=page] .pagination__total",
-      HTMLSpanElement,
-      $pagination,
-    );
     this.#current = Number(this.#$input.value);
     this.#pages = initialPages;
     this.#onPageChange = onPageChange;
 
-    this.#$total.textContent = initialPages.toString();
     this.#checkTriggers();
   }
 
@@ -93,7 +86,6 @@ export class Pagination {
   /** @param {number} newPages */
   setPages(newPages) {
     this.#pages = newPages;
-    this.#$total.textContent = newPages.toString();
   }
 
   /**
