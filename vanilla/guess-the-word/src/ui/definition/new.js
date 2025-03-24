@@ -1,8 +1,8 @@
-import { $definitionslist } from "./elements";
+import { $definitionPagesContainer } from "./pages";
 
 export const removeAllNewBadges = () => {
-  const $definitions = $definitionslist.querySelectorAll(
-    ".definition[data-new]",
+  const $definitions = $definitionPagesContainer.querySelectorAll(
+    ".definitions-list.page[data-active] .definition[data-new]",
   );
 
   $definitions.forEach(($definition) => {
