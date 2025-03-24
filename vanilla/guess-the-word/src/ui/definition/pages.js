@@ -1,6 +1,7 @@
 import { Pages } from "@/pages";
 import { getElementById, getElementBySelector } from "@lib/dom";
 import { discoveredWords } from "@/state/discovered-words";
+import { renderDefinition } from "./render/definition";
 import { DEFINITIONS_PER_PAGE } from "@/consts/definitions";
 
 export const $definitionPagesContainer = getElementById(
@@ -11,13 +12,18 @@ export const $definitionPagesContainer = getElementById(
 export const DefinitionPages = new Pages($definitionPagesContainer, {
   items: Array.from(discoveredWords),
   itemsPerPage: DEFINITIONS_PER_PAGE,
+  // TODO: maybe can I pass `isNew` param to `renderItem` method?
   renderItem({ item, index, totalItems }) {
-    const $item = document.createElement("li");
+    const $definition = renderDefinition(item);
+    const isLast = index === totalItems - 1;
 
-    $item.textContent = item;
-    if (index === totalItems - 1) $item.classList.add("last");
+    if (isLast) return $definition;
 
-    return $item;
+    const $fragment = document.createDocumentFragment();
+    const $separator = document.createElement("hr");
+
+    $fragment.append($definition, $separator);
+    return $fragment;
   },
   clearEmpty: ($page) => $page.querySelector(".not-yet")?.remove(),
   $pageTemplate: getElementById(

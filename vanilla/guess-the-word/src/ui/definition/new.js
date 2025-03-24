@@ -16,6 +16,7 @@ export const removeAllNewBadges = () => {
  * @param {HTMLDetailsElement} params.$details
  * @param {HTMLElement} params.$label
  */
+// TODO: add way to integrate it with `DefinitionPages` instance
 export const addNewBadge = ({ $details, $label }) => {
   const $badge = document.createElement("span");
 
