@@ -10,11 +10,11 @@ const error = (message) => {
 export class Pages {
   #$pagesContainer;
   #$pageTemplate;
+  #$emptyPageTemplate;
   #$total;
   #pages;
   #itemsPerPage;
   #renderItem;
-  #renderEmpty;
   #clearEmpty;
   #current;
 
@@ -39,7 +39,7 @@ export class Pages {
       const totalItems = items.length;
 
       if (totalItems === 0) {
-        $newPage.appendChild(this.#renderEmpty());
+        $newPage.appendChild(this.#$emptyPageTemplate.content.cloneNode(true));
       } else {
         items.forEach((item, index) =>
           $newPage.appendChild(this.#renderItem({ item, index, totalItems })),
@@ -61,9 +61,9 @@ export class Pages {
    * @param {Item[]} extraParams.items
    * @param {number} extraParams.itemsPerPage
    * @param {({ item, index, totalItems}: { item: Item, index: number, totalItems: number}) => DocumentFragment | HTMLLIElement} extraParams.renderItem
-   * @param {() => DocumentFragment | HTMLElement} extraParams.renderEmpty
    * @param {($page: HTMLUListElement) => void} extraParams.clearEmpty
    * @param {HTMLTemplateElement} extraParams.$pageTemplate
+   * @param {HTMLTemplateElement} extraParams.$emptyPageTemplate
    * @param {HTMLElement} extraParams.$total
    */
   constructor(
@@ -72,9 +72,9 @@ export class Pages {
       items,
       itemsPerPage,
       renderItem,
-      renderEmpty,
       clearEmpty,
       $pageTemplate,
+      $emptyPageTemplate,
       $total,
     },
   ) {
@@ -98,7 +98,7 @@ export class Pages {
     this.#pages = paginate(items, itemsPerPage);
     this.#itemsPerPage = itemsPerPage;
     this.#renderItem = renderItem;
-    this.#renderEmpty = renderEmpty;
+    this.#$emptyPageTemplate = $emptyPageTemplate;
     this.#clearEmpty = clearEmpty;
     this.#current = 1;
 
