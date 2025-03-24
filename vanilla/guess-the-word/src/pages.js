@@ -10,6 +10,7 @@ const error = (message) => {
 export class Pages {
   #$pagesContainer;
   #$pageTemplate;
+  #$total;
   #pages;
   #itemsPerPage;
   #renderItem;
@@ -66,10 +67,19 @@ export class Pages {
    * @param {() => DocumentFragment | HTMLElement} extraParams.renderEmpty
    * @param {($page: HTMLUListElement) => void} extraParams.clearEmpty
    * @param {HTMLTemplateElement} extraParams.$pageTemplate
+   * @param {HTMLElement} extraParams.$total
    */
   constructor(
     $pagesContainer,
-    { items, itemsPerPage, renderItem, renderEmpty, clearEmpty, $pageTemplate },
+    {
+      items,
+      itemsPerPage,
+      renderItem,
+      renderEmpty,
+      clearEmpty,
+      $pageTemplate,
+      $total,
+    },
   ) {
     if ($pagesContainer == null)
       error('"$pagesContainer" argument is required');
@@ -89,13 +99,16 @@ export class Pages {
 
     this.#$pagesContainer = $pagesContainer;
     this.#$pageTemplate = $pageTemplate;
+    this.#$total = $total;
     this.#pages = paginate(items, itemsPerPage);
     this.#itemsPerPage = itemsPerPage;
     this.#renderItem = renderItem;
     this.#renderEmpty = renderEmpty;
     this.#clearEmpty = clearEmpty;
     this.#current = 1;
+
     this.#renderPage(1);
+    $total.textContent = `${this.#pages.length}`;
   }
 
   /** @param {Item} item */
@@ -147,6 +160,11 @@ export class Pages {
 
       if (itemToMove == null) break;
     }
+
+    if (itemToMove == null) return;
+
+    this.#pages[pageIdx].push(itemToMove);
+    this.#$total.textContent = `${totalPages + 1}`;
   }
 
   goNext() {
