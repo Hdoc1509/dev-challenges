@@ -106,6 +106,10 @@ export class Pages {
     $total.textContent = `${this.#pages.length}`;
   }
 
+  get pages() {
+    return this.#pages.length;
+  }
+
   /** @param {Item} item */
   append(item) {
     const $currentPage = getElementBySelector(
