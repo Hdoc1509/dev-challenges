@@ -9,8 +9,3 @@ export const $showDefinition = getElementBySelector(
   ".info .definition__open",
   HTMLButtonElement,
 );
-
-export const $definitionslist = getElementBySelector(
-  "#definitions-tab-content .definitions-list",
-  HTMLUListElement,
-);
