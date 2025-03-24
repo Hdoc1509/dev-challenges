@@ -1,4 +1,5 @@
 import { difficulty } from "@/state/difficulty";
+import { discoveredWords } from "@/state/discovered-words";
 import { generateRandomWord } from "./handlers/random-word";
 import { handleShowDefinition } from "./handlers/show-definition";
 import { handleLetterInput } from "./handlers/letter-input";
@@ -9,15 +10,17 @@ import { applyDifficulty } from "@/utils/difficulty/apply";
 import { isValidLetterField } from "@/utils/letter-fields";
 import { $menu, $menuClose, $menuOpen, MenuTabs } from "@/ui/menu";
 // import { generateWordList } from "@/ui/word-list";
+import { DefinitionPagination } from "@/ui/definition/pagination";
+import { renderDefinitionsCount } from "@/ui/definition/render/count";
 import { removeAllNewBadges } from "@/ui/definition/new";
 import { $showDefinition } from "@/ui/definition/elements";
 import { $hintsTrigger, HintsTabs } from "@/ui/hints";
 import { $randomWord, $reset } from "@/ui/actions";
-import { DefinitionPagination } from "@/ui/definition/pagination";
 
 export async function setupEventListeners() {
   await applyDifficulty(difficulty);
   generateRandomWord();
+  renderDefinitionsCount(discoveredWords.size);
   // generateWordList();
 
   document.addEventListener("click", (e) => {
