@@ -24,7 +24,7 @@ export const DefinitionPages = new Pages($pagesContainer, {
     "definition-page-template",
     HTMLTemplateElement,
   ),
-  $emptyPageTemplate: getElementById(
+  $pageEmptyTemplate: getElementById(
     "definition-page-empty-template",
     HTMLTemplateElement,
   ),
