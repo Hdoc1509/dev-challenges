@@ -82,8 +82,6 @@ export class Pages {
       error('"$pagesContainer" argument is required');
     if (!($pagesContainer instanceof HTMLDivElement))
       error('"$pagesContainer" argument must be an instance of HTMLDivElement');
-    if (!$pagesContainer.classList.contains("pages"))
-      error('"$pagesContainer" argument must have "pages" class');
 
     const $templateClone = /** @type {DocumentFragment} */ (
       $pageTemplate.content.cloneNode(true)
