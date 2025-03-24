@@ -3,12 +3,12 @@ import { getElementById, getElementBySelector } from "@lib/dom";
 import { discoveredWords } from "@/state/discovered-words";
 import { DEFINITIONS_PER_PAGE } from "@/consts/definitions";
 
-const $pagesContainer = getElementById(
+export const $definitionPagesContainer = getElementById(
   "definition-pages-container",
   HTMLDivElement,
 );
 
-export const DefinitionPages = new Pages($pagesContainer, {
+export const DefinitionPages = new Pages($definitionPagesContainer, {
   items: Array.from(discoveredWords),
   itemsPerPage: DEFINITIONS_PER_PAGE,
   renderItem({ item, index, totalItems }) {

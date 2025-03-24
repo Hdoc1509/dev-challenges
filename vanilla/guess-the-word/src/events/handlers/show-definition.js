@@ -1,13 +1,14 @@
 import { getElementBySelector } from "@lib/dom";
 import { currentWord } from "@/state/current-word";
 import { $definitionsTab, $menu, MenuTabs } from "@/ui/menu";
-import { $definitionSection, $definitionslist } from "@/ui/definition/elements";
+import { $definitionSection } from "@/ui/definition/elements";
+import { $definitionPagesContainer } from "@/ui/definition/pages";
 
 export function handleShowDefinition() {
   const $details = getElementBySelector(
-    `.definition[data-word=${currentWord}]`,
+    `.definitions-list.page[data-active] .definition[data-word=${currentWord}]`,
     HTMLDetailsElement,
-    $definitionslist,
+    $definitionPagesContainer,
   );
 
   $definitionSection.removeAttribute("data-active");
