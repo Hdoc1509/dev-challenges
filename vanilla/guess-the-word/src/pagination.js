@@ -6,24 +6,24 @@ const error = (message) => {
 };
 
 export class Pagination {
+  #PagesHandler;
   #$pagePrev;
   #$pageNext;
   #$input;
-  #pages;
   #current;
 
   /**
    * @param {HTMLMenuElement} $pagination
-   * @param {Object} extraParams
-   * @param {number} extraParams.initialPages
+   * @param {import("./pages").Pages<any>} PagesHandler
    */
-  constructor($pagination, { initialPages }) {
+  constructor($pagination, PagesHandler) {
     if ($pagination == null) error('"$pagination" argument is required');
     if (!($pagination instanceof HTMLMenuElement))
       error('"$pagination" argument must be an instance of HTMLMenuElement');
     if (!$pagination.classList.contains("pagination"))
       error('"$pagination" argument must have "pagination" class');
 
+    this.#PagesHandler = PagesHandler;
     this.#$pagePrev = getElementBySelector(
       "li.pagination__item > .pagination__trigger[data-page-prev]",
       HTMLButtonElement,
@@ -38,20 +38,21 @@ export class Pagination {
       $pagination,
     );
     this.#current = Number(this.#$input.value);
-    this.#pages = initialPages;
 
     this.#checkTriggers();
   }
 
   #checkTriggers() {
-    if (this.#pages === 1) {
+    const pages = this.#PagesHandler.pages;
+
+    if (pages === 1) {
       this.#$pagePrev.disabled = true;
       this.#$pageNext.disabled = true;
       this.#$input.disabled = true;
     } else if (this.#current === 1) {
       this.#$pagePrev.disabled = true;
       this.#$pageNext.disabled = false;
-    } else if (this.#current === this.#pages) {
+    } else if (this.#current === pages) {
       this.#$pagePrev.disabled = false;
       this.#$pageNext.disabled = true;
     } else {
@@ -70,7 +71,8 @@ export class Pagination {
   }
 
   goNextPage() {
-    if (this.#current === this.#pages) console.warn("No more pages");
+    if (this.#current === this.#PagesHandler.pages)
+      console.warn("No more pages");
     else this.#selectPage(this.#current + 1);
   }
 
@@ -109,9 +111,10 @@ export class Pagination {
     if (!isValid) $input.value = this.#current.toString();
     else {
       const pageNumber = Number(page);
+      const pages = this.#PagesHandler.pages;
 
       if (pageNumber < 1) this.#selectPage(1);
-      else if (pageNumber > this.#pages) this.#selectPage(this.#pages);
+      else if (pageNumber > pages) this.#selectPage(pages);
       else this.#selectPage(pageNumber);
     }
     $input.blur();
