@@ -1,9 +1,5 @@
 import { getElementById, getElementBySelector } from "@lib/dom";
 import { handleDefinitionOpen } from "@/events/handlers/definition-open";
-import { renderDefinitionsCount } from "./count";
-import { addNewBadge } from "../new";
-import { $definitionslist } from "../elements";
-import { DEFINITIONS_PER_PAGE } from "@/consts/definitions";
 
 const $definitionTemplate = getElementById(
   "definition-template",
@@ -13,52 +9,33 @@ const $definitionTemplate = getElementById(
 /** @param {string} word */
 const capitalize = (word) => word[0].toUpperCase() + word.slice(1);
 
-/**
- * @param {string} word
- * @param {{ lastWord?: string, initialRender?: boolean }} options
- */
-export const renderDefinition = async (
-  word,
-  { lastWord, initialRender = false } = {},
-) => {
-  const $itemClone = /** @type {DocumentFragment} */ (
+/** @param {string} word */
+export const renderDefinition = (word) => {
+  const $clone = /** @type {DocumentFragment} */ (
     $definitionTemplate.content.cloneNode(true)
   );
-  const $details = getElementBySelector(
+  const $definition = getElementBySelector(
     ".definition",
     HTMLDetailsElement,
-    $itemClone,
+    $clone,
   );
   const $label = getElementBySelector(
     ".definition__label",
     HTMLElement,
-    $itemClone,
+    $clone,
   );
-  const $separator = document.createElement("hr");
-  const $notYet = $definitionslist.querySelector(".not-yet");
   const controller = new AbortController();
 
-  if ($notYet != null) $notYet.remove();
-
-  $details.dataset.word = word;
+  $definition.dataset.word = word;
   $label.textContent = capitalize(word);
 
-  $details.addEventListener(
+  $definition.addEventListener(
     "toggle",
     () => {
-      if ($details.open) handleDefinitionOpen($details, { controller });
+      if ($definition.open) handleDefinitionOpen($definition, { controller });
     },
     { signal: controller.signal },
   );
 
-  if (initialRender) {
-    $definitionslist.appendChild($itemClone);
-    if (word !== lastWord) $definitionslist.appendChild($separator);
-  } else {
-    if ($definitionslist.childElementCount >= 1)
-      $definitionslist.prepend($separator);
-
-    addNewBadge({ $details, $label });
-    $definitionslist.prepend($itemClone);
-  }
+  return $clone;
 };
