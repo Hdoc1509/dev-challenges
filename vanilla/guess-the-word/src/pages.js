@@ -47,15 +47,12 @@ export class Pages {
       }
 
       $page = $newPage;
+      this.#$pagesContainer.appendChild($template);
     }
 
     $currentPage?.removeAttribute("data-active");
     $page.dataset.active = "";
-
-    if (!this.#$pagesContainer.contains($page)) {
-      $page.dataset.page = page.toString();
-      this.#$pagesContainer.appendChild($page);
-    }
+    $page.dataset.page = page.toString();
   }
 
   /**
