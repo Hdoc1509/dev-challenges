@@ -13,30 +13,6 @@ const $definitionTemplate = getElementById(
 /** @param {string} word */
 const capitalize = (word) => word[0].toUpperCase() + word.slice(1);
 
-/** @param {Array<string>} words */
-export const renderSavedDefinitions = (words) => {
-  if (words.length === 0) return;
-
-  renderDefinitionsCount(words.length);
-
-  const wordsToRender = words.slice(0, DEFINITIONS_PER_PAGE);
-  const lastWord = wordsToRender[wordsToRender.length - 1];
-  const pages = Math.ceil(words.length / DEFINITIONS_PER_PAGE);
-
-  for (const word of wordsToRender)
-    renderDefinition(word, { lastWord, initialRender: true });
-
-  if (words.length > DEFINITIONS_PER_PAGE) {
-    // TODO: render pagination section
-    // - go-prev button:
-    //   - if no previous page, disable
-    // - current page
-    // - go-next button
-    //   - if no next page, disable
-    console.log("render pagination section", pages, "pages");
-  }
-};
-
 /**
  * @param {string} word
  * @param {{ lastWord?: string, initialRender?: boolean }} options
