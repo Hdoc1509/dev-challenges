@@ -11,6 +11,7 @@ import { isValidLetterField } from "@/utils/letter-fields";
 import { $menu, $menuClose, $menuOpen, MenuTabs } from "@/ui/menu";
 // import { generateWordList } from "@/ui/word-list";
 import { DefinitionPagination } from "@/ui/definition/pagination";
+import { DefinitionPages } from "@/ui/definition/pages";
 import { renderDefinitionsCount } from "@/ui/definition/render/count";
 import { removeAllNewBadges } from "@/ui/definition/badge";
 import { $showDefinition } from "@/ui/definition/elements";
@@ -28,8 +29,10 @@ export async function setupEventListeners() {
 
     if ($target === $randomWord) generateRandomWord();
     else if ($target === $reset) resetGame();
-    else if ($target === $menuOpen) $menu.showModal();
-    else if ($target === $menuClose) $menu.close();
+    else if ($target === $menuOpen) {
+      DefinitionPages.renderPage(DefinitionPagination.currentPage);
+      $menu.showModal();
+    } else if ($target === $menuClose) $menu.close();
     else if ($target === $showDefinition) handleShowDefinition();
     else if ($target === $hintsTrigger) handleShowHints();
     else if (MenuTabs.isTabLink($target)) MenuTabs.selectTab($target);
