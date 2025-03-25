@@ -10,7 +10,7 @@ export class Pagination {
   #$pagePrev;
   #$pageNext;
   #$input;
-  #current;
+  currentPage;
 
   /**
    * @param {HTMLMenuElement} $pagination
@@ -39,9 +39,9 @@ export class Pagination {
       HTMLInputElement,
       $pagination,
     );
-    this.#current = Number(this.#$input.value);
+    this.currentPage = Number(this.#$input.value);
 
-    if (renderCurrent) this.#PagesHandler.renderPage(this.#current);
+    if (renderCurrent) this.#PagesHandler.renderPage(this.currentPage);
     this.#checkTriggers();
   }
 
@@ -52,10 +52,10 @@ export class Pagination {
       this.#$pagePrev.disabled = true;
       this.#$pageNext.disabled = true;
       this.#$input.disabled = true;
-    } else if (this.#current === 1) {
+    } else if (this.currentPage === 1) {
       this.#$pagePrev.disabled = true;
       this.#$pageNext.disabled = false;
-    } else if (this.#current === pages) {
+    } else if (this.currentPage === pages) {
       this.#$pagePrev.disabled = false;
       this.#$pageNext.disabled = true;
     } else {
@@ -67,22 +67,22 @@ export class Pagination {
   /** @param {number} page */
   #selectPage(page) {
     this.#$input.value = page.toString();
-    if (this.#current !== page) {
-      this.#current = page;
+    if (this.currentPage !== page) {
+      this.currentPage = page;
       this.#checkTriggers();
       this.#PagesHandler.renderPage(page);
     }
   }
 
   goNextPage() {
-    if (this.#current === this.#PagesHandler.pages)
+    if (this.currentPage === this.#PagesHandler.pages)
       console.warn("No more pages");
-    else this.#selectPage(this.#current + 1);
+    else this.#selectPage(this.currentPage + 1);
   }
 
   goPrevPage() {
-    if (this.#current === 1) console.warn("No previous page");
-    else this.#selectPage(this.#current - 1);
+    if (this.currentPage === 1) console.warn("No previous page");
+    else this.#selectPage(this.currentPage - 1);
   }
 
   /**
@@ -112,7 +112,7 @@ export class Pagination {
     const page = $input.value;
     const isValid = /^-?\d+$/.test(page);
 
-    if (!isValid) $input.value = this.#current.toString();
+    if (!isValid) $input.value = this.currentPage.toString();
     else {
       const pageNumber = Number(page);
       const pages = this.#PagesHandler.pages;
