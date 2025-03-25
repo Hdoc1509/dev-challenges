@@ -12,6 +12,7 @@ const error = (message) => {
  * @property {Item} item
  * @property {number} index
  * @property {number} totalItems
+ * @property {boolean} [isNew]
  */
 
 /** @typedef {DocumentFragment | HTMLLIElement} RenderItemResult */
@@ -88,6 +89,7 @@ export class Pages {
       $total,
     },
   ) {
+    // TODO: move validations to separate function
     if ($pagesContainer == null)
       error('"$pagesContainer" argument is required');
     if (!($pagesContainer instanceof HTMLDivElement))
@@ -132,9 +134,10 @@ export class Pages {
     this.#pages[pageIdx].push(item);
 
     const totalItems = this.#pages[pageIdx].length;
+    const isNew = true;
 
     $currentPage.appendChild(
-      this.#renderItem({ item, index: totalItems - 1, totalItems }),
+      this.#renderItem({ item, index: totalItems - 1, totalItems, isNew }),
     );
 
     // NOTE: logic below can be also used for `prepend()` method
