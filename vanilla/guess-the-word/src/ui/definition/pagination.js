@@ -6,4 +6,5 @@ const $pagination = getElementById("definition-pagination", HTMLMenuElement);
 
 export const DefinitionPagination = new Pagination($pagination, {
   pagesHandler: DefinitionPages,
+  renderCurrent: false,
 });
