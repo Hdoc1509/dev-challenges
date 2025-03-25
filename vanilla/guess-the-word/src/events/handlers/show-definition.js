@@ -14,6 +14,7 @@ export function handleShowDefinition() {
   $definitionSection.removeAttribute("data-active");
   $menu.showModal();
   MenuTabs.selectTab($definitionsTab);
+  $details.scrollIntoView();
   $details.open = true;
   $details.focus();
 }
