@@ -10,7 +10,7 @@ const $definitionTemplate = getElementById(
 const capitalize = (word) => word[0].toUpperCase() + word.slice(1);
 
 /** @param {string} word */
-export const renderDefinition = (word) => {
+export const createDefinition = (word) => {
   const $clone = /** @type {DocumentFragment} */ (
     $definitionTemplate.content.cloneNode(true)
   );

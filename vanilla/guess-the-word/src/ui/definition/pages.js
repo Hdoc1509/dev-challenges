@@ -1,7 +1,7 @@
 import { Pages } from "@/pages";
 import { getElementById, getElementBySelector } from "@lib/dom";
 import { discoveredWords } from "@/state/discovered-words";
-import { renderDefinition } from "./render/definition";
+import { createDefinition } from "./create";
 import { DEFINITIONS_PER_PAGE } from "@/consts/definitions";
 
 export const $definitionPagesContainer = getElementById(
@@ -14,7 +14,7 @@ export const DefinitionPages = new Pages($definitionPagesContainer, {
   itemsPerPage: DEFINITIONS_PER_PAGE,
   // TODO: maybe can I pass `isNew` param to `renderItem` method?
   renderItem({ item, index, totalItems }) {
-    const $definition = renderDefinition(item);
+    const $definition = createDefinition(item);
     const isLast = index === totalItems - 1;
 
     if (isLast) return $definition;
