@@ -1,4 +1,3 @@
-import { getElementBySelector } from "@lib/dom";
 import { paginate } from "./utils/paginate";
 
 const INSERTION_MODE = Object.freeze({
@@ -97,9 +96,9 @@ export class Pages {
 
   /** @param {number} page */
   renderPage(page) {
-    /** @type {HTMLUListElement | null} */
-    const $currentPage =
-      this.#$pagesContainer.querySelector(".page[data-active]");
+    const $currentPage = /** @type {HTMLUListElement | null} */ (
+      this.#$currentPage
+    );
     /** @type {HTMLUListElement | null} */
     let $page = this.#$pagesContainer.querySelector(
       `.page[data-page="${page}"]`,
@@ -142,11 +141,7 @@ export class Pages {
 
   /** @param {Item} item */
   append(item) {
-    const $currentPage = getElementBySelector(
-      ".page[data-active]",
-      HTMLUListElement,
-      this.#$pagesContainer,
-    );
+    const $currentPage = /** @type {HTMLUListElement} */ (this.#$currentPage);
     const pageIdx = this.#current - 1;
 
     this.#pages[pageIdx].push(item);
@@ -166,13 +161,13 @@ export class Pages {
     this.#reorder({ totalItems, $currentPage, pageIdx });
   }
 
+  get #$currentPage() {
+    return this.#$pagesContainer.querySelector(".page[data-active]");
+  }
+
   /** @param {Item} item */
   prepend(item) {
-    const $currentPage = getElementBySelector(
-      ".page[data-active]",
-      HTMLUListElement,
-      this.#$pagesContainer,
-    );
+    const $currentPage = /** @type {HTMLUListElement} */ (this.#$currentPage);
     const pageIdx = this.#current - 1;
 
     this.#pages[pageIdx].unshift(item);
