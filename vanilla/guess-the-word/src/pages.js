@@ -18,6 +18,7 @@ const error = (message) => {
  * @property {number} index
  * @property {number} totalItems
  * @property {boolean} [isNew]
+ * @property {typeof INSERTION_MODE[keyof typeof INSERTION_MODE]} insertionMode
  */
 
 /** @typedef {DocumentFragment | HTMLLIElement} RenderItemResult */
@@ -60,7 +61,14 @@ export class Pages {
         $newPage.appendChild(this.#$pageEmptyTemplate.content.cloneNode(true));
       } else {
         items.forEach((item, index) =>
-          $newPage.appendChild(this.#renderItem({ item, index, totalItems })),
+          $newPage.appendChild(
+            this.#renderItem({
+              item,
+              index,
+              totalItems,
+              insertionMode: INSERTION_MODE.APPEND,
+            }),
+          ),
         );
       }
 
@@ -144,7 +152,13 @@ export class Pages {
     const isNew = true;
 
     $currentPage.appendChild(
-      this.#renderItem({ item, index: totalItems - 1, totalItems, isNew }),
+      this.#renderItem({
+        item,
+        index: totalItems - 1,
+        totalItems,
+        isNew,
+        insertionMode: INSERTION_MODE.APPEND,
+      }),
     );
 
     // NOTE: logic below can be also used for `prepend()` method
