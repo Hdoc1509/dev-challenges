@@ -33,6 +33,7 @@ export class Pages {
   #renderItem;
   #clearEmpty;
   #onItemRemoved;
+  #onPageChange;
   #current = 0;
 
   static INSERTION_MODE = INSERTION_MODE;
@@ -45,6 +46,7 @@ export class Pages {
    * @param {(params: RenderItemParams<Item>) => RenderItemResult} extraParams.renderItem
    * @param {($page: HTMLUListElement) => void} extraParams.clearEmpty
    * @param {($page: HTMLUListElement) => void} [extraParams.onItemRemoved]
+   * @param {($page: HTMLUListElement) => void} [extraParams.onPageChange]
    * @param {HTMLTemplateElement} extraParams.$pageTemplate
    * @param {HTMLTemplateElement} extraParams.$pageEmptyTemplate
    * @param {HTMLElement} extraParams.$total
@@ -57,6 +59,7 @@ export class Pages {
       renderItem,
       clearEmpty,
       onItemRemoved,
+      onPageChange,
       $pageTemplate,
       $pageEmptyTemplate,
       $total,
@@ -86,6 +89,7 @@ export class Pages {
     this.#$pageEmptyTemplate = $pageEmptyTemplate;
     this.#clearEmpty = clearEmpty;
     this.#onItemRemoved = onItemRemoved;
+    this.#onPageChange = onPageChange;
 
     $total.textContent = `${this.#pages.length}`;
   }
@@ -137,6 +141,7 @@ export class Pages {
     $currentPage?.removeAttribute("data-active");
     $page.dataset.active = "";
     $page.dataset.page = page.toString();
+    this.#onPageChange?.($page);
   }
 
   /** @param {Item} item */
