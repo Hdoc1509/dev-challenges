@@ -22,13 +22,11 @@ export const DefinitionPages = new Pages($definitionPagesContainer, {
       insertionMode === Pages.INSERTION_MODE.APPEND
     )
       $definition.prepend(document.createElement("hr"));
+
     if (isLast) return $definition;
 
-    const $fragment = document.createDocumentFragment();
-    const $separator = document.createElement("hr");
-
-    $fragment.append($definition, $separator);
-    return $fragment;
+    $definition.appendChild(document.createElement("hr"));
+    return $definition;
   },
   clearEmpty: ($page) => $page.querySelector(".not-yet")?.remove(),
   $pageTemplate: getElementById(
