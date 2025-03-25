@@ -23,5 +23,6 @@ export function handleGameSuccess() {
   $definitionSection.setAttribute("data-active", "");
   addDiscoveredWord(currentWord);
   DefinitionPages.prepend(currentWord);
+  DefinitionPages.renderPage(1);
   renderDefinitionsCount(discoveredWords.size);
 }
