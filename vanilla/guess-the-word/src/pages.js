@@ -33,6 +33,7 @@ export class Pages {
   #itemsPerPage;
   #renderItem;
   #clearEmpty;
+  #onItemRemoved;
   #current;
 
   static INSERTION_MODE = INSERTION_MODE;
@@ -88,6 +89,7 @@ export class Pages {
    * @param {number} extraParams.itemsPerPage
    * @param {(params: RenderItemParams<Item>) => RenderItemResult} extraParams.renderItem
    * @param {($page: HTMLUListElement) => void} extraParams.clearEmpty
+   * @param {($page: HTMLUListElement) => void} [extraParams.onItemRemoved]
    * @param {HTMLTemplateElement} extraParams.$pageTemplate
    * @param {HTMLTemplateElement} extraParams.$pageEmptyTemplate
    * @param {HTMLElement} extraParams.$total
@@ -99,6 +101,7 @@ export class Pages {
       itemsPerPage,
       renderItem,
       clearEmpty,
+      onItemRemoved,
       $pageTemplate,
       $pageEmptyTemplate,
       $total,
@@ -127,6 +130,7 @@ export class Pages {
     this.#renderItem = renderItem;
     this.#$pageEmptyTemplate = $pageEmptyTemplate;
     this.#clearEmpty = clearEmpty;
+    this.#onItemRemoved = onItemRemoved;
     this.#current = 1;
 
     this.#renderPage(1);
@@ -208,7 +212,10 @@ export class Pages {
         itemToMove = null;
 
         if ($elementToMove != null) {
-          $page?.insertBefore($elementToMove, $page.firstElementChild);
+          if ($page == null) {
+            $elementToMove.remove();
+            this.#onItemRemoved?.($currentPage);
+          } else $page.insertBefore($elementToMove, $page.firstElementChild);
           $elementToMove = null;
         }
       }
