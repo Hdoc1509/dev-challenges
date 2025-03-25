@@ -142,7 +142,7 @@ export class Pages {
 
     // NOTE: logic below can be also used for `prepend()` method
 
-    if (totalItems === 0) this.#clearEmpty($currentPage);
+    if (totalItems === 1) this.#clearEmpty($currentPage);
     else if (totalItems <= this.#itemsPerPage) return;
 
     const totalPages = this.#pages.length;
