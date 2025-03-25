@@ -1,6 +1,11 @@
 import { getElementBySelector } from "@lib/dom";
 import { paginate } from "./utils/paginate";
 
+const INSERTION_MODE = Object.freeze({
+  APPEND: "append",
+  PREPEND: "prepend",
+});
+
 /** @param {string} message */
 const error = (message) => {
   throw new Error(`[Pages]: ${message}`);
@@ -28,6 +33,8 @@ export class Pages {
   #renderItem;
   #clearEmpty;
   #current;
+
+  static INSERTION_MODE = INSERTION_MODE;
 
   /** @param {number} page */
   #renderPage(page) {
