@@ -163,7 +163,7 @@ export class Pages {
         insertionMode: INSERTION_MODE.APPEND,
       }),
     );
-    this.#reorder({ totalItems, $currentPage, pageIdx });
+    this.#reorder({ totalItems, $fromPage: $currentPage, pageIdx });
   }
 
   get #$currentPage() {
@@ -172,15 +172,17 @@ export class Pages {
 
   /** @param {Item} item */
   prepend(item) {
-    const $currentPage = /** @type {HTMLUListElement} */ (this.#$currentPage);
-    const pageIdx = this.#current - 1;
+    const $page = /** @type {HTMLUListElement} */ (
+      this.#$pagesContainer.querySelector(".page[data-page='1']")
+    );
+    const pageIdx = 0;
 
     this.#pages[pageIdx].unshift(item);
 
     const totalItems = this.#pages[pageIdx].length;
     const isNew = true;
 
-    $currentPage.prepend(
+    $page.prepend(
       this.#renderItem({
         item,
         index: 0,
@@ -189,12 +191,12 @@ export class Pages {
         insertionMode: INSERTION_MODE.PREPEND,
       }),
     );
-    this.#reorder({ totalItems, $currentPage, pageIdx });
+    this.#reorder({ totalItems, $fromPage: $page, pageIdx });
   }
 
-  /** @param {{ totalItems: number, $currentPage: HTMLUListElement, pageIdx: number }} params */
-  #reorder({ totalItems, $currentPage, pageIdx }) {
-    if (totalItems === 1) this.#clearEmpty($currentPage);
+  /** @param {{ totalItems: number, $fromPage: HTMLUListElement, pageIdx: number }} params */
+  #reorder({ totalItems, $fromPage, pageIdx }) {
+    if (totalItems === 1) this.#clearEmpty($fromPage);
     else if (totalItems <= this.#itemsPerPage) return;
 
     const totalPages = this.#pages.length;
@@ -213,7 +215,7 @@ export class Pages {
         if ($elementToMove != null) {
           if ($page == null) {
             $elementToMove.remove();
-            this.#onItemRemoved?.($currentPage);
+            this.#onItemRemoved?.($fromPage);
           } else $page.insertBefore($elementToMove, $page.firstElementChild);
           $elementToMove = null;
         }
