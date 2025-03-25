@@ -12,9 +12,8 @@ export const $definitionPagesContainer = getElementById(
 export const DefinitionPages = new Pages($definitionPagesContainer, {
   items: Array.from(discoveredWords),
   itemsPerPage: DEFINITIONS_PER_PAGE,
-  // TODO: maybe can I pass `isNew` param to `renderItem` method?
-  renderItem({ item, index, totalItems }) {
-    const $definition = createDefinition(item);
+  renderItem({ item, index, totalItems, isNew }) {
+    const $definition = createDefinition(item, { isNew });
     const isLast = index === totalItems - 1;
 
     if (isLast) return $definition;
