@@ -151,7 +151,7 @@ export class Pages {
 
     for (let i = pageIdx; i < totalPages; i++) {
       const $page = this.#$pagesContainer.querySelector(
-        `.page[data-page=${i + 1}]`,
+        `.page[data-page="${i + 1}"]`,
       );
 
       if (itemToMove != null) {
