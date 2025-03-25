@@ -136,6 +136,7 @@ export class Pages {
       this.#$pagesContainer.appendChild($template);
     }
 
+    this.#current = page;
     $currentPage?.removeAttribute("data-active");
     $page.dataset.active = "";
     $page.dataset.page = page.toString();
