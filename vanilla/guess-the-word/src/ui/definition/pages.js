@@ -16,12 +16,12 @@ export const DefinitionPages = new Pages($definitionPagesContainer, {
     const $definition = createDefinition(item, { isNew });
     const isLast = index === totalItems - 1;
 
-    if (isNew && totalItems > 1) {
-      if (insertionMode === Pages.INSERTION_MODE.APPEND)
-        $definition.prepend(document.createElement("hr"));
-      else if (insertionMode === Pages.INSERTION_MODE.PREPEND)
-        $definition.append(document.createElement("hr"));
-    }
+    if (
+      isNew &&
+      totalItems > 1 &&
+      insertionMode === Pages.INSERTION_MODE.APPEND
+    )
+      $definition.prepend(document.createElement("hr"));
     if (isLast) return $definition;
 
     const $fragment = document.createDocumentFragment();
