@@ -14,16 +14,17 @@ export class Pagination {
 
   /**
    * @param {HTMLMenuElement} $pagination
-   * @param {import("./pages").Pages<any>} PagesHandler
+   * @param {Object} extraParams
+   * @param {import("./pages").Pages<any>} extraParams.pagesHandler
    */
-  constructor($pagination, PagesHandler) {
+  constructor($pagination, { pagesHandler }) {
     if ($pagination == null) error('"$pagination" argument is required');
     if (!($pagination instanceof HTMLMenuElement))
       error('"$pagination" argument must be an instance of HTMLMenuElement');
     if (!$pagination.classList.contains("pagination"))
       error('"$pagination" argument must have "pagination" class');
 
-    this.#PagesHandler = PagesHandler;
+    this.#PagesHandler = pagesHandler;
     this.#$pagePrev = getElementBySelector(
       "li.pagination__item > .pagination__trigger[data-page-prev]",
       HTMLButtonElement,

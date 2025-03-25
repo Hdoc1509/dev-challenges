@@ -4,7 +4,6 @@ import { DefinitionPages } from "./pages";
 
 const $pagination = getElementById("definition-pagination", HTMLMenuElement);
 
-export const DefinitionPagination = new Pagination(
-  $pagination,
-  DefinitionPages,
-);
+export const DefinitionPagination = new Pagination($pagination, {
+  pagesHandler: DefinitionPages,
+});
