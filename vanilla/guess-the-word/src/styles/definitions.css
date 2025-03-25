@@ -27,6 +27,9 @@
 
   list-style: none;
 }
+.definitions-list:not([data-active]) {
+  display: none;
+}
 .definitions-list hr {
   margin-block: 0.25rem;
   color: rgb(175, 175, 175);
