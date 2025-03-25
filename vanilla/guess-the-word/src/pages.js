@@ -160,9 +160,14 @@ export class Pages {
         insertionMode: INSERTION_MODE.APPEND,
       }),
     );
+    this.#reorder({ totalItems, $currentPage, pageIdx });
+  }
 
-    // NOTE: logic below can be also used for `prepend()` method
 
+
+  /** @param {{ totalItems: number, $currentPage: HTMLUListElement, pageIdx: number }} params */
+  // NOTE: can be also used for `prepend()` method
+  #reorder({ totalItems, $currentPage, pageIdx }) {
     if (totalItems === 1) this.#clearEmpty($currentPage);
     else if (totalItems <= this.#itemsPerPage) return;
 
