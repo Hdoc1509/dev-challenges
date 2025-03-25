@@ -34,7 +34,7 @@ export class Pages {
   #renderItem;
   #clearEmpty;
   #onItemRemoved;
-  #current;
+  #current = 0;
 
   static INSERTION_MODE = INSERTION_MODE;
 
@@ -87,9 +87,7 @@ export class Pages {
     this.#$pageEmptyTemplate = $pageEmptyTemplate;
     this.#clearEmpty = clearEmpty;
     this.#onItemRemoved = onItemRemoved;
-    this.#current = 1;
 
-    this.renderPage(1);
     $total.textContent = `${this.#pages.length}`;
   }
 

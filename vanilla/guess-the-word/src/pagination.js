@@ -39,6 +39,7 @@ export class Pagination {
     );
     this.#current = Number(this.#$input.value);
 
+    this.#PagesHandler.renderPage(this.#current);
     this.#checkTriggers();
   }
 
@@ -67,6 +68,7 @@ export class Pagination {
     if (this.#current !== page) {
       this.#current = page;
       this.#checkTriggers();
+      this.#PagesHandler.renderPage(page);
     }
   }
 
