@@ -8,7 +8,7 @@ export const paginate = (items, itemsPerPage) => {
   const pagesQuantity = Math.ceil(items.length / itemsPerPage);
   const pages = [];
 
-  for (let i = 0; i <= pagesQuantity; i++) {
+  for (let i = 0; i < pagesQuantity; i++) {
     const offset = i * itemsPerPage;
     pages.push(items.slice(offset, offset + itemsPerPage));
   }
