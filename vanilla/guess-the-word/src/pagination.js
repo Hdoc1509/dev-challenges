@@ -16,8 +16,9 @@ export class Pagination {
    * @param {HTMLMenuElement} $pagination
    * @param {Object} extraParams
    * @param {import("./pages").Pages<any>} extraParams.pagesHandler
+   * @param {boolean} [extraParams.renderCurrent] Whether to render the current page on initialization
    */
-  constructor($pagination, { pagesHandler }) {
+  constructor($pagination, { pagesHandler, renderCurrent = true }) {
     if ($pagination == null) error('"$pagination" argument is required');
     if (!($pagination instanceof HTMLMenuElement))
       error('"$pagination" argument must be an instance of HTMLMenuElement');
@@ -40,7 +41,7 @@ export class Pagination {
     );
     this.#current = Number(this.#$input.value);
 
-    this.#PagesHandler.renderPage(this.#current);
+    if (renderCurrent) this.#PagesHandler.renderPage(this.#current);
     this.#checkTriggers();
   }
 
