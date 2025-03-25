@@ -38,50 +38,6 @@ export class Pages {
 
   static INSERTION_MODE = INSERTION_MODE;
 
-  /** @param {number} page */
-  #renderPage(page) {
-    /** @type {HTMLUListElement | null} */
-    const $currentPage =
-      this.#$pagesContainer.querySelector(".page[data-active]");
-    /** @type {HTMLUListElement | null} */
-    let $page = this.#$pagesContainer.querySelector(
-      `.page[data-page="${page}"]`,
-    );
-
-    if ($page == null) {
-      const $template = /** @type {DocumentFragment} */ (
-        this.#$pageTemplate.content.cloneNode(true)
-      );
-      const $newPage = /** @type {HTMLUListElement} */ (
-        $template.querySelector("ul")
-      );
-      const items = this.#pages[page - 1];
-      const totalItems = items.length;
-
-      if (totalItems === 0) {
-        $newPage.appendChild(this.#$pageEmptyTemplate.content.cloneNode(true));
-      } else {
-        items.forEach((item, index) =>
-          $newPage.appendChild(
-            this.#renderItem({
-              item,
-              index,
-              totalItems,
-              insertionMode: INSERTION_MODE.APPEND,
-            }),
-          ),
-        );
-      }
-
-      $page = $newPage;
-      this.#$pagesContainer.appendChild($template);
-    }
-
-    $currentPage?.removeAttribute("data-active");
-    $page.dataset.active = "";
-    $page.dataset.page = page.toString();
-  }
-
   /**
    * @param {HTMLDivElement} $pagesContainer
    * @param {Object} extraParams
@@ -133,12 +89,56 @@ export class Pages {
     this.#onItemRemoved = onItemRemoved;
     this.#current = 1;
 
-    this.#renderPage(1);
+    this.renderPage(1);
     $total.textContent = `${this.#pages.length}`;
   }
 
   get pages() {
     return this.#pages.length;
+  }
+
+  /** @param {number} page */
+  renderPage(page) {
+    /** @type {HTMLUListElement | null} */
+    const $currentPage =
+      this.#$pagesContainer.querySelector(".page[data-active]");
+    /** @type {HTMLUListElement | null} */
+    let $page = this.#$pagesContainer.querySelector(
+      `.page[data-page="${page}"]`,
+    );
+
+    if ($page == null) {
+      const $template = /** @type {DocumentFragment} */ (
+        this.#$pageTemplate.content.cloneNode(true)
+      );
+      const $newPage = /** @type {HTMLUListElement} */ (
+        $template.querySelector("ul")
+      );
+      const items = this.#pages[page - 1];
+      const totalItems = items.length;
+
+      if (totalItems === 0) {
+        $newPage.appendChild(this.#$pageEmptyTemplate.content.cloneNode(true));
+      } else {
+        items.forEach((item, index) =>
+          $newPage.appendChild(
+            this.#renderItem({
+              item,
+              index,
+              totalItems,
+              insertionMode: INSERTION_MODE.APPEND,
+            }),
+          ),
+        );
+      }
+
+      $page = $newPage;
+      this.#$pagesContainer.appendChild($template);
+    }
+
+    $currentPage?.removeAttribute("data-active");
+    $page.dataset.active = "";
+    $page.dataset.page = page.toString();
   }
 
   /** @param {Item} item */
