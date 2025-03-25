@@ -29,6 +29,11 @@ export const DefinitionPages = new Pages($definitionPagesContainer, {
     return $definition;
   },
   clearEmpty: ($page) => $page.querySelector(".not-yet")?.remove(),
+  onItemRemoved: ($page) => {
+    const $lastElement = $page.lastElementChild;
+
+    if ($lastElement instanceof HTMLHRElement) $lastElement.remove();
+  },
   $pageTemplate: getElementById(
     "definition-page-template",
     HTMLTemplateElement,
