@@ -6,6 +6,16 @@ const error = (message) => {
   throw new Error(`[Pages]: ${message}`);
 };
 
+/**
+ * @template Item
+ * @typedef {Object} RenderItemParams
+ * @property {Item} item
+ * @property {number} index
+ * @property {number} totalItems
+ */
+
+/** @typedef {DocumentFragment | HTMLLIElement} RenderItemResult */
+
 /** @template Item */
 export class Pages {
   #$pagesContainer;
@@ -60,7 +70,7 @@ export class Pages {
    * @param {Object} extraParams
    * @param {Item[]} extraParams.items
    * @param {number} extraParams.itemsPerPage
-   * @param {({ item, index, totalItems}: { item: Item, index: number, totalItems: number}) => DocumentFragment | HTMLLIElement} extraParams.renderItem
+   * @param {(params: RenderItemParams<Item>) => RenderItemResult} extraParams.renderItem
    * @param {($page: HTMLUListElement) => void} extraParams.clearEmpty
    * @param {HTMLTemplateElement} extraParams.$pageTemplate
    * @param {HTMLTemplateElement} extraParams.$pageEmptyTemplate
