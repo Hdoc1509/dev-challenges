@@ -98,6 +98,18 @@ export class Pages {
     return this.#pages.length;
   }
 
+  /**
+   * @param {number} page
+   * @returns {HTMLUListElement | null}
+   */
+  #getpage(page) {
+    return this.#$pagesContainer.querySelector(`.page[data-page="${page}"]`);
+  }
+
+  get #$firstPage() {
+    return this.#getpage(1);
+  }
+
   /** @param {number} page */
   renderPage(page) {
     const $currentPage = /** @type {HTMLUListElement | null} */ (
@@ -172,9 +184,7 @@ export class Pages {
 
   /** @param {Item} item */
   prepend(item) {
-    const $page = /** @type {HTMLUListElement} */ (
-      this.#$pagesContainer.querySelector(".page[data-page='1']")
-    );
+    const $firstPage = this.#$firstPage;
     const pageIdx = 0;
 
     this.#pages[pageIdx].unshift(item);
@@ -182,7 +192,11 @@ export class Pages {
     const totalItems = this.#pages[pageIdx].length;
     const isNew = true;
 
-    $page.prepend(
+    if ($firstPage == null) this.renderPage(1);
+
+    const $newFirstPage = /** @type {HTMLUListElement} */ (this.#$firstPage);
+
+    $newFirstPage.prepend(
       this.#renderItem({
         item,
         index: 0,
@@ -191,7 +205,7 @@ export class Pages {
         insertionMode: INSERTION_MODE.PREPEND,
       }),
     );
-    this.#reorder({ totalItems, $fromPage: $page, pageIdx });
+    this.#reorder({ totalItems, $fromPage: $newFirstPage, pageIdx });
   }
 
   /** @param {{ totalItems: number, $fromPage: HTMLUListElement, pageIdx: number }} params */
