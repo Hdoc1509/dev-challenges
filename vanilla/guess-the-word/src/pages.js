@@ -234,22 +234,4 @@ export class Pages {
     this.#pages[pageIdx].push(itemToMove);
     this.#$total.textContent = `${totalPages + 1}`;
   }
-
-  goNext() {
-    if (!(this.#current < this.#pages.length)) return { canGoNext: false };
-
-    this.#current++;
-    this.#renderPage(this.#current);
-
-    return { canGoNext: this.#current < this.#pages.length };
-  }
-
-  goPrev() {
-    if (this.#current === 1) return { canGoPrev: false };
-
-    this.#current--;
-    this.#renderPage(this.#current);
-
-    return { canGoPrev: this.#current > 1 };
-  }
 }
