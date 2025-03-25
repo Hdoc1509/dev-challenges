@@ -3,6 +3,7 @@ import { getElementById, getElementBySelector } from "@lib/dom";
 import { discoveredWords } from "@/state/discovered-words";
 import { createDefinition } from "./create";
 import { DEFINITIONS_PER_PAGE } from "@/consts/definitions";
+import { $menuTabContent } from "../menu";
 
 export const $definitionPagesContainer = getElementById(
   "definition-pages-container",
@@ -34,6 +35,7 @@ export const DefinitionPages = new Pages($definitionPagesContainer, {
 
     if ($lastElement instanceof HTMLHRElement) $lastElement.remove();
   },
+  onPageChange: () => $menuTabContent.scrollTo(0, 0),
   $pageTemplate: getElementById(
     "definition-page-template",
     HTMLTemplateElement,
