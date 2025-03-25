@@ -163,10 +163,33 @@ export class Pages {
     this.#reorder({ totalItems, $currentPage, pageIdx });
   }
 
+  /** @param {Item} item */
+  prepend(item) {
+    const $currentPage = getElementBySelector(
+      ".page[data-active]",
+      HTMLUListElement,
+      this.#$pagesContainer,
+    );
+    const pageIdx = this.#current - 1;
 
+    this.#pages[pageIdx].unshift(item);
+
+    const totalItems = this.#pages[pageIdx].length;
+    const isNew = true;
+
+    $currentPage.prepend(
+      this.#renderItem({
+        item,
+        index: 0,
+        totalItems,
+        isNew,
+        insertionMode: INSERTION_MODE.PREPEND,
+      }),
+    );
+    this.#reorder({ totalItems, $currentPage, pageIdx });
+  }
 
   /** @param {{ totalItems: number, $currentPage: HTMLUListElement, pageIdx: number }} params */
-  // NOTE: can be also used for `prepend()` method
   #reorder({ totalItems, $currentPage, pageIdx }) {
     if (totalItems === 1) this.#clearEmpty($currentPage);
     else if (totalItems <= this.#itemsPerPage) return;
