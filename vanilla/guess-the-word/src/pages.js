@@ -215,12 +215,12 @@ export class Pages {
    * @param {number} params.pageIdx
    */
   #reorder({ totalItems, $fromPage, pageIdx }) {
-    // TODO: clearEmpty() only be called after the first item is added, i.e.
-    // when totalPages === 1 && totalItems === 1
-    if (totalItems === 1 && $fromPage != null) this.#clearEmpty($fromPage);
+    const totalPages = this.#pages.length;
+
+    if (totalPages === 1 && totalItems === 1 && $fromPage != null)
+      this.#clearEmpty($fromPage);
     else if (totalItems <= this.#itemsPerPage) return;
 
-    const totalPages = this.#pages.length;
     let itemToMove = null;
     let $elementToMove = null;
     let $previousPage = null;
