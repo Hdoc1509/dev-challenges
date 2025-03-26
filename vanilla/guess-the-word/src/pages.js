@@ -20,6 +20,14 @@ const error = (message) => {
  * @property {typeof INSERTION_MODE[keyof typeof INSERTION_MODE]} insertionMode
  */
 
+/**
+ * @template Item
+ * @callback InsertionMethod
+ * @param {Item} item
+ * @param {Object} [options]
+ * @param {boolean} [options.renderPage] Whether to call `renderPage(page)` before rendering the item
+ */
+
 /** @typedef {DocumentFragment | HTMLLIElement} RenderItemResult */
 
 /** @template Item */
@@ -182,8 +190,8 @@ export class Pages {
     return this.#$pagesContainer.querySelector(".page[data-active]");
   }
 
-  /** @param {Item} item */
-  prepend(item) {
+  /** @type {InsertionMethod<Item>} */
+  prepend(item, { renderPage = true } = {}) {
     const $firstPage = this.#$firstPage;
     const pageIdx = 0;
 
@@ -192,11 +200,11 @@ export class Pages {
     const totalItems = this.#pages[pageIdx].length;
     const isNew = true;
 
-    if ($firstPage == null) this.renderPage(1);
+    if ($firstPage == null && renderPage) this.renderPage(1);
 
-    const $newFirstPage = /** @type {HTMLUListElement} */ (this.#$firstPage);
+    const $newFirstPage = this.#$firstPage;
 
-    $newFirstPage.prepend(
+    $newFirstPage?.prepend(
       this.#renderItem({
         item,
         index: 0,
@@ -208,9 +216,14 @@ export class Pages {
     this.#reorder({ totalItems, $fromPage: $newFirstPage, pageIdx });
   }
 
-  /** @param {{ totalItems: number, $fromPage: HTMLUListElement, pageIdx: number }} params */
+  /**
+   * @param {Object} params
+   * @param {number} params.totalItems
+   * @param {HTMLUListElement | null} params.$fromPage
+   * @param {number} params.pageIdx
+   */
   #reorder({ totalItems, $fromPage, pageIdx }) {
-    if (totalItems === 1) this.#clearEmpty($fromPage);
+    if (totalItems === 1 && $fromPage != null) this.#clearEmpty($fromPage);
     else if (totalItems <= this.#itemsPerPage) return;
 
     const totalPages = this.#pages.length;
@@ -218,9 +231,7 @@ export class Pages {
     let $elementToMove = null;
 
     for (let i = pageIdx; i < totalPages; i++) {
-      const $page = this.#$pagesContainer.querySelector(
-        `.page[data-page="${i + 1}"]`,
-      );
+      const $page = this.#getpage(i + 1);
 
       if (itemToMove != null) {
         this.#pages[i].unshift(itemToMove);
@@ -229,7 +240,7 @@ export class Pages {
         if ($elementToMove != null) {
           if ($page == null) {
             $elementToMove.remove();
-            this.#onItemRemoved?.($fromPage);
+            if ($fromPage != null) this.#onItemRemoved?.($fromPage);
           } else $page.insertBefore($elementToMove, $page.firstElementChild);
           $elementToMove = null;
         }
