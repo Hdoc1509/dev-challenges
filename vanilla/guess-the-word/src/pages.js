@@ -43,7 +43,6 @@ export class Pages {
   #onItemRemoved;
   #onItemMoved;
   #onPageChange;
-  #current = 0;
 
   static INSERTION_MODE = INSERTION_MODE;
 
@@ -157,7 +156,6 @@ export class Pages {
       this.#$pagesContainer.appendChild($template);
     }
 
-    this.#current = page;
     $currentPage?.removeAttribute("data-active");
     $page.dataset.active = "";
     $page.dataset.page = page.toString();
