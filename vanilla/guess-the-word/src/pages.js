@@ -196,17 +196,15 @@ export class Pages {
 
   /** @type {InsertionMethod<Item>} */
   prepend(item, { renderPage = true } = {}) {
-    const $firstPage = this.#$firstPage;
+    if (renderPage) this.renderPage(1);
+
     const pageIdx = 0;
 
     this.#pages[pageIdx].unshift(item);
 
+    const $newFirstPage = this.#$firstPage;
     const totalItems = this.#pages[pageIdx].length;
     const isNew = true;
-
-    if ($firstPage == null && renderPage) this.renderPage(1);
-
-    const $newFirstPage = this.#$firstPage;
 
     $newFirstPage?.prepend(
       this.#renderItem({
