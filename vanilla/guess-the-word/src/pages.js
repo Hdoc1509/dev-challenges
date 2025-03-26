@@ -133,6 +133,7 @@ export class Pages {
     );
 
     if ($page == null) {
+      console.log("renderPage", page);
       const $template = /** @type {DocumentFragment} */ (
         this.#$pageTemplate.content.cloneNode(true)
       );
@@ -170,6 +171,7 @@ export class Pages {
 
   /** @param {Item} item */
   append(item) {
+    // FIX: $currentPage can be null
     const $currentPage = /** @type {HTMLUListElement} */ (this.#$currentPage);
     const pageIdx = this.#current - 1;
 
@@ -231,6 +233,7 @@ export class Pages {
     const totalPages = this.#pages.length;
     let itemToMove = null;
     let $elementToMove = null;
+    let $previousPage = null;
 
     for (let i = pageIdx; i < totalPages; i++) {
       const $page = this.#getpage(i + 1);
@@ -247,6 +250,7 @@ export class Pages {
             $page.insertBefore($elementToMove, $page.firstElementChild);
             this.#onItemMoved?.($page);
           }
+          if ($previousPage != null) this.#onItemRemoved?.($previousPage);
           $elementToMove = null;
         }
       }
@@ -254,7 +258,10 @@ export class Pages {
       if (this.#pages[i].length > this.#itemsPerPage) {
         itemToMove = this.#pages[i].pop();
 
-        if ($page != null) $elementToMove = $page.lastElementChild;
+        if ($page != null) {
+          $elementToMove = $page.lastElementChild;
+          $previousPage = $page;
+        }
       }
 
       if (itemToMove == null) break;
