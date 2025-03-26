@@ -30,6 +30,8 @@ export const DefinitionPages = new Pages($definitionPagesContainer, {
     return $definition;
   },
   clearEmpty: ($page) => $page.querySelector(".not-yet")?.remove(),
+  onItemMoved: ($page) =>
+    $page.insertBefore(document.createElement("hr"), $page.children[1]),
   onItemRemoved: ($page) => {
     const $lastElement = $page.lastElementChild;
 
