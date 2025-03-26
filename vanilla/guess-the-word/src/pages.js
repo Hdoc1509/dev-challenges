@@ -240,7 +240,6 @@ export class Pages {
 
       if (itemToMove != null) {
         this.#pages[i].unshift(itemToMove);
-        itemToMove = null;
 
         if ($elementToMove != null) {
           if ($page == null) $elementToMove.remove();
@@ -250,7 +249,17 @@ export class Pages {
           }
           if ($previousPage != null) this.#onItemRemoved?.($previousPage);
           $elementToMove = null;
-        }
+        } else
+          $page?.prepend(
+            this.#renderItem({
+              item: itemToMove,
+              index: 0,
+              totalItems: this.#pages[i].length,
+              insertionMode: INSERTION_MODE.PREPEND,
+            }),
+          );
+
+        itemToMove = null;
       }
 
       if (this.#pages[i].length > this.#itemsPerPage) {
