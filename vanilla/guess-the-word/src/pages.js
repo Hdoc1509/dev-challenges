@@ -118,10 +118,6 @@ export class Pages {
     return this.#$pagesContainer.querySelector(`.page[data-page="${page}"]`);
   }
 
-  get #$firstPage() {
-    return this.#getpage(1);
-  }
-
   /** @param {number} page */
   renderPage(page) {
     const $currentPage = /** @type {HTMLUListElement | null} */ (
@@ -204,7 +200,7 @@ export class Pages {
 
     this.#pages[pageIdx].unshift(item);
 
-    const $firstPage = this.#$firstPage;
+    const $firstPage = this.#getpage(1);
     const totalItems = this.#pages[pageIdx].length;
 
     $firstPage?.prepend(
