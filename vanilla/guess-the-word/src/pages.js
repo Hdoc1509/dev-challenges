@@ -172,15 +172,15 @@ export class Pages {
   /** @type {InsertionMethod<Item>} */
   append(item, { renderPage = true } = {}) {
     if (renderPage) this.renderPage(this.totalPages);
-    // FIX: $currentPage can be null
-    const $currentPage = /** @type {HTMLUListElement} */ (this.#$currentPage);
-    const pageIdx = this.#current - 1;
+
+    const pageIdx = this.totalPages - 1;
 
     this.#pages[pageIdx].push(item);
 
+    const $lastPage = this.#getpage(pageIdx + 1);
     const totalItems = this.#pages[pageIdx].length;
 
-    $currentPage.appendChild(
+    $lastPage?.appendChild(
       this.#renderItem({
         item,
         index: totalItems - 1,
@@ -189,7 +189,7 @@ export class Pages {
         insertionMode: INSERTION_MODE.APPEND,
       }),
     );
-    this.#reorder({ totalItems, $fromPage: $currentPage, pageIdx });
+    this.#reorder({ totalItems, $fromPage: $lastPage, pageIdx });
   }
 
   get #$currentPage() {
