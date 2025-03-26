@@ -74,6 +74,12 @@ export class Pagination {
     }
   }
 
+  /** @param {number} page */
+  updateCurrentPage(page) {
+    this.currentPage = page;
+    this.#$input.value = page.toString();
+  }
+
   goNextPage() {
     if (this.currentPage === this.#PagesHandler.pages)
       console.warn("No more pages");
