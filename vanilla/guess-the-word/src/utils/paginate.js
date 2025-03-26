@@ -13,5 +13,7 @@ export const paginate = (items, itemsPerPage) => {
     pages.push(items.slice(offset, offset + itemsPerPage));
   }
 
+  if (pages.length === 0) pages.push([]);
+
   return pages;
 };
