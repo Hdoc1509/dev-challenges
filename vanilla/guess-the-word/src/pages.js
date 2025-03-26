@@ -114,7 +114,7 @@ export class Pages {
    * @param {number} page
    * @returns {HTMLUListElement | null}
    */
-  #getpage(page) {
+  #$page(page) {
     return this.#$pagesContainer.querySelector(`.page[data-page="${page}"]`);
   }
 
@@ -173,7 +173,7 @@ export class Pages {
 
     this.#pages[pageIdx].push(item);
 
-    const $lastPage = this.#getpage(pageIdx + 1);
+    const $lastPage = this.#$page(pageIdx + 1);
     const totalItems = this.#pages[pageIdx].length;
 
     $lastPage?.appendChild(
@@ -200,7 +200,7 @@ export class Pages {
 
     this.#pages[pageIdx].unshift(item);
 
-    const $firstPage = this.#getpage(1);
+    const $firstPage = this.#$page(1);
     const totalItems = this.#pages[pageIdx].length;
 
     $firstPage?.prepend(
@@ -233,7 +233,7 @@ export class Pages {
     let $previousPage = null;
 
     for (let i = pageIdx; i < totalPages; i++) {
-      const $page = this.#getpage(i + 1);
+      const $page = this.#$page(i + 1);
 
       if (itemToMove != null) {
         this.#pages[i].unshift(itemToMove);
