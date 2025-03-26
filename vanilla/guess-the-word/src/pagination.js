@@ -16,7 +16,8 @@ export class Pagination {
    * @param {HTMLMenuElement} $pagination
    * @param {Object} extraParams
    * @param {import("./pages").Pages<any>} extraParams.pagesHandler
-   * @param {boolean} [extraParams.renderCurrent] Whether to call `pagesHandler.renderPage(currentPage)` on initialization
+   * @param {boolean} [extraParams.renderCurrent]
+   * Whether to call `pagesHandler.renderPage(currentPage)` on initialization
    */
   constructor($pagination, { pagesHandler, renderCurrent = true }) {
     if ($pagination == null) error('"$pagination" argument is required');
