@@ -120,9 +120,8 @@ export class Pages {
 
   /** @param {number} page */
   renderPage(page) {
-    const $currentPage = /** @type {HTMLUListElement | null} */ (
-      this.#$pagesContainer.querySelector(".page[data-active]")
-    );
+    const $currentPage =
+      this.#$pagesContainer.querySelector(".page[data-active]");
     /** @type {HTMLUListElement | null} */
     let $page = this.#$pagesContainer.querySelector(
       `.page[data-page="${page}"]`,
