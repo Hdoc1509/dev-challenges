@@ -14,6 +14,7 @@ import { DefinitionPagination } from "@/ui/definition/pagination";
 import { DefinitionPages } from "@/ui/definition/pages";
 import { renderDefinitionsCount } from "@/ui/definition/render/count";
 import { removeAllNewBadges } from "@/ui/definition/badge";
+import { closeOpenedDefinition } from "@/ui/definition/close-definition";
 import { $showDefinition } from "@/ui/definition/elements";
 import { $hintsTrigger, HintsTabs } from "@/ui/hints";
 import { $randomWord, $reset } from "@/ui/actions";
@@ -62,5 +63,8 @@ export async function setupEventListeners() {
       DefinitionPagination.handleInputChange($target);
   });
 
-  $menu.addEventListener("close", () => removeAllNewBadges());
+  $menu.addEventListener("close", () => {
+    removeAllNewBadges();
+    closeOpenedDefinition();
+  });
 }
