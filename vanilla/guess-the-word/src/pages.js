@@ -204,11 +204,11 @@ export class Pages {
 
     this.#pages[pageIdx].unshift(item);
 
-    const $newFirstPage = this.#$firstPage;
+    const $firstPage = this.#$firstPage;
     const totalItems = this.#pages[pageIdx].length;
     const isNew = true;
 
-    $newFirstPage?.prepend(
+    $firstPage?.prepend(
       this.#renderItem({
         item,
         index: 0,
@@ -217,7 +217,7 @@ export class Pages {
         insertionMode: INSERTION_MODE.PREPEND,
       }),
     );
-    this.#reorder({ totalItems, $fromPage: $newFirstPage, pageIdx });
+    this.#reorder({ totalItems, $fromPage: $firstPage, pageIdx });
   }
 
   /**
@@ -227,6 +227,8 @@ export class Pages {
    * @param {number} params.pageIdx
    */
   #reorder({ totalItems, $fromPage, pageIdx }) {
+    // TODO: clearEmpty() only be called after the first item is added, i.e.
+    // when totalPages === 1 && totalItems === 1
     if (totalItems === 1 && $fromPage != null) this.#clearEmpty($fromPage);
     else if (totalItems <= this.#itemsPerPage) return;
 
