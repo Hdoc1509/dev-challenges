@@ -243,10 +243,8 @@ export class Pages {
         itemToMove = null;
 
         if ($elementToMove != null) {
-          if ($page == null) {
-            $elementToMove.remove();
-            if ($fromPage != null) this.#onItemRemoved?.($fromPage);
-          } else {
+          if ($page == null) $elementToMove.remove();
+          else {
             $page.insertBefore($elementToMove, $page.firstElementChild);
             this.#onItemMoved?.($page);
           }
