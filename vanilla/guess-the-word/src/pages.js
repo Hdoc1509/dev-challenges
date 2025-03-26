@@ -121,7 +121,7 @@ export class Pages {
   /** @param {number} page */
   renderPage(page) {
     const $currentPage = /** @type {HTMLUListElement | null} */ (
-      this.#$currentPage
+      this.#$pagesContainer.querySelector(".page[data-active]")
     );
     /** @type {HTMLUListElement | null} */
     let $page = this.#$pagesContainer.querySelector(
@@ -186,10 +186,6 @@ export class Pages {
       }),
     );
     this.#reorder({ totalItems, $fromPage: $lastPage, pageIdx });
-  }
-
-  get #$currentPage() {
-    return this.#$pagesContainer.querySelector(".page[data-active]");
   }
 
   /** @type {InsertionMethod<Item>} */
