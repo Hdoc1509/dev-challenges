@@ -106,7 +106,7 @@ export class Pages {
     $total.textContent = `${this.#pages.length}`;
   }
 
-  get pages() {
+  get totalPages() {
     return this.#pages.length;
   }
 
@@ -169,8 +169,9 @@ export class Pages {
     this.#onPageChange?.($page);
   }
 
-  /** @param {Item} item */
-  append(item) {
+  /** @type {InsertionMethod<Item>} */
+  append(item, { renderPage = true } = {}) {
+    if (renderPage) this.renderPage(this.totalPages);
     // FIX: $currentPage can be null
     const $currentPage = /** @type {HTMLUListElement} */ (this.#$currentPage);
     const pageIdx = this.#current - 1;

@@ -46,7 +46,7 @@ export class Pagination {
   }
 
   #checkTriggers() {
-    const pages = this.#PagesHandler.pages;
+    const pages = this.#PagesHandler.totalPages;
 
     if (pages === 1) {
       this.#$pagePrev.disabled = true;
@@ -81,7 +81,7 @@ export class Pagination {
   }
 
   goNextPage() {
-    if (this.currentPage === this.#PagesHandler.pages)
+    if (this.currentPage === this.#PagesHandler.totalPages)
       console.warn("No more pages");
     else this.#selectPage(this.currentPage + 1);
   }
@@ -121,7 +121,7 @@ export class Pagination {
     if (!isValid) $input.value = this.currentPage.toString();
     else {
       const pageNumber = Number(page);
-      const pages = this.#PagesHandler.pages;
+      const pages = this.#PagesHandler.totalPages;
 
       if (pageNumber < 1) this.#selectPage(1);
       else if (pageNumber > pages) this.#selectPage(pages);
