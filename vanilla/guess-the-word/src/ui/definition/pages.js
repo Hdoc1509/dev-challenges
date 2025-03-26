@@ -1,7 +1,7 @@
 import { Pages } from "@/pages";
 import { getElementById, getElementBySelector } from "@lib/dom";
 import { discoveredWords } from "@/state/discovered-words";
-import { createDefinition } from "./create";
+import { createDefinition } from "./render/create-definition";
 import { DEFINITIONS_PER_PAGE } from "@/consts/definitions";
 import { $menuTabContent } from "../menu";
 

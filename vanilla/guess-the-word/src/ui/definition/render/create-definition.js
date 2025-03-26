@@ -1,6 +1,6 @@
 import { getElementById, getElementBySelector } from "@lib/dom";
 import { handleDefinitionOpen } from "@/events/handlers/definition-open";
-import { addNewBadge } from "./badge";
+import { addNewBadge } from "../badge";
 
 const $definitionTemplate = getElementById(
   "definition-template",
