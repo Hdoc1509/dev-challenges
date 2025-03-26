@@ -178,14 +178,13 @@ export class Pages {
     this.#pages[pageIdx].push(item);
 
     const totalItems = this.#pages[pageIdx].length;
-    const isNew = true;
 
     $currentPage.appendChild(
       this.#renderItem({
         item,
         index: totalItems - 1,
         totalItems,
-        isNew,
+        isNew: true,
         insertionMode: INSERTION_MODE.APPEND,
       }),
     );
@@ -206,14 +205,13 @@ export class Pages {
 
     const $firstPage = this.#$firstPage;
     const totalItems = this.#pages[pageIdx].length;
-    const isNew = true;
 
     $firstPage?.prepend(
       this.#renderItem({
         item,
         index: 0,
         totalItems,
-        isNew,
+        isNew: true,
         insertionMode: INSERTION_MODE.PREPEND,
       }),
     );
