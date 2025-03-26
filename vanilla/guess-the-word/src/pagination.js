@@ -39,6 +39,15 @@ export class Pagination {
       HTMLInputElement,
       $pagination,
     );
+
+    const inputPage = Number(this.#$input.value);
+
+    if (
+      Number.isNaN(inputPage) ||
+      inputPage > this.#PagesHandler.totalPages ||
+      inputPage < 1
+    )
+      this.#$input.value = this.#PagesHandler.totalPages.toString();
     this.currentPage = Number(this.#$input.value);
 
     if (renderCurrent) this.#PagesHandler.renderPage(this.currentPage);
