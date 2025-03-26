@@ -41,6 +41,7 @@ export class Pages {
   #renderItem;
   #clearEmpty;
   #onItemRemoved;
+  #onItemMoved;
   #onPageChange;
   #current = 0;
 
@@ -54,6 +55,7 @@ export class Pages {
    * @param {(params: RenderItemParams<Item>) => RenderItemResult} extraParams.renderItem
    * @param {($page: HTMLUListElement) => void} extraParams.clearEmpty
    * @param {($page: HTMLUListElement) => void} [extraParams.onItemRemoved]
+   * @param {($page: HTMLUListElement) => void} [extraParams.onItemMoved]
    * @param {($page: HTMLUListElement) => void} [extraParams.onPageChange]
    * @param {HTMLTemplateElement} extraParams.$pageTemplate
    * @param {HTMLTemplateElement} extraParams.$pageEmptyTemplate
@@ -67,6 +69,7 @@ export class Pages {
       renderItem,
       clearEmpty,
       onItemRemoved,
+      onItemMoved,
       onPageChange,
       $pageTemplate,
       $pageEmptyTemplate,
@@ -97,6 +100,7 @@ export class Pages {
     this.#$pageEmptyTemplate = $pageEmptyTemplate;
     this.#clearEmpty = clearEmpty;
     this.#onItemRemoved = onItemRemoved;
+    this.#onItemMoved = onItemMoved;
     this.#onPageChange = onPageChange;
 
     $total.textContent = `${this.#pages.length}`;
@@ -241,7 +245,10 @@ export class Pages {
           if ($page == null) {
             $elementToMove.remove();
             if ($fromPage != null) this.#onItemRemoved?.($fromPage);
-          } else $page.insertBefore($elementToMove, $page.firstElementChild);
+          } else {
+            $page.insertBefore($elementToMove, $page.firstElementChild);
+            this.#onItemMoved?.($page);
+          }
           $elementToMove = null;
         }
       }
