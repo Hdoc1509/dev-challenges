@@ -30,10 +30,12 @@ export class Pagination {
     this.#$pagePrev = getElementBySelector(
       "li.pagination__item > .pagination__trigger[data-page-prev]",
       HTMLButtonElement,
+      $pagination,
     );
     this.#$pageNext = getElementBySelector(
       "li.pagination__item > .pagination__trigger[data-page-next]",
       HTMLButtonElement,
+      $pagination,
     );
     this.#$input = getElementBySelector(
       "li.pagination__item[aria-current=page] > .pagination__current",
