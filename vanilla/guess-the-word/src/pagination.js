@@ -62,6 +62,11 @@ export class Pagination {
 
     if (renderCurrent) this.#PagesHandler.renderPage(this.currentPage);
     this.#checkTriggers();
+    this.#PagesHandler.addEventListener("pageadd", (totalPages) => {
+      this.#checkTriggers();
+      this.#$input.max = `${totalPages}`;
+      this.#$total.textContent = `${totalPages}`;
+    });
   }
 
   #checkTriggers() {
