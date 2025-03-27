@@ -79,12 +79,15 @@ export class Pagination {
     } else if (this.currentPage === 1) {
       this.#$pagePrev.disabled = true;
       this.#$pageNext.disabled = false;
+      this.#$input.disabled = false;
     } else if (this.currentPage === pages) {
       this.#$pagePrev.disabled = false;
       this.#$pageNext.disabled = true;
+      this.#$input.disabled = false;
     } else {
       this.#$pagePrev.disabled = false;
       this.#$pageNext.disabled = false;
+      this.#$input.disabled = false;
     }
   }
 
