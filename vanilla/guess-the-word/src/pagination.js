@@ -97,6 +97,7 @@ export class Pagination {
   updateCurrentPage(page) {
     this.currentPage = page;
     this.#$input.value = page.toString();
+    this.#checkTriggers();
   }
 
   goNextPage() {
