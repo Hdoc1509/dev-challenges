@@ -118,13 +118,14 @@ export class Pagination {
   }
 
   #goNextPage() {
-    if (this.currentPage === this.#PagesHandler.totalPages) return;
-    this.#selectPage(this.currentPage + 1);
+    if (this.currentPage === this.#PagesHandler.totalPages)
+      this.#$pageNext.disabled = true;
+    else this.#selectPage(this.currentPage + 1);
   }
 
   #goPrevPage() {
-    if (this.currentPage === 1) return;
-    this.#selectPage(this.currentPage - 1);
+    if (this.currentPage === 1) this.#$pagePrev.disabled = true;
+    else this.#selectPage(this.currentPage - 1);
   }
 
   /**
