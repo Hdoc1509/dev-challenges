@@ -59,14 +59,23 @@ export class Pagination {
       this.#$input.value = this.#PagesHandler.totalPages.toString();
     this.#$total.textContent = `${this.#PagesHandler.totalPages}`;
     this.currentPage = Number(this.#$input.value);
+    this.#setAriaLabel();
 
     if (renderCurrent) this.#PagesHandler.renderPage(this.currentPage);
     this.#checkTriggers();
     this.#PagesHandler.addEventListener("pageadd", (totalPages) => {
       this.#checkTriggers();
       this.#$input.max = `${totalPages}`;
+      this.#setAriaLabel();
       this.#$total.textContent = `${totalPages}`;
     });
+  }
+
+  #setAriaLabel() {
+    this.#$input.setAttribute(
+      "aria-label",
+      `Page ${this.currentPage} of ${this.#PagesHandler.totalPages}`,
+    );
   }
 
   #checkTriggers() {
