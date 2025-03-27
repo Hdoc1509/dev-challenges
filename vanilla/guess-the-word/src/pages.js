@@ -30,6 +30,8 @@ const error = (message) => {
 
 /** @typedef {DocumentFragment | HTMLLIElement} RenderItemResult */
 
+/** @typedef {(totalPages: number) => void} PageAddEventHandler */
+
 /** @template Item */
 export class Pages {
   #$pagesContainer;
@@ -43,6 +45,8 @@ export class Pages {
   #onItemRemoved;
   #onItemMoved;
   #onPageChange;
+  /** @type {{pageadd: PageAddEventHandler[]}} */
+  #events = { pageadd: [] };
 
   static INSERTION_MODE = INSERTION_MODE;
 
@@ -56,6 +60,7 @@ export class Pages {
    * @param {($page: HTMLUListElement) => void} [extraParams.onItemRemoved]
    * @param {($page: HTMLUListElement) => void} [extraParams.onItemMoved]
    * @param {($page: HTMLUListElement) => void} [extraParams.onPageChange]
+   * @param {PageAddEventHandler} [extraParams.onPageAdd]
    * @param {HTMLTemplateElement} extraParams.$pageTemplate
    * @param {HTMLTemplateElement} extraParams.$pageEmptyTemplate
    * @param {HTMLElement} extraParams.$total
@@ -70,6 +75,7 @@ export class Pages {
       onItemRemoved,
       onItemMoved,
       onPageChange,
+      onPageAdd,
       $pageTemplate,
       $pageEmptyTemplate,
       $total,
@@ -101,6 +107,7 @@ export class Pages {
     this.#onItemRemoved = onItemRemoved;
     this.#onItemMoved = onItemMoved;
     this.#onPageChange = onPageChange;
+    if (typeof onPageAdd === "function") this.#events.pageadd.push(onPageAdd);
 
     $total.textContent = `${this.#pages.length}`;
   }
@@ -268,5 +275,6 @@ export class Pages {
 
     this.#pages[pageIdx].push(itemToMove);
     this.#$total.textContent = `${totalPages + 1}`;
+    this.#events.pageadd.forEach((handler) => handler(totalPages + 1));
   }
 }
