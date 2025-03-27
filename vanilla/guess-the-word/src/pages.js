@@ -121,6 +121,15 @@ export class Pages {
   }
 
   /**
+   * @template {keyof PageEvents} Event
+   * @param {Event} event
+   * @param {PageEvents[Event][number]} handler
+   */
+  addEventListener(event, handler) {
+    this.#events[event].push(handler);
+  }
+
+  /**
    * @param {number} page
    * @returns {HTMLUListElement | null}
    */
