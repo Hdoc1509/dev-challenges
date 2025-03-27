@@ -117,15 +117,14 @@ export class Pagination {
     this.#checkTriggers();
   }
 
-  goNextPage() {
-    if (this.currentPage === this.#PagesHandler.totalPages)
-      console.warn("No more pages");
-    else this.#selectPage(this.currentPage + 1);
+  #goNextPage() {
+    if (this.currentPage === this.#PagesHandler.totalPages) return;
+    this.#selectPage(this.currentPage + 1);
   }
 
-  goPrevPage() {
-    if (this.currentPage === 1) console.warn("No previous page");
-    else this.#selectPage(this.currentPage - 1);
+  #goPrevPage() {
+    if (this.currentPage === 1) return;
+    this.#selectPage(this.currentPage - 1);
   }
 
   /**
@@ -138,8 +137,8 @@ export class Pagination {
 
   /** @param {HTMLButtonElement} $trigger */
   handleTrigger($trigger) {
-    if ($trigger === this.#$pagePrev) this.goPrevPage();
-    else this.goNextPage();
+    if ($trigger === this.#$pagePrev) this.#goPrevPage();
+    else this.#goNextPage();
   }
 
   /**
