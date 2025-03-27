@@ -30,7 +30,17 @@ const error = (message) => {
 
 /** @typedef {DocumentFragment | HTMLLIElement} RenderItemResult */
 
-/** @typedef {(totalPages: number) => void} PageAddEventHandler */
+/** @typedef {"pageadd"} PageEventType */
+
+/**
+ * @typedef PageEventHandler
+ * @property {(totalPages: number) => void} pageadd
+ */
+
+/**
+ * @typedef PageEvents
+ * @property {PageEventHandler["pageadd"][]} pageadd
+ */
 
 /** @template Item */
 export class Pages {
@@ -44,7 +54,7 @@ export class Pages {
   #onItemRemoved;
   #onItemMoved;
   #onPageChange;
-  /** @type {{pageadd: PageAddEventHandler[]}} */
+  /** @type {PageEvents} */
   #events = { pageadd: [] };
 
   static INSERTION_MODE = INSERTION_MODE;
@@ -59,7 +69,7 @@ export class Pages {
    * @param {($page: HTMLUListElement) => void} [extraParams.onItemRemoved]
    * @param {($page: HTMLUListElement) => void} [extraParams.onItemMoved]
    * @param {($page: HTMLUListElement) => void} [extraParams.onPageChange]
-   * @param {PageAddEventHandler} [extraParams.onPageAdd]
+   * @param {PageEventHandler["pageadd"]} [extraParams.onPageAdd]
    * @param {HTMLTemplateElement} extraParams.$pageTemplate
    * @param {HTMLTemplateElement} extraParams.$pageEmptyTemplate
    */
