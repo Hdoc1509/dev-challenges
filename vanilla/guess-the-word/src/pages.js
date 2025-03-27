@@ -278,6 +278,11 @@ export class Pages {
     if (itemToMove == null) return;
 
     this.#pages.push([itemToMove]);
+    // NOTE: this can only happen when first page has more than itemsPerPage items
+    if ($elementToMove != null) {
+      $elementToMove.remove();
+      if ($previousPage != null) this.#onItemRemoved?.($previousPage);
+    }
     this.#events.pageadd.forEach((handler) => handler(totalPages + 1));
   }
 }
