@@ -10,7 +10,9 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 YELLOW='\033[1;33m'
 
-if git diff --quiet origin/master HEAD "$JQ_SCRIPT" &&
+branch=$(git branch --show-current)
+
+if git diff --quiet origin/"$branch" "$branch" "$JQ_SCRIPT" &&
   git diff --quiet "$JQ_SCRIPT"; then
   echo
   echo -e "${YELLOW}[words]: Filter script is up to date"
