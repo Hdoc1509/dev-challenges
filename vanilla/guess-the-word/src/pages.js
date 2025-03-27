@@ -277,7 +277,7 @@ export class Pages {
 
     if (itemToMove == null) return;
 
-    this.#pages[pageIdx].push(itemToMove);
+    this.#pages.push([itemToMove]);
     this.#events.pageadd.forEach((handler) => handler(totalPages + 1));
   }
 }
