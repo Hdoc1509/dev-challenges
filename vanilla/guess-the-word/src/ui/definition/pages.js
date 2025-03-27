@@ -1,9 +1,9 @@
 import { Pages } from "@/pages";
-import { getElementById, getElementBySelector } from "@lib/dom";
+import { getElementById } from "@lib/dom";
 import { discoveredWords } from "@/state/discovered-words";
 import { createDefinition } from "./render/create-definition";
-import { DEFINITIONS_PER_PAGE } from "@/consts/definitions";
 import { $menuTabContent } from "../menu";
+import { DEFINITIONS_PER_PAGE } from "@/consts/definitions";
 
 export const $definitionPagesContainer = getElementById(
   "definition-pages-container",
@@ -45,9 +45,5 @@ export const DefinitionPages = new Pages($definitionPagesContainer, {
   $pageEmptyTemplate: getElementById(
     "definition-page-empty-template",
     HTMLTemplateElement,
-  ),
-  $total: getElementBySelector(
-    "#definition-pagination .pagination__total",
-    HTMLSpanElement,
   ),
 });

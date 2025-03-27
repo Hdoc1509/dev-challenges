@@ -37,7 +37,6 @@ export class Pages {
   #$pagesContainer;
   #$pageTemplate;
   #$pageEmptyTemplate;
-  #$total;
   #pages;
   #itemsPerPage;
   #renderItem;
@@ -63,7 +62,6 @@ export class Pages {
    * @param {PageAddEventHandler} [extraParams.onPageAdd]
    * @param {HTMLTemplateElement} extraParams.$pageTemplate
    * @param {HTMLTemplateElement} extraParams.$pageEmptyTemplate
-   * @param {HTMLElement} extraParams.$total
    */
   constructor(
     $pagesContainer,
@@ -78,7 +76,6 @@ export class Pages {
       onPageAdd,
       $pageTemplate,
       $pageEmptyTemplate,
-      $total,
     },
   ) {
     // TODO: move validations to separate function
@@ -98,7 +95,6 @@ export class Pages {
 
     this.#$pagesContainer = $pagesContainer;
     this.#$pageTemplate = $pageTemplate;
-    this.#$total = $total;
     this.#pages = paginate(items, itemsPerPage);
     this.#itemsPerPage = itemsPerPage;
     this.#renderItem = renderItem;
@@ -108,8 +104,6 @@ export class Pages {
     this.#onItemMoved = onItemMoved;
     this.#onPageChange = onPageChange;
     if (typeof onPageAdd === "function") this.#events.pageadd.push(onPageAdd);
-
-    $total.textContent = `${this.#pages.length}`;
   }
 
   get totalPages() {
@@ -274,7 +268,6 @@ export class Pages {
     if (itemToMove == null) return;
 
     this.#pages[pageIdx].push(itemToMove);
-    this.#$total.textContent = `${totalPages + 1}`;
     this.#events.pageadd.forEach((handler) => handler(totalPages + 1));
   }
 }

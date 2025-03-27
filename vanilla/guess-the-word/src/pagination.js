@@ -10,6 +10,7 @@ export class Pagination {
   #$pagePrev;
   #$pageNext;
   #$input;
+  #$total;
   currentPage;
 
   /**
@@ -42,6 +43,11 @@ export class Pagination {
       HTMLInputElement,
       $pagination,
     );
+    this.#$total = getElementBySelector(
+      "li.pagination__item[aria-current=page] .pagination__total",
+      HTMLSpanElement,
+      $pagination,
+    );
 
     const inputPage = Number(this.#$input.value);
 
@@ -51,6 +57,7 @@ export class Pagination {
       inputPage < 1
     )
       this.#$input.value = this.#PagesHandler.totalPages.toString();
+    this.#$total.textContent = `${this.#PagesHandler.totalPages}`;
     this.currentPage = Number(this.#$input.value);
 
     if (renderCurrent) this.#PagesHandler.renderPage(this.currentPage);
