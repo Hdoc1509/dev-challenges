@@ -16,7 +16,7 @@ if git diff --quiet origin/"$branch" "$branch" "$JQ_SCRIPT" &&
   git diff --quiet "$JQ_SCRIPT"; then
   echo
   echo -e "${YELLOW}[words]: Filter script is up to date"
-  echo -e "[words]: Skipping generation...${NOCOLOR}"
+  echo -e "${YELLOW}[words]: Skipping generation...${NOCOLOR}"
   exit 0
 fi
 

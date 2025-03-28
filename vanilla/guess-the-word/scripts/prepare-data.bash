@@ -13,5 +13,5 @@ if [[ ! -f "$MOCKS_DIR"/all-words-data.json ]]; then
   echo -e "${GREEN}[prepare-data]: All words data mock generated!${NOCOLOR}"
 else
   echo -e "${YELLOW}[prepare-data]: All words data mock already exists"
-  echo -e "[prepare-data]: Skipping generation...${NOCOLOR}"
+  echo -e "${YELLOW}[prepare-data]: Skipping generation...${NOCOLOR}"
 fi
