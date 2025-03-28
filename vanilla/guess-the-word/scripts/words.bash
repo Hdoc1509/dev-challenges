@@ -28,9 +28,12 @@ if filter_script_is_up_to_date &>/dev/null; then
 fi
 
 generate_mock() {
+  local target_file=""
   local min=$GENERAL_MIN_LENGTH
   local max=""
   local file_name=""
+  local words_initial_count=0
+  local words_final_count=0
 
   while (($# >= 1)); do
     case $1 in
@@ -46,11 +49,25 @@ generate_mock() {
     exit 1
   fi
 
+  target_file="$MOCKS_DIR"/words/"$file_name".json
+
+  if [[ -f "$target_file" ]]; then
+    words_initial_count="$(jq -r 'length' "$target_file")"
+  fi
+
   jq --arg MIN_LENGTH "$min" --arg MAX_LENGTH "$max" --from-file "$JQ_FILTER_SCRIPT" \
     "$MOCKS_DIR"/all-words-data.json | jq --compact-output '[keys[]]' \
-    >"$MOCKS_DIR"/words/"$file_name".json
+    >"$target_file"
+
+  words_final_count="$(jq -r 'length' "$target_file")"
 
   echo -e "${GREEN}[words]: Generated $file_name.json!${NOCOLOR}"
+
+  if [[ $words_initial_count -gt 0 && $words_initial_count != "$words_final_count" ]]; then
+    echo -e "${YELLOW}[words]: $file_name.json has changed!"
+    echo -e "${YELLOW}[words]: Previous count: $words_initial_count${NOCOLOR}"
+    echo -e "${YELLOW}[words]: Current count: $words_final_count${NOCOLOR}"
+  fi
 }
 
 echo
