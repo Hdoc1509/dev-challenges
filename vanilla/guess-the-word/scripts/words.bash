@@ -82,6 +82,3 @@ generate_mock \
   --max-length "$(jq -r '.max' "$EXTREME_INSANE_LENGTH")" \
   --name extreme
 generate_mock --min-length "$(jq -r '.min' "$WHY_VOID_LENGTH")" --name why
-
-jq 'length' "$MOCKS_DIR"/definitions.json >"$MOCKS_DIR"/words-total.json
-echo -e "${GREEN}[words]: Generated words-total.json!${NOCOLOR}"
