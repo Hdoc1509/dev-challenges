@@ -16,8 +16,12 @@ YELLOW='\033[1;33m'
 
 branch=$(git branch --show-current)
 
-if git diff --quiet origin/"$branch" "$branch" "$JQ_SCRIPT" &&
-  git diff --quiet "$JQ_SCRIPT"; then
+filter_script_is_up_to_date() {
+  git diff --quiet origin/"$branch" "$branch" "$JQ_SCRIPT" &&
+    git diff --quiet "$JQ_SCRIPT"
+}
+
+if filter_script_is_up_to_date &>/dev/null; then
   echo
   echo -e "${YELLOW}[words]: Filter script is up to date"
   echo -e "${YELLOW}[words]: Skipping generation...${NOCOLOR}"
