@@ -9,6 +9,7 @@ EASY_LENGTH="$MOCKS_DIR"/difficulties-by-length/easy.json
 NORMAL_MASTER_LENGTH="$MOCKS_DIR"/difficulties-by-length/normal-master.json
 EXTREME_INSANE_LENGTH="$MOCKS_DIR"/difficulties-by-length/extreme-insane.json
 WHY_VOID_LENGTH="$MOCKS_DIR"/difficulties-by-length/why-void.json
+GENERAL_MIN_LENGTH="$(jq -r '.min' "$EASY_LENGTH")"
 
 NOCOLOR='\033[0m'
 GREEN='\033[0;32m'
@@ -27,7 +28,7 @@ if filter_script_is_up_to_date &>/dev/null; then
 fi
 
 generate_mock() {
-  local min=4
+  local min=$GENERAL_MIN_LENGTH
   local max=""
   local file_name=""
 
