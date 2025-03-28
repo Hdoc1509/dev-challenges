@@ -17,9 +17,12 @@ fi
 
 get_challenge_title() {
   local app_path="$1"
-  head --lines=1 "$app_path/README.md" |
-    awk -F ">" '{ print $2 }' |
-    awk -F "<" '{ print $1 }'
+  # NOTE: update line if _templates/app/shared/README.md.hygen changes
+  #       the line of challenge title
+  head --lines=2 "$app_path/README.md" |
+    awk --field-separator=">" '{ print $2 }' |
+    awk --field-separator="<" '{ print $1 }' |
+    tr --delete '\n'
 }
 
 echo
