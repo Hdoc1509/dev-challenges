@@ -72,6 +72,48 @@
   color: var(--definition-label-text);
   cursor: pointer;
 }
+.definition__difficulties {
+  display: inline-flex;
+  gap: 0.5ch;
+  margin-left: 0.5em;
+  padding: 0;
+}
+.definition__difficulty {
+  display: grid;
+  place-content: center;
+
+  width: 2ch;
+  height: 2ch;
+  border: 1px solid;
+  border-radius: 4px;
+}
+.definition__difficulty[aria-label="Easy"] {
+  color: var(--difficulty-easy);
+}
+.definition__difficulty[aria-label="Normal"] {
+  color: var(--difficulty-normal);
+}
+.definition__difficulty[aria-label="Hard"] {
+  color: var(--difficulty-hard);
+}
+.definition__difficulty[aria-label="Master"] {
+  color: var(--difficulty-master);
+}
+.definition__difficulty[aria-label="Extreme"] {
+  color: var(--difficulty-extreme);
+}
+.definition__difficulty[aria-label="Insane"] {
+  color: var(--difficulty-insane);
+}
+.definition__difficulty[aria-label="Why"] {
+  color: var(--difficulty-why);
+}
+.definition__difficulty[aria-label="Void"] {
+  color: var(--difficulty-void);
+}
+.definition__difficulty:not([data-completed]) {
+  color: var(--word-bg);
+}
 .definition__content {
   display: flex;
   flex-direction: column;
