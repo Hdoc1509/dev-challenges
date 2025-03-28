@@ -5,6 +5,8 @@ PROJECT_ROOT="$REPO_ROOT"/vanilla/guess-the-word
 MOCKS_DIR="$PROJECT_ROOT"/src/mocks
 JQ_FILTER_SCRIPT="$PROJECT_ROOT"/scripts/filter-words.jq
 JQ_PARSE_SCRIPT="$PROJECT_ROOT"/scripts/parse-definitions.jq
+EASY_LENGTH="$MOCKS_DIR"/difficulties-by-length/easy.json
+MIN_LENGTH="$(jq -r '.min' "$EASY_LENGTH")"
 
 NOCOLOR='\033[0m'
 GREEN='\033[0;32m'
@@ -20,7 +22,7 @@ if git diff --quiet origin/"$branch" "$branch" "$JQ_FILTER_SCRIPT" &&
   exit 0
 fi
 
-jq --arg MIN_LENGTH "4" --arg MAX_LENGTH "" --from-file "$JQ_FILTER_SCRIPT" \
+jq --arg MIN_LENGTH "$MIN_LENGTH" --arg MAX_LENGTH "" --from-file "$JQ_FILTER_SCRIPT" \
   "$MOCKS_DIR"/all-words-data.json |
   jq --compact-output --from-file "$JQ_PARSE_SCRIPT" \
     >"$MOCKS_DIR"/definitions.json
