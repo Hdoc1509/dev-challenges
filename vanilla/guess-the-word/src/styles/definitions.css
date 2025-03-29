@@ -112,7 +112,7 @@
   color: var(--difficulty-void);
 }
 .definition__difficulty:not([data-completed]) {
-  color: var(--word-bg);
+  color: rgb(175, 175, 175);
 }
 .definition__content {
   display: flex;
