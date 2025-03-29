@@ -18,6 +18,7 @@ export function handleGameSuccess() {
   $hints.removeAttribute("data-active");
   $hintsContent.removeAttribute("data-active");
 
+  // TODO: update definition difficulty styles instead of return immediately
   if (discoveredWords.has(currentWord)) return;
 
   $definitionSection.setAttribute("data-active", "");
