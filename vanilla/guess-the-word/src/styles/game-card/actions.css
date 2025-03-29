@@ -9,7 +9,8 @@
   background-color: var(--secondary);
   border: none;
   border-radius: 12px;
-  outline: none;
+  /* TODO: apply same outline to other buttons */
+  outline: 3px solid var(--_control-outline-color);
 
   font-weight: 600;
   font-size: var(--button-fs);
@@ -21,6 +22,7 @@
 .game-card .actions__control:hover,
 .game-card .actions__control:focus {
   transform: translateY(-4px) scale(1.05);
+  --_control-outline-color: var(--text);
 }
 .game-card .actions__control:disabled {
   pointer-events: none;
