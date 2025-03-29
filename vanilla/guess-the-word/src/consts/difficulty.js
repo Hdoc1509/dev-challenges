@@ -9,3 +9,5 @@ export const DIFFICULTY = Object.freeze({
   VOID: "void"
 });
 /** @typedef {DIFFICULTY[keyof DIFFICULTY]} Difficulty */
+
+export const DIFFICULTIES = new Set(Object.values(DIFFICULTY));
