@@ -40,9 +40,32 @@ export const discoveredWords = (() => {
   return wordsMap;
 })();
 
-/** @param {string} word */
-export const addDiscoveredWord = (word) => {
-  discoveredWords.add(word);
+/**
+ * @param {string} word
+ * @param {{ difficulty: import("@/consts/difficulty").Difficulty }} extraParams
+ */
+export const addDiscoveredWord = (word, { difficulty }) => {
+  if (!getDifficultiesOfWord(word).includes(difficulty)) return;
+
+  const difficulties = discoveredWords.has(word)
+    ? /** @type {Set<string>} */ (discoveredWords.get(word))
+    : new Set([difficulty]);
+
+  difficulties.add(difficulty);
+
+  if (difficulties.size === discoveredWords.get(word)?.size) return;
+
+  discoveredWords.set(word, difficulties);
   wordsToSave.unshift(word);
-  localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(wordsToSave));
+
+  // NOTE: can this be really slow when discovered words reach 1k+?
+  // if yes, then I should use:
+  // - IndexedDB or
+  // - some kind of free storage service, will require some auth logic
+  const data = wordsToSave.map((word) => [
+    word,
+    Array.from(/** @type {Set<string>} */ (discoveredWords.get(word))),
+  ]);
+
+  localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(data));
 };
