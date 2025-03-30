@@ -1,4 +1,5 @@
 import { getElementById, getElementBySelector } from "@lib/dom";
+import { discoveredWords } from "@/state/discovered-words";
 import { handleDefinitionOpen } from "@/events/handlers/definition-open";
 import { getDifficultiesOfWord } from "@/utils/difficulty/of-word";
 import { addNewBadge } from "../badge";
@@ -45,7 +46,8 @@ export const createDefinition = (word, { isNew = false } = {}) => {
 
     $item.classList.add("definition__difficulty");
     $item.setAttribute("aria-label", label);
-    // if (discoveredWords.get(word).has(difficulty)) $span.dataset.completed = true;
+    if (discoveredWords.get(word)?.has(difficulty))
+      $item.dataset.completed = "";
     $span.textContent = `${difficulty[0].toUpperCase()}`;
     $span.setAttribute("aria-hidden", "true");
     $item.appendChild($span);
