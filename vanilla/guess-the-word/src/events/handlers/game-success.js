@@ -1,6 +1,8 @@
 import { showAlert } from "@lib/alert";
 import { addDiscoveredWord, discoveredWords } from "@/state/discovered-words";
 import { currentWord } from "@/state/current-word";
+import { difficulty } from "@/state/difficulty";
+import { getDifficultiesOfWord } from "@/utils/difficulty/of-word";
 import { setWordCompleted, showCorrectWord } from "@/ui/word";
 import { hideTimerBar } from "@/ui/timer";
 import { DefinitionPages } from "@/ui/definition/pages";
@@ -18,11 +20,19 @@ export function handleGameSuccess() {
   $hints.removeAttribute("data-active");
   $hintsContent.removeAttribute("data-active");
 
-  // TODO: update definition difficulty styles instead of return immediately
-  if (discoveredWords.has(currentWord)) return;
+  if (!discoveredWords.has(currentWord)) {
+    if (
+      discoveredWords.get(currentWord)?.size !==
+      getDifficultiesOfWord(currentWord).length
+    ) {
+      $definitionSection.setAttribute("data-active", "");
+      // NOTE: need to be added before DefinitionPages.prepend(currentWord);
+      addDiscoveredWord(currentWord, { difficulty });
+      // TODO: update definition difficulty styles
+      // updateDefinitionDifficulty(currentWord, { difficulty });
+    }
 
-  $definitionSection.setAttribute("data-active", "");
-  addDiscoveredWord(currentWord);
-  DefinitionPages.prepend(currentWord);
-  renderDefinitionsCount(discoveredWords.size);
+    DefinitionPages.prepend(currentWord);
+    renderDefinitionsCount(discoveredWords.size);
+  }
 }
