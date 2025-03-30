@@ -11,7 +11,7 @@ export const $definitionPagesContainer = getElementById(
 );
 
 export const DefinitionPages = new Pages($definitionPagesContainer, {
-  items: Array.from(discoveredWords),
+  items: Array.from(discoveredWords.keys()),
   itemsPerPage: DEFINITIONS_PER_PAGE,
   renderItem({ item, index, totalItems, isNew, insertionMode }) {
     const $definition = createDefinition(item, { isNew });
