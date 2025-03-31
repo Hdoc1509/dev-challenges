@@ -2,7 +2,7 @@ import { showAlert } from "@lib/alert";
 import { addDiscoveredWord, discoveredWords } from "@/state/discovered-words";
 import { currentWord } from "@/state/current-word";
 import { difficulty } from "@/state/difficulty";
-import { getDifficultiesOfWord } from "@/utils/difficulty/of-word";
+import { hasCompletedDifficulties } from "@/utils/difficulty/completed";
 import { setWordCompleted, showCorrectWord } from "@/ui/word";
 import { hideTimerBar } from "@/ui/timer";
 import { DefinitionPages } from "@/ui/definition/pages";
@@ -26,10 +26,7 @@ export function handleGameSuccess() {
     addDiscoveredWord(currentWord, { difficulty });
     DefinitionPages.prepend(currentWord);
     renderDefinitionsCount(discoveredWords.size);
-  } else if (
-    getDifficultiesOfWord(currentWord).length !==
-    discoveredWords.get(currentWord)?.size
-  ) {
+  } else if (!hasCompletedDifficulties({ word: currentWord })) {
     // NOTE: definition may be not rendered if its page was not rendered yet
     // only show definition button if the item is rendered
     $definitionSection.setAttribute("data-active", "");
