@@ -21,18 +21,20 @@ export function handleGameSuccess() {
   $hintsContent.removeAttribute("data-active");
 
   if (!discoveredWords.has(currentWord)) {
-    if (
-      discoveredWords.get(currentWord)?.size !==
-      getDifficultiesOfWord(currentWord).length
-    ) {
-      $definitionSection.setAttribute("data-active", "");
-      // NOTE: need to be added before DefinitionPages.prepend(currentWord);
-      addDiscoveredWord(currentWord, { difficulty });
-      // TODO: update definition difficulty styles
-      // updateDefinitionDifficulty(currentWord, { difficulty });
-    }
-
+    $definitionSection.setAttribute("data-active", "");
+    // NOTE: render of definition's difficulty depends on discoveredWords
+    addDiscoveredWord(currentWord, { difficulty });
     DefinitionPages.prepend(currentWord);
     renderDefinitionsCount(discoveredWords.size);
+  } else if (
+    getDifficultiesOfWord(currentWord).length !==
+    discoveredWords.get(currentWord)?.size
+  ) {
+    // NOTE: definition may be not rendered if its page was not rendered yet
+    // only show definition button if the item is rendered
+    $definitionSection.setAttribute("data-active", "");
+    addDiscoveredWord(currentWord, { difficulty });
+    // TODO: update definition difficulty styles
+    // updateDefinitionDifficulty(currentWord, { difficulty });
   }
 }
