@@ -2,6 +2,7 @@ import { getDefinition } from "@/services/definition";
 import { getElementBySelector } from "@lib/dom";
 import { createRetryButton } from "@/ui/definition/retry";
 import { createSpinner } from "@/ui/spinner";
+import { hasCompletedDifficulties } from "@/utils/difficulty/completed";
 
 /**
  * @param {HTMLDetailsElement} $definitionDetails
@@ -56,7 +57,8 @@ export async function handleDefinitionOpen($definitionDetails, { controller }) {
   }
 
   controller.abort();
-  $definitionDetails.removeAttribute("data-word");
+  if (hasCompletedDifficulties({ word }))
+    $definitionDetails.removeAttribute("data-word");
   $definitionDetails.removeAttribute("data-status");
   $definitionDetails.scrollIntoView();
   $content.querySelector(".definition__error")?.remove();
