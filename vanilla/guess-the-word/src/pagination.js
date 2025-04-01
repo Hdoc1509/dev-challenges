@@ -50,14 +50,11 @@ export class Pagination {
     );
 
     const inputPage = Number(this.#$input.value);
+    const totalPages = this.#PagesHandler.totalPages;
 
-    if (
-      Number.isNaN(inputPage) ||
-      inputPage > this.#PagesHandler.totalPages ||
-      inputPage < 1
-    )
-      this.#$input.value = this.#PagesHandler.totalPages.toString();
-    this.#$total.textContent = `${this.#PagesHandler.totalPages}`;
+    if (Number.isNaN(inputPage) || inputPage > totalPages || inputPage < 1)
+      this.#$input.value = `${totalPages}`;
+    this.#$total.textContent = `${totalPages}`;
     this.currentPage = Number(this.#$input.value);
     this.#setAriaLabel();
 
