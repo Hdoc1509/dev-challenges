@@ -47,9 +47,7 @@ export const discoveredWords = (() => {
 export const addDiscoveredWord = (word, { difficulty }) => {
   if (!getDifficultiesOfWord(word).includes(difficulty)) return;
 
-  const difficulties = discoveredWords.has(word)
-    ? Array.from(discoveredWords.get(word) ?? [])
-    : [difficulty];
+  const difficulties = Array.from(discoveredWords.get(word) ?? [difficulty]);
 
   difficulties.push(difficulty);
 
