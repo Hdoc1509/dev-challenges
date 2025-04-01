@@ -1,5 +1,6 @@
 #!/bin/bash
 
+branch=$(git branch --show-current)
 REPO_ROOT=$(git rev-parse --show-toplevel)
 PROJECT_ROOT="$REPO_ROOT"/vanilla/guess-the-word
 MOCKS_DIR="$PROJECT_ROOT"/src/mocks
@@ -16,16 +17,10 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 YELLOW='\033[1;33m'
 
-export JQ_FILTER_SCRIPT
 
-source "$SCRIPTS_DIR"/check-filter-script.bash
-
-if filter_script_is_up_to_date &>/dev/null; then
-  echo
-  echo -e "${YELLOW}[words]: Filter script is up to date"
-  echo -e "${YELLOW}[words]: Skipping generation...${NOCOLOR}"
-  exit 0
-fi
+is_up_to_date() {
+  git diff --quiet origin/"$branch" "$branch" "$1" && git diff --quiet "$1" &>/dev/null
+}
 
 generate_mock() {
   local target_file=""
@@ -51,6 +46,12 @@ generate_mock() {
 
   target_file="$MOCKS_DIR"/words/"$file_name".json
 
+  if is_up_to_date "$JQ_FILTER_SCRIPT" && [[ -f "$target_file" ]]; then
+    echo -e "${YELLOW}[words]: $file_name.json is up to date"
+    echo -e "${YELLOW}[words]: Skipping generation...${NOCOLOR}"
+    return
+  fi
+
   if [[ -f "$target_file" ]]; then
     words_initial_count="$(jq -r 'length' "$target_file")"
   fi
@@ -69,6 +70,10 @@ generate_mock() {
     echo -e "${YELLOW}[words]: Current count: $words_final_count${NOCOLOR}"
   fi
 }
+
+if [[ ! -d "$MOCKS_DIR"/words ]]; then
+  mkdir -p "$MOCKS_DIR"/words
+fi
 
 echo
 
