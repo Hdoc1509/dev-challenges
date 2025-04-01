@@ -3,7 +3,9 @@ import { words } from "@/state/words";
 import { currentWord, setCurrentWord } from "@/state/current-word";
 import { resetTries } from "@/state/tries";
 import { gameResets, maxResets, resetGameResets } from "@/state/resets";
+import { Random } from "@/utils/random";
 import { createLetterFields } from "@/utils/letter-fields";
+import { hasCompletedDifficulties } from "@/utils/difficulty/completed";
 import { scrambleWord } from "@/utils/scramble";
 import { $word, captureWordLetters, setWordLetters } from "@/ui/word";
 import { $currentTries, $triesContainer, $triesIndicators } from "@/ui/tries";
@@ -22,7 +24,10 @@ import {
 import { RESETS } from "@/consts/resets";
 
 export function generateRandomWord() {
-  const randomWord = words[Math.floor(Math.random() * words.length)];
+  let randomWord = Random.element(words);
+
+  while (hasCompletedDifficulties({ word: randomWord }))
+    randomWord = Random.element(words);
 
   setCurrentWord(randomWord);
   resetAlert();
