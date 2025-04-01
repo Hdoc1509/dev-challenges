@@ -48,14 +48,16 @@ export const addDiscoveredWord = (word, { difficulty }) => {
   if (!getDifficultiesOfWord(word).includes(difficulty)) return;
 
   const difficulties = discoveredWords.has(word)
-    ? /** @type {Set<string>} */ (discoveredWords.get(word))
-    : new Set([difficulty]);
+    ? Array.from(discoveredWords.get(word) ?? [])
+    : [difficulty];
 
-  difficulties.add(difficulty);
+  difficulties.push(difficulty);
 
-  if (difficulties.size === discoveredWords.get(word)?.size) return;
+  if (difficulties.length === discoveredWords.get(word)?.size) return;
 
-  discoveredWords.set(word, difficulties);
+  discoveredWords.set(word, new Set(difficulties));
+  // TODO: only prepend if not already in discoveredWords
+  // add auxiliar varible for that
   wordsToSave.unshift(word);
 
   // NOTE: can this be really slow when discovered words reach 1k+?
