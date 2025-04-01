@@ -7,6 +7,7 @@ import { setWordCompleted, showCorrectWord } from "@/ui/word";
 import { hideTimerBar } from "@/ui/timer";
 import { DefinitionPages } from "@/ui/definition/pages";
 import { renderDefinitionsCount } from "@/ui/definition/render/count";
+import { renderCompletedDifficulty } from "@/ui/definition/render/difficulty";
 import { $definitionSection } from "@/ui/definition/elements";
 import { $hints, $hintsContent } from "@/ui/hints";
 import { $reset } from "@/ui/actions";
@@ -27,11 +28,8 @@ export function handleGameSuccess() {
     DefinitionPages.prepend(currentWord);
     renderDefinitionsCount(discoveredWords.size);
   } else if (!hasCompletedDifficulties({ word: currentWord })) {
-    // NOTE: definition may be not rendered if its page was not rendered yet
-    // only show definition button if the item is rendered
-    $definitionSection.setAttribute("data-active", "");
     addDiscoveredWord(currentWord, { difficulty });
-    // TODO: update definition difficulty styles
-    // updateDefinitionDifficulty(currentWord, { difficulty });
+    if (renderCompletedDifficulty({ word: currentWord, difficulty }))
+      $definitionSection.setAttribute("data-active", "");
   }
 }
