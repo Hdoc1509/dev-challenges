@@ -15,8 +15,7 @@ export function renderCompletedDifficulty({ word, difficulty }) {
     `.definitions-list.page .definition[data-word=${word}]`,
   );
 
-  if ($definition == null || !($definition instanceof HTMLDetailsElement))
-    return false;
+  if (!($definition instanceof HTMLDetailsElement)) return false;
 
   const $difficulty = getElementBySelector(
     `.definition__difficulty[aria-label="${difficulty}" i]`,
