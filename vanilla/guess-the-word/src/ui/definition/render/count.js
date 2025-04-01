@@ -1,11 +1,8 @@
 import { getElementBySelector } from "@lib/dom";
 import { TOTAL_WORDS } from "@/consts/definitions";
 
-const $definitionsTotal = getElementBySelector(
-  ".definitions-count__total",
-  HTMLSpanElement,
-);
-$definitionsTotal.textContent = TOTAL_WORDS.toString();
+getElementBySelector(".definitions-count__total", HTMLSpanElement).textContent =
+  TOTAL_WORDS.toString();
 
 const $definitionsProgress = getElementBySelector(
   ".definitions-count__progress",
