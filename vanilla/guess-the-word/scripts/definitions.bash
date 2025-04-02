@@ -23,13 +23,13 @@ if is_up_to_date "$JQ_FILTER_SCRIPT" && [[ -f "$DEFINITIONS_FILE" ]]; then
   exit 0
 fi
 
+echo
 jq --arg MIN_LENGTH "$MIN_LENGTH" --arg MAX_LENGTH "" --from-file "$JQ_FILTER_SCRIPT" \
   "$MOCKS_DIR"/all-words-data.json |
   jq --compact-output --from-file "$JQ_PARSE_SCRIPT" >"$DEFINITIONS_FILE"
+echo -e "${GREEN}[defs]: Generated definitions.json!${NOCOLOR}"
 
 jq 'length' "$DEFINITIONS_FILE" >"$MOCKS_DIR"/words-total.json
-echo
 echo -e "${GREEN}[defs]: Generated words-total.json!${NOCOLOR}"
-echo -e "${GREEN}[defs]: Generated definitions.json!${NOCOLOR}"
 echo -e "${YELLOW}[defs]: DO NOT FORGET to update 'npoint' bin!!!${NOCOLOR}"
 sleep 8
