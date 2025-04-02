@@ -13,11 +13,9 @@ NOCOLOR='\033[0m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 
-export JQ_FILTER_SCRIPT
+source "$SCRIPTS_DIR"/utils.bash
 
-source "$SCRIPTS_DIR"/check-filter-script.bash
-
-if filter_script_is_up_to_date &>/dev/null; then
+if is_up_to_date "$JQ_FILTER_SCRIPT" && [[ -f "$MOCKS_DIR"/definitions.json ]]; then
   echo
   echo -e "${YELLOW}[defs]: Filter script is up to date"
   echo -e "${YELLOW}[defs]: Skipping generation...${NOCOLOR}"
