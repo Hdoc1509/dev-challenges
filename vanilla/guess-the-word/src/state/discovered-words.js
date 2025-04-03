@@ -1,4 +1,5 @@
 import { getDifficultiesOfWord } from "@/utils/difficulty/of-word";
+import { isWordRemovedFromGame } from "@/utils/word-removed";
 import { DIFFICULTIES } from "@/consts/difficulty";
 
 const LOCAL_STORAGE_KEY = "discovered-words";
@@ -6,19 +7,20 @@ const LOCAL_STORAGE_KEY = "discovered-words";
 /** @type {string[]} */
 const wordsToSave = [];
 
-export const discoveredWords = (() => {
-  /** @type {Map<string, Set<string>>} */
-  const wordsMap = new Map();
+/** @type {Map<string, Set<string>>} */
+export const discoveredWords = new Map();
+
+export const loadSavedWords = async () => {
   const savedWords = localStorage.getItem(LOCAL_STORAGE_KEY);
   const parsedWords = JSON.parse(savedWords ?? "[]");
 
-  if (!Array.isArray(parsedWords)) return wordsMap;
+  if (!Array.isArray(parsedWords)) return;
 
   for (const item of parsedWords) {
     if (typeof item === "string") {
       const difficulty = getDifficultiesOfWord(item)[0];
 
-      wordsMap.set(item, new Set([difficulty]));
+      discoveredWords.set(item, new Set([difficulty]));
       wordsToSave.push(item);
     } else if (Array.isArray(item)) {
       if (item.length !== 2) continue;
@@ -28,17 +30,16 @@ export const discoveredWords = (() => {
       if (
         typeof word !== "string" ||
         !Array.isArray(difficulties) ||
-        !difficulties.every((difficulty) => DIFFICULTIES.has(difficulty))
+        !difficulties.every((difficulty) => DIFFICULTIES.has(difficulty)) ||
+        (await isWordRemovedFromGame(word))
       )
         continue;
 
-      wordsMap.set(word, new Set(difficulties));
+      discoveredWords.set(word, new Set(difficulties));
       wordsToSave.push(word);
     }
   }
-
-  return wordsMap;
-})();
+};
 
 /**
  * @param {string} word

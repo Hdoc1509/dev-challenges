@@ -1,11 +1,9 @@
-import { ResponseError } from "@lib/fetcher";
 import { getDefinition } from "@/services/definition";
 import { getElementBySelector } from "@lib/dom";
+import { hasCompletedDifficulties } from "@/utils/difficulty/completed";
 import { createRetryButton } from "@/ui/definition/retry";
 import { createErrorMessage } from "@/ui/definition/error-message";
-import { createErrorRemovedMessage } from "@/ui/definition/error-removed";
 import { createSpinner } from "@/ui/spinner";
-import { hasCompletedDifficulties } from "@/utils/difficulty/completed";
 
 /**
  * @param {HTMLDetailsElement} $definitionDetails
@@ -32,19 +30,8 @@ export async function handleDefinitionOpen($definitionDetails, { controller }) {
   if (error != null) {
     $definitionDetails.dataset.status = "error";
 
-    if ($content.querySelector(".definition_error") == null) {
-      if (error instanceof ResponseError && error.res.status === 404) {
-        controller.abort();
-        $definitionDetails.removeAttribute("data-word");
-        $content.appendChild(
-          createErrorRemovedMessage($definitionDetails, { word }),
-        );
-        $content.querySelector(".spinner")?.remove();
-        return;
-      }
-
+    if ($content.querySelector(".definition_error") == null)
       $content.appendChild(createErrorMessage(error.message));
-    }
 
     if ($content.querySelector(".definition__retry") == null)
       $content.appendChild(

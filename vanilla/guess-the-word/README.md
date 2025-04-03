@@ -59,7 +59,6 @@ create a small game that tests your data management and DOM manipulation with Ja
   - [Outfit](https://fontsource.org/fonts/outfit)
 - [tabler icons](https://tabler.io/icons)
   - [book-2](https://tabler.io/icons/icon/book-2)
-  - [database-minus](https://tabler.io/icons/icon/database-minus)
   - [edit](https://tabler.io/icons/icon/edit)
   - [filter-off](https://tabler.io/icons/icon/filter-off)
   - [list-letters](https://tabler.io/icons/icon/list-letters)
