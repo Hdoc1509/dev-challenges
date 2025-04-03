@@ -19,13 +19,10 @@ export async function handleDefinitionOpen($definitionDetails, { controller }) {
     HTMLElement,
     $definitionDetails,
   );
-  let $error = $content.querySelector(".definition__error");
-  let $retry = $content.querySelector(".definition__retry");
-  /** @type {HTMLDivElement | null} */
-  let $spinner = $content.querySelector(".spinner");
   const word = /** @type {string} */ ($definitionDetails.dataset.word);
 
-  if ($spinner == null) $content.appendChild(createSpinner());
+  if ($content.querySelector(".spinner") == null)
+    $content.appendChild(createSpinner());
 
   $definitionDetails.dataset.status = "loading";
   const [error, definitions] = await getDefinition(word);
@@ -33,12 +30,12 @@ export async function handleDefinitionOpen($definitionDetails, { controller }) {
   if (error != null) {
     $definitionDetails.dataset.status = "error";
 
-    if ($error == null) {
+    if ($content.querySelector(".definition_error") == null) {
 
       $content.appendChild(createErrorMessage(error.message));
     }
 
-    if ($retry == null)
+    if ($content.querySelector(".definition__retry") == null)
       $content.appendChild(
         createRetryButton({ $definitionDetails, controller }),
       );
