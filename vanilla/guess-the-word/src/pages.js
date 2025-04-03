@@ -121,6 +121,19 @@ export class Pages {
   }
 
   /**
+   * @param {Item[]} items
+   * @param {Object} [options]
+   * @param {number} [options.fromPage]
+   */
+  updateItems(items, { fromPage = 1 } = {}) {
+    for (let page = fromPage; page <= this.totalPages; page++)
+      this.#$page(page)?.remove();
+
+    this.#pages = paginate(items, this.#itemsPerPage);
+    for (let page = 1; page <= fromPage; page++) this.renderPage(page);
+  }
+
+  /**
    * @template {keyof PageEvents} Event
    * @param {Event} event
    * @param {PageEvents[Event][number]} handler
