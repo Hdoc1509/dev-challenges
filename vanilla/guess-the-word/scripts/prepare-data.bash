@@ -8,11 +8,6 @@ if is_up_to_date "$WORDSAPI_SAMPLE" && is_up_to_date "$CUSTOM_WORDS_DATA" && [[ 
   return
 fi
 
-if [[ ! -f "$TARGET_FILE" ]]; then
-  jq --slurp --compact-output 'reduce .[] as $item ({}; . * $item)' \
-    "$WORDSAPI_SAMPLE" "$CUSTOM_WORDS_DATA" >"$TARGET_FILE"
-  echo -e "${GREEN}[prepare-data]: Generated all-words-data.json!${NOCOLOR}"
-else
-  echo -e "${YELLOW}[prepare-data]: All words data mock already exists"
-  echo -e "${YELLOW}[prepare-data]: Skipping generation...${NOCOLOR}"
-fi
+jq --slurp --compact-output 'reduce .[] as $item ({}; . * $item)' \
+  "$WORDSAPI_SAMPLE" "$CUSTOM_WORDS_DATA" >"$TARGET_FILE"
+echo -e "${GREEN}[prepare-data]: Generated all-words-data.json!${NOCOLOR}"
