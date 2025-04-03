@@ -7,9 +7,8 @@
     "dev": "pnpm run mocks && vite",
     "build": "pnpm run mocks && vite build",
     "preview": "pnpm run mocks && vite preview",
-    "words": "pnpm run prepare-data && bash ./scripts/words.bash",
-    "defs": "pnpm run prepare-data && bash ./scripts/definitions.bash",
-    "prepare-data": "bash ./scripts/prepare-data.bash",
+    "words": "bash ./scripts/words.bash",
+    "defs": "bash ./scripts/definitions.bash",
     "mocks": "pnpm run words && pnpm run defs && echo"
   },
   "dependencies": {

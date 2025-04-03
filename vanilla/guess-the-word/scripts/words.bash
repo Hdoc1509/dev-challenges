@@ -17,6 +17,7 @@ RED='\033[0;31m'
 YELLOW='\033[1;33m'
 
 source "$SCRIPTS_DIR"/utils.bash
+source "$SCRIPTS_DIR"/prepare-data.bash
 
 generate_mock() {
   local target_file=""

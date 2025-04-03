@@ -15,6 +15,7 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 
 source "$SCRIPTS_DIR"/utils.bash
+source "$SCRIPTS_DIR"/prepare-data.bash
 
 if is_up_to_date "$JQ_FILTER_SCRIPT" && [[ -f "$DEFINITIONS_FILE" ]]; then
   echo
@@ -31,5 +32,6 @@ echo -e "${GREEN}[defs]: Generated definitions.json!${NOCOLOR}"
 
 jq 'length' "$DEFINITIONS_FILE" >"$MOCKS_DIR"/words-total.json
 echo -e "${GREEN}[defs]: Generated words-total.json!${NOCOLOR}"
+
 echo -e "${YELLOW}[defs]: DO NOT FORGET to update 'npoint' bin!!!${NOCOLOR}"
 sleep 8
