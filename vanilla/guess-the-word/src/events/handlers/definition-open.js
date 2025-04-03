@@ -1,6 +1,7 @@
 import { getDefinition } from "@/services/definition";
 import { getElementBySelector } from "@lib/dom";
 import { createRetryButton } from "@/ui/definition/retry";
+import { createErrorMessage } from "@/ui/definition/error-message";
 import { createSpinner } from "@/ui/spinner";
 import { hasCompletedDifficulties } from "@/utils/difficulty/completed";
 
@@ -33,11 +34,8 @@ export async function handleDefinitionOpen($definitionDetails, { controller }) {
     $definitionDetails.dataset.status = "error";
 
     if ($error == null) {
-      const $newError = document.createElement("p");
 
-      $newError.classList.add("definition__error");
-      $newError.textContent = error.message;
-      $content.appendChild($newError);
+      $content.appendChild(createErrorMessage(error.message));
     }
 
     if ($retry == null)
