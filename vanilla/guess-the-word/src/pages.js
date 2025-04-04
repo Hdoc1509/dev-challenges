@@ -76,6 +76,7 @@ export class Pages {
   constructor(
     $pagesContainer,
     {
+      // TODO: make `items` an optional argument
       items,
       itemsPerPage,
       renderItem,
@@ -124,13 +125,16 @@ export class Pages {
    * @param {Item[]} items
    * @param {Object} [options]
    * @param {number} [options.fromPage]
+   * @param {boolean} [options.renderPages]
    */
-  updateItems(items, { fromPage = 1 } = {}) {
+  updateItems(items, { fromPage = 1, renderPages = true } = {}) {
     for (let page = fromPage; page <= this.totalPages; page++)
       this.#$page(page)?.remove();
 
     this.#pages = paginate(items, this.#itemsPerPage);
-    for (let page = 1; page <= fromPage; page++) this.renderPage(page);
+    if (renderPages)
+      for (let page = 1; page <= fromPage; page++) this.renderPage(page);
+    // TODO: trigger `itemsupdated` event with total pages as payload
   }
 
   /**

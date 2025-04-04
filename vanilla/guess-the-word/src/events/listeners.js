@@ -1,5 +1,5 @@
 import { difficulty } from "@/state/difficulty";
-import { discoveredWords } from "@/state/discovered-words";
+import { discoveredWords, loadSavedWords } from "@/state/discovered-words";
 import { generateRandomWord } from "./handlers/random-word";
 import { handleShowDefinition } from "./handlers/show-definition";
 import { handleLetterInput } from "./handlers/letter-input";
@@ -21,8 +21,12 @@ import { $randomWord, $reset } from "@/ui/actions";
 
 export async function setupEventListeners() {
   await applyDifficulty(difficulty);
+  await loadSavedWords();
   generateRandomWord();
   renderDefinitionsCount(discoveredWords.size);
+  DefinitionPages.updateItems(Array.from(discoveredWords.keys()), {
+    renderPages: false,
+  });
   // generateWordList();
 
   document.addEventListener("click", (e) => {

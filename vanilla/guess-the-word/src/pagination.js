@@ -66,6 +66,9 @@ export class Pagination {
       this.#setAriaLabel({ totalPages });
       this.#$total.textContent = `${totalPages}`;
     });
+    // TODO: subscribe to `itemsupdated` event
+    // update total pages
+    // check triggers
   }
 
   /** @param {{ totalPages: number }} params */
