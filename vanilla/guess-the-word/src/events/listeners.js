@@ -24,7 +24,7 @@ export async function setupEventListeners() {
   await loadSavedWords();
   generateRandomWord();
   renderDefinitionsCount(discoveredWords.size);
-  DefinitionPages.updateItems(Array.from(discoveredWords.keys()));
+  DefinitionPages.setItems(Array.from(discoveredWords.keys()));
   // generateWordList();
 
   document.addEventListener("click", (e) => {

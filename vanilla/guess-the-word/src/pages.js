@@ -125,7 +125,7 @@ export class Pages {
    * @param {Item[]} items
    * @param {{ renderPage?: number }} [options]
    */
-  updateItems(items, { renderPage } = {}) {
+  setItems(items, { renderPage } = {}) {
     for (let page = 1; page <= this.totalPages; page++)
       this.#$page(page)?.remove();
 
