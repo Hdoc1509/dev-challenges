@@ -38,6 +38,7 @@ const error = (message) => {
 /**
  * @typedef PageEvents
  * @property {PageEventHandler["pageadd"][]} pageadd
+ * @property {Array<(totalPages: number) => void>} itemsupdate
  */
 
 /** @template Item */
@@ -53,10 +54,11 @@ export class Pages {
   #onItemMoved;
   #onPageChange;
   /** @type {PageEvents} */
-  #events = { pageadd: [] };
+  #events = { pageadd: [], itemsupdate: [] };
 
   static INSERTION_MODE = INSERTION_MODE;
 
+  // TODO: remove `onPageAdd` option
   /**
    * @param {HTMLDivElement} $pagesContainer
    * @param {Object} extraParams
@@ -125,14 +127,18 @@ export class Pages {
    * @param {number} [options.fromPage]
    * @param {boolean} [options.renderPages]
    */
+  // TODO: remove `fromPage` and `renderPages` options
   updateItems(items, { fromPage = 1, renderPages = true } = {}) {
     for (let page = fromPage; page <= this.totalPages; page++)
       this.#$page(page)?.remove();
 
     this.#pages = paginate(items, this.#itemsPerPage);
+
+    const totalPages = this.totalPages;
+
+    this.#events.itemsupdate.forEach((handler) => handler(totalPages));
     if (renderPages)
       for (let page = 1; page <= fromPage; page++) this.renderPage(page);
-    // TODO: trigger `itemsupdated` event with total pages as payload
   }
 
   /**

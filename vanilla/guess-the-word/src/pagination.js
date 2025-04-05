@@ -60,15 +60,24 @@ export class Pagination {
 
     if (renderCurrent) this.#PagesHandler.renderPage(this.currentPage);
     this.#checkTriggers();
+    // NOTE: checkTrigger(), $input.max, setAriaLabel(), $total.textContent are
+    // called on:
+    // - initialization
+    // - pageadd event
+    // - itemsupdate event
+    // try to join those calls into a private method
     this.#PagesHandler.addEventListener("pageadd", (totalPages) => {
       this.#checkTriggers();
       this.#$input.max = `${totalPages}`;
       this.#setAriaLabel({ totalPages });
       this.#$total.textContent = `${totalPages}`;
     });
-    // TODO: subscribe to `itemsupdated` event
-    // update total pages
-    // check triggers
+    this.#PagesHandler.addEventListener("itemsupdate", (totalPages) => {
+      this.#checkTriggers();
+      this.#$input.max = `${totalPages}`;
+      this.#setAriaLabel({ totalPages });
+      this.#$total.textContent = `${totalPages}`;
+    });
   }
 
   /** @param {{ totalPages: number }} params */
