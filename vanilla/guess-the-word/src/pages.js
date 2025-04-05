@@ -123,13 +123,10 @@ export class Pages {
 
   /**
    * @param {Item[]} items
-   * @param {Object} [options]
-   * @param {number} [options.fromPage]
-   * @param {boolean} [options.renderPages]
+   * @param {{ renderPage?: number }} [options]
    */
-  // TODO: remove `fromPage` and `renderPages` options
-  updateItems(items, { fromPage = 1, renderPages = true } = {}) {
-    for (let page = fromPage; page <= this.totalPages; page++)
+  updateItems(items, { renderPage } = {}) {
+    for (let page = 1; page <= this.totalPages; page++)
       this.#$page(page)?.remove();
 
     this.#pages = paginate(items, this.#itemsPerPage);
@@ -137,8 +134,7 @@ export class Pages {
     const totalPages = this.totalPages;
 
     this.#events.itemsupdate.forEach((handler) => handler(totalPages));
-    if (renderPages)
-      for (let page = 1; page <= fromPage; page++) this.renderPage(page);
+    if (renderPage) this.renderPage(renderPage);
   }
 
   /**
