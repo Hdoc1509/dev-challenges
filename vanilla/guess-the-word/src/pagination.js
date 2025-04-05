@@ -54,30 +54,24 @@ export class Pagination {
 
     if (Number.isNaN(inputPage) || inputPage > totalPages || inputPage < 1)
       this.#$input.value = `${totalPages}`;
-    this.#$total.textContent = `${totalPages}`;
     this.currentPage = Number(this.#$input.value);
-    this.#setAriaLabel({ totalPages });
-
     if (renderCurrent) this.#PagesHandler.renderPage(this.currentPage);
-    this.#checkTriggers();
-    // NOTE: checkTrigger(), $input.max, setAriaLabel(), $total.textContent are
-    // called on:
-    // - initialization
-    // - pageadd event
-    // - itemsupdate event
-    // try to join those calls into a private method
+    this.#setTotalPages(totalPages);
+
     this.#PagesHandler.addEventListener("pageadd", (totalPages) => {
-      this.#checkTriggers();
-      this.#$input.max = `${totalPages}`;
-      this.#setAriaLabel({ totalPages });
-      this.#$total.textContent = `${totalPages}`;
+      this.#setTotalPages(totalPages);
     });
     this.#PagesHandler.addEventListener("itemsupdate", (totalPages) => {
-      this.#checkTriggers();
-      this.#$input.max = `${totalPages}`;
-      this.#setAriaLabel({ totalPages });
-      this.#$total.textContent = `${totalPages}`;
+      this.#setTotalPages(totalPages);
     });
+  }
+
+  /** @param {number} totalPages */
+  #setTotalPages(totalPages) {
+    this.#checkTriggers();
+    this.#$input.max = `${totalPages}`;
+    this.#setAriaLabel({ totalPages });
+    this.#$total.textContent = `${totalPages}`;
   }
 
   /** @param {{ totalPages: number }} params */
