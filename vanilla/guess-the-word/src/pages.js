@@ -62,7 +62,7 @@ export class Pages {
   /**
    * @param {HTMLDivElement} $pagesContainer
    * @param {Object} extraParams
-   * @param {Item[]} extraParams.items
+   * @param {Item[]} [extraParams.items]
    * @param {number} extraParams.itemsPerPage
    * @param {(params: RenderItemParams<Item>) => RenderItemResult} extraParams.renderItem
    * @param {($page: HTMLUListElement) => void} extraParams.clearEmpty
@@ -76,7 +76,6 @@ export class Pages {
   constructor(
     $pagesContainer,
     {
-      // TODO: make `items` an optional argument
       items,
       itemsPerPage,
       renderItem,
@@ -106,7 +105,7 @@ export class Pages {
 
     this.#$pagesContainer = $pagesContainer;
     this.#$pageTemplate = $pageTemplate;
-    this.#pages = paginate(items, itemsPerPage);
+    this.#pages = items == null ? [[]] : paginate(items, itemsPerPage);
     this.#itemsPerPage = itemsPerPage;
     this.#renderItem = renderItem;
     this.#$pageEmptyTemplate = $pageEmptyTemplate;

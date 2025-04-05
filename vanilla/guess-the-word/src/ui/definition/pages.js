@@ -1,6 +1,5 @@
 import { Pages } from "@/pages";
 import { getElementById } from "@lib/dom";
-import { discoveredWords } from "@/state/discovered-words";
 import { createDefinition } from "./render/create-definition";
 import { $menuTabContent } from "../menu";
 import { DEFINITIONS_PER_PAGE } from "@/consts/definitions";
@@ -10,8 +9,8 @@ export const $definitionPagesContainer = getElementById(
   HTMLDivElement,
 );
 
+/** @type {Pages<string>} */
 export const DefinitionPages = new Pages($definitionPagesContainer, {
-  items: Array.from(discoveredWords.keys()),
   itemsPerPage: DEFINITIONS_PER_PAGE,
   renderItem({ item, index, totalItems, isNew, insertionMode }) {
     const $definition = createDefinition(item, { isNew });
