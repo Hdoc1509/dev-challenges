@@ -58,7 +58,6 @@ export class Pages {
 
   static INSERTION_MODE = INSERTION_MODE;
 
-  // TODO: remove `onPageAdd` option
   /**
    * @param {HTMLDivElement} $pagesContainer
    * @param {Object} extraParams
@@ -69,7 +68,6 @@ export class Pages {
    * @param {($page: HTMLUListElement) => void} [extraParams.onItemRemoved]
    * @param {($page: HTMLUListElement) => void} [extraParams.onItemMoved]
    * @param {($page: HTMLUListElement) => void} [extraParams.onPageChange]
-   * @param {PageEventHandler["pageadd"]} [extraParams.onPageAdd]
    * @param {HTMLTemplateElement} extraParams.$pageTemplate
    * @param {HTMLTemplateElement} extraParams.$pageEmptyTemplate
    */
@@ -83,7 +81,6 @@ export class Pages {
       onItemRemoved,
       onItemMoved,
       onPageChange,
-      onPageAdd,
       $pageTemplate,
       $pageEmptyTemplate,
     },
@@ -113,7 +110,6 @@ export class Pages {
     this.#onItemRemoved = onItemRemoved;
     this.#onItemMoved = onItemMoved;
     this.#onPageChange = onPageChange;
-    if (typeof onPageAdd === "function") this.#events.pageadd.push(onPageAdd);
   }
 
   get totalPages() {
