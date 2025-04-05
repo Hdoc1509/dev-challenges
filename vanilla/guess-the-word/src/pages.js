@@ -30,8 +30,6 @@ const error = (message) => {
 
 /** @typedef {DocumentFragment | HTMLLIElement} RenderItemResult */
 
-/** @typedef {"pageadd"} PageEventType */
-
 /**
  * @typedef PageEventHandler
  * @property {(totalPages: number) => void} pageadd
