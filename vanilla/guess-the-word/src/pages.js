@@ -121,7 +121,7 @@ export class Pages {
     return this.#pages.length;
   }
 
-  /**
+  /** Update items to be paginated. Triggers `itemsupdate` event.
    * @param {Item[]} items
    * @param {{ renderPage?: number }} [options]
    */
