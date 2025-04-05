@@ -101,7 +101,7 @@ export class Pagination {
 
   /** @param {number} page */
   #selectPage(page) {
-    this.#$input.value = page.toString();
+    this.#$input.value = `${page}`;
     if (this.currentPage !== page) {
       this.currentPage = page;
       this.#checkTriggers();
@@ -112,7 +112,7 @@ export class Pagination {
   /** @param {number} page */
   updateCurrentPage(page) {
     this.currentPage = page;
-    this.#$input.value = page.toString();
+    this.#$input.value = `${page}`;
     this.#checkTriggers();
   }
 
@@ -154,7 +154,7 @@ export class Pagination {
     const page = $input.value;
     const isValid = /^-?\d+$/.test(page);
 
-    if (!isValid) $input.value = this.currentPage.toString();
+    if (!isValid) $input.value = `${this.currentPage}`;
     else {
       const pageNumber = Number(page);
       const pages = this.#PagesHandler.totalPages;
