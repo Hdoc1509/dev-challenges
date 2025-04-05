@@ -70,16 +70,11 @@ export class Pagination {
   #setTotalPages(totalPages) {
     this.#checkTriggers();
     this.#$input.max = `${totalPages}`;
-    this.#setAriaLabel({ totalPages });
-    this.#$total.textContent = `${totalPages}`;
-  }
-
-  /** @param {{ totalPages: number }} params */
-  #setAriaLabel({ totalPages }) {
     this.#$input.setAttribute(
       "aria-label",
       `Page ${this.currentPage} of ${totalPages}`,
     );
+    this.#$total.textContent = `${totalPages}`;
   }
 
   #checkTriggers() {
