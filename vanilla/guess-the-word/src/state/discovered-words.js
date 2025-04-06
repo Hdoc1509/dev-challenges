@@ -69,19 +69,3 @@ export const addDiscoveredWord = (word, { difficulty }) => {
 
   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(data));
 };
-
-/** @param {string} word */
-export const removeDiscoveredWord = (word) => {
-  const toSave = new Set(wordsToSave);
-
-  discoveredWords.delete(word);
-  toSave.delete(word);
-  wordsToSave.splice(wordsToSave.indexOf(word), 1);
-
-  const data = wordsToSave.map((word) => [
-    word,
-    Array.from(/** @type {Set<string>} */ (discoveredWords.get(word))),
-  ]);
-
-  localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(data));
-};
