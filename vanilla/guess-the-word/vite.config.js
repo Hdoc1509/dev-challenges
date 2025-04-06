@@ -12,9 +12,9 @@ export default defineConfig({
         manualChunks(id) {
           if (id.includes("libs")) return "libs";
           if (id.includes("src/events")) return "events";
-          if (id.includes("src/constants")) return "constants";
+          if (id.includes("src/consts") && !id.includes("src/consts/words"))
+            return "consts";
           if (id.includes("src/utils")) return "utils";
-          if (id.includes("mocks/words/normal")) return "words-normal";
           if (id.includes("mocks/definitions")) return "definitions";
         },
       },
