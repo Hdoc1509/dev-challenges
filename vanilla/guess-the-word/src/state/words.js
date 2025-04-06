@@ -1,6 +1,5 @@
-import { WORDS_NORMAL } from "@/consts/words/normal";
-
-export let words = WORDS_NORMAL;
+/** @type {readonly string[]} */
+export let words = [];
 
 /** @param {readonly string[]} newWords */
 export const setWords = (newWords) => (words = newWords);

@@ -15,34 +15,34 @@ export async function applyDifficulty(difficulty) {
     MasterDifficulty.unapply();
     InsaneDifficulty.unapply();
   } else if (difficulty === DIFFICULTY.NORMAL) {
-    NormalDifficulty.apply();
+    await NormalDifficulty.apply();
     MasterDifficulty.unapply();
     InsaneDifficulty.unapply();
   } else if (difficulty === DIFFICULTY.HARD) {
-    HardDifficulty.apply();
+    await HardDifficulty.apply();
     MasterDifficulty.unapply();
     InsaneDifficulty.unapply();
   } else if (difficulty === DIFFICULTY.MASTER) {
-    HardDifficulty.apply();
+    await HardDifficulty.apply();
     MasterDifficulty.apply();
     InsaneDifficulty.unapply();
   } else if (difficulty === DIFFICULTY.EXTREME) {
-    HardDifficulty.apply();
+    await HardDifficulty.apply();
     MasterDifficulty.apply();
     await ExtremeDifficulty.apply();
     InsaneDifficulty.unapply();
   } else if (difficulty === DIFFICULTY.INSANE) {
-    HardDifficulty.apply();
+    await HardDifficulty.apply();
     MasterDifficulty.apply();
     ExtremeDifficulty.apply();
     InsaneDifficulty.apply();
   } else if (difficulty === DIFFICULTY.WHY) {
-    HardDifficulty.apply();
+    await HardDifficulty.apply();
     MasterDifficulty.unapply();
     InsaneDifficulty.apply();
     await WhyDifficulty.apply();
   } else if (difficulty === DIFFICULTY.VOID) {
-    HardDifficulty.apply();
+    await HardDifficulty.apply();
     MasterDifficulty.unapply();
     InsaneDifficulty.unapply();
     await WhyDifficulty.apply();
