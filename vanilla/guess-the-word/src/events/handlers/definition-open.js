@@ -3,7 +3,7 @@ import { getElementBySelector } from "@lib/dom";
 import { hasCompletedDifficulties } from "@/utils/difficulty/completed";
 import { createRetryButton } from "@/ui/definition/retry";
 import { createErrorMessage } from "@/ui/definition/error-message";
-import { createSpinner } from "@/ui/spinner";
+import { addSpinner, removeSpinner } from "@/ui/spinner";
 
 /**
  * @param {HTMLDetailsElement} $definitionDetails
@@ -21,10 +21,9 @@ export async function handleDefinitionOpen($definitionDetails, { controller }) {
   );
   const word = /** @type {string} */ ($definitionDetails.dataset.word);
 
-  if ($content.querySelector(".spinner") == null)
-    $content.appendChild(createSpinner());
-
+  addSpinner($content);
   $definitionDetails.dataset.status = "loading";
+
   const [error, definitions] = await getDefinition(word);
 
   if (error != null) {
@@ -56,5 +55,5 @@ export async function handleDefinitionOpen($definitionDetails, { controller }) {
   $definitionDetails.scrollIntoView();
   $content.querySelector(".definition__error")?.remove();
   $content.querySelector(".definition__retry")?.remove();
-  $content.querySelector(".spinner")?.remove();
+  removeSpinner($content);
 }
