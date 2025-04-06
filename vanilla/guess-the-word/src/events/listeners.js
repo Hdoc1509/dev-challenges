@@ -16,12 +16,17 @@ import { renderDefinitionsCount } from "@/ui/definition/render/count";
 import { removeAllNewBadges } from "@/ui/definition/badge";
 import { closeOpenedDefinition } from "@/ui/definition/close-definition";
 import { $showDefinition } from "@/ui/definition/elements";
+import { $word } from "@/ui/word";
+import { $typing } from "@/ui/typing";
 import { $hintsTrigger, HintsTabs } from "@/ui/hints";
 import { $randomWord, $reset } from "@/ui/actions";
+import { addSpinner, removeSpinner } from "@/ui/spinner";
 
 export async function setupEventListeners() {
+  addSpinner($word, $typing);
   await applyDifficulty(difficulty);
   await loadSavedWords();
+  removeSpinner($word, $typing);
   generateRandomWord();
   renderDefinitionsCount(discoveredWords.size);
   DefinitionPages.setItems(Array.from(discoveredWords.keys()));
