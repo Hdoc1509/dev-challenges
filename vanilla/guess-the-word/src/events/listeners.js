@@ -12,7 +12,7 @@ import { $menu, $menuClose, $menuOpen, MenuTabs } from "@/ui/menu";
 // import { generateWordList } from "@/ui/word-list";
 import { DefinitionPagination } from "@/ui/definition/pagination";
 import { DefinitionPages } from "@/ui/definition/pages";
-import { renderDefinitionsCount } from "@/ui/definition/render/count";
+import { renderDefinitionsCount } from "@/ui/definition/count";
 import { removeAllNewBadges } from "@/ui/definition/badge";
 import { closeOpenedDefinition } from "@/ui/definition/close-definition";
 import { $showDefinition } from "@/ui/definition/elements";

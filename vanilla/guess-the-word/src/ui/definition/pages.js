@@ -1,6 +1,6 @@
 import { Pages } from "@/pages";
 import { getElementById } from "@lib/dom";
-import { createDefinition } from "./render/create-definition";
+import { createDefinition } from "./create-definition";
 import { $menuTabContent } from "../menu";
 import { DEFINITIONS_PER_PAGE } from "@/consts/definitions";
 

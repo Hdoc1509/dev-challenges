@@ -2,7 +2,7 @@ import { getElementById, getElementBySelector } from "@lib/dom";
 import { discoveredWords } from "@/state/discovered-words";
 import { handleDefinitionOpen } from "@/events/handlers/definition-open";
 import { getDifficultiesOfWord } from "@/utils/difficulty/of-word";
-import { addNewBadge } from "../badge";
+import { addNewBadge } from "./badge";
 
 const $definitionTemplate = getElementById(
   "definition-template",

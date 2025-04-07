@@ -1,5 +1,5 @@
 import { getElementBySelector } from "@lib/dom";
-import { $definitionPagesContainer } from "../pages";
+import { $definitionPagesContainer } from "./pages";
 import { getDifficultiesOfWord } from "@/utils/difficulty/of-word";
 
 /**
