@@ -46,7 +46,7 @@ export const createDefinition = (word, { isNew = false } = {}) => {
 
     $item.classList.add("definition__difficulty");
     $item.setAttribute("aria-label", label);
-    if (discoveredWords.get(word)?.has(difficulty))
+    if (discoveredWords.get(word)?.includes(difficulty))
       $item.dataset.completed = "";
     $span.textContent = `${difficulty[0].toUpperCase()}`;
     $span.setAttribute("aria-hidden", "true");

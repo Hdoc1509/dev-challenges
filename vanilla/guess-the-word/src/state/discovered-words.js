@@ -1,49 +1,84 @@
 import { getDifficultiesOfWord } from "@/utils/difficulty/of-word";
 import { isWordRemovedFromGame } from "@/utils/word-removed";
 import { DIFFICULTIES } from "@/consts/difficulty";
+/** @typedef {import("@/consts/difficulty").Difficulty} Difficulty */
 
-const LOCAL_STORAGE_KEY = "discovered-words";
+const LOCAL_STORAGE_OLD_KEY = "discovered-words";
+const LOCAL_STORAGE_KEY = `dev-challenges/guess-the-word/${LOCAL_STORAGE_OLD_KEY}`;
 
-/** @type {string[]} */
-const wordsToSave = [];
-
-/** @type {Map<string, Set<string>>} */
+/** @type {Map<string, Array<Difficulty>>} */
+// TODO: update type to: Map<string, Difficulty[] | "all">
 export const discoveredWords = new Map();
 
 export const loadSavedWords = async () => {
-  const savedWords = localStorage.getItem(LOCAL_STORAGE_KEY);
-  const parsedWords = JSON.parse(savedWords ?? "[]");
+  const oldSavedItem = localStorage.getItem(LOCAL_STORAGE_OLD_KEY);
 
-  if (!Array.isArray(parsedWords)) return;
+  if (oldSavedItem != null) {
+    const parsedItem = JSON.parse(oldSavedItem);
 
-  for (const item of parsedWords) {
-    if (typeof item === "string") {
-      const difficulty = getDifficultiesOfWord(item)[0];
+    if (Array.isArray(parsedItem)) {
+      /** @type {Array<[string, Difficulty[]]>} */
+      const data = [];
 
-      discoveredWords.set(item, new Set([difficulty]));
-      wordsToSave.push(item);
-    } else if (Array.isArray(item)) {
+      for (const item of parsedItem) {
+        if (typeof item === "string" && !(await isWordRemovedFromGame(item))) {
+          const difficulty = getDifficultiesOfWord(item)[0];
+
+          // TODO: if difficulty is "easy", then add "all" to the list
+          data.unshift([item, [difficulty]]);
+        }
+      }
+
+      for (const [word, difficulties] of data)
+        discoveredWords.set(word, difficulties);
+    }
+
+    const data = Array.from(discoveredWords);
+
+    localStorage.removeItem(LOCAL_STORAGE_OLD_KEY);
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(data));
+    return;
+  }
+
+  const savedItem = localStorage.getItem(LOCAL_STORAGE_KEY);
+
+  if (savedItem === null) return;
+
+  const parsedItem = JSON.parse(savedItem);
+
+  if (!Array.isArray(parsedItem)) return;
+
+  for (const item of parsedItem) {
+    if (Array.isArray(item)) {
       if (item.length !== 2) continue;
 
       const [word, difficulties] = item;
 
+      // TODO: if difficulties is "all", discoveredWords.set(word, "all");
+
       if (
         typeof word !== "string" ||
         !Array.isArray(difficulties) ||
-        !difficulties.every((difficulty) => DIFFICULTIES.has(difficulty)) ||
+        !difficulties.every(
+          /** @param {string} difficulty
+           * @returns {difficulty is Difficulty}
+           */ (difficulty) =>
+            DIFFICULTIES.has(/** @type {Difficulty} */ (difficulty)),
+        ) ||
         (await isWordRemovedFromGame(word))
       )
         continue;
 
-      discoveredWords.set(word, new Set(difficulties));
-      wordsToSave.push(word);
+      // TODO: if getDifficultiesOfWord(word) same length as difficulties,
+      // then add "all" as the difficulty
+      discoveredWords.set(word, difficulties);
     }
   }
 };
 
 /**
  * @param {string} word
- * @param {{ difficulty: import("@/consts/difficulty").Difficulty }} extraParams
+ * @param {{ difficulty: Difficulty }} extraParams
  */
 export const addDiscoveredWord = (word, { difficulty }) => {
   if (!getDifficultiesOfWord(word).includes(difficulty)) return;
@@ -53,19 +88,11 @@ export const addDiscoveredWord = (word, { difficulty }) => {
     difficulty,
   );
 
-  if (difficulties.size === savedWordDifficulties?.size) return;
+  if (difficulties.size === savedWordDifficulties?.length) return;
 
-  discoveredWords.set(word, difficulties);
-  if (savedWordDifficulties == null) wordsToSave.unshift(word);
+  discoveredWords.set(word, Array.from(difficulties));
 
-  // NOTE: can this be really slow when discovered words reach 1k+?
-  // if yes, then I should use:
-  // - IndexedDB or
-  // - some kind of free storage service, will require some auth logic
-  const data = wordsToSave.map((word) => [
-    word,
-    Array.from(/** @type {Set<string>} */ (discoveredWords.get(word))),
-  ]);
+  const data = Array.from(discoveredWords);
 
   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(data));
 };

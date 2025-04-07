@@ -29,7 +29,7 @@ export async function setupEventListeners() {
   removeSpinner($word, $typing);
   generateRandomWord();
   renderDefinitionsCount(discoveredWords.size);
-  DefinitionPages.setItems(Array.from(discoveredWords.keys()));
+  DefinitionPages.setItems(Array.from(discoveredWords.keys()).reverse());
   // generateWordList();
 
   document.addEventListener("click", (e) => {
