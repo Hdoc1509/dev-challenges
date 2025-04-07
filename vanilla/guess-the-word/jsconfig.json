@@ -11,9 +11,11 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "noEmit": true,
 
     "paths": {
       "@/*": ["./src/*"]
     }
-  }
+  },
+  "include": ["src/**/*"]
 }
