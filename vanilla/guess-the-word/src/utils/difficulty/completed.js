@@ -1,6 +1,6 @@
 import { discoveredWords } from "@/state/discovered-words";
-import { getDifficultiesOfWord } from "./of-word";
+import { DIFFICULTIES_ALL } from "@/consts/difficulty";
 
 /** @param {{ word: string }} params */
 export const hasCompletedDifficulties = ({ word }) =>
-  getDifficultiesOfWord(word).length === discoveredWords.get(word)?.length;
+  discoveredWords.get(word) === DIFFICULTIES_ALL;

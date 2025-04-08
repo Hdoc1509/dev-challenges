@@ -11,3 +11,5 @@ export const DIFFICULTY = Object.freeze({
 /** @typedef {DIFFICULTY[keyof DIFFICULTY]} Difficulty */
 
 export const DIFFICULTIES = new Set(Object.values(DIFFICULTY));
+
+export const DIFFICULTIES_ALL = "all";

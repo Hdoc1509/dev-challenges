@@ -1,13 +1,17 @@
 import { getDifficultiesOfWord } from "@/utils/difficulty/of-word";
 import { isWordRemovedFromGame } from "@/utils/word-removed";
-import { DIFFICULTIES } from "@/consts/difficulty";
+import {
+  DIFFICULTIES,
+  DIFFICULTIES_ALL,
+  DIFFICULTY,
+} from "@/consts/difficulty";
 /** @typedef {import("@/consts/difficulty").Difficulty} Difficulty */
+/** @typedef {typeof DIFFICULTIES_ALL} DifficultiesAll */
 
 const LOCAL_STORAGE_OLD_KEY = "discovered-words";
 const LOCAL_STORAGE_KEY = `dev-challenges/guess-the-word/${LOCAL_STORAGE_OLD_KEY}`;
 
-/** @type {Map<string, Array<Difficulty>>} */
-// TODO: update type to: Map<string, Difficulty[] | "all">
+/** @type {Map<string, Difficulty[] | DifficultiesAll>} */
 export const discoveredWords = new Map();
 
 export const loadSavedWords = async () => {
@@ -17,15 +21,17 @@ export const loadSavedWords = async () => {
     const parsedItem = JSON.parse(oldSavedItem);
 
     if (Array.isArray(parsedItem)) {
-      /** @type {Array<[string, Difficulty[]]>} */
+      /** @type {Array<[string, Difficulty[] | DifficultiesAll]>} */
       const data = [];
 
       for (const item of parsedItem) {
         if (typeof item === "string" && !(await isWordRemovedFromGame(item))) {
           const difficulty = getDifficultiesOfWord(item)[0];
 
-          // TODO: if difficulty is "easy", then add "all" to the list
-          data.unshift([item, [difficulty]]);
+          data.unshift([
+            item,
+            difficulty === DIFFICULTY.EASY ? DIFFICULTIES_ALL : [difficulty],
+          ]);
         }
       }
 
@@ -54,24 +60,26 @@ export const loadSavedWords = async () => {
 
       const [word, difficulties] = item;
 
-      // TODO: if difficulties is "all", discoveredWords.set(word, "all");
+      if (typeof word !== "string") continue;
 
-      if (
-        typeof word !== "string" ||
-        !Array.isArray(difficulties) ||
-        !difficulties.every(
+      if (difficulties === DIFFICULTIES_ALL)
+        discoveredWords.set(word, DIFFICULTIES_ALL);
+      else if (
+        Array.isArray(difficulties) &&
+        difficulties.every(
           /** @param {string} difficulty
            * @returns {difficulty is Difficulty}
            */ (difficulty) =>
             DIFFICULTIES.has(/** @type {Difficulty} */ (difficulty)),
-        ) ||
-        (await isWordRemovedFromGame(word))
+        ) &&
+        !(await isWordRemovedFromGame(word))
       )
-        continue;
-
-      // TODO: if getDifficultiesOfWord(word) same length as difficulties,
-      // then add "all" as the difficulty
-      discoveredWords.set(word, difficulties);
+        discoveredWords.set(
+          word,
+          getDifficultiesOfWord(word).length === difficulties.length
+            ? DIFFICULTIES_ALL
+            : difficulties,
+        );
     }
   }
 };
@@ -81,16 +89,26 @@ export const loadSavedWords = async () => {
  * @param {{ difficulty: Difficulty }} extraParams
  */
 export const addDiscoveredWord = (word, { difficulty }) => {
-  if (!getDifficultiesOfWord(word).includes(difficulty)) return;
+  const availableDifficulties = getDifficultiesOfWord(word);
 
-  const savedWordDifficulties = discoveredWords.get(word);
-  const difficulties = new Set(savedWordDifficulties ?? [difficulty]).add(
+  if (!availableDifficulties.includes(difficulty)) return;
+
+  const savedDifficulties = discoveredWords.get(word);
+
+  if (savedDifficulties === DIFFICULTIES_ALL) return;
+
+  const difficulties = new Set(savedDifficulties ?? [difficulty]).add(
     difficulty,
   );
 
-  if (difficulties.size === savedWordDifficulties?.length) return;
+  if (difficulties.size === savedDifficulties?.length) return;
 
-  discoveredWords.set(word, Array.from(difficulties));
+  discoveredWords.set(
+    word,
+    difficulties.size === availableDifficulties.length
+      ? DIFFICULTIES_ALL
+      : Array.from(difficulties),
+  );
 
   const data = Array.from(discoveredWords);
 

@@ -3,6 +3,7 @@ import { discoveredWords } from "@/state/discovered-words";
 import { handleDefinitionOpen } from "@/events/handlers/definition-open";
 import { getDifficultiesOfWord } from "@/utils/difficulty/of-word";
 import { addNewBadge } from "./badge";
+import { DIFFICULTIES_ALL } from "@/consts/difficulty";
 
 const $definitionTemplate = getElementById(
   "definition-template",
@@ -33,6 +34,7 @@ export const createDefinition = (word, { isNew = false } = {}) => {
   // TODO: move to createDefinitionDifficulties()
   const $difficulties = document.createElement("ul");
   const controller = new AbortController();
+  const completedDifficulties = discoveredWords.get(word);
 
   $difficulties.setAttribute("aria-label", "Difficulties available");
   $difficulties.classList.add("definition__difficulties");
@@ -46,7 +48,10 @@ export const createDefinition = (word, { isNew = false } = {}) => {
 
     $item.classList.add("definition__difficulty");
     $item.setAttribute("aria-label", label);
-    if (discoveredWords.get(word)?.includes(difficulty))
+    if (
+      completedDifficulties === DIFFICULTIES_ALL ||
+      completedDifficulties?.includes(difficulty)
+    )
       $item.dataset.completed = "";
     $span.textContent = `${difficulty[0].toUpperCase()}`;
     $span.setAttribute("aria-hidden", "true");
