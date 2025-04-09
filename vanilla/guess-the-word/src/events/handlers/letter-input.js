@@ -75,5 +75,7 @@ export function handleLetterInput($currentField) {
     $nextField.focus();
   } else if (tries === TRIES.NONE) {
     handleGameSuccess();
+  } else {
+    hideTimerBar();
   }
 }

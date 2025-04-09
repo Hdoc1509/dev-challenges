@@ -28,6 +28,7 @@ export const hideTimer = () =>
 
 export const showTimerBar = () =>
   $timerBar.style.setProperty("display", "block");
+/** Aborts the timer bar animation and its associated event listener */
 export const hideTimerBar = () =>
   $timerBar.style.setProperty("display", "none");
 
