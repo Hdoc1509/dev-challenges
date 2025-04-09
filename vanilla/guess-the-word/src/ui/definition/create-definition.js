@@ -35,6 +35,8 @@ export const createDefinition = (word, { isNew = false } = {}) => {
   const $difficulties = document.createElement("ul");
   const controller = new AbortController();
   const completedDifficulties = discoveredWords.get(word);
+  const hasCompletedAllDifficulties =
+    completedDifficulties === DIFFICULTIES_ALL;
 
   $difficulties.setAttribute("aria-label", "Difficulties available");
   $difficulties.classList.add("definition__difficulties");
@@ -49,7 +51,7 @@ export const createDefinition = (word, { isNew = false } = {}) => {
     $item.classList.add("definition__difficulty");
     $item.setAttribute("aria-label", label);
     if (
-      completedDifficulties === DIFFICULTIES_ALL ||
+      hasCompletedAllDifficulties ||
       completedDifficulties?.includes(difficulty)
     )
       $item.dataset.completed = "";
