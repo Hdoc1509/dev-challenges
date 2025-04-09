@@ -29,7 +29,7 @@ export async function handleDefinitionOpen($definitionDetails, { controller }) {
   if (error != null) {
     $definitionDetails.dataset.status = "error";
 
-    if ($content.querySelector(".definition_error") == null)
+    if ($content.querySelector(".definition__error") == null)
       $content.appendChild(createErrorMessage(error.message));
 
     if ($content.querySelector(".definition__retry") == null)
