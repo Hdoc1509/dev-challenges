@@ -1,37 +1,20 @@
-import { difficulty } from "@/state/difficulty";
-import { discoveredWords, loadSavedWords } from "@/state/discovered-words";
 import { generateRandomWord } from "./handlers/random-word";
 import { handleShowDefinition } from "./handlers/show-definition";
 import { handleLetterInput } from "./handlers/letter-input";
 import { resetGame } from "./handlers/reset-game";
 import { handleDifficultyChange } from "./handlers/difficulty-change";
 import { handleShowHints } from "./handlers/show-hints";
-import { applyDifficulty } from "@/utils/difficulty/apply";
 import { isValidLetterField } from "@/utils/letter-fields";
 import { $menu, $menuClose, $menuOpen, MenuTabs } from "@/ui/menu";
-// import { generateWordList } from "@/ui/word-list";
 import { DefinitionPagination } from "@/ui/definition/pagination";
 import { DefinitionPages } from "@/ui/definition/pages";
-import { renderDefinitionsCount } from "@/ui/definition/count";
 import { removeAllNewBadges } from "@/ui/definition/badge";
 import { closeOpenedDefinition } from "@/ui/definition/close-definition";
 import { $showDefinition } from "@/ui/definition/elements";
-import { $word } from "@/ui/word";
-import { $typing } from "@/ui/typing";
 import { $hintsTrigger, HintsTabs } from "@/ui/hints";
 import { $randomWord, $reset } from "@/ui/actions";
-import { addSpinner, removeSpinner } from "@/ui/spinner";
 
 export async function setupEventListeners() {
-  addSpinner($word, $typing);
-  await applyDifficulty(difficulty);
-  await loadSavedWords();
-  removeSpinner($word, $typing);
-  generateRandomWord();
-  renderDefinitionsCount(discoveredWords.size);
-  DefinitionPages.setItems(Array.from(discoveredWords.keys()).reverse());
-  // generateWordList();
-
   document.addEventListener("click", (e) => {
     const $target = e.target;
 
