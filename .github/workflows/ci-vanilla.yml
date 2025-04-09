@@ -1,0 +1,82 @@
+name: CI Vanilla
+
+on:
+  push:
+    branches:
+      - '*/*'
+    paths:
+      - "vanilla/**"
+
+jobs:
+  changed-files:
+    runs-on: ubuntu-22.04
+    outputs:
+      files: ${{ steps.filter.outputs.only_changed }}
+      app_name: ${{ steps.env_vars.outputs.APP_NAME }}
+      feature_name: ${{ steps.env_vars.outputs.FEATURE_NAME }}
+    steps:
+      - uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 2
+
+      - name: Set up Environment Variables
+        id: env_vars
+        run: |
+          # NOTE: app-name matches app dirname and `.name` in `package.json`
+          app_name="${BRANCH_NAME%/*}" # app-name/feature-name -> app-name
+          feature_name="${BRANCH_NAME#*/}" # app-name/feature-name -> feature-name
+          echo "app_name=${app_name}" >> "$GITHUB_OUTPUT"
+          echo "feature_name=${feature_name}" >> "$GITHUB_OUTPUT"
+        env:
+          BRANCH_NAME: ${{ github.ref_name }}
+
+      - name: Checking for changes of ${{ env.APP_NAME }} in ${{ env.FEATURE_NAME }}
+        uses: tj-actions/changed-files@v46.0.4
+        id: filter
+        with:
+          files: |
+            _templates/**
+            .github/**
+            legacy/quote-generator/**
+            legacy/weather-app/**
+            legacy/github-jobs/**
+            !.github/workflows/ci.yml
+            !vanilla/${{ env.APP_NAME }}/**
+            **.md
+        env:
+          APP_NAME: ${{ steps.env_vars.outputs.app_name }}
+          FEATURE_NAME: ${{ steps.env_vars.outputs.feature_name }}
+
+  lint:
+    needs: changed-files
+    runs-on: ubuntu-22.04
+    if: ${{ needs.changed-files.outputs.files != 'true' }}
+    env:
+      APP_NAME: ${{ needs.changed-files.outputs.app_name }}
+    steps:
+      - uses: actions/checkout@v4.2.2
+      - uses: pnpm/action-setup@v4.1.0
+      - uses: actions/setup-node@v4.3.0
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: |
+          pnpm install --frozen-lockfile --filter "@hdoc/dev-challenges" --filter "$APP_NAME"...
+          pnpm run lint:vanilla vanilla/"$APP_NAME"
+
+  typecheck:
+    needs: changed-files
+    runs-on: ubuntu-22.04
+    if: ${{ needs.changed-files.outputs.files != 'true' }}
+    env:
+      APP_NAME: ${{ needs.changed-files.outputs.app_name }}
+    steps:
+      - uses: actions/checkout@v4.2.2
+      - uses: pnpm/action-setup@v4.1.0
+      - uses: actions/setup-node@v4.3.0
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: |
+          pnpm install --frozen-lockfile --filter "@hdoc/dev-challenges" --filter "$APP_NAME"...
+          pnpm run typecheck --filter "$APP_NAME"
