@@ -5,11 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "pnpm run mocks && vite",
-    "build": "pnpm run mocks && pnpm tsc --project jsconfig.json && vite build",
+    "build": "pnpm run mocks && pnpm run typecheck && vite build",
     "preview": "pnpm run mocks && vite preview",
     "words": "bash ./scripts/words.bash",
     "defs": "bash ./scripts/definitions.bash",
-    "mocks": "pnpm run words && pnpm run defs && echo"
+    "mocks": "pnpm run words && pnpm run defs && echo",
+    "typecheck": "tsc --project jsconfig.json"
   },
   "dependencies": {
     "@fontsource-variable/outfit": "catalog:",
