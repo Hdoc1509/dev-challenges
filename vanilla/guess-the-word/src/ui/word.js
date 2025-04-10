@@ -1,4 +1,4 @@
-import { getAllElementsBySelector, getElementById } from "@lib/dom";
+import { getElementById } from "@lib/dom";
 import { currentWord } from "@/state/current-word";
 
 const ATTRIBUTRES = Object.freeze({
@@ -27,11 +27,7 @@ export const createWordLetters = (word) => {
     $word.appendChild($letter);
   });
 
-  $wordLetters = getAllElementsBySelector(
-    ".word__letter",
-    HTMLSpanElement,
-    $word,
-  );
+  $wordLetters = Array.from($word.querySelectorAll(".word__letter"));
 
   $word.removeAttribute(ATTRIBUTRES.WORD.COMPLETED);
 };
