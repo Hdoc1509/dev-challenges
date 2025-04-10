@@ -1,7 +1,7 @@
 /** @typedef Item
  * @property {AbortController} controller
+ * @property {string} word
  */
-// TODO: add `word` property
 
 /** @type {WeakMap<HTMLDetailsElement, Item>} */
 export const DefinitionItem = new WeakMap();

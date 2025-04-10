@@ -17,7 +17,9 @@ export async function handleDefinitionOpen($definitionDetails) {
     HTMLElement,
     $definitionDetails,
   );
-  const word = /** @type {string} */ ($definitionDetails.dataset.word);
+  const word = DefinitionItem.get($definitionDetails)?.word;
+
+  if (word == null) return;
 
   addSpinner($content);
   $definitionDetails.dataset.status = "loading";
