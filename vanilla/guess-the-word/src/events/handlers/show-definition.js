@@ -1,20 +1,29 @@
-import { getElementBySelector } from "@lib/dom";
 import { currentWord } from "@/state/current-word";
 import { $definitionsTab, $menu, MenuTabs } from "@/ui/menu";
 import { $definitionSection } from "@/ui/definition/elements";
-import { $definitionPagesContainer } from "@/ui/definition/pages";
+import {
+  DefinitionPages,
+  $definitionPagesContainer,
+} from "@/ui/definition/pages";
 import { DefinitionPagination } from "@/ui/definition/pagination";
 
 export function handleShowDefinition() {
-  DefinitionPagination.setCurrentPage(1);
-
   // TODO: add DefinitionItem.Element Map to @/state/definition
   // const $details = DefinitionItem.Element.get(word);
-  const $details = getElementBySelector(
-    `.definitions-list.page[data-active] .definition[data-word=${currentWord}]`,
-    HTMLDetailsElement,
-    $definitionPagesContainer,
+  const $details = $definitionPagesContainer.querySelector(
+    `.definition[data-word=${currentWord}]`,
   );
+
+  // NOTE: can be null if it's page is not rendered yet
+  if (!($details instanceof HTMLDetailsElement)) return;
+
+  const $page = /** @type {HTMLUListElement} */ (
+    $details.closest(".definitions-list.page")
+  );
+  const targetPage = Number($page.dataset.page);
+
+  DefinitionPages.renderPage(targetPage);
+  DefinitionPagination.setCurrentPage(targetPage);
 
   $definitionSection.removeAttribute("data-active");
   $menu.showModal();
