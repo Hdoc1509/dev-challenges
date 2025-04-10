@@ -1,15 +1,13 @@
 import { getDefinition } from "@/services/definition";
 import { getElementBySelector } from "@lib/dom";
+import { DefinitionItem } from "@/state/definition";
 import { hasCompletedDifficulties } from "@/utils/difficulty/completed";
 import { createRetryButton } from "@/ui/definition/retry";
 import { createErrorMessage } from "@/ui/definition/error-message";
 import { addSpinner, removeSpinner } from "@/ui/spinner";
 
-/**
- * @param {HTMLDetailsElement} $definitionDetails
- * @param {{ controller: AbortController }} extraParams
- */
-export async function handleDefinitionOpen($definitionDetails, { controller }) {
+/** @param {HTMLDetailsElement} $definitionDetails */
+export async function handleDefinitionOpen($definitionDetails) {
   const status = $definitionDetails.dataset.status;
 
   if (status === "success" || status === "loading") return;
@@ -33,9 +31,7 @@ export async function handleDefinitionOpen($definitionDetails, { controller }) {
       $content.appendChild(createErrorMessage(error.message));
 
     if ($content.querySelector(".definition__retry") == null)
-      $content.appendChild(
-        createRetryButton({ $definitionDetails, controller }),
-      );
+      $content.appendChild(createRetryButton($definitionDetails));
 
     return;
   }
@@ -48,9 +44,11 @@ export async function handleDefinitionOpen($definitionDetails, { controller }) {
     $content.appendChild($definition);
   }
 
-  controller.abort();
+  DefinitionItem.AbortController.get($definitionDetails)?.abort();
+  DefinitionItem.AbortController.delete($definitionDetails);
   if (hasCompletedDifficulties({ word }))
     $definitionDetails.removeAttribute("data-word");
+  // TODO: remove data-status after removing spinner, error message and retry button
   $definitionDetails.removeAttribute("data-status");
   $definitionDetails.scrollIntoView();
   $content.querySelector(".definition__error")?.remove();

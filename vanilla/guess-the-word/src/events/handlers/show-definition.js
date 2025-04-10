@@ -8,6 +8,8 @@ import { DefinitionPagination } from "@/ui/definition/pagination";
 export function handleShowDefinition() {
   DefinitionPagination.updateCurrentPage(1);
 
+  // TODO: add DefinitionItem.Element Map to @/state/definition
+  // const $details = DefinitionItem.Element.get(word);
   const $details = getElementBySelector(
     `.definitions-list.page[data-active] .definition[data-word=${currentWord}]`,
     HTMLDetailsElement,
