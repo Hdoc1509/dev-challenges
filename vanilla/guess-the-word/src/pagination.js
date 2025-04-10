@@ -110,7 +110,7 @@ export class Pagination {
   }
 
   /** @param {number} page */
-  updateCurrentPage(page) {
+  setCurrentPage(page) {
     this.currentPage = page;
     this.#$input.value = `${page}`;
     this.#checkTriggers();

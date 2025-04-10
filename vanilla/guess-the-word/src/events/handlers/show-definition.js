@@ -6,7 +6,7 @@ import { $definitionPagesContainer } from "@/ui/definition/pages";
 import { DefinitionPagination } from "@/ui/definition/pagination";
 
 export function handleShowDefinition() {
-  DefinitionPagination.updateCurrentPage(1);
+  DefinitionPagination.setCurrentPage(1);
 
   // TODO: add DefinitionItem.Element Map to @/state/definition
   // const $details = DefinitionItem.Element.get(word);
