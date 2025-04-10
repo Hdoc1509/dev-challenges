@@ -1,4 +1,5 @@
 import { currentWord } from "@/state/current-word";
+import { DefinitionElement } from "@/state/definition";
 import { $definitionsTab, $menu, MenuTabs } from "@/ui/menu";
 import { $definitionSection } from "@/ui/definition/elements";
 import {
@@ -8,14 +9,13 @@ import {
 import { DefinitionPagination } from "@/ui/definition/pagination";
 
 export function handleShowDefinition() {
-  // TODO: add DefinitionItem.Element Map to @/state/definition
-  // const $details = DefinitionItem.Element.get(word);
-  const $details = $definitionPagesContainer.querySelector(
-    `.definition[data-word=${currentWord}]`,
-  );
+  const $details = DefinitionElement.get(currentWord);
 
-  // NOTE: can be null if it's page is not rendered yet
-  if (!($details instanceof HTMLDetailsElement)) return;
+  if (
+    !($details instanceof HTMLDetailsElement) ||
+    !$definitionPagesContainer.contains($details)
+  )
+    return;
 
   const $page = /** @type {HTMLUListElement} */ (
     $details.closest(".definitions-list.page")

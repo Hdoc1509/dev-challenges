@@ -1,6 +1,6 @@
 import { getDefinition } from "@/services/definition";
 import { getElementBySelector } from "@lib/dom";
-import { DefinitionItem } from "@/state/definition";
+import { DefinitionElement, DefinitionItem } from "@/state/definition";
 import { hasCompletedDifficulties } from "@/utils/difficulty/completed";
 import { createRetryButton } from "@/ui/definition/retry";
 import { createErrorMessage } from "@/ui/definition/error-message";
@@ -48,8 +48,7 @@ export async function handleDefinitionOpen($definitionDetails) {
 
   DefinitionItem.get($definitionDetails)?.controller.abort();
   DefinitionItem.delete($definitionDetails);
-  if (hasCompletedDifficulties({ word }))
-    $definitionDetails.removeAttribute("data-word");
+  if (hasCompletedDifficulties({ word })) DefinitionElement.delete(word);
   // TODO: remove data-status after removing spinner, error message and retry button
   $definitionDetails.removeAttribute("data-status");
   $definitionDetails.scrollIntoView();

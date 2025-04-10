@@ -1,6 +1,6 @@
 import { getElementById, getElementBySelector } from "@lib/dom";
 import { discoveredWords } from "@/state/discovered-words";
-import { DefinitionItem } from "@/state/definition";
+import { DefinitionElement, DefinitionItem } from "@/state/definition";
 import { handleDefinitionOpen } from "@/events/handlers/definition-open";
 import { getDifficultiesOfWord } from "@/utils/difficulty/of-word";
 import { addNewBadge } from "./badge";
@@ -40,10 +40,9 @@ export const createDefinition = (word, { isNew = false } = {}) => {
     completedDifficulties === DIFFICULTIES_ALL;
 
   DefinitionItem.set($definition, { controller, word });
+  DefinitionElement.set(word, $definition);
   $difficulties.setAttribute("aria-label", "Difficulties available");
   $difficulties.classList.add("definition__difficulties");
-  // TODO: DefinitionItem.Element.set(word, $definition);
-  $definition.dataset.word = word;
   $label.textContent = capitalize(word);
   if (isNew) addNewBadge({ $details: $definition, $label });
   getDifficultiesOfWord(word).forEach((difficulty) => {

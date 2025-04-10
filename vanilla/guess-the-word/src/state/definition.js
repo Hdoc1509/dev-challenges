@@ -5,3 +5,6 @@
 
 /** @type {WeakMap<HTMLDetailsElement, Item>} */
 export const DefinitionItem = new WeakMap();
+
+/** @type {Map<string, HTMLDetailsElement>} */
+export const DefinitionElement = new Map();
