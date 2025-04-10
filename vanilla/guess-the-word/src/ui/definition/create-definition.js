@@ -39,7 +39,7 @@ export const createDefinition = (word, { isNew = false } = {}) => {
   const hasCompletedAllDifficulties =
     completedDifficulties === DIFFICULTIES_ALL;
 
-  DefinitionItem.AbortController.set($definition, controller);
+  DefinitionItem.set($definition, { controller });
   $difficulties.setAttribute("aria-label", "Difficulties available");
   $difficulties.classList.add("definition__difficulties");
   // TODO: DefinitionItem.Element.set(word, $definition);

@@ -22,7 +22,7 @@ export const createRetryButton = ($definitionDetails) => {
     "click",
     () => handleDefinitionOpen($definitionDetails),
     {
-      signal: DefinitionItem.AbortController.get($definitionDetails)?.signal,
+      signal: DefinitionItem.get($definitionDetails)?.controller.signal,
     },
   );
 

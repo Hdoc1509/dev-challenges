@@ -44,8 +44,8 @@ export async function handleDefinitionOpen($definitionDetails) {
     $content.appendChild($definition);
   }
 
-  DefinitionItem.AbortController.get($definitionDetails)?.abort();
-  DefinitionItem.AbortController.delete($definitionDetails);
+  DefinitionItem.get($definitionDetails)?.controller.abort();
+  DefinitionItem.delete($definitionDetails);
   if (hasCompletedDifficulties({ word }))
     $definitionDetails.removeAttribute("data-word");
   // TODO: remove data-status after removing spinner, error message and retry button

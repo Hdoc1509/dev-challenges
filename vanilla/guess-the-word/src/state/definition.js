@@ -1,4 +1,7 @@
-export const DefinitionItem = {
-  /** @type {WeakMap<HTMLDetailsElement, AbortController>} */
-  AbortController: new WeakMap(),
-};
+/** @typedef Item
+ * @property {AbortController} controller
+ */
+// TODO: add `word` property
+
+/** @type {WeakMap<HTMLDetailsElement, Item>} */
+export const DefinitionItem = new WeakMap();
