@@ -1,0 +1,57 @@
+name: CI Root
+
+on:
+  push:
+    branches:
+      - 'root/*'
+
+jobs:
+  changed-files:
+    runs-on: ubuntu-22.04
+    outputs:
+      files: ${{ steps.filter.outputs.only_changed }}
+    steps:
+      - uses: actions/checkout@v4.2.2
+        with:
+          fetch-depth: 2
+      - uses: tj-actions/changed-files@v46.0.4
+        id: filter
+        with:
+          files: |
+            _templates/**
+            .github/**
+            legacy/quote-generator/**
+            legacy/weather-app/**
+            legacy/github-jobs/**
+            !.github/workflows/ci-root.yml
+            **.md
+
+  lint:
+    needs: changed-files
+    runs-on: ubuntu-22.04
+    if: ${{ needs.changed-files.outputs.files != 'true' }}
+    steps:
+      - uses: actions/checkout@v4.2.2
+      - uses: pnpm/action-setup@v4.1.0
+      - uses: actions/setup-node@v4.3.0
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: |
+          pnpm install --frozen-lockfile
+          pnpm run lint
+
+  typecheck:
+    needs: changed-files
+    runs-on: ubuntu-22.04
+    if: ${{ needs.changed-files.outputs.files != 'true' }}
+    steps:
+      - uses: actions/checkout@v4.2.2
+      - uses: pnpm/action-setup@v4.1.0
+      - uses: actions/setup-node@v4.3.0
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: |
+          pnpm install --frozen-lockfile
+          pnpm run --recursive typecheck
