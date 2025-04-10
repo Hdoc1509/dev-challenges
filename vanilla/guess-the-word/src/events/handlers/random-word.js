@@ -7,7 +7,7 @@ import { Random } from "@/utils/random";
 import { createLetterFields } from "@/utils/letter-fields";
 import { hasCompletedDifficulties } from "@/utils/difficulty/completed";
 import { scrambleWord } from "@/utils/scramble";
-import { $word, captureWordLetters, setWordLetters } from "@/ui/word";
+import { createWordLetters } from "@/ui/word";
 import { $currentTries, $triesContainer, $triesIndicators } from "@/ui/tries";
 import { $mistakenLetters, $mistakesContainer } from "@/ui/mistakes";
 import { captureLetterFields, setLetterFields, $typing } from "@/ui/typing";
@@ -34,19 +34,11 @@ export function generateRandomWord() {
   resetTries();
   resetGameResets();
 
-  while ($word.firstChild) $word.removeChild($word.firstChild);
-  scrambleWord(currentWord)
-    .split("")
-    .forEach((letter) => {
-      const $letter = document.createElement("span");
+  createWordLetters(scrambleWord(currentWord));
 
-      $letter.textContent = letter;
-      $letter.classList.add("word__letter");
-      $word.appendChild($letter);
-    });
-  setWordLetters(captureWordLetters());
-  $word.removeAttribute("data-completed");
-
+  // TODO: update createLetterFields() util
+  // - clear $typing
+  // - call setLetterFields() and captureLetterFields()
   while ($typing.firstChild) $typing.removeChild($typing.firstChild);
   createLetterFields(currentWord.length);
   setLetterFields(captureLetterFields());

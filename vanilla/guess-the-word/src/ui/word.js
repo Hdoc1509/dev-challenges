@@ -15,11 +15,26 @@ export const $word = getElementById("word", HTMLDivElement);
 /** @type {HTMLSpanElement[]} */
 export let $wordLetters = [];
 
-/** @param {HTMLSpanElement[]} $letters */
-export const setWordLetters = ($letters) => ($wordLetters = $letters);
+/** @param {string} word */
+export const createWordLetters = (word) => {
+  while ($word.firstChild) $word.removeChild($word.firstChild);
 
-export const captureWordLetters = () =>
-  getAllElementsBySelector(".word__letter", HTMLSpanElement, $word);
+  word.split("").forEach((letter) => {
+    const $letter = document.createElement("span");
+
+    $letter.textContent = letter;
+    $letter.classList.add("word__letter");
+    $word.appendChild($letter);
+  });
+
+  $wordLetters = getAllElementsBySelector(
+    ".word__letter",
+    HTMLSpanElement,
+    $word,
+  );
+
+  $word.removeAttribute(ATTRIBUTRES.WORD.COMPLETED);
+};
 
 /** @param {string} letter */
 export const useLetter = (letter) => {

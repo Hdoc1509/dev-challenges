@@ -2,6 +2,8 @@ import { getElementBySelector } from "@lib/dom";
 import { $letterTemplate, $typing } from "@/ui/typing";
 import { CLASSES } from "@/consts/css-classes";
 
+// TODO: move these utils to @/ui/typing
+
 /** @param {number} quantity */
 export function createLetterFields(quantity) {
   for (let i = 0; i < quantity; i++) {
