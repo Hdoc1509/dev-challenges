@@ -49,10 +49,9 @@ export async function handleDefinitionOpen($definitionDetails) {
   DefinitionItem.get($definitionDetails)?.controller.abort();
   DefinitionItem.delete($definitionDetails);
   if (hasCompletedDifficulties({ word })) DefinitionElement.delete(word);
-  // TODO: remove data-status after removing spinner, error message and retry button
-  $definitionDetails.removeAttribute("data-status");
   $definitionDetails.scrollIntoView();
   $content.querySelector(".definition__error")?.remove();
   $content.querySelector(".definition__retry")?.remove();
   removeSpinner($content);
+  $definitionDetails.removeAttribute("data-status");
 }
