@@ -1,7 +1,7 @@
 import { getDefinition } from "@/services/definition";
 import { getElementBySelector } from "@lib/dom";
 import { DefinitionElement, DefinitionItem } from "@/state/definition";
-import { hasCompletedDifficulties } from "@/utils/difficulty/completed";
+import { hasCompletedAllDifficulties } from "@/utils/difficulty/completed";
 import { createRetryButton } from "@/ui/definition/retry";
 import { createErrorMessage } from "@/ui/definition/error-message";
 import { addSpinner, removeSpinner } from "@/ui/spinner";
@@ -48,7 +48,7 @@ export async function handleDefinitionOpen($definitionDetails) {
 
   DefinitionItem.get($definitionDetails)?.controller.abort();
   DefinitionItem.delete($definitionDetails);
-  if (hasCompletedDifficulties({ word })) DefinitionElement.delete(word);
+  if (hasCompletedAllDifficulties({ word })) DefinitionElement.delete(word);
   $definitionDetails.scrollIntoView();
   $content.querySelector(".definition__error")?.remove();
   $content.querySelector(".definition__retry")?.remove();
