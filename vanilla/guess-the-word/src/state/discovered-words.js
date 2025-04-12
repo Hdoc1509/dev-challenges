@@ -55,32 +55,30 @@ export const loadSavedWords = async () => {
   if (!Array.isArray(parsedItem)) return;
 
   for (const item of parsedItem) {
-    if (Array.isArray(item)) {
-      if (item.length !== 2) continue;
+    if (!Array.isArray(item) || item.length !== 2) continue;
 
-      const [word, difficulties] = item;
+    const [word, difficulties] = item;
 
-      if (typeof word !== "string") continue;
+    if (typeof word !== "string") continue;
 
-      if (difficulties === DIFFICULTIES_ALL)
-        discoveredWords.set(word, DIFFICULTIES_ALL);
-      else if (
-        Array.isArray(difficulties) &&
-        difficulties.every(
-          /** @param {string} difficulty
-           * @returns {difficulty is Difficulty}
-           */ (difficulty) =>
-            DIFFICULTIES.has(/** @type {Difficulty} */ (difficulty)),
-        ) &&
-        !(await isWordRemovedFromGame(word))
-      )
-        discoveredWords.set(
-          word,
-          getDifficultiesOfWord(word).length === difficulties.length
-            ? DIFFICULTIES_ALL
-            : difficulties,
-        );
-    }
+    if (difficulties === DIFFICULTIES_ALL)
+      discoveredWords.set(word, DIFFICULTIES_ALL);
+    else if (
+      Array.isArray(difficulties) &&
+      difficulties.every(
+        /** @param {string} difficulty
+         * @returns {difficulty is Difficulty} */
+        (difficulty) =>
+          DIFFICULTIES.has(/** @type {Difficulty} */ (difficulty)),
+      ) &&
+      !(await isWordRemovedFromGame(word))
+    )
+      discoveredWords.set(
+        word,
+        getDifficultiesOfWord(word).length === difficulties.length
+          ? DIFFICULTIES_ALL
+          : difficulties,
+      );
   }
 };
 
