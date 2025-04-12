@@ -13,7 +13,7 @@ const ATTRIBUTRES = Object.freeze({
 export const $word = getElementById("word", HTMLDivElement);
 
 /** @type {HTMLSpanElement[]} */
-export let $wordLetters = [];
+let $wordLetters = [];
 
 /** @param {string} word */
 export const createWordLetters = (word) => {
@@ -40,6 +40,11 @@ export const useLetter = (letter) => {
 
   if ($letter != null) $letter.setAttribute(ATTRIBUTRES.LETTER.USED, "");
 };
+
+export const clearUsedLetters = () =>
+  $wordLetters.forEach(($letter) =>
+    $letter.removeAttribute(ATTRIBUTRES.LETTER.USED),
+  );
 
 export const setWordCompleted = () =>
   $word.setAttribute(ATTRIBUTRES.WORD.COMPLETED, "");
