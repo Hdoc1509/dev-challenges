@@ -5,7 +5,7 @@ import { resetTries } from "@/state/tries";
 import { gameResets, maxResets, resetGameResets } from "@/state/resets";
 import { Random } from "@/utils/random";
 import { createLetterFields } from "@/utils/letter-fields";
-import { hasCompletedAllDifficulties } from "@/utils/difficulty/completed";
+import { hasCompletedDifficulty } from "@/utils/difficulty/completed";
 import { scrambleWord } from "@/utils/scramble";
 import { createWordLetters } from "@/ui/word";
 import { $currentTries, $triesContainer, $triesIndicators } from "@/ui/tries";
@@ -26,7 +26,7 @@ import { RESETS } from "@/consts/resets";
 export function generateRandomWord() {
   let randomWord = Random.element(words);
 
-  while (hasCompletedAllDifficulties({ word: randomWord }))
+  while (hasCompletedDifficulty({ word: randomWord }))
     randomWord = Random.element(words);
 
   setCurrentWord(randomWord);
