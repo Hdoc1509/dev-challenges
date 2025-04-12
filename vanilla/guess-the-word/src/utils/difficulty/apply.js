@@ -34,7 +34,7 @@ export async function applyDifficulty(difficulty) {
   } else if (difficulty === DIFFICULTY.INSANE) {
     await HardDifficulty.apply();
     MasterDifficulty.apply();
-    ExtremeDifficulty.apply();
+    await ExtremeDifficulty.apply();
     InsaneDifficulty.apply();
   } else if (difficulty === DIFFICULTY.WHY) {
     await HardDifficulty.apply();
