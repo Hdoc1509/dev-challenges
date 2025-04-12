@@ -66,10 +66,8 @@ export const loadSavedWords = async () => {
     else if (
       Array.isArray(difficulties) &&
       difficulties.every(
-        /** @param {string} difficulty
-         * @returns {difficulty is Difficulty} */
-        (difficulty) =>
-          DIFFICULTIES.has(/** @type {Difficulty} */ (difficulty)),
+        /** @returns {difficulty is Difficulty} */
+        (difficulty) => DIFFICULTIES.has(difficulty),
       ) &&
       !(await isWordRemovedFromGame(word))
     )
