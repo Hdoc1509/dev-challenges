@@ -15,22 +15,25 @@ import { $reset } from "@/ui/actions";
 
 export function resetGame() {
   resetTries();
-  hideTimerBar();
   increaseGameResets();
 
   clearUsedLetters();
-  resetLetterFields();
 
   if (implementsMaxResets() && gameResets === maxResets) {
-    $mistakesContainer.removeAttribute("data-active");
     $triesContainer.removeAttribute("data-active");
+    $mistakesContainer.removeAttribute("data-active");
   }
   $currentTries.textContent = "0";
   $triesIndicators.forEach(($item) => $item.removeAttribute("data-completed"));
+  $mistakenLetters.textContent = "-";
   if (implementsMaxResets()) {
     $currentResets.textContent = `${gameResets}`;
     $resetsIndicators[gameResets - 1].setAttribute("data-completed", "");
   }
-  $mistakenLetters.textContent = "-";
+
+  hideTimerBar();
+
+  resetLetterFields();
+
   $reset.disabled = true;
 }
