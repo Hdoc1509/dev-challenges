@@ -79,4 +79,4 @@ jobs:
           cache: pnpm
       - run: |
           pnpm install --frozen-lockfile --filter "@hdoc/dev-challenges" --filter "$APP_NAME"...
-          pnpm run typecheck --filter "$APP_NAME"
+          pnpm --filter "$APP_NAME" typecheck
