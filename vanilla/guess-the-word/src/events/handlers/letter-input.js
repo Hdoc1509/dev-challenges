@@ -1,12 +1,10 @@
 import { currentWord } from "@/state/current-word";
-import { difficulty } from "@/state/difficulty";
 import { increaseTries, maxTries, tries } from "@/state/tries";
-import { maxResets, gameResets } from "@/state/resets";
+import { maxResets, gameResets, implementsMaxResets } from "@/state/resets";
 import { handleLetterMistake } from "./letter-mistake";
 import { resetGame } from "./reset-game";
 import { handleGameOver } from "./game-over";
 import { handleGameSuccess } from "./game-success";
-import { implementsMaxResets } from "@/utils/max-resets";
 import { showCorrectWord, useLetter } from "@/ui/word";
 import { hideTimerBar } from "@/ui/timer";
 import { $hints, addHint } from "@/ui/hints";
@@ -36,7 +34,7 @@ export function handleLetterInput($currentField) {
   addHint(enteredLetter, { letterIndex, isCorrect: isMatch });
 
   if (!isMatch) {
-    if (implementsMaxResets({ difficulty }) && gameResets === maxResets) {
+    if (implementsMaxResets() && gameResets === maxResets) {
       handleLetterMistake({ $currentLetter, enteredLetter, tries });
       handleGameOver({ $currentField, $currentLetter });
       showCorrectWord(); // TODO: move to handleGameOver()
