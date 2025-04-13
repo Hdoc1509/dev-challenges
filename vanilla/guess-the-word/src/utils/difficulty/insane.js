@@ -6,8 +6,8 @@ import {
   showTimer,
   showTimerBar,
 } from "@/ui/timer";
+import { isValidLetterField } from "@/ui/typing";
 import { Random } from "../random";
-import { isValidLetterField } from "../letter-fields";
 
 /** @type {HTMLInputElement | null} */
 // NOTE: avoids weird behaviors when focusing more than once on the same input

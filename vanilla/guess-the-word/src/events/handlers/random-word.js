@@ -4,7 +4,7 @@ import { currentWord, setCurrentWord } from "@/state/current-word";
 import { resetTries } from "@/state/tries";
 import { gameResets, maxResets, resetGameResets } from "@/state/resets";
 import { Random } from "@/utils/random";
-import { createLetterFields } from "@/utils/letter-fields";
+import { createLetterFields } from "@/ui/typing";
 import { hasCompletedDifficulty } from "@/utils/difficulty/completed";
 import { scrambleWord } from "@/utils/scramble";
 import { createWordLetters } from "@/ui/word";
