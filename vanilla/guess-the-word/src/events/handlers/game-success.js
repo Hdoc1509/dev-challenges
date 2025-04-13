@@ -3,7 +3,7 @@ import { addDiscoveredWord, discoveredWords } from "@/state/discovered-words";
 import { currentWord } from "@/state/current-word";
 import { difficulty } from "@/state/difficulty";
 import { hasCompletedAllDifficulties } from "@/utils/difficulty/completed";
-import { setWordCompleted, showCorrectWord } from "@/ui/word";
+import { showCorrectWord } from "@/ui/word";
 import { hideTimerBar } from "@/ui/timer";
 import { DefinitionPages } from "@/ui/definition/pages";
 import { renderDefinitionsCount } from "@/ui/definition/count";
@@ -16,7 +16,6 @@ export function handleGameSuccess() {
   showAlert({ color: "success", text: "🎉 Success!" });
   hideTimerBar();
   $reset.disabled = true;
-  setWordCompleted();
   showCorrectWord();
   $hints.removeAttribute("data-active");
   $hintsContent.removeAttribute("data-active");

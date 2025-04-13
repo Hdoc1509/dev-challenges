@@ -39,7 +39,7 @@ export function handleLetterInput($currentField) {
     if (implementsMaxResets({ difficulty }) && gameResets === maxResets) {
       handleLetterMistake({ $currentLetter, enteredLetter, tries });
       handleGameOver({ $currentField, $currentLetter });
-      showCorrectWord();
+      showCorrectWord(); // TODO: move to handleGameOver()
       hideTimerBar();
       return;
     }
