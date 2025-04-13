@@ -1,11 +1,18 @@
 import { getElementBySelector } from "@lib/dom";
-import { $letterTemplate, $typing } from "@/ui/typing";
+import {
+  $letterTemplate,
+  $typing,
+  captureLetterFields,
+  setLetterFields,
+} from "@/ui/typing";
 import { CLASSES } from "@/consts/css-classes";
 
 // TODO: move these utils to @/ui/typing
 
 /** @param {number} quantity */
 export function createLetterFields(quantity) {
+  while ($typing.firstChild) $typing.removeChild($typing.firstChild);
+
   for (let i = 0; i < quantity; i++) {
     const $letterClone = /** @type {DocumentFragment} */ (
       $letterTemplate.content.cloneNode(true)
@@ -31,6 +38,8 @@ export function createLetterFields(quantity) {
   $firstLetter.classList.add(CLASSES.TYPING.LETTER__CURRENT);
   $firstField.disabled = false;
   $firstField.focus();
+
+  setLetterFields(captureLetterFields());
 }
 
 /** @type {($target: EventTarget | null) => $target is HTMLInputElement} */
