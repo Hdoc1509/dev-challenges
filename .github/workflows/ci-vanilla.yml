@@ -6,6 +6,7 @@ on:
       - '*/*'
     paths:
       - "vanilla/**"
+      - ".github/workflows/ci-vanilla.yml"
 
 jobs:
   changed-files:
@@ -40,7 +41,7 @@ jobs:
             legacy/quote-generator/**
             legacy/weather-app/**
             legacy/github-jobs/**
-            !.github/workflows/ci.yml
+            !.github/workflows/ci-vanilla.yml
             !vanilla/${{ env.APP_NAME }}/**
             **.md
         env:
