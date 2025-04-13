@@ -10,13 +10,16 @@ import { TRIES } from "@/consts/tries";
  * @param {number} params.tries
  */
 export function handleLetterMistake({ $currentLetter, enteredLetter, tries }) {
+  $currentLetter.classList.add(CLASSES.TYPING.LETTER__MISTAKEN);
+
+  // NOTE: only happens when reached max resets
+  if (tries === TRIES.NONE) return;
+
   const mistakes = $mistakenLetters.textContent;
 
+  $currentTries.textContent = `${tries}`;
+  // NOTE: can be null if reached max tries
+  $triesIndicators[tries - 1]?.setAttribute("data-completed", "");
   $mistakenLetters.textContent =
     tries === TRIES.FIRST ? enteredLetter : `${mistakes}, ${enteredLetter}`;
-
-  $currentTries.textContent = `${tries}`;
-  // NOTE: can be undefined if difficulty === MASTER
-  $triesIndicators[tries - 1]?.setAttribute("data-completed", "");
-  $currentLetter.classList.add(CLASSES.TYPING.LETTER__MISTAKEN);
 }
