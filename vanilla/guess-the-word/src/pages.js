@@ -91,13 +91,13 @@ export class Pages {
     if (!($pagesContainer instanceof HTMLDivElement))
       error('"$pagesContainer" argument must be an instance of HTMLDivElement');
 
-    const $templateClone = /** @type {DocumentFragment} */ (
+    const $pageClone = /** @type {DocumentFragment} */ (
       $pageTemplate.content.cloneNode(true)
     ).querySelector("ul");
 
-    if ($templateClone == null)
+    if ($pageClone == null)
       error('"$pageTemplate" argument must have an "ul" element');
-    else if (!$templateClone.classList.contains("page"))
+    else if (!$pageClone.classList.contains("page"))
       error('"ul" element in "$pageTemplate" argument must have "page" class');
 
     this.#$pagesContainer = $pagesContainer;
