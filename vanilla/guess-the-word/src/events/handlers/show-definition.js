@@ -20,7 +20,9 @@ export function handleShowDefinition() {
   const $page = /** @type {HTMLUListElement} */ (
     $details.closest(".definitions-list.page")
   );
-  const targetPage = Number($page.dataset.page);
+  const targetPage = DefinitionPages.numberOfPage($page);
+
+  if (targetPage == null) return;
 
   DefinitionPages.renderPage(targetPage);
   DefinitionPagination.setCurrentPage(targetPage);

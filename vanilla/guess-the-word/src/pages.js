@@ -43,6 +43,8 @@ const error = (message) => {
 
 /** @template Item */
 export class Pages {
+  /** @type {Map<number, HTMLUListElement>} */
+  #Pages = new Map();
   #$pagesContainer;
   #$pageTemplate;
   #$pageEmptyTemplate;
@@ -121,8 +123,8 @@ export class Pages {
    * @param {{ renderPage?: number }} [options]
    */
   setItems(items, { renderPage } = {}) {
-    for (let page = 1; page <= this.totalPages; page++)
-      this.#$page(page)?.remove();
+    this.#Pages.forEach(($page) => $page.remove());
+    this.#Pages.clear();
 
     this.#paginatedItems = paginate(items, this.#itemsPerPage);
 
@@ -141,12 +143,16 @@ export class Pages {
     this.#events[event].push(handler);
   }
 
-  /**
-   * @param {number} page
-   * @returns {HTMLUListElement | null}
-   */
+  /** @param {number} page */
   #$page(page) {
-    return this.#$pagesContainer.querySelector(`.page[data-page="${page}"]`);
+    return this.#Pages.get(page);
+  }
+
+  /** @param {HTMLUListElement} $page */
+  numberOfPage($page) {
+    return Array.from(this.#Pages).find(
+      ([, $pageElement]) => $pageElement === $page,
+    )?.[0];
   }
 
   /** @param {number} page */
@@ -187,7 +193,7 @@ export class Pages {
 
     $currentPage?.removeAttribute("data-active");
     $page.dataset.active = "";
-    $page.dataset.page = page.toString();
+    this.#Pages.set(page, $page);
     this.#onPageChange?.($page);
   }
 
@@ -240,7 +246,7 @@ export class Pages {
   /**
    * @param {Object} params
    * @param {number} params.totalItems
-   * @param {HTMLUListElement | null} params.$fromPage
+   * @param {HTMLUListElement} [params.$fromPage]
    * @param {number} params.pageIdx
    */
   #reorder({ totalItems, $fromPage, pageIdx }) {
