@@ -1,6 +1,7 @@
 import { currentWord } from "@/state/current-word";
 import { increaseTries, maxTries, tries } from "@/state/tries";
 import { maxResets, gameResets, implementsMaxResets } from "@/state/resets";
+import { TypingLetterIndex } from "@/state/typing-letter";
 import { handleLetterMistake } from "./letter-mistake";
 import { resetGame } from "./reset-game";
 import { handleGameOver } from "./game-over";
@@ -17,7 +18,9 @@ export function handleLetterInput($currentField) {
   const $currentLetter = /** @type {HTMLSpanElement} */ (
     $currentField.parentElement
   );
-  const letterIndex = Number($currentLetter.dataset.letterIndex);
+  const letterIndex = /** @type {number}*/ (
+    TypingLetterIndex.get($currentField)
+  );
   const enteredLetter = $currentField.value;
   const lowercaseLetter = enteredLetter.toLowerCase();
 

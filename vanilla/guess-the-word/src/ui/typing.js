@@ -1,4 +1,5 @@
 import { getElementById, getElementBySelector } from "@lib/dom";
+import { TypingLetterIndex } from "@/state/typing-letter";
 import { CLASSES } from "@/consts/css-classes";
 
 export const $typing = getElementById("typing", HTMLElement);
@@ -18,14 +19,13 @@ export function createLetterFields(quantity) {
     const $letterClone = /** @type {DocumentFragment} */ (
       $letterTemplate.content.cloneNode(true)
     );
-    const $letter = getElementBySelector(
-      ".typing__letter",
-      HTMLSpanElement,
+    const $field = getElementBySelector(
+      "input",
+      HTMLInputElement,
       $letterClone,
     );
 
-    $letter.setAttribute("data-letter-index", `${i}`);
-
+    TypingLetterIndex.set($field, i);
     $typing.appendChild($letterClone);
   }
 
