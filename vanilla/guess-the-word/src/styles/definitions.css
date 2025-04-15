@@ -37,6 +37,7 @@
 
 .definition:not(.info .definition) {
   border-left: 3px solid var(--definition-border-color, var(--word-bg));
+  padding-inline: 0.75rem;
 
   --spinner-size: 2.25rem;
 }
@@ -66,7 +67,6 @@
 }
 .definition__label {
   outline: none;
-  padding-left: 0.75rem;
 
   font-weight: bold;
   font-size: 1.125rem;
@@ -120,7 +120,7 @@
   flex-direction: column;
   gap: 0.5em;
 
-  padding: 0.25rem 0.875rem;
+  padding-block: 0.25rem;
 }
 .definition__error {
   display: var(--error-display);
