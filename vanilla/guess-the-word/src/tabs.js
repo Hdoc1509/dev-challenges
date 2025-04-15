@@ -1,4 +1,4 @@
-import { getAllElementsBySelector } from "@lib/dom";
+import { getAllElementsBySelector, getElementBySelector } from "@lib/dom";
 
 const CLASSES = Object.freeze({
   TAB_LINK: "tab-nav__link",
@@ -8,12 +8,16 @@ const CLASSES = Object.freeze({
 const ATTRIBUTES = Object.freeze({
   TAB: Object.freeze({
     SELECTED: "aria-selected",
-    NAME: "data-tab",
   }),
   CONTENT: Object.freeze({
     ACTIVE: "data-content-active",
   }),
 });
+
+const TAB_VALID_SELECTOR = `.${CLASSES.TAB_LINK}[id]:not([id=""])`
+  .concat('[aria-controls$="-tab-content"]')
+  .concat('[role="tab"]')
+  .concat(':where([aria-selected="true"], [aria-selected="false"])');
 
 export class Tabs {
   /** @type {HTMLElement} */
@@ -22,6 +26,8 @@ export class Tabs {
   #$CONTENTS = new Map();
   /** @type {Map<string, HTMLButtonElement>} */
   #$TABS = new Map();
+  /** @type {Map<HTMLButtonElement, string>} */
+  #TabIds = new Map();
   #currentTab = "";
 
   /**
@@ -29,36 +35,34 @@ export class Tabs {
    * @param {HTMLElement} params.$nav
    * @param {HTMLElement} params.$content
    */
-  constructor({ $nav, $content }) {
+  constructor({ $nav, $content: $contentContainer }) {
     this.#$nav = $nav;
 
     const $tabs = getAllElementsBySelector(
-      `.${CLASSES.TAB_LINK}[${ATTRIBUTES.TAB.NAME}]`,
+      TAB_VALID_SELECTOR,
       HTMLButtonElement,
       $nav,
     );
-    const $contents = getAllElementsBySelector(
-      `.${CLASSES.TAB_CONTENT}[${ATTRIBUTES.TAB.NAME}]`,
-      HTMLDivElement,
-      $content,
-    );
-    const tabsQuantity = $tabs.length;
 
-    if (tabsQuantity !== $contents.length)
-      throw new Error("Tabs: number of tabs and contents must be equal");
+    if ($tabs.length < 2) throw new Error("At least 2 tabs are required");
 
-    for (let i = 0; i < tabsQuantity; i++) {
-      const $tab = $tabs[i];
-      const $content = $contents[i];
-
-      this.#$TABS.set(/** @type {string} */ ($tab.dataset.tab), $tab);
-      this.#$CONTENTS.set(
-        /** @type {string} */ ($content.dataset.tab),
-        $content,
+    $tabs.forEach(($tab) => {
+      const contentId = /** @type {string} */ (
+        $tab.getAttribute("aria-controls")
       );
-    }
+      // TODO: create util createContentSelector({ tabId, contentId })
+      const $content = getElementBySelector(
+        `#${contentId}.${CLASSES.TAB_CONTENT}[role="tabpanel"][aria-labelledby="${$tab.id}"]`,
+        HTMLDivElement,
+        $contentContainer,
+      );
 
-    this.#currentTab = /** @type {string} */ ($tabs[0].dataset.tab);
+      this.#$TABS.set(contentId, $tab);
+      this.#$CONTENTS.set(contentId, $content);
+      this.#TabIds.set($tab, contentId);
+    });
+
+    this.#currentTab = /** @type {string} */ (this.#TabIds.get($tabs[0]));
   }
 
   /**
@@ -69,20 +73,24 @@ export class Tabs {
     return (
       $element instanceof HTMLButtonElement &&
       this.#$nav.contains($element) &&
-      $element.matches(`.${CLASSES.TAB_LINK}[${ATTRIBUTES.TAB.NAME}]`)
+      $element.matches(`.${CLASSES.TAB_LINK}`)
     );
   }
 
   /** @param {HTMLButtonElement} $tabLink */
   selectTab($tabLink) {
-    const tab = /** @type {string} */ ($tabLink.dataset.tab);
+    const contentId = this.#TabIds.get($tabLink);
 
-    if (this.#currentTab === tab) return;
+    if (this.#currentTab === contentId || contentId == null) return;
+
+    // TODO: add utils
+    // - selectTab({ $tabLink, $content })
+    // - deselectTab({ $tabLink, $content })
 
     const $currentTab = this.#$TABS.get(this.#currentTab);
     const $currentContent = this.#$CONTENTS.get(this.#currentTab);
-    const $targetTab = this.#$TABS.get(tab);
-    const $targetContent = this.#$CONTENTS.get(tab);
+    const $targetTab = this.#$TABS.get(contentId);
+    const $targetContent = this.#$CONTENTS.get(contentId);
 
     if (
       $currentTab == null ||
@@ -100,6 +108,6 @@ export class Tabs {
     $targetTab.scrollIntoView();
     $targetContent.setAttribute(ATTRIBUTES.CONTENT.ACTIVE, "");
 
-    this.#currentTab = tab;
+    this.#currentTab = contentId;
   }
 }
