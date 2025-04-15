@@ -135,7 +135,7 @@
 }
 /* TODO: create button[data-variant="secondary"] with these styles */
 /* almost all of these is also used for menu buttons */
-.definition__retry, .definition__remove-now {
+.definition__retry {
   display: var(--retry-display, flex);
   align-self: center;
   align-items: center;
