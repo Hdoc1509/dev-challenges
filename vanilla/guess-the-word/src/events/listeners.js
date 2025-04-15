@@ -1,5 +1,7 @@
 import { generateRandomWord } from "./handlers/random-word";
 import { handleShowDefinition } from "./handlers/show-definition";
+import { closeOpenedDefinition } from "./handlers/close-definition";
+import { removeAllNewBadges } from "./handlers/remove-new-badges";
 import { handleLetterInput } from "./handlers/letter-input";
 import { resetGame } from "./handlers/reset-game";
 import { handleDifficultyChange } from "./handlers/difficulty-change";
@@ -7,8 +9,6 @@ import { handleShowHints } from "./handlers/show-hints";
 import { $menu, $menuClose, $menuOpen, MenuTabs } from "@/ui/menu";
 import { DefinitionPagination } from "@/ui/definition/pagination";
 import { DefinitionPages } from "@/ui/definition/pages";
-import { removeAllNewBadges } from "@/ui/definition/badge";
-import { closeOpenedDefinition } from "@/ui/definition/close-definition";
 import { $showDefinition } from "@/ui/definition/elements";
 import { $hintsTrigger, HintsTabs } from "@/ui/hints";
 import { isValidLetterField } from "@/ui/typing";
