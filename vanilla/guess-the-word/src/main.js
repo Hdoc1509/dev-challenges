@@ -1,6 +1,6 @@
 import { difficulty } from "./state/difficulty";
 import { discoveredWords, loadSavedWords } from "./state/discovered-words";
-import { setupEventListeners } from "./events/listeners";
+import { setupEventListeners } from "./events/listeners/setup";
 import { generateRandomWord } from "./events/handlers/random-word";
 import { applyDifficulty } from "./utils/difficulty/apply";
 import { renderDefinitionsCount } from "./ui/definition/count";
