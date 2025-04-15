@@ -43,10 +43,12 @@ const error = (message) => {
 
 /** @template Item */
 export class Pages {
+  /** @type {Map<number, HTMLUListElement>} */
+  #Pages = new Map();
   #$pagesContainer;
   #$pageTemplate;
   #$pageEmptyTemplate;
-  #pages;
+  #paginatedItems;
   #itemsPerPage;
   #renderItem;
   #clearEmpty;
@@ -91,18 +93,18 @@ export class Pages {
     if (!($pagesContainer instanceof HTMLDivElement))
       error('"$pagesContainer" argument must be an instance of HTMLDivElement');
 
-    const $templateClone = /** @type {DocumentFragment} */ (
+    const $pageClone = /** @type {DocumentFragment} */ (
       $pageTemplate.content.cloneNode(true)
     ).querySelector("ul");
 
-    if ($templateClone == null)
+    if ($pageClone == null)
       error('"$pageTemplate" argument must have an "ul" element');
-    else if (!$templateClone.classList.contains("page"))
+    else if (!$pageClone.classList.contains("page"))
       error('"ul" element in "$pageTemplate" argument must have "page" class');
 
     this.#$pagesContainer = $pagesContainer;
     this.#$pageTemplate = $pageTemplate;
-    this.#pages = items == null ? [[]] : paginate(items, itemsPerPage);
+    this.#paginatedItems = items == null ? [[]] : paginate(items, itemsPerPage);
     this.#itemsPerPage = itemsPerPage;
     this.#renderItem = renderItem;
     this.#$pageEmptyTemplate = $pageEmptyTemplate;
@@ -113,7 +115,7 @@ export class Pages {
   }
 
   get totalPages() {
-    return this.#pages.length;
+    return this.#paginatedItems.length;
   }
 
   /** Update items to be paginated. Triggers `itemsupdate` event.
@@ -121,10 +123,10 @@ export class Pages {
    * @param {{ renderPage?: number }} [options]
    */
   setItems(items, { renderPage } = {}) {
-    for (let page = 1; page <= this.totalPages; page++)
-      this.#$page(page)?.remove();
+    this.#Pages.forEach(($page) => $page.remove());
+    this.#Pages.clear();
 
-    this.#pages = paginate(items, this.#itemsPerPage);
+    this.#paginatedItems = paginate(items, this.#itemsPerPage);
 
     const totalPages = this.totalPages;
 
@@ -141,12 +143,16 @@ export class Pages {
     this.#events[event].push(handler);
   }
 
-  /**
-   * @param {number} page
-   * @returns {HTMLUListElement | null}
-   */
+  /** @param {number} page */
   #$page(page) {
-    return this.#$pagesContainer.querySelector(`.page[data-page="${page}"]`);
+    return this.#Pages.get(page);
+  }
+
+  /** @param {HTMLUListElement} $page */
+  numberOfPage($page) {
+    return Array.from(this.#Pages).find(
+      ([, $pageElement]) => $pageElement === $page,
+    )?.[0];
   }
 
   /** @param {number} page */
@@ -163,7 +169,7 @@ export class Pages {
       const $newPage = /** @type {HTMLUListElement} */ (
         $template.querySelector("ul")
       );
-      const items = this.#pages[page - 1];
+      const items = this.#paginatedItems[page - 1];
       const totalItems = items.length;
 
       if (totalItems === 0) {
@@ -187,7 +193,7 @@ export class Pages {
 
     $currentPage?.removeAttribute("data-active");
     $page.dataset.active = "";
-    $page.dataset.page = page.toString();
+    this.#Pages.set(page, $page);
     this.#onPageChange?.($page);
   }
 
@@ -197,10 +203,10 @@ export class Pages {
 
     const pageIdx = this.totalPages - 1;
 
-    this.#pages[pageIdx].push(item);
+    this.#paginatedItems[pageIdx].push(item);
 
     const $lastPage = this.#$page(pageIdx + 1);
-    const totalItems = this.#pages[pageIdx].length;
+    const totalItems = this.#paginatedItems[pageIdx].length;
 
     $lastPage?.appendChild(
       this.#renderItem({
@@ -220,10 +226,10 @@ export class Pages {
 
     const pageIdx = 0;
 
-    this.#pages[pageIdx].unshift(item);
+    this.#paginatedItems[pageIdx].unshift(item);
 
     const $firstPage = this.#$page(1);
-    const totalItems = this.#pages[pageIdx].length;
+    const totalItems = this.#paginatedItems[pageIdx].length;
 
     $firstPage?.prepend(
       this.#renderItem({
@@ -240,11 +246,11 @@ export class Pages {
   /**
    * @param {Object} params
    * @param {number} params.totalItems
-   * @param {HTMLUListElement | null} params.$fromPage
+   * @param {HTMLUListElement} [params.$fromPage]
    * @param {number} params.pageIdx
    */
   #reorder({ totalItems, $fromPage, pageIdx }) {
-    const totalPages = this.#pages.length;
+    const totalPages = this.#paginatedItems.length;
 
     if (totalPages === 1 && totalItems === 1 && $fromPage != null)
       this.#clearEmpty($fromPage);
@@ -258,7 +264,7 @@ export class Pages {
       const $page = this.#$page(i + 1);
 
       if (itemToMove != null) {
-        this.#pages[i].unshift(itemToMove);
+        this.#paginatedItems[i].unshift(itemToMove);
 
         if ($elementToMove != null) {
           if ($page == null) $elementToMove.remove();
@@ -273,7 +279,7 @@ export class Pages {
             this.#renderItem({
               item: itemToMove,
               index: 0,
-              totalItems: this.#pages[i].length,
+              totalItems: this.#paginatedItems[i].length,
               insertionMode: INSERTION_MODE.PREPEND,
             }),
           );
@@ -281,8 +287,8 @@ export class Pages {
         itemToMove = null;
       }
 
-      if (this.#pages[i].length > this.#itemsPerPage) {
-        itemToMove = this.#pages[i].pop();
+      if (this.#paginatedItems[i].length > this.#itemsPerPage) {
+        itemToMove = this.#paginatedItems[i].pop();
 
         if ($page != null) {
           $elementToMove = $page.lastElementChild;
@@ -295,7 +301,7 @@ export class Pages {
 
     if (itemToMove == null) return;
 
-    this.#pages.push([itemToMove]);
+    this.#paginatedItems.push([itemToMove]);
     // NOTE: this can only happen when first page has more than itemsPerPage items
     if ($elementToMove != null) {
       $elementToMove.remove();

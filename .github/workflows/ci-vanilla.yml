@@ -6,6 +6,7 @@ on:
       - '*/*'
     paths:
       - "vanilla/**"
+      - ".github/workflows/ci-vanilla.yml"
 
 jobs:
   changed-files:
@@ -40,7 +41,7 @@ jobs:
             legacy/quote-generator/**
             legacy/weather-app/**
             legacy/github-jobs/**
-            !.github/workflows/ci.yml
+            !.github/workflows/ci-vanilla.yml
             !vanilla/${{ env.APP_NAME }}/**
             **.md
         env:
@@ -79,4 +80,4 @@ jobs:
           cache: pnpm
       - run: |
           pnpm install --frozen-lockfile --filter "@hdoc/dev-challenges" --filter "$APP_NAME"...
-          pnpm run typecheck --filter "$APP_NAME"
+          pnpm --filter "$APP_NAME" typecheck

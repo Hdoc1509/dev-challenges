@@ -1,5 +1,5 @@
 import { showAlert } from "@lib/alert";
-import { $wordLetters } from "@/ui/word";
+import { clearUsedLetters } from "@/ui/word";
 import { $hints, $hintsContent } from "@/ui/hints";
 import { $reset } from "@/ui/actions";
 import { CLASSES } from "@/consts/css-classes";
@@ -15,7 +15,7 @@ export function handleGameOver({ $currentField, $currentLetter }) {
   $currentField.disabled = true;
   $currentField.readOnly = true;
   $currentLetter.classList.remove(CLASSES.TYPING.LETTER__CURRENT);
-  $wordLetters.forEach(($letter) => $letter.removeAttribute("data-used"));
+  clearUsedLetters();
   $hints.removeAttribute("data-active");
   $hintsContent.removeAttribute("data-active");
 }

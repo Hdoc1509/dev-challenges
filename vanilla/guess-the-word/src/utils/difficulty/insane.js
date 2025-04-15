@@ -1,4 +1,5 @@
 import { handleLetterInput } from "@/events/handlers/letter-input";
+import { TypingLetterIndex } from "@/state/typing-letter";
 import {
   hideTimer,
   resetTimer,
@@ -6,8 +7,8 @@ import {
   showTimer,
   showTimerBar,
 } from "@/ui/timer";
+import { isValidLetterField } from "@/ui/typing";
 import { Random } from "../random";
-import { isValidLetterField } from "../letter-fields";
 
 /** @type {HTMLInputElement | null} */
 // NOTE: avoids weird behaviors when focusing more than once on the same input
@@ -21,11 +22,10 @@ const handleLetterFocus = (e) => {
 
   if (!isValidLetterField($target)) return;
 
-  const $currentLetter = /** @type {HTMLSpanElement} */ ($target.parentElement);
-  const letterIdx = $currentLetter.dataset.letterIndex;
+  const letterIdx = TypingLetterIndex.get($target);
 
-  if (letterIdx === "0" || $lastFocusedInput === $target) return;
-  if (letterIdx === "1") showTimerBar();
+  if (letterIdx === 0 || $lastFocusedInput === $target) return;
+  if (letterIdx === 1) showTimerBar();
 
   const timerDuration = Random.intInRange(3, 5);
 

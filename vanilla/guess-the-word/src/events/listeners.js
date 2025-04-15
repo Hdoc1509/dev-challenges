@@ -4,7 +4,6 @@ import { handleLetterInput } from "./handlers/letter-input";
 import { resetGame } from "./handlers/reset-game";
 import { handleDifficultyChange } from "./handlers/difficulty-change";
 import { handleShowHints } from "./handlers/show-hints";
-import { isValidLetterField } from "@/utils/letter-fields";
 import { $menu, $menuClose, $menuOpen, MenuTabs } from "@/ui/menu";
 import { DefinitionPagination } from "@/ui/definition/pagination";
 import { DefinitionPages } from "@/ui/definition/pages";
@@ -12,6 +11,7 @@ import { removeAllNewBadges } from "@/ui/definition/badge";
 import { closeOpenedDefinition } from "@/ui/definition/close-definition";
 import { $showDefinition } from "@/ui/definition/elements";
 import { $hintsTrigger, HintsTabs } from "@/ui/hints";
+import { isValidLetterField } from "@/ui/typing";
 import { $randomWord, $reset } from "@/ui/actions";
 
 export async function setupEventListeners() {

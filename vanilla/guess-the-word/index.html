@@ -103,19 +103,12 @@
             <header class="menu__header">
               <nav>
                 <div id="hints-nav" class="tab-nav" role="tablist">
-                  <!--
-                    TODO:
-                    apply styles based on aria-selected instead of
-                    data-tab-active
-                  -->
                   <button
                     id="all-hints-tab"
                     class="tab-nav__link"
                     role="tab"
                     aria-controls="all-hints-tab-content"
                     aria-selected="true"
-                    data-tab="all"
-                    data-tab-active
                     disabled
                   >
                     <!-- select-all icon -->
@@ -156,7 +149,6 @@
                     role="tab"
                     aria-controls="correct-hints-tab-content"
                     aria-selected="false"
-                    data-tab="correct"
                   >
                     <!-- text-grammar icon-->
                     <svg
@@ -184,7 +176,6 @@
                 class="tab-content__item"
                 role="tabpanel"
                 aria-labelledby="all-hints-tab"
-                data-tab="all"
                 data-content-active
               >
                 <ul class="hints-list"></ul>
@@ -194,7 +185,6 @@
                 class="tab-content__item"
                 role="tabpanel"
                 aria-labelledby="correct-hints-tab"
-                data-tab="correct"
               >
                 <ul class="hints-list"></ul>
               </div>
@@ -271,8 +261,6 @@
               role="tab"
               aria-controls="definitions-tab-content"
               aria-selected="true"
-              data-tab="definitions"
-              data-tab-active
               disabled
             >
               <!-- book-2 icon -->
@@ -297,7 +285,6 @@
               role="tab"
               aria-controls="difficulty-tab-content"
               aria-selected="false"
-              data-tab="difficulty"
             >
               <!-- versions icon -->
               <svg
@@ -336,7 +323,6 @@
           class="tab-content__item"
           role="tabpanel"
           aria-labelledby="definitions-tab"
-          data-tab="definitions"
           data-content-active
         >
           <div class="definitions-count">
@@ -409,7 +395,6 @@
           class="tab-content__item"
           role="tabpanel"
           aria-labelledby="difficulty-tab"
-          data-tab="difficulty"
         >
           <form id="difficulty-form">
             <div class="radio-group">

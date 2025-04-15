@@ -30,3 +30,6 @@ export const setMaxResets = (newMaxResets) => {
   maxResets = newMaxResets;
   if (IS_DEV) console.log({ maxResets });
 };
+
+export const implementsMaxResets = () =>
+  maxResets === RESETS.MAX.MASTER || maxResets === RESETS.MAX.VOID;

@@ -18,7 +18,6 @@
 .game-card .word__letter {
   width: 1ch;
 }
-
-.game-card .word:not(.word[data-completed]) .word__letter[data-used] {
+.game-card .word__letter[data-used] {
   color: var(--black);
 }
