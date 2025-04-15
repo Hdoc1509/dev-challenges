@@ -22,13 +22,10 @@ const TAB_VALID_SELECTOR = `.${CLASSES.TAB_LINK}[id]:not([id=""])`
 export class Tabs {
   /** @type {HTMLElement} */
   #$nav;
-  /** @type {Map<string, HTMLDivElement>} */
-  #$CONTENTS = new Map();
-  /** @type {Map<string, HTMLButtonElement>} */
-  #$TABS = new Map();
-  /** @type {Map<HTMLButtonElement, string>} */
-  #TabIds = new Map();
-  #currentTab = "";
+  /** @type {Map<HTMLButtonElement, HTMLDivElement>} */
+  #$Content = new Map();
+  /** @type {HTMLButtonElement} */
+  #$current;
 
   /**
    * @param {Object} params
@@ -57,12 +54,12 @@ export class Tabs {
         $contentContainer,
       );
 
-      this.#$TABS.set(contentId, $tab);
-      this.#$CONTENTS.set(contentId, $content);
-      this.#TabIds.set($tab, contentId);
+      this.#$Content.set($tab, $content);
     });
 
-    this.#currentTab = /** @type {string} */ (this.#TabIds.get($tabs[0]));
+    // TODO: set $current as $selectedTab that has [aria-selected="true"]
+    // check if there is only one $selectedTab
+    this.#$current = $tabs[0];
   }
 
   /**
@@ -77,28 +74,21 @@ export class Tabs {
     );
   }
 
-  /** @param {HTMLButtonElement} $tabLink */
-  selectTab($tabLink) {
-    const contentId = this.#TabIds.get($tabLink);
-
-    if (this.#currentTab === contentId || contentId == null) return;
+  /** @param {HTMLButtonElement} $targetTab */
+  selectTab($targetTab) {
+    if (this.#$current === $targetTab) return;
 
     // TODO: add utils
     // - selectTab({ $tabLink, $content })
     // - deselectTab({ $tabLink, $content })
 
-    const $currentTab = this.#$TABS.get(this.#currentTab);
-    const $currentContent = this.#$CONTENTS.get(this.#currentTab);
-    const $targetTab = this.#$TABS.get(contentId);
-    const $targetContent = this.#$CONTENTS.get(contentId);
+    const $currentTab = this.#$current;
+    const $currentContent = this.#$Content.get($currentTab);
+    const $targetContent = this.#$Content.get($targetTab);
 
-    if (
-      $currentTab == null ||
-      $currentContent == null ||
-      $targetTab == null ||
-      $targetContent == null
-    )
-      return;
+    if ($currentContent == null) return;
+
+    if ($targetTab == null || $targetContent == null) return;
 
     $currentTab.setAttribute(ATTRIBUTES.TAB.SELECTED, "false");
     $currentTab.disabled = false;
@@ -108,6 +98,6 @@ export class Tabs {
     $targetTab.scrollIntoView();
     $targetContent.setAttribute(ATTRIBUTES.CONTENT.ACTIVE, "");
 
-    this.#currentTab = contentId;
+    this.#$current = $targetTab;
   }
 }
