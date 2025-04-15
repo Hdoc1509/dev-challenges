@@ -1,5 +1,5 @@
 import { getElementBySelector } from "@lib/dom";
-import { TOTAL_WORDS } from "@/consts/definitions";
+import { TOTAL_WORDS } from "@/consts/words/total";
 
 getElementBySelector(".definitions-count__total", HTMLSpanElement).textContent =
   TOTAL_WORDS.toString();
