@@ -7,7 +7,6 @@ const CLASSES = Object.freeze({
 
 const ATTRIBUTES = Object.freeze({
   TAB: Object.freeze({
-    ACTIVE: "data-tab-active",
     SELECTED: "aria-selected",
     NAME: "data-tab",
   }),
@@ -94,11 +93,9 @@ export class Tabs {
       return;
 
     $currentTab.setAttribute(ATTRIBUTES.TAB.SELECTED, "false");
-    $currentTab.removeAttribute(ATTRIBUTES.TAB.ACTIVE);
     $currentTab.disabled = false;
     $currentContent.removeAttribute(ATTRIBUTES.CONTENT.ACTIVE);
     $targetTab.setAttribute(ATTRIBUTES.TAB.SELECTED, "true");
-    $targetTab.setAttribute(ATTRIBUTES.TAB.ACTIVE, "");
     $targetTab.disabled = true;
     $targetTab.scrollIntoView();
     $targetContent.setAttribute(ATTRIBUTES.CONTENT.ACTIVE, "");
