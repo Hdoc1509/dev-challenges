@@ -1,50 +1,19 @@
-import {
-  getAllElementsBySelector,
-  getElementById,
-  getElementBySelector,
-} from "@lib/dom";
-import { maxResets } from "@/state/resets";
-import { CLASSES } from "@/consts/css-classes";
+import { StepIndicator } from "@lib/step-indicator";
+import { getElementById, getElementBySelector } from "@lib/dom";
 
-export const $currentResets = getElementById("current-resets", HTMLSpanElement);
-export const $maxResets = getElementById("max-resets", HTMLSpanElement);
-
-$maxResets.textContent = `${maxResets}`;
+const $currentResets = getElementById("current-resets", HTMLSpanElement);
 
 export const $resetsContainer = getElementBySelector(
   ".game-card .info .resets",
   HTMLElement,
 );
 
-const $resetsIndicatorsContainer = getElementBySelector(
-  `.${CLASSES.RESETS.INDICATOR}`,
+const $indicatorContainer = getElementBySelector(
+  `:scope > .${StepIndicator.CLASSES.INDICATOR}`,
   HTMLDivElement,
+  $resetsContainer,
 );
 
-/** @param {number} quantity */
-export const generateResetsIndicators = (quantity) => {
-  while ($resetsIndicatorsContainer.firstChild)
-    $resetsIndicatorsContainer.removeChild(
-      $resetsIndicatorsContainer.firstChild,
-    );
-
-  for (let i = 0; i < quantity; i++) {
-    const $item = document.createElement("span");
-
-    $item.classList.add(CLASSES.STEPPER.STEP);
-    $resetsIndicatorsContainer.appendChild($item);
-  }
-};
-
-export const captureResetsIndicators = () =>
-  getAllElementsBySelector(
-    `.${CLASSES.RESETS.INDICATOR} > .${CLASSES.STEPPER.STEP}`,
-    HTMLSpanElement,
-  );
-
-/** @type {HTMLSpanElement[]} */
-export let $resetsIndicators = [];
-
-/** @param {HTMLSpanElement[]} $newResetsIndicators */
-export const setResetsIndicators = ($newResetsIndicators) =>
-  ($resetsIndicators = $newResetsIndicators);
+export const ResetsIndicator = new StepIndicator($indicatorContainer, {
+  onStep: (newStep) => ($currentResets.textContent = `${newStep}`),
+});
