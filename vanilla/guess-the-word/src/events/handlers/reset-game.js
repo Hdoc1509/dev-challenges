@@ -8,7 +8,7 @@ import {
 import { clearUsedLetters } from "@/ui/word";
 import { $triesContainer, TriesIndicator } from "@/ui/tries";
 import { $mistakenLetters, $mistakesContainer } from "@/ui/mistakes";
-import { $currentResets, $resetsIndicators } from "@/ui/resets";
+import { ResetsIndicator } from "@/ui/resets";
 import { hideTimerBar } from "@/ui/timer";
 import { resetLetterFields } from "@/ui/typing";
 import { $reset } from "@/ui/actions";
@@ -25,10 +25,7 @@ export function resetGame() {
   }
   TriesIndicator.reset();
   $mistakenLetters.textContent = "-";
-  if (implementsMaxResets()) {
-    $currentResets.textContent = `${gameResets}`;
-    $resetsIndicators[gameResets - 1].setAttribute("data-completed", "");
-  }
+  if (implementsMaxResets()) ResetsIndicator.goNext();
 
   hideTimerBar();
 
