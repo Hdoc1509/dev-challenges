@@ -18,7 +18,7 @@
 .game-card .info .mistakes:not([data-active]) {
   display: none;
 }
-.game-card .info .tries__indicator,
+.game-card .info .step-indicator,
 .game-card .info .resets__indicator {
   --step-color: var(--word-bg);
   --step-color-completed: var(--primary);
