@@ -99,8 +99,9 @@ export class Pagination {
     }
   }
 
-  /** @param {number} page */
-  #selectPage(page) {
+  /** Update current page and call `pagesHandler.renderPage(page)`
+   * @param {number} page */
+  selectPage(page) {
     this.#$input.value = `${page}`;
     if (this.currentPage !== page) {
       this.currentPage = page;
@@ -119,12 +120,12 @@ export class Pagination {
   #goNextPage() {
     if (this.currentPage === this.#PagesHandler.totalPages)
       this.#$pageNext.disabled = true;
-    else this.#selectPage(this.currentPage + 1);
+    else this.selectPage(this.currentPage + 1);
   }
 
   #goPrevPage() {
     if (this.currentPage === 1) this.#$pagePrev.disabled = true;
-    else this.#selectPage(this.currentPage - 1);
+    else this.selectPage(this.currentPage - 1);
   }
 
   /**
@@ -159,9 +160,9 @@ export class Pagination {
       const pageNumber = Number(page);
       const pages = this.#PagesHandler.totalPages;
 
-      if (pageNumber < 1) this.#selectPage(1);
-      else if (pageNumber > pages) this.#selectPage(pages);
-      else this.#selectPage(pageNumber);
+      if (pageNumber < 1) this.selectPage(1);
+      else if (pageNumber > pages) this.selectPage(pages);
+      else this.selectPage(pageNumber);
     }
     $input.blur();
   }

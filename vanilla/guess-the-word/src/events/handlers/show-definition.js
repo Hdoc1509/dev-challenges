@@ -24,8 +24,7 @@ export function handleShowDefinition() {
 
   if (targetPage == null) return;
 
-  DefinitionPages.renderPage(targetPage);
-  DefinitionPagination.setCurrentPage(targetPage);
+  DefinitionPagination.selectPage(targetPage);
 
   $definitionSection.removeAttribute("data-active");
   $menu.showModal();
