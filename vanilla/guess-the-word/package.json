@@ -18,6 +18,7 @@
     "@lib/alert": "workspace:",
     "@lib/dom": "workspace:",
     "@lib/fetcher": "workspace:",
+    "@lib/step-indicator": "workspace:",
     "zod": "catalog:"
   },
   "devDependencies": {

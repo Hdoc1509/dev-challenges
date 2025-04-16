@@ -1,49 +1,20 @@
-import {
-  getAllElementsBySelector,
-  getElementById,
-  getElementBySelector,
-} from "@lib/dom";
-import { maxTries } from "@/state/tries";
-import { CLASSES } from "@/consts/css-classes";
+import { StepIndicatorDynamic } from "@lib/step-indicator/dynamic";
+import { getElementById, getElementBySelector } from "@lib/dom";
 
 export const $triesContainer = getElementBySelector(
   ".info > .tries",
   HTMLElement,
 );
-export const $currentTries = getElementById("current-tries", HTMLSpanElement);
-export const $maxTries = getElementById("max-tries", HTMLSpanElement);
+const $currentTries = getElementById("current-tries", HTMLSpanElement);
+const $maxTries = getElementById("max-tries", HTMLSpanElement);
 
-$maxTries.textContent = `${maxTries}`;
-
-const $triesIndicator = getElementBySelector(
-  `.${CLASSES.TRIES.INDICATOR}.stepper`,
+const $indicatorContainer = getElementBySelector(
+  `:scope > .${StepIndicatorDynamic.CLASSES.INDICATOR}`,
   HTMLDivElement,
+  $triesContainer,
 );
 
-/** @param {number} quantity */
-export const generateTriesIndicators = (quantity) => {
-  // TODO: add custom library to handle this logic, like used for tabs.js
-  while ($triesIndicator.firstChild)
-    $triesIndicator.removeChild($triesIndicator.firstChild);
-
-  for (let i = 0; i < quantity - 1; i++) {
-    const $item = document.createElement("span");
-
-    $item.classList.add(CLASSES.STEPPER.STEP);
-    $triesIndicator.appendChild($item);
-  }
-};
-
-generateTriesIndicators(maxTries);
-
-export const captureTriesIndicators = () =>
-  getAllElementsBySelector(
-    `.${CLASSES.TRIES.INDICATOR} > .${CLASSES.STEPPER.STEP}`,
-    HTMLSpanElement,
-  );
-
-export let $triesIndicators = captureTriesIndicators();
-
-/** @param {HTMLSpanElement[]} $newTriesIndicators */
-export const setTriesIndicators = ($newTriesIndicators) =>
-  ($triesIndicators = $newTriesIndicators);
+export const TriesIndicator = new StepIndicatorDynamic($indicatorContainer, {
+  onStep: (newStep) => ($currentTries.textContent = `${newStep}`),
+  onQuantity: (newQuantity) => ($maxTries.textContent = `${newQuantity}`),
+});

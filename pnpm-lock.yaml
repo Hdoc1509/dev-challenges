@@ -862,6 +862,9 @@ importers:
       '@lib/fetcher':
         specifier: 'workspace:'
         version: link:../../libs/fetcher
+      '@lib/step-indicator':
+        specifier: 'workspace:'
+        version: link:../../libs/step-indicator
       zod:
         specifier: 'catalog:'
         version: 3.22.4
