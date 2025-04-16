@@ -1,4 +1,4 @@
-import { $currentTries, $triesIndicators } from "@/ui/tries";
+import { TriesIndicator } from "@/ui/tries";
 import { $mistakenLetters } from "@/ui/mistakes";
 import { CLASSES } from "@/consts/css-classes";
 import { TRIES } from "@/consts/tries";
@@ -17,9 +17,7 @@ export function handleLetterMistake({ $currentLetter, enteredLetter, tries }) {
 
   const mistakes = $mistakenLetters.textContent;
 
-  $currentTries.textContent = `${tries}`;
-  // NOTE: can be null if reached max tries
-  $triesIndicators[tries - 1]?.setAttribute("data-completed", "");
+  TriesIndicator.goNext();
   $mistakenLetters.textContent =
     tries === TRIES.FIRST ? enteredLetter : `${mistakes}, ${enteredLetter}`;
 }
