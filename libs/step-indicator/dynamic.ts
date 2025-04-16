@@ -1,8 +1,7 @@
 import { StepIndicatorBase } from "./base";
 import { Messenger } from "./messenger";
 import { validateContainer } from "./validate";
-import { CLASSES, STEP } from "./consts";
-import { MESSAGE } from "./messages";
+import { CLASSES, MESSAGE, STEP } from "./consts";
 import type {
   EventListener,
   ExpectedElements,

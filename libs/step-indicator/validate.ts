@@ -1,5 +1,4 @@
-import { MESSAGE } from "./messages";
-import { CLASSES } from "./consts";
+import { CLASSES, MESSAGE } from "./consts";
 import type { Messenger } from "./messenger";
 import type { ExpectedElements } from "./types";
 

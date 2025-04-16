@@ -1,5 +1,4 @@
-import { MESSAGE } from "./messages";
-import { ATTRIBUTES, CLASSES, STEP } from "./consts";
+import { ATTRIBUTES, CLASSES, MESSAGE, STEP } from "./consts";
 import type { Messenger } from "./messenger";
 import type { EventListener, ExpectedElements } from "./types";
 

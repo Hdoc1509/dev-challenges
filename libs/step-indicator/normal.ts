@@ -1,8 +1,7 @@
 import { StepIndicatorBase } from "./base";
 import { Messenger } from "./messenger";
 import { validateContainer } from "./validate";
-import { MESSAGE } from "./messages";
-import { CLASSES, STEP } from "./consts";
+import { CLASSES, MESSAGE, STEP } from "./consts";
 import type { ExpectedElements, SharedExtraParams } from "./types";
 
 export class StepIndicator extends StepIndicatorBase {
