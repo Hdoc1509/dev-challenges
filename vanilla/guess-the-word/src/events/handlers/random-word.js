@@ -8,7 +8,7 @@ import { createLetterFields } from "@/ui/typing";
 import { hasCompletedDifficulty } from "@/utils/difficulty/completed";
 import { scrambleWord } from "@/utils/scramble";
 import { createWordLetters } from "@/ui/word";
-import { $currentTries, $triesContainer, $triesIndicators } from "@/ui/tries";
+import { $triesContainer, TriesIndicator } from "@/ui/tries";
 import { $mistakenLetters, $mistakesContainer } from "@/ui/mistakes";
 import { $currentResets, $resetsIndicators } from "@/ui/resets";
 import { hideTimerBar } from "@/ui/timer";
@@ -43,8 +43,7 @@ export function generateRandomWord() {
     $mistakesContainer.setAttribute("data-active", "");
     $triesContainer.setAttribute("data-active", "");
   }
-  $currentTries.textContent = "0";
-  $triesIndicators.forEach(($item) => $item.removeAttribute("data-completed"));
+  TriesIndicator.reset();
   $resetsIndicators.forEach(($item) => $item.removeAttribute("data-completed"));
   $mistakenLetters.textContent = "-";
   $currentResets.textContent = `${gameResets}`;
