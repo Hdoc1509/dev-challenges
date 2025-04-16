@@ -2,7 +2,7 @@ import { resetAlert } from "@lib/alert";
 import { words } from "@/state/words";
 import { currentWord, setCurrentWord } from "@/state/current-word";
 import { resetTries } from "@/state/tries";
-import { gameResets, maxResets, resetGameResets } from "@/state/resets";
+import { maxResets, resetGameResets } from "@/state/resets";
 import { Random } from "@/utils/random";
 import { createLetterFields } from "@/ui/typing";
 import { hasCompletedDifficulty } from "@/utils/difficulty/completed";
@@ -10,7 +10,7 @@ import { scrambleWord } from "@/utils/scramble";
 import { createWordLetters } from "@/ui/word";
 import { $triesContainer, TriesIndicator } from "@/ui/tries";
 import { $mistakenLetters, $mistakesContainer } from "@/ui/mistakes";
-import { $currentResets, $resetsIndicators } from "@/ui/resets";
+import { ResetsIndicator } from "@/ui/resets";
 import { hideTimerBar } from "@/ui/timer";
 import { $reset } from "@/ui/actions";
 import { $definitionSection } from "@/ui/definition/elements";
@@ -44,9 +44,8 @@ export function generateRandomWord() {
     $triesContainer.setAttribute("data-active", "");
   }
   TriesIndicator.reset();
-  $resetsIndicators.forEach(($item) => $item.removeAttribute("data-completed"));
+  ResetsIndicator.reset();
   $mistakenLetters.textContent = "-";
-  $currentResets.textContent = `${gameResets}`;
   hideTimerBar();
   $definitionSection.removeAttribute("data-active");
   $hints.removeAttribute("data-active");
