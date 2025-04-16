@@ -1,0 +1,11 @@
+{
+  "name": "@lib/step-indicator",
+  "private": true,
+  "version": "0.0.1",
+  "main": "normal.ts",
+  "type": "module",
+  "exports": {
+    ".": "./normal.ts",
+    "./dynamic": "./dynamic.ts"
+  }
+}

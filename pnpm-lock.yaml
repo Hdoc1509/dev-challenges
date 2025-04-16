@@ -827,6 +827,8 @@ importers:
         specifier: '*'
         version: 1.65.0
 
+  libs/step-indicator: {}
+
   vanilla/contact-page:
     dependencies:
       '@fontsource/be-vietnam-pro':
