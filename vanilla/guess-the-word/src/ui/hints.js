@@ -41,13 +41,13 @@ const $correctHintsList = getElementBySelector(
 
 /** @param {number} lettersCount */
 const createHintsGroup = (lettersCount, { noCounter = false } = {}) => {
-  const $item = document.createElement("li");
+  const $group = document.createElement("li");
   const $content = document.createElement("section");
 
-  $item.classList.add("hint-group");
+  $group.classList.add("hint-group");
   $content.classList.add("hint-group__content");
 
-  if (noCounter) $item.classList.add("hint-group--no-counter");
+  if (noCounter) $group.classList.add("hint-group--no-counter");
 
   for (let i = 0; i < lettersCount; i++) {
     const $letter = document.createElement("span");
@@ -56,9 +56,9 @@ const createHintsGroup = (lettersCount, { noCounter = false } = {}) => {
     $content.appendChild($letter);
   }
 
-  $item.appendChild($content);
+  $group.appendChild($content);
 
-  return $item;
+  return $group;
 };
 
 /**
