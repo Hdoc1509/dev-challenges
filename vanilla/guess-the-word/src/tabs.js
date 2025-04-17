@@ -10,7 +10,7 @@ const ATTRIBUTES = Object.freeze({
     SELECTED: "aria-selected",
   }),
   CONTENT: Object.freeze({
-    ACTIVE: "data-content-active",
+    ACTIVE: "data-active",
   }),
 });
 

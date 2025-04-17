@@ -67,6 +67,6 @@
   gap: 1rem;
   width: 100%;
 }
-.tab-content__item:not([data-content-active]) {
+.tab-content__item:not([data-active]) {
   display: none;
 }
