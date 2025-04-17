@@ -19,11 +19,9 @@
 
 ## Overview
 
-<!-- TODO: Update screenshot and its aspect ratio once project has completed -->
-
 <p align="center">
   <img
-    src="https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png"
+    src="https://github.com/user-attachments/assets/914fc244-c36f-455a-8bab-332787159a9d"
     alt="guess-the-word screenshot"
     style="aspect-ratio: 16 / 9"
   />
