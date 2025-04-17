@@ -40,14 +40,12 @@ const $correctHintsList = getElementBySelector(
 );
 
 /** @param {number} lettersCount */
-const createHintsGroup = (lettersCount, { noCounter = false } = {}) => {
+const createHintsGroup = (lettersCount) => {
   const $group = document.createElement("li");
   const $content = document.createElement("section");
 
   $group.classList.add("hint-group");
   $content.classList.add("hint-group__content");
-
-  if (noCounter) $group.classList.add("hint-group--no-counter");
 
   for (let i = 0; i < lettersCount; i++) {
     const $letter = document.createElement("span");
@@ -74,9 +72,7 @@ export const addHint = (enteredLetter, { letterIndex, isCorrect }) => {
     $allHintsList.appendChild(createHintsGroup(lettersCount));
 
   if ($correctHintsInitialItem == null)
-    $correctHintsList.appendChild(
-      createHintsGroup(lettersCount, { noCounter: true }),
-    );
+    $correctHintsList.appendChild(createHintsGroup(lettersCount));
 
   const $allHintsGroup = $allHintsList.children[gameResets];
   const $allHintsContent = $allHintsGroup.children[0];

@@ -17,17 +17,15 @@
 }
 
 .hint-group {
-  display: grid;
-  grid-template-columns: 1ch auto;
+  display: flex;
+  justify-content: center;
+  gap: 0.75ch;
 
   counter-increment: hints-counter;
 }
-.hint-group--no-counter {
-  grid-template-columns: 1fr;
-}
 .hint-group__content {
   display: flex;
-  gap: 0.75ch;
+  gap: inherit;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -36,9 +34,6 @@
   width: 1ch;
   color: var(--secondary);
   text-align: center;
-}
-#correct-hints-tab-content .hint-group {
-  justify-content: center;
 }
 
 .hint {
