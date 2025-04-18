@@ -14,10 +14,8 @@ export const $definitionPagesContainer = getElementById(
 /** @type {Pages<string>} */
 export const DefinitionPages = new Pages($definitionPagesContainer, {
   itemsPerPage: DEFINITIONS_PER_PAGE,
-  renderItem: ({
-    item,
-    /* index, totalItems, */ isNew /* , insertionMode */,
-  }) => createDefinition(item, { isNew }),
+  renderItem: ({ item, /* index, totalItems, */ isNew }) =>
+    createDefinition(item, { isNew }),
   clearEmpty: ($page) => $page.querySelector(".not-yet")?.remove(),
   // onItemMoved: ($page) =>
   //   $page.insertBefore(document.createElement("hr"), $page.children[1]),

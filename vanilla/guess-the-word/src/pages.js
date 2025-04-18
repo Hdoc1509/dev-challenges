@@ -1,10 +1,5 @@
 import { paginate } from "./utils/paginate";
 
-const INSERTION_MODE = Object.freeze({
-  APPEND: "append",
-  PREPEND: "prepend",
-});
-
 /** @param {string} message */
 const error = (message) => {
   throw new Error(`[Pages]: ${message}`);
@@ -21,7 +16,6 @@ const error = (message) => {
  * @property {number} index
  * @property {number} totalItems
  * @property {boolean} [isNew]
- * @property {typeof INSERTION_MODE[keyof typeof INSERTION_MODE]} insertionMode
  */
 
 /**
@@ -31,8 +25,6 @@ const error = (message) => {
  * @param {Object} [options]
  * @param {boolean} [options.renderPage] Whether to call `renderPage(page)` before rendering the item
  */
-
-/** @typedef {DocumentFragment | HTMLLIElement} RenderItemResult */
 
 /**
  * @typedef PageEventHandler
@@ -62,8 +54,6 @@ export class Pages {
   /** @type {PageEvents} */
   #events = { pageadd: [], itemsupdate: [] };
 
-  static INSERTION_MODE = INSERTION_MODE;
-
   // TODO: update extraParams:
   // - remove onItemMoved()
 
@@ -72,7 +62,9 @@ export class Pages {
    * @param {Object} extraParams
    * @param {Item[]} [extraParams.items]
    * @param {number} extraParams.itemsPerPage
-   * @param {(params: RenderItemParams<Item>) => RenderItemResult} extraParams.renderItem
+   * @param {(params: RenderItemParams<Item>) => DocumentFragment | HTMLLIElement} extraParams.renderItem
+   * Must return an `HTMLLIElement` or a `DocumentFragment` whose first child is
+   * an `HTMLLIElement`
    * @param {($page: HTMLUListElement) => void} extraParams.clearEmpty
    * @param {(removedItem: Item) => void} [extraParams.onItemRemoved]
    * Triggered when an element of an item is removed from a page
@@ -184,14 +176,7 @@ export class Pages {
         $newPage.appendChild(this.#$pageEmptyTemplate.content.cloneNode(true));
       } else {
         items.forEach((item, index) =>
-          $newPage.appendChild(
-            this.#renderItem({
-              item,
-              index,
-              totalItems,
-              insertionMode: INSERTION_MODE.APPEND,
-            }),
-          ),
+          $newPage.appendChild(this.#renderItem({ item, index, totalItems })),
         );
       }
 
@@ -222,7 +207,6 @@ export class Pages {
         index: totalItems - 1,
         totalItems,
         isNew: true,
-        insertionMode: INSERTION_MODE.APPEND,
       }),
     );
     this.#reorder({ totalItems, $fromPage: $lastPage, pageIdx });
@@ -240,13 +224,7 @@ export class Pages {
     const totalItems = this.#paginatedItems[pageIdx].length;
 
     $firstPage?.prepend(
-      this.#renderItem({
-        item,
-        index: 0,
-        totalItems,
-        isNew: true,
-        insertionMode: INSERTION_MODE.PREPEND,
-      }),
+      this.#renderItem({ item, index: 0, totalItems, isNew: true }),
     );
     this.#reorder({ totalItems, $fromPage: $firstPage, pageIdx });
   }
@@ -288,7 +266,6 @@ export class Pages {
               item: itemToMove,
               index: 0,
               totalItems: this.#paginatedItems[i].length,
-              insertionMode: INSERTION_MODE.PREPEND,
             }),
           );
 
