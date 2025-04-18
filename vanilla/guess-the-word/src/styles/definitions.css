@@ -21,7 +21,7 @@
 
 .definitions-list {
   display: grid;
-  gap: 4px;
+  gap: 0.5rem;
 
   padding: 0;
 
@@ -30,9 +30,9 @@
 .definitions-list:not([data-active]) {
   display: none;
 }
-.definitions-list hr {
-  margin-block: 0.25rem;
-  color: rgb(175, 175, 175);
+.definitions-list > li:not(:first-child) {
+  border-top: 2px solid rgb(175, 175, 175);
+  padding-top: 0.5rem;
 }
 
 .definition:not(.info .definition) {
