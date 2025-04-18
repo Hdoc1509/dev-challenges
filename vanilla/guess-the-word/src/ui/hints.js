@@ -81,8 +81,7 @@ export const addHint = (enteredLetter, { letterIndex, isCorrect }) => {
     const $correctHintsGroup = /** @type {HTMLLIElement} */ (
       $correctHintsList.firstElementChild
     );
-    const $correctHintsContent = $correctHintsGroup.children[0];
-    const $correctHintsLetter = $correctHintsContent.children[letterIndex];
+    const $correctHintsLetter = $correctHintsGroup.children[letterIndex];
 
     $correctHintsLetter.textContent = enteredLetter;
     $correctHintsLetter.classList.add("hint--correct");
