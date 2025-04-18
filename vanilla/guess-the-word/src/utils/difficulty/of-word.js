@@ -3,7 +3,7 @@ import NORMAL_MASTER_LENGTH from "@/mocks/difficulties-by-length/normal-master.j
 import EXTREME_INSANE_LENGTH from "@/mocks/difficulties-by-length/extreme-insane.json";
 import { DIFFICULTY } from "@/consts/difficulty";
 
-/**
+/** First item of returned array is the name of difficulty group it belongs to
  * @param {string} word
  * @returns {import("@/consts/difficulty").Difficulty[]}
  */
