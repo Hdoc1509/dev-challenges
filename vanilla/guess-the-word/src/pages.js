@@ -10,6 +10,10 @@ const error = (message) => {
   throw new Error(`[Pages]: ${message}`);
 };
 
+// TODO: update params of renderItem()
+//   - item: Item
+//   - extraParams: { isNew?: boolean }
+
 /**
  * @template Item
  * @typedef {Object} RenderItemParams
@@ -60,6 +64,9 @@ export class Pages {
 
   static INSERTION_MODE = INSERTION_MODE;
 
+  // TODO: update extraParams:
+  // - remove onItemMoved()
+
   /**
    * @param {HTMLDivElement} $pagesContainer
    * @param {Object} extraParams
@@ -67,7 +74,8 @@ export class Pages {
    * @param {number} extraParams.itemsPerPage
    * @param {(params: RenderItemParams<Item>) => RenderItemResult} extraParams.renderItem
    * @param {($page: HTMLUListElement) => void} extraParams.clearEmpty
-   * @param {($page: HTMLUListElement) => void} [extraParams.onItemRemoved]
+   * @param {(removedItem: Item) => void} [extraParams.onItemRemoved]
+   * Triggered when an element of an item is removed from a page
    * @param {($page: HTMLUListElement) => void} [extraParams.onItemMoved]
    * @param {($page: HTMLUListElement) => void} [extraParams.onPageChange]
    * @param {HTMLTemplateElement} extraParams.$pageTemplate
@@ -258,7 +266,6 @@ export class Pages {
 
     let itemToMove = null;
     let $elementToMove = null;
-    let $previousPage = null;
 
     for (let i = pageIdx; i < totalPages; i++) {
       const $page = this.#$page(i + 1);
@@ -267,12 +274,13 @@ export class Pages {
         this.#paginatedItems[i].unshift(itemToMove);
 
         if ($elementToMove != null) {
-          if ($page == null) $elementToMove.remove();
-          else {
+          if ($page == null) {
+            $elementToMove.remove();
+            this.#onItemRemoved?.(itemToMove);
+          } else {
             $page.insertBefore($elementToMove, $page.firstElementChild);
             this.#onItemMoved?.($page);
           }
-          if ($previousPage != null) this.#onItemRemoved?.($previousPage);
           $elementToMove = null;
         } else
           $page?.prepend(
@@ -290,10 +298,7 @@ export class Pages {
       if (this.#paginatedItems[i].length > this.#itemsPerPage) {
         itemToMove = this.#paginatedItems[i].pop();
 
-        if ($page != null) {
-          $elementToMove = $page.lastElementChild;
-          $previousPage = $page;
-        }
+        if ($page != null) $elementToMove = $page.lastElementChild;
       }
 
       if (itemToMove == null) break;
@@ -302,10 +307,9 @@ export class Pages {
     if (itemToMove == null) return;
 
     this.#paginatedItems.push([itemToMove]);
-    // NOTE: this can only happen when first page has more than itemsPerPage items
     if ($elementToMove != null) {
       $elementToMove.remove();
-      if ($previousPage != null) this.#onItemRemoved?.($previousPage);
+      this.#onItemRemoved?.(itemToMove);
     }
     this.#events.pageadd.forEach((handler) => handler(totalPages + 1));
   }

@@ -9,7 +9,7 @@ export const $definitionPagesContainer = getElementById(
   HTMLDivElement,
 );
 
-// TODO: remove unused features from Pages class
+// TODO: remove unnecessary features from Pages class
 
 /** @type {Pages<string>} */
 export const DefinitionPages = new Pages($definitionPagesContainer, {
@@ -21,11 +21,8 @@ export const DefinitionPages = new Pages($definitionPagesContainer, {
   clearEmpty: ($page) => $page.querySelector(".not-yet")?.remove(),
   // onItemMoved: ($page) =>
   //   $page.insertBefore(document.createElement("hr"), $page.children[1]),
-  // onItemRemoved: ($page) => {
-  //   const $lastElement = $page.lastElementChild;
-  //
-  //   if ($lastElement instanceof HTMLHRElement) $lastElement.remove();
-  // },
+  // TODO: remove `item` from DefinitionElement Map
+  onItemRemoved: (item) => console.log("onItemRemoved", item),
   onPageChange: () => $menuTabContent.scrollTo(0, 0),
   $pageTemplate: getElementById(
     "definition-page-template",
