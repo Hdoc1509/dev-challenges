@@ -60,15 +60,11 @@ const createHintsGroup = (lettersCount) => {
  * @param {{ letterIndex: number, isCorrect: boolean }} options
  */
 export const addHint = (enteredLetter, { letterIndex, isCorrect }) => {
-  // TODO: simplify acces to $allHintsGroup and $correctHintsGroup
-  const $allHintsInitialItem = $allHintsList.children[gameResets];
-  const $correctHintsInitialItem = $correctHintsList.firstElementChild;
   const lettersCount = currentWord.length;
 
-  if ($allHintsInitialItem == null)
+  if ($allHintsList.children[gameResets] == null)
     $allHintsList.appendChild(createHintsGroup(lettersCount));
-
-  if ($correctHintsInitialItem == null)
+  if ($correctHintsList.firstElementChild == null)
     $correctHintsList.appendChild(createHintsGroup(lettersCount));
 
   const $allHintsGroup = $allHintsList.children[gameResets];
