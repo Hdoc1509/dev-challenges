@@ -1,6 +1,5 @@
 import { getElementBySelector } from "@lib/dom";
 import { DefinitionElement } from "@/state/definition";
-import { $definitionPagesContainer } from "./pages";
 import { getDifficultiesOfWord } from "@/utils/difficulty/of-word";
 
 /**
@@ -14,11 +13,7 @@ export function renderCompletedDifficulty({ word, difficulty }) {
 
   const $definition = DefinitionElement.get(word);
 
-  if (
-    !($definition instanceof HTMLDetailsElement) ||
-    !$definitionPagesContainer.contains($definition)
-  )
-    return false;
+  if (!($definition instanceof HTMLDetailsElement)) return false;
 
   const $difficulty = getElementBySelector(
     `.definition__difficulty[aria-label="${difficulty}" i]`,
