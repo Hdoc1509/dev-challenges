@@ -21,6 +21,7 @@ source "$SCRIPTS_DIR"/prepare-data.bash
 
 generate_mock() {
   local target_file=""
+  local target_file_total=""
   local min=$GENERAL_MIN_LENGTH
   local max=""
   local file_name=""
@@ -42,9 +43,14 @@ generate_mock() {
   fi
 
   target_file="$MOCKS_DIR"/words/"$file_name".json
+  target_file_total="$MOCKS_DIR"/words/"$file_name"-total.json
 
-  if is_up_to_date "$JQ_FILTER_SCRIPT" && [[ -f "$target_file" ]]; then
-    echo -e "${YELLOW}[words]: $file_name.json is up to date"
+  if
+    is_up_to_date "$JQ_FILTER_SCRIPT" &&
+      [[ -f "$target_file" ]] &&
+      [[ -f "$target_file_total" ]]
+  then
+    echo -e "${YELLOW}[words]: $file_name.json and $file_name-total.json are up to date!${NOCOLOR}"
     echo -e "${YELLOW}[words]: Skipping generation...${NOCOLOR}"
     return
   fi
@@ -56,10 +62,12 @@ generate_mock() {
   jq --arg MIN_LENGTH "$min" --arg MAX_LENGTH "$max" --from-file "$JQ_FILTER_SCRIPT" \
     "$MOCKS_DIR"/all-words-data.json | jq --compact-output '[keys[]]' \
     >"$target_file"
+  echo -e "${GREEN}[words]: Generated $file_name.json!${NOCOLOR}"
 
   words_final_count="$(jq -r 'length' "$target_file")"
 
-  echo -e "${GREEN}[words]: Generated $file_name.json!${NOCOLOR}"
+  echo "$words_final_count" >"$MOCKS_DIR"/words/"$file_name"-total.json
+  echo -e "${GREEN}[words]: Generated $file_name-total.json!${NOCOLOR}"
 
   if [[ $words_initial_count -gt 0 && $words_initial_count != "$words_final_count" ]]; then
     echo -e "${YELLOW}[words]: $file_name.json has changed!"
