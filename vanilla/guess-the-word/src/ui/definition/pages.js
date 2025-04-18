@@ -13,6 +13,9 @@ export const $definitionPagesContainer = getElementById(
 export const DefinitionPages = new Pages($definitionPagesContainer, {
   itemsPerPage: DEFINITIONS_PER_PAGE,
   renderItem({ item, index, totalItems, isNew, insertionMode }) {
+    // FIX: remove usage of `<hr>` elements as theses are not valid children of `<ul>`
+    // - simplify DOM handling in `Pages` class
+    // - use similiar approach used for `.hint-group` elements
     const $definition = createDefinition(item, { isNew });
     const isLast = index === totalItems - 1;
 

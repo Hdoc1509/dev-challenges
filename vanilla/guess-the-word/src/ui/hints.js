@@ -42,19 +42,15 @@ const $correctHintsList = getElementBySelector(
 /** @param {number} lettersCount */
 const createHintsGroup = (lettersCount) => {
   const $group = document.createElement("li");
-  const $content = document.createElement("section");
 
   $group.classList.add("hint-group");
-  $content.classList.add("hint-group__content");
 
   for (let i = 0; i < lettersCount; i++) {
     const $letter = document.createElement("span");
 
     $letter.classList.add("hint");
-    $content.appendChild($letter);
+    $group.appendChild($letter);
   }
-
-  $group.appendChild($content);
 
   return $group;
 };
@@ -64,6 +60,7 @@ const createHintsGroup = (lettersCount) => {
  * @param {{ letterIndex: number, isCorrect: boolean }} options
  */
 export const addHint = (enteredLetter, { letterIndex, isCorrect }) => {
+  // TODO: simplify acces to $allHintsGroup and $correctHintsGroup
   const $allHintsInitialItem = $allHintsList.children[gameResets];
   const $correctHintsInitialItem = $correctHintsList.firstElementChild;
   const lettersCount = currentWord.length;
@@ -75,8 +72,7 @@ export const addHint = (enteredLetter, { letterIndex, isCorrect }) => {
     $correctHintsList.appendChild(createHintsGroup(lettersCount));
 
   const $allHintsGroup = $allHintsList.children[gameResets];
-  const $allHintsContent = $allHintsGroup.children[0];
-  const $allHintsLetter = $allHintsContent.children[letterIndex];
+  const $allHintsLetter = $allHintsGroup.children[letterIndex];
 
   $allHintsLetter.textContent = enteredLetter;
   $allHintsLetter.classList.add(`hint--${isCorrect ? "correct" : "wrong"}`);
