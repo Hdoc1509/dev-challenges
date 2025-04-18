@@ -1,5 +1,6 @@
+import { loadSavedWords } from "./services/saved-words/load";
 import { difficulty } from "./state/difficulty";
-import { discoveredWords, loadSavedWords } from "./state/discovered-words";
+import { discoveredWords } from "./state/discovered-words";
 import { setupEventListeners } from "./events/listeners/setup";
 import { generateRandomWord } from "./events/handlers/random-word";
 import { applyDifficulty } from "./utils/difficulty/apply";
@@ -20,6 +21,9 @@ import "./styles/main.css";
   await applyDifficulty(difficulty);
   await loadSavedWords();
   removeSpinner($word, $typing);
+  // TODO: disable $randomButton when all words of current difficulty are completed
+  // - use an early return in generateRandomWord()
+  // - also do this after handleGameSuccess() if needed
   generateRandomWord();
   renderDefinitionsCount(discoveredWords.size);
   DefinitionPages.setItems(Array.from(discoveredWords.keys()).reverse());

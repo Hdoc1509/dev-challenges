@@ -1,5 +1,6 @@
 import { showAlert } from "@lib/alert";
-import { addDiscoveredWord, discoveredWords } from "@/state/discovered-words";
+import { addDiscoveredWord } from "@/services/saved-words/add";
+import { discoveredWords } from "@/state/discovered-words";
 import { currentWord } from "@/state/current-word";
 import { difficulty } from "@/state/difficulty";
 import { hasCompletedAllDifficulties } from "@/utils/difficulty/completed";
