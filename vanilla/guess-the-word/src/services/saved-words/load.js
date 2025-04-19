@@ -19,7 +19,7 @@ export const loadSavedWords = async () => {
     const parsedItem = JSON.parse(oldSavedItem);
 
     if (Array.isArray(parsedItem)) {
-      /** @type {Array<[string, Difficulty[] | DifficultiesAll]>} */
+      /** @type {Array<[string, Difficulty | DifficultiesAll]>} */
       const data = [];
 
       for (const item of parsedItem) {
@@ -28,13 +28,16 @@ export const loadSavedWords = async () => {
 
           data.unshift([
             item,
-            difficulty === DIFFICULTY.EASY ? DIFFICULTIES_ALL : [difficulty],
+            difficulty === DIFFICULTY.EASY ? DIFFICULTIES_ALL : difficulty,
           ]);
         }
       }
 
-      for (const [word, difficulties] of data)
-        discoveredWords.set(word, difficulties);
+      for (const [word, difficulty] of data) {
+        if (difficulty === DIFFICULTIES_ALL)
+          discoveredWords.set(word, difficulty);
+        else discoveredWords.set(word, [difficulty]);
+      }
     }
 
     const data = Array.from(discoveredWords);
