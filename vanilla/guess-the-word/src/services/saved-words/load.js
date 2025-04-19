@@ -53,25 +53,34 @@ export const loadSavedWords = async () => {
   for (const item of parsedItem) {
     if (!Array.isArray(item) || item.length !== 2) continue;
 
-    const [word, difficulties] = item;
+    const [word, savedDifficulties] = item;
 
     if (typeof word !== "string") continue;
 
-    if (difficulties === DIFFICULTIES_ALL)
+    const availableDifficulties = getDifficultiesOfWord(word);
+
+    if (savedDifficulties === DIFFICULTIES_ALL) {
+      availableDifficulties.forEach((difficulty) =>
+        DiscoveredWordsByDifficulty.get(difficulty)?.add(word),
+      );
       discoveredWords.set(word, DIFFICULTIES_ALL);
-    else if (
-      Array.isArray(difficulties) &&
-      difficulties.every(
+    } else if (
+      Array.isArray(savedDifficulties) &&
+      savedDifficulties.every(
         /** @returns {difficulty is Difficulty} */
         (difficulty) => DIFFICULTIES.has(difficulty),
       ) &&
       !(await isWordRemovedFromGame(word))
-    )
+    ) {
+      savedDifficulties.forEach((difficulty) =>
+        DiscoveredWordsByDifficulty.get(difficulty)?.add(word),
+      );
       discoveredWords.set(
         word,
-        getDifficultiesOfWord(word).length === difficulties.length
+        availableDifficulties.length === savedDifficulties.length
           ? DIFFICULTIES_ALL
-          : difficulties,
+          : savedDifficulties,
       );
+    }
   }
 };

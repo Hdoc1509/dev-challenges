@@ -4,6 +4,8 @@ import { DIFFICULTIES_ALL } from "@/consts/difficulty";
 import { DISCOVERED_WORDS } from "@/consts/discovered-words";
 /** @typedef {import("@/consts/difficulty").Difficulty} Difficulty */
 
+// TODO: implement DiscoveredWordsByDifficulty
+
 /**
  * @param {string} word
  * @param {{ difficulty: Difficulty }} extraParams
