@@ -1,8 +1,15 @@
-import { discoveredWords } from "@/state/discovered-words";
 import { parseOldFormat } from "./parse-old";
+import {
+  DiscoveredWordsByDifficulty,
+  discoveredWords,
+} from "@/state/discovered-words";
 import { getDifficultiesOfWord } from "@/utils/difficulty/of-word";
 import { isWordRemovedFromGame } from "@/utils/word-removed";
-import { DIFFICULTIES, DIFFICULTIES_ALL } from "@/consts/difficulty";
+import {
+  DIFFICULTIES,
+  DIFFICULTIES_ALL,
+  DIFFICULTY,
+} from "@/consts/difficulty";
 import { DISCOVERED_WORDS } from "@/consts/discovered-words";
 /** @typedef {import("@/consts/difficulty").Difficulty} Difficulty */
 /** @typedef {typeof DIFFICULTIES_ALL} DifficultiesAll */
@@ -15,11 +22,14 @@ export const loadSavedWords = async () => {
   if (oldSavedItem != null) {
     const savedData = await parseOldFormat(JSON.parse(oldSavedItem));
 
-    // TODO: implement DiscoveredWordsByDifficulty
     for (const [word, difficulty] of savedData) {
-      if (difficulty === DIFFICULTIES_ALL)
+      if (difficulty === DIFFICULTIES_ALL) {
+        DiscoveredWordsByDifficulty.get(DIFFICULTY.EASY)?.add(word);
         discoveredWords.set(word, difficulty);
-      else discoveredWords.set(word, [difficulty]);
+      } else {
+        DiscoveredWordsByDifficulty.get(difficulty)?.add(word);
+        discoveredWords.set(word, [difficulty]);
+      }
     }
 
     const data = Array.from(discoveredWords);
