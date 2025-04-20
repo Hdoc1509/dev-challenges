@@ -29,22 +29,22 @@ export class Pagination {
 
     this.#PagesHandler = pagesHandler;
     this.#$pagePrev = getElementBySelector(
-      "li.pagination__item > .pagination__trigger[data-page-prev]",
+      ":scope > li.pagination__item > .pagination__trigger[data-page-prev]",
       HTMLButtonElement,
       $pagination,
     );
     this.#$pageNext = getElementBySelector(
-      "li.pagination__item > .pagination__trigger[data-page-next]",
+      ":scope > li.pagination__item > .pagination__trigger[data-page-next]",
       HTMLButtonElement,
       $pagination,
     );
     this.#$input = getElementBySelector(
-      "li.pagination__item[aria-current=page] > .pagination__current",
+      ":scope > li.pagination__item[aria-current=page] > .pagination__current",
       HTMLInputElement,
       $pagination,
     );
     this.#$total = getElementBySelector(
-      "li.pagination__item[aria-current=page] .pagination__total",
+      ":scope > li.pagination__item[aria-current=page] .pagination__total",
       HTMLSpanElement,
       $pagination,
     );
