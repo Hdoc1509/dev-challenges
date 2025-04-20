@@ -1,18 +1,11 @@
 import { parseOldFormat } from "./parse-old";
+import { parseSavedWords } from "./parse";
 import {
   DiscoveredWordsByDifficulty,
   discoveredWords,
 } from "@/state/discovered-words";
-import { getDifficultiesOfWord } from "@/utils/difficulty/of-word";
-import { isWordRemovedFromGame } from "@/utils/word-removed";
-import {
-  DIFFICULTIES,
-  DIFFICULTIES_ALL,
-  DIFFICULTY,
-} from "@/consts/difficulty";
+import { DIFFICULTIES_ALL, DIFFICULTY } from "@/consts/difficulty";
 import { DISCOVERED_WORDS } from "@/consts/discovered-words";
-/** @typedef {import("@/consts/difficulty").Difficulty} Difficulty */
-/** @typedef {typeof DIFFICULTIES_ALL} DifficultiesAll */
 
 export const loadSavedWords = async () => {
   const oldSavedItem = localStorage.getItem(
@@ -48,39 +41,10 @@ export const loadSavedWords = async () => {
 
   const parsedItem = JSON.parse(savedItem);
 
-  if (!Array.isArray(parsedItem)) return;
-
-  for (const item of parsedItem) {
-    if (!Array.isArray(item) || item.length !== 2) continue;
-
-    const [word, savedDifficulties] = item;
-
-    if (typeof word !== "string") continue;
-
-    const availableDifficulties = getDifficultiesOfWord(word);
-
-    if (savedDifficulties === DIFFICULTIES_ALL) {
-      availableDifficulties.forEach((difficulty) =>
-        DiscoveredWordsByDifficulty.get(difficulty)?.add(word),
-      );
-      discoveredWords.set(word, DIFFICULTIES_ALL);
-    } else if (
-      Array.isArray(savedDifficulties) &&
-      savedDifficulties.every(
-        /** @returns {difficulty is Difficulty} */
-        (difficulty) => DIFFICULTIES.has(difficulty),
-      ) &&
-      !(await isWordRemovedFromGame(word))
-    ) {
-      savedDifficulties.forEach((difficulty) =>
-        DiscoveredWordsByDifficulty.get(difficulty)?.add(word),
-      );
-      discoveredWords.set(
-        word,
-        availableDifficulties.length === savedDifficulties.length
-          ? DIFFICULTIES_ALL
-          : savedDifficulties,
-      );
-    }
-  }
+  await parseSavedWords(parsedItem, ({ word, difficulties, completed }) => {
+    difficulties.forEach((difficulty) =>
+      DiscoveredWordsByDifficulty.get(difficulty)?.add(word),
+    );
+    discoveredWords.set(word, completed ? DIFFICULTIES_ALL : difficulties);
+  });
 };
