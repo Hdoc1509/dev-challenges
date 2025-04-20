@@ -157,8 +157,9 @@ export class Pages {
 
   /** @param {number} page */
   renderPage(page) {
-    const $currentPage =
-      this.#$pagesContainer.querySelector(".page[data-active]");
+    const $currentPage = this.#$pagesContainer.querySelector(
+      ":scope > .page[data-active]",
+    );
     let $page = this.#$page(page);
 
     if ($page == null) {
