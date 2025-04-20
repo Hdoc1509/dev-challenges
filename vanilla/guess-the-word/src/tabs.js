@@ -14,7 +14,7 @@ const ATTRIBUTES = Object.freeze({
   }),
 });
 
-const TAB_VALID_SELECTOR = `.${CLASSES.TAB_LINK}[id]:not([id=""])`
+const TAB_VALID_SELECTOR = `:scope .${CLASSES.TAB_LINK}[id]:not([id=""])`
   .concat('[aria-controls$="-tab-content"]')
   .concat('[role="tab"]')
   .concat(':where([aria-selected="true"], [aria-selected="false"])');
@@ -49,7 +49,7 @@ export class Tabs {
       );
       // TODO: create util createContentSelector({ tabId, contentId })
       const $content = getElementBySelector(
-        `#${contentId}.${CLASSES.TAB_CONTENT}[role="tabpanel"][aria-labelledby="${$tab.id}"]`,
+        `:scope #${contentId}.${CLASSES.TAB_CONTENT}[role="tabpanel"][aria-labelledby="${$tab.id}"]`,
         HTMLDivElement,
         $contentContainer,
       );
