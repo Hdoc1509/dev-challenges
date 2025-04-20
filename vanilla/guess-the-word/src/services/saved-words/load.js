@@ -4,26 +4,23 @@ import {
   DiscoveredWordsByDifficulty,
   discoveredWords,
 } from "@/state/discovered-words";
-import { DIFFICULTIES_ALL, DIFFICULTY } from "@/consts/difficulty";
+import { DIFFICULTIES_ALL } from "@/consts/difficulty";
 import { DISCOVERED_WORDS } from "@/consts/discovered-words";
 
 export const loadSavedWords = async () => {
+  // FIX: onlye load item with old format if current format is not found
   const oldSavedItem = localStorage.getItem(
     DISCOVERED_WORDS.LOCAL_STORAGE_OLD_KEY,
   );
 
   if (oldSavedItem != null) {
-    const savedData = await parseOldFormat(JSON.parse(oldSavedItem));
-
-    for (const [word, difficulty] of savedData) {
-      if (difficulty === DIFFICULTIES_ALL) {
-        DiscoveredWordsByDifficulty.get(DIFFICULTY.EASY)?.add(word);
-        discoveredWords.set(word, difficulty);
-      } else {
-        DiscoveredWordsByDifficulty.get(difficulty)?.add(word);
-        discoveredWords.set(word, [difficulty]);
-      }
-    }
+    const parsedItem = JSON.parse(oldSavedItem);
+    await parseOldFormat(parsedItem, ({ word, difficulties, completed }) => {
+      difficulties.forEach((difficulty) =>
+        DiscoveredWordsByDifficulty.get(difficulty)?.add(word),
+      );
+      discoveredWords.set(word, completed ? DIFFICULTIES_ALL : difficulties);
+    });
 
     const data = Array.from(discoveredWords);
 
@@ -40,7 +37,6 @@ export const loadSavedWords = async () => {
   if (savedItem === null) return;
 
   const parsedItem = JSON.parse(savedItem);
-
   await parseSavedWords(parsedItem, ({ word, difficulties, completed }) => {
     difficulties.forEach((difficulty) =>
       DiscoveredWordsByDifficulty.get(difficulty)?.add(word),

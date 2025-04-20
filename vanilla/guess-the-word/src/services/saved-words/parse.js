@@ -4,6 +4,8 @@ import { DIFFICULTIES, DIFFICULTIES_ALL } from "@/consts/difficulty";
 /** @typedef {import("@/consts/difficulty").Difficulty} Difficulty */
 /** @typedef {typeof DIFFICULTIES_ALL} DifficultiesAll */
 
+// TODO: create SavedWordParser function type
+
 /** @typedef SavedWordItem
  * @property {string} word
  * @property {Difficulty[]} difficulties

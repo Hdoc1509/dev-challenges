@@ -1,28 +1,32 @@
 import { getDifficultiesOfWord } from "@/utils/difficulty/of-word";
 import { isWordRemovedFromGame } from "@/utils/word-removed";
-import { DIFFICULTIES_ALL, DIFFICULTY } from "@/consts/difficulty";
+import { DIFFICULTY } from "@/consts/difficulty";
 /** @typedef {import("@/consts/difficulty").Difficulty} Difficulty */
-/** @typedef {typeof DIFFICULTIES_ALL} DifficultiesAll */
+/** @typedef {import("./parse").SavedWordItem} SavedWordItem */
 
 // TEST: add unit test
 
-/** @param {any} parsedItem */
-export async function parseOldFormat(parsedItem) {
+/** @param {any} parsedItem
+ * @param {(item: SavedWordItem) => void} onParsedItem */
+export async function parseOldFormat(parsedItem, onParsedItem) {
   if (!Array.isArray(parsedItem)) return [];
 
-  /** @type {Array<[string, Difficulty | DifficultiesAll]>} */
+  /** @type {Array<[string, Difficulty]>} */
   const data = [];
 
   for (const item of parsedItem) {
     if (typeof item === "string" && !(await isWordRemovedFromGame(item))) {
       const difficulty = getDifficultiesOfWord(item)[0];
 
-      data.unshift([
-        item,
-        difficulty === DIFFICULTY.EASY ? DIFFICULTIES_ALL : difficulty,
-      ]);
+      data.unshift([item, difficulty]);
     }
   }
 
-  return data;
+  data.forEach(([word, difficulty]) =>
+    onParsedItem({
+      word,
+      difficulties: [difficulty],
+      completed: difficulty === DIFFICULTY.EASY,
+    }),
+  );
 }
