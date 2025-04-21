@@ -1,6 +1,6 @@
+import { DIFFICULTY_GROUP } from "@/consts/difficulty";
 import { setWords } from "@/state/words";
 
 export const ExtremeDifficulty = Object.freeze({
-  apply: async () =>
-    setWords(await import("@/consts/words/extreme").then((mod) => mod.default)),
+  apply: async () => await setWords(DIFFICULTY_GROUP.EXTREME),
 });

@@ -13,5 +13,16 @@ const AvailableWords = new Map([
 /** @type {readonly string[]} */
 export let words = [];
 
-/** @param {readonly string[]} newWords */
-export const setWords = (newWords) => (words = newWords);
+/** @param {DifficultyGroup} difficultyGroup */
+export const setWords = async (difficultyGroup) => {
+  const savedWords = AvailableWords.get(difficultyGroup);
+
+  if (savedWords == null) {
+    const mockedWords = await import(
+      `../consts/words/${difficultyGroup}.js`
+    ).then((mod) => mod.default);
+
+    AvailableWords.set(difficultyGroup, new Set(mockedWords));
+    words = mockedWords;
+  } else words = Array.from(savedWords);
+};
