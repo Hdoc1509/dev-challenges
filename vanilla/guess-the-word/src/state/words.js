@@ -26,3 +26,24 @@ export const setWords = async (difficultyGroup) => {
     words = mockedWords;
   } else words = Array.from(savedWords);
 };
+
+/** @param {string} word
+ * @param {{ difficultyGroup: DifficultyGroup }} extraParams */
+export const removeWord = async (word, { difficultyGroup }) => {
+  const savedWords = AvailableWords.get(difficultyGroup);
+
+  if (savedWords == null) {
+    const mockedWords = await import(
+      `../consts/words/${difficultyGroup}.js`
+    ).then((mod) => mod.default);
+    const wordsToUse = new Set(mockedWords);
+
+    wordsToUse.delete(word);
+
+    AvailableWords.set(difficultyGroup, wordsToUse);
+    words = Array.from(wordsToUse);
+  } else {
+    savedWords.delete(word);
+    words = Array.from(savedWords);
+  }
+};
