@@ -17,3 +17,10 @@ export function getDifficultiesOfWord(word) {
     return [DIFFICULTY.EXTREME, DIFFICULTY.INSANE];
   return [DIFFICULTY.WHY, DIFFICULTY.VOID];
 }
+
+/** @param {string} word */
+export function getDifficultyGroupOfWord(word) {
+  return /** @type {import("@/consts/difficulty").DifficultyGroup} */ (
+    getDifficultiesOfWord(word)[0]
+  );
+}
