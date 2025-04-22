@@ -13,7 +13,8 @@ const AvailableWords = new Map([
   [DIFFICULTY.VOID, null],
 ]);
 
-/** @type {readonly string[]} */
+/** Only contains words that has not been completed yet
+ * @type {readonly string[]} */
 export let words = [];
 
 /** @param {Difficulty} difficulty */

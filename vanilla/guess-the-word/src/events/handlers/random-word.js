@@ -24,7 +24,6 @@ import { RESETS } from "@/consts/resets";
 export function generateRandomWord() {
   if (words.length === 0) return ($randomWord.disabled = true);
 
-  // NOTE: `words` only contains words that has not been completed yet
   const randomWord = words.length === 1 ? words[0] : Random.element(words);
 
   setCurrentWord(randomWord);
