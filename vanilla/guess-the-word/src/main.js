@@ -1,7 +1,7 @@
 import { loadSavedWords } from "./services/saved-words/load";
 import { difficulty } from "./state/difficulty";
 import { discoveredWords } from "./state/discovered-words";
-import { removeAvailableWord } from "./state/words";
+import { removeAvailableWord, words } from "./state/words";
 import { setupEventListeners } from "./events/listeners/setup";
 import { generateRandomWord } from "./events/handlers/random-word";
 import { applyDifficulty } from "./utils/difficulty/apply";
@@ -9,6 +9,7 @@ import { renderDefinitionsCount } from "./ui/definition/count";
 import { DefinitionPages } from "./ui/definition/pages";
 import { $word } from "./ui/word";
 import { $typing } from "./ui/typing";
+import { $randomWord } from "./ui/actions";
 import { addSpinner, removeSpinner } from "./ui/spinner";
 import { DIFFICULTIES_ALL } from "./consts/difficulty";
 import "@lib/alert/styles.css";
@@ -26,9 +27,9 @@ import "./styles/main.css";
   }
   await applyDifficulty(difficulty);
   removeSpinner($word, $typing);
-  // TODO: disable $randomButton when there are no available words
-  // - use an early return in generateRandomWord()
-  generateRandomWord();
+  if (words.length === 0) {
+    $randomWord.disabled = true;
+  } else generateRandomWord();
   renderDefinitionsCount(discoveredWords.size);
   DefinitionPages.setItems(Array.from(discoveredWords.keys()).reverse());
 

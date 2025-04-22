@@ -12,7 +12,7 @@ import { $triesContainer, TriesIndicator } from "@/ui/tries";
 import { $mistakenLetters, $mistakesContainer } from "@/ui/mistakes";
 import { ResetsIndicator } from "@/ui/resets";
 import { hideTimerBar } from "@/ui/timer";
-import { $reset } from "@/ui/actions";
+import { $randomWord, $reset } from "@/ui/actions";
 import { $definitionSection } from "@/ui/definition/elements";
 import {
   $hints,
@@ -23,6 +23,8 @@ import {
 import { RESETS } from "@/consts/resets";
 
 export function generateRandomWord() {
+  if (words.length === 0) return ($randomWord.disabled = true);
+
   let randomWord = Random.element(words);
 
   while (hasCompletedDifficulty({ word: randomWord }))

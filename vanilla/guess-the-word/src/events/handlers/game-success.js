@@ -12,7 +12,7 @@ import { renderDefinitionsCount } from "@/ui/definition/count";
 import { renderCompletedDifficulty } from "@/ui/definition/difficulty";
 import { $definitionSection } from "@/ui/definition/elements";
 import { $hints, $hintsContent } from "@/ui/hints";
-import { $reset } from "@/ui/actions";
+import { $randomWord, $reset } from "@/ui/actions";
 
 export function handleGameSuccess() {
   showAlert({ color: "success", text: "🎉 Success!" });
@@ -33,9 +33,9 @@ export function handleGameSuccess() {
 
     if (completed) {
       removeAvailableWord(currentWord);
+      $randomWord.disabled = true;
       // TODO:
       // - update completed words of all difficulties in Stats tab
-      // - disable $randomButton when there are no available words
       // - disable difficulty option from Difficulty tab
       // - render a message about completed difficulty
       //   - indicate that you need to select another difficulty to continue playing
