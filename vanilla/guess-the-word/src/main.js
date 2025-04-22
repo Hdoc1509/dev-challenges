@@ -1,6 +1,5 @@
 import { loadSavedWords } from "./services/saved-words/load";
 import { difficulty } from "./state/difficulty";
-import { discoveredWords } from "./state/discovered-words";
 import { removeWord } from "./state/words";
 import { setupEventListeners } from "./events/listeners/setup";
 import { generateRandomWord } from "./events/handlers/random-word";
@@ -21,7 +20,7 @@ import "./styles/main.css";
 (async () => {
   // data initialization
   addSpinner($word, $typing);
-  await loadSavedWords();
+  const discoveredWords = await loadSavedWords();
   for (const [word, difficulties] of discoveredWords) {
     if (difficulties === DIFFICULTIES_ALL)
       await removeWord(word, {

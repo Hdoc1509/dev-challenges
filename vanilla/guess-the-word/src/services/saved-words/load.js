@@ -31,10 +31,8 @@ export const loadSavedWords = async () => {
       DISCOVERED_WORDS.LOCAL_STORAGE_KEY,
       JSON.stringify(data),
     );
-    return;
-  }
+  } else if (savedItem != null)
+    await parseSavedWords(JSON.parse(savedItem), loadWordItem);
 
-  if (savedItem === null) return;
-
-  await parseSavedWords(JSON.parse(savedItem), loadWordItem);
+  return discoveredWords;
 };
