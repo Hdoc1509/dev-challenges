@@ -1,3 +1,4 @@
+import { getDifficultyGroupOfWord } from "@/utils/difficulty/of-word";
 import { DIFFICULTY_GROUP } from "@/consts/difficulty";
 /** @typedef {import("@/consts/difficulty").DifficultyGroup} DifficultyGroup */
 
@@ -27,9 +28,10 @@ export const setWords = async (difficultyGroup) => {
   } else words = Array.from(savedWords);
 };
 
-/** @param {string} word
- * @param {{ difficultyGroup: DifficultyGroup }} extraParams */
-export const removeWord = async (word, { difficultyGroup }) => {
+/** @param {string} word */
+export const removeWord = async (word) => {
+  // TODO: call `getDifficultiesOfWord()` and use its first item as `difficultyGroup`
+  const difficultyGroup = getDifficultyGroupOfWord(word);
   const savedWords = AvailableWords.get(difficultyGroup);
 
   if (savedWords == null) {
