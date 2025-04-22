@@ -4,8 +4,6 @@ import WORDS_NORMAL_TOTAL from "@/mocks/words/normal-total.json";
 import WORDS_EXTREME_TOTAL from "@/mocks/words/extreme-total.json";
 import WORDS_WHY_TOTAL from "@/mocks/words/why-total.json";
 
-// TODO: reorganize mock-related constant files:
-// - move @/consts/words/[difficulty].js to @/mocks/words/by-difficulty/[difficulty].js
 export const TOTAL_WORDS = {
   ALL: WORDS_TOTAL_MOCK,
   EASY: WORDS_EASY_TOTAL,

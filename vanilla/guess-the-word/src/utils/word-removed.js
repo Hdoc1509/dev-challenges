@@ -19,7 +19,7 @@ export async function isWordRemovedFromGame(word) {
 
       if (cachedModuleWords == null) {
         const { default: wordsModule } = await import(
-          `../consts/words/${difficultyMock}.js`
+          `../consts/words/by-difficulty/${difficultyMock}.js`
         );
         const moduleToCache = new Set(wordsModule);
 

@@ -19,7 +19,7 @@ export const setWords = async (difficultyGroup) => {
 
   if (savedWords == null) {
     const { default: mockedWords } = await import(
-      `../consts/words/${difficultyGroup}.js`
+      `../consts/words/by-difficulty/${difficultyGroup}.js`
     );
 
     AvailableWords.set(difficultyGroup, new Set(mockedWords));
@@ -34,7 +34,7 @@ export const removeWord = async (word, { difficultyGroup }) => {
 
   if (savedWords == null) {
     const { default: mockedWords } = await import(
-      `../consts/words/${difficultyGroup}.js`
+      `../consts/words/by-difficulty/${difficultyGroup}.js`
     );
     const wordsToUse = new Set(mockedWords);
 
