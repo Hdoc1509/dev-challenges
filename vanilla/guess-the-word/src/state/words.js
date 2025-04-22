@@ -42,11 +42,11 @@ export const removeAvailableWord = async (word) => {
     const wordsToUse = new Set(mockedWords);
 
     wordsToUse.delete(word);
-
     AvailableWords.set(difficultyGroup, wordsToUse);
     words = Array.from(wordsToUse);
   } else {
-    savedWords.delete(word);
-    words = Array.from(savedWords);
+    const hasBeenRemoved = savedWords.delete(word);
+
+    if (hasBeenRemoved) words = Array.from(savedWords);
   }
 };
