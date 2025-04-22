@@ -4,7 +4,10 @@ import { discoveredWords } from "@/state/discovered-words";
 import { removeAvailableWord } from "@/state/words";
 import { currentWord } from "@/state/current-word";
 import { difficulty } from "@/state/difficulty";
-import { hasCompletedAllDifficulties } from "@/utils/difficulty/completed";
+import {
+  hasCompletedAllDifficulties,
+  showCompletedDifficultyMessage,
+} from "@/utils/difficulty/completed";
 import { showCorrectWord } from "@/ui/word";
 import { hideTimerBar } from "@/ui/timer";
 import { DefinitionPages } from "@/ui/definition/pages";
@@ -34,11 +37,10 @@ export function handleGameSuccess() {
     if (completed) {
       removeAvailableWord(currentWord);
       $randomWord.disabled = true;
+      showCompletedDifficultyMessage();
       // TODO:
       // - update completed words of all difficulties in Stats tab
       // - disable difficulty option from Difficulty tab
-      // - render a message about completed difficulty
-      //   - indicate that you need to select another difficulty to continue playing
     }
     if (renderCompletedDifficulty({ word: currentWord, difficulty }))
       $definitionSection.setAttribute("data-active", "");

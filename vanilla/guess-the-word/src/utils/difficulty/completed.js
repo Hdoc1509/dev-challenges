@@ -9,3 +9,9 @@ export const hasCompletedDifficulty = ({ word }) =>
 /** @param {{ word: string }} params */
 export const hasCompletedAllDifficulties = ({ word }) =>
   discoveredWords.get(word) === DIFFICULTIES_ALL;
+
+export const showCompletedDifficultyMessage = () => {
+  // TODO:
+  // - indicate that you need to select another difficulty to continue playing
+  console.log("TODO: showCompletedDifficultyMessage");
+};

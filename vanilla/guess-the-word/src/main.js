@@ -5,6 +5,7 @@ import { removeAvailableWord, words } from "./state/words";
 import { setupEventListeners } from "./events/listeners/setup";
 import { generateRandomWord } from "./events/handlers/random-word";
 import { applyDifficulty } from "./utils/difficulty/apply";
+import { showCompletedDifficultyMessage } from "./utils/difficulty/completed";
 import { renderDefinitionsCount } from "./ui/definition/count";
 import { DefinitionPages } from "./ui/definition/pages";
 import { $word } from "./ui/word";
@@ -29,6 +30,7 @@ import "./styles/main.css";
   removeSpinner($word, $typing);
   if (words.length === 0) {
     $randomWord.disabled = true;
+    showCompletedDifficultyMessage();
   } else generateRandomWord();
   renderDefinitionsCount(discoveredWords.size);
   DefinitionPages.setItems(Array.from(discoveredWords.keys()).reverse());
