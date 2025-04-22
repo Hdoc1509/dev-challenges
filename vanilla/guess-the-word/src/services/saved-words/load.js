@@ -33,6 +33,4 @@ export const loadSavedWords = async () => {
     );
   } else if (savedItem != null)
     await parseSavedWords(JSON.parse(savedItem), loadWordItem);
-
-  return discoveredWords;
 };
