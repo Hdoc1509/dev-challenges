@@ -1,4 +1,3 @@
-import { getDifficultiesOfWord } from "@/utils/difficulty/of-word";
 import { DIFFICULTY, DIFFICULTY_GROUP } from "@/consts/difficulty";
 /** @typedef {import("@/consts/difficulty").Difficulty} Difficulty */
 
@@ -32,12 +31,11 @@ export const setWordsByDifficulty = async (difficulty) => {
   } else words = Array.from(savedWords);
 };
 
-/** @param {string} word */
-export const removeAvailableWord = async (word) => {
-  const difficultyGroup = /** @type {DifficultyGroup} */ (
-    getDifficultiesOfWord(word)[0]
-  );
-  const savedWords = AvailableWords.get(difficultyGroup);
+/** @param {string} word
+ * @param {{ difficulty: Difficulty }} extraParams */
+export const removeAvailableWord = async (word, { difficulty }) => {
+  const savedWords = AvailableWords.get(difficulty);
+  const difficultyGroup = DIFFICULTY_GROUP[difficulty];
 
   if (savedWords == null) {
     const { default: mockedWords } = await import(
@@ -46,7 +44,7 @@ export const removeAvailableWord = async (word) => {
     const wordsToUse = new Set(mockedWords);
 
     wordsToUse.delete(word);
-    AvailableWords.set(difficultyGroup, wordsToUse);
+    AvailableWords.set(difficulty, wordsToUse);
     words = Array.from(wordsToUse);
   } else {
     const hasBeenRemoved = savedWords.delete(word);

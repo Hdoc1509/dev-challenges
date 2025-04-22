@@ -8,6 +8,7 @@ export const discoveredWords = new Map();
 // NOTE: add new Statistics tab to Menu
 
 /** @type {Map<Difficulty, Set<string>>} */
+// TODO: looks like this state will not be needed
 export const DiscoveredWordsByDifficulty = new Map([
   [DIFFICULTY.EASY, new Set()],
   [DIFFICULTY.NORMAL, new Set()],

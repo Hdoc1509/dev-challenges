@@ -35,7 +35,7 @@ export function handleGameSuccess() {
     const { completed } = addDiscoveredWord(currentWord, { difficulty });
 
     if (completed) {
-      removeAvailableWord(currentWord);
+      removeAvailableWord(currentWord, { difficulty });
       $randomWord.disabled = true;
       showCompletedDifficultyMessage();
       // TODO:
