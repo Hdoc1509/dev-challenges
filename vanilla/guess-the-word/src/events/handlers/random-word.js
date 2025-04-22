@@ -1,6 +1,6 @@
 import { resetAlert } from "@lib/alert";
 import { words } from "@/state/words";
-import { currentWord, setCurrentWord } from "@/state/current-word";
+import { setCurrentWord } from "@/state/current-word";
 import { resetTries } from "@/state/tries";
 import { maxResets, resetGameResets } from "@/state/resets";
 import { Random } from "@/utils/random";
@@ -32,8 +32,8 @@ export function generateRandomWord() {
   resetTries();
   resetGameResets();
 
-  createWordLetters(scrambleWord(currentWord));
-  createLetterFields(currentWord.length);
+  createWordLetters(scrambleWord(randomWord));
+  createLetterFields(randomWord.length);
 
   if (maxResets === RESETS.MAX.VOID) {
     $mistakesContainer.removeAttribute("data-active");
