@@ -25,7 +25,9 @@ export async function isWordRemovedFromGame(word) {
 
         mockFiles.set(difficultyMock, moduleToCache);
         return !moduleToCache.has(word);
-      } else return !cachedModuleWords.has(word);
+      }
+
+      return !cachedModuleWords.has(word);
     }
   }
 
