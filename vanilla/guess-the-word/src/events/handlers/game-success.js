@@ -1,6 +1,7 @@
 import { showAlert } from "@lib/alert";
 import { addDiscoveredWord } from "@/services/saved-words/add";
 import { discoveredWords } from "@/state/discovered-words";
+import { removeAvailableWord } from "@/state/words";
 import { currentWord } from "@/state/current-word";
 import { difficulty } from "@/state/difficulty";
 import { hasCompletedAllDifficulties } from "@/utils/difficulty/completed";
@@ -28,7 +29,17 @@ export function handleGameSuccess() {
     DefinitionPages.prepend(currentWord);
     renderDefinitionsCount(discoveredWords.size);
   } else if (!hasCompletedAllDifficulties({ word: currentWord })) {
-    addDiscoveredWord(currentWord, { difficulty });
+    const { completed } = addDiscoveredWord(currentWord, { difficulty });
+
+    if (completed) {
+      removeAvailableWord(currentWord);
+      // TODO:
+      // - update completed words of all difficulties in Stats tab
+      // - disable $randomButton when there are no available words
+      // - disable difficulty option from Difficulty tab
+      // - render a message about completed difficulty
+      //   - indicate that you need to select another difficulty to continue playing
+    }
     if (renderCompletedDifficulty({ word: currentWord, difficulty }))
       $definitionSection.setAttribute("data-active", "");
   }

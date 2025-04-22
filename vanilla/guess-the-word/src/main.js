@@ -28,7 +28,6 @@ import "./styles/main.css";
   removeSpinner($word, $typing);
   // TODO: disable $randomButton when there are no available words
   // - use an early return in generateRandomWord()
-  // - also do this after handleGameSuccess() if needed
   generateRandomWord();
   renderDefinitionsCount(discoveredWords.size);
   DefinitionPages.setItems(Array.from(discoveredWords.keys()).reverse());
