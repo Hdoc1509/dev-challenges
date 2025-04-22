@@ -5,7 +5,6 @@ import { resetTries } from "@/state/tries";
 import { maxResets, resetGameResets } from "@/state/resets";
 import { Random } from "@/utils/random";
 import { createLetterFields } from "@/ui/typing";
-import { hasCompletedDifficulty } from "@/utils/difficulty/completed";
 import { scrambleWord } from "@/utils/scramble";
 import { createWordLetters } from "@/ui/word";
 import { $triesContainer, TriesIndicator } from "@/ui/tries";
@@ -25,10 +24,8 @@ import { RESETS } from "@/consts/resets";
 export function generateRandomWord() {
   if (words.length === 0) return ($randomWord.disabled = true);
 
-  let randomWord = Random.element(words);
-
-  while (hasCompletedDifficulty({ word: randomWord }))
-    randomWord = Random.element(words);
+  // NOTE: `words` only contains words that has not been completed yet
+  const randomWord = words.length === 1 ? words[0] : Random.element(words);
 
   setCurrentWord(randomWord);
   resetAlert();
