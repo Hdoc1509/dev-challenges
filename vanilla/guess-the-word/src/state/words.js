@@ -1,14 +1,17 @@
 import { getDifficultiesOfWord } from "@/utils/difficulty/of-word";
-import { DIFFICULTY_GROUP } from "@/consts/difficulty";
-/** @typedef {import("@/consts/difficulty").DifficultyGroup} DifficultyGroup */
+import { DIFFICULTY } from "@/consts/difficulty";
+/** @typedef {import("@/consts/difficulty").Difficulty} Difficulty */
 
-/** @type {Map<DifficultyGroup, Set<string> | null>} */
-// NOTE: delete from this map once a word has completed all of its difficulties
+/** @type {Map<Difficulty, Set<string> | null>} */
 const AvailableWords = new Map([
-  [DIFFICULTY_GROUP.EASY, null],
-  [DIFFICULTY_GROUP.NORMAL, null],
-  [DIFFICULTY_GROUP.EXTREME, null],
-  [DIFFICULTY_GROUP.WHY, null],
+  [DIFFICULTY.EASY, null],
+  [DIFFICULTY.NORMAL, null],
+  [DIFFICULTY.HARD, null],
+  [DIFFICULTY.MASTER, null],
+  [DIFFICULTY.EXTREME, null],
+  [DIFFICULTY.INSANE, null],
+  [DIFFICULTY.WHY, null],
+  [DIFFICULTY.VOID, null],
 ]);
 
 /** @type {readonly string[]} */
