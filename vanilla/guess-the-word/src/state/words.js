@@ -1,5 +1,5 @@
 import { getDifficultiesOfWord } from "@/utils/difficulty/of-word";
-import { DIFFICULTY } from "@/consts/difficulty";
+import { DIFFICULTY, DIFFICULTY_GROUP } from "@/consts/difficulty";
 /** @typedef {import("@/consts/difficulty").Difficulty} Difficulty */
 
 /** @type {Map<Difficulty, Set<string> | null>} */
@@ -17,16 +17,17 @@ const AvailableWords = new Map([
 /** @type {readonly string[]} */
 export let words = [];
 
-/** @param {DifficultyGroup} difficultyGroup */
-export const setWords = async (difficultyGroup) => {
-  const savedWords = AvailableWords.get(difficultyGroup);
+/** @param {Difficulty} difficulty */
+export const setWordsByDifficulty = async (difficulty) => {
+  const savedWords = AvailableWords.get(difficulty);
+  const difficultyGroup = DIFFICULTY_GROUP[difficulty];
 
   if (savedWords == null) {
     const { default: mockedWords } = await import(
       `../consts/words/by-difficulty/${difficultyGroup}.js`
     );
 
-    AvailableWords.set(difficultyGroup, new Set(mockedWords));
+    AvailableWords.set(difficulty, new Set(mockedWords));
     words = mockedWords;
   } else words = Array.from(savedWords);
 };

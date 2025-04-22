@@ -1,4 +1,5 @@
 import { handleLetterInput } from "@/events/handlers/letter-input";
+import { setWordsByDifficulty } from "@/state/words";
 import { TypingLetterIndex } from "@/state/typing-letter";
 import {
   hideTimer,
@@ -9,6 +10,7 @@ import {
 } from "@/ui/timer";
 import { isValidLetterField } from "@/ui/typing";
 import { Random } from "../random";
+import { DIFFICULTY } from "@/consts/difficulty";
 
 /** @type {HTMLInputElement | null} */
 // NOTE: avoids weird behaviors when focusing more than once on the same input
@@ -43,6 +45,7 @@ const handleLetterFocus = (e) => {
 export const InsaneDifficulty = Object.freeze({
   apply() {
     showTimer();
+    setWordsByDifficulty(DIFFICULTY.INSANE);
     document.addEventListener("focusin", handleLetterFocus);
   },
   unapply() {
