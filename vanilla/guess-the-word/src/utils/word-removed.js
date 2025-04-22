@@ -1,7 +1,7 @@
 import { getDifficultiesOfWord } from "./difficulty/of-word.js";
 import { DIFFICULTY } from "@/consts/difficulty.js";
 
-/** @type {Map<import("@/consts/difficulty").Difficulty, Set<string> | null>} */
+/** @type {Map<import("@/consts/difficulty").DifficultyGroup, Set<string> | null>} */
 const mockFiles = new Map([
   [DIFFICULTY.EASY, null],
   [DIFFICULTY.NORMAL, null],
