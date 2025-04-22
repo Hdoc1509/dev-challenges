@@ -4,7 +4,7 @@ import { TOTAL_WORDS } from "@/consts/words/total";
 getElementBySelector(
   ".definitions-count__total",
   HTMLSpanElement,
-).textContent = `${TOTAL_WORDS}`;
+).textContent = `${TOTAL_WORDS.ALL}`;
 
 const $definitionsProgress = getElementBySelector(
   ".definitions-count__progress",
@@ -17,7 +17,7 @@ const $definitionsCurrent = getElementBySelector(
 
 /** @param {number} count */
 export const renderDefinitionsCount = (count) => {
-  const percent = ((count / TOTAL_WORDS) * 100).toFixed(8);
+  const percent = ((count / TOTAL_WORDS.ALL) * 100).toFixed(8);
 
   $definitionsProgress.style.setProperty("--definitions-count", `${percent}%`);
   $definitionsCurrent.textContent = `${count}`;
