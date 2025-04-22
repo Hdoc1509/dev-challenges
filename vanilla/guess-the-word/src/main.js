@@ -1,7 +1,7 @@
 import { loadSavedWords } from "./services/saved-words/load";
 import { difficulty } from "./state/difficulty";
 import { discoveredWords } from "./state/discovered-words";
-import { removeWord } from "./state/words";
+import { removeAvailableWord } from "./state/words";
 import { setupEventListeners } from "./events/listeners/setup";
 import { generateRandomWord } from "./events/handlers/random-word";
 import { applyDifficulty } from "./utils/difficulty/apply";
@@ -22,7 +22,7 @@ import "./styles/main.css";
   addSpinner($word, $typing);
   await loadSavedWords();
   for (const [word, difficulties] of discoveredWords) {
-    if (difficulties === DIFFICULTIES_ALL) await removeWord(word);
+    if (difficulties === DIFFICULTIES_ALL) await removeAvailableWord(word);
   }
   await applyDifficulty(difficulty);
   removeSpinner($word, $typing);

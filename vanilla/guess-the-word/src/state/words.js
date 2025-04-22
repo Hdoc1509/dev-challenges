@@ -29,7 +29,7 @@ export const setWords = async (difficultyGroup) => {
 };
 
 /** @param {string} word */
-export const removeWord = async (word) => {
+export const removeAvailableWord = async (word) => {
   // TODO: call `getDifficultiesOfWord()` and use its first item as `difficultyGroup`
   const difficultyGroup = getDifficultyGroupOfWord(word);
   const savedWords = AvailableWords.get(difficultyGroup);
