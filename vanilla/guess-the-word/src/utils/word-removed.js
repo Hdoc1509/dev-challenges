@@ -15,19 +15,19 @@ export async function isWordRemovedFromGame(word) {
 
   for (const difficultyMock of mockFiles.keys()) {
     if (difficulties.includes(difficultyMock)) {
-      const cachedModuleWords = mockFiles.get(difficultyMock);
+      const words = mockFiles.get(difficultyMock);
 
-      if (cachedModuleWords == null) {
-        const { default: wordsModule } = await import(
+      if (words == null) {
+        const { default: loadedWords } = await import(
           `../consts/words/by-difficulty/${difficultyMock}.js`
         );
-        const moduleToCache = new Set(wordsModule);
+        const wordsToLoad = new Set(loadedWords);
 
-        mockFiles.set(difficultyMock, moduleToCache);
-        return !moduleToCache.has(word);
+        mockFiles.set(difficultyMock, wordsToLoad);
+        return !wordsToLoad.has(word);
       }
 
-      return !cachedModuleWords.has(word);
+      return !words.has(word);
     }
   }
 
