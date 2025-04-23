@@ -85,8 +85,6 @@ export const addHint = (enteredLetter, { letterIndex, isCorrect }) => {
 };
 
 export const clearHints = () => {
-  while ($allHintsList.firstChild)
-    $allHintsList.removeChild($allHintsList.firstChild);
-  while ($correctHintsList.firstChild)
-    $correctHintsList.removeChild($correctHintsList.firstChild);
+  $allHintsList.replaceChildren();
+  $correctHintsList.replaceChildren();
 };

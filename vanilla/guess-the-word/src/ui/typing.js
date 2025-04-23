@@ -13,7 +13,7 @@ let $letterFields;
 
 /** @param {number} quantity */
 export function createLetterFields(quantity) {
-  while ($typing.firstChild) $typing.removeChild($typing.firstChild);
+  $typing.replaceChildren();
 
   for (let i = 0; i < quantity; i++) {
     const $letterClone = /** @type {DocumentFragment} */ (
