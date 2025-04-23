@@ -9,13 +9,3 @@ export const hasCompletedDifficulty = ({ word }) =>
 /** @param {{ word: string }} params */
 export const hasCompletedAllDifficulties = ({ word }) =>
   discoveredWords.get(word) === DIFFICULTIES_ALL;
-
-// TODO: move to `events/handlers/difficulty-completed.js`
-export const showCompletedDifficultyMessage = () => {
-  // TODO:
-  // - create word letters with `congrats` as selected word
-  // - hide `info` and `typing` section
-  // - show `difficulty-completed` section
-  // - indicate that you need to select another difficulty to continue playing
-  console.log("TODO: showCompletedDifficultyMessage");
-};

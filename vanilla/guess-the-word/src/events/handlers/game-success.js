@@ -1,13 +1,11 @@
 import { showAlert } from "@lib/alert";
 import { addDiscoveredWord } from "@/services/saved-words/add";
 import { discoveredWords } from "@/state/discovered-words";
-import { removeAvailableWord } from "@/state/words";
+import { removeAvailableWord, words } from "@/state/words";
 import { currentWord } from "@/state/current-word";
 import { difficulty } from "@/state/difficulty";
-import {
-  hasCompletedAllDifficulties,
-  showCompletedDifficultyMessage,
-} from "@/utils/difficulty/completed";
+import { handleDifficultyComplete } from "./difficulty-complete";
+import { hasCompletedAllDifficulties } from "@/utils/difficulty/completed";
 import { showCorrectWord } from "@/ui/word";
 import { hideTimerBar } from "@/ui/timer";
 import { DefinitionPages } from "@/ui/definition/pages";
@@ -15,7 +13,7 @@ import { renderDefinitionsCount } from "@/ui/definition/count";
 import { renderCompletedDifficulty } from "@/ui/definition/difficulty";
 import { $definitionSection } from "@/ui/definition/elements";
 import { $hints, $hintsContent } from "@/ui/hints";
-import { $randomWord, $reset } from "@/ui/actions";
+import { $reset } from "@/ui/actions";
 
 export function handleGameSuccess() {
   showAlert({ color: "success", text: "🎉 Success!" });
@@ -36,11 +34,7 @@ export function handleGameSuccess() {
 
     if (completed) {
       removeAvailableWord(currentWord, { difficulty });
-      $randomWord.disabled = true;
-      showCompletedDifficultyMessage();
-      // TODO:
-      // - update completed words of all difficulties in Stats tab
-      // - disable difficulty option from Difficulty tab
+      if (words.length === 0) handleDifficultyComplete();
     }
     if (renderCompletedDifficulty({ word: currentWord, difficulty }))
       $definitionSection.setAttribute("data-active", "");

@@ -5,13 +5,12 @@ import { removeAvailableWord, words } from "./state/words";
 import { setupEventListeners } from "./events/listeners/setup";
 import { generateRandomWord } from "./events/handlers/random-word";
 import { applyDifficulty } from "./utils/difficulty/apply";
+import { handleDifficultyComplete } from "./events/handlers/difficulty-complete";
 import { getDifficultiesOfWord } from "./utils/difficulty/of-word";
-import { showCompletedDifficultyMessage } from "./utils/difficulty/completed";
 import { renderDefinitionsCount } from "./ui/definition/count";
 import { DefinitionPages } from "./ui/definition/pages";
 import { $word } from "./ui/word";
 import { $typing } from "./ui/typing";
-import { $randomWord } from "./ui/actions";
 import { addSpinner, removeSpinner } from "./ui/spinner";
 import { DIFFICULTIES_ALL } from "./consts/difficulty";
 import "@lib/alert/styles.css";
@@ -38,10 +37,8 @@ import "./styles/main.css";
   await applyDifficulty(difficulty);
   removeSpinner($word, $typing);
 
-  if (words.length === 0) {
-    $randomWord.disabled = true;
-    showCompletedDifficultyMessage();
-  } else generateRandomWord();
+  if (words.length === 0) handleDifficultyComplete();
+  else generateRandomWord();
   renderDefinitionsCount(discoveredWords.size);
   DefinitionPages.setItems(Array.from(discoveredWords.keys()).reverse());
 
