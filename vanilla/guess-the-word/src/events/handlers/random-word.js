@@ -3,6 +3,7 @@ import { words } from "@/state/words";
 import { setCurrentWord } from "@/state/current-word";
 import { resetTries } from "@/state/tries";
 import { maxResets, resetGameResets } from "@/state/resets";
+import { handleDifficultyComplete } from "./difficulty-complete";
 import { Random } from "@/utils/random";
 import { createLetterFields } from "@/ui/typing";
 import { scrambleWord } from "@/utils/scramble";
@@ -11,7 +12,7 @@ import { $triesContainer, TriesIndicator } from "@/ui/tries";
 import { $mistakenLetters, $mistakesContainer } from "@/ui/mistakes";
 import { ResetsIndicator } from "@/ui/resets";
 import { hideTimerBar } from "@/ui/timer";
-import { $randomWord, $reset } from "@/ui/actions";
+import { $reset } from "@/ui/actions";
 import { $definitionSection } from "@/ui/definition/elements";
 import {
   $hints,
@@ -22,7 +23,7 @@ import {
 import { RESETS } from "@/consts/resets";
 
 export function generateRandomWord() {
-  if (words.length === 0) return ($randomWord.disabled = true);
+  if (words.length === 0) return handleDifficultyComplete();
 
   const randomWord = words.length === 1 ? words[0] : Random.element(words);
 
