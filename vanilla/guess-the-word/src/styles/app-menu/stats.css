@@ -1,0 +1,29 @@
+.progress[data-stats="total"] {
+  --progress-bg: var(--word-bg);
+}
+.progress[data-stats="easy"] {
+  /* TODO: use darker color */
+  --progress-bg: var(--difficulty-easy);
+}
+.progress[data-stats="normal"] {
+  /* TODO: use darker color */
+  --progress-bg: var(--difficulty-normal);
+}
+.progress[data-stats="hard"] {
+  --progress-bg: var(--difficulty-hard);
+}
+.progress[data-stats="master"] {
+  --progress-bg: var(--difficulty-master);
+}
+.progress[data-stats="extreme"] {
+  --progress-bg: var(--difficulty-extreme);
+}
+.progress[data-stats="insane"] {
+  --progress-bg: var(--difficulty-insane);
+}
+.progress[data-stats="why"] {
+  --progress-bg: var(--difficulty-why);
+}
+.progress[data-stats="void"] {
+  --progress-bg: var(--difficulty-void);
+}

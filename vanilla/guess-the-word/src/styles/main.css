@@ -1,6 +1,7 @@
 @import "global.css";
 @import "game-card/main.css";
 @import "menu.css";
+@import "app-menu/main.css";
 @import "tabs.css";
 @import "step-indicator.css";
 @import "definitions.css";
