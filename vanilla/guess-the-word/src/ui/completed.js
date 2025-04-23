@@ -1,6 +1,6 @@
 import { getElementBySelector } from "@lib/dom";
 
-const $difficultyCompleted = getElementBySelector(
+export const $difficultyCompleted = getElementBySelector(
   ".info .difficulty-completed",
   HTMLElement,
 );
@@ -23,8 +23,19 @@ const $completedName = getElementBySelector(
   $primaryMessage,
 );
 
-const $showDifficulties = getElementBySelector(
+export const $showDifficulties = getElementBySelector(
   ":scope > .menu-trigger",
   HTMLButtonElement,
   $difficultyCompleted,
 );
+
+/** @param {import("@/consts/difficulty").Difficulty} difficulty
+ * @param {{ secondaryMessage?: boolean }} [options] */
+export const showCompletedDifficultyMessage = (
+  difficulty,
+  { secondaryMessage = true } = {},
+) => {
+  $completedName.textContent = `${difficulty}`;
+  $completedName.dataset.difficulty = difficulty;
+  if (!secondaryMessage) $secondaryMessage.classList.add("hidden");
+};
