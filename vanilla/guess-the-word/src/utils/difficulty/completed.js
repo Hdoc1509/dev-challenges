@@ -10,6 +10,7 @@ export const hasCompletedDifficulty = ({ word }) =>
 export const hasCompletedAllDifficulties = ({ word }) =>
   discoveredWords.get(word) === DIFFICULTIES_ALL;
 
+// TODO: move to `events/handlers/difficulty-completed.js`
 export const showCompletedDifficultyMessage = () => {
   // TODO:
   // - create word letters with `congrats` as selected word
