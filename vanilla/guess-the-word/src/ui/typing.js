@@ -9,10 +9,11 @@ export const $letterTemplate = getElementById(
 );
 
 /** @type {HTMLInputElement[]} */
-let $letterFields;
+const $letterFields = [];
 
 /** @param {number} quantity */
 export function createLetterFields(quantity) {
+  $letterFields.length = 0;
   $typing.replaceChildren();
 
   for (let i = 0; i < quantity; i++) {
@@ -26,23 +27,18 @@ export function createLetterFields(quantity) {
     );
 
     TypingLetterIndex.set($field, i);
+    $letterFields.push($field);
     $typing.appendChild($letterClone);
   }
 
+  const [$firstField] = $letterFields;
   const $firstLetter = /** @type {HTMLSpanElement} */ (
-    $typing.firstElementChild
-  );
-  const $firstField = /** @type {HTMLInputElement} */ (
-    $firstLetter.firstElementChild
+    $firstField.parentElement
   );
 
   $firstLetter.classList.add(CLASSES.TYPING.LETTER__CURRENT);
   $firstField.disabled = false;
   $firstField.focus();
-
-  $letterFields = Array.from(
-    $typing.querySelectorAll(".typing__letter > input"),
-  );
 }
 
 /** @type {($target: EventTarget | null) => $target is HTMLInputElement} */
