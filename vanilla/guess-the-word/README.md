@@ -82,10 +82,10 @@ create a small game that tests your data management and DOM manipulation with Ja
 - Add border colors to correct and wrong entered letters
 - Show correct word when winning or losing
 - **Hints** section: all letters and correct letters
-- Statistics for number of discovered words and total available words
-- **Definition** for each discovered word
-- Multiple difficulties available for each word
-- **Pagination** for discovered words
+- Menu:
+  - `Definitions`: see definition for each discovered word. Includes `Pagination`
+  - `Difficulty`: change difficulty level
+  - `Stats`: see statistics for discovered words
 
 ### What I learned
 
