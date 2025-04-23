@@ -20,11 +20,10 @@ export let words = [];
 /** @param {Difficulty} difficulty */
 export const setWordsByDifficulty = async (difficulty) => {
   const savedWords = AvailableWords.get(difficulty);
-  const difficultyGroup = DIFFICULTY_GROUP[difficulty];
 
   if (savedWords == null) {
     const { default: mockedWords } = await import(
-      `../consts/words/by-difficulty/${difficultyGroup}.js`
+      `../consts/words/by-difficulty/${DIFFICULTY_GROUP[difficulty]}.js`
     );
 
     AvailableWords.set(difficulty, new Set(mockedWords));
@@ -36,11 +35,10 @@ export const setWordsByDifficulty = async (difficulty) => {
  * @param {{ difficulty: Difficulty }} extraParams */
 export const removeAvailableWord = async (word, { difficulty }) => {
   const savedWords = AvailableWords.get(difficulty);
-  const difficultyGroup = DIFFICULTY_GROUP[difficulty];
 
   if (savedWords == null) {
     const { default: mockedWords } = await import(
-      `../consts/words/by-difficulty/${difficultyGroup}.js`
+      `../consts/words/by-difficulty/${DIFFICULTY_GROUP[difficulty]}.js`
     );
     const wordsToUse = new Set(mockedWords);
 
