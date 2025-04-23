@@ -13,8 +13,7 @@
 }
 .definitions-count__progress {
   position: absolute;
-  top: 0;
-  bottom: 0;
+  height: 100%;
   background-color: var(--primary);
   width: var(--definitions-count);
 }
