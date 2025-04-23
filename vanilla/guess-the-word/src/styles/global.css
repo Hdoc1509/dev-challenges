@@ -126,3 +126,7 @@ button > svg {
   color: var(--secondary);
   font-size: 1.25em;
 }
+
+.hidden {
+  display: none;
+}
