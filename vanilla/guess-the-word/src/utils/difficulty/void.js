@@ -4,8 +4,8 @@ import { DIFFICULTY } from "@/consts/difficulty";
 import { RESETS } from "@/consts/resets";
 
 export const VoidDifficulty = Object.freeze({
-  apply() {
-    setWordsByDifficulty(DIFFICULTY.VOID);
+  async apply() {
     setMaxResets(RESETS.MAX.VOID);
+    await setWordsByDifficulty(DIFFICULTY.VOID);
   },
 });

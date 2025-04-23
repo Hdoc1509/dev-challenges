@@ -43,10 +43,10 @@ const handleLetterFocus = (e) => {
 };
 
 export const InsaneDifficulty = Object.freeze({
-  apply() {
+  async apply() {
     showTimer();
-    setWordsByDifficulty(DIFFICULTY.INSANE);
     document.addEventListener("focusin", handleLetterFocus);
+    await setWordsByDifficulty(DIFFICULTY.INSANE);
   },
   unapply() {
     hideTimer();

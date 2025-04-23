@@ -5,10 +5,10 @@ import { RESETS } from "@/consts/resets";
 import { DIFFICULTY } from "@/consts/difficulty";
 
 export const MasterDifficulty = Object.freeze({
-  apply() {
+  async apply() {
     setMaxResets(RESETS.MAX.MASTER);
-    setWordsByDifficulty(DIFFICULTY.MASTER);
     $resetsContainer.setAttribute("data-active", "");
+    await setWordsByDifficulty(DIFFICULTY.MASTER);
   },
   unapply: () => $resetsContainer.removeAttribute("data-active"),
 });
