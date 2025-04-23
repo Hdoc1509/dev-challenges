@@ -1,0 +1,26 @@
+.progress {
+  position: relative;
+
+  border: 2px solid var(--progress-bg);
+  font-weight: bold;
+}
+.progress__description {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+
+  padding: 0.25rem;
+  text-shadow: 0px 0px 4px #000;
+  color: var(--progress-description-text);
+}
+.progress__title {
+  text-align: right;
+}
+.progress__track {
+  position: absolute;
+
+  height: 100%;
+  background-color: var(--progress-bg);
+  width: var(--progress-track-width, 50%);
+}
