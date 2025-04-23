@@ -12,6 +12,9 @@ export const hasCompletedAllDifficulties = ({ word }) =>
 
 export const showCompletedDifficultyMessage = () => {
   // TODO:
+  // - create word letters with `congrats` as selected word
+  // - hide `info` and `typing` section
+  // - show `difficulty-completed` section
   // - indicate that you need to select another difficulty to continue playing
   console.log("TODO: showCompletedDifficultyMessage");
 };
