@@ -22,5 +22,5 @@
 
   height: 100%;
   background-color: var(--progress-bg);
-  width: var(--progress-track-width, 50%);
+  width: var(--progress-track-width);
 }
