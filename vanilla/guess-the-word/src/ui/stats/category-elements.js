@@ -1,13 +1,9 @@
 import { getElementBySelector } from "@lib/dom";
 import { $statsTabContent } from "../menu";
 
-// TODO: remove $total property from StatsCategoryElements
-
 /** @typedef StatsCategoryElements
  * @property {HTMLDivElement} $track
- * @property {HTMLSpanElement} $current
- * @property {HTMLSpanElement} $total
- */
+ * @property {HTMLSpanElement} $current */
 
 /** @param {import("@/consts/stats").StatsCategory} category
  * @returns {StatsCategoryElements} */
@@ -27,11 +23,6 @@ export function getCategoryElements(category) {
     HTMLSpanElement,
     $stats,
   );
-  const $total = getElementBySelector(
-    ":scope .progress__total",
-    HTMLSpanElement,
-    $stats,
-  );
 
-  return { $track, $current, $total };
+  return { $track, $current };
 }
