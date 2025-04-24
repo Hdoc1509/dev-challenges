@@ -3,11 +3,13 @@ import WORDS_EASY_TOTAL from "@/mocks/words/easy-total.json";
 import WORDS_NORMAL_TOTAL from "@/mocks/words/normal-total.json";
 import WORDS_EXTREME_TOTAL from "@/mocks/words/extreme-total.json";
 import WORDS_WHY_TOTAL from "@/mocks/words/why-total.json";
+import { DIFFICULTY } from "../difficulty";
 
+/** @type {Record<"ALL" | import("../difficulty").DifficultyGroup, number>} */
 export const TOTAL_WORDS = {
   ALL: WORDS_TOTAL_MOCK,
-  EASY: WORDS_EASY_TOTAL,
-  NORMAL: WORDS_NORMAL_TOTAL,
-  EXTREME: WORDS_EXTREME_TOTAL,
-  WHY: WORDS_WHY_TOTAL,
+  [DIFFICULTY.EASY]: WORDS_EASY_TOTAL,
+  [DIFFICULTY.NORMAL]: WORDS_NORMAL_TOTAL,
+  [DIFFICULTY.EXTREME]: WORDS_EXTREME_TOTAL,
+  [DIFFICULTY.WHY]: WORDS_WHY_TOTAL,
 };
