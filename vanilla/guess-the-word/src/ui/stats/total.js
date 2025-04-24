@@ -1,11 +1,10 @@
 import { getElementBySelector } from "@lib/dom";
 import { $statsTabContent } from "../menu";
-import { STATS_CATEGORY_TOTAL } from "@/consts/stats";
-import { TOTAL_WORDS } from "@/consts/words/total";
-import { DIFFICULTY_GROUP } from "@/consts/difficulty";
 
-/** @param {import("@/consts/stats").StatsCategory} category */
-export function renderStatsTotal(category) {
+/** @param {Object} params
+ * @param {import("@/consts/stats").StatsCategory} params.category
+ * @param {number} params.total */
+export function renderStatsTotal({ category, total }) {
   const $stats = getElementBySelector(
     `:scope > .progress[data-stats="${category}"]`,
     HTMLDivElement,
@@ -16,10 +15,6 @@ export function renderStatsTotal(category) {
     HTMLSpanElement,
     $stats,
   );
-  const totalCount =
-    category === STATS_CATEGORY_TOTAL
-      ? TOTAL_WORDS.ALL
-      : TOTAL_WORDS[DIFFICULTY_GROUP[category]];
 
-  $total.textContent = `${totalCount}`;
+  $total.textContent = `${total}`;
 }
