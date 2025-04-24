@@ -7,6 +7,10 @@ import { STATS_CATEGORY_TOTAL } from "@/consts/stats";
 /** @type {Map<Category, import("./category-elements").StatsCategoryElements>} */
 const Elements = new Map([]);
 
+const CSS_VARIABLE = Object.freeze({
+  PROGRESS_TRACK_WIDTH: "--progress-track-width",
+});
+
 /** @param {Category} category
  * @param {number} count */
 export function renderCurrentStats(category, count) {
@@ -15,11 +19,16 @@ export function renderCurrentStats(category, count) {
     category === STATS_CATEGORY_TOTAL
       ? TOTAL_WORDS.ALL
       : TOTAL_WORDS[DIFFICULTY_GROUP[category]];
+  const trackWidth = ((count / total) * 100).toFixed(8);
 
   if ($elements == null) {
     $elements = getCategoryElements(category);
     Elements.set(category, $elements);
   }
 
-  console.log("renderStats", { category, count, total });
+  $elements.$track.style.setProperty(
+    CSS_VARIABLE.PROGRESS_TRACK_WIDTH,
+    `${trackWidth}%`,
+  );
+  $elements.$current.textContent = `${count}`;
 }
