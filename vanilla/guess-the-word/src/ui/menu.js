@@ -12,6 +12,11 @@ export const $definitionsTab = getElementById(
   "definitions-tab",
   HTMLButtonElement,
 );
+export const $statsTab = getElementById("stats-tab", HTMLButtonElement);
+export const $statsTabContent = getElementById(
+  "stats-tab-content",
+  HTMLElement,
+);
 
 export const $menuTabContent = getElementById("menu-content", HTMLElement);
 
