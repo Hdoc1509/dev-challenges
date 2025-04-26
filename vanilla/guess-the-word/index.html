@@ -1,3 +1,4 @@
+<!-- vim: set filetype=ejs :-->
 <!doctype html>
 <html lang="en">
   <head>
@@ -103,33 +104,21 @@
             </svg>
           </button>
           <section class="hints__content">
+            <% const hintsTabs = ["all", "correct"]; %>
             <header class="menu__header">
               <nav>
                 <div id="hints-nav" class="tab-nav" role="tablist">
+                  <% for (const tab of hintsTabs) { %>
                   <button
-                    id="all-hints-tab"
+                    id="<%= tab %>-hints-tab"
                     class="tab-nav__link"
                     role="tab"
-                    aria-controls="all-hints-tab-content"
-                    aria-selected="true"
+                    aria-controls="<%= tab %>-hints-tab-content"
+                    aria-selected="<%= tab === 'all' %>"
+                    ejs="<% if (tab === 'all') { %>"
                     disabled
+                    ejs="<% } %>"
                   >
-                    <!-- select-all icon -->
-                    <!-- <svg
-                      focusable="false"
-                      aria-hidden="true"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path
-                        d="M8 9a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1zM12 20v.01M16 20v.01M8 20v.01M4 20v.01M4 16v.01M4 12v.01M4 8v.01M4 4v.01M8 4v.01M12 4v.01M16 4v.01M20 4v.01M20 8v.01M20 12v.01M20 16v.01M20 20v.01"
-                      />
-                    </svg> -->
-                    <!-- filter-off icon-->
                     <svg
                       focusable="false"
                       aria-hidden="true"
@@ -140,57 +129,42 @@
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     >
+                      <% if (tab === "all") { %>
+                      <!-- select-all icon -->
+                      <!-- <path
+                        d="M8 9a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1zM12 20v.01M16 20v.01M8 20v.01M4 20v.01M4 16v.01M4 12v.01M4 8v.01M4 4v.01M8 4v.01M12 4v.01M16 4v.01M20 4v.01M20 8v.01M20 12v.01M20 16v.01M20 20v.01"
+                      /> -->
+                      <!-- filter-off icon -->
                       <path
                         d="M8 4h12v2.172a2 2 0 0 1-.586 1.414L15.5 11.5M15 15v4l-6 2v-8.5L4.52 7.572A2 2 0 0 1 4 6.227V4M3 3l18 18"
                       />
-                    </svg>
-                    All
-                  </button>
-                  <button
-                    id="correct-hints-tab"
-                    class="tab-nav__link"
-                    role="tab"
-                    aria-controls="correct-hints-tab-content"
-                    aria-selected="false"
-                  >
-                    <!-- text-grammar icon-->
-                    <svg
-                      focusable="false"
-                      aria-hidden="true"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
+                      <% } else { %>
+                      <!-- text-grammar icon -->
                       <path
                         d="M14 9a3 3 0 1 0 6 0 3 3 0 0 0-6 0M4 12V7a3 3 0 1 1 6 0v5M4 9h6M20 6v6M4 16h12M4 20h6M14 20l2 2 5-5"
                       />
+                      <% } %>
                     </svg>
-                    Correct
+                    <%= capitalize(tab) %>
                   </button>
+                  <% } %>
                 </div>
               </nav>
             </header>
             <section id="hints-menu-content" class="tab-content">
+              <% for (const tab of hintsTabs) { %>
               <div
-                id="all-hints-tab-content"
+                id="<%= tab %>-hints-tab-content"
                 class="tab-content__item"
                 role="tabpanel"
-                aria-labelledby="all-hints-tab"
+                aria-labelledby="<%= tab %>-hints-tab"
+                ejs="<% if (tab === 'all') { %>"
                 data-active
+                ejs="<% } %>"
               >
                 <ul class="hints-list"></ul>
               </div>
-              <div
-                id="correct-hints-tab-content"
-                class="tab-content__item"
-                role="tabpanel"
-                aria-labelledby="correct-hints-tab"
-              >
-                <ul class="hints-list"></ul>
-              </div>
+              <% } %>
             </section>
           </section>
         </section>

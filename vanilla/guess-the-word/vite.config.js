@@ -4,7 +4,22 @@ import { createHtmlPlugin } from "vite-plugin-html";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [createHtmlPlugin({ minify: true })],
+  plugins: [
+    createHtmlPlugin({
+      minify: {
+        collapseWhitespace: true,
+        keepClosingSlash: true,
+        removeComments: true,
+        removeRedundantAttributes: true,
+        removeEmptyAttributes: (attribute) => attribute === "ejs",
+      },
+      inject: {
+        data: {
+          capitalize: (word) => word[0].toUpperCase() + word.slice(1),
+        },
+      },
+    }),
+  ],
   base: "/dev-challenges/guess-the-word",
   build: {
     rollupOptions: {
