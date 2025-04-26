@@ -7,5 +7,11 @@ export default {
         parser: "astro",
       },
     },
+    {
+      files: ["./vanilla/guess-the-word/index.html"],
+      options: {
+        plugins: ["prettier-plugin-ejs"],
+      },
+    },
   ],
 };

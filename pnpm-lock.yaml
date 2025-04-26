@@ -221,6 +221,9 @@ importers:
       prettier-plugin-astro:
         specifier: 'catalog:'
         version: 0.13.0
+      prettier-plugin-ejs:
+        specifier: 1.0.3
+        version: 1.0.3(prettier@3.0.1)
       typescript:
         specifier: 'catalog:'
         version: 5.3.2
@@ -3929,6 +3932,11 @@ packages:
   prettier-plugin-astro@0.13.0:
     resolution: {integrity: sha512-5HrJNnPmZqTUNoA97zn4gNQv9BgVhv+et03314WpQ9H9N8m2L9OSV798olwmG2YLXPl1iSstlJCR1zB3x5xG4g==}
     engines: {node: ^14.15.0 || >=16.0.0}
+
+  prettier-plugin-ejs@1.0.3:
+    resolution: {integrity: sha512-wTL4U/ou6dHHp1ZTfS67SHVb/dRgVhpIOTgCvkgdqF/Lw6A472W90dxFtsWSXIR7GmLZRgZb2PdArR9ozxX7cg==}
+    peerDependencies:
+      prettier: 2.x - 3.x
 
   prettier@3.0.1:
     resolution: {integrity: sha512-fcOWSnnpCrovBsmFZIGIy9UqK2FaI7Hqax+DIO0A9UxeVoY4iweyaFjS5TavZN97Hfehph0nhsZnjlVKzEQSrQ==}
@@ -8229,6 +8237,10 @@ snapshots:
       '@astrojs/compiler': 1.8.2
       prettier: 3.0.1
       sass-formatter: 0.7.9
+
+  prettier-plugin-ejs@1.0.3(prettier@3.0.1):
+    dependencies:
+      prettier: 3.0.1
 
   prettier@3.0.1: {}
 

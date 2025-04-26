@@ -31,6 +31,7 @@
     "npkill": "catalog:",
     "prettier": "catalog:",
     "prettier-plugin-astro": "catalog:",
+    "prettier-plugin-ejs": "1.0.3",
     "typescript": "catalog:"
   }
 }
