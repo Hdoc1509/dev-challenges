@@ -2,6 +2,8 @@ import { resolve } from "node:path";
 import { defineConfig } from "vite";
 import { createHtmlPlugin } from "vite-plugin-html";
 
+const __dirname = import.meta.dirname;
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -16,6 +18,9 @@ export default defineConfig({
       inject: {
         data: {
           capitalize: (word) => word[0].toUpperCase() + word.slice(1),
+        },
+        ejsOptions: {
+          views: [resolve(__dirname, "components")],
         },
       },
     }),
@@ -38,7 +43,7 @@ export default defineConfig({
   resolve: {
     alias: {
       // https://nodejs.org/api/esm.html#importmetadirname
-      "@": resolve(import.meta.dirname, "src"),
+      "@": resolve(__dirname, "src"),
     },
   },
 });
