@@ -8,7 +8,7 @@ export default {
       },
     },
     {
-      files: ["./vanilla/guess-the-word/index.html"],
+      files: ["./vanilla/guess-the-word/index.html", "*.ejs"],
       options: {
         plugins: ["prettier-plugin-ejs"],
       },
