@@ -21,7 +21,7 @@
           aria-label="Open menu"
           data-menu="app-menu"
         >
-          <%- include("icon/menu-deep") %>
+          <%- include("icon/MenuDeep") %>
         </button>
       </header>
       <div class="word" id="word" aria-label="Scrambled word"></div>
@@ -54,13 +54,13 @@
         </section>
         <section class="definition">
           <button class="definition__open menu-trigger">
-            Definition <%- include("icon/book-2") %>
+            Definition <%- include("icon/Book2") %>
           </button>
         </section>
         <section class="hints">
           <button class="menu-trigger">
             <span class="menu-trigger__label">Hints</span>
-            <%- include("icon/progress-help") %>
+            <%- include("icon/ProgressHelp") %>
           </button>
           <section class="hints__content">
             <% const hintsTabs = ["all", "correct"]; %>
@@ -79,10 +79,10 @@
                     ejs="<% } %>"
                   >
                     <% if (tab === "all") { %>
-                    <%- /* include("icon/select-all") */ %>
-                    <%- include("icon/filter-off") %>
+                    <%- /* include("icon/SelectAll") */ %>
+                    <%- include("icon/FilterOff") %>
                     <% } else if (tab === "correct") { %>
-                    <%- include("icon/text-grammar") %>
+                    <%- include("icon/TextGrammar") %>
                     <% } %>
                     <%= capitalize(tab) %>
                   </button>
@@ -115,7 +115,7 @@
           </p>
           <p data-secondary>Select another difficulty to continue playing.</p>
           <button class="menu-trigger">
-            Difficulties <%- include("icon/versions") %>
+            Difficulties <%- include("icon/Versions") %>
           </button>
         </section>
       </section>
@@ -153,7 +153,7 @@
     </template>
     <template id="definition-retry-template">
       <button class="definition__retry">
-        <%- include("icon/reload") %> Retry
+        <%- include("icon/Reload") %> Retry
       </button>
     </template>
     <template id="definition-page-template">
@@ -175,7 +175,7 @@
               aria-selected="true"
               disabled
             >
-              <%- include("icon/book-2") %>
+              <%- include("icon/Book2") %>
               Definitions
             </button>
             <button
@@ -185,7 +185,7 @@
               aria-controls="difficulty-tab-content"
               aria-selected="false"
             >
-              <%- include("icon/versions") %>
+              <%- include("icon/Versions") %>
               Difficulty
             </button>
             <button
@@ -195,13 +195,13 @@
               aria-controls="stats-tab-content"
               aria-selected="false"
             >
-              <%- include("icon/chart-bar") %>
+              <%- include("icon/ChartBar") %>
               Stats
             </button>
           </div>
         </nav>
         <button id="menu-close" class="menu-trigger" aria-label="Close menu">
-          <%- include("icon/x") %>
+          <%- include("icon/X") %>
         </button>
       </header>
       <section id="menu-content" class="tab-content">
@@ -230,7 +230,7 @@
                   aria-label="Previous page"
                   data-page-prev
                 >
-                  <%- include("icon/arrow-badge-left") %>
+                  <%- include("icon/ArrowBadgeLeft") %>
                 </button>
               </li>
               <li class="pagination__item" aria-current="page">
@@ -251,7 +251,7 @@
                   aria-label="Next page"
                   data-page-next
                 >
-                  <%- include("icon/arrow-badge-right") %>
+                  <%- include("icon/ArrowBadgeRight") %>
                 </button>
               </li>
             </menu>
@@ -275,8 +275,8 @@
                   />
                   <span class="radio__icon" aria-hidden="true">
                     <!-- prettier-ignore -->
-                    <%- include("icon/radio-unchecked") %>
-                    <%- include("icon/radio-checked") %>
+                    <%- include("icon/RadioUnchecked") %>
+                    <%- include("icon/RadioChecked") %>
                   </span>
                 </span>
                 <span class="label__text">
@@ -295,8 +295,8 @@
                   />
                   <span class="radio__icon" aria-hidden="true">
                     <!-- prettier-ignore -->
-                    <%- include("icon/radio-unchecked") %>
-                    <%- include("icon/radio-checked") %>
+                    <%- include("icon/RadioUnchecked") %>
+                    <%- include("icon/RadioChecked") %>
                   </span>
                 </span>
                 <span class="label__text">
@@ -314,8 +314,8 @@
                   />
                   <span class="radio__icon" aria-hidden="true">
                     <!-- prettier-ignore -->
-                    <%- include("icon/radio-unchecked") %>
-                    <%- include("icon/radio-checked") %>
+                    <%- include("icon/RadioUnchecked") %>
+                    <%- include("icon/RadioChecked") %>
                   </span>
                 </span>
                 <span class="label__text">
@@ -340,8 +340,8 @@
                   />
                   <span class="radio__icon" aria-hidden="true">
                     <!-- prettier-ignore -->
-                    <%- include("icon/radio-unchecked") %>
-                    <%- include("icon/radio-checked") %>
+                    <%- include("icon/RadioUnchecked") %>
+                    <%- include("icon/RadioChecked") %>
                   </span>
                 </span>
                 <span class="label__text">
@@ -366,8 +366,8 @@
                   />
                   <span class="radio__icon" aria-hidden="true">
                     <!-- prettier-ignore -->
-                    <%- include("icon/radio-unchecked") %>
-                    <%- include("icon/radio-checked") %>
+                    <%- include("icon/RadioUnchecked") %>
+                    <%- include("icon/RadioChecked") %>
                   </span>
                 </span>
                 <span class="label__text">
@@ -392,8 +392,8 @@
                   />
                   <span class="radio__icon" aria-hidden="true">
                     <!-- prettier-ignore -->
-                    <%- include("icon/radio-unchecked") %>
-                    <%- include("icon/radio-checked") %>
+                    <%- include("icon/RadioUnchecked") %>
+                    <%- include("icon/RadioChecked") %>
                   </span>
                 </span>
                 <span class="label__text">
@@ -418,8 +418,8 @@
                   />
                   <span class="radio__icon" aria-hidden="true">
                     <!-- prettier-ignore -->
-                    <%- include("icon/radio-unchecked") %>
-                    <%- include("icon/radio-checked") %>
+                    <%- include("icon/RadioUnchecked") %>
+                    <%- include("icon/RadioChecked") %>
                   </span>
                 </span>
                 <span class="label__text">
@@ -444,8 +444,8 @@
                   />
                   <span class="radio__icon" aria-hidden="true">
                     <!-- prettier-ignore -->
-                    <%- include("icon/radio-unchecked") %>
-                    <%- include("icon/radio-checked") %>
+                    <%- include("icon/RadioUnchecked") %>
+                    <%- include("icon/RadioChecked") %>
                   </span>
                 </span>
                 <span class="label__text">
