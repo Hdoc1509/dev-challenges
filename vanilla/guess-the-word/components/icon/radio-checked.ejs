@@ -1,25 +1,10 @@
-<!-- TODO: create a svg-icon component -->
-<!-- - receive `filled` parameter. `boolean | undefined = false` -->
-<!-- - outline (default): uses fill="none" and set stroke attributes -->
-<!-- - filled: uses fill="currentColor" and do not set stroke attributes -->
-<!-- - shared attributes (outline, filled): -->
-<!--   - viewBox="0 0 24 24" -->
-<!--   - focusable="false" -->
-<!--   - aria-hidden="true" -->
-<svg
-  viewBox="0 0 24 24"
-  fill="none"
-  stroke="currentColor"
-  stroke-width="2"
-  stroke-linecap="round"
-  stroke-linejoin="round"
->
-  <!-- circle icon -->
-  <path d="M3 12a9 9 0 1 0 18 0 9 9 0 1 0-18 0" />
-  <!-- point filled icon -->
-  <path
-    fill="currentColor"
-    stroke="none"
-    d="M12 7a5 5 0 1 1-4.995 5.217L7 12l.005-.217A5 5 0 0 1 12 7z"
-  />
-</svg>
+<%- include("svg-icon", { class: "radio__icon-checked" }) %>
+<!-- circle icon -->
+<path d="M3 12a9 9 0 1 0 18 0 9 9 0 1 0-18 0" />
+<!-- point filled icon -->
+<path
+  fill="currentColor"
+  stroke="none"
+  d="M12 7a5 5 0 1 1-4.995 5.217L7 12l.005-.217A5 5 0 0 1 12 7z"
+/>
+<%- include("svg-icon", { close: true }) %>

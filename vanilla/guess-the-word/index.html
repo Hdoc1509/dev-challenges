@@ -21,16 +21,7 @@
           aria-label="Open menu"
           data-menu="app-menu"
         >
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <%- include("icon/menu-deep") %>
-          </svg>
+          <%- include("icon/menu-deep") %>
         </button>
       </header>
       <div class="word" id="word" aria-label="Scrambled word"></div>
@@ -63,36 +54,13 @@
         </section>
         <section class="definition">
           <button class="definition__open menu-trigger">
-            Definition
-            <svg
-              focusable="false"
-              aria-hidden="true"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <%- include("icon/book-2") %>
-            </svg>
+            Definition <%- include("icon/book-2") %>
           </button>
         </section>
         <section class="hints">
           <button class="menu-trigger">
             <span class="menu-trigger__label">Hints</span>
-            <svg
-              focusable="false"
-              aria-hidden="true"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <%- include("icon/progress-help") %>
-            </svg>
+            <%- include("icon/progress-help") %>
           </button>
           <section class="hints__content">
             <% const hintsTabs = ["all", "correct"]; %>
@@ -110,23 +78,12 @@
                     disabled
                     ejs="<% } %>"
                   >
-                    <svg
-                      focusable="false"
-                      aria-hidden="true"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <% if (tab === "all") { %>
-                      <%- /* include("icon/select-all") */ %>
-                      <%- include("icon/filter-off") %>
-                      <% } else { %>
-                      <%- include("icon/text-grammar") %>
-                      <% } %>
-                    </svg>
+                    <% if (tab === "all") { %>
+                    <%- /* include("icon/select-all") */ %>
+                    <%- include("icon/filter-off") %>
+                    <% } else if (tab === "correct") { %>
+                    <%- include("icon/text-grammar") %>
+                    <% } %>
                     <%= capitalize(tab) %>
                   </button>
                   <% } %>
@@ -158,17 +115,7 @@
           </p>
           <p data-secondary>Select another difficulty to continue playing.</p>
           <button class="menu-trigger">
-            Difficulties
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <%- include("icon/versions") %>
-            </svg>
+            Difficulties <%- include("icon/versions") %>
           </button>
         </section>
       </section>
@@ -206,19 +153,7 @@
     </template>
     <template id="definition-retry-template">
       <button class="definition__retry">
-        <svg
-          focusable="false"
-          aria-hidden="true"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <%- include("icon/reload") %>
-        </svg>
-        Retry
+        <%- include("icon/reload") %> Retry
       </button>
     </template>
     <template id="definition-page-template">
@@ -230,6 +165,7 @@
     <dialog id="app-menu" class="menu">
       <header class="menu__header">
         <nav>
+          <!-- TODO: use same logic used to generate tabs of hints section -->
           <div id="menu-nav" class="tab-nav" role="tablist">
             <button
               id="definitions-tab"
@@ -239,18 +175,7 @@
               aria-selected="true"
               disabled
             >
-              <svg
-                focusable="false"
-                aria-hidden="true"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <%- include("icon/book-2") %>
-              </svg>
+              <%- include("icon/book-2") %>
               Definitions
             </button>
             <button
@@ -260,16 +185,7 @@
               aria-controls="difficulty-tab-content"
               aria-selected="false"
             >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <%- include("icon/versions") %>
-              </svg>
+              <%- include("icon/versions") %>
               Difficulty
             </button>
             <button
@@ -279,31 +195,13 @@
               aria-controls="stats-tab-content"
               aria-selected="false"
             >
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <%- include("icon/chart-bar") %>
-              </svg>
+              <%- include("icon/chart-bar") %>
               Stats
             </button>
           </div>
         </nav>
         <button id="menu-close" class="menu-trigger" aria-label="Close menu">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <%- include("icon/x") %>
-          </svg>
+          <%- include("icon/x") %>
         </button>
       </header>
       <section id="menu-content" class="tab-content">
@@ -332,14 +230,7 @@
                   aria-label="Previous page"
                   data-page-prev
                 >
-                  <svg
-                    focusable="false"
-                    aria-hidden="true"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <%- include("icon/arrow-badge-left") %>
-                  </svg>
+                  <%- include("icon/arrow-badge-left") %>
                 </button>
               </li>
               <li class="pagination__item" aria-current="page">
@@ -360,14 +251,7 @@
                   aria-label="Next page"
                   data-page-next
                 >
-                  <svg
-                    focusable="false"
-                    aria-hidden="true"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                  >
-                    <%- include("icon/arrow-badge-right") %>
-                  </svg>
+                  <%- include("icon/arrow-badge-right") %>
                 </button>
               </li>
             </menu>
@@ -390,20 +274,9 @@
                     value="easy"
                   />
                   <span class="radio__icon" aria-hidden="true">
-                    <svg
-                      class="radio__icon-unchecked"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <%- include("icon/radio-unchecked") %>
-                    </svg>
-                    <svg
-                      class="radio__icon-checked"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <%- include("icon/radio-checked") %>
-                    </svg>
+                    <!-- prettier-ignore -->
+                    <%- include("icon/radio-unchecked") %>
+                    <%- include("icon/radio-checked") %>
                   </span>
                 </span>
                 <span class="label__text">
@@ -421,20 +294,9 @@
                     checked
                   />
                   <span class="radio__icon" aria-hidden="true">
-                    <svg
-                      class="radio__icon-unchecked"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <%- include("icon/radio-unchecked") %>
-                    </svg>
-                    <svg
-                      class="radio__icon-checked"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <%- include("icon/radio-checked") %>
-                    </svg>
+                    <!-- prettier-ignore -->
+                    <%- include("icon/radio-unchecked") %>
+                    <%- include("icon/radio-checked") %>
                   </span>
                 </span>
                 <span class="label__text">
@@ -451,20 +313,9 @@
                     value="hard"
                   />
                   <span class="radio__icon" aria-hidden="true">
-                    <svg
-                      class="radio__icon-unchecked"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <%- include("icon/radio-unchecked") %>
-                    </svg>
-                    <svg
-                      class="radio__icon-checked"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <%- include("icon/radio-checked") %>
-                    </svg>
+                    <!-- prettier-ignore -->
+                    <%- include("icon/radio-unchecked") %>
+                    <%- include("icon/radio-checked") %>
                   </span>
                 </span>
                 <span class="label__text">
@@ -488,20 +339,9 @@
                     value="master"
                   />
                   <span class="radio__icon" aria-hidden="true">
-                    <svg
-                      class="radio__icon-unchecked"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <%- include("icon/radio-unchecked") %>
-                    </svg>
-                    <svg
-                      class="radio__icon-checked"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <%- include("icon/radio-checked") %>
-                    </svg>
+                    <!-- prettier-ignore -->
+                    <%- include("icon/radio-unchecked") %>
+                    <%- include("icon/radio-checked") %>
                   </span>
                 </span>
                 <span class="label__text">
@@ -525,20 +365,9 @@
                     value="extreme"
                   />
                   <span class="radio__icon" aria-hidden="true">
-                    <svg
-                      class="radio__icon-unchecked"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <%- include("icon/radio-unchecked") %>
-                    </svg>
-                    <svg
-                      class="radio__icon-checked"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <%- include("icon/radio-checked") %>
-                    </svg>
+                    <!-- prettier-ignore -->
+                    <%- include("icon/radio-unchecked") %>
+                    <%- include("icon/radio-checked") %>
                   </span>
                 </span>
                 <span class="label__text">
@@ -562,20 +391,9 @@
                     value="insane"
                   />
                   <span class="radio__icon" aria-hidden="true">
-                    <svg
-                      class="radio__icon-unchecked"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <%- include("icon/radio-unchecked") %>
-                    </svg>
-                    <svg
-                      class="radio__icon-checked"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <%- include("icon/radio-checked") %>
-                    </svg>
+                    <!-- prettier-ignore -->
+                    <%- include("icon/radio-unchecked") %>
+                    <%- include("icon/radio-checked") %>
                   </span>
                 </span>
                 <span class="label__text">
@@ -599,20 +417,9 @@
                     value="why"
                   />
                   <span class="radio__icon" aria-hidden="true">
-                    <svg
-                      class="radio__icon-unchecked"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <%- include("icon/radio-unchecked") %>
-                    </svg>
-                    <svg
-                      class="radio__icon-checked"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <%- include("icon/radio-checked") %>
-                    </svg>
+                    <!-- prettier-ignore -->
+                    <%- include("icon/radio-unchecked") %>
+                    <%- include("icon/radio-checked") %>
                   </span>
                 </span>
                 <span class="label__text">
@@ -636,20 +443,9 @@
                     value="void"
                   />
                   <span class="radio__icon" aria-hidden="true">
-                    <svg
-                      class="radio__icon-unchecked"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <%- include("icon/radio-unchecked") %>
-                    </svg>
-                    <svg
-                      class="radio__icon-checked"
-                      focusable="false"
-                      viewBox="0 0 24 24"
-                    >
-                      <%- include("icon/radio-checked") %>
-                    </svg>
+                    <!-- prettier-ignore -->
+                    <%- include("icon/radio-unchecked") %>
+                    <%- include("icon/radio-checked") %>
                   </span>
                 </span>
                 <span class="label__text">

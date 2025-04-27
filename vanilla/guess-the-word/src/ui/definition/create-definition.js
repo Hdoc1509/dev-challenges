@@ -57,6 +57,7 @@ export const createDefinition = (word, { isNew = false } = {}) => {
       completedDifficulties?.includes(difficulty)
     )
       $item.dataset.completed = "";
+    // NOTE: should I use letter-[letter] icons instead of text?
     $span.textContent = `${difficulty[0].toUpperCase()}`;
     $span.setAttribute("aria-hidden", "true");
     $item.appendChild($span);
