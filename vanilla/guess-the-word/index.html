@@ -32,7 +32,7 @@
               >?</span
             >)<span aria-hidden="true">:</span>
           </p>
-          <div class="step-indicator" aria-hidden="true"></div>
+          <%- include("StepIndicator") %>
         </section>
         <section class="mistakes" data-active>
           <span>Mistakes:</span>
@@ -44,10 +44,7 @@
               >2</span
             >)<span aria-hidden="true">:</span>
           </p>
-          <div class="step-indicator" aria-hidden="true">
-            <span class="step-indicator__step"></span>
-            <span class="step-indicator__step"></span>
-          </div>
+          <%- include("StepIndicator", { steps: 2 }) %>
         </section>
         <section id="timer" class="timer">
           <div class="timer__bar"></div>
