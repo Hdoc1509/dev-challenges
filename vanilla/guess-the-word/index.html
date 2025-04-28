@@ -60,7 +60,6 @@
             <%- include("icon/ProgressHelp") %>
           </button>
           <section class="hints__content">
-            <% const oldHintsTabs = ["all", "correct"]; %>
             <!-- prettier-ignore -->
             <% const hintsTabs = [
                  { name: "all", icon: "FilterOff", selected: true },
@@ -71,18 +70,11 @@
               <%- include("tabs/TabNav", { name: "hints", tabs: hintsTabs }) %>
             </header>
             <section id="hints-tab-content" class="tab-content">
-              <% for (const tab of oldHintsTabs) { %>
-              <div
-                id="<%= tab %>-hints-tab-content"
-                class="tab-content__item"
-                role="tabpanel"
-                aria-labelledby="<%= tab %>-hints-tab"
-                ejs="<% if (tab === 'all') { %>"
-                data-active
-                ejs="<% } %>"
-              >
-                <ul class="hints-list"></ul>
-              </div>
+              <!-- prettier-ignore -->
+              <% for (const tab of hintsTabs) { %>
+              <%- include("tabs/TabContentItem", { ...tab, navName: "hints" }) %>
+              <ul class="hints-list"></ul>
+              <%- include("tabs/TabContentItem", { close: true }) %>
               <% } %>
             </section>
           </section>
