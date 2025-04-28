@@ -60,35 +60,18 @@
             <%- include("icon/ProgressHelp") %>
           </button>
           <section class="hints__content">
-            <% const hintsTabs = ["all", "correct"]; %>
+            <% const oldHintsTabs = ["all", "correct"]; %>
+            <!-- prettier-ignore -->
+            <% const hintsTabs = [
+                 { name: "all", icon: "FilterOff", selected: true },
+                 // { name: "all", icon: "SelectAll", selected: true },
+                 { name: "correct", icon: "TextGrammar" },
+               ] %>
             <header class="menu__header">
-              <nav>
-                <div id="hints-nav" class="tab-nav" role="tablist">
-                  <% for (const tab of hintsTabs) { %>
-                  <button
-                    id="<%= tab %>-hints-tab"
-                    class="tab-nav__link"
-                    role="tab"
-                    aria-controls="<%= tab %>-hints-tab-content"
-                    aria-selected="<%= tab === 'all' %>"
-                    ejs="<% if (tab === 'all') { %>"
-                    disabled
-                    ejs="<% } %>"
-                  >
-                    <% if (tab === "all") { %>
-                    <%- /* include("icon/SelectAll") */ %>
-                    <%- include("icon/FilterOff") %>
-                    <% } else if (tab === "correct") { %>
-                    <%- include("icon/TextGrammar") %>
-                    <% } %>
-                    <%= capitalize(tab) %>
-                  </button>
-                  <% } %>
-                </div>
-              </nav>
+              <%- include("tabs/TabNav", { name: "hints", tabs: hintsTabs }) %>
             </header>
             <section id="hints-menu-content" class="tab-content">
-              <% for (const tab of hintsTabs) { %>
+              <% for (const tab of oldHintsTabs) { %>
               <div
                 id="<%= tab %>-hints-tab-content"
                 class="tab-content__item"

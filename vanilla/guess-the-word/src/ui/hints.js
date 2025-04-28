@@ -22,7 +22,7 @@ export const $hintsContent = getElementBySelector(
   $hints,
 );
 
-const $hintsTabNav = getElementById("hints-nav", HTMLElement);
+const $hintsTabNav = getElementById("hints-tab-nav", HTMLElement);
 const $hintsTabContent = getElementById("hints-menu-content", HTMLElement);
 
 export const HintsTabs = new Tabs({
