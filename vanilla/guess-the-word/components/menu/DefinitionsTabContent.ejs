@@ -1,0 +1,40 @@
+<div class="definitions-count">
+  <div class="definitions-count__progress"></div>
+  <p class="definitions-count__description">
+    <span class="definitions-count__current">0</span>
+    /
+    <span class="definitions-count__total">0</span>
+    words
+  </p>
+</div>
+<div id="definition-pages-container"></div>
+<nav aria-label="Definition pages">
+  <menu id="definition-pagination" class="pagination">
+    <li class="pagination__item">
+      <button
+        class="pagination__trigger"
+        aria-label="Previous page"
+        data-page-prev
+      >
+        <%- include("icon/ArrowBadgeLeft") %>
+      </button>
+    </li>
+    <li class="pagination__item" aria-current="page">
+      <input
+        type="text"
+        inputmode="numeric"
+        class="pagination__current"
+        min="1"
+        value="1"
+      />
+      <span aria-hidden="true">
+        / <span class="pagination__total">1</span>
+      </span>
+    </li>
+    <li class="pagination__item">
+      <button class="pagination__trigger" aria-label="Next page" data-page-next>
+        <%- include("icon/ArrowBadgeRight") %>
+      </button>
+    </li>
+  </menu>
+</nav>
