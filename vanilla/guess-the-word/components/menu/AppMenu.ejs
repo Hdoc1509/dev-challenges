@@ -1,0 +1,49 @@
+<dialog id="app-menu" class="menu">
+  <!-- prettier-ignore -->
+  <% const menuTabs = [
+       { name: "definitions", icon: "Book2", selected: true },
+       { name: "difficulty", icon: "Versions" },
+       { name: "stats", icon: "ChartBar" },
+     ] %>
+  <header class="menu__header">
+    <nav>
+      <div id="menu-tab-nav" class="tab-nav" role="tablist">
+        <!-- prettier-ignore -->
+        <% for (const tab of menuTabs) { %>
+        <%- include("tabs/TabNavItem", { ...tab, contentName: "menu" }) %>
+        <% } %>
+      </div>
+    </nav>
+    <button id="menu-close" class="menu-trigger" aria-label="Close menu">
+      <%- include("icon/X") %>
+    </button>
+  </header>
+  <section id="menu-tab-content" class="tab-content">
+    <!-- TODO: use TabContentItem component -->
+    <div
+      id="definitions-menu-tab-content"
+      class="tab-content__item"
+      role="tabpanel"
+      aria-labelledby="definitions-menu-tab"
+      data-active
+    >
+      <%- include("menu/DefinitionsTabContent") %>
+    </div>
+    <div
+      id="difficulty-menu-tab-content"
+      class="tab-content__item"
+      role="tabpanel"
+      aria-labelledby="difficulty-menu-tab"
+    >
+      <%- include("menu/DifficultyTabContent") %>
+    </div>
+    <div
+      id="stats-menu-tab-content"
+      class="tab-content__item"
+      role="tabpanel"
+      aria-labelledby="stats-menu-tab"
+    >
+      <%- include("menu/StatsTabContent") %>
+    </div>
+  </section>
+</dialog>
