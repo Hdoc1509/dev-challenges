@@ -34,7 +34,7 @@
   grid-template-rows: auto 1fr auto;
 }
 
-/* TODO: move to app-menu/difficulty.css */ */
+/* TODO: move to app-menu/difficulty.css */
 #difficulty-menu-tab-content {
   --radio-group-gap: 0.25rem;
   --label-text: var(--text);
