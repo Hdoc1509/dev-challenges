@@ -18,7 +18,7 @@ export const $statsTabContent = getElementById(
   HTMLElement,
 );
 
-export const $menuTabContent = getElementById("menu-content", HTMLElement);
+export const $menuTabContent = getElementById("menu-tab-content", HTMLElement);
 
 export const MenuTabs = new Tabs({
   $nav: $menuTabNav,
