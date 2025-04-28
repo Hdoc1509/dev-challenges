@@ -1,0 +1,15 @@
+<% if (!(locals.close ?? false)) { %>
+<div
+  id="<%= name %>-<%= navName %>-tab-content"
+  class="tab-content__item"
+  role="tabpanel"
+  aria-labelledby="<%= name %>-<%= navName %>-tab"
+  ejs="<% if (locals.selected ?? false) { %>"
+  data-active
+  ejs="<% } %>"
+>
+  <!-- children -->
+  <% } else { %>
+  <!-- children -->
+</div>
+<% } %>
