@@ -142,41 +142,19 @@
       <p class="not-yet">- No discovered words yet -</p>
     </template>
     <dialog id="app-menu" class="menu">
+      <!-- prettier-ignore -->
+      <% const menuTabs = [
+           { name: "definitions", icon: "Book2", selected: true },
+           { name: "difficulty", icon: "Versions" },
+           { name: "stats", icon: "ChartBar" },
+         ] %>
       <header class="menu__header">
         <nav>
-          <!-- TODO: use same logic used to generate tabs of hints section -->
           <div id="menu-tab-nav" class="tab-nav" role="tablist">
-            <button
-              id="definitions-tab"
-              class="tab-nav__link"
-              role="tab"
-              aria-controls="definitions-tab-content"
-              aria-selected="true"
-              disabled
-            >
-              <%- include("icon/Book2") %>
-              Definitions
-            </button>
-            <button
-              id="difficulty-tab"
-              class="tab-nav__link"
-              role="tab"
-              aria-controls="difficulty-tab-content"
-              aria-selected="false"
-            >
-              <%- include("icon/Versions") %>
-              Difficulty
-            </button>
-            <button
-              id="stats-tab"
-              class="tab-nav__link"
-              role="tab"
-              aria-controls="stats-tab-content"
-              aria-selected="false"
-            >
-              <%- include("icon/ChartBar") %>
-              Stats
-            </button>
+            <!-- prettier-ignore -->
+            <% for (const tab of menuTabs) { %>
+            <%- include("tabs/TabNavItem", { ...tab, contentName: "menu" }) %>
+            <% } %>
           </div>
         </nav>
         <button id="menu-close" class="menu-trigger" aria-label="Close menu">
@@ -185,10 +163,10 @@
       </header>
       <section id="menu-content" class="tab-content">
         <div
-          id="definitions-tab-content"
+          id="definitions-menu-tab-content"
           class="tab-content__item"
           role="tabpanel"
-          aria-labelledby="definitions-tab"
+          aria-labelledby="definitions-menu-tab"
           data-active
         >
           <div class="definitions-count">
@@ -237,10 +215,10 @@
           </nav>
         </div>
         <div
-          id="difficulty-tab-content"
+          id="difficulty-menu-tab-content"
           class="tab-content__item"
           role="tabpanel"
-          aria-labelledby="difficulty-tab"
+          aria-labelledby="difficulty-menu-tab"
         >
           <form id="difficulty-form">
             <div class="radio-group">
@@ -443,10 +421,10 @@
           </form>
         </div>
         <div
-          id="stats-tab-content"
+          id="stats-menu-tab-content"
           class="tab-content__item"
           role="tabpanel"
-          aria-labelledby="stats-tab"
+          aria-labelledby="stats-menu-tab"
         >
           <p class="not-yet">Missing updates when discovering new words</p>
           <div class="progress" data-stats="total">
