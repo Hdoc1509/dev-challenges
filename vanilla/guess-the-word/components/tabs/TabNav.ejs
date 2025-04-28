@@ -1,0 +1,19 @@
+<nav>
+  <div id="<%= name %>-tab-nav" class="tab-nav" role="tablist">
+    <% for (const tab of tabs) { %>
+    <button
+      id="<%= tab.name %>-<%= name %>-tab"
+      class="tab-nav__link"
+      role="tab"
+      aria-controls="<%= tab.name %>-<%= name %>-tab-content"
+      aria-selected="<%= tab.selected ?? false %>"
+      ejs="<% if (tab.selected ?? false) { %>"
+      disabled
+      ejs="<% } %>"
+    >
+      <%- include(`icon/${tab.icon}`) %>
+      <%= capitalize(tab.name) %>
+    </button>
+    <% } %>
+  </div>
+</nav>
