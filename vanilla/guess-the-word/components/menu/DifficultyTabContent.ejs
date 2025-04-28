@@ -1,0 +1,200 @@
+<form id="difficulty-form">
+  <div class="radio-group">
+    <!-- TODO: move option template to DifficultyOption.ejs -->
+    <label class="label" data-type="radio" data-difficulty="easy">
+      <span class="radio">
+        <input
+          class="radio__inner"
+          type="radio"
+          name="difficulty"
+          value="easy"
+        />
+        <span class="radio__icon" aria-hidden="true">
+          <!-- prettier-ignore -->
+          <%- include("icon/RadioUnchecked") %>
+          <%- include("icon/RadioChecked") %>
+        </span>
+      </span>
+      <span class="label__text">
+        <span class="difficulty-name">Easy:</span>
+        Words with at most 6 letters
+      </span>
+    </label>
+    <label class="label" data-type="radio" data-difficulty="normal">
+      <span class="radio">
+        <input
+          class="radio__inner"
+          type="radio"
+          name="difficulty"
+          value="normal"
+          checked
+        />
+        <span class="radio__icon" aria-hidden="true">
+          <!-- prettier-ignore -->
+          <%- include("icon/RadioUnchecked") %>
+          <%- include("icon/RadioChecked") %>
+        </span>
+      </span>
+      <span class="label__text">
+        <span class="difficulty-name">Normal:</span>
+        Words with 7 ~ 9 letters
+      </span>
+    </label>
+    <label class="label" data-type="radio" data-difficulty="hard">
+      <span class="radio">
+        <input
+          class="radio__inner"
+          type="radio"
+          name="difficulty"
+          value="hard"
+        />
+        <span class="radio__icon" aria-hidden="true">
+          <!-- prettier-ignore -->
+          <%- include("icon/RadioUnchecked") %>
+          <%- include("icon/RadioChecked") %>
+        </span>
+      </span>
+      <span class="label__text">
+        <span class="difficulty-name">Hard:</span>
+        Only 3 tries
+        <span class="plus-sign">+</span>
+        <span
+          class="difficulty-name"
+          style="--difficulty-text: var(--difficulty-normal)"
+        >
+          Normal
+        </span>
+      </span>
+    </label>
+    <label class="label" data-type="radio" data-difficulty="master">
+      <span class="radio">
+        <input
+          class="radio__inner"
+          type="radio"
+          name="difficulty"
+          value="master"
+        />
+        <span class="radio__icon" aria-hidden="true">
+          <!-- prettier-ignore -->
+          <%- include("icon/RadioUnchecked") %>
+          <%- include("icon/RadioChecked") %>
+        </span>
+      </span>
+      <span class="label__text">
+        <span class="difficulty-name">Master:</span>
+        Only 2 resets
+        <span class="plus-sign">+</span>
+        <span
+          class="difficulty-name"
+          style="--difficulty-text: var(--difficulty-hard)"
+        >
+          Hard
+        </span>
+      </span>
+    </label>
+    <label class="label" data-type="radio" data-difficulty="extreme">
+      <span class="radio">
+        <input
+          class="radio__inner"
+          type="radio"
+          name="difficulty"
+          value="extreme"
+        />
+        <span class="radio__icon" aria-hidden="true">
+          <!-- prettier-ignore -->
+          <%- include("icon/RadioUnchecked") %>
+          <%- include("icon/RadioChecked") %>
+        </span>
+      </span>
+      <span class="label__text">
+        <span class="difficulty-name">Extreme:</span>
+        Words with 10 ~ 12 letters
+        <span class="plus-sign">+</span>
+        <span
+          class="difficulty-name"
+          style="--difficulty-text: var(--difficulty-master)"
+        >
+          Master
+        </span>
+      </span>
+    </label>
+    <label class="label" data-type="radio" data-difficulty="insane">
+      <span class="radio">
+        <input
+          class="radio__inner"
+          type="radio"
+          name="difficulty"
+          value="insane"
+        />
+        <span class="radio__icon" aria-hidden="true">
+          <!-- prettier-ignore -->
+          <%- include("icon/RadioUnchecked") %>
+          <%- include("icon/RadioChecked") %>
+        </span>
+      </span>
+      <span class="label__text">
+        <span class="difficulty-name">Insane:</span>
+        3 ~ 5 seconds per letter
+        <span class="plus-sign">+</span>
+        <span
+          class="difficulty-name"
+          style="--difficulty-text: var(--difficulty-extreme)"
+        >
+          Extreme
+        </span>
+      </span>
+    </label>
+    <label class="label" data-type="radio" data-difficulty="why">
+      <span class="radio">
+        <input
+          class="radio__inner"
+          type="radio"
+          name="difficulty"
+          value="why"
+        />
+        <span class="radio__icon" aria-hidden="true">
+          <!-- prettier-ignore -->
+          <%- include("icon/RadioUnchecked") %>
+          <%- include("icon/RadioChecked") %>
+        </span>
+      </span>
+      <span class="label__text">
+        <span class="difficulty-name">Why?:</span>
+        Words with at least 13 letters
+        <span class="plus-sign">+</span>
+        <span
+          class="difficulty-name"
+          style="--difficulty-text: var(--difficulty-insane)"
+        >
+          Insane
+        </span>
+      </span>
+    </label>
+    <label class="label" data-type="radio" data-difficulty="void">
+      <span class="radio">
+        <input
+          class="radio__inner"
+          type="radio"
+          name="difficulty"
+          value="void"
+        />
+        <span class="radio__icon" aria-hidden="true">
+          <!-- prettier-ignore -->
+          <%- include("icon/RadioUnchecked") %>
+          <%- include("icon/RadioChecked") %>
+        </span>
+      </span>
+      <span class="label__text">
+        <span class="difficulty-name">Void:</span>
+        No resets
+        <span class="plus-sign">+</span>
+        <span
+          class="difficulty-name"
+          style="--difficulty-text: var(--difficulty-why)"
+        >
+          Why?
+        </span>
+      </span>
+    </label>
+  </div>
+</form>
