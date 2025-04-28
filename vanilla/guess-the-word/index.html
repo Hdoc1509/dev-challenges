@@ -67,7 +67,11 @@
                  { name: "correct", icon: "TextGrammar" },
                ] %>
             <header class="menu__header">
-              <%- include("tabs/TabNav", { name: "hints", tabs: hintsTabs }) %>
+              <nav>
+                <div id="hints-tab-nav" class="tab-nav" role="tablist">
+                  <%- include("tabs/TabNav", { name: "hints", tabs: hintsTabs }) %>
+                </div>
+              </nav>
             </header>
             <section id="hints-tab-content" class="tab-content">
               <!-- prettier-ignore -->
