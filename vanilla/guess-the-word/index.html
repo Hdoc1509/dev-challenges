@@ -108,39 +108,12 @@
       <span class="alert__text"></span>
       <div class="alert__time-bar"></div>
     </div>
-    <template id="letter-template">
-      <span class="typing__letter">
-        <input disabled />
-        <span class="typing__caret"></span>
-      </span>
-    </template>
-    <template id="definition-template">
-      <li>
-        <details class="definition" name="definition">
-          <summary class="definition__label"></summary>
-          <section class="definition__content"></section>
-        </details>
-      </li>
-    </template>
-    <template id="spinner-template">
-      <div class="spinner">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </template>
-    <template id="definition-retry-template">
-      <button class="definition__retry">
-        <%- include("icon/Reload") %> Retry
-      </button>
-    </template>
-    <template id="definition-page-template">
-      <ul class="definitions-list page" aria-label="Discovered words"></ul>
-    </template>
-    <template id="definition-page-empty-template">
-      <p class="not-yet">- No discovered words yet -</p>
-    </template>
+    <%- include("template/TypingLetter") %>
+    <%- include("template/DefinitionItem") %>
+    <%- include("template/Spinner") %>
+    <%- include("template/DefinitionRetry") %>
+    <%- include("template/DefinitionPage") %>
+    <%- include("template/DefinitionPageEmpty") %>
     <dialog id="app-menu" class="menu">
       <!-- prettier-ignore -->
       <% const menuTabs = [
