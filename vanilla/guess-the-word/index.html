@@ -69,7 +69,10 @@
             <header class="menu__header">
               <nav>
                 <div id="hints-tab-nav" class="tab-nav" role="tablist">
-                  <%- include("tabs/TabNav", { name: "hints", tabs: hintsTabs }) %>
+                  <!-- prettier-ignore -->
+                  <% for (const tab of hintsTabs) { %>
+                  <%- include("tabs/TabNavItem", { ...tab, contentName: "hints" }) %>
+                  <% } %>
                 </div>
               </nav>
             </header>
