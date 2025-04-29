@@ -12,7 +12,10 @@ import { DefinitionPages } from "@/ui/definition/pages";
 import { renderCompletedDifficulty } from "@/ui/definition/difficulty";
 import { $definitionSection } from "@/ui/definition/elements";
 import { $hints, $hintsContent } from "@/ui/hints";
+import { renderCurrentStats } from "@/ui/stats/current";
 import { $reset } from "@/ui/actions";
+import { STATS_CATEGORY_TOTAL } from "@/consts/stats";
+import { TOTAL_WORDS } from "@/consts/words/total";
 
 export function handleGameSuccess() {
   showAlert({ color: "success", text: "🎉 Success!" });
@@ -27,7 +30,11 @@ export function handleGameSuccess() {
     // NOTE: render of definition's difficulty depends on discoveredWords
     addDiscoveredWord(currentWord, { difficulty });
     DefinitionPages.prepend(currentWord);
-    // TODO: render `total` stats
+    renderCurrentStats({
+      category: STATS_CATEGORY_TOTAL,
+      count: discoveredWords.size,
+      total: TOTAL_WORDS.ALL,
+    });
   } else if (!hasCompletedAllDifficulties({ word: currentWord })) {
     const { completed } = addDiscoveredWord(currentWord, { difficulty });
 
