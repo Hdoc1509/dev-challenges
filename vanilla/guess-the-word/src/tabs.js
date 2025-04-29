@@ -27,11 +27,7 @@ export class Tabs {
   /** @type {HTMLButtonElement} */
   #$current;
 
-  /**
-   * @param {Object} params
-   * @param {HTMLDivElement} params.$nav
-   * @param {HTMLDivElement} params.$content
-   */
+  /** @param {{ $nav: HTMLDivElement, $content: HTMLDivElement }} params */
   constructor({ $nav, $content: $contentContainer }) {
     this.#$nav = $nav;
 
