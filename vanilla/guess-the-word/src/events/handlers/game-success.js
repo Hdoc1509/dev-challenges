@@ -16,6 +16,7 @@ import { renderCurrentStats } from "@/ui/stats/current";
 import { $reset } from "@/ui/actions";
 import { STATS_CATEGORY_TOTAL } from "@/consts/stats";
 import { TOTAL_WORDS } from "@/consts/words/total";
+import { DIFFICULTY_GROUP } from "@/consts/difficulty";
 
 export function handleGameSuccess() {
   showAlert({ color: "success", text: "🎉 Success!" });
@@ -26,14 +27,22 @@ export function handleGameSuccess() {
   $hintsContent.removeAttribute("data-active");
 
   if (!discoveredWords.has(currentWord)) {
+    const totalByDifficulty = TOTAL_WORDS[DIFFICULTY_GROUP[difficulty]];
+
     $definitionSection.setAttribute("data-active", "");
     // NOTE: render of definition's difficulty depends on discoveredWords
     addDiscoveredWord(currentWord, { difficulty });
+    removeAvailableWord(currentWord, { difficulty });
     DefinitionPages.prepend(currentWord);
     renderCurrentStats({
       category: STATS_CATEGORY_TOTAL,
       count: discoveredWords.size,
       total: TOTAL_WORDS.ALL,
+    });
+    renderCurrentStats({
+      category: difficulty,
+      count: totalByDifficulty - words.length,
+      total: totalByDifficulty,
     });
   } else if (!hasCompletedAllDifficulties({ word: currentWord })) {
     const { completed } = addDiscoveredWord(currentWord, { difficulty });
