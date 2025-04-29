@@ -9,7 +9,6 @@ import { hasCompletedAllDifficulties } from "@/utils/difficulty/completed";
 import { showCorrectWord } from "@/ui/word";
 import { hideTimerBar } from "@/ui/timer";
 import { DefinitionPages } from "@/ui/definition/pages";
-import { renderDefinitionsCount } from "@/ui/definition/count";
 import { renderCompletedDifficulty } from "@/ui/definition/difficulty";
 import { $definitionSection } from "@/ui/definition/elements";
 import { $hints, $hintsContent } from "@/ui/hints";
@@ -28,12 +27,13 @@ export function handleGameSuccess() {
     // NOTE: render of definition's difficulty depends on discoveredWords
     addDiscoveredWord(currentWord, { difficulty });
     DefinitionPages.prepend(currentWord);
-    renderDefinitionsCount(discoveredWords.size);
+    // TODO: render `total` stats
   } else if (!hasCompletedAllDifficulties({ word: currentWord })) {
     const { completed } = addDiscoveredWord(currentWord, { difficulty });
 
     if (completed) {
       removeAvailableWord(currentWord, { difficulty });
+      // TODO: render `${difficulty} stats`
       if (words.length === 0) handleDifficultyComplete();
     }
     if (renderCompletedDifficulty({ word: currentWord, difficulty }))

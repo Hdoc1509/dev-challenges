@@ -7,7 +7,6 @@ import { generateRandomWord } from "./events/handlers/random-word";
 import { applyDifficulty } from "./utils/difficulty/apply";
 import { handleDifficultyComplete } from "./events/handlers/difficulty-complete";
 import { getDifficultiesOfWord } from "./utils/difficulty/of-word";
-import { renderDefinitionsCount } from "./ui/definition/count";
 import { DefinitionPages } from "./ui/definition/pages";
 import { $word } from "./ui/word";
 import { $typing } from "./ui/typing";
@@ -51,7 +50,6 @@ import "./styles/main.css";
 
   if (words.length === 0) handleDifficultyComplete();
   else generateRandomWord();
-  renderDefinitionsCount(discoveredWords.size);
   renderCurrentStats({
     category: STATS_CATEGORY_TOTAL,
     count: discoveredWords.size,
