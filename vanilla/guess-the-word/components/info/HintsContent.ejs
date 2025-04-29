@@ -1,0 +1,26 @@
+<section class="hints__content">
+  <!-- prettier-ignore -->
+  <% const hintsTabs = [
+       { name: "all", icon: "FilterOff", selected: true },
+       // { name: "all", icon: "SelectAll", selected: true },
+       { name: "correct", icon: "TextGrammar" },
+     ] %>
+  <header class="menu__header">
+    <nav>
+      <div id="hints-tab-nav" class="tab-nav" role="tablist">
+        <!-- prettier-ignore -->
+        <% for (const tab of hintsTabs) { %>
+        <%- include("tabs/TabNavItem", { ...tab, contentName: "hints" }) %>
+        <% } %>
+      </div>
+    </nav>
+  </header>
+  <div id="hints-tab-content" class="tab-content">
+    <!-- prettier-ignore -->
+    <% for (const tab of hintsTabs) { %>
+    <%- include("tabs/TabContentItem", { ...tab, navName: "hints" }) %>
+    <ul class="hints-list"></ul>
+    <%- include("tabs/TabContentItem", { close: true }) %>
+    <% } %>
+  </div>
+</section>
