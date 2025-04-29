@@ -30,12 +30,21 @@ export const $showDifficulties = getElementBySelector(
 );
 
 /** @param {import("@/consts/difficulty").Difficulty} difficulty
- * @param {{ secondaryMessage?: boolean }} [options] */
+ * @param {{ allCompleted?: boolean, secondaryMessage?: boolean }} [options] */
+// NOTE: looks like `secondaryMessage` is not used anywhere
 export const showCompletedDifficultyMessage = (
   difficulty,
-  { secondaryMessage = true } = {},
+  { allCompleted = false, secondaryMessage = true } = {},
 ) => {
   $difficultyCompleted.setAttribute("data-active", "");
+
+  if (allCompleted) {
+    $primaryMessage.textContent = "You have completed all the difficulties!";
+    $secondaryMessage.classList.add("hidden");
+    $showDifficulties.remove();
+    return;
+  }
+
   $completedName.textContent = `${difficulty}`;
   $completedName.dataset.difficulty = difficulty;
   if (!secondaryMessage) $secondaryMessage.classList.add("hidden");
