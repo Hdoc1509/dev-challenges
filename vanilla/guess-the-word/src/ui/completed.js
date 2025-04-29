@@ -1,6 +1,6 @@
 import { getElementBySelector } from "@lib/dom";
 
-export const $difficultyCompleted = getElementBySelector(
+const $difficultyCompleted = getElementBySelector(
   ".info .difficulty-completed",
   HTMLElement,
 );
@@ -35,6 +35,7 @@ export const showCompletedDifficultyMessage = (
   difficulty,
   { secondaryMessage = true } = {},
 ) => {
+  $difficultyCompleted.setAttribute("data-active", "");
   $completedName.textContent = `${difficulty}`;
   $completedName.dataset.difficulty = difficulty;
   if (!secondaryMessage) $secondaryMessage.classList.add("hidden");
