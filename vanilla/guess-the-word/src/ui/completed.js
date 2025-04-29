@@ -40,3 +40,7 @@ export const showCompletedDifficultyMessage = (
   $completedName.dataset.difficulty = difficulty;
   if (!secondaryMessage) $secondaryMessage.classList.add("hidden");
 };
+
+export const hideCompletedDifficultyMessage = () => {
+  $difficultyCompleted.removeAttribute("data-active");
+};
