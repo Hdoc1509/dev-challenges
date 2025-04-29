@@ -58,6 +58,10 @@ export class Tabs {
     this.#$current = $tabs[0];
   }
 
+  get currentTab() {
+    return this.#$current;
+  }
+
   /**
    * @param {EventTarget | HTMLElement | null} $element
    * @returns {$element is HTMLButtonElement}
