@@ -4,8 +4,15 @@ import { handleShowDefinition } from "../handlers/show-definition";
 import { handleToggleHints } from "../handlers/toggle-hints";
 import { DefinitionPages } from "@/ui/definition/pages";
 import { DefinitionPagination } from "@/ui/definition/pagination";
-import { MenuTabs, $menu, $menuOpen, $menuClose } from "@/ui/menu";
+import {
+  MenuTabs,
+  $menu,
+  $menuOpen,
+  $menuClose,
+  $difficultyTab,
+} from "@/ui/menu";
 import { HintsTabs, $hintsTrigger } from "@/ui/hints";
+import { $showDifficulties } from "@/ui/completed";
 import { $randomWord, $reset } from "@/ui/actions";
 import { $showDefinition } from "@/ui/definition/elements";
 
@@ -21,7 +28,10 @@ export function setupClickListeners() {
     } else if ($target === $menuClose) $menu.close();
     else if ($target === $showDefinition) handleShowDefinition();
     else if ($target === $hintsTrigger) handleToggleHints();
-    else if (MenuTabs.isTabLink($target)) MenuTabs.selectTab($target);
+    else if ($target === $showDifficulties) {
+      $menu.showModal();
+      MenuTabs.selectTab($difficultyTab);
+    } else if (MenuTabs.isTabLink($target)) MenuTabs.selectTab($target);
     else if (HintsTabs.isTabLink($target)) HintsTabs.selectTab($target);
     else if (DefinitionPagination.isTrigger($target))
       DefinitionPagination.handleTrigger($target);

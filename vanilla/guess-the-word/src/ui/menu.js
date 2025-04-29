@@ -18,6 +18,11 @@ export const $statsTabContent = getElementById(
   HTMLElement,
 );
 
+export const $difficultyTab = getElementById(
+  "difficulty-menu-tab",
+  HTMLButtonElement,
+);
+
 export const $menuTabContent = getElementById(
   "menu-tab-content",
   HTMLDivElement,
