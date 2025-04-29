@@ -31,8 +31,11 @@ export function setupClickListeners() {
     else if ($target === $showDifficulties) {
       $menu.showModal();
       MenuTabs.selectTab($difficultyTab);
-    } else if (MenuTabs.isTabLink($target)) MenuTabs.selectTab($target);
-    else if (HintsTabs.isTabLink($target)) HintsTabs.selectTab($target);
+    } else if (MenuTabs.isTabLink($target)) {
+      if ($target === $definitionsTab)
+        DefinitionPages.renderPage(DefinitionPagination.currentPage);
+      MenuTabs.selectTab($target);
+    } else if (HintsTabs.isTabLink($target)) HintsTabs.selectTab($target);
     else if (DefinitionPagination.isTrigger($target))
       DefinitionPagination.handleTrigger($target);
   });
