@@ -46,12 +46,11 @@ export function handleGameSuccess() {
     });
   } else if (!hasCompletedAllDifficulties({ word: currentWord })) {
     const { completed } = addDiscoveredWord(currentWord, { difficulty });
+    removeAvailableWord(currentWord, { difficulty });
+    // TODO: render `${difficulty} stats`
 
-    if (completed) {
-      removeAvailableWord(currentWord, { difficulty });
-      // TODO: render `${difficulty} stats`
-      if (words.length === 0) handleDifficultyComplete();
-    }
+    if (completed && words.length === 0) handleDifficultyComplete();
+
     if (renderCompletedDifficulty({ word: currentWord, difficulty }))
       $definitionSection.setAttribute("data-active", "");
   }
