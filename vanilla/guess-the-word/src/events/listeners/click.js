@@ -10,6 +10,7 @@ import {
   $menuOpen,
   $menuClose,
   $difficultyTab,
+  $definitionsTab,
 } from "@/ui/menu";
 import { HintsTabs, $hintsTrigger } from "@/ui/hints";
 import { $showDifficulties } from "@/ui/completed";
@@ -23,7 +24,8 @@ export function setupClickListeners() {
     if ($target === $randomWord) generateRandomWord();
     else if ($target === $reset) resetGame();
     else if ($target === $menuOpen) {
-      DefinitionPages.renderPage(DefinitionPagination.currentPage);
+      if (MenuTabs.currentTab === $definitionsTab)
+        DefinitionPages.renderPage(DefinitionPagination.currentPage);
       $menu.showModal();
     } else if ($target === $menuClose) $menu.close();
     else if ($target === $showDefinition) handleShowDefinition();
