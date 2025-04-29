@@ -8,6 +8,7 @@ import {
   showCompletedDifficultyMessage,
 } from "@/ui/completed";
 import { $randomWord } from "@/ui/actions";
+import { disableDifficultyOption } from "@/ui/difficulty-form";
 import { difficulty } from "@/state/difficulty";
 
 export function handleDifficultyComplete() {
@@ -20,7 +21,5 @@ export function handleDifficultyComplete() {
   showCompletedDifficultyMessage(difficulty);
 
   createWordLetters("congrats");
-  // TODO:
-  // - update completed words of all difficulties in Stats tab
-  // - disable difficulty option from Difficulty tab
+  disableDifficultyOption(difficulty);
 }
