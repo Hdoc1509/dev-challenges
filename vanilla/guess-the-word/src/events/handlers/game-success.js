@@ -26,11 +26,12 @@ export function handleGameSuccess() {
   $hints.removeAttribute("data-active");
   $hintsContent.removeAttribute("data-active");
 
-  if (!discoveredWords.has(currentWord)) {
-    const totalByDifficulty = TOTAL_WORDS[DIFFICULTY_GROUP[difficulty]];
+  const totalByDifficulty = TOTAL_WORDS[DIFFICULTY_GROUP[difficulty]];
 
+  if (!discoveredWords.has(currentWord)) {
     $definitionSection.setAttribute("data-active", "");
     // NOTE: render of definition's difficulty depends on discoveredWords
+    // TODO: if difficulty is `easy`, word is completed when added
     addDiscoveredWord(currentWord, { difficulty });
     removeAvailableWord(currentWord, { difficulty });
     DefinitionPages.prepend(currentWord);
@@ -46,8 +47,13 @@ export function handleGameSuccess() {
     });
   } else if (!hasCompletedAllDifficulties({ word: currentWord })) {
     const { completed } = addDiscoveredWord(currentWord, { difficulty });
+
     removeAvailableWord(currentWord, { difficulty });
-    // TODO: render `${difficulty} stats`
+    renderCurrentStats({
+      category: difficulty,
+      count: totalByDifficulty - words.length,
+      total: totalByDifficulty,
+    });
 
     if (completed && words.length === 0) handleDifficultyComplete();
 
