@@ -11,6 +11,10 @@
 .radio:focus-within {
   background-color: var(--radio-bg-hover, rgb(100 100 100 / 20%));
 }
+.radio[data-disabled] {
+  color: var(--radio-color-disabled, rgba(0, 0, 0, 0.4));
+  --_checked-color: currentColor;
+}
 
 .radio__inner {
   grid-area: 1 / 1;

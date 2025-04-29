@@ -20,6 +20,10 @@
 .label[data-type="radio"]:focus-within {
   color: var(--label-text, #333);
 }
+.label[data-disabled] {
+  color: var(--label-text-disabled, rgba(0, 0, 0, 0.4));
+  pointer-events: none;
+}
 
 .label__text {
   display: inline-flex;
