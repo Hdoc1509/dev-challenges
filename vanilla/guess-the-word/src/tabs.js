@@ -14,7 +14,7 @@ const ATTRIBUTES = Object.freeze({
   }),
 });
 
-const TAB_VALID_SELECTOR = `:scope .${CLASSES.TAB_LINK}[id]:not([id=""])`
+const TAB_VALID_SELECTOR = `:scope > .${CLASSES.TAB_LINK}[id]:not([id=""])`
   .concat('[aria-controls$="-tab-content"]')
   .concat('[role="tab"]')
   .concat(':where([aria-selected="true"], [aria-selected="false"])');
