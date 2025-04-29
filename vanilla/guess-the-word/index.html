@@ -76,14 +76,14 @@
                 </div>
               </nav>
             </header>
-            <section id="hints-tab-content" class="tab-content">
+            <div id="hints-tab-content" class="tab-content">
               <!-- prettier-ignore -->
               <% for (const tab of hintsTabs) { %>
               <%- include("tabs/TabContentItem", { ...tab, navName: "hints" }) %>
               <ul class="hints-list"></ul>
               <%- include("tabs/TabContentItem", { close: true }) %>
               <% } %>
-            </section>
+            </div>
           </section>
         </section>
         <section class="difficulty-completed">

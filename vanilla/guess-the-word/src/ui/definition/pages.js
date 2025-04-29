@@ -21,6 +21,7 @@ export const DefinitionPages = new Pages($definitionPagesContainer, {
   // onItemMoved: ($page) =>
   //   $page.insertBefore(document.createElement("hr"), $page.children[1]),
   onItemRemoved: (item) => DefinitionElement.delete(item),
+  // NOTE: should I call `.scrollTo()` on $definitionPagesContainer instead?
   onPageChange: () => $menuTabContent.scrollTo(0, 0),
   $pageTemplate: getElementById(
     "definition-page-template",

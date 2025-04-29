@@ -7,7 +7,7 @@ export const $menuClose = getElementById("menu-close", HTMLButtonElement);
 
 export const $menu = getElementById("app-menu", HTMLDialogElement);
 
-const $menuTabNav = getElementById("menu-tab-nav", HTMLElement);
+const $menuTabNav = getElementById("menu-tab-nav", HTMLDivElement);
 export const $definitionsTab = getElementById(
   "definitions-menu-tab",
   HTMLButtonElement,
@@ -18,7 +18,10 @@ export const $statsTabContent = getElementById(
   HTMLElement,
 );
 
-export const $menuTabContent = getElementById("menu-tab-content", HTMLElement);
+export const $menuTabContent = getElementById(
+  "menu-tab-content",
+  HTMLDivElement,
+);
 
 export const MenuTabs = new Tabs({
   $nav: $menuTabNav,
