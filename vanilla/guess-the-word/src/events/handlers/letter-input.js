@@ -1,11 +1,11 @@
 import { currentWord } from "@/state/current-word";
 import { increaseTries, maxTries, tries } from "@/state/tries";
 import { maxResets, gameResets, implementsMaxResets } from "@/state/resets";
-import { TypingLetterIndex } from "@/state/typing-letter";
 import { handleLetterMistake } from "./letter-mistake";
 import { resetGame } from "./reset-game";
 import { handleGameOver } from "./game-over";
 import { handleGameSuccess } from "./game-success";
+import { getLetter } from "@/utils/get-letter";
 import { showCorrectWord, useLetter } from "@/ui/word";
 import { hideTimerBar } from "@/ui/timer";
 import { $hints, addHint } from "@/ui/hints";
@@ -15,25 +15,12 @@ import { TRIES } from "@/consts/tries";
 
 /** @param {HTMLInputElement} $currentField */
 export function handleLetterInput($currentField) {
-  const letterIndex = TypingLetterIndex.get($currentField);
+  const retrievedLetter = getLetter($currentField);
 
-  if (letterIndex == null) return;
+  if (retrievedLetter == null) return;
 
-  const $currentLetter = /** @type {HTMLSpanElement} */ (
-    $currentField.parentElement
-  );
-
-  const enteredLetter = $currentField.value;
-  const lowercaseLetter = enteredLetter.toLowerCase();
-
-  if (
-    enteredLetter !== "" &&
-    (enteredLetter === " " || !/[a-z]/.test(lowercaseLetter))
-  ) {
-    $currentField.value = "";
-    return;
-  }
-
+  const { letterIndex, lowercaseLetter, enteredLetter, $currentLetter } =
+    retrievedLetter;
   const isMatch = currentWord[letterIndex] === lowercaseLetter;
 
   addHint(enteredLetter, { letterIndex, isCorrect: isMatch });
