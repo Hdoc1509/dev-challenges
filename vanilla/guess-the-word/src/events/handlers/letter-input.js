@@ -43,6 +43,7 @@ export function handleLetterInput($currentField) {
       handleLetterMistake({ $currentLetter, enteredLetter, tries });
       handleGameOver({ $currentField, $currentLetter });
       showCorrectWord(); // TODO: move to handleGameOver()
+      // PERF: only hide timer if difficulty implements it
       hideTimerBar();
       return;
     }
@@ -67,8 +68,11 @@ export function handleLetterInput($currentField) {
   $currentField.readOnly = true;
   $currentLetter.classList.remove(CLASSES.TYPING.LETTER__CURRENT);
 
-  // TODO: also check if matches '.typing__letter' class
-  if ($nextLetter instanceof HTMLSpanElement) {
+  // TODO: add util isValidTypingLetter()
+  if (
+    $nextLetter instanceof HTMLSpanElement &&
+    $nextLetter.matches(`.${CLASSES.TYPING.LETTER}`)
+  ) {
     const $nextField = /** @type {HTMLInputElement} */ (
       $nextLetter.firstElementChild
     );
@@ -79,6 +83,7 @@ export function handleLetterInput($currentField) {
   } else if (tries === TRIES.NONE) {
     handleGameSuccess();
   } else {
+    // PERF: only hide timer if difficulty implements it
     hideTimerBar();
   }
 }
