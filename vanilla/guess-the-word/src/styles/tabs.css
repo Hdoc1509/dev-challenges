@@ -1,10 +1,20 @@
 .tab-nav {
   --_disabled-color: rgb(100, 100, 100);
   --_disabled-hover-color: rgb(175, 175, 175);
+  --_highlight-size: var(--tab-nav-highlight-size, 3px);
   position: relative;
   display: flex;
 
   padding: 0;
+}
+.tab-nav::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+  height: var(--_highlight-size);
+  background-color: var(--_disabled-color);
 }
 .tab-nav__link {
   position: relative;
@@ -14,7 +24,8 @@
 
   background-color: transparent;
   border: none;
-  border-bottom: 3px solid var(--tab-item-highlight, var(--_disabled-color));
+  border-bottom: var(--_highlight-size) solid
+    var(--tab-item-highlight, var(--_disabled-color));
   border-radius: 12px 12px 0 0;
   outline: none;
   padding: 0.5em 1em;
