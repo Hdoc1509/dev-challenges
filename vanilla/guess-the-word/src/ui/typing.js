@@ -52,6 +52,7 @@ export const resetLetterFields = () => {
   const $currentLetter = $typing.querySelector(
     `:scope .${CLASSES.TYPING.LETTER__CURRENT}`,
   );
+  const $currentField = $currentLetter?.querySelector(":scope > input");
   const $usedLetters = $typing.querySelectorAll(
     `:scope .${CLASSES.TYPING.LETTER__CORRECT}, .${CLASSES.TYPING.LETTER__MISTAKEN}`,
   );
@@ -70,6 +71,7 @@ export const resetLetterFields = () => {
     $field.disabled = true;
     $field.value = "";
   });
+  if ($currentField instanceof HTMLInputElement) $currentField.disabled = true;
 
   $firstField.parentElement?.classList.add(CLASSES.TYPING.LETTER__CURRENT);
   $firstField.disabled = false;
