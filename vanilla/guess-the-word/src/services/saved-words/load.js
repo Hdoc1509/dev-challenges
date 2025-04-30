@@ -1,17 +1,12 @@
 import { parseOldFormat } from "./parse-old";
 import { parseSavedWords } from "./parse";
-import {
-  DiscoveredWordsByDifficulty,
-  discoveredWords,
-} from "@/state/discovered-words";
+import { discoveredWords } from "@/state/discovered-words";
 import { DIFFICULTIES_ALL } from "@/consts/difficulty";
 import { DISCOVERED_WORDS } from "@/consts/discovered-words";
 
 /** @param {import("./parse").SavedWordItem} wordItem */
 const loadWordItem = ({ word, difficulties, completed }) => {
-  difficulties.forEach((difficulty) =>
-    DiscoveredWordsByDifficulty.get(difficulty)?.add(word),
-  );
+  // TODO: use `onLoadedItem()` callback
   discoveredWords.set(word, completed ? DIFFICULTIES_ALL : difficulties);
 };
 
