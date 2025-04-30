@@ -6,18 +6,21 @@ import { DISCOVERED_WORDS } from "@/consts/discovered-words";
 
 /** @param {import("./parse").SavedWordItem} wordItem */
 const loadWordItem = ({ word, difficulties, completed }) => {
-  // TODO: use `onLoadedItem()` callback
   discoveredWords.set(word, completed ? DIFFICULTIES_ALL : difficulties);
 };
 
-export const loadSavedWords = async () => {
+/** @param {(loadedWord: import("./parse").SavedWordItem) => Promise<void>} onLoadedWord */
+export const loadSavedWords = async (onLoadedWord) => {
   const oldSavedItem = localStorage.getItem(
     DISCOVERED_WORDS.LOCAL_STORAGE_OLD_KEY,
   );
   const savedItem = localStorage.getItem(DISCOVERED_WORDS.LOCAL_STORAGE_KEY);
 
   if (oldSavedItem != null && savedItem == null) {
-    await parseOldFormat(JSON.parse(oldSavedItem), loadWordItem);
+    await parseOldFormat(JSON.parse(oldSavedItem), async (parsedItem) => {
+      loadWordItem(parsedItem);
+      await onLoadedWord(parsedItem);
+    });
 
     const data = Array.from(discoveredWords);
 
@@ -27,5 +30,8 @@ export const loadSavedWords = async () => {
       JSON.stringify(data),
     );
   } else if (savedItem != null)
-    await parseSavedWords(JSON.parse(savedItem), loadWordItem);
+    await parseSavedWords(JSON.parse(savedItem), async (parsedItem) => {
+      loadWordItem(parsedItem);
+      await onLoadedWord(parsedItem);
+    });
 };

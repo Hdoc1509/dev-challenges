@@ -11,10 +11,8 @@ import { DIFFICULTIES, DIFFICULTIES_ALL } from "@/consts/difficulty";
  * @property {boolean} completed
  */
 
-/**
- * @param {any} parsedItem
- * @param {(item: SavedWordItem) => void} onParsedItem
- */
+/** @param {any} parsedItem
+ * @param {(item: SavedWordItem) => Promise<void>} onParsedItem */
 export async function parseSavedWords(parsedItem, onParsedItem) {
   if (!Array.isArray(parsedItem)) return;
 
@@ -28,7 +26,7 @@ export async function parseSavedWords(parsedItem, onParsedItem) {
     const availableDifficulties = getDifficultiesOfWord(word);
 
     if (savedDifficulties === DIFFICULTIES_ALL)
-      onParsedItem({
+      await onParsedItem({
         word,
         difficulties: availableDifficulties,
         completed: true,
@@ -41,7 +39,7 @@ export async function parseSavedWords(parsedItem, onParsedItem) {
       ) &&
       !(await isWordRemovedFromGame(word))
     )
-      onParsedItem({
+      await onParsedItem({
         word,
         difficulties: savedDifficulties,
         completed: availableDifficulties.length === savedDifficulties.length,

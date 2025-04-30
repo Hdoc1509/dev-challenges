@@ -5,7 +5,7 @@ import { DIFFICULTY } from "@/consts/difficulty";
 // TEST: add unit test
 
 /** @param {any} parsedItem
- * @param {(item: import("./parse").SavedWordItem) => void} onParsedItem */
+ * @param {(item: import("./parse").SavedWordItem) => Promise<void>} onParsedItem */
 export async function parseOldFormat(parsedItem, onParsedItem) {
   if (!Array.isArray(parsedItem)) return [];
 
@@ -20,11 +20,10 @@ export async function parseOldFormat(parsedItem, onParsedItem) {
     }
   }
 
-  data.forEach(([word, difficulty]) =>
-    onParsedItem({
+  for (const [word, difficulty] of data)
+    await onParsedItem({
       word,
       difficulties: [difficulty],
       completed: difficulty === DIFFICULTY.EASY,
-    }),
-  );
+    });
 }

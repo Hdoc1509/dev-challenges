@@ -6,7 +6,6 @@ import { setupEventListeners } from "./events/listeners/setup";
 import { generateRandomWord } from "./events/handlers/random-word";
 import { applyDifficulty } from "./utils/difficulty/apply";
 import { handleDifficultyComplete } from "./events/handlers/difficulty-complete";
-import { getDifficultiesOfWord } from "./utils/difficulty/of-word";
 import { DefinitionPages } from "./ui/definition/pages";
 import { $word } from "./ui/word";
 import { $typing } from "./ui/typing";
@@ -14,11 +13,7 @@ import { renderCurrentStats } from "./ui/stats/current";
 import { renderStatsTotal } from "./ui/stats/total";
 import { addSpinner, removeSpinner } from "./ui/spinner";
 import { TOTAL_WORDS } from "./consts/words/total";
-import {
-  DIFFICULTIES_ALL,
-  DIFFICULTY,
-  DIFFICULTY_GROUP,
-} from "./consts/difficulty";
+import { DIFFICULTY, DIFFICULTY_GROUP } from "./consts/difficulty";
 import { STATS_CATEGORY_TOTAL } from "./consts/stats";
 import "@lib/alert/styles.css";
 import "@fontsource-variable/outfit";
@@ -33,18 +28,10 @@ import "./styles/main.css";
 (async () => {
   // data initialization
   addSpinner($word, $typing);
-  // PERF: can I pass an `onLoadedWord()` callback to `loadSavedWords()`?
-  // it will call `removeAvailableWord()` for each loaded word
-  await loadSavedWords();
-  for (const [word, difficulties] of discoveredWords) {
-    const completedDifficulties =
-      difficulties === DIFFICULTIES_ALL
-        ? getDifficultiesOfWord(word)
-        : difficulties;
-
-    for (const difficulty of completedDifficulties)
+  await loadSavedWords(async ({ word, difficulties }) => {
+    for (const difficulty of difficulties)
       await removeAvailableWord(word, { difficulty });
-  }
+  });
   await applyDifficulty(difficulty);
   removeSpinner($word, $typing);
 
