@@ -36,6 +36,7 @@ export function createLetterFields(quantity) {
     $firstField.parentElement
   );
 
+  $typing.setAttribute("data-active", "");
   $firstLetter.classList.add(CLASSES.TYPING.LETTER__CURRENT);
   $firstField.disabled = false;
   $firstField.focus();

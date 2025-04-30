@@ -11,6 +11,10 @@
 
   --caret-blink-duration: 2.25s;
 }
+.game-card .typing:not([data-active]) {
+  display: none;
+}
+
 .game-card .typing__letter {
   position: relative;
 

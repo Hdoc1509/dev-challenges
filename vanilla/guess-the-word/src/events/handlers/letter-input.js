@@ -15,12 +15,14 @@ import { TRIES } from "@/consts/tries";
 
 /** @param {HTMLInputElement} $currentField */
 export function handleLetterInput($currentField) {
+  const letterIndex = TypingLetterIndex.get($currentField);
+
+  if (letterIndex == null) return;
+
   const $currentLetter = /** @type {HTMLSpanElement} */ (
     $currentField.parentElement
   );
-  const letterIndex = /** @type {number}*/ (
-    TypingLetterIndex.get($currentField)
-  );
+
   const enteredLetter = $currentField.value;
   const lowercaseLetter = enteredLetter.toLowerCase();
 

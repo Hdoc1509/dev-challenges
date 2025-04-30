@@ -7,6 +7,7 @@ import { $mistakesContainer } from "@/ui/mistakes";
 import { $resetsContainer } from "@/ui/resets";
 import { hideTimer } from "@/ui/timer";
 import { showCompletedDifficultyMessage } from "@/ui/completed";
+import { $typing } from "@/ui/typing";
 import { $randomWord } from "@/ui/actions";
 import { disableDifficultyOption } from "@/ui/difficulty-form";
 
@@ -23,6 +24,8 @@ export function handleDifficultyComplete() {
   $triesContainer.removeAttribute("data-active");
   $mistakesContainer.removeAttribute("data-active");
   $resetsContainer.removeAttribute("data-active");
+  $typing.replaceChildren();
+  $typing.removeAttribute("data-active");
   hideTimer();
   showCompletedDifficultyMessage(difficulty, { allCompleted: gameCompleted });
   createWordLetters("congrats");
