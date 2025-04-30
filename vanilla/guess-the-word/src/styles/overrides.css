@@ -31,7 +31,7 @@
 
 /* TODO: move to app-menu/definitions.css */
 #definitions-menu-tab-content {
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: 1fr auto;
 }
 
 /* TODO: move to app-menu/difficulty.css */
