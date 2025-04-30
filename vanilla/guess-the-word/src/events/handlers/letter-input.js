@@ -9,6 +9,7 @@ import { getLetter } from "@/utils/get-letter";
 import { showCorrectWord, useLetter } from "@/ui/word";
 import { hideTimerBar } from "@/ui/timer";
 import { $hints, addHint } from "@/ui/hints";
+import { isValidTypingLetter } from "@/ui/typing";
 import { $reset } from "@/ui/actions";
 import { CLASSES } from "@/consts/css-classes";
 import { TRIES } from "@/consts/tries";
@@ -40,7 +41,6 @@ export function handleLetterInput($currentField) {
 
     if (tries === maxTries) return resetGame();
   } else {
-    // TODO: move to handleLetterCorrect() in another file
     useLetter(lowercaseLetter);
     $currentLetter.classList.add(CLASSES.TYPING.LETTER__CORRECT);
   }
@@ -55,11 +55,8 @@ export function handleLetterInput($currentField) {
   $currentField.readOnly = true;
   $currentLetter.classList.remove(CLASSES.TYPING.LETTER__CURRENT);
 
-  // TODO: add util isValidTypingLetter()
-  if (
-    $nextLetter instanceof HTMLSpanElement &&
-    $nextLetter.matches(`.${CLASSES.TYPING.LETTER}`)
-  ) {
+  if (isValidTypingLetter($nextLetter)) {
+    // TODO: move to goNextLetter() handler
     const $nextField = /** @type {HTMLInputElement} */ (
       $nextLetter.firstElementChild
     );
