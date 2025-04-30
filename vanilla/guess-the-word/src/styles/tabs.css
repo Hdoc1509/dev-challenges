@@ -1,6 +1,6 @@
 .tab-nav {
-  --_bottom-border: rgb(100, 100, 100);
-  --_disabled-color: rgb(175, 175, 175);
+  --_disabled-color: rgb(100, 100, 100);
+  --_disabled-hover-color: rgb(175, 175, 175);
   position: relative;
   display: flex;
 
@@ -14,7 +14,7 @@
 
   background-color: transparent;
   border: none;
-  border-bottom: 3px solid var(--tab-item-highlight, var(--_bottom-border));
+  border-bottom: 3px solid var(--tab-item-highlight, var(--_disabled-color));
   border-radius: 12px 12px 0 0;
   outline: none;
   padding: 0.5em 1em;
@@ -34,11 +34,11 @@
   background-color: rgba(100, 100, 100, 0.15);
 }
 .tab-nav__link[aria-selected="false"] {
-  color: var(--_disabled-color);
+  color: var(--_disabled-hover-color);
 }
 .tab-nav__link[aria-selected="false"]:hover,
 .tab-nav__link[aria-selected="false"]:focus {
-  --tab-item-highlight: var(--_disabled-color);
+  --tab-item-highlight: var(--_disabled-hover-color);
 }
 
 .tab-content {
