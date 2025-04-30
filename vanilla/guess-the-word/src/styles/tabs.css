@@ -19,7 +19,7 @@
   outline: none;
   padding: 0.5em 1em;
 
-  font-size: 1.125rem;
+  font-size: var(--tab-link-font-size, 1.125rem);
   font-weight: var(--tab-link-font-weight);
 
   transition:

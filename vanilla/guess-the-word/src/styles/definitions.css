@@ -68,7 +68,7 @@
   outline: none;
 
   font-weight: bold;
-  font-size: 1.125rem;
+  font-size: var(--definition-label-font-size, 1.125rem);
   color: var(--definition-label-text);
   cursor: pointer;
 }
@@ -120,6 +120,8 @@
   gap: 0.5em;
 
   padding-block: 0.25rem;
+
+  font-size: var(--definition-content-font-size, 1rem);
 }
 .definition__error {
   display: var(--error-display);

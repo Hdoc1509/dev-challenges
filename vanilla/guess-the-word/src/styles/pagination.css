@@ -8,7 +8,7 @@
   padding: 0;
   padding-bottom: 0.125rem;
 
-  font-size: 1.125rem;
+  font-size: var(--pagination-item-size, 1.125rem);
 
   list-style: none;
 }

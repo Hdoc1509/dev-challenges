@@ -40,7 +40,7 @@
   --radio-group-gap: 0.25rem;
   --label-text: var(--text);
   --label-text-disabled: var(--_disabled-color);
-  --label-font-size: 1.125rem;
+  --label-font-size: var(--difficulty-option-font-size, 1.125rem);
   --radio-color-disabled: var(--_disabled-color);
 }
 #difficulty-menu-tab-content .difficulty-name {

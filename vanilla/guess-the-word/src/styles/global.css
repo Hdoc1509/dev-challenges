@@ -62,6 +62,14 @@
 @media (max-width: 640px) {
   :root {
     --bg-image-url: url("/bg-guess-the-word-small.jpg");
+    --difficulty-option-font-size: 1rem;
+    --tab-link-font-size: 1rem;
+    --definition-label-font-size: 1rem;
+    --definition-content-font-size: 0.875rem;
+    --pagination-item-size: 1rem;
+    --word-fs: 1.75rem;
+    --letter-fs: 1.125rem;
+    --hints-list-font-size: 1.125rem;
   }
 }
 
