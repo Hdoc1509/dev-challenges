@@ -1,6 +1,5 @@
 import { getElementById, getElementBySelector } from "@lib/dom";
 import { DIFFICULTIES, DIFFICULTY } from "@/consts/difficulty";
-/** @typedef {import("@/consts/difficulty").Difficulty} Difficulty */
 
 export const $difficultyForm = getElementById(
   "difficulty-form",
@@ -13,13 +12,15 @@ export const getSelectedDifficulty = () => {
 
   if (
     typeof difficulty !== "string" ||
-    !DIFFICULTIES.has(/** @type {Difficulty} */ (difficulty))
+    !DIFFICULTIES.has(
+      /** @type {import("@/consts/difficulty").Difficulty} */ (difficulty),
+    )
   )
     return DIFFICULTY.NORMAL;
-  return /** @type {Difficulty} */ (difficulty);
+  return /** @type {import("@/consts/difficulty").Difficulty} */ (difficulty);
 };
 
-/** @param {Difficulty} difficulty */
+/** @param {import("@/consts/difficulty").Difficulty} difficulty */
 export const disableDifficultyOption = (difficulty) => {
   const $label = getElementBySelector(
     `:scope > .radio-group > .label[data-difficulty="${difficulty}"]`,

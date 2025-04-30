@@ -1,14 +1,13 @@
 import { getDifficultiesOfWord } from "@/utils/difficulty/of-word";
 import { isWordRemovedFromGame } from "@/utils/word-removed";
 import { DIFFICULTIES, DIFFICULTIES_ALL } from "@/consts/difficulty";
-/** @typedef {import("@/consts/difficulty").Difficulty} Difficulty */
 /** @typedef {typeof DIFFICULTIES_ALL} DifficultiesAll */
 
 // TODO: create SavedWordParser function type
 
 /** @typedef SavedWordItem
  * @property {string} word
- * @property {Difficulty[]} difficulties
+ * @property {import("@/consts/difficulty").Difficulty[]} difficulties
  * @property {boolean} completed
  */
 
@@ -37,7 +36,7 @@ export async function parseSavedWords(parsedItem, onParsedItem) {
     else if (
       Array.isArray(savedDifficulties) &&
       savedDifficulties.every(
-        /** @returns {difficulty is Difficulty} */
+        /** @returns {difficulty is import("@/consts/difficulty").Difficulty} */
         (difficulty) => DIFFICULTIES.has(difficulty),
       ) &&
       !(await isWordRemovedFromGame(word))

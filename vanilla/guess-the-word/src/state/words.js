@@ -1,7 +1,6 @@
 import { DIFFICULTY, DIFFICULTY_GROUP } from "@/consts/difficulty";
-/** @typedef {import("@/consts/difficulty").Difficulty} Difficulty */
 
-/** @type {Map<Difficulty, Set<string> | null>} */
+/** @type {Map<import("@/consts/difficulty").Difficulty, Set<string> | null>} */
 export const AvailableWords = new Map([
   [DIFFICULTY.EASY, null],
   [DIFFICULTY.NORMAL, null],
@@ -17,7 +16,7 @@ export const AvailableWords = new Map([
  * @type {readonly string[]} */
 export let words = [];
 
-/** @param {Difficulty} difficulty */
+/** @param {import("@/consts/difficulty").Difficulty} difficulty */
 export const setWordsByDifficulty = async (difficulty) => {
   const savedWords = AvailableWords.get(difficulty);
 
@@ -32,7 +31,7 @@ export const setWordsByDifficulty = async (difficulty) => {
 };
 
 /** @param {string} word
- * @param {{ difficulty: Difficulty }} extraParams */
+ * @param {{ difficulty: import("@/consts/difficulty").Difficulty }} extraParams */
 // PERF: avoid updating `words` state if not needed, i.e when initializing app
 export const removeAvailableWord = async (word, { difficulty }) => {
   const savedWords = AvailableWords.get(difficulty);

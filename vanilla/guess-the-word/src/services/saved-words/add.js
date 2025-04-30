@@ -2,10 +2,9 @@ import { discoveredWords } from "@/state/discovered-words";
 import { getDifficultiesOfWord } from "@/utils/difficulty/of-word";
 import { DIFFICULTIES_ALL } from "@/consts/difficulty";
 import { DISCOVERED_WORDS } from "@/consts/discovered-words";
-/** @typedef {import("@/consts/difficulty").Difficulty} Difficulty */
 
 /** @param {string} word
- * @param {{ difficulty: Difficulty }} extraParams
+ * @param {{ difficulty: import("@/consts/difficulty").Difficulty }} extraParams
  * @returns {{ completed: boolean }} */
 export const addDiscoveredWord = (word, { difficulty }) => {
   const availableDifficulties = getDifficultiesOfWord(word);

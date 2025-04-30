@@ -1,5 +1,2 @@
-/** @typedef {import("@/consts/difficulty").Difficulty} Difficulty */
-/** @typedef {import("@/consts/difficulty").DifficultiesAll} DifficultiesAll */
-
-/** @type {Map<string, Difficulty[] | DifficultiesAll>} */
+/** @type {Map<string, import("@/consts/difficulty").Difficulty[] | import("@/consts/difficulty").DifficultiesAll>} */
 export const discoveredWords = new Map();

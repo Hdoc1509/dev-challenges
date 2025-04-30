@@ -1,14 +1,16 @@
 import { getCategoryElements } from "./category-elements";
-/** @typedef {import("@/consts/stats").StatsCategory} Category */
 
-/** @type {Map<Category, import("./category-elements").StatsCategoryElements>} */
+/** @type {Map<import("@/consts/stats").StatsCategory, import("./category-elements").StatsCategoryElements>} */
 const Elements = new Map([]);
 
 const CSS_VARIABLE = Object.freeze({
   PROGRESS_TRACK_WIDTH: "--progress-track-width",
 });
 
-/** @param {{ category: Category, count: number, total: number }} params */
+/** @param {Object} params
+ * @param {import("@/consts/stats").StatsCategory} params.category
+ * @param {number} params.count
+ * @param {number} params.total */
 export function renderCurrentStats({ category, count, total }) {
   let $elements = Elements.get(category);
   const trackWidth = ((count / total) * 100).toFixed(8);
