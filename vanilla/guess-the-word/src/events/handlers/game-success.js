@@ -18,7 +18,7 @@ import { STATS_CATEGORY_TOTAL } from "@/consts/stats";
 import { TOTAL_WORDS } from "@/consts/words/total";
 import { DIFFICULTY_GROUP } from "@/consts/difficulty";
 
-export function handleGameSuccess() {
+export async function handleGameSuccess() {
   showAlert({ color: "success", text: "🎉 Success!" });
   hideTimerBar();
   $reset.disabled = true;
@@ -33,7 +33,7 @@ export function handleGameSuccess() {
     // NOTE: render of `DefinitionPages` depends on discoveredWords
     const { completed } = addDiscoveredWord(currentWord, { difficulty });
 
-    removeAvailableWord(currentWord, { difficulty });
+    await removeAvailableWord(currentWord, { difficulty });
     DefinitionPages.prepend(currentWord);
     renderCurrentStats({
       category: STATS_CATEGORY_TOTAL,
@@ -50,7 +50,7 @@ export function handleGameSuccess() {
   } else if (!hasCompletedAllDifficulties({ word: currentWord })) {
     const { completed } = addDiscoveredWord(currentWord, { difficulty });
 
-    removeAvailableWord(currentWord, { difficulty });
+    await removeAvailableWord(currentWord, { difficulty });
     renderCurrentStats({
       category: difficulty,
       count: totalByDifficulty - words.length,
