@@ -1,8 +1,8 @@
 import { getAllElementsBySelector, getElementBySelector } from "@lib/dom";
 
 const CLASSES = Object.freeze({
-  TAB_LINK: "tab-nav__link",
-  TAB_CONTENT: "tab-content__item",
+  LINK: "tab-nav__link",
+  CONTENT: "tab-content__item",
 });
 
 const ATTRIBUTES = Object.freeze({
@@ -14,7 +14,7 @@ const ATTRIBUTES = Object.freeze({
   }),
 });
 
-const TAB_VALID_SELECTOR = `:scope > .${CLASSES.TAB_LINK}[id]:not([id=""])`
+const TAB_VALID_SELECTOR = `:scope > .${CLASSES.LINK}[id]:not([id=""])`
   .concat('[aria-controls$="-tab-content"]')
   .concat('[role="tab"]')
   .concat(':where([aria-selected="true"], [aria-selected="false"])');
@@ -45,7 +45,7 @@ export class Tabs {
       );
       // TODO: create util createContentSelector({ tabId, contentId })
       const $content = getElementBySelector(
-        `:scope #${contentId}.${CLASSES.TAB_CONTENT}[role="tabpanel"][aria-labelledby="${$tab.id}"]`,
+        `:scope #${contentId}.${CLASSES.CONTENT}[role="tabpanel"][aria-labelledby="${$tab.id}"]`,
         HTMLDivElement,
         $contentContainer,
       );
@@ -70,7 +70,7 @@ export class Tabs {
     return (
       $element instanceof HTMLButtonElement &&
       this.#$nav.contains($element) &&
-      $element.matches(`.${CLASSES.TAB_LINK}`)
+      $element.matches(`.${CLASSES.LINK}`)
     );
   }
 
