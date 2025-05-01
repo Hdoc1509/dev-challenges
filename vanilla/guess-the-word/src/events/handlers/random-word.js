@@ -44,7 +44,7 @@ export function generateRandomWord() {
   }
   TriesIndicator.reset();
   ResetsIndicator.reset();
-  $mistakenLetters.textContent = "-";
+  $mistakenLetters.textContent = "0";
   hideTimerBar();
   $definitionSection.removeAttribute("data-active");
   $hints.removeAttribute("data-active");

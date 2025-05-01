@@ -24,7 +24,7 @@ export function resetGame() {
     $mistakesContainer.removeAttribute("data-active");
   }
   TriesIndicator.reset();
-  $mistakenLetters.textContent = "-";
+  $mistakenLetters.textContent = "0";
   if (implementsMaxResets()) ResetsIndicator.goNext();
 
   hideTimerBar();
