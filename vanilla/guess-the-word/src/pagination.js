@@ -110,13 +110,6 @@ export class Pagination {
     }
   }
 
-  /** @param {number} page */
-  setCurrentPage(page) {
-    this.currentPage = page;
-    this.#$input.value = `${page}`;
-    this.#checkTriggers();
-  }
-
   #goNextPage() {
     if (this.currentPage === this.#PagesHandler.totalPages)
       this.#$pageNext.disabled = true;
