@@ -31,10 +31,12 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           if (id.includes("libs")) return "libs";
+          if (id.includes("ui")) return "ui";
           if (id.includes("src/events")) return "events";
           if (id.includes("src/consts") && !id.includes("src/consts/words"))
             return "consts";
           if (id.includes("src/utils")) return "utils";
+          if (id.includes("src/services")) return "services";
           if (id.includes("mocks/definitions")) return "definitions";
         },
       },
