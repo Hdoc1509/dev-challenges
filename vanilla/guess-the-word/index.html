@@ -11,11 +11,10 @@
   <body>
     <main class="game-card">
       <header class="game-card__header">
-        <img
-          class="game-card__logo"
-          src="/word-scramblle-logo.svg"
-          alt="Word Scramblle logo"
-        />
+        <picture class="game-card__logo">
+          <source srcset="/word-scramblle-logo.webp" type="image/webp" />
+          <img src="/word-scramblle-logo.svg" alt="Word Scramblle logo" />
+        </picture>
         <button
           id="menu-open"
           class="menu-trigger"

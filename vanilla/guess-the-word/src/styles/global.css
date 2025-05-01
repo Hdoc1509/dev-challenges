@@ -54,6 +54,11 @@
 
   --bg-image-url: url("/bg-guess-the-word.jpg");
 }
+@supports (background-image: url("/bg-guess-the-word.webp")) {
+  :root {
+    --bg-image-url: url("/bg-guess-the-word.webp");
+  }
+}
 @supports (font-variation-settings: normal) {
   :root {
     font-family: "Outfit Variable", sans-serif;
@@ -70,6 +75,12 @@
     --word-fs: 1.75rem;
     --letter-fs: 1.125rem;
     --hints-list-font-size: 1.125rem;
+  }
+
+  @supports (background-image: url("/bg-guess-the-word-small.webp")) {
+    :root {
+      --bg-image-url: url("/bg-guess-the-word-small.webp");
+    }
   }
 }
 

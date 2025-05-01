@@ -71,7 +71,8 @@ create a small game that tests your data management and DOM manipulation with Ja
   - [writing-sign](https://tabler.io/icons/icon/writing-sign)
   - [x](https://tabler.io/icons/icon/x)
 - [colorhexa](https://www.colorhexa.com/)
-- [Online Image Compressor](https://imagecompressor.com/)
+- [Online Image Compressor](https://imagecompressor.com/) and
+  [Squoosh](https://squoosh.app/) for image optimization
 - [Words API](https://wordsapi.com/) for mocked words
   - Sample data taken from [Pricing](https://wordsapi.com/#pricing) section
 
