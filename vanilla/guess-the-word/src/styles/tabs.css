@@ -16,7 +16,7 @@
   height: var(--_highlight-size);
   background-color: var(--_disabled-color);
 }
-.tab-nav__link {
+.tab-nav__trigger {
   position: relative;
   display: flex;
   align-items: center;
@@ -39,16 +39,16 @@
 
   --icon-size: 1.25em;
 }
-.tab-nav__link[aria-selected="true"] {
+.tab-nav__trigger[aria-selected="true"] {
   --tab-item-highlight: var(--primary);
   --tab-link-font-weight: bold;
   background-color: rgba(100, 100, 100, 0.15);
 }
-.tab-nav__link[aria-selected="false"] {
+.tab-nav__trigger[aria-selected="false"] {
   color: var(--_disabled-hover-color);
 }
-.tab-nav__link[aria-selected="false"]:hover,
-.tab-nav__link[aria-selected="false"]:focus {
+.tab-nav__trigger[aria-selected="false"]:hover,
+.tab-nav__trigger[aria-selected="false"]:focus {
   --tab-item-highlight: var(--_disabled-hover-color);
 }
 
