@@ -11,7 +11,7 @@ export class Pagination {
   #$pageNext;
   #$input;
   #$total;
-  currentPage;
+  #current;
 
   /**
    * @param {HTMLMenuElement} $pagination
@@ -54,8 +54,8 @@ export class Pagination {
 
     if (Number.isNaN(inputPage) || inputPage > totalPages || inputPage < 1)
       this.#$input.value = `${totalPages}`;
-    this.currentPage = Number(this.#$input.value);
-    if (renderCurrent) this.#PagesHandler.renderPage(this.currentPage);
+    this.#current = Number(this.#$input.value);
+    if (renderCurrent) this.#PagesHandler.renderPage(this.#current);
     this.#setTotalPages(totalPages);
 
     this.#PagesHandler.addEventListener("pageadd", (totalPages) => {
@@ -72,7 +72,7 @@ export class Pagination {
     this.#$input.max = `${totalPages}`;
     this.#$input.setAttribute(
       "aria-label",
-      `Page ${this.currentPage} of ${totalPages}`,
+      `Page ${this.#current} of ${totalPages}`,
     );
     this.#$total.textContent = `${totalPages}`;
   }
@@ -84,11 +84,11 @@ export class Pagination {
       this.#$pagePrev.disabled = true;
       this.#$pageNext.disabled = true;
       this.#$input.disabled = true;
-    } else if (this.currentPage === 1) {
+    } else if (this.#current === 1) {
       this.#$pagePrev.disabled = true;
       this.#$pageNext.disabled = false;
       this.#$input.disabled = false;
-    } else if (this.currentPage === pages) {
+    } else if (this.#current === pages) {
       this.#$pagePrev.disabled = false;
       this.#$pageNext.disabled = true;
       this.#$input.disabled = false;
@@ -99,26 +99,30 @@ export class Pagination {
     }
   }
 
+  get currentPage() {
+    return this.#current;
+  }
+
   /** Update current page and call `pagesHandler.renderPage(page)`
    * @param {number} page */
   selectPage(page) {
     this.#$input.value = `${page}`;
-    if (this.currentPage !== page) {
-      this.currentPage = page;
+    if (this.#current !== page) {
+      this.#current = page;
       this.#checkTriggers();
       this.#PagesHandler.renderPage(page);
     }
   }
 
   #goNextPage() {
-    if (this.currentPage === this.#PagesHandler.totalPages)
+    if (this.#current === this.#PagesHandler.totalPages)
       this.#$pageNext.disabled = true;
-    else this.selectPage(this.currentPage + 1);
+    else this.selectPage(this.#current + 1);
   }
 
   #goPrevPage() {
-    if (this.currentPage === 1) this.#$pagePrev.disabled = true;
-    else this.selectPage(this.currentPage - 1);
+    if (this.#current === 1) this.#$pagePrev.disabled = true;
+    else this.selectPage(this.#current - 1);
   }
 
   /**
@@ -148,7 +152,7 @@ export class Pagination {
     const page = $input.value;
     const isValid = /^-?\d+$/.test(page);
 
-    if (!isValid) $input.value = `${this.currentPage}`;
+    if (!isValid) $input.value = `${this.#current}`;
     else {
       const pageNumber = Number(page);
       const pages = this.#PagesHandler.totalPages;
