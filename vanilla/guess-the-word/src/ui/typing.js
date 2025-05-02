@@ -25,7 +25,13 @@ export function createLetterFields(quantity) {
       HTMLInputElement,
       $letterClone,
     );
+    const $hiddenLabel = document.createElement("span");
 
+    $field.setAttribute("aria-labelledby", `letter-label-${i}`);
+    $hiddenLabel.textContent = `Letter ${i + 1}`;
+    $hiddenLabel.classList.add("visually-hidden");
+    $hiddenLabel.setAttribute("id", `letter-label-${i}`);
+    $field.after($hiddenLabel);
     TypingLetterIndex.set($field, i);
     $letterFields.push($field);
     $typing.appendChild($letterClone);
