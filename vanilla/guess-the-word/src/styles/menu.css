@@ -28,8 +28,6 @@
 }
 
 .menu-trigger {
-  grid-area: menu-trigger;
-
   display: grid;
   place-items: center;
 

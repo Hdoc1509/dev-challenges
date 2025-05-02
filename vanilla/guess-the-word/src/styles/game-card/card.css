@@ -19,6 +19,9 @@
   --menu-trigger-bg: var(--primary);
   --menu-trigger-size: 1.75rem;
 }
+.game-card__header > .menu-trigger {
+  grid-area: menu-trigger;
+}
 
 .game-card__logo {
   grid-area: logo;
