@@ -20,14 +20,14 @@
   --word-shadow: 0px 4px 0px 0px var(--black);
   --button-shadow: drop-shadow(0px 4px 0px #7b248a); /* filter: [value] */
 
-  --difficulty-easy: #5de43b;
+  --difficulty-easy: #70e751;
   --difficulty-normal: #3bb2e4;
   --difficulty-hard: #e4c23b;
   --difficulty-master: #e46e3b;
-  --difficulty-extreme: #cf1d41;
-  --difficulty-insane: #6e3be4;
-  --difficulty-why: var(--primary);
-  --difficulty-void: var(--secondary);
+  --difficulty-extreme: #3be4c2;
+  --difficulty-insane: #b2e43b;
+  --difficulty-why: #9b78ff; /* https://www.color-hex.com/color-palette/1055851 */
+  --difficulty-void: #dd79f0;
 
   --card-padding: 1.5rem;
   --card-gap: 1.5rem;

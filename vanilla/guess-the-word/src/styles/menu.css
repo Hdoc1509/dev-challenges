@@ -10,11 +10,11 @@
   height: min(var(--menu-max-height), 100%);
   margin: auto;
   padding: 1rem;
-  background-color: #212529;
+  background-color: #0f131f;
   border-color: #000;
   border-radius: 12px;
 
-  color: var(--text);
+  color: #d7e0ed;
 }
 .menu[open] {
   display: grid;

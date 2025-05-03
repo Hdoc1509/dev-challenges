@@ -10,7 +10,7 @@
   display: none;
 }
 .definitions-list > li:not(:first-child) {
-  border-top: 2px solid rgb(175, 175, 175);
+  border-top: 2px solid #9b9b9b;
   padding-top: 0.5rem;
 }
 
@@ -96,7 +96,7 @@
   color: var(--difficulty-void);
 }
 .definition__difficulty:not([data-completed]) {
-  color: rgb(175, 175, 175);
+  color: #9b9b9b;
 }
 .definition__content {
   display: flex;
