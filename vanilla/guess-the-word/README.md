@@ -78,17 +78,17 @@ create a small game that tests your data management and DOM manipulation with Ja
 
 ### Extra Features
 
-- Case insensitive check for entered letter
-- Difficulty levels: `Easy`, `Normal`, `Hard`, `Master`, `Extreme`, `Insane`,
-  `Why` and `Void`
+- +7400 words to discover
+- Insensitive case checking for entered letter
 - Change color of used letters
-- Add border colors to correct and wrong entered letters
+- Border colors for correct and wrong entered letters
 - Show correct word when winning or losing
-- `Hints` section: all letters and correct letters
-- Menu:
-  - `Definitions`: see definition for each discovered word. Includes `Pagination`
-  - `Difficulty`: change difficulty level
-  - `Stats`: see statistics for discovered words
+- `Hints` section: see all letters that have been guessed
+- `Menu`:
+  - `Definitions`, for each discovered word. Includes `Pagination`
+  - `Difficulty`, to change difficulty level: `Easy`, `Normal`, `Hard`, `Master`,
+    `Extreme`, `Insane`, `Why` and `Void`
+  - `Stats`, for discovered words
 
 ### What I learned
 
