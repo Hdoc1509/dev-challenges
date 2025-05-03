@@ -23,7 +23,7 @@
   gap: 0.75ch;
 }
 .hint-group:not(:first-child) {
-  border-top: 2px solid var(--primary);
+  border-top: 2px solid var(--difficulty-why);
   padding-top: 0.75ch;
 }
 
