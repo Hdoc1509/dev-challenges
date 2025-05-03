@@ -21,10 +21,10 @@
   --spinner-size: 2.25rem;
 }
 .definition[data-new] {
-  --definition-badge-text: var(--secondary);
+  --definition-badge-text: var(--difficulty-void);
 }
 .definition[open] {
-  --definition-label-text: var(--secondary);
+  --definition-label-text: var(--difficulty-void);
 }
 .definition[open],
 .definition:hover {
