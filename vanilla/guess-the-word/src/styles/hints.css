@@ -41,8 +41,8 @@
   border-color: var(--word-bg);
 }
 .hint--correct {
-  border-color: var(--difficulty-easy);
+  border-color: var(--letter-border-correct);
 }
 .hint--wrong {
-  border-color: var(--difficulty-extreme);
+  border-color: var(--letter-border-wrong);
 }
