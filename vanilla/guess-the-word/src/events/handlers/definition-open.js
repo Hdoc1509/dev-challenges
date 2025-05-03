@@ -1,4 +1,3 @@
-import { getDefinition } from "@/services/definition";
 import { getElementBySelector } from "@lib/dom";
 import { DefinitionElement, DefinitionItem } from "@/state/definition";
 import { hasCompletedAllDifficulties } from "@/utils/difficulty/completed";
@@ -23,6 +22,8 @@ export async function handleDefinitionOpen($definitionDetails) {
 
   addSpinner($content);
   $definitionDetails.dataset.status = "loading";
+
+  const { getDefinition } = await import("@/services/definition");
 
   const [error, definitions] = await getDefinition(word);
 

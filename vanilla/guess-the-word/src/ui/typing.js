@@ -25,6 +25,7 @@ export function createLetterFields(quantity) {
       HTMLInputElement,
       $letterClone,
     );
+    // TODO: move logic to insert hidden label to a util
     const $hiddenLabel = document.createElement("span");
 
     $field.setAttribute("aria-labelledby", `letter-label-${i}`);

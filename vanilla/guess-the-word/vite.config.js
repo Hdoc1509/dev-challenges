@@ -36,7 +36,6 @@ export default defineConfig({
           if (id.includes("src/consts") && !id.includes("src/consts/words"))
             return "consts";
           if (id.includes("src/utils")) return "utils";
-          if (id.includes("src/services")) return "services";
           if (id.includes("mocks/definitions")) return "definitions";
         },
       },
