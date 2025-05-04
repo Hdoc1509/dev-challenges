@@ -1,6 +1,6 @@
 import { Pages } from "@/pages";
 import { getElementById } from "@lib/dom";
-import { DefinitionElement } from "@/state/definition";
+import { DefinitionElement, DefinitionItem } from "@/state/definition";
 import { createDefinition } from "./create-definition";
 import { $menuTabContent } from "../menu";
 import { DEFINITIONS_PER_PAGE } from "@/consts/definitions";
@@ -20,7 +20,13 @@ export const DefinitionPages = new Pages($definitionPagesContainer, {
   clearEmpty: ($page) => $page.querySelector(".not-yet")?.remove(),
   // onItemMoved: ($page) =>
   //   $page.insertBefore(document.createElement("hr"), $page.children[1]),
-  onItemRemoved: (item) => DefinitionElement.delete(item),
+  onItemRemoved: (item) => {
+    const $definition = DefinitionElement.get(item);
+    if ($definition == null) return;
+
+    DefinitionItem.get($definition)?.controller.abort();
+    DefinitionElement.delete(item);
+  },
   onPageChange: () => $menuTabContent.scrollTo(0, 0),
   $pageTemplate: getElementById(
     "definition-page-template",

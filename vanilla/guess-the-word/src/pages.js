@@ -254,8 +254,8 @@ export class Pages {
 
         if ($elementToMove != null) {
           if ($page == null) {
-            $elementToMove.remove();
             this.#onItemRemoved?.(itemToMove);
+            $elementToMove.remove();
           } else {
             $page.insertBefore($elementToMove, $page.firstElementChild);
             this.#onItemMoved?.($page);
@@ -286,8 +286,8 @@ export class Pages {
 
     this.#paginatedItems.push([itemToMove]);
     if ($elementToMove != null) {
-      $elementToMove.remove();
       this.#onItemRemoved?.(itemToMove);
+      $elementToMove.remove();
     }
     this.#events.pageadd.forEach((handler) => handler(totalPages + 1));
   }
