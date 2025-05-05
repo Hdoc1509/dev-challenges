@@ -1,17 +1,17 @@
 import { gameCompleted, setGameCompleted } from "@/state/game-complete";
 import { difficulty } from "@/state/difficulty";
 import { AvailableWords } from "@/state/words";
+import { InsaneDifficulty } from "@/utils/difficulty/insane";
 import { createWordLetters } from "@/ui/word";
 import { $triesContainer } from "@/ui/tries";
 import { $mistakesContainer } from "@/ui/mistakes";
 import { $resetsContainer } from "@/ui/resets";
-import { hideTimer } from "@/ui/timer";
 import { showCompletedDifficultyMessage } from "@/ui/completed";
 import { $typing } from "@/ui/typing";
 import { $randomWord } from "@/ui/actions";
 import { disableDifficultyOption } from "@/ui/difficulty-form";
 
-export function handleDifficultyComplete() {
+export async function handleDifficultyComplete() {
   if (!gameCompleted) {
     const isCompleted = Array.from(AvailableWords).every(
       ([, words]) => words?.size === 0,
@@ -26,7 +26,10 @@ export function handleDifficultyComplete() {
   $resetsContainer.removeAttribute("data-active");
   $typing.replaceChildren();
   $typing.removeAttribute("data-active");
-  hideTimer();
+  if (InsaneDifficulty.isApplied()) {
+    const { hideTimer } = await import("@/ui/timer");
+    hideTimer();
+  }
   showCompletedDifficultyMessage(difficulty, { allCompleted: gameCompleted });
   createWordLetters("congrats");
   disableDifficultyOption(difficulty);

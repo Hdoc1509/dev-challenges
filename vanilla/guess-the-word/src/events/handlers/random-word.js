@@ -5,13 +5,13 @@ import { resetTries } from "@/state/tries";
 import { maxResets, resetGameResets } from "@/state/resets";
 import { handleDifficultyComplete } from "./difficulty-complete";
 import { Random } from "@/utils/random";
-import { createLetterFields } from "@/ui/typing";
+import { InsaneDifficulty } from "@/utils/difficulty/insane";
 import { scrambleWord } from "@/utils/scramble";
 import { createWordLetters } from "@/ui/word";
 import { $triesContainer, TriesIndicator } from "@/ui/tries";
 import { $mistakenLetters, $mistakesContainer } from "@/ui/mistakes";
 import { ResetsIndicator } from "@/ui/resets";
-import { hideTimerBar } from "@/ui/timer";
+import { createLetterFields } from "@/ui/typing";
 import { $reset } from "@/ui/actions";
 import { $definitionSection } from "@/ui/definition/elements";
 import {
@@ -45,7 +45,8 @@ export function generateRandomWord() {
   TriesIndicator.reset();
   ResetsIndicator.reset();
   $mistakenLetters.textContent = "0";
-  hideTimerBar();
+  if (InsaneDifficulty.isApplied())
+    import("@/ui/timer").then(({ hideTimerBar }) => hideTimerBar());
   $definitionSection.removeAttribute("data-active");
   $hints.removeAttribute("data-active");
   $hintsContent.removeAttribute("data-active");

@@ -16,8 +16,6 @@ const CSS = Object.freeze({
   }),
 });
 
-// TODO: only import if current difficulty implements timer
-
 export const resetTimer = () => {
   $timerBar.classList.remove(CSS.CLASSES.TIMER.BAR);
   void $timerBar.offsetWidth;

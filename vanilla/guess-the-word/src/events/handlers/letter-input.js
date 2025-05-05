@@ -5,9 +5,9 @@ import { handleLetterMistake } from "./letter-mistake";
 import { resetGame } from "./reset-game";
 import { handleGameOver } from "./game-over";
 import { handleGameSuccess } from "./game-success";
+import { InsaneDifficulty } from "@/utils/difficulty/insane";
 import { getLetter } from "@/utils/get-letter";
 import { showCorrectWord, useLetter } from "@/ui/word";
-import { hideTimerBar } from "@/ui/timer";
 import { $hints, addHint } from "@/ui/hints";
 import { isValidTypingLetter } from "@/ui/typing";
 import { $reset } from "@/ui/actions";
@@ -31,8 +31,8 @@ export function handleLetterInput($currentField) {
       handleLetterMistake({ $currentLetter, enteredLetter, tries });
       handleGameOver({ $currentField, $currentLetter });
       showCorrectWord(); // TODO: move to handleGameOver()
-      // PERF: only hide timer if difficulty implements it
-      hideTimerBar();
+      if (InsaneDifficulty.isApplied())
+        import("@/ui/timer").then(({ hideTimerBar }) => hideTimerBar());
       return;
     }
 
@@ -66,8 +66,6 @@ export function handleLetterInput($currentField) {
     $nextField.focus();
   } else if (tries === TRIES.NONE) {
     handleGameSuccess();
-  } else {
-    // PERF: only hide timer if difficulty implements it
-    hideTimerBar();
-  }
+  } else if (InsaneDifficulty.isApplied())
+    import("@/ui/timer").then(({ hideTimerBar }) => hideTimerBar());
 }

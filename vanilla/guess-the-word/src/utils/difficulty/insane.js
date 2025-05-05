@@ -1,28 +1,31 @@
 import { setWordsByDifficulty } from "@/state/words";
-import { hideTimer, showTimer } from "@/ui/timer";
 import { DIFFICULTY } from "@/consts/difficulty";
 
-let hasBeenApplied = false;
+let isApplied = false;
 
 export const InsaneDifficulty = Object.freeze({
   async apply() {
     const { handleLetterFocus } = await import(
       "@/events/handlers/letter-focus"
     );
+    const { showTimer } = await import("@/ui/timer");
 
-    hasBeenApplied = true;
+    isApplied = true;
     showTimer();
     document.addEventListener("focusin", handleLetterFocus);
     await setWordsByDifficulty(DIFFICULTY.INSANE);
   },
   async unapply() {
-    if (!hasBeenApplied) return;
+    if (!isApplied) return;
 
     const { handleLetterFocus } = await import(
       "@/events/handlers/letter-focus"
     );
+    const { hideTimer } = await import("@/ui/timer");
 
+    isApplied = false;
     hideTimer();
     document.removeEventListener("focusin", handleLetterFocus);
   },
+  isApplied: () => isApplied,
 });

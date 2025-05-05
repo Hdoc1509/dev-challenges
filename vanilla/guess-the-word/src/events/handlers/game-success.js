@@ -6,8 +6,8 @@ import { currentWord } from "@/state/current-word";
 import { difficulty } from "@/state/difficulty";
 import { handleDifficultyComplete } from "./difficulty-complete";
 import { hasCompletedAllDifficulties } from "@/utils/difficulty/completed";
+import { InsaneDifficulty } from "@/utils/difficulty/insane";
 import { showCorrectWord } from "@/ui/word";
-import { hideTimerBar } from "@/ui/timer";
 import { DefinitionPages } from "@/ui/definition/pages";
 import { renderCompletedDifficulty } from "@/ui/definition/difficulty";
 import { $definitionSection } from "@/ui/definition/elements";
@@ -20,7 +20,10 @@ import { DIFFICULTY_GROUP } from "@/consts/difficulty";
 
 export async function handleGameSuccess() {
   showAlert({ color: "success", text: "🎉 Success!" });
-  hideTimerBar();
+  if (InsaneDifficulty.isApplied()) {
+    const { hideTimerBar } = await import("@/ui/timer");
+    hideTimerBar();
+  }
   $reset.disabled = true;
   showCorrectWord();
   $hints.removeAttribute("data-active");
