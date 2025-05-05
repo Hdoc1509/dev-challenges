@@ -13,24 +13,24 @@ export async function applyDifficulty(difficulty) {
   if (difficulty === DIFFICULTY.EASY) {
     await EasyDifficulty.apply();
     MasterDifficulty.unapply();
-    InsaneDifficulty.unapply();
+    await InsaneDifficulty.unapply();
   } else if (difficulty === DIFFICULTY.NORMAL) {
     await NormalDifficulty.apply();
     MasterDifficulty.unapply();
-    InsaneDifficulty.unapply();
+    await InsaneDifficulty.unapply();
   } else if (difficulty === DIFFICULTY.HARD) {
     await HardDifficulty.apply();
     MasterDifficulty.unapply();
-    InsaneDifficulty.unapply();
+    await InsaneDifficulty.unapply();
   } else if (difficulty === DIFFICULTY.MASTER) {
     await HardDifficulty.apply();
     await MasterDifficulty.apply();
-    InsaneDifficulty.unapply();
+    await InsaneDifficulty.unapply();
   } else if (difficulty === DIFFICULTY.EXTREME) {
     await HardDifficulty.apply();
     await MasterDifficulty.apply();
     await ExtremeDifficulty.apply();
-    InsaneDifficulty.unapply();
+    await InsaneDifficulty.unapply();
   } else if (difficulty === DIFFICULTY.INSANE) {
     await HardDifficulty.apply();
     await MasterDifficulty.apply();
@@ -44,7 +44,7 @@ export async function applyDifficulty(difficulty) {
   } else if (difficulty === DIFFICULTY.VOID) {
     await HardDifficulty.apply();
     MasterDifficulty.unapply();
-    InsaneDifficulty.unapply();
+    await InsaneDifficulty.unapply();
     await WhyDifficulty.apply();
     await VoidDifficulty.apply();
   }

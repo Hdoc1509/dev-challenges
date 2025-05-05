@@ -32,7 +32,12 @@ export default defineConfig({
         manualChunks(id) {
           if (id.includes("libs")) return "libs";
           if (id.includes("ui")) return "ui";
-          if (id.includes("src/events")) return "events";
+          if (
+            id.includes("src/events/handlers") &&
+            !id.includes("src/events/handlers/letter-focus")
+          )
+            return "event-handlers";
+          if (id.includes("src/events/listeners")) return "event-listeners";
           if (id.includes("src/consts") && !id.includes("src/consts/words"))
             return "consts";
           if (id.includes("src/utils")) return "utils";
