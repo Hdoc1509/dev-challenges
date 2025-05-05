@@ -1,5 +1,3 @@
-import { parseOldFormat } from "./parse-old";
-import { parseSavedWords } from "./parse";
 import { discoveredWords } from "@/state/discovered-words";
 import { DIFFICULTIES_ALL } from "@/consts/difficulty";
 import { DISCOVERED_WORDS } from "@/consts/discovered-words";
@@ -17,6 +15,8 @@ export const loadSavedWords = async (onLoadedWord) => {
   const savedItem = localStorage.getItem(DISCOVERED_WORDS.LOCAL_STORAGE_KEY);
 
   if (oldSavedItem != null && savedItem == null) {
+    const { parseOldFormat } = await import("./parse-old");
+
     await parseOldFormat(JSON.parse(oldSavedItem), async (parsedItem) => {
       loadWordItem(parsedItem);
       await onLoadedWord(parsedItem);
@@ -29,9 +29,12 @@ export const loadSavedWords = async (onLoadedWord) => {
       DISCOVERED_WORDS.LOCAL_STORAGE_KEY,
       JSON.stringify(data),
     );
-  } else if (savedItem != null)
+  } else if (savedItem != null) {
+    const { parseSavedWords } = await import("./parse");
+
     await parseSavedWords(JSON.parse(savedItem), async (parsedItem) => {
       loadWordItem(parsedItem);
       await onLoadedWord(parsedItem);
     });
+  }
 };
