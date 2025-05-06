@@ -1,4 +1,5 @@
 import { getElementBySelector } from "@lib/dom";
+import "@/styles/game-card/timer.css";
 
 const $timer = getElementBySelector("#timer.timer", HTMLElement);
 
@@ -9,6 +10,7 @@ const CSS = Object.freeze({
     TIMER: Object.freeze({
       BAR: "timer__bar",
     }),
+    // TODO: use [data-active] instead
     TIMER__ACTIVE: "timer--active",
   }),
   VARIABLES: Object.freeze({

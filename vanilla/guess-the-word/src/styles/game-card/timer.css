@@ -8,11 +8,6 @@
   border-radius: 12px;
   background-color: var(--_bg);
   height: 8px;
-
-  display: none;
-}
-.timer--active {
-  display: block;
 }
 
 .timer__bar {
