@@ -5,11 +5,11 @@ import {
   increaseGameResets,
   maxResets,
 } from "@/state/resets";
+import { MasterDifficulty } from "@/utils/difficulty/master";
 import { InsaneDifficulty } from "@/utils/difficulty/insane";
 import { clearUsedLetters } from "@/ui/word";
 import { $triesContainer, TriesIndicator } from "@/ui/tries";
 import { $mistakenLetters, $mistakesContainer } from "@/ui/mistakes";
-import { ResetsIndicator } from "@/ui/resets";
 import { resetLetterFields } from "@/ui/typing";
 import { $reset } from "@/ui/actions";
 
@@ -25,8 +25,10 @@ export async function resetGame() {
   }
   TriesIndicator.reset();
   $mistakenLetters.textContent = "0";
-  if (implementsMaxResets()) ResetsIndicator.goNext();
-
+  if (MasterDifficulty.isApplied())
+    import("@/ui/resets").then(({ ResetsIndicator }) =>
+      ResetsIndicator.goNext(),
+    );
   if (InsaneDifficulty.isApplied())
     import("@/ui/timer").then(({ hideTimerBar }) => hideTimerBar());
 

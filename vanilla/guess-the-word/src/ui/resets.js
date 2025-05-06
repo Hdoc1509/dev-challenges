@@ -3,8 +3,6 @@ import { getElementById, getElementBySelector } from "@lib/dom";
 
 const $currentResets = getElementById("current-resets", HTMLSpanElement);
 
-// TODO: only import if current difficulty implements max resets
-//
 export const $resetsContainer = getElementBySelector(
   ".game-card .info .resets",
   HTMLElement,

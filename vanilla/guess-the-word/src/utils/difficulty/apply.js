@@ -12,15 +12,15 @@ import { DIFFICULTY } from "@/consts/difficulty";
 export async function applyDifficulty(difficulty) {
   if (difficulty === DIFFICULTY.EASY) {
     await EasyDifficulty.apply();
-    MasterDifficulty.unapply();
+    await MasterDifficulty.unapply();
     await InsaneDifficulty.unapply();
   } else if (difficulty === DIFFICULTY.NORMAL) {
     await NormalDifficulty.apply();
-    MasterDifficulty.unapply();
+    await MasterDifficulty.unapply();
     await InsaneDifficulty.unapply();
   } else if (difficulty === DIFFICULTY.HARD) {
     await HardDifficulty.apply();
-    MasterDifficulty.unapply();
+    await MasterDifficulty.unapply();
     await InsaneDifficulty.unapply();
   } else if (difficulty === DIFFICULTY.MASTER) {
     await HardDifficulty.apply();
@@ -43,7 +43,7 @@ export async function applyDifficulty(difficulty) {
     await WhyDifficulty.apply();
   } else if (difficulty === DIFFICULTY.VOID) {
     await HardDifficulty.apply();
-    MasterDifficulty.unapply();
+    await MasterDifficulty.unapply();
     await InsaneDifficulty.unapply();
     await WhyDifficulty.apply();
     await VoidDifficulty.apply();

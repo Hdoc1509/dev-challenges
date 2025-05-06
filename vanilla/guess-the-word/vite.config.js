@@ -31,7 +31,7 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           if (id.includes("libs")) return "libs";
-          if (id.includes("src/ui") && !id.includes("src/ui/timer"))
+          if (id.includes("src/ui") && id.match(/timer|resets/) == null)
             return "ui";
           if (
             id.includes("src/events/handlers") &&

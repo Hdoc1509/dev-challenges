@@ -1,11 +1,11 @@
 import { gameCompleted, setGameCompleted } from "@/state/game-complete";
 import { difficulty } from "@/state/difficulty";
 import { AvailableWords } from "@/state/words";
+import { MasterDifficulty } from "@/utils/difficulty/master";
 import { InsaneDifficulty } from "@/utils/difficulty/insane";
 import { createWordLetters } from "@/ui/word";
 import { $triesContainer } from "@/ui/tries";
 import { $mistakesContainer } from "@/ui/mistakes";
-import { $resetsContainer } from "@/ui/resets";
 import { showCompletedDifficultyMessage } from "@/ui/completed";
 import { $typing } from "@/ui/typing";
 import { $randomWord } from "@/ui/actions";
@@ -23,7 +23,10 @@ export async function handleDifficultyComplete() {
   $randomWord.disabled = true;
   $triesContainer.removeAttribute("data-active");
   $mistakesContainer.removeAttribute("data-active");
-  $resetsContainer.removeAttribute("data-active");
+  if (MasterDifficulty.isApplied()) {
+    const { $resetsContainer } = await import("@/ui/resets");
+    $resetsContainer.removeAttribute("data-active");
+  }
   $typing.replaceChildren();
   $typing.removeAttribute("data-active");
   if (InsaneDifficulty.isApplied()) {
