@@ -17,7 +17,8 @@
 /* TODO: use .hidden class instead of [data-active] */
 .game-card .info .tries:not([data-active]),
 .game-card .info .mistakes:not([data-active]),
-.timer:not(.timer--active){
+.timer:not(.timer--active),
+.game-card .info .resets:not([data-active]) {
   display: none;
 }
 .game-card .info .step-indicator {
@@ -26,9 +27,6 @@
 }
 
 .game-card .info .resets {
-  display: none;
-}
-.game-card .info .resets[data-active] {
   display: flex;
 }
 
