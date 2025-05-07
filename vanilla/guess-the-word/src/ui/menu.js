@@ -12,6 +12,8 @@ export const $definitionsTab = getElementById(
   "definitions-menu-tab",
   HTMLButtonElement,
 );
+
+export const $statsTab = getElementById("stats-menu-tab", HTMLButtonElement);
 export const $statsTabContent = getElementById(
   "stats-menu-tab-content",
   HTMLElement,

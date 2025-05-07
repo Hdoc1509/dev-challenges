@@ -1,6 +1,8 @@
 import { getElementBySelector } from "@lib/dom";
 import { $statsTabContent } from "../menu";
 
+// TODO: handle CateogryElements Map here
+
 /** @typedef StatsCategoryElements
  * @property {HTMLDivElement} $track
  * @property {HTMLSpanElement} $current */

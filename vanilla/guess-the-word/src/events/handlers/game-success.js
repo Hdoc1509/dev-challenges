@@ -4,6 +4,7 @@ import { discoveredWords } from "@/state/discovered-words";
 import { removeAvailableWord, words } from "@/state/words";
 import { currentWord } from "@/state/current-word";
 import { difficulty } from "@/state/difficulty";
+import { hasInitialStatsInitialized } from "@/state/stats";
 import { handleDifficultyComplete } from "./difficulty-complete";
 import { hasCompletedAllDifficulties } from "@/utils/difficulty/completed";
 import { InsaneDifficulty } from "@/utils/difficulty/insane";
@@ -12,7 +13,6 @@ import { DefinitionPages } from "@/ui/definition/pages";
 import { renderCompletedDifficulty } from "@/ui/definition/difficulty";
 import { $definitionSection } from "@/ui/definition/elements";
 import { $hints, $hintsContent } from "@/ui/hints";
-import { renderCurrentStats } from "@/ui/stats/current";
 import { $reset } from "@/ui/actions";
 import { STATS_CATEGORY_TOTAL } from "@/consts/stats";
 import { TOTAL_WORDS } from "@/consts/words/total";
@@ -32,33 +32,44 @@ export async function handleGameSuccess() {
   const totalByDifficulty = TOTAL_WORDS[DIFFICULTY_GROUP[difficulty]];
 
   if (!discoveredWords.has(currentWord)) {
-    $definitionSection.setAttribute("data-active", "");
+    // TODO: move to handleNewWord()
     // NOTE: render of `DefinitionPages` depends on discoveredWords
     const { completed } = addDiscoveredWord(currentWord, { difficulty });
 
+    $definitionSection.setAttribute("data-active", "");
     await removeAvailableWord(currentWord, { difficulty });
     DefinitionPages.prepend(currentWord);
-    renderCurrentStats({
-      category: STATS_CATEGORY_TOTAL,
-      count: discoveredWords.size,
-      total: TOTAL_WORDS.ALL,
-    });
-    renderCurrentStats({
-      category: difficulty,
-      count: totalByDifficulty - words.length,
-      total: totalByDifficulty,
-    });
+
+    if (hasInitialStatsInitialized) {
+      const { renderCurrentStats } = await import("@/ui/stats/current");
+
+      renderCurrentStats({
+        category: STATS_CATEGORY_TOTAL,
+        count: discoveredWords.size,
+        total: TOTAL_WORDS.ALL,
+      });
+      renderCurrentStats({
+        category: difficulty,
+        count: totalByDifficulty - words.length,
+        total: totalByDifficulty,
+      });
+    }
 
     if (completed && words.length === 0) handleDifficultyComplete();
   } else if (!hasCompletedAllDifficulties({ word: currentWord })) {
+    // TODO: move to handleCompletedDifficulty()
     const { completed } = addDiscoveredWord(currentWord, { difficulty });
 
     await removeAvailableWord(currentWord, { difficulty });
-    renderCurrentStats({
-      category: difficulty,
-      count: totalByDifficulty - words.length,
-      total: totalByDifficulty,
-    });
+
+    if (hasInitialStatsInitialized) {
+      const { renderCurrentStats } = await import("@/ui/stats/current");
+      renderCurrentStats({
+        category: difficulty,
+        count: totalByDifficulty - words.length,
+        total: totalByDifficulty,
+      });
+    }
 
     if (completed && words.length === 0) handleDifficultyComplete();
 

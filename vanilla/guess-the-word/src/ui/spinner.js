@@ -6,6 +6,7 @@ const $spinnerTemplate = getElementById(
 );
 
 export const createSpinner = () => $spinnerTemplate.content.cloneNode(true);
+
 /** @param {HTMLElement[]} $elements */
 export const addSpinner = (...$elements) => {
   for (const $element of $elements)

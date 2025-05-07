@@ -19,6 +19,7 @@ const TAB_VALID_SELECTOR = `:scope > .${CLASSES.LINK}[id]:not([id=""])`
   .concat('[role="tab"]')
   .concat(':where([aria-selected="true"], [aria-selected="false"])');
 
+// TODO: add methods to retrieve $tab and $content elements
 export class Tabs {
   /** @type {HTMLElement} */
   #$nav;

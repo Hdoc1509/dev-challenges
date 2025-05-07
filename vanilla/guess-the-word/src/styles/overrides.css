@@ -94,3 +94,7 @@
 #difficulty-menu-tab-content .label[data-disabled] {
   --difficulty-text: var(--_disabled-color);
 }
+
+#stats-menu-tab-content .progress__count[data-loading] {
+  display: none;
+}

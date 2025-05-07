@@ -11,6 +11,7 @@ import {
   $menuClose,
   $difficultyTab,
   $definitionsTab,
+  $statsTab,
 } from "@/ui/menu";
 import { HintsTabs, $hintsTrigger } from "@/ui/hints";
 import { $showDifficulties } from "@/ui/completed";
@@ -26,6 +27,11 @@ export function setupClickListeners() {
     else if ($target === $menuOpen) {
       if (MenuTabs.currentTab === $definitionsTab)
         DefinitionPages.renderPage(DefinitionPagination.currentPage);
+      else if (MenuTabs.currentTab === $statsTab)
+        import("@/ui/stats/initial-stats").then(({ renderInitialStats }) =>
+          renderInitialStats(),
+        );
+
       $menu.showModal();
     } else if ($target === $menuClose) $menu.close();
     else if ($target === $showDefinition) handleShowDefinition();
@@ -36,6 +42,11 @@ export function setupClickListeners() {
     } else if (MenuTabs.isTabLink($target)) {
       if ($target === $definitionsTab)
         DefinitionPages.renderPage(DefinitionPagination.currentPage);
+      else if ($target === $statsTab)
+        import("@/ui/stats/initial-stats").then(({ renderInitialStats }) =>
+          renderInitialStats(),
+        );
+
       MenuTabs.selectTab($target);
     } else if (HintsTabs.isTabLink($target)) HintsTabs.selectTab($target);
     else if (DefinitionPagination.isTrigger($target))
