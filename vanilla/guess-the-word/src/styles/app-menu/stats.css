@@ -2,11 +2,9 @@
   --progress-bg: var(--word-bg);
 }
 .progress[data-stats="easy"] {
-  /* TODO: use darker color */
   --progress-bg: var(--difficulty-easy);
 }
 .progress[data-stats="normal"] {
-  /* TODO: use darker color */
   --progress-bg: var(--difficulty-normal);
 }
 .progress[data-stats="hard"] {
@@ -26,4 +24,7 @@
 }
 .progress[data-stats="void"] {
   --progress-bg: var(--difficulty-void);
+}
+.progress {
+  --progress-description-bg: #0f131f;
 }
