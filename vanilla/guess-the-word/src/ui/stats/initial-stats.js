@@ -9,6 +9,8 @@ import { addSpinner, removeSpinner } from "@/ui/spinner";
 import { DIFFICULTY, DIFFICULTY_GROUP } from "@/consts/difficulty";
 import { STATS_CATEGORY_TOTAL } from "@/consts/stats";
 import { TOTAL_WORDS } from "@/consts/words/total";
+import "@/styles/progress.css";
+import "@/styles/app-menu/stats.css";
 
 export async function renderInitialStats() {
   if (hasInitialStatsInitialized) return;
