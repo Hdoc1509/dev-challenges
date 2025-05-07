@@ -40,20 +40,19 @@ export async function handleGameSuccess() {
     await removeAvailableWord(currentWord, { difficulty });
     DefinitionPages.prepend(currentWord);
 
-    if (hasInitialStatsInitialized) {
-      const { renderCurrentStats } = await import("@/ui/stats/current");
-
-      renderCurrentStats({
-        category: STATS_CATEGORY_TOTAL,
-        count: discoveredWords.size,
-        total: TOTAL_WORDS.ALL,
+    if (hasInitialStatsInitialized)
+      import("@/ui/stats/current").then(({ renderCurrentStats }) => {
+        renderCurrentStats({
+          category: STATS_CATEGORY_TOTAL,
+          count: discoveredWords.size,
+          total: TOTAL_WORDS.ALL,
+        });
+        renderCurrentStats({
+          category: difficulty,
+          count: totalByDifficulty - words.length,
+          total: totalByDifficulty,
+        });
       });
-      renderCurrentStats({
-        category: difficulty,
-        count: totalByDifficulty - words.length,
-        total: totalByDifficulty,
-      });
-    }
 
     if (completed && words.length === 0) handleDifficultyComplete();
   } else if (!hasCompletedAllDifficulties({ word: currentWord })) {
@@ -62,14 +61,14 @@ export async function handleGameSuccess() {
 
     await removeAvailableWord(currentWord, { difficulty });
 
-    if (hasInitialStatsInitialized) {
-      const { renderCurrentStats } = await import("@/ui/stats/current");
-      renderCurrentStats({
-        category: difficulty,
-        count: totalByDifficulty - words.length,
-        total: totalByDifficulty,
-      });
-    }
+    if (hasInitialStatsInitialized)
+      await import("@/ui/stats/current").then(({ renderCurrentStats }) =>
+        renderCurrentStats({
+          category: difficulty,
+          count: totalByDifficulty - words.length,
+          total: totalByDifficulty,
+        }),
+      );
 
     if (completed && words.length === 0) handleDifficultyComplete();
 
