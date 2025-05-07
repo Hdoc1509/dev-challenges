@@ -5,6 +5,7 @@ import {
   setHasInitialStatsInitialized,
 } from "@/state/stats";
 import { getCategoryElements } from "@/ui/stats/category-elements";
+import { renderStatsTotal } from "./total";
 import { addSpinner, removeSpinner } from "@/ui/spinner";
 import { DIFFICULTY, DIFFICULTY_GROUP } from "@/consts/difficulty";
 import { STATS_CATEGORY_TOTAL } from "@/consts/stats";
@@ -35,7 +36,6 @@ export async function renderInitialStats() {
   });
 
   const { renderCurrentStats } = await import("@/ui/stats/current");
-  const { renderStatsTotal } = await import("@/ui/stats/total");
 
   setHasInitialStatsInitialized(true);
   renderCurrentStats({
