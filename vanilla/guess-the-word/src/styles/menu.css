@@ -27,6 +27,8 @@
   align-items: center;
 }
 
+/* TODO: create a `.button` component */
+/* merge these styles with `.actions__control` component */
 .menu-trigger {
   display: grid;
   place-items: center;
