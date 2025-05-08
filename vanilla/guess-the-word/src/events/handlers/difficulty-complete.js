@@ -11,7 +11,7 @@ import { $typing } from "@/ui/typing";
 import { $randomWord } from "@/ui/actions";
 import { disableDifficultyOption } from "@/ui/difficulty-form";
 
-export async function handleDifficultyComplete() {
+export function handleDifficultyComplete() {
   if (!gameCompleted) {
     const isCompleted = Array.from(AvailableWords).every(
       ([, words]) => words?.size === 0,
@@ -21,18 +21,18 @@ export async function handleDifficultyComplete() {
   }
 
   $randomWord.disabled = true;
+
   $triesContainer.removeAttribute("data-active");
   $mistakesContainer.removeAttribute("data-active");
-  if (MasterDifficulty.isApplied()) {
-    const { $resetsContainer } = await import("@/ui/resets");
-    $resetsContainer.removeAttribute("data-active");
-  }
+  if (MasterDifficulty.isApplied())
+    import("@/ui/resets").then(({ $resetsContainer }) =>
+      $resetsContainer.removeAttribute("data-active"),
+    );
+  if (InsaneDifficulty.isApplied())
+    import("@/ui/timer").then(({ hideTimer }) => hideTimer());
   $typing.replaceChildren();
   $typing.removeAttribute("data-active");
-  if (InsaneDifficulty.isApplied()) {
-    const { hideTimer } = await import("@/ui/timer");
-    hideTimer();
-  }
+
   showCompletedDifficultyMessage(difficulty, { allCompleted: gameCompleted });
   createWordLetters("congrats");
   disableDifficultyOption(difficulty);
