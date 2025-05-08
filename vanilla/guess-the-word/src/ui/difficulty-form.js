@@ -1,10 +1,7 @@
 import { getElementById, getElementBySelector } from "@lib/dom";
 import { DIFFICULTIES, DIFFICULTY } from "@/consts/difficulty";
 
-export const $difficultyForm = getElementById(
-  "difficulty-form",
-  HTMLFormElement,
-);
+const $difficultyForm = getElementById("difficulty-form", HTMLFormElement);
 
 export const getSelectedDifficulty = () => {
   const data = new FormData($difficultyForm);
