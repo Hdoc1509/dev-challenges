@@ -1,7 +1,6 @@
 import { setDifficulty } from "@/state/difficulty";
 import { words } from "@/state/words";
 import { generateRandomWord } from "./random-word";
-import { handleDifficultyComplete } from "./difficulty-complete";
 import { applyDifficulty } from "@/utils/difficulty/apply";
 import { hideCompletedDifficultyMessage } from "@/ui/completed";
 
@@ -9,7 +8,10 @@ import { hideCompletedDifficultyMessage } from "@/ui/completed";
 export async function handleDifficultyChange(difficulty) {
   setDifficulty(difficulty);
   await applyDifficulty(difficulty);
-  if (words.length === 0) handleDifficultyComplete();
+  if (words.length === 0)
+    import("./difficulty-complete").then(({ handleDifficultyComplete }) =>
+      handleDifficultyComplete(),
+    );
   else {
     hideCompletedDifficultyMessage();
     generateRandomWord();

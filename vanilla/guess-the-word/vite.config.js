@@ -35,7 +35,7 @@ export default defineConfig({
             return "ui";
           if (
             id.includes("src/events/handlers") &&
-            !id.includes("src/events/handlers/letter-focus")
+            id.match(/letter-focus|difficulty-complete/) == null
           )
             return "event-handlers";
           if (id.includes("src/events/listeners")) return "event-listeners";

@@ -5,7 +5,6 @@ import { removeAvailableWord, words } from "./state/words";
 import { setupEventListeners } from "./events/listeners/setup";
 import { generateRandomWord } from "./events/handlers/random-word";
 import { applyDifficulty } from "./utils/difficulty/apply";
-import { handleDifficultyComplete } from "./events/handlers/difficulty-complete";
 import { DefinitionPages } from "./ui/definition/pages";
 import { $word } from "./ui/word";
 import { $typing } from "./ui/typing";
@@ -26,7 +25,10 @@ import "./styles/main.css";
   await applyDifficulty(difficulty);
   removeSpinner($word, $typing);
 
-  if (words.length === 0) handleDifficultyComplete();
+  if (words.length === 0)
+    import("./events/handlers/difficulty-complete").then(
+      ({ handleDifficultyComplete }) => handleDifficultyComplete(),
+    );
   else generateRandomWord();
   DefinitionPages.setItems(Array.from(discoveredWords.keys()).reverse());
 

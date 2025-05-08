@@ -5,7 +5,6 @@ import { removeAvailableWord, words } from "@/state/words";
 import { currentWord } from "@/state/current-word";
 import { difficulty } from "@/state/difficulty";
 import { hasInitialStatsInitialized } from "@/state/stats";
-import { handleDifficultyComplete } from "./difficulty-complete";
 import { hasCompletedAllDifficulties } from "@/utils/difficulty/completed";
 import { InsaneDifficulty } from "@/utils/difficulty/insane";
 import { showCorrectWord } from "@/ui/word";
@@ -54,7 +53,10 @@ export async function handleGameSuccess() {
         });
       });
 
-    if (completed && words.length === 0) handleDifficultyComplete();
+    if (completed && words.length === 0)
+      import("./difficulty-complete").then(({ handleDifficultyComplete }) =>
+        handleDifficultyComplete(),
+      );
   } else if (!hasCompletedAllDifficulties({ word: currentWord })) {
     // TODO: move to handleCompletedDifficulty()
     const { completed } = addDiscoveredWord(currentWord, { difficulty });
@@ -70,7 +72,10 @@ export async function handleGameSuccess() {
         }),
       );
 
-    if (completed && words.length === 0) handleDifficultyComplete();
+    if (completed && words.length === 0)
+      import("./difficulty-complete").then(({ handleDifficultyComplete }) =>
+        handleDifficultyComplete(),
+      );
 
     if (renderCompletedDifficulty({ word: currentWord, difficulty }))
       $definitionSection.setAttribute("data-active", "");

@@ -3,7 +3,6 @@ import { words } from "@/state/words";
 import { setCurrentWord } from "@/state/current-word";
 import { resetTries } from "@/state/tries";
 import { maxResets, resetGameResets } from "@/state/resets";
-import { handleDifficultyComplete } from "./difficulty-complete";
 import { Random } from "@/utils/random";
 import { MasterDifficulty } from "@/utils/difficulty/master";
 import { InsaneDifficulty } from "@/utils/difficulty/insane";
@@ -23,7 +22,12 @@ import {
 import { RESETS } from "@/consts/resets";
 
 export function generateRandomWord() {
-  if (words.length === 0) return handleDifficultyComplete();
+  if (words.length === 0) {
+    import("./difficulty-complete").then(({ handleDifficultyComplete }) =>
+      handleDifficultyComplete(),
+    );
+    return;
+  }
 
   const randomWord = words.length === 1 ? words[0] : Random.element(words);
 
