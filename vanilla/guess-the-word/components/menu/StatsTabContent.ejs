@@ -1,11 +1,7 @@
-<!-- TODO: loop trough STAT_CATEGORIES -->
-<!-- this will be inject by `ejs` -->
-<%- include('Progress', { category: 'total' }) %>
-<%- include('Progress', { category: 'easy' }) %>
-<%- include('Progress', { category: 'normal' }) %>
-<%- include('Progress', { category: 'hard' }) %>
-<%- include('Progress', { category: 'master' }) %>
-<%- include('Progress', { category: 'extreme' }) %>
-<%- include('Progress', { category: 'insane' }) %>
-<%- include('Progress', { category: 'why', onTitle: title => `${title}?` }) %>
-<%- include('Progress', { category: 'void' }) %>
+<% for (const category of STATS_CATEGORIES) { %>
+<% if (category === DIFFICULTY.WHY) { %>
+<%- include('Progress', { category, onTitle: title => `${title}?` }) %>
+<% } else { %>
+<%- include('Progress', { category }) %>
+<% } %>
+<% } %>
