@@ -28,7 +28,3 @@
 .progress {
   --progress-description-bg: #0f131f;
 }
-
-#stats-menu-tab-content .progress__count[data-loading] {
-  display: none;
-}
