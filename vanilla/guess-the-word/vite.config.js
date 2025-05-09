@@ -1,6 +1,13 @@
 import { resolve } from "node:path";
 import { defineConfig } from "vite";
 import { createHtmlPlugin } from "vite-plugin-html";
+import { DIFFICULTY } from "./src/consts/difficulty";
+import { STATS_CATEGORY_TOTAL } from "./src/consts/stats";
+
+const STATS_CATEGORIES = /** @type {const} */ ([
+  STATS_CATEGORY_TOTAL,
+  ...Object.values(DIFFICULTY),
+]);
 
 const __dirname = import.meta.dirname;
 
@@ -18,6 +25,8 @@ export default defineConfig({
       inject: {
         data: {
           capitalize: (word) => word[0].toUpperCase() + word.slice(1),
+          DIFFICULTY,
+          STATS_CATEGORIES,
         },
         ejsOptions: {
           views: [resolve(__dirname, "components")],
