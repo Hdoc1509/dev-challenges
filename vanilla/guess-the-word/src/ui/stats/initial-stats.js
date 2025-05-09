@@ -4,8 +4,6 @@ import {
   hasInitialStatsInitialized,
   setHasInitialStatsInitialized,
 } from "@/state/stats";
-import { getCategoryElements } from "./category-elements";
-import { addSpinner } from "@/ui/spinner";
 import { DIFFICULTY, DIFFICULTY_GROUP } from "@/consts/difficulty";
 import { STATS_CATEGORY_TOTAL } from "@/consts/stats";
 import { TOTAL_WORDS } from "@/consts/words/total";
@@ -14,19 +12,6 @@ export async function renderInitialStats() {
   if (hasInitialStatsInitialized) return;
 
   const difficulties = Object.values(DIFFICULTY);
-  const categories = /** @type {const} */ ([
-    STATS_CATEGORY_TOTAL,
-    ...difficulties,
-  ]);
-
-  categories.forEach((category) => {
-    const $current = getCategoryElements(category).$current;
-
-    $current.textContent = "";
-    // TODO: spinner will be rendered by default by using `ejs` template
-    // NOTE: spinner will be removed by renderCurrentStats()
-    addSpinner($current);
-  });
 
   const { renderCurrentStats } = await import("./current");
 

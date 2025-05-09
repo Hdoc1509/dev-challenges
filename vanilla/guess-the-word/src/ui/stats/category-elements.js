@@ -5,7 +5,7 @@ import { $statsTabContent } from "../menu";
 
 /** @typedef StatsCategoryElements
  * @property {HTMLDivElement} $track
- * @property {HTMLSpanElement} $current */
+ * @property {HTMLDivElement} $current */
 
 /** @param {import("@/consts/stats").StatsCategory} category
  * @returns {StatsCategoryElements} */
@@ -22,7 +22,7 @@ export function getCategoryElements(category) {
   );
   const $current = getElementBySelector(
     ":scope .progress__current",
-    HTMLSpanElement,
+    HTMLDivElement,
     $stats,
   );
 
