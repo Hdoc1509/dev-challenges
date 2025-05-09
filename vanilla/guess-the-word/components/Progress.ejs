@@ -1,0 +1,15 @@
+<div class="progress" data-stats="<%= category %>">
+  <div class="progress__track"></div>
+  <div class="progress__description">
+    <span class="progress__title">
+      <!-- prettier-ignore -->
+      <% const title = capitalize(category) %>
+      <%= locals.onTitle?.(title) ?? title %>:
+    </span>
+    <div class="progress__count">
+      <div class="progress__current"><%- include('Spinner') %></div>
+      /
+      <span class="progress__total">0</span>
+    </div>
+  </div>
+</div>
