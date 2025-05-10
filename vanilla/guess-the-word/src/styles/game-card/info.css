@@ -23,7 +23,7 @@
 }
 .game-card .info .step-indicator {
   --step-color: var(--word-bg);
-  --step-color-completed: var(--primary);
+  --step-color-completed: var(--secondary);
 }
 
 .game-card .info .resets {
@@ -43,7 +43,7 @@
 .game-card .info .definition__open,
 .game-card .info .menu-trigger {
   /* .menu-trigger */
-  --menu-trigger-bg: var(--primary);
+  --menu-trigger-bg: var(--secondary);
   --menu-trigger-padding: 0.5em 0.75em;
   --menu-trigger-scale: 1.075;
   --menu-trigger-size: 1.5em;

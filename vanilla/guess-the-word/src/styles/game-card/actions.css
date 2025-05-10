@@ -6,7 +6,7 @@
 }
 .game-card .actions__control {
   padding: 0.5em 2.5em;
-  background-color: var(--secondary);
+  background-color: var(--primary);
   border: none;
   border-radius: 8px;
   /* TODO: apply same outline to other buttons */

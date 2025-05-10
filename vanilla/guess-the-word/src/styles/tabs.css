@@ -40,7 +40,7 @@
   --icon-size: 1.25em;
 }
 .tab-nav__trigger[aria-selected="true"] {
-  --tab-item-highlight: var(--primary);
+  --tab-item-highlight: var(--secondary);
   --tab-link-font-weight: bold;
   background-color: rgba(100, 100, 100, 0.15);
 }

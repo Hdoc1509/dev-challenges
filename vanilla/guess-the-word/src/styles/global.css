@@ -10,9 +10,9 @@
 
   /* colors */
   --text: #f2f5f9;
-  --primary: #7429c6;
-  --primary-transparent: #7429c68f;
-  --secondary: #c951e7;
+  --secondary: #7429c6;
+  --secondary-transparent: #7429c68f;
+  --primary: #c951e7;
   --black: #030616;
   --letter-border: #4a5567;
   --letter-border-current: #672171;
@@ -52,7 +52,7 @@
   --alert-time-bar-duration: 4s;
 
   --timer-bg: var(--word-bg);
-  --timer-bar-bg: var(--secondary);
+  --timer-bar-bg: var(--primary);
 
   --bg-image-url: url("/bg-guess-the-word.jpg");
 }
@@ -102,7 +102,7 @@ body {
 
   background:
     var(--bg-image-url) no-repeat,
-    linear-gradient(to right, var(--primary), var(--secondary)),
+    linear-gradient(to right, var(--secondary), var(--primary)),
     var(--card-bg) /* navigation bar buttons */;
   background-size: cover;
   background-position: center;
@@ -138,13 +138,13 @@ button > svg {
 }
 
 .not-yet {
-  color: var(--secondary);
+  color: var(--primary);
   font-size: 1.25rem;
   text-align: center;
 }
 
 .plus-sign {
-  color: var(--secondary);
+  color: var(--primary);
   font-size: 1.25em;
   line-height: 1;
   align-self: center;

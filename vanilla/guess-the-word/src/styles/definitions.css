@@ -28,10 +28,10 @@
 }
 .definition[open],
 .definition:hover {
-  --definition-border-color: var(--primary);
+  --definition-border-color: var(--secondary);
 }
 .definition:hover .definition__label::marker {
-  color: var(--secondary);
+  color: var(--primary);
 }
 .definition[data-status="loading"] .definition__content {
   --error-display: none;
@@ -129,7 +129,7 @@
   border-radius: 8px;
   border: none;
   padding: 0.25em 0.75em;
-  background-color: var(--primary);
+  background-color: var(--secondary);
   margin-top: 0.5em;
 
   font-weight: bold;

@@ -25,10 +25,10 @@
   aspect-ratio: 1;
   outline: 2px solid transparent;
   border-radius: 8px;
-  border: 2px solid var(--primary);
+  border: 2px solid var(--secondary);
   background-color: transparent;
 
-  color: var(--secondary);
+  color: var(--primary);
   --icon-size: 1.25em;
 }
 .pagination__trigger:hover,
@@ -36,7 +36,7 @@
   background-color: var(--_hover);
 }
 .pagination__trigger:focus {
-  outline-color: var(--primary-transparent);
+  outline-color: var(--secondary-transparent);
 }
 .pagination__trigger[disabled] {
   border-color: var(--word-bg);
@@ -49,7 +49,7 @@
   margin-right: 6px;
   outline: none;
   border-radius: 8px;
-  border: 2px solid var(--primary);
+  border: 2px solid var(--secondary);
   background: transparent;
 
   color: var(--text);
@@ -59,7 +59,7 @@
   background-color: var(--_hover);
 }
 .pagination__current:focus {
-  background-color: var(--primary);
+  background-color: var(--secondary);
 }
 .pagination__total {
   margin-left: 6px;
