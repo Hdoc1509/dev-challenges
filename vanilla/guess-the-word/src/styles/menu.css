@@ -35,7 +35,7 @@
 
   background-color: var(--menu-trigger-bg);
   border: none;
-  border-radius: 7px;
+  border-radius: 6px;
   margin-left: auto;
   padding: var(--menu-trigger-padding, 0.075em 0.15em);
 
