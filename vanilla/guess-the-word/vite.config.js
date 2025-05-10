@@ -1,13 +1,19 @@
 import { resolve } from "node:path";
 import { defineConfig } from "vite";
 import { createHtmlPlugin } from "vite-plugin-html";
-import { DIFFICULTY } from "./src/consts/difficulty";
+import { TOTAL_WORDS } from "./src/consts/words/total";
+import { DIFFICULTY, DIFFICULTY_GROUP } from "./src/consts/difficulty";
 import { STATS_CATEGORY_TOTAL } from "./src/consts/stats";
 
-const STATS_CATEGORIES = /** @type {const} */ ([
+// TODO: move to ./vite-config/ejs.js
+const data = {
+  capitalize: (word) => word[0].toUpperCase() + word.slice(1),
+  DIFFICULTY,
+  DIFFICULTY_GROUP,
+  STATS_CATEGORIES: [STATS_CATEGORY_TOTAL, ...Object.values(DIFFICULTY)],
   STATS_CATEGORY_TOTAL,
-  ...Object.values(DIFFICULTY),
-]);
+  TOTAL_WORDS,
+};
 
 const __dirname = import.meta.dirname;
 
@@ -23,11 +29,7 @@ export default defineConfig({
         removeEmptyAttributes: (attribute) => attribute === "ejs",
       },
       inject: {
-        data: {
-          capitalize: (word) => word[0].toUpperCase() + word.slice(1),
-          DIFFICULTY,
-          STATS_CATEGORIES,
-        },
+        data,
         ejsOptions: {
           views: [resolve(__dirname, "components")],
         },
@@ -38,6 +40,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
+        // TODO: move to ./vite-config/build.js
         manualChunks(id) {
           if (id.includes("libs")) return "libs";
           if (id.includes("src/ui") && id.match(/timer|resets|stats/) == null)

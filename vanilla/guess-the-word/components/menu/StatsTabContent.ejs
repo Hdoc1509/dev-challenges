@@ -1,7 +1,10 @@
 <% for (const category of STATS_CATEGORIES) { %>
+<% const total = category === STATS_CATEGORY_TOTAL ?
+     TOTAL_WORDS.ALL :
+     TOTAL_WORDS[DIFFICULTY_GROUP[category]] %>
 <% if (category === DIFFICULTY.WHY) { %>
-<%- include('Progress', { category, onTitle: title => `${title}?` }) %>
+<%- include('Progress', { category, total, onTitle: title => `${title}?` }) %>
 <% } else { %>
-<%- include('Progress', { category }) %>
+<%- include('Progress', { category, total }) %>
 <% } %>
 <% } %>

@@ -8,11 +8,7 @@ import { applyDifficulty } from "./utils/difficulty/apply";
 import { DefinitionPages } from "./ui/definition/pages";
 import { $word } from "./ui/word";
 import { $typing } from "./ui/typing";
-import { renderStatsTotal } from "./ui/stats/total";
 import { addSpinner, removeSpinner } from "./ui/spinner";
-import { TOTAL_WORDS } from "./consts/words/total";
-import { DIFFICULTY, DIFFICULTY_GROUP } from "./consts/difficulty";
-import { STATS_CATEGORY_TOTAL } from "./consts/stats";
 import "@lib/alert/styles.css";
 import "@fontsource-variable/outfit";
 import "@fontsource/outfit/400.css";
@@ -34,15 +30,6 @@ import "./styles/main.css";
       ({ handleDifficultyComplete }) => handleDifficultyComplete(),
     );
   else generateRandomWord();
-
-  // TODO: render total stats with `ejs` template
-  renderStatsTotal({ category: STATS_CATEGORY_TOTAL, total: TOTAL_WORDS.ALL });
-  Object.values(DIFFICULTY).forEach((difficulty) =>
-    renderStatsTotal({
-      category: difficulty,
-      total: TOTAL_WORDS[DIFFICULTY_GROUP[difficulty]],
-    }),
-  );
 
   DefinitionPages.setItems(Array.from(discoveredWords.keys()).reverse());
 
