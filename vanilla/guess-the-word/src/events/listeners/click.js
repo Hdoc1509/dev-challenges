@@ -27,10 +27,6 @@ export function setupClickListeners() {
     else if ($target === $menuOpen) {
       if (MenuTabs.currentTab === $definitionsTab)
         DefinitionPages.renderPage(DefinitionPagination.currentPage);
-      else if (MenuTabs.currentTab === $statsTab)
-        import("@/ui/stats/initial-stats").then(({ renderInitialStats }) =>
-          renderInitialStats(),
-        );
 
       $menu.showModal();
     } else if ($target === $menuClose) $menu.close();
