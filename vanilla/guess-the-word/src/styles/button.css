@@ -1,0 +1,23 @@
+.button {
+  display: flex;
+  align-items: center;
+
+  padding: var(--button-padding, 0.5em 2.5em);
+  background-color: var(--button-bg, var(--primary));
+  border: none;
+  border-radius: var(--button-radius, 8px);
+
+  font-weight: var(--button-font-weight);
+  font-size: var(--button-font-size);
+
+  transition: transform var(--button-transform-duration, 0.2s) ease;
+}
+.button:hover,
+.button:focus {
+  transform: scale(var(--button-hover-scale, 1.05));
+}
+
+.button:disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}

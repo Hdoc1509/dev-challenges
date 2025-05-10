@@ -43,12 +43,10 @@
 .game-card .info .definition__open,
 .game-card .info .menu-trigger {
   /* .menu-trigger */
-  --menu-trigger-bg: var(--secondary);
   --menu-trigger-padding: 0.5em 0.75em;
-  --menu-trigger-scale: 1.075;
+  --button-hover-scale: 1.075;
   --menu-trigger-size: 1.5em;
 
-  display: flex;
   gap: 4px;
 
   margin: 0 auto;

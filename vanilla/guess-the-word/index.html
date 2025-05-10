@@ -23,7 +23,7 @@
         </picture>
         <button
           id="menu-open"
-          class="menu-trigger"
+          class="menu-trigger button | push-right"
           aria-label="Open menu"
           data-menu="app-menu"
         >
@@ -61,7 +61,7 @@
           </button>
         </section>
         <section class="hints">
-          <button class="menu-trigger">
+          <button class="menu-trigger button">
             <span class="menu-trigger__label">Hints</span>
             <%- include("icon/ProgressHelp") %>
           </button>
@@ -81,8 +81,10 @@
       </section>
       <section id="typing" class="typing" data-active></section>
       <section class="actions">
-        <button id="random" class="actions__control">Random</button>
-        <button id="reset" class="actions__control" disabled>Reset</button>
+        <button id="random" class="actions__control button">Random</button>
+        <button id="reset" class="actions__control button" disabled>
+          Reset
+        </button>
       </section>
     </main>
     <div id="alert" class="alert">

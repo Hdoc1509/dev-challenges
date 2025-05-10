@@ -16,7 +16,6 @@
   grid-template-areas: ". logo menu-trigger";
   align-items: center;
 
-  --menu-trigger-bg: var(--secondary);
   --menu-trigger-size: 1.75rem;
 }
 .game-card__header > .menu-trigger {

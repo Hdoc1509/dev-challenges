@@ -5,28 +5,15 @@
   flex-wrap: wrap;
 }
 .game-card .actions__control {
-  padding: 0.5em 2.5em;
-  background-color: var(--primary);
-  border: none;
-  border-radius: 8px;
-  /* TODO: apply same outline to other buttons */
   outline: 2px solid var(--_control-outline-color);
-
-  font-weight: 600;
-  font-size: var(--button-fs);
-
+  --button-font-weight: 600;
   filter: var(--button-shadow);
-
-  transition: transform 0.2s ease;
 }
+/* TODO: use same hover/focus rules as <Button /> from @hrc/button */
 .game-card .actions__control:hover,
 .game-card .actions__control:focus {
   transform: translateY(-4px) scale(1.05);
   --_control-outline-color: var(--text);
-}
-.game-card .actions__control:disabled {
-  pointer-events: none;
-  opacity: 0.5;
 }
 
 /* TODO: move to ./typing.css */

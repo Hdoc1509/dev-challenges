@@ -27,24 +27,11 @@
   align-items: center;
 }
 
-/* TODO: create a `.button` component */
-/* merge these styles with `.actions__control` component */
 .menu-trigger {
-  display: grid;
-  place-items: center;
-
-  background-color: var(--menu-trigger-bg);
-  border: none;
-  border-radius: 6px;
-  margin-left: auto;
-  padding: var(--menu-trigger-padding, 0.15em);
-
-  transition: transform 0.2s ease;
+  --button-radius: 6px;
+  --button-padding: var(--menu-trigger-padding, 0.15em);
+  --button-bg: var(--secondary);
+  --button-hover-scale: 1.125;
 
   --icon-size: var(--menu-trigger-size, 1rem);
-}
-/* TODO: use same hover/focus rules as <Button /> from @hrc/button */
-.menu-trigger:hover,
-.menu-trigger:focus {
-  transform: scale(var(--menu-trigger-scale, 1.125));
 }
