@@ -37,7 +37,7 @@
   border: none;
   border-radius: 6px;
   margin-left: auto;
-  padding: var(--menu-trigger-padding, 0.075em 0.15em);
+  padding: var(--menu-trigger-padding, 0.15em);
 
   transition: transform 0.2s ease;
 
