@@ -10,7 +10,7 @@
   border: none;
   border-radius: 8px;
   /* TODO: apply same outline to other buttons */
-  outline: 3px solid var(--_control-outline-color);
+  outline: 2px solid var(--_control-outline-color);
 
   font-weight: 600;
   font-size: var(--button-fs);
@@ -29,6 +29,7 @@
   opacity: 0.5;
 }
 
+/* TODO: move to ./typing.css */
 @keyframes blink {
   0%,
   50%,
