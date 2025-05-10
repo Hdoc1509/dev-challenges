@@ -6,6 +6,6 @@ export const $definitionSection = getElementBySelector(
 );
 
 export const $showDefinition = getElementBySelector(
-  ".info .definition__open",
+  ".info .menu-trigger",
   HTMLButtonElement,
 );

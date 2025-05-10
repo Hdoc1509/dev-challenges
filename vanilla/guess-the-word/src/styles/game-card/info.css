@@ -40,7 +40,6 @@
   display: none;
 }
 
-.game-card .info .definition__open,
 .game-card .info .menu-trigger {
   /* .menu-trigger */
   --menu-trigger-padding: 0.5em 0.75em;
