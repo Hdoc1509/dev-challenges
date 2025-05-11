@@ -118,29 +118,20 @@
   font-weight: bold;
   text-align: center;
 }
-/* TODO: create button[data-variant="secondary"] with these styles */
-/* almost all of these is also used for menu buttons */
 .definition__retry {
-  display: var(--retry-display, flex);
+  --button-display: var(--retry-display, flex);
   align-self: center;
-  align-items: center;
   gap: 4px;
 
-  border-radius: 8px;
-  border: none;
-  padding: 0.25em 0.75em;
-  background-color: var(--secondary);
+  --button-padding: 0.25em 0.75em;
+  --button-bg: var(--secondary);
   margin-top: 0.5em;
 
-  font-weight: bold;
+  --button-font-weight: bold;
 
-  transition: transform 0.2s ease;
+  --button-hover-scale: var(--menu-trigger-scale, 1.125);
 
   --icon-size: 1.25em;
-}
-.definition__retry:hover,
-.definition__retry:focus {
-  transform: scale(var(--menu-trigger-scale, 1.125));
 }
 .definition__badge {
   margin-left: 0.5em;

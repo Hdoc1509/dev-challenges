@@ -1,5 +1,5 @@
 .button {
-  display: flex;
+  display: var(--button-display, flex);
   align-items: center;
 
   padding: var(--button-padding, 0.5em 2.5em);
