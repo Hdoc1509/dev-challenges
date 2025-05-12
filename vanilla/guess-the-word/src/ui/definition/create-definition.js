@@ -3,6 +3,7 @@ import { discoveredWords } from "@/state/discovered-words";
 import { DefinitionElement, DefinitionItem } from "@/state/definition";
 import { handleDefinitionOpen } from "@/events/handlers/definition-open";
 import { getDifficultiesOfWord } from "@/utils/difficulty/of-word";
+import { capitalize } from "@/utils/string";
 import { addNewBadge } from "./badge";
 import { DIFFICULTIES_ALL } from "@/consts/difficulty";
 
@@ -10,9 +11,6 @@ const $definitionTemplate = getElementById(
   "definition-template",
   HTMLTemplateElement,
 );
-
-/** @param {string} word */
-const capitalize = (word) => word[0].toUpperCase() + word.slice(1);
 
 /**
  * @param {string} word
