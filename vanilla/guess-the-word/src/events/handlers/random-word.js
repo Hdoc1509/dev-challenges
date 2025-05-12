@@ -1,8 +1,8 @@
-import { resetAlert } from "@lib/alert";
 import { words } from "@/state/words";
 import { setCurrentWord } from "@/state/current-word";
 import { resetTries } from "@/state/tries";
 import { maxResets, resetGameResets } from "@/state/resets";
+import { isAlertInitialized } from "@/state/alert";
 import { Random } from "@/utils/random";
 import { MasterDifficulty } from "@/utils/difficulty/master";
 import { InsaneDifficulty } from "@/utils/difficulty/insane";
@@ -32,7 +32,8 @@ export function generateRandomWord() {
   const randomWord = words.length === 1 ? words[0] : Random.element(words);
 
   setCurrentWord(randomWord);
-  resetAlert();
+  if (isAlertInitialized)
+    import("@lib/alert").then(({ resetAlert }) => resetAlert());
   resetTries();
   resetGameResets();
 

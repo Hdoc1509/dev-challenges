@@ -1,6 +1,6 @@
-import { showAlert } from "@lib/alert";
 import { discoveredWords } from "@/state/discovered-words";
 import { currentWord } from "@/state/current-word";
+import { setIsAlertInitialized } from "@/state/alert";
 import { handleNewWord } from "./new-word";
 import { handleNewDifficulty } from "./new-difficulty";
 import { hasCompletedAllDifficulties } from "@/utils/difficulty/completed";
@@ -10,7 +10,10 @@ import { $hints, $hintsContent } from "@/ui/hints";
 import { $reset } from "@/ui/actions";
 
 export async function handleGameSuccess() {
-  showAlert({ color: "success", text: "🎉 Success!" });
+  import("@lib/alert").then(({ showAlert }) => {
+    setIsAlertInitialized(true);
+    showAlert({ color: "success", text: "🎉 Success!" });
+  });
   if (InsaneDifficulty.isApplied()) {
     const { hideTimerBar } = await import("@/ui/timer");
     hideTimerBar();
