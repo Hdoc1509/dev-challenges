@@ -1,0 +1,15 @@
+import { TOTAL_WORDS } from "../src/consts/words/total";
+import { DIFFICULTY, DIFFICULTY_GROUP } from "../src/consts/difficulty";
+import { STATS_CATEGORY_TOTAL } from "../src/consts/stats";
+
+export const EJS_CONFIG = {
+  data: {
+    // TODO: move to @/utils/strings.js
+    capitalize: (word) => word[0].toUpperCase() + word.slice(1),
+    DIFFICULTY,
+    DIFFICULTY_GROUP,
+    STATS_CATEGORIES: [STATS_CATEGORY_TOTAL, ...Object.values(DIFFICULTY)],
+    STATS_CATEGORY_TOTAL,
+    TOTAL_WORDS,
+  },
+};
