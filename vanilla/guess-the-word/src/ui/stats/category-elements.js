@@ -1,15 +1,20 @@
 import { getElementBySelector } from "@lib/dom";
 import { $statsTabContent } from "../menu";
 
-// TODO: handle CateogryElements Map here
-
 /** @typedef StatsCategoryElements
  * @property {HTMLDivElement} $track
  * @property {HTMLDivElement} $current */
 
+/** @type {Map<import("@/consts/stats").StatsCategory, StatsCategoryElements>} */
+const Elements = new Map([]);
+
 /** @param {import("@/consts/stats").StatsCategory} category
  * @returns {StatsCategoryElements} */
 export function getCategoryElements(category) {
+  const $elements = Elements.get(category);
+
+  if ($elements != null) return $elements;
+
   const $stats = getElementBySelector(
     `:scope > .progress[data-stats="${category}"]`,
     HTMLDivElement,
@@ -26,5 +31,6 @@ export function getCategoryElements(category) {
     $stats,
   );
 
+  Elements.set(category, { $track, $current });
   return { $track, $current };
 }
