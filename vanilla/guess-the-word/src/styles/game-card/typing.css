@@ -68,3 +68,15 @@
 .game-card .typing__letter > input:disabled {
   pointer-events: none;
 }
+
+@keyframes blink {
+  0%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  75% {
+    opacity: 0;
+  }
+}
