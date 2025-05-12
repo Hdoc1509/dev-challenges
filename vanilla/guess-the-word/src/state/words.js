@@ -12,7 +12,7 @@ export const AvailableWords = new Map([
   [DIFFICULTY.VOID, null],
 ]);
 
-/** Only contains words available for current difficulty
+/** Available words for current difficulty
  * @type {readonly string[]} */
 export let words = [];
 
