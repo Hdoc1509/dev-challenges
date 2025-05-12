@@ -20,7 +20,7 @@ import "./styles/main.css";
   addSpinner($word, $typing);
   await loadSavedWords(async ({ word, difficulties }) => {
     for (const difficulty of difficulties)
-      await removeAvailableWord(word, { difficulty });
+      await removeAvailableWord(word, { difficulty, isInitialization: true });
   });
   await applyDifficulty(difficulty);
   removeSpinner($word, $typing);

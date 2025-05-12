@@ -31,9 +31,13 @@ export const setWordsByDifficulty = async (difficulty) => {
 };
 
 /** @param {string} word
- * @param {{ difficulty: import("@/consts/difficulty").Difficulty }} extraParams */
-// PERF: avoid updating `words` state if not needed, i.e when initializing app
-export const removeAvailableWord = async (word, { difficulty }) => {
+ * @param {Object} extraParams
+ * @param {import("@/consts/difficulty").Difficulty} extraParams.difficulty
+ * @param {boolean} [extraParams.isInitialization] */
+export const removeAvailableWord = async (
+  word,
+  { difficulty, isInitialization = false },
+) => {
   const savedWords = AvailableWords.get(difficulty);
 
   if (savedWords == null) {
@@ -44,10 +48,10 @@ export const removeAvailableWord = async (word, { difficulty }) => {
 
     wordsToUse.delete(word);
     AvailableWords.set(difficulty, wordsToUse);
-    words = Array.from(wordsToUse);
+    if (!isInitialization) words = Array.from(wordsToUse);
   } else {
     const hasBeenRemoved = savedWords.delete(word);
 
-    if (hasBeenRemoved) words = Array.from(savedWords);
+    if (!isInitialization && hasBeenRemoved) words = Array.from(savedWords);
   }
 };
