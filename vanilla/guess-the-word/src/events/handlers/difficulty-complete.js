@@ -27,7 +27,7 @@ export function handleDifficultyComplete() {
   $mistakesContainer.classList.add(CLASSES.HIDDEN);
   if (MasterDifficulty.isApplied())
     import("@/ui/resets").then(({ $resetsContainer }) =>
-      $resetsContainer.removeAttribute("data-active"),
+      $resetsContainer.classList.add(CLASSES.HIDDEN),
     );
   if (InsaneDifficulty.isApplied())
     import("@/ui/timer").then(({ hideTimer }) => hideTimer());

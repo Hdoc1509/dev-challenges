@@ -14,10 +14,6 @@
   row-gap: 0.25rem;
   flex-wrap: wrap;
 }
-/* TODO: use .hidden class instead of [data-active] */
-.game-card .info .resets:not([data-active]) {
-  display: none;
-}
 .game-card .info .step-indicator {
   --step-color: var(--word-bg);
   --step-color-completed: var(--secondary);
