@@ -10,6 +10,7 @@ import { showCompletedDifficultyMessage } from "@/ui/completed";
 import { $typing } from "@/ui/typing/elements";
 import { $randomWord } from "@/ui/actions";
 import { disableDifficultyOption } from "@/ui/difficulty-form";
+import { CLASSES } from "@/consts/css-classes";
 
 export function handleDifficultyComplete() {
   if (!gameCompleted) {
@@ -31,7 +32,7 @@ export function handleDifficultyComplete() {
   if (InsaneDifficulty.isApplied())
     import("@/ui/timer").then(({ hideTimer }) => hideTimer());
   $typing.replaceChildren();
-  $typing.removeAttribute("data-active");
+  $typing.classList.add(CLASSES.HIDDEN);
 
   showCompletedDifficultyMessage(difficulty, { allCompleted: gameCompleted });
   createWordLetters("congrats");

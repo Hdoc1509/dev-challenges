@@ -5,4 +5,5 @@ export const CLASSES = Object.freeze({
     LETTER__MISTAKEN: "typing__letter--mistaken",
     LETTER__CORRECT: "typing__letter--correct",
   }),
+  HIDDEN: "hidden",
 });
