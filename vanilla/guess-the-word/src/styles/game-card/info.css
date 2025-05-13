@@ -15,7 +15,6 @@
   flex-wrap: wrap;
 }
 /* TODO: use .hidden class instead of [data-active] */
-.timer:not(.timer--active),
 .game-card .info .resets:not([data-active]) {
   display: none;
 }

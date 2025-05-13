@@ -1,4 +1,5 @@
 import { getElementBySelector } from "@lib/dom";
+import { CLASSES } from "@/consts/css-classes";
 import "@/styles/game-card/timer.css";
 
 const $timer = getElementBySelector("#timer.timer", HTMLElement);
@@ -10,8 +11,6 @@ const CSS = Object.freeze({
     TIMER: Object.freeze({
       BAR: "timer__bar",
     }),
-    // TODO: use [data-active] instead
-    TIMER__ACTIVE: "timer--active",
   }),
   VARIABLES: Object.freeze({
     TIME_BAR_DURATION: "--timer-bar-duration",
@@ -24,9 +23,8 @@ export const resetTimer = () => {
   $timerBar.classList.add(CSS.CLASSES.TIMER.BAR);
 };
 
-export const showTimer = () => $timer.classList.add(CSS.CLASSES.TIMER__ACTIVE);
-export const hideTimer = () =>
-  $timer.classList.remove(CSS.CLASSES.TIMER__ACTIVE);
+export const showTimer = () => $timer.classList.remove(CLASSES.HIDDEN);
+export const hideTimer = () => $timer.classList.add(CLASSES.HIDDEN);
 
 export const showTimerBar = () =>
   $timerBar.style.setProperty("display", "block");
