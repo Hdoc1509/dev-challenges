@@ -17,7 +17,7 @@ const ATTRIBUTES = Object.freeze({
 const TAB_VALID_SELECTOR = `:scope > .${CLASSES.LINK}[id]:not([id=""])`
   .concat('[aria-controls$="-tab-content"]')
   .concat('[role="tab"]')
-  .concat(':where([aria-selected="true"], [aria-selected="false"])');
+  .concat('[aria-selected]:not([aria-selected=""])');
 
 // TODO: add methods to retrieve $tab and $content elements
 export class Tabs {
