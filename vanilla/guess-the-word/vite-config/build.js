@@ -1,7 +1,7 @@
 export const BUILD_CONFIG = {
   /** @param {string} id */
   manualChunks(id) {
-    if (id.includes("libs")) return "libs";
+    if (id.includes("libs") && id.match(/alert|fetcher/) == null) return "libs";
     if (id.includes("src/ui") && id.match(/timer|resets|stats/) == null)
       return "ui";
     if (
