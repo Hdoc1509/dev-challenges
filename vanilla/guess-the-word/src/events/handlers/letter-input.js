@@ -5,6 +5,7 @@ import { handleLetterMistake } from "./letter-mistake";
 import { resetGame } from "./reset-game";
 import { handleGameOver } from "./game-over";
 import { handleGameSuccess } from "./game-success";
+import { goNextLetter } from "./go-next-letter";
 import { InsaneDifficulty } from "@/utils/difficulty/insane";
 import { getLetter } from "@/utils/get-letter";
 import { showCorrectWord, useLetter } from "@/ui/word";
@@ -17,7 +18,6 @@ import { TRIES } from "@/consts/tries";
 /** @param {HTMLInputElement} $currentField */
 export function handleLetterInput($currentField) {
   const retrievedLetter = getLetter($currentField);
-
   if (retrievedLetter == null) return;
 
   const { letterIndex, lowercaseLetter, enteredLetter, $currentLetter } =
@@ -55,17 +55,8 @@ export function handleLetterInput($currentField) {
   $currentField.readOnly = true;
   $currentLetter.classList.remove(CLASSES.TYPING.LETTER__CURRENT);
 
-  if (isValidTypingLetter($nextLetter)) {
-    // TODO: move to goNextLetter() handler
-    const $nextField = /** @type {HTMLInputElement} */ (
-      $nextLetter.firstElementChild
-    );
-
-    $nextLetter.classList.add(CLASSES.TYPING.LETTER__CURRENT);
-    $nextField.disabled = false;
-    $nextField.focus();
-  } else if (tries === TRIES.NONE) {
-    handleGameSuccess();
-  } else if (InsaneDifficulty.isApplied())
+  if (isValidTypingLetter($nextLetter)) goNextLetter($nextLetter);
+  else if (tries === TRIES.NONE) handleGameSuccess();
+  else if (InsaneDifficulty.isApplied())
     import("@/ui/timer").then(({ hideTimerBar }) => hideTimerBar());
 }

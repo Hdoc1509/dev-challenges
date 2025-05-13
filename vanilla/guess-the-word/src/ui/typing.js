@@ -11,6 +11,8 @@ export const $letterTemplate = getElementById(
 /** @type {HTMLInputElement[]} */
 const $letterFields = [];
 
+// TODO: split into ./letter-fields.js and ./validation.js
+
 /** @param {number} quantity */
 export function createLetterFields(quantity) {
   $letterFields.length = 0;
