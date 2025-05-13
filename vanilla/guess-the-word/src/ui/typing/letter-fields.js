@@ -1,17 +1,12 @@
 import { getElementById, getElementBySelector } from "@lib/dom";
+import { $typing } from "./elements";
 import { TypingLetterIndex } from "@/state/typing-letter";
-import { $typing } from "./typing/elements";
 import { CLASSES } from "@/consts/css-classes";
 
-export const $letterTemplate = getElementById(
-  "letter-template",
-  HTMLTemplateElement,
-);
+const $letterTemplate = getElementById("letter-template", HTMLTemplateElement);
 
 /** @type {HTMLInputElement[]} */
 const $letterFields = [];
-
-// TODO: split into ./letter-fields.js and ./validation.js
 
 /** @param {number} quantity */
 export function createLetterFields(quantity) {

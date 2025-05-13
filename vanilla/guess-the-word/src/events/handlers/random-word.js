@@ -10,7 +10,7 @@ import { scrambleWord } from "@/utils/scramble";
 import { createWordLetters } from "@/ui/word";
 import { $triesContainer, TriesIndicator } from "@/ui/tries";
 import { $mistakenLetters, $mistakesContainer } from "@/ui/mistakes";
-import { createLetterFields } from "@/ui/typing";
+import { createLetterFields } from "@/ui/typing/letter-fields";
 import { $reset } from "@/ui/actions";
 import { $definitionSection } from "@/ui/definition/elements";
 import {

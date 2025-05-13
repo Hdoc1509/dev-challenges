@@ -10,7 +10,7 @@ import { InsaneDifficulty } from "@/utils/difficulty/insane";
 import { clearUsedLetters } from "@/ui/word";
 import { $triesContainer, TriesIndicator } from "@/ui/tries";
 import { $mistakenLetters, $mistakesContainer } from "@/ui/mistakes";
-import { resetLetterFields } from "@/ui/typing";
+import { resetLetterFields } from "@/ui/typing/letter-fields";
 import { $reset } from "@/ui/actions";
 
 export async function resetGame() {
