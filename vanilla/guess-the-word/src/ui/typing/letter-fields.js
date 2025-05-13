@@ -1,6 +1,7 @@
 import { getElementById, getElementBySelector } from "@lib/dom";
-import { $typing } from "./elements";
 import { TypingLetterIndex } from "@/state/typing-letter";
+import { createLetterLabel } from "./letter-label";
+import { $typing } from "./elements";
 import { CLASSES } from "@/consts/css-classes";
 
 const $letterTemplate = getElementById("letter-template", HTMLTemplateElement);
@@ -13,7 +14,7 @@ export function createLetterFields(quantity) {
   $letterFields.length = 0;
   $typing.replaceChildren();
 
-  for (let i = 0; i < quantity; i++) {
+  for (let idx = 0; idx < quantity; idx++) {
     const $letterClone = /** @type {DocumentFragment} */ (
       $letterTemplate.content.cloneNode(true)
     );
@@ -22,15 +23,10 @@ export function createLetterFields(quantity) {
       HTMLInputElement,
       $letterClone,
     );
-    // TODO: move logic to insert hidden label to a util
-    const $hiddenLabel = document.createElement("span");
 
-    $field.setAttribute("aria-labelledby", `letter-label-${i}`);
-    $hiddenLabel.textContent = `Letter ${i + 1}`;
-    $hiddenLabel.classList.add("visually-hidden");
-    $hiddenLabel.setAttribute("id", `letter-label-${i}`);
-    $field.after($hiddenLabel);
-    TypingLetterIndex.set($field, i);
+    $field.setAttribute("aria-labelledby", `letter-label-${idx}`);
+    $field.after(createLetterLabel(idx));
+    TypingLetterIndex.set($field, idx);
     $letterFields.push($field);
     $typing.appendChild($letterClone);
   }
