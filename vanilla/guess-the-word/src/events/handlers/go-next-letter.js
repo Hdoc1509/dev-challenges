@@ -1,4 +1,4 @@
-import { isValidLetterField } from "@/ui/typing";
+import { isValidLetterField } from "@/ui/typing/validation";
 import { CLASSES } from "@/consts/css-classes";
 
 /** @param {HTMLSpanElement} $nextLetter */

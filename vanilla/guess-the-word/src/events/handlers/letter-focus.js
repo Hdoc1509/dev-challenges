@@ -1,6 +1,6 @@
 import { TypingLetterIndex } from "@/state/typing-letter";
 import { resetTimer, setTimerDuration, showTimerBar } from "@/ui/timer";
-import { isValidLetterField } from "@/ui/typing";
+import { isValidLetterField } from "@/ui/typing/validation";
 import { Random } from "@/utils/random";
 import { handleLetterInput } from "./letter-input";
 
@@ -13,7 +13,6 @@ let controller = null;
 /** @param {FocusEvent} e */
 export const handleLetterFocus = (e) => {
   const $target = e.target;
-
   if (!isValidLetterField($target)) return;
 
   const letterIdx = TypingLetterIndex.get($target);

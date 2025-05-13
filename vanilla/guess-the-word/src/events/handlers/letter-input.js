@@ -10,7 +10,7 @@ import { InsaneDifficulty } from "@/utils/difficulty/insane";
 import { getLetter } from "@/utils/get-letter";
 import { showCorrectWord, useLetter } from "@/ui/word";
 import { $hints, addHint } from "@/ui/hints";
-import { isValidTypingLetter } from "@/ui/typing";
+import { isValidTypingLetter } from "@/ui/typing/validation";
 import { $reset } from "@/ui/actions";
 import { CLASSES } from "@/consts/css-classes";
 import { TRIES } from "@/consts/tries";
