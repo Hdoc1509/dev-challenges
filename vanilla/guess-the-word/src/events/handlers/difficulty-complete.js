@@ -7,7 +7,7 @@ import { createWordLetters } from "@/ui/word";
 import { $triesContainer } from "@/ui/tries";
 import { $mistakesContainer } from "@/ui/mistakes";
 import { showCompletedDifficultyMessage } from "@/ui/completed";
-import { $typing } from "@/ui/typing";
+import { $typing } from "@/ui/typing/elements";
 import { $randomWord } from "@/ui/actions";
 import { disableDifficultyOption } from "@/ui/difficulty-form";
 

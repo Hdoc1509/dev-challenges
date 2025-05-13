@@ -1,8 +1,8 @@
 import { getElementById, getElementBySelector } from "@lib/dom";
 import { TypingLetterIndex } from "@/state/typing-letter";
+import { $typing } from "./typing/elements";
 import { CLASSES } from "@/consts/css-classes";
 
-export const $typing = getElementById("typing", HTMLElement);
 export const $letterTemplate = getElementById(
   "letter-template",
   HTMLTemplateElement,

@@ -7,7 +7,7 @@ import { generateRandomWord } from "./events/handlers/random-word";
 import { applyDifficulty } from "./utils/difficulty/apply";
 import { DefinitionPages } from "./ui/definition/pages";
 import { $word } from "./ui/word";
-import { $typing } from "./ui/typing";
+import { $typing } from "./ui/typing/elements.js";
 import { addSpinner, removeSpinner } from "./ui/spinner";
 import "@lib/alert/styles.css";
 import "@fontsource-variable/outfit";
