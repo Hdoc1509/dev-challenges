@@ -12,6 +12,7 @@ import { $triesContainer, TriesIndicator } from "@/ui/tries";
 import { $mistakenLetters, $mistakesContainer } from "@/ui/mistakes";
 import { resetLetterFields } from "@/ui/typing/letter-fields";
 import { $reset } from "@/ui/actions";
+import { CLASSES } from "@/consts/css-classes";
 
 export async function resetGame() {
   resetTries();
@@ -20,7 +21,7 @@ export async function resetGame() {
   clearUsedLetters();
 
   if (implementsMaxResets() && gameResets === maxResets) {
-    $triesContainer.removeAttribute("data-active");
+    $triesContainer.classList.add(CLASSES.HIDDEN);
     $mistakesContainer.removeAttribute("data-active");
   }
   TriesIndicator.reset();

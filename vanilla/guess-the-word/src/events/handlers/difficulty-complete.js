@@ -23,7 +23,7 @@ export function handleDifficultyComplete() {
 
   $randomWord.disabled = true;
 
-  $triesContainer.removeAttribute("data-active");
+  $triesContainer.classList.add(CLASSES.HIDDEN);
   $mistakesContainer.removeAttribute("data-active");
   if (MasterDifficulty.isApplied())
     import("@/ui/resets").then(({ $resetsContainer }) =>

@@ -20,6 +20,7 @@ import {
   clearHints,
 } from "@/ui/hints";
 import { RESETS } from "@/consts/resets";
+import { CLASSES } from "@/consts/css-classes";
 
 export function generateRandomWord() {
   if (words.length === 0) {
@@ -42,10 +43,10 @@ export function generateRandomWord() {
 
   if (maxResets === RESETS.MAX.VOID) {
     $mistakesContainer.removeAttribute("data-active");
-    $triesContainer.removeAttribute("data-active");
+    $triesContainer.classList.add(CLASSES.HIDDEN);
   } else {
     $mistakesContainer.setAttribute("data-active", "");
-    $triesContainer.setAttribute("data-active", "");
+    $triesContainer.classList.remove(CLASSES.HIDDEN);
   }
   TriesIndicator.reset();
   if (MasterDifficulty.isApplied())
