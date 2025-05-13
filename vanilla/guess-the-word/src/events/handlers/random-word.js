@@ -42,10 +42,10 @@ export function generateRandomWord() {
   createLetterFields(randomWord.length);
 
   if (maxResets === RESETS.MAX.VOID) {
-    $mistakesContainer.removeAttribute("data-active");
+    $mistakesContainer.classList.add(CLASSES.HIDDEN);
     $triesContainer.classList.add(CLASSES.HIDDEN);
   } else {
-    $mistakesContainer.setAttribute("data-active", "");
+    $mistakesContainer.classList.remove(CLASSES.HIDDEN);
     $triesContainer.classList.remove(CLASSES.HIDDEN);
   }
   TriesIndicator.reset();

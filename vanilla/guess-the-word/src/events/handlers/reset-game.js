@@ -22,7 +22,7 @@ export async function resetGame() {
 
   if (implementsMaxResets() && gameResets === maxResets) {
     $triesContainer.classList.add(CLASSES.HIDDEN);
-    $mistakesContainer.removeAttribute("data-active");
+    $mistakesContainer.classList.add(CLASSES.HIDDEN);
   }
   TriesIndicator.reset();
   $mistakenLetters.textContent = "0";

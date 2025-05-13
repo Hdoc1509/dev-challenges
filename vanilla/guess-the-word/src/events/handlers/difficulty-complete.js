@@ -24,7 +24,7 @@ export function handleDifficultyComplete() {
   $randomWord.disabled = true;
 
   $triesContainer.classList.add(CLASSES.HIDDEN);
-  $mistakesContainer.removeAttribute("data-active");
+  $mistakesContainer.classList.add(CLASSES.HIDDEN);
   if (MasterDifficulty.isApplied())
     import("@/ui/resets").then(({ $resetsContainer }) =>
       $resetsContainer.removeAttribute("data-active"),
