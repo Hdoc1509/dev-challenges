@@ -1,6 +1,7 @@
 import { resolve } from "node:path";
 import { defineConfig } from "vite";
 import { createHtmlPlugin } from "vite-plugin-html";
+import { ejsReloadPlugin } from "./vite-plugin/ejs-reload.js";
 import { BUILD_CONFIG } from "./vite-config/build.js";
 import { EJS_CONFIG } from "./vite-config/ejs.js";
 
@@ -25,6 +26,7 @@ export default defineConfig({
         },
       },
     }),
+    ejsReloadPlugin({ dirname: __dirname }),
   ],
   base: "/dev-challenges/guess-the-word",
   build: {
