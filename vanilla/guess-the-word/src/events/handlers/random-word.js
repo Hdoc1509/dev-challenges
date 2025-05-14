@@ -13,7 +13,7 @@ import { $mistakenLetters, $mistakesContainer } from "@/ui/mistakes";
 import { createLetterFields } from "@/ui/typing/letter-fields";
 import { $reset } from "@/ui/actions";
 import { $definitionSection } from "@/ui/definition/elements";
-import { clearHints } from "@/ui/hints";
+import { clearHints } from "@/ui/hints/clear";
 import { $hints, $hintsContent, $hintsTriggerLabel } from "@/ui/hints/elements";
 import { RESETS } from "@/consts/resets";
 import { CLASSES } from "@/consts/css-classes";
