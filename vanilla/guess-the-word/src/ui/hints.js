@@ -37,12 +37,14 @@ export const HintsTabs = new Tabs({
 });
 
 const $allHintsList = getElementBySelector(
-  "#all-hints-tab-content > .hints-list",
+  ":scope > #all-hints-tab-content > .hints-list",
   HTMLUListElement,
+  $hintsTabContent,
 );
 const $correctHintsList = getElementBySelector(
-  "#correct-hints-tab-content > .hints-list",
+  ":scope > #correct-hints-tab-content > .hints-list",
   HTMLUListElement,
+  $hintsTabContent,
 );
 
 /** @param {number} lettersCount */
