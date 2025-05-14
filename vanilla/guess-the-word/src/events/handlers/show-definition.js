@@ -4,6 +4,7 @@ import { $definitionsTab, $menu, MenuTabs } from "@/ui/menu";
 import { $definitionSection } from "@/ui/definition/elements";
 import { DefinitionPages } from "@/ui/definition/pages";
 import { DefinitionPagination } from "@/ui/definition/pagination";
+import { CLASSES } from "@/consts/css-classes";
 
 export function handleShowDefinition() {
   const $details = DefinitionElement.get(currentWord);
@@ -19,7 +20,7 @@ export function handleShowDefinition() {
 
   DefinitionPagination.selectPage(targetPage);
 
-  $definitionSection.removeAttribute("data-active");
+  $definitionSection.classList.add(CLASSES.HIDDEN);
   $menu.showModal();
   MenuTabs.selectTab($definitionsTab);
   $details.scrollIntoView();

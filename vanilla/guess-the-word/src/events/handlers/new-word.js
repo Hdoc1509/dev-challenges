@@ -9,13 +9,14 @@ import { $definitionSection } from "@/ui/definition/elements";
 import { STATS_CATEGORY_TOTAL } from "@/consts/stats";
 import { TOTAL_WORDS } from "@/consts/words/total";
 import { DIFFICULTY_GROUP } from "@/consts/difficulty";
+import { CLASSES } from "@/consts/css-classes";
 
 export async function handleNewWord() {
   // NOTE: render of `DefinitionPages` depends on discoveredWords
   const { completed } = addDiscoveredWord(currentWord, { difficulty });
   const totalWords = TOTAL_WORDS[DIFFICULTY_GROUP[difficulty]];
 
-  $definitionSection.setAttribute("data-active", "");
+  $definitionSection.classList.remove(CLASSES.HIDDEN);
   await removeAvailableWord(currentWord, { difficulty });
   DefinitionPages.prepend(currentWord);
 

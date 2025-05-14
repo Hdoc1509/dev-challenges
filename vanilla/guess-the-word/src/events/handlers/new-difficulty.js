@@ -7,6 +7,7 @@ import { renderCompletedDifficulty } from "@/ui/definition/difficulty";
 import { $definitionSection } from "@/ui/definition/elements";
 import { TOTAL_WORDS } from "@/consts/words/total";
 import { DIFFICULTY_GROUP } from "@/consts/difficulty";
+import { CLASSES } from "@/consts/css-classes";
 
 export async function handleNewDifficulty() {
   const { completed } = addDiscoveredWord(currentWord, { difficulty });
@@ -29,5 +30,5 @@ export async function handleNewDifficulty() {
     );
 
   if (renderCompletedDifficulty({ word: currentWord, difficulty }))
-    $definitionSection.setAttribute("data-active", "");
+    $definitionSection.classList.remove(CLASSES.HIDDEN);
 }

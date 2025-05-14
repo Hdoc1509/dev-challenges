@@ -27,7 +27,6 @@
 .game-card .info .hints {
   grid-column: 1 / -1;
 }
-.game-card .info .definition:not([data-active]),
 .game-card .info .hints:not([data-active]),
 .info .difficulty-completed:not([data-active]) {
   display: none;
