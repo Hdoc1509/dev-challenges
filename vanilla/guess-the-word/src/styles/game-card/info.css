@@ -73,6 +73,6 @@
 .info .difficulty-completed [data-primary] {
   font-size: 1.5em;
 }
-.info .difficulty-completed .menu-trigger {
+.info .difficulty-completed .button {
   margin-top: 0.5rem;
 }

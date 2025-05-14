@@ -25,7 +25,7 @@ const $completedName = getElementBySelector(
 );
 
 export const $showDifficulties = getElementBySelector(
-  ":scope > .menu-trigger",
+  ":scope > .button",
   HTMLButtonElement,
   $difficultyCompleted,
 );
