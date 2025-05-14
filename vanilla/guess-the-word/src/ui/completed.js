@@ -1,4 +1,5 @@
 import { getElementBySelector } from "@lib/dom";
+import { CLASSES } from "@/consts/css-classes";
 
 const $difficultyCompleted = getElementBySelector(
   ".info .difficulty-completed",
@@ -35,11 +36,11 @@ export const showCompletedDifficultyMessage = (
   difficulty,
   { allCompleted = false } = {},
 ) => {
-  $difficultyCompleted.setAttribute("data-active", "");
+  $difficultyCompleted.classList.remove(CLASSES.HIDDEN);
 
   if (allCompleted) {
     $primaryMessage.textContent = "You have completed all the difficulties!";
-    $secondaryMessage.classList.add("hidden");
+    $secondaryMessage.classList.add(CLASSES.HIDDEN);
     $showDifficulties.remove();
     return;
   }
@@ -49,5 +50,5 @@ export const showCompletedDifficultyMessage = (
 };
 
 export const hideCompletedDifficultyMessage = () => {
-  $difficultyCompleted.removeAttribute("data-active");
+  $difficultyCompleted.classList.add(CLASSES.HIDDEN);
 };

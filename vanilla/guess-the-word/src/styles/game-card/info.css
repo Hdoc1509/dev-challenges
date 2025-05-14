@@ -27,9 +27,6 @@
 .game-card .info .hints {
   grid-column: 1 / -1;
 }
-.info .difficulty-completed:not([data-active]) {
-  display: none;
-}
 
 .game-card .info .menu-trigger {
   /* .menu-trigger */
