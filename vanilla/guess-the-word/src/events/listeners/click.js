@@ -13,7 +13,7 @@ import {
   $definitionsTab,
   $statsTab,
 } from "@/ui/menu";
-import { HintsTabs, $hintsTrigger } from "@/ui/hints";
+import { HintsTabs, $hintsTrigger } from "@/ui/hints/elements";
 import { $showDifficulties } from "@/ui/completed";
 import { $randomWord, $reset } from "@/ui/actions";
 import { $showDefinition } from "@/ui/definition/elements";

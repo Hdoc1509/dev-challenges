@@ -1,6 +1,6 @@
 import { setIsAlertInitialized } from "@/state/alert";
 import { clearUsedLetters } from "@/ui/word";
-import { $hints, $hintsContent } from "@/ui/hints";
+import { $hints, $hintsContent } from "@/ui/hints/elements";
 import { $reset } from "@/ui/actions";
 import { CLASSES } from "@/consts/css-classes";
 

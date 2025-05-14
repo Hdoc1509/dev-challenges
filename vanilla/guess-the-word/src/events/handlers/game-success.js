@@ -6,7 +6,7 @@ import { handleNewDifficulty } from "./new-difficulty";
 import { hasCompletedAllDifficulties } from "@/utils/difficulty/completed";
 import { InsaneDifficulty } from "@/utils/difficulty/insane";
 import { showCorrectWord } from "@/ui/word";
-import { $hints, $hintsContent } from "@/ui/hints";
+import { $hints, $hintsContent } from "@/ui/hints/elements";
 import { $reset } from "@/ui/actions";
 import { CLASSES } from "@/consts/css-classes";
 

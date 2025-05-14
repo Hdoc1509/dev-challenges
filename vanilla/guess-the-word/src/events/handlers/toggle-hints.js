@@ -1,4 +1,4 @@
-import { $hintsContent, $hintsTriggerLabel } from "@/ui/hints";
+import { $hintsContent, $hintsTriggerLabel } from "@/ui/hints/elements";
 import { CLASSES } from "@/consts/css-classes";
 
 export function handleToggleHints() {

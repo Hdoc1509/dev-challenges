@@ -1,51 +1,10 @@
-import { getElementById, getElementBySelector } from "@lib/dom";
 import { gameResets } from "@/state/resets";
 import { currentWord } from "@/state/current-word";
-import { Tabs } from "@/tabs";
+import { $allHintsList, $correctHintsList } from "./hints/elements";
 
 // TODO: split into multiple files
-// - ./hints/elements.js
-// - ./hints/group.js
 // - ./hints/add.js
 // - ./hints/clear.js
-
-export const $hints = getElementBySelector(".info .hints", HTMLElement);
-
-export const $hintsTrigger = getElementBySelector(
-  ".menu-trigger",
-  HTMLButtonElement,
-  $hints,
-);
-export const $hintsTriggerLabel = getElementBySelector(
-  ".menu-trigger__label",
-  HTMLElement,
-  $hintsTrigger,
-);
-
-export const $hintsContent = getElementBySelector(
-  ".hints__content",
-  HTMLElement,
-  $hints,
-);
-
-const $hintsTabNav = getElementById("hints-tab-nav", HTMLDivElement);
-const $hintsTabContent = getElementById("hints-tab-content", HTMLDivElement);
-
-export const HintsTabs = new Tabs({
-  $nav: $hintsTabNav,
-  $content: $hintsTabContent,
-});
-
-const $allHintsList = getElementBySelector(
-  ":scope > #all-hints-tab-content > .hints-list",
-  HTMLUListElement,
-  $hintsTabContent,
-);
-const $correctHintsList = getElementBySelector(
-  ":scope > #correct-hints-tab-content > .hints-list",
-  HTMLUListElement,
-  $hintsTabContent,
-);
 
 /** @param {number} lettersCount */
 const createHintsGroup = (lettersCount) => {
