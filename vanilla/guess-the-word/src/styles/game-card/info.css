@@ -45,10 +45,10 @@
   flex-direction: column;
   gap: 1rem;
 }
-.game-card .hints .menu-trigger {
+.game-card .hints .button {
   --icon-size: 1.875em;
 }
-.game-card .hints .menu-trigger__label {
+.game-card .hints .button__label {
   pointer-events: none;
 }
 .game-card .hints__content {

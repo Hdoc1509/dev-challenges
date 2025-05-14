@@ -4,12 +4,12 @@ import { getElementById, getElementBySelector } from "@lib/dom";
 export const $hints = getElementBySelector(".info .hints", HTMLElement);
 
 export const $hintsTrigger = getElementBySelector(
-  ".menu-trigger",
+  ":scope > .button",
   HTMLButtonElement,
   $hints,
 );
 export const $hintsTriggerLabel = getElementBySelector(
-  ".menu-trigger__label",
+  ":scope > .button__label",
   HTMLElement,
   $hintsTrigger,
 );
