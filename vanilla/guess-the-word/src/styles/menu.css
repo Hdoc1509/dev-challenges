@@ -33,13 +33,3 @@
 
   --icon-size: 1.75rem;
 }
-
-/* TODO: remove .menu-trigger selector */
-.menu-trigger {
-  --button-radius: 6px;
-  --button-padding: var(--menu-trigger-padding, 0.15em);
-  --button-bg: var(--secondary);
-  --button-hover-scale: 1.125;
-
-  --icon-size: var(--menu-trigger-size, 1rem);
-}

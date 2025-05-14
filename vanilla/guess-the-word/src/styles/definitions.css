@@ -129,7 +129,7 @@
 
   --button-font-weight: bold;
 
-  --button-hover-scale: var(--menu-trigger-scale, 1.125);
+  --button-hover-scale: 1.125;
 
   --icon-size: 1.25em;
 }
