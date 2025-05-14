@@ -15,12 +15,7 @@
   transform: translateY(0);
 }
 
-.menu .menu-trigger {
-  --menu-trigger-bg: var(--secondary);
-  --menu-trigger-size: 1.75rem;
-  --menu-trigger-padding: 0.075em;
-  color: var(--text);
-}
+/* TODO: move to ./menu.css */
 .menu .tab-content {
   overflow-y: auto;
 }

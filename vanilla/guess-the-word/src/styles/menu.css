@@ -18,12 +18,23 @@
   grid-template-rows: auto 1fr;
   gap: 1rem;
 }
+
 .menu__header {
   display: flex;
   gap: 1rem;
   align-items: center;
 }
+.menu__header #menu-close.button {
+  --button-radius: 6px;
+  --button-bg: var(--secondary);
+  --button-padding: 0.075em;
+  --button-hover-scale: 1.125;
+  color: var(--text);
 
+  --icon-size: 1.75rem;
+}
+
+/* TODO: remove .menu-trigger selector */
 .menu-trigger {
   --button-radius: 6px;
   --button-padding: var(--menu-trigger-padding, 0.15em);
