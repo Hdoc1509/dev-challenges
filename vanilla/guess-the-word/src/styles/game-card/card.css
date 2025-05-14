@@ -15,8 +15,6 @@
   grid-template-columns: 1fr auto 1fr;
   grid-template-areas: ". logo menu-open";
   align-items: center;
-
-  --menu-trigger-size: 1.75rem;
 }
 .game-card__header #menu-open.button {
   grid-area: menu-open;
