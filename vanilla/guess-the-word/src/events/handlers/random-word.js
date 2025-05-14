@@ -57,8 +57,8 @@ export function generateRandomWord() {
   if (InsaneDifficulty.isApplied())
     import("@/ui/timer").then(({ hideTimerBar }) => hideTimerBar());
   $definitionSection.classList.add(CLASSES.HIDDEN);
-  $hints.removeAttribute("data-active");
-  $hintsContent.removeAttribute("data-active");
+  $hints.classList.add(CLASSES.HIDDEN);
+  $hintsContent.classList.add(CLASSES.HIDDEN);
   $hintsTriggerLabel.textContent = "Show hints";
   clearHints();
   $reset.disabled = true;

@@ -46,7 +46,7 @@ export function handleLetterInput($currentField) {
   }
 
   if (tries <= TRIES.FIRST && gameResets <= maxResets)
-    $hints.setAttribute("data-active", "");
+    $hints.classList.remove(CLASSES.HIDDEN);
 
   const $nextLetter = $currentLetter.nextElementSibling;
 

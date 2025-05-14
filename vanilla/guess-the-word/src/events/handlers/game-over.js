@@ -19,6 +19,6 @@ export function handleGameOver({ $currentField, $currentLetter }) {
   $currentField.readOnly = true;
   $currentLetter.classList.remove(CLASSES.TYPING.LETTER__CURRENT);
   clearUsedLetters();
-  $hints.removeAttribute("data-active");
-  $hintsContent.removeAttribute("data-active");
+  $hints.classList.add(CLASSES.HIDDEN);
+  $hintsContent.classList.add(CLASSES.HIDDEN);
 }

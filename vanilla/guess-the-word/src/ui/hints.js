@@ -3,6 +3,12 @@ import { gameResets } from "@/state/resets";
 import { currentWord } from "@/state/current-word";
 import { Tabs } from "@/tabs";
 
+// TODO: split into multiple files
+// - ./hints/elements.js
+// - ./hints/group.js
+// - ./hints/add.js
+// - ./hints/clear.js
+
 export const $hints = getElementBySelector(".info .hints", HTMLElement);
 
 export const $hintsTrigger = getElementBySelector(

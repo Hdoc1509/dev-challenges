@@ -8,6 +8,7 @@ import { InsaneDifficulty } from "@/utils/difficulty/insane";
 import { showCorrectWord } from "@/ui/word";
 import { $hints, $hintsContent } from "@/ui/hints";
 import { $reset } from "@/ui/actions";
+import { CLASSES } from "@/consts/css-classes";
 
 export async function handleGameSuccess() {
   import("@lib/alert").then(({ showAlert }) => {
@@ -20,8 +21,8 @@ export async function handleGameSuccess() {
   }
   $reset.disabled = true;
   showCorrectWord();
-  $hints.removeAttribute("data-active");
-  $hintsContent.removeAttribute("data-active");
+  $hints.classList.add(CLASSES.HIDDEN);
+  $hintsContent.classList.add(CLASSES.HIDDEN);
 
   if (!discoveredWords.has(currentWord)) handleNewWord();
   else if (!hasCompletedAllDifficulties({ word: currentWord }))

@@ -1,13 +1,12 @@
 import { $hintsContent, $hintsTriggerLabel } from "@/ui/hints";
-
-const ATTRIBUTE = "data-active";
+import { CLASSES } from "@/consts/css-classes";
 
 export function handleToggleHints() {
-  if ($hintsContent.hasAttribute(ATTRIBUTE)) {
-    $hintsContent.removeAttribute(ATTRIBUTE);
+  if (!$hintsContent.classList.contains(CLASSES.HIDDEN)) {
+    $hintsContent.classList.add(CLASSES.HIDDEN);
     $hintsTriggerLabel.textContent = "Show hints";
   } else {
-    $hintsContent.setAttribute(ATTRIBUTE, "");
+    $hintsContent.classList.remove(CLASSES.HIDDEN);
     $hintsTriggerLabel.textContent = "Hide hints";
   }
 }

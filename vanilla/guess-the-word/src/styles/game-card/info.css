@@ -27,7 +27,6 @@
 .game-card .info .hints {
   grid-column: 1 / -1;
 }
-.game-card .info .hints:not([data-active]),
 .info .difficulty-completed:not([data-active]) {
   display: none;
 }
@@ -55,12 +54,9 @@
   pointer-events: none;
 }
 .game-card .hints__content {
-  display: none;
+  display: flex;
   flex-direction: column;
   gap: 1rem;
-}
-.game-card .hints__content[data-active] {
-  display: flex;
 }
 .game-card .hints__content .tab-nav {
   justify-content: center;
