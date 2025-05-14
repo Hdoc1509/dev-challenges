@@ -7,6 +7,18 @@
   font-weight: 600;
 }
 
+.game-card .info .button {
+  gap: 4px;
+
+  margin-inline: auto;
+  --button-radius: 6px;
+  --button-padding: 0.5em 0.75em;
+  --button-bg: var(--secondary);
+  --button-hover-scale: 1.075;
+
+  --icon-size: 1.5em;
+}
+
 .game-card .info .tries,
 .game-card .info .resets {
   display: flex;
@@ -26,17 +38,6 @@
 .game-card .info .definition,
 .game-card .info .hints {
   grid-column: 1 / -1;
-}
-
-.game-card .info .menu-trigger {
-  /* .menu-trigger */
-  --menu-trigger-padding: 0.5em 0.75em;
-  --button-hover-scale: 1.075;
-  --menu-trigger-size: 1.5em;
-
-  gap: 4px;
-
-  margin: 0 auto;
 }
 
 .game-card .info .hints {

@@ -6,6 +6,7 @@ export const $definitionSection = getElementBySelector(
 );
 
 export const $showDefinition = getElementBySelector(
-  ".info .menu-trigger",
+  ":scope > .button",
   HTMLButtonElement,
+  $definitionSection,
 );
