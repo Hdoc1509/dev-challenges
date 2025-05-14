@@ -40,7 +40,7 @@ export const showCompletedDifficultyMessage = (
 
   if (allCompleted) {
     $primaryMessage.textContent = "You have completed all the difficulties!";
-    $secondaryMessage.classList.add(CLASSES.HIDDEN);
+    $secondaryMessage.remove();
     $showDifficulties.remove();
     return;
   }
