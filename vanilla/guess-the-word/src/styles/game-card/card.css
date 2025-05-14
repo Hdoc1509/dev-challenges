@@ -18,8 +18,15 @@
 
   --menu-trigger-size: 1.75rem;
 }
-.game-card__header > .menu-trigger {
+.game-card__header #menu-open.button {
   grid-area: menu-trigger;
+
+  --button-radius: 6px;
+  --button-padding: 0.15em;
+  --button-bg: var(--secondary);
+  --button-hover-scale: 1.125;
+
+  --icon-size: 1.75rem;
 }
 
 .game-card__logo {
