@@ -14,12 +14,3 @@
 .alert--open {
   transform: translateY(0);
 }
-
-/* TODO: move to ./menu.css */
-.menu .tab-content {
-  overflow-y: auto;
-}
-.menu__header nav {
-  flex-grow: 1;
-  overflow-x: scroll;
-}

@@ -33,3 +33,11 @@
 
   --icon-size: 1.75rem;
 }
+.menu__header nav {
+  flex-grow: 1;
+  overflow-x: scroll;
+}
+
+.menu .tab-content {
+  overflow-y: auto;
+}
