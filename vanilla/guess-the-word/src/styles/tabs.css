@@ -7,15 +7,7 @@
 
   padding: 0;
 }
-.tab-nav::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
 
-  width: 100%;
-  height: var(--_highlight-size);
-  background-color: var(--_disabled-color);
-}
 .tab-nav__trigger {
   position: relative;
   display: flex;
