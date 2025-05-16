@@ -1,0 +1,24 @@
+.text-difficulty-easy {
+  color: var(--difficulty-easy);
+}
+.text-difficulty-normal {
+  color: var(--difficulty-normal);
+}
+.text-difficulty-hard {
+  color: var(--difficulty-hard);
+}
+.text-difficulty-master {
+  color: var(--difficulty-master);
+}
+.text-difficulty-extreme {
+  color: var(--difficulty-extreme);
+}
+.text-difficulty-insane {
+  color: var(--difficulty-insane);
+}
+.text-difficulty-why {
+  color: var(--difficulty-why);
+}
+.text-difficulty-void {
+  color: var(--difficulty-void);
+}

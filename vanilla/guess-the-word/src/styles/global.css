@@ -8,6 +8,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  /* TODO: move to ./vars.css */
   /* colors */
   --text: #f2f5f9;
   --secondary: #7429c6;
@@ -86,6 +87,7 @@
   }
 }
 
+/* TODO: move to ./reset.css */
 *,
 *::before,
 *::after {
@@ -116,6 +118,7 @@ body {
   }
 }
 
+/* TODO: move to ./reset.css */
 button,
 input {
   color: inherit;
@@ -137,12 +140,14 @@ button > svg {
   pointer-events: none;
 }
 
+/* TODO: move to ./utils.css */
 .not-yet {
   color: var(--primary);
   font-size: 1.25rem;
   text-align: center;
 }
 
+/* TODO: move to ./utils.css */
 .plus-sign {
   color: var(--primary);
   font-size: 1.25em;
@@ -150,10 +155,12 @@ button > svg {
   align-self: center;
 }
 
+/* TODO: move to ./utils.css */
 .hidden {
   display: none !important;
 }
 
+/* TODO: move to ./utils.css */
 .visually-hidden {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -164,9 +171,15 @@ button > svg {
   width: 1px;
 }
 
+/* TODO: move to ./utils.css */
 .push-right {
   margin-left: auto;
 }
 .push-left {
   margin-right: auto;
 }
+
+/* TODO: add more utility classes to ./utils.css */
+/* - .radius-<name> */
+/*   https://tailwindcss.com/docs/border-radius */
+/* - .font-bold */

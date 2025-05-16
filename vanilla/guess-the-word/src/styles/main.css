@@ -1,5 +1,6 @@
 /* TODO: use CUBE CSS methodology */
 @import "global.css";
+@import "utils.css";
 @import "button.css";
 @import "game-card/main.css";
 @import "menu.css";
