@@ -24,10 +24,15 @@
   --button-shadow: drop-shadow(0px 4px 0px #7b248a); /* filter: [value] */
 
   --difficulty-easy: #70e751;
+  /* "split complementary color" https://www.colorhexa.com/e4c23b#schemes */
   --difficulty-normal: #3bb2e4;
+  /* "tetradic color" https://www.colorhexa.com/c23be4#schemes */
   --difficulty-hard: #e4c23b;
+  /* "analogous color" https://www.colorhexa.com/e4c23b#schemes */
   --difficulty-master: #e46e3b;
+  /* "tetradic color" https://www.colorhexa.com/e43b5d#schemes */
   --difficulty-extreme: #3be4c2;
+  /* "split complemenetary color" https://www.colorhexa.com/c23be4#schemes */
   --difficulty-insane: #b2e43b;
   --difficulty-why: #9b78ff; /* https://www.color-hex.com/color-palette/1055851 */
   --difficulty-void: #dd79f0;
