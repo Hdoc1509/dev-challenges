@@ -14,7 +14,7 @@ const ATTRIBUTES = Object.freeze({
   }),
 });
 
-const TAB_VALID_SELECTOR = `:scope > .${CLASSES.LINK}[id]:not([id=""])`
+const TAB_VALID_SELECTOR = `.${CLASSES.LINK}[id]:not([id=""])`
   .concat('[aria-controls$="-tab-content"]')
   .concat('[role="tab"]')
   .concat('[aria-selected]:not([aria-selected=""])');
@@ -33,7 +33,7 @@ export class Tabs {
     this.#$nav = $nav;
 
     const $tabs = getAllElementsBySelector(
-      TAB_VALID_SELECTOR,
+      `:scope > ${TAB_VALID_SELECTOR}`,
       HTMLButtonElement,
       $nav,
     );
