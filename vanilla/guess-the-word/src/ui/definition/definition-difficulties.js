@@ -18,7 +18,10 @@ export function createDefinitionDifficulties(word) {
     const $span = document.createElement("span");
     const label = capitalize(difficulty);
 
-    $item.classList.add("definition__difficulty");
+    $item.classList.add(
+      "definition__difficulty",
+      `text-difficulty-${difficulty}`,
+    );
     $item.setAttribute("aria-label", label);
     if (
       hasCompletedAllDifficulties ||

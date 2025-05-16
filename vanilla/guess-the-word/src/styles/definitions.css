@@ -76,30 +76,6 @@
   border: 1px solid;
   border-radius: 4px;
 }
-.definition__difficulty[aria-label="Easy"] {
-  color: var(--difficulty-easy);
-}
-.definition__difficulty[aria-label="Normal"] {
-  color: var(--difficulty-normal);
-}
-.definition__difficulty[aria-label="Hard"] {
-  color: var(--difficulty-hard);
-}
-.definition__difficulty[aria-label="Master"] {
-  color: var(--difficulty-master);
-}
-.definition__difficulty[aria-label="Extreme"] {
-  color: var(--difficulty-extreme);
-}
-.definition__difficulty[aria-label="Insane"] {
-  color: var(--difficulty-insane);
-}
-.definition__difficulty[aria-label="Why"] {
-  color: var(--difficulty-why);
-}
-.definition__difficulty[aria-label="Void"] {
-  color: var(--difficulty-void);
-}
 .definition__difficulty:not([data-completed]) {
   color: #9b9b9b;
 }
