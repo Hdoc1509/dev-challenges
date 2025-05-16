@@ -8,10 +8,6 @@ const INPUT_OPTION_SELECTOR = ".radio-group"
 
 const $difficultyForm = getElementById("difficulty-form", HTMLFormElement);
 
-/** @param {import("@/consts/difficulty").Difficulty} difficulty */
-const createInputOptionSelector = (difficulty) =>
-  `:scope > ${INPUT_OPTION_SELECTOR}[value="${difficulty}"]`;
-
 export const getSelectedDifficulty = () => {
   const data = new FormData($difficultyForm);
   const difficulty = data.get("difficulty");
@@ -29,7 +25,7 @@ export const getSelectedDifficulty = () => {
 /** @param {import("@/consts/difficulty").Difficulty} difficulty */
 export const disableDifficultyOption = (difficulty) => {
   const $optionInput = getElementBySelector(
-    createInputOptionSelector(difficulty),
+    `:scope > ${INPUT_OPTION_SELECTOR}[value="${difficulty}"]`,
     HTMLInputElement,
     $difficultyForm,
   );
