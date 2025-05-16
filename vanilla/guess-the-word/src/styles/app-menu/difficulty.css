@@ -6,54 +6,18 @@
   --label-font-size: var(--difficulty-option-font-size, 1.125rem);
   --radio-color-disabled: var(--_disabled-color);
 }
+/* TODO: use .font-bold instead */
 #difficulty-menu-tab-content .difficulty-name {
   font-weight: bold;
-  color: var(--difficulty-text);
 }
+/* TODO: use .width-fit instead */
 #difficulty-menu-tab-content .label {
   width: fit-content;
 }
+#difficulty-menu-tab-content .label[data-disabled] .difficulty-name {
+  --difficulty-text: var(--_disabled-color);
+}
 #difficulty-menu-tab-content .radio {
   --radio-size: 1.25rem;
-}
-#difficulty-menu-tab-content .label[data-difficulty="easy"] {
-  /* from "tetradic" colors https://www.colorhexa.com/c23be4#schemes */
-  --radio-color: var(--difficulty-easy);
-  --difficulty-text: var(--difficulty-easy);
-}
-#difficulty-menu-tab-content .label[data-difficulty="normal"] {
-  /* from "split complementary" colors https://www.colorhexa.com/e4c23b#schemes */
-  --radio-color: var(--difficulty-normal);
-  --difficulty-text: var(--difficulty-normal);
-}
-#difficulty-menu-tab-content .label[data-difficulty="hard"] {
-  /* from "tetradic" colors https://www.colorhexa.com/c23be4#schemes */
-  --radio-color: var(--difficulty-hard);
-  --difficulty-text: var(--difficulty-hard);
-}
-#difficulty-menu-tab-content .label[data-difficulty="master"] {
-  /* from "analogous" colors https://www.colorhexa.com/e4c23b#schemes */
-  --radio-color: var(--difficulty-master);
-  --difficulty-text: var(--difficulty-master);
-}
-#difficulty-menu-tab-content .label[data-difficulty="extreme"] {
-  /* from "monochromatic" colors https://www.colorhexa.com/e43b5d#schemes */
-  --radio-color: var(--difficulty-extreme);
-  --difficulty-text: var(--difficulty-extreme);
-}
-#difficulty-menu-tab-content .label[data-difficulty="insane"] {
-  /* from "analogous" colors https://www.colorhexa.com/c23be4#schemes */
-  --radio-color: var(--difficulty-insane);
-  --difficulty-text: var(--difficulty-insane);
-}
-#difficulty-menu-tab-content .label[data-difficulty="why"] {
-  --radio-color: var(--difficulty-why);
-  --difficulty-text: var(--difficulty-why);
-}
-#difficulty-menu-tab-content .label[data-difficulty="void"] {
-  --radio-color: var(--difficulty-void);
-  --difficulty-text: var(--difficulty-void);
-}
-#difficulty-menu-tab-content .label[data-disabled] {
-  --difficulty-text: var(--_disabled-color);
+  --radio-color: var(--difficulty-text);
 }

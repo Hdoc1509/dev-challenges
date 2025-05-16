@@ -1,5 +1,6 @@
+<!-- TODO: remove data-difficulty from .label -->
 <label class="label" data-type="radio" data-difficulty="<%= difficulty %>">
-  <span class="radio">
+  <span class="radio text-difficulty-<%= difficulty %>">
     <input
       class="radio__inner"
       type="radio"
@@ -13,7 +14,7 @@
     </span>
   </span>
   <span class="label__text">
-    <span class="difficulty-name">
+    <span class="difficulty-name text-difficulty-<%= difficulty %>">
       <!-- prettier-ignore -->
       <% const label = capitalize(difficulty) %>
       <%= locals.onLabel?.(label) ?? label %>:
@@ -21,11 +22,7 @@
     <%= description %>
     <% if (locals.extraDifficulty != null) { %>
     <span class="plus-sign">+</span>
-    <!-- TODO: use `.text-<difficulty>` utility class -->
-    <span
-      class="difficulty-name"
-      style="--difficulty-text: var(--difficulty-<%= extraDifficulty %>)"
-    >
+    <span class="difficulty-name text-difficulty-<%= extraDifficulty %>">
       <!-- prettier-ignore -->
       <% const extraLabel = capitalize(extraDifficulty) %>
       <%= locals.onExtraLabel?.(extraLabel) ?? extraLabel %>

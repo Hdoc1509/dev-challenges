@@ -19,11 +19,13 @@ export const getSelectedDifficulty = () => {
 
 /** @param {import("@/consts/difficulty").Difficulty} difficulty */
 export const disableDifficultyOption = (difficulty) => {
+  // TODO: retrieve $label from $option.parentElement
   const $label = getElementBySelector(
     `:scope > .radio-group > .label[data-difficulty="${difficulty}"]`,
     HTMLLabelElement,
     $difficultyForm,
   );
+  // TODO: use .radio.text-difficulty-${difficulty} selector instead
   const $option = getElementBySelector(
     `:scope > .radio`,
     HTMLSpanElement,
