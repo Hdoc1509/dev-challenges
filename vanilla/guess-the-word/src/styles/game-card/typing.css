@@ -18,7 +18,7 @@
   width: 3.5ch;
   height: 3.5ch;
   border-radius: 10px;
-  border: 2px solid var(--letter-border);
+  border: 2px solid var(--letter-border, var(--gray));
 
   overflow: hidden;
 }

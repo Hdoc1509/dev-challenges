@@ -15,11 +15,11 @@
   --secondary-transparent: #7429c68f;
   --primary: #c951e7;
   --black: #030616;
-  --letter-border: #4a5567;
+  --gray: #4a5567;
+
   --letter-border-current: #672171;
   --letter-border-wrong: #cf1d41;
   --letter-border-correct: var(--difficulty-easy);
-  --word-bg: #4a5567;
   --word-shadow: 0px 4px 0px 0px var(--black);
   --button-shadow: drop-shadow(0px 4px 0px #7b248a); /* filter: [value] */
 
@@ -57,7 +57,7 @@
 
   --alert-time-bar-duration: 4s;
 
-  --timer-bg: var(--word-bg);
+  --timer-bg: var(--gray);
   --timer-bar-bg: var(--primary);
 
   --bg-image-url: url("/bg-guess-the-word.jpg");
