@@ -1,23 +1,26 @@
 #difficulty-menu-tab-content {
   --_disabled-color: rgb(175, 175, 175);
-  --radio-group-gap: 0.25rem;
+
+  --label-font-size: var(--difficulty-option-font-size, 1.125rem);
   --label-text: var(--text);
   --label-text-disabled: var(--_disabled-color);
-  --label-font-size: var(--difficulty-option-font-size, 1.125rem);
+
+  --radio-group-gap: 0.25rem;
+  --radio-size: 1.25rem;
   --radio-color-disabled: var(--_disabled-color);
 }
-/* TODO: use .font-bold instead */
-#difficulty-menu-tab-content .difficulty-name {
-  font-weight: bold;
-}
-/* TODO: use .width-fit instead */
+
 #difficulty-menu-tab-content .label {
   width: fit-content;
 }
+
+#difficulty-menu-tab-content .radio {
+  --radio-color: var(--difficulty-text);
+}
+
+#difficulty-menu-tab-content .difficulty-name {
+  font-weight: bold;
+}
 #difficulty-menu-tab-content .label[data-disabled] .difficulty-name {
   --difficulty-text: var(--_disabled-color);
-}
-#difficulty-menu-tab-content .radio {
-  --radio-size: 1.25rem;
-  --radio-color: var(--difficulty-text);
 }
