@@ -26,7 +26,7 @@ export function getCategoryElements(category) {
     $stats,
   );
   const $current = getElementBySelector(
-    ":scope .progress__current",
+    ":scope > .progress__description > .progress__count > .progress__current",
     HTMLDivElement,
     $stats,
   );
