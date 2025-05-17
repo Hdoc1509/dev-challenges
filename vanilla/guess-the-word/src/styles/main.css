@@ -1,20 +1,26 @@
-/* TODO: use CUBE CSS methodology */
 @import "vars.css";
+
 @import "reset.css";
+
 @import "global.css";
+
 @import "utils.css";
+
+/* generic blocks */
 @import "button.css";
-@import "game-card/main.css";
-@import "menu.css";
-@import "app-menu/main.css";
 @import "tabs.css";
 @import "step-indicator.css";
-@import "definitions.css";
-@import "hints.css";
 @import "radio-group.css";
 @import "radio.css";
 @import "label.css";
 @import "pagination.css";
 @import "spinner.css";
 @import "progress.css";
+
+/* app-specific blocks */
+@import "game-card/main.css";
+@import "menu.css";
+@import "app-menu/main.css";
+@import "definitions.css";
+@import "hints.css";
 @import "overrides.css";
