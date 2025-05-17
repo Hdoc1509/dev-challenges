@@ -10,16 +10,13 @@ export const $definitionPagesContainer = getElementById(
   HTMLDivElement,
 );
 
-// TODO: remove unnecessary features from Pages class
-
 /** @type {Pages<string>} */
 export const DefinitionPages = new Pages($definitionPagesContainer, {
   itemsPerPage: DEFINITIONS_PER_PAGE,
   // TODO: add a way to track `new` items
   // an item can be removed but also be `new` beacuse menu has not been opened
   // - update tracking when rendering and when removing
-  renderItem: (item, { /* index, totalItems, */ isNew }) =>
-    createDefinition(item, { isNew }),
+  renderItem: (item, { isNew } = {}) => createDefinition(item, { isNew }),
   clearEmpty: ($page) => $page.querySelector(".not-yet")?.remove(),
   onItemRemoved: (item) => {
     const $definition = DefinitionElement.get(item);

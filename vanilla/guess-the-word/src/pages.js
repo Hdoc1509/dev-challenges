@@ -24,18 +24,12 @@ const error = (message) => {
  * @property {Array<(totalPages: number) => void>} itemsupdate
  */
 
-// TODO: update params
-// only keep `isNew` extra param
-
 /** Must return an `HTMLLIElement` or a `DocumentFragment` whose only child is
  * an `HTMLLIElement`
  * @template Item
  * @callback ItemRenderer
  * @param {Item} item
- * @param {Object} extraParams
- * @param {number} extraParams.index Index of the new `item` added to the page
- * @param {number} extraParams.totalItems
- * Total items of the page after adding new `item`
+ * @param {Object} [extraParams]
  * @param {boolean} [extraParams.isNew]
  * It's `true` when added by `apped(item)` or `prepend(item)`
  * @return {DocumentFragment | HTMLLIElement} */
@@ -167,14 +161,11 @@ export class Pages {
         $template.querySelector("ul")
       );
       const items = this.#paginatedItems[page - 1];
-      const totalItems = items.length;
 
-      if (totalItems === 0) {
+      if (items.length === 0) {
         $newPage.appendChild(this.#$pageEmptyTemplate.content.cloneNode(true));
       } else {
-        items.forEach((item, index) =>
-          $newPage.appendChild(this.#renderItem(item, { index, totalItems })),
-        );
+        items.forEach((item) => $newPage.appendChild(this.#renderItem(item)));
       }
 
       $page = $newPage;
@@ -198,13 +189,7 @@ export class Pages {
     const $lastPage = this.#$page(pageIdx + 1);
     const totalItems = this.#paginatedItems[pageIdx].length;
 
-    $lastPage?.appendChild(
-      this.#renderItem(item, {
-        index: totalItems - 1,
-        totalItems,
-        isNew: true,
-      }),
-    );
+    $lastPage?.appendChild(this.#renderItem(item, { isNew: true }));
     this.#reorder({ totalItems, $fromPage: $lastPage, pageIdx });
   }
 
@@ -219,9 +204,7 @@ export class Pages {
     const $firstPage = this.#$page(1);
     const totalItems = this.#paginatedItems[pageIdx].length;
 
-    $firstPage?.prepend(
-      this.#renderItem(item, { index: 0, totalItems, isNew: true }),
-    );
+    $firstPage?.prepend(this.#renderItem(item, { isNew: true }));
     this.#reorder({ totalItems, $fromPage: $firstPage, pageIdx });
   }
 
@@ -255,13 +238,9 @@ export class Pages {
             $page.insertBefore($elementToMove, $page.firstElementChild);
           }
           $elementToMove = null;
-        } else
-          $page?.prepend(
-            this.#renderItem(itemToMove, {
-              index: 0,
-              totalItems: this.#paginatedItems[i].length,
-            }),
-          );
+        } else {
+          $page?.prepend(this.#renderItem(itemToMove));
+        }
 
         itemToMove = null;
       }
