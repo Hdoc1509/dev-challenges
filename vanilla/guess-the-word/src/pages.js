@@ -31,7 +31,7 @@ const error = (message) => {
  * @param {Item} item
  * @param {Object} [extraParams]
  * @param {boolean} [extraParams.isNew]
- * It's `true` when added by `apped(item)` or `prepend(item)`
+ * It's `true` when added by `append(item)` or `prepend(item)`
  * @return {DocumentFragment | HTMLLIElement} */
 
 /** @template Item */
