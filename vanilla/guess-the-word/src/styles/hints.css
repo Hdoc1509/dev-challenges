@@ -38,11 +38,11 @@
   border-radius: 6px;
 
   text-align: center;
-  border-color: var(--word-bg);
+  border-color: var(--slate-600);
 }
 .hint--correct {
-  border-color: var(--letter-border-correct);
+  border-color: var(--difficulty-easy);
 }
 .hint--wrong {
-  border-color: var(--letter-border-wrong);
+  border-color: var(--rose-600);
 }
