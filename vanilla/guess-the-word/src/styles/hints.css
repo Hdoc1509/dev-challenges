@@ -1,3 +1,13 @@
+#hints-tab-nav.tab-nav::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+  height: var(--_highlight-size); /* defined by tabs.css */
+  background-color: var(--_disabled-color); /* defined by tabs.css */
+}
+
 #hints-tab-content {
   max-height: 240px;
   overflow-y: auto;
