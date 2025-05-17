@@ -15,7 +15,7 @@
 }
 
 .definition:not(.info .definition) {
-  border-left: 3px solid var(--definition-border-color, var(--word-bg));
+  border-left: 3px solid var(--definition-border-color, var(--slate-600));
   padding-inline: 0.75rem;
 
   --spinner-size: 2.25rem;
