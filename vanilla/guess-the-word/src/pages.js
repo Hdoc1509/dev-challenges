@@ -5,19 +5,6 @@ const error = (message) => {
   throw new Error(`[Pages]: ${message}`);
 };
 
-// TODO: update params of renderItem()
-//   - item: Item
-//   - extraParams: { isNew?: boolean }
-
-/**
- * @template Item
- * @typedef {Object} RenderItemParams
- * @property {Item} item
- * @property {number} index
- * @property {number} totalItems
- * @property {boolean} [isNew]
- */
-
 /**
  * @template Item
  * @callback InsertionMethod
@@ -36,6 +23,22 @@ const error = (message) => {
  * @property {PageEventHandler["pageadd"][]} pageadd
  * @property {Array<(totalPages: number) => void>} itemsupdate
  */
+
+// TODO: update params
+// only keep `isNew` extra param
+
+/** Must return an `HTMLLIElement` or a `DocumentFragment` whose only child is
+ * an `HTMLLIElement`
+ * @template Item
+ * @callback ItemRenderer
+ * @param {Item} item
+ * @param {Object} extraParams
+ * @param {number} extraParams.index Index of the new `item` added to the page
+ * @param {number} extraParams.totalItems
+ * Total items of the page after adding new `item`
+ * @param {boolean} [extraParams.isNew]
+ * It's `true` when added by `apped(item)` or `prepend(item)`
+ * @return {DocumentFragment | HTMLLIElement} */
 
 /** @template Item */
 export class Pages {
@@ -58,7 +61,7 @@ export class Pages {
    * @param {Object} extraParams
    * @param {Item[]} [extraParams.items]
    * @param {number} extraParams.itemsPerPage
-   * @param {(params: RenderItemParams<Item>) => DocumentFragment | HTMLLIElement} extraParams.renderItem
+   * @param {ItemRenderer<Item>} extraParams.renderItem
    * Must return an `HTMLLIElement` or a `DocumentFragment` whose first child is
    * an `HTMLLIElement`
    * @param {($page: HTMLUListElement) => void} extraParams.clearEmpty
@@ -170,7 +173,7 @@ export class Pages {
         $newPage.appendChild(this.#$pageEmptyTemplate.content.cloneNode(true));
       } else {
         items.forEach((item, index) =>
-          $newPage.appendChild(this.#renderItem({ item, index, totalItems })),
+          $newPage.appendChild(this.#renderItem(item, { index, totalItems })),
         );
       }
 
@@ -196,8 +199,7 @@ export class Pages {
     const totalItems = this.#paginatedItems[pageIdx].length;
 
     $lastPage?.appendChild(
-      this.#renderItem({
-        item,
+      this.#renderItem(item, {
         index: totalItems - 1,
         totalItems,
         isNew: true,
@@ -218,7 +220,7 @@ export class Pages {
     const totalItems = this.#paginatedItems[pageIdx].length;
 
     $firstPage?.prepend(
-      this.#renderItem({ item, index: 0, totalItems, isNew: true }),
+      this.#renderItem(item, { index: 0, totalItems, isNew: true }),
     );
     this.#reorder({ totalItems, $fromPage: $firstPage, pageIdx });
   }
@@ -255,8 +257,7 @@ export class Pages {
           $elementToMove = null;
         } else
           $page?.prepend(
-            this.#renderItem({
-              item: itemToMove,
+            this.#renderItem(itemToMove, {
               index: 0,
               totalItems: this.#paginatedItems[i].length,
             }),
