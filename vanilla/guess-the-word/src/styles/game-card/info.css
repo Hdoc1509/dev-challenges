@@ -27,7 +27,7 @@
   flex-wrap: wrap;
 }
 .game-card .info .step-indicator {
-  --step-color: var(--word-bg);
+  --step-color: var(--slate-600);
   --step-color-completed: var(--secondary);
 }
 
