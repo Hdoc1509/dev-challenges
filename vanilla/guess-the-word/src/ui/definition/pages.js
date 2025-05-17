@@ -18,8 +18,6 @@ export const DefinitionPages = new Pages($definitionPagesContainer, {
   renderItem: ({ item, /* index, totalItems, */ isNew }) =>
     createDefinition(item, { isNew }),
   clearEmpty: ($page) => $page.querySelector(".not-yet")?.remove(),
-  // onItemMoved: ($page) =>
-  //   $page.insertBefore(document.createElement("hr"), $page.children[1]),
   onItemRemoved: (item) => {
     const $definition = DefinitionElement.get(item);
     if ($definition == null) return;

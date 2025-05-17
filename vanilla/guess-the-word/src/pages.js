@@ -49,13 +49,9 @@ export class Pages {
   #renderItem;
   #clearEmpty;
   #onItemRemoved;
-  #onItemMoved;
   #onPageChange;
   /** @type {PageEvents} */
   #events = { pageadd: [], itemsupdate: [] };
-
-  // TODO: update extraParams:
-  // - remove onItemMoved()
 
   /**
    * @param {HTMLDivElement} $pagesContainer
@@ -68,7 +64,6 @@ export class Pages {
    * @param {($page: HTMLUListElement) => void} extraParams.clearEmpty
    * @param {(removedItem: Item) => void} [extraParams.onItemRemoved]
    * Triggered when an element of an item is removed from a page
-   * @param {($page: HTMLUListElement) => void} [extraParams.onItemMoved]
    * @param {($page: HTMLUListElement) => void} [extraParams.onPageChange]
    * @param {HTMLTemplateElement} extraParams.$pageTemplate
    * @param {HTMLTemplateElement} extraParams.$pageEmptyTemplate
@@ -81,7 +76,6 @@ export class Pages {
       renderItem,
       clearEmpty,
       onItemRemoved,
-      onItemMoved,
       onPageChange,
       $pageTemplate,
       $pageEmptyTemplate,
@@ -110,7 +104,6 @@ export class Pages {
     this.#$pageEmptyTemplate = $pageEmptyTemplate;
     this.#clearEmpty = clearEmpty;
     this.#onItemRemoved = onItemRemoved;
-    this.#onItemMoved = onItemMoved;
     this.#onPageChange = onPageChange;
   }
 
@@ -258,7 +251,6 @@ export class Pages {
             $elementToMove.remove();
           } else {
             $page.insertBefore($elementToMove, $page.firstElementChild);
-            this.#onItemMoved?.($page);
           }
           $elementToMove = null;
         } else
