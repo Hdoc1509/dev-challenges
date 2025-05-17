@@ -14,14 +14,6 @@
   }
 }
 
-/* TODO: move to ./reset.css */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-}
-
 body {
   display: flex;
 
@@ -43,13 +35,6 @@ body {
   body {
     padding: 1rem;
   }
-}
-
-/* TODO: move to ./reset.css */
-button,
-input {
-  color: inherit;
-  font: inherit;
 }
 
 button {
