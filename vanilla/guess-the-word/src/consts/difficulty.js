@@ -33,6 +33,7 @@ export const DIFFICULTY_OPTION = Object.freeze({
   },
   [DIFFICULTY.NORMAL]: {
     description: "Words with 7 ~ 9 letters",
+    checked: true,
   },
   [DIFFICULTY.HARD]: {
     description: "Only 2 tries",

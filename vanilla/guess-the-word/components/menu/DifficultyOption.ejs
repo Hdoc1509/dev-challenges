@@ -5,6 +5,9 @@
       type="radio"
       name="difficulty"
       value="<%= difficulty %>"
+      ejs="<% if (locals.checked ?? false) { %>"
+      checked
+      ejs="<% } %>"
     />
     <span class="radio__icon" aria-hidden="true">
       <!-- prettier-ignore -->
