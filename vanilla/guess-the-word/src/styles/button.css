@@ -8,7 +8,7 @@
   border-radius: var(--button-radius, 8px);
 
   font-weight: var(--button-font-weight);
-  font-size: var(--button-font-size);
+  font-size: var(--button-font-size, 0.875rem);
 
   transition: transform var(--button-transform-duration, 0.2s) ease;
 }

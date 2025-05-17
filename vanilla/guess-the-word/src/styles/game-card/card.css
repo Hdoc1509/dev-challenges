@@ -1,12 +1,12 @@
 .game-card {
   display: flex;
   flex-direction: column;
-  gap: var(--card-gap);
+  gap: var(--card-gap, 1.5rem);
 
   margin: auto;
-  width: min(var(--card-max-width), 100%);
-  background-color: var(--card-bg);
-  padding: var(--card-padding);
+  width: min(var(--card-max-width, 370px), 100%);
+  background-color: var(--card-bg, var(--slate-800));
+  padding: var(--card-padding, 1.5rem);
   border-radius: 12px;
 }
 

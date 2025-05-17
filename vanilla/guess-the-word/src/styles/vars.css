@@ -46,38 +46,11 @@
   --difficulty-why: #9b78ff;
   --difficulty-void: #dd79f0;
 
-  /* TODO: move to their styles files */
-  --card-padding: 1.5rem;
-  --card-gap: 1.5rem;
-  --card-max-width: 370px;
-  --card-bg: var(--slate-800);
-  --word-padding: 12px;
-  --letters-gap: 10px;
-  --letters-margin-block: 2.5rem;
-  --letter-padding: 8px 14px;
-
-  --buttons-top-margin: 3rem;
-  --buttons-gap: 18px;
-
-  /* font sizes */
-  --word-fs: 2rem;
-  --letter-fs: 1.25rem;
-  --info-fs: 0.875rem;
-  --button-fs: 0.875rem;
-
   /* LIBS CUSTOMIZATION */
   --alert-time-bar-duration: 4s;
 
   --timer-bg: var(--slate-600);
   --timer-bar-bg: var(--primary);
-
-  /* TODO: move to its selector */
-  --bg-image-url: url("/bg-guess-the-word.jpg");
-}
-@supports (background-image: url("/bg-guess-the-word.webp")) {
-  :root {
-    --bg-image-url: url("/bg-guess-the-word.webp");
-  }
 }
 
 @media (max-width: 640px) {

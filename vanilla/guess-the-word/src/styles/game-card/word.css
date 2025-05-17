@@ -5,12 +5,12 @@
   column-gap: 1ch;
 
   background-color: var(--slate-600);
-  padding: var(--word-padding);
+  padding: var(--word-padding, 0.75rem);
   border-radius: 8px;
   border: none;
   box-shadow: 0px 4px 0px 0px var(--slate-950);
 
-  font-size: var(--word-fs);
+  font-size: var(--word-fs, 2rem);
   font-weight: bold;
   user-select: none;
 }

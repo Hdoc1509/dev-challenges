@@ -1,12 +1,12 @@
 .game-card .typing {
   display: flex;
-  gap: var(--letters-gap);
+  gap: var(--letters-gap, 10px);
   justify-content: center;
   flex-wrap: wrap;
 
-  margin-block: var(--letters-margin-block);
+  margin-block: var(--letters-margin-block, 2.5rem);
 
-  font-size: var(--letter-fs);
+  font-size: var(--letter-fs, 1.25rem);
   font-weight: bold;
 
   --caret-blink-duration: 2.25s;
