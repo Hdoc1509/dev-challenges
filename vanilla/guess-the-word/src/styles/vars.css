@@ -1,0 +1,101 @@
+:root {
+  /* COLORS */
+  --rose-600: #cf1d41;
+
+  /* calculated with https://rgbacolorpicker.com/rgba-to-hex */
+  --red-600-35: #ff0a0a59;
+
+  --blue-100: #d7e0ed;
+
+  --purple-700: #7b248a;
+  --purple-800: #672171;
+
+  --slate-600: #4a5567;
+  --slate-800: #171e30;
+  --slate-900: #0f131f;
+  --slate-950: #030616;
+
+  --gray-400: #afafaf;
+  --gray-400-15: #afafaf26;
+  --gray-500: #9b9b9b;
+  --gray-700: #646464;
+  /* calculated with https://rgbacolorpicker.com/rgba-to-hex */
+  --gray-700-15: #64646426;
+  --gray-800: #333;
+
+  /* TOKENS */
+  --text: #f2f5f9;
+
+  --secondary: #7429c6;
+  --secondary-transparent: #7429c68f;
+
+  --primary: #c951e7;
+
+  --difficulty-easy: #70e751;
+  /* "split complementary color" https://www.colorhexa.com/e4c23b#schemes */
+  --difficulty-normal: #3bb2e4;
+  /* "tetradic color" https://www.colorhexa.com/c23be4#schemes */
+  --difficulty-hard: #e4c23b;
+  /* "analogous color" https://www.colorhexa.com/e4c23b#schemes */
+  --difficulty-master: #e46e3b;
+  /* "tetradic color" https://www.colorhexa.com/e43b5d#schemes */
+  --difficulty-extreme: #3be4c2;
+  /* "split complemenetary color" https://www.colorhexa.com/c23be4#schemes */
+  --difficulty-insane: #b2e43b;
+  /* https://www.color-hex.com/color-palette/1055851 */
+  --difficulty-why: #9b78ff;
+  --difficulty-void: #dd79f0;
+
+  /* TODO: move to their styles files */
+  --card-padding: 1.5rem;
+  --card-gap: 1.5rem;
+  --card-max-width: 370px;
+  --card-bg: var(--slate-800);
+  --word-padding: 12px;
+  --letters-gap: 10px;
+  --letters-margin-block: 2.5rem;
+  --letter-padding: 8px 14px;
+
+  --buttons-top-margin: 3rem;
+  --buttons-gap: 18px;
+
+  /* font sizes */
+  --word-fs: 2rem;
+  --letter-fs: 1.25rem;
+  --info-fs: 0.875rem;
+  --button-fs: 0.875rem;
+
+  /* LIBS CUSTOMIZATION */
+  --alert-time-bar-duration: 4s;
+
+  --timer-bg: var(--slate-600);
+  --timer-bar-bg: var(--primary);
+
+  /* TODO: move to its selector */
+  --bg-image-url: url("/bg-guess-the-word.jpg");
+}
+@supports (background-image: url("/bg-guess-the-word.webp")) {
+  :root {
+    --bg-image-url: url("/bg-guess-the-word.webp");
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --bg-image-url: url("/bg-guess-the-word-small.jpg");
+    --difficulty-option-font-size: 1rem;
+    --tab-link-font-size: 1rem;
+    --definition-label-font-size: 1rem;
+    --definition-content-font-size: 0.875rem;
+    --pagination-item-size: 1rem;
+    --word-fs: 1.75rem;
+    --letter-fs: 1.125rem;
+    --hints-list-font-size: 1.125rem;
+  }
+
+  @supports (background-image: url("/bg-guess-the-word-small.webp")) {
+    :root {
+      --bg-image-url: url("/bg-guess-the-word-small.webp");
+    }
+  }
+}

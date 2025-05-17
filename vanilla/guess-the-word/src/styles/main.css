@@ -1,4 +1,5 @@
 /* TODO: use CUBE CSS methodology */
+@import "vars.css";
 @import "global.css";
 @import "utils.css";
 @import "button.css";
