@@ -1,5 +1,5 @@
 .pagination {
-  --_hover: var(--black);
+  --_hover: var(--slate-950);
 
   display: flex;
   justify-content: center;
@@ -39,8 +39,8 @@
   outline-color: var(--secondary-transparent);
 }
 .pagination__trigger[disabled] {
-  border-color: var(--word-bg);
-  color: var(--word-bg);
+  border-color: var(--slate-600);
+  color: var(--slate-600);
 }
 
 .pagination__current {

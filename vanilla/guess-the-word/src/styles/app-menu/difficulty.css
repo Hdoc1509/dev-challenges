@@ -1,5 +1,5 @@
 #difficulty-menu-tab-content {
-  --_disabled-color: rgb(175, 175, 175);
+  --_disabled-color: var(--gray-400);
 
   --label-font-size: var(--difficulty-option-font-size, 1.125rem);
   --label-text: var(--text);
@@ -7,6 +7,7 @@
 
   --radio-group-gap: 0.25rem;
   --radio-size: 1.25rem;
+  --radio-bg-hover: var(--gray-400-15);
   --radio-color-disabled: var(--_disabled-color);
 }
 

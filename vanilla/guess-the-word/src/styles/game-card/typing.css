@@ -18,7 +18,7 @@
   width: 3.5ch;
   height: 3.5ch;
   border-radius: 10px;
-  border: 2px solid var(--letter-border, var(--gray));
+  border: 2px solid var(--letter-border, var(--slate-600));
 
   overflow: hidden;
 }
@@ -49,14 +49,14 @@
   visibility: var(--caret-visibility, hidden);
 }
 .game-card .typing__letter--current {
-  border-color: var(--letter-border-current);
+  border-color: var(--purple-800);
   --caret-visibility: visible;
 }
 .game-card .typing__letter--mistaken {
-  border-color: var(--letter-border-wrong);
+  border-color: var(--rose-600);
 }
 .game-card .typing__letter--correct {
-  border-color: var(--letter-border-correct);
+  border-color: var(--difficulty-easy);
 }
 .game-card .typing__letter--current > input:focus ~ .typing__caret {
   animation-duration: var(--caret-blink-duration);

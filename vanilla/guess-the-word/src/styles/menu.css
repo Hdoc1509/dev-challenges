@@ -6,11 +6,11 @@
   height: min(var(--menu-max-height), 100%);
   margin: auto;
   padding: 1rem;
-  background-color: #0f131f;
-  border-color: #000;
+  background-color: var(--slate-900);
+  border-color: var(--slate-950);
   border-radius: 12px;
 
-  color: #d7e0ed;
+  color: var(--blue-100);
 }
 .menu[open] {
   display: grid;

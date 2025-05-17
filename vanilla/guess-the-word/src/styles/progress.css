@@ -19,7 +19,7 @@
 .progress__title {
   margin-left: auto;
   padding: 0.25rem;
-  background-color: var(--progress-description-bg);
+  background-color: var(--slate-900);
   border-radius: 6px 0 0 6px;
 }
 .progress__count {
@@ -29,7 +29,7 @@
 
   margin-right: auto;
   padding: 0.25rem;
-  background-color: var(--progress-description-bg);
+  background-color: var(--slate-900);
   border-radius: 0 6px 6px 0;
 }
 .progress__current {

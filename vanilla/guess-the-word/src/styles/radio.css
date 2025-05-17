@@ -5,11 +5,11 @@
   border-radius: 50%;
   padding: var(--radio-padding, 0.5rem);
 
-  color: var(--radio-color, #333);
+  color: var(--radio-color, var(--gray-800));
 }
 .radio:hover,
 .radio:focus-within {
-  background-color: var(--radio-bg-hover, rgb(100 100 100 / 20%));
+  background-color: var(--radio-bg-hover, rgb(0 0 0 / 10%));
 }
 .radio[data-disabled] {
   color: var(--radio-color-disabled, rgba(0, 0, 0, 0.4));

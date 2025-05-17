@@ -8,7 +8,7 @@
   font-family: var(--label-font-family, inherit);
   font-size: var(--label-font-size, 0.75rem);
   font-weight: var(--label-font-weight, 400);
-  color: var(--label-text, #333);
+  color: var(--label-text, var(--gray-800));
 }
 .label:focus-within {
   color: var(--_text-focus);
@@ -18,7 +18,7 @@
   cursor: pointer;
 }
 .label[data-type="radio"]:focus-within {
-  color: var(--label-text, #333);
+  color: var(--label-text, var(--gray-800));
 }
 .label[data-disabled] {
   color: var(--label-text-disabled, rgba(0, 0, 0, 0.4));

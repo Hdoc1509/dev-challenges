@@ -1,6 +1,6 @@
 .tab-nav {
-  --_disabled-color: rgb(100, 100, 100);
-  --_disabled-hover-color: rgb(175, 175, 175);
+  --_disabled-color: var(--gray-700);
+  --_disabled-hover-color: var(--gray-400);
   --_highlight-size: var(--tab-nav-highlight-size, 3px);
   position: relative;
   display: flex;
@@ -34,7 +34,7 @@
 .tab-nav__trigger[aria-selected="true"] {
   --tab-item-highlight: var(--secondary);
   --tab-link-font-weight: bold;
-  background-color: rgba(100, 100, 100, 0.15);
+  background-color: var(--gray-700-15);
 }
 .tab-nav__trigger[aria-selected="false"] {
   color: var(--_disabled-hover-color);

@@ -1,5 +1,5 @@
 .progress[data-stats="total"] {
-  --progress-bg: var(--word-bg);
+  --progress-bg: var(--slate-600);
 }
 .progress[data-stats="easy"] {
   --progress-bg: var(--difficulty-easy);
@@ -24,7 +24,4 @@
 }
 .progress[data-stats="void"] {
   --progress-bg: var(--difficulty-void);
-}
-.progress {
-  --progress-description-bg: #0f131f;
 }

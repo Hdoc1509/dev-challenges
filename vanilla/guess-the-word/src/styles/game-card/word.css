@@ -4,11 +4,11 @@
   flex-wrap: wrap;
   column-gap: 1ch;
 
-  background-color: var(--gray);
+  background-color: var(--slate-600);
   padding: var(--word-padding);
   border-radius: 8px;
   border: none;
-  box-shadow: var(--word-shadow);
+  box-shadow: 0px 4px 0px 0px var(--slate-950);
 
   font-size: var(--word-fs);
   font-weight: bold;
@@ -19,5 +19,5 @@
   width: 1ch;
 }
 .game-card .word__letter[data-used] {
-  color: var(--black);
+  color: var(--slate-950);
 }

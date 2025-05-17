@@ -7,7 +7,7 @@
 .game-card .actions__control {
   outline: 2px solid var(--_control-outline-color);
   --button-font-weight: 600;
-  filter: var(--button-shadow);
+  filter: drop-shadow(0px 4px 0px var(--purple-700));
 }
 /* TODO: use same hover/focus rules as <Button /> from @hrc/button */
 .game-card .actions__control:hover,
