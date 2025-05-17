@@ -36,11 +36,6 @@ body {
     --bg-image-url: url("/bg-guess-the-word.webp");
   }
 }
-@media (max-width: 767px) {
-  body {
-    padding: 1rem;
-  }
-}
 
 button {
   cursor: pointer;

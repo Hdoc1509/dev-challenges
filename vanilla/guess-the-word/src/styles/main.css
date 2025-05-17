@@ -24,3 +24,5 @@
 @import "definitions.css";
 @import "hints.css";
 @import "overrides.css";
+
+@import "responsive.css";
