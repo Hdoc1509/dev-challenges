@@ -94,7 +94,7 @@ create a small game that tests your data management and DOM manipulation with Ja
 
 - Create state management by [using modules][mdn-modules]
 - More secure data by using [Map][mdn-map] and [WeakMap][mdn-weakmap] to
-  encapsulate data for HTML elements
+  [encapsulate data for HTML elements][mdn-encapsulate-data]
 - Custom pagination system
 - Custom tabs system
 - Custom step-indicator library
@@ -124,4 +124,5 @@ pnpm run dev --open
 [mdn-modules]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import#imported_values_can_only_be_modified_by_the_exporter
 [mdn-map]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
 [mdn-weakmap]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap
+[mdn-encapsulate-data]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap#associating_metadata
 [mdn-abortcontroller]: https://developer.mozilla.org/en-US/docs/Web/API/AbortController
