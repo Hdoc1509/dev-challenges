@@ -1,6 +1,6 @@
 import { generateRandomWord } from "../handlers/random-word";
-import { resetGame } from "../handlers/reset-game";
-import { handleShowDefinition } from "../handlers/show-definition";
+import { resetGame } from "../handlers/game-reset";
+import { handleShowDefinition } from "../handlers/definition-show";
 import { handleToggleHints } from "../handlers/toggle-hints";
 import { DefinitionPages } from "@/ui/definition/pages";
 import { DefinitionPagination } from "@/ui/definition/pagination";
