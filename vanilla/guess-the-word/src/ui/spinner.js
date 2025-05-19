@@ -9,15 +9,13 @@ export const createSpinner = () => $spinnerTemplate.content.cloneNode(true);
 
 /** @param {HTMLElement[]} $elements */
 export const addSpinner = (...$elements) => {
-  // TODO: use :scope selector
   for (const $element of $elements)
-    if ($element.querySelector(".spinner") == null)
+    if ($element.querySelector(":scope > .spinner") == null)
       $element.appendChild(createSpinner());
 };
 
 /** @param {HTMLElement[]} $elements */
 export const removeSpinner = (...$elements) => {
-  // TODO: use :scope selector
   for (const $element of $elements)
-    $element.querySelector(".spinner")?.remove();
+    $element.querySelector(":scope > .spinner")?.remove();
 };

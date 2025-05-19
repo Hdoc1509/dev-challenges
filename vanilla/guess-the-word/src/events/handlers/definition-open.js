@@ -34,15 +34,16 @@ export async function handleDefinitionOpen($definitionDetails) {
   if (error != null) {
     $definitionDetails.dataset.status = "error";
 
-    if ($content.querySelector(".definition__error") == null)
+    if ($content.querySelector(":scope > .definition__error") == null)
       $content.appendChild(createErrorMessage(error.message));
 
-    if ($content.querySelector(".definition__retry") == null)
+    if ($content.querySelector(":scope > .definition__retry") == null)
       $content.appendChild(createRetryButton($definitionDetails));
 
     return;
   }
 
+  // TODO: move to removeNewBadge($definitionDetails) separate handler
   const $newBadge = getElementBySelector(
     ":scope > .definition__label > .definition__badge",
     HTMLSpanElement,
@@ -63,10 +64,10 @@ export async function handleDefinitionOpen($definitionDetails) {
   DefinitionNew.delete(word);
   if (hasCompletedAllDifficulties({ word })) DefinitionElement.delete(word);
   $definitionDetails.scrollIntoView();
+  // TODO: call removeNewBadge($definitionDetails)
   $newBadge.remove();
-  // TODO: use :scope selector
-  $content.querySelector(".definition__error")?.remove();
-  $content.querySelector(".definition__retry")?.remove();
+  $content.querySelector(":scope > .definition__error")?.remove();
+  $content.querySelector(":scope > .definition__retry")?.remove();
   removeSpinner($content);
   $definitionDetails.removeAttribute("data-status");
 }
