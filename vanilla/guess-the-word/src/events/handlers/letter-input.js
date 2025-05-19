@@ -8,7 +8,7 @@ import { handleGameSuccess } from "./game-success";
 import { goNextLetter } from "./letter-next";
 import { InsaneDifficulty } from "@/utils/difficulty/insane";
 import { getLetter } from "@/utils/get-letter";
-import { showCorrectWord, useLetter } from "@/ui/word";
+import { useLetter } from "@/ui/word";
 import { addHint } from "@/ui/hints/add";
 import { $hints } from "@/ui/hints/elements";
 import { isValidTypingLetter } from "@/ui/typing/validation";
@@ -31,7 +31,6 @@ export function handleLetterInput($currentField) {
     if (implementsMaxResets() && gameResets === maxResets) {
       handleLetterMistake({ $currentLetter, enteredLetter, tries });
       handleGameOver({ $currentField, $currentLetter });
-      showCorrectWord(); // TODO: move to handleGameOver()
       if (InsaneDifficulty.isApplied())
         import("@/ui/timer").then(({ hideTimerBar }) => hideTimerBar());
       return;

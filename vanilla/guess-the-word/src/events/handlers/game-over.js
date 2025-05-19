@@ -1,5 +1,5 @@
 import { setIsAlertInitialized } from "@/state/alert";
-import { clearUsedLetters } from "@/ui/word";
+import { clearUsedLetters, showCorrectWord } from "@/ui/word";
 import { $hints, $hintsContent } from "@/ui/hints/elements";
 import { $reset } from "@/ui/actions";
 import { CLASSES } from "@/consts/css-classes";
@@ -14,6 +14,11 @@ export function handleGameOver({ $currentField, $currentLetter }) {
     setIsAlertInitialized(true);
     showAlert({ color: "error", text: "😔 Game Over!" });
   });
+
+  // TODO: reorder instructions based on its position in UI
+
+  showCorrectWord();
+
   $reset.disabled = true;
   $currentField.disabled = true;
   $currentField.readOnly = true;

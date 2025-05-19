@@ -15,6 +15,8 @@ export async function handleGameSuccess() {
     setIsAlertInitialized(true);
     showAlert({ color: "success", text: "🎉 Success!" });
   });
+
+  // TODO: reorder instructions based on its position in UI
   if (InsaneDifficulty.isApplied()) {
     const { hideTimerBar } = await import("@/ui/timer");
     hideTimerBar();
