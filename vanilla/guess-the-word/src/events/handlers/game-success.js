@@ -16,15 +16,18 @@ export async function handleGameSuccess() {
     showAlert({ color: "success", text: "🎉 Success!" });
   });
 
-  // TODO: reorder instructions based on its position in UI
+  showCorrectWord();
+
   if (InsaneDifficulty.isApplied()) {
+    // TODO: remove usage of `await`
     const { hideTimerBar } = await import("@/ui/timer");
     hideTimerBar();
   }
-  $reset.disabled = true;
-  showCorrectWord();
+
   $hints.classList.add(CLASSES.HIDDEN);
   $hintsContent.classList.add(CLASSES.HIDDEN);
+
+  $reset.disabled = true;
 
   if (!discoveredWords.has(currentWord)) handleNewWord();
   else if (!hasCompletedAllDifficulties({ word: currentWord }))
