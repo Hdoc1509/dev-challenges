@@ -1,5 +1,9 @@
 import { getElementById, getElementBySelector } from "@lib/dom";
-import { DefinitionElement, DefinitionItem } from "@/state/definition";
+import {
+  DefinitionElement,
+  DefinitionItem,
+  DefinitionNew,
+} from "@/state/definition";
 import { handleDefinitionOpen } from "@/events/handlers/definition-open";
 import { capitalize } from "@/utils/string";
 import { createDefinitionDifficulties } from "./definition-difficulties";
@@ -10,10 +14,8 @@ const $definitionTemplate = getElementById(
   HTMLTemplateElement,
 );
 
-/**
- * @param {string} word
- * @param {{ isNew?: boolean }} [options]
- */
+/** @param {string} word
+ * @param {{ isNew?: boolean }} [options] */
 export const createDefinition = (word, { isNew = false } = {}) => {
   const $clone = /** @type {DocumentFragment} */ (
     $definitionTemplate.content.cloneNode(true)
@@ -34,7 +36,10 @@ export const createDefinition = (word, { isNew = false } = {}) => {
   DefinitionItem.set($definition, { controller, word });
   DefinitionElement.set(word, $definition);
   $label.textContent = capitalize(word);
-  if (isNew) addNewBadge({ $details: $definition, $label });
+  if (isNew || DefinitionNew.has(word)) {
+    DefinitionNew.add(word);
+    addNewBadge({ $details: $definition, $label });
+  }
   $label.appendChild($difficulties);
 
   $definition.addEventListener(

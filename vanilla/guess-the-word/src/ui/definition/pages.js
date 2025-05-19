@@ -13,9 +13,6 @@ export const $definitionPagesContainer = getElementById(
 /** @type {Pages<string>} */
 export const DefinitionPages = new Pages($definitionPagesContainer, {
   itemsPerPage: DEFINITIONS_PER_PAGE,
-  // TODO: add a way to track `new` items
-  // an item can be removed but also be `new` beacuse menu has not been opened
-  // - update tracking when rendering and when removing
   renderItem: (item, { isNew } = {}) => createDefinition(item, { isNew }),
   clearEmpty: ($page) => $page.querySelector(".not-yet")?.remove(),
   onItemRemoved: (item) => {
