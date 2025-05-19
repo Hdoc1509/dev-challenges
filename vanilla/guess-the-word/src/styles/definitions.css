@@ -20,10 +20,6 @@
 
   --spinner-size: 2.25rem;
 }
-/* TODO: remove usage of data-new attribute */
-.definition[data-new] {
-  --definition-badge-text: var(--difficulty-void);
-}
 .definition[open] {
   --definition-label-text: var(--difficulty-void);
 }
@@ -122,6 +118,5 @@
   border-radius: 6px;
 
   font-size: 0.8125em;
-  /* TODO: set color here */
-  color: var(--definition-badge-text);
+  color: var(--difficulty-void);
 }

@@ -38,7 +38,7 @@ export const createDefinition = (word, { isNew = false } = {}) => {
   $label.textContent = capitalize(word);
   if (isNew || DefinitionNew.has(word)) {
     DefinitionNew.add(word);
-    addNewBadge({ $details: $definition, $label });
+    addNewBadge({ $label });
   }
   $label.appendChild($difficulties);
 
