@@ -10,7 +10,7 @@ import { $hints, $hintsContent } from "@/ui/hints/elements";
 import { $reset } from "@/ui/actions";
 import { CLASSES } from "@/consts/css-classes";
 
-export async function handleGameSuccess() {
+export function handleGameSuccess() {
   import("@lib/alert").then(({ showAlert }) => {
     setIsAlertInitialized(true);
     showAlert({ color: "success", text: "🎉 Success!" });
@@ -18,11 +18,8 @@ export async function handleGameSuccess() {
 
   showCorrectWord();
 
-  if (InsaneDifficulty.isApplied()) {
-    // TODO: remove usage of `await`
-    const { hideTimerBar } = await import("@/ui/timer");
-    hideTimerBar();
-  }
+  if (InsaneDifficulty.isApplied())
+    import("@/ui/timer").then(({ hideTimerBar }) => hideTimerBar());
 
   $hints.classList.add(CLASSES.HIDDEN);
   $hintsContent.classList.add(CLASSES.HIDDEN);
