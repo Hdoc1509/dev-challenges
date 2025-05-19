@@ -9,6 +9,7 @@ export const createSpinner = () => $spinnerTemplate.content.cloneNode(true);
 
 /** @param {HTMLElement[]} $elements */
 export const addSpinner = (...$elements) => {
+  // TODO: use :scope selector
   for (const $element of $elements)
     if ($element.querySelector(".spinner") == null)
       $element.appendChild(createSpinner());
@@ -16,6 +17,7 @@ export const addSpinner = (...$elements) => {
 
 /** @param {HTMLElement[]} $elements */
 export const removeSpinner = (...$elements) => {
+  // TODO: use :scope selector
   for (const $element of $elements)
     $element.querySelector(".spinner")?.remove();
 };

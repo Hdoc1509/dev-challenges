@@ -9,5 +9,6 @@ export function addNewBadge({ $details, $label }) {
   $badge.classList.add("definition__badge");
   $badge.textContent = "New";
   $label.appendChild($badge);
+  // TODO: remove usage of data-new attribute
   $details.dataset.new = "";
 }

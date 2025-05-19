@@ -1,5 +1,9 @@
 import { getElementBySelector } from "@lib/dom";
-import { DefinitionElement, DefinitionItem } from "@/state/definition";
+import {
+  DefinitionElement,
+  DefinitionItem,
+  DefinitionNew,
+} from "@/state/definition";
 import { hasCompletedAllDifficulties } from "@/utils/difficulty/completed";
 import { createRetryButton } from "@/ui/definition/retry";
 import { createErrorMessage } from "@/ui/definition/error-message";
@@ -39,7 +43,14 @@ export async function handleDefinitionOpen($definitionDetails) {
     return;
   }
 
+  const $newBadge = getElementBySelector(
+    ":scope > .definition__label > .definition__badge",
+    HTMLSpanElement,
+    $definitionDetails,
+  );
+
   $definitionDetails.dataset.status = "success";
+
   for (const definition of definitions) {
     const $definition = document.createElement("p");
 
@@ -49,8 +60,11 @@ export async function handleDefinitionOpen($definitionDetails) {
 
   DefinitionItem.get($definitionDetails)?.controller.abort();
   DefinitionItem.delete($definitionDetails);
+  DefinitionNew.delete(word);
   if (hasCompletedAllDifficulties({ word })) DefinitionElement.delete(word);
   $definitionDetails.scrollIntoView();
+  $newBadge.remove();
+  // TODO: use :scope selector
   $content.querySelector(".definition__error")?.remove();
   $content.querySelector(".definition__retry")?.remove();
   removeSpinner($content);
