@@ -1,0 +1,24 @@
+:root {
+  --rose-600: #cf1d41;
+
+  /* calculated with https://rgbacolorpicker.com/rgba-to-hex */
+  --red-600-35: #ff0a0a59;
+
+  --blue-100: #d7e0ed;
+
+  --purple-700: #7b248a;
+  --purple-800: #672171;
+
+  --slate-600: #4a5567;
+  --slate-800: #171e30;
+  --slate-900: #0f131f;
+  --slate-950: #030616;
+
+  --gray-400: #afafaf;
+  --gray-400-15: #afafaf26;
+  --gray-500: #9b9b9b;
+  --gray-700: #646464;
+  /* calculated with https://rgbacolorpicker.com/rgba-to-hex */
+  --gray-700-15: #64646426;
+  --gray-800: #333;
+}
