@@ -20,14 +20,14 @@
 
   overflow: hidden;
 }
-.game-card .typing__letter--current {
+.game-card .typing__letter[data-state="current"] {
   --_border: var(--purple-800);
   --caret-color: currentColor;
 }
-.game-card .typing__letter--mistaken {
+.game-card .typing__letter[data-state="mistaken"] {
   --_border: var(--rose-600);
 }
-.game-card .typing__letter--correct {
+.game-card .typing__letter[data-state="correct"] {
   --_border: var(--difficulty-easy);
 }
 .game-card .typing__letter:focus-within {

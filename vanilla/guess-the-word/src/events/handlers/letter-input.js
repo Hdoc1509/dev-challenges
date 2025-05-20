@@ -30,7 +30,7 @@ export function handleLetterInput($currentField) {
   if (!isMatch) {
     if (implementsMaxResets() && gameResets === maxResets) {
       handleLetterMistake({ $currentLetter, enteredLetter, tries });
-      handleGameOver({ $currentField, $currentLetter });
+      handleGameOver({ $currentField });
       if (InsaneDifficulty.isApplied())
         import("@/ui/timer").then(({ hideTimerBar }) => hideTimerBar());
       return;
@@ -42,7 +42,7 @@ export function handleLetterInput($currentField) {
     if (tries === maxTries) return resetGame();
   } else {
     useLetter(lowercaseLetter);
-    $currentLetter.classList.add(CLASSES.TYPING.LETTER__CORRECT);
+    $currentLetter.dataset.state = "correct";
   }
 
   if (tries <= TRIES.FIRST && gameResets <= maxResets)
@@ -53,7 +53,6 @@ export function handleLetterInput($currentField) {
   if (gameResets < maxResets) $reset.disabled = false;
   $currentField.disabled = true;
   $currentField.readOnly = true;
-  $currentLetter.classList.remove(CLASSES.TYPING.LETTER__CURRENT);
 
   if (isValidTypingLetter($nextLetter)) goNextLetter($nextLetter);
   else if (tries === TRIES.NONE) handleGameSuccess();

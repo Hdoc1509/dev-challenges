@@ -1,6 +1,5 @@
 import { TriesIndicator } from "@/ui/tries";
 import { $mistakenLetters } from "@/ui/mistakes";
-import { CLASSES } from "@/consts/css-classes";
 import { TRIES } from "@/consts/tries";
 
 /**
@@ -10,7 +9,7 @@ import { TRIES } from "@/consts/tries";
  * @param {number} params.tries
  */
 export function handleLetterMistake({ $currentLetter, enteredLetter, tries }) {
-  $currentLetter.classList.add(CLASSES.TYPING.LETTER__MISTAKEN);
+  $currentLetter.dataset.state = "mistaken";
 
   // NOTE: only happens when reached max resets
   if (tries === TRIES.NONE) return;

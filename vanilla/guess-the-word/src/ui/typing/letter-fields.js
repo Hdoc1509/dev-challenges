@@ -37,38 +37,28 @@ export function createLetterFields(quantity) {
   );
 
   $typing.classList.remove(CLASSES.HIDDEN);
-  $firstLetter.classList.add(CLASSES.TYPING.LETTER__CURRENT);
+  $firstLetter.dataset.state = "current";
   $firstField.disabled = false;
   $firstField.focus();
 }
 
 export const resetLetterFields = () => {
   const $firstField = $letterFields[0];
-  const $currentLetter = $typing.querySelector(
-    `:scope .${CLASSES.TYPING.LETTER__CURRENT}`,
-  );
-  const $currentField = $currentLetter?.querySelector(":scope > input");
   const $usedLetters = $typing.querySelectorAll(
-    `:scope .${CLASSES.TYPING.LETTER__CORRECT}, .${CLASSES.TYPING.LETTER__MISTAKEN}`,
+    `:scope > .${CLASSES.TYPING.LETTER}[data-state]:not([data-state=""])`,
   );
-
-  $currentLetter?.classList.remove(CLASSES.TYPING.LETTER__CURRENT);
 
   $usedLetters.forEach(($letter, idx) => {
     const $field = $letterFields[idx];
 
-    $letter.classList.remove(
-      CLASSES.TYPING.LETTER__CORRECT,
-      CLASSES.TYPING.LETTER__MISTAKEN,
-    );
+    $letter.removeAttribute("data-state");
 
     $field.readOnly = false;
     $field.disabled = true;
     $field.value = "";
   });
-  if ($currentField instanceof HTMLInputElement) $currentField.disabled = true;
 
-  $firstField.parentElement?.classList.add(CLASSES.TYPING.LETTER__CURRENT);
+  $firstField.parentElement?.setAttribute("data-state", "current");
   $firstField.disabled = false;
   $firstField.focus();
 };

@@ -5,9 +5,8 @@ import { $reset } from "@/ui/actions";
 import { CLASSES } from "@/consts/css-classes";
 
 /** @param {Object} params
- * @param {HTMLInputElement} params.$currentField
- * @param {HTMLSpanElement} params.$currentLetter */
-export function handleGameOver({ $currentField, $currentLetter }) {
+ * @param {HTMLInputElement} params.$currentField */
+export function handleGameOver({ $currentField }) {
   import("@lib/alert").then(({ showAlert }) => {
     setIsAlertInitialized(true);
     showAlert({ color: "error", text: "😔 Game Over!" });
@@ -21,7 +20,6 @@ export function handleGameOver({ $currentField, $currentLetter }) {
 
   $currentField.disabled = true;
   $currentField.readOnly = true;
-  $currentLetter.classList.remove(CLASSES.TYPING.LETTER__CURRENT);
 
   $reset.disabled = true;
 }
