@@ -58,9 +58,6 @@
 .game-card .typing__letter:focus-within {
   --caret-blink-duration: 2.25s;
 }
-.game-card .typing__letter > input:disabled {
-  pointer-events: none;
-}
 
 @keyframes blink {
   0%,
