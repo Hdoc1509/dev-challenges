@@ -42,15 +42,14 @@
   width: 1ch;
   height: 2px;
   margin: 0 auto;
-  background-color: currentColor;
+  background-color: var(--caret-color, transparent);
 
   animation: blink infinite both;
   -webkit-animation: blink infinite both;
-  visibility: var(--caret-visibility, hidden);
 }
 .game-card .typing__letter--current {
   border-color: var(--purple-800);
-  --caret-visibility: visible;
+  --caret-color: currentColor;
 }
 .game-card .typing__letter--mistaken {
   border-color: var(--rose-600);
