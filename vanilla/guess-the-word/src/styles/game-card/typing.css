@@ -20,6 +20,20 @@
 
   overflow: hidden;
 }
+.game-card .typing__letter--current {
+  border-color: var(--purple-800);
+  --caret-color: currentColor;
+}
+.game-card .typing__letter--mistaken {
+  border-color: var(--rose-600);
+}
+.game-card .typing__letter--correct {
+  border-color: var(--difficulty-easy);
+}
+.game-card .typing__letter:focus-within {
+  --caret-blink-duration: 2.25s;
+}
+
 .game-card .typing__letter > input {
   width: 100%;
   height: 100%;
@@ -44,19 +58,6 @@
 
   animation: blink infinite both var(--caret-blink-duration);
   -webkit-animation: blink infinite both var(--caret-blink-duration);
-}
-.game-card .typing__letter--current {
-  border-color: var(--purple-800);
-  --caret-color: currentColor;
-}
-.game-card .typing__letter--mistaken {
-  border-color: var(--rose-600);
-}
-.game-card .typing__letter--correct {
-  border-color: var(--difficulty-easy);
-}
-.game-card .typing__letter:focus-within {
-  --caret-blink-duration: 2.25s;
 }
 
 @keyframes blink {
