@@ -44,10 +44,8 @@ export async function handleDefinitionOpen($definitionDetails) {
   }
 
   // TODO: move to removeNewBadge($definitionDetails) separate handler
-  const $newBadge = getElementBySelector(
+  const $newBadge = $definitionDetails.querySelector(
     ":scope > .definition__label > .definition__badge",
-    HTMLSpanElement,
-    $definitionDetails,
   );
 
   $definitionDetails.dataset.status = "success";
@@ -65,7 +63,7 @@ export async function handleDefinitionOpen($definitionDetails) {
   if (hasCompletedAllDifficulties({ word })) DefinitionElement.delete(word);
   $definitionDetails.scrollIntoView();
   // TODO: call removeNewBadge($definitionDetails)
-  $newBadge.remove();
+  if ($newBadge instanceof HTMLSpanElement) $newBadge.remove();
   $content.querySelector(":scope > .definition__error")?.remove();
   $content.querySelector(":scope > .definition__retry")?.remove();
   removeSpinner($content);
