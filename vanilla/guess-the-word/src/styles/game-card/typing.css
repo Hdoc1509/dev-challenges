@@ -8,8 +8,6 @@
 
   font-size: var(--letter-fs, 1.25rem);
   font-weight: bold;
-
-  --caret-blink-duration: 2.25s;
 }
 
 .game-card .typing__letter {
@@ -44,8 +42,8 @@
   margin: 0 auto;
   background-color: var(--caret-color, transparent);
 
-  animation: blink infinite both;
-  -webkit-animation: blink infinite both;
+  animation: blink infinite both var(--caret-blink-duration);
+  -webkit-animation: blink infinite both var(--caret-blink-duration);
 }
 .game-card .typing__letter--current {
   border-color: var(--purple-800);
@@ -57,8 +55,8 @@
 .game-card .typing__letter--correct {
   border-color: var(--difficulty-easy);
 }
-.game-card .typing__letter--current:focus-within .typing__caret {
-  animation-duration: var(--caret-blink-duration);
+.game-card .typing__letter:focus-within {
+  --caret-blink-duration: 2.25s;
 }
 .game-card .typing__letter > input:disabled {
   pointer-events: none;
