@@ -57,7 +57,7 @@
 .game-card .typing__letter--correct {
   border-color: var(--difficulty-easy);
 }
-.game-card .typing__letter--current > input:focus ~ .typing__caret {
+.game-card .typing__letter--current:focus-within .typing__caret {
   animation-duration: var(--caret-blink-duration);
 }
 .game-card .typing__letter > input:disabled {
