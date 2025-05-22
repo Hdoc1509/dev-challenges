@@ -43,11 +43,15 @@ export const showTimerBar = () =>
 export const hideTimerBar = () =>
   $timerBar.style.setProperty("display", "none");
 
-/** @param {number} duration Timer duration in seconds
- * @param {() => void} onEnd
- * @param {{ controller: AbortController }} options */
-export const setTimerDuration = (duration, onEnd, { controller }) => {
-  $timerLabel.textContent = `${duration} seconds available`;
+/** @param {Object} params
+ * @param {number} params.duration Timer duration in seconds
+ * @param {() => void} params.onEnd
+ * @param {AbortController} params.controller
+ * @param {(duration: number) => string} [params.onLabel]
+ */
+export const setTimerDuration = ({ duration, onEnd, controller, onLabel }) => {
+  if (typeof onLabel === "function")
+    $timerLabel.textContent = onLabel(duration);
   $timerBar.style.setProperty(CSS.VARIABLES.TIME_BAR_DURATION, `${duration}s`);
   $timerBar.addEventListener("animationend", onEnd, {
     once: true,

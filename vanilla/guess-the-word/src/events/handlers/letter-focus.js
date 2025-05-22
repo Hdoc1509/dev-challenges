@@ -28,7 +28,10 @@ export const handleLetterFocus = (e) => {
 
   $lastFocusedInput = $target;
   resetTimer();
-  setTimerDuration(timerDuration, () => handleLetterInput($target), {
+  setTimerDuration({
+    duration: timerDuration,
+    onEnd: () => handleLetterInput($target),
+    onLabel: (duration) => `${duration}  seconds available`,
     controller,
   });
 };
