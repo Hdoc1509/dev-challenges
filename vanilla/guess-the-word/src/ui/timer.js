@@ -2,11 +2,18 @@ import { getElementBySelector } from "@lib/dom";
 import { CLASSES } from "@/consts/css-classes";
 import "@/styles/game-card/timer.css";
 
-const $timer = getElementBySelector("#timer.timer", HTMLElement);
+// TODO: move this logic into a separate class
+// use it internally in `Alert` class
 
+const $timer = getElementBySelector("#timer.timer", HTMLElement);
 const $timerBar = getElementBySelector(
   ":scope .timer__bar",
   HTMLDivElement,
+  $timer,
+);
+const $timerLabel = getElementBySelector(
+  ":scope .timer__label",
+  HTMLSpanElement,
   $timer,
 );
 
@@ -36,12 +43,11 @@ export const showTimerBar = () =>
 export const hideTimerBar = () =>
   $timerBar.style.setProperty("display", "none");
 
-/**
- * @param {number} duration Timer duration in seconds
+/** @param {number} duration Timer duration in seconds
  * @param {() => void} onEnd
- * @param {{ controller: AbortController }} options
- */
+ * @param {{ controller: AbortController }} options */
 export const setTimerDuration = (duration, onEnd, { controller }) => {
+  $timerLabel.textContent = `${duration} seconds available`;
   $timerBar.style.setProperty(CSS.VARIABLES.TIME_BAR_DURATION, `${duration}s`);
   $timerBar.addEventListener("animationend", onEnd, {
     once: true,
