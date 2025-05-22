@@ -1,3 +1,4 @@
+/* TODO: add data-position="<position>"  variants */
 .alert {
   --_movement-duration: 0.4s;
   --_bg: var(--alert-bg);
@@ -20,6 +21,7 @@
   transform: translateX(100%) translate(1rem);
   transition: transform var(--_movement-duration) ease-in-out;
 }
+/* TODO: use data-state="open|closing" */
 .alert--open {
   visibility: visible;
   transform: translateX(0);

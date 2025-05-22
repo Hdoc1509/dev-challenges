@@ -17,7 +17,6 @@ export class Alert {
   #$text: HTMLSpanElement;
   #$timerBar: HTMLDivElement;
   static COLORS = COLORS;
-  // #a11y: boolean;
 
   constructor(alertElement: HTMLDivElement /*, options: AlertOptions */) {
     this.#$alert = alertElement;
@@ -47,8 +46,6 @@ export class Alert {
   show({ color, text }: ShowOptions) {
     this.#$alert.classList.add("alert--open");
     this.#$alert.setAttribute("data-color", color);
-    // if (this.#a11y)
-    this.#$text.textContent = ""; // NOTE: needed to announce updates
     this.#$text.textContent = text;
   }
 }
