@@ -4,7 +4,11 @@ import "@/styles/game-card/timer.css";
 
 const $timer = getElementBySelector("#timer.timer", HTMLElement);
 
-const $timerBar = getElementBySelector(".timer__bar", HTMLDivElement, $timer);
+const $timerBar = getElementBySelector(
+  ":scope .timer__bar",
+  HTMLDivElement,
+  $timer,
+);
 
 const CSS = Object.freeze({
   CLASSES: Object.freeze({
