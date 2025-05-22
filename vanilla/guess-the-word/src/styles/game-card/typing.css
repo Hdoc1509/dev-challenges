@@ -7,7 +7,6 @@
   margin-block: var(--letters-margin-block, 2.5rem);
 
   font-size: var(--letter-fs, 1.25rem);
-  font-weight: bold;
 }
 
 .game-card .typing__letter {

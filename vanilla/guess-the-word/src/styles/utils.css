@@ -65,7 +65,10 @@
   margin-right: auto;
 }
 
+.font-semibold {
+  font-weight: 600;
+}
+
 /* TODO: add more utility classes
 /* - .radius-<name> */
 /*   https://tailwindcss.com/docs/border-radius */
-/* - .font-bold */

@@ -11,7 +11,6 @@
   box-shadow: 0px 4px 0px 0px var(--slate-950);
 
   font-size: var(--word-fs, 2rem);
-  font-weight: bold;
   user-select: none;
 }
 

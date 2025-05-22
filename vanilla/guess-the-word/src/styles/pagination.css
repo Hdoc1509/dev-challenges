@@ -13,10 +13,6 @@
   list-style: none;
 }
 
-.pagination__item[aria-current] {
-  font-weight: bold;
-}
-
 .pagination__trigger {
   display: grid;
   place-items: center;
