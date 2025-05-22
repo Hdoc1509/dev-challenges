@@ -49,7 +49,7 @@ export const hideTimerBar = () =>
  * @param {AbortController} params.controller
  * @param {(duration: number) => string} [params.onLabel]
  */
-export const setTimerDuration = ({ duration, onEnd, controller, onLabel }) => {
+export const startTimer = ({ duration, onEnd, controller, onLabel }) => {
   if (typeof onLabel === "function")
     $timerLabel.textContent = onLabel(duration);
   $timerBar.style.setProperty(CSS.VARIABLES.TIME_BAR_DURATION, `${duration}s`);
