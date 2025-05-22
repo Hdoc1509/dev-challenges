@@ -11,9 +11,9 @@ import { $reset } from "@/ui/actions";
 import { CLASSES } from "@/consts/css-classes";
 
 export function handleGameSuccess() {
-  import("@lib/alert").then(({ showAlert }) => {
+  import("@/ui/alert").then(({ GameAlert }) => {
     setIsAlertInitialized(true);
-    showAlert({ color: "success", text: "🎉 Success!" });
+    GameAlert.show({ color: "success", text: "🎉 Success!" });
   });
 
   showCorrectWord();

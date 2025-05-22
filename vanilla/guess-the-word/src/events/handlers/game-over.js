@@ -7,9 +7,9 @@ import { CLASSES } from "@/consts/css-classes";
 /** @param {Object} params
  * @param {HTMLInputElement} params.$currentField */
 export function handleGameOver({ $currentField }) {
-  import("@lib/alert").then(({ showAlert }) => {
+  import("@/ui/alert").then(({ GameAlert }) => {
     setIsAlertInitialized(true);
-    showAlert({ color: "error", text: "😔 Game Over!" });
+    GameAlert.show({ color: "error", text: "😔 Game Over!" });
   });
 
   clearUsedLetters();

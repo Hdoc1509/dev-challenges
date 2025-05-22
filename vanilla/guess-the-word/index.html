@@ -87,7 +87,8 @@
       </section>
     </main>
     <div id="alert" class="alert">
-      <span class="alert__text"></span>
+      <!-- FIX: icon must be aria-hidden. use a nested element for it -->
+      <span class="alert__text" role="alert"></span>
       <div class="alert__time-bar"></div>
     </div>
     <%- include("menu/AppMenu") %>

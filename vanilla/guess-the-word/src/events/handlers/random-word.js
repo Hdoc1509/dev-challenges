@@ -19,6 +19,8 @@ import { RESETS } from "@/consts/resets";
 import { CLASSES } from "@/consts/css-classes";
 
 export function generateRandomWord() {
+  // FIX: disable random button while showing correct word
+
   if (words.length === 0) {
     import("./difficulty-complete").then(({ handleDifficultyComplete }) =>
       handleDifficultyComplete(),
@@ -30,7 +32,7 @@ export function generateRandomWord() {
 
   setCurrentWord(randomWord);
   if (isAlertInitialized)
-    import("@lib/alert").then(({ resetAlert }) => resetAlert());
+    import("@/ui/alert").then(({ GameAlert }) => GameAlert.reset());
   resetTries();
   resetGameResets();
 
