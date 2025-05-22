@@ -21,11 +21,12 @@
   background: var(--_bar-bg);
 
   transform-origin: left center;
-
-  animation: timer-bar var(--timer-bar-duration) linear forwards;
+}
+.timer[data-type="countdown"] .timer__bar {
+  animation: timer-bar-countdown var(--timer-bar-duration) linear forwards;
 }
 
-@keyframes timer-bar {
+@keyframes timer-bar-countdown {
   to {
     transform: scaleX(0);
   }
