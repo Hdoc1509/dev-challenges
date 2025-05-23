@@ -1,5 +1,10 @@
 import { TypingLetterIndex } from "@/state/typing-letter";
-import { resetTimer, startTimer, showTimerBar } from "@/ui/timer";
+import {
+  resetTimer,
+  startTimer,
+  showTimerBar,
+  timerController,
+} from "@/ui/timer";
 import { isValidLetterField } from "@/ui/typing/validation";
 import { Random } from "@/utils/random";
 import { handleLetterInput } from "./letter-input";
@@ -7,8 +12,6 @@ import { handleLetterInput } from "./letter-input";
 /** @type {HTMLInputElement | null} */
 // NOTE: avoids weird behaviors when focusing more than once on the same input
 let $lastFocusedInput = null;
-/** @type {AbortController | null} */
-let controller = null;
 
 /** @param {FocusEvent} e */
 export const handleLetterFocus = (e) => {
@@ -22,16 +25,14 @@ export const handleLetterFocus = (e) => {
 
   const timerDuration = Random.intInRange(3, 5);
 
-  controller?.abort();
-
-  controller = new AbortController();
-
   $lastFocusedInput = $target;
+
+  timerController?.abort();
   resetTimer();
   startTimer({
     duration: timerDuration,
     onEnd: () => handleLetterInput($target),
     onLabel: (duration) => `${duration}  seconds available`,
-    controller,
+    controller: new AbortController(),
   });
 };
