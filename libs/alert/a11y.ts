@@ -47,5 +47,12 @@ export class Alert {
     this.#$alert.classList.add("alert--open");
     this.#$alert.setAttribute("data-color", color);
     this.#$text.textContent = text;
+    this.#$timerBar.addEventListener(
+      "animationend",
+      () => {
+        this.close();
+      },
+      { once: true },
+    );
   }
 }
