@@ -37,11 +37,10 @@ export const resetTimer = () => {
 export const showTimer = () => $timer.classList.remove(CLASSES.HIDDEN);
 export const hideTimer = () => $timer.classList.add(CLASSES.HIDDEN);
 
-export const showTimerBar = () =>
-  $timerBar.style.setProperty("display", "block");
-/** Aborts the timer bar animation and its associated event listener */
-export const hideTimerBar = () =>
-  $timerBar.style.setProperty("display", "none");
+export const showTimerBar = () => $timerBar.setAttribute("data-active", "");
+/** Aborts the timer bar animation and its associated `animationend` event
+ * listener */
+export const hideTimerBar = () => $timerBar.removeAttribute("data-active");
 
 /** @param {Object} params
  * @param {number} params.duration Timer duration in seconds

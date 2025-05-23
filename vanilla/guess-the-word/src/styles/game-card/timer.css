@@ -16,13 +16,13 @@
   left: 0;
 
   height: 100%;
-  width: 100%;
   border-radius: inherit;
   background: var(--_bar-bg);
 
   transform-origin: left center;
 }
-.timer[data-type="countdown"] .timer__bar {
+.timer[data-type="countdown"] .timer__bar[data-active] {
+  width: 100%;
   animation: timer-bar-countdown var(--timer-bar-duration) linear forwards;
 }
 
