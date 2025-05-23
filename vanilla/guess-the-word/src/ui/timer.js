@@ -31,7 +31,7 @@ const CSS = Object.freeze({
 /** @type {AbortController} */
 export let timerController;
 
-export const resetTimer = () => {
+const resetTimer = () => {
   $timerBar.classList.remove(CSS.CLASSES.TIMER.BAR);
   void $timerBar.offsetWidth;
   $timerBar.classList.add(CSS.CLASSES.TIMER.BAR);
@@ -53,6 +53,8 @@ export const hideTimerBar = () => $timerBar.removeAttribute("data-active");
  */
 export const startTimer = ({ duration, controller, onEnd, onLabel }) => {
   timerController = controller;
+
+  resetTimer();
   if (typeof onLabel === "function")
     $timerLabel.textContent = onLabel(duration);
   $timerBar.style.setProperty(CSS.VARIABLES.TIME_BAR_DURATION, `${duration}s`);
