@@ -52,18 +52,19 @@ export const hideTimerBar = () => {
 
 /** @param {Object} params
  * @param {number} params.duration Timer duration in seconds
- * @param {() => void} params.onEnd
- * @param {AbortController} params.controller Overrides `timerController`
+ * @param {() => void} params.onEnd Event handler called once timer bar finishes
  * @param {(duration: number) => string} [params.onLabel]
+ * Display a notification for accessibility purposes
  */
-export const startTimer = ({ duration, controller, onEnd, onLabel }) => {
-  timerController = controller;
+export const startTimer = ({ duration, onEnd, onLabel }) => {
+  // TODO: call timerController.abort() here
+  timerController = new AbortController();
 
   resetTimer();
   $timerBar.style.setProperty(CSS.VARIABLES.TIME_BAR_DURATION, `${duration}s`);
   $timerBar.addEventListener("animationend", onEnd, {
     once: true,
-    signal: controller.signal,
+    signal: timerController.signal,
   });
   if (!isEnabled) {
     isEnabled = true;
