@@ -1,5 +1,5 @@
 import { TypingLetterIndex } from "@/state/typing-letter";
-import { startTimer, showTimerBar, timerController } from "@/ui/timer";
+import { startTimer, timerController } from "@/ui/timer";
 import { isValidLetterField } from "@/ui/typing/validation";
 import { Random } from "@/utils/random";
 import { handleLetterInput } from "./letter-input";
@@ -11,12 +11,13 @@ let $lastFocusedInput = null;
 /** @param {FocusEvent} e */
 export const handleLetterFocus = (e) => {
   const $target = e.target;
-  if (!isValidLetterField($target)) return;
 
-  const letterIdx = TypingLetterIndex.get($target);
-
-  if (letterIdx === 0 || $lastFocusedInput === $target) return;
-  if (letterIdx === 1) showTimerBar();
+  if (
+    !isValidLetterField($target) ||
+    TypingLetterIndex.get($target) === 0 ||
+    $lastFocusedInput === $target
+  )
+    return;
 
   const timerDuration = Random.intInRange(3, 5);
 

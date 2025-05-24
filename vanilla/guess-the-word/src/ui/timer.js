@@ -40,10 +40,15 @@ const resetTimer = () => {
 export const showTimer = () => $timer.classList.remove(CLASSES.HIDDEN);
 export const hideTimer = () => $timer.classList.add(CLASSES.HIDDEN);
 
-export const showTimerBar = () => $timerBar.setAttribute("data-active", "");
-/** Aborts the timer bar animation and its associated `animationend` event
- * listener */
-export const hideTimerBar = () => $timerBar.removeAttribute("data-active");
+let isEnabled = false;
+
+/** Aborts the timer bar animation and prevents its `onEnd` event handler to be
+ * called
+ * Use `timerController.abort()` to remove `onEnd` event handler */
+export const hideTimerBar = () => {
+  isEnabled = false;
+  $timerBar.removeAttribute("data-active");
+};
 
 /** @param {Object} params
  * @param {number} params.duration Timer duration in seconds
@@ -55,11 +60,15 @@ export const startTimer = ({ duration, controller, onEnd, onLabel }) => {
   timerController = controller;
 
   resetTimer();
-  if (typeof onLabel === "function")
-    $timerLabel.textContent = onLabel(duration);
   $timerBar.style.setProperty(CSS.VARIABLES.TIME_BAR_DURATION, `${duration}s`);
   $timerBar.addEventListener("animationend", onEnd, {
     once: true,
     signal: controller.signal,
   });
+  if (!isEnabled) {
+    isEnabled = true;
+    $timerBar.setAttribute("data-active", "");
+  }
+  if (typeof onLabel === "function")
+    $timerLabel.textContent = onLabel(duration);
 };
