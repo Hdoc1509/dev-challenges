@@ -26,7 +26,7 @@ export const handleLetterFocus = (e) => {
   startTimer({
     duration: timerDuration,
     onEnd: () => handleLetterInput($target),
-    onLabel: (duration) => `${duration}  seconds available`,
+    onLabel: (duration) => `${duration} seconds available`,
     controller: new AbortController(),
   });
 };
