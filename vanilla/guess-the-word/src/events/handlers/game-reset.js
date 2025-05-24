@@ -14,7 +14,7 @@ import { resetLetterFields } from "@/ui/typing/letter-fields";
 import { $reset } from "@/ui/actions";
 import { CLASSES } from "@/consts/css-classes";
 
-export async function resetGame() {
+export function resetGame() {
   resetTries();
   increaseGameResets();
 
