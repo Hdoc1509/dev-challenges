@@ -1,5 +1,5 @@
 import { TypingLetterIndex } from "@/state/typing-letter";
-import { startTimer, timerController } from "@/ui/timer";
+import { startTimer } from "@/ui/timer";
 import { isValidLetterField } from "@/ui/typing/validation";
 import { Random } from "@/utils/random";
 import { handleLetterInput } from "./letter-input";
@@ -23,7 +23,6 @@ export const handleLetterFocus = (e) => {
 
   $lastFocusedInput = $target;
 
-  timerController?.abort();
   startTimer({
     duration: timerDuration,
     onEnd: () => handleLetterInput($target),

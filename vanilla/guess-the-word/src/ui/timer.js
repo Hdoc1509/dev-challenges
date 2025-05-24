@@ -28,7 +28,7 @@ const CSS = Object.freeze({
   }),
 });
 
-/** @type {AbortController} */
+/** @type {AbortController | undefined} */
 export let timerController;
 
 const resetTimer = () => {
@@ -57,10 +57,11 @@ export const hideTimerBar = () => {
  * Display a notification for accessibility purposes
  */
 export const startTimer = ({ duration, onEnd, onLabel }) => {
-  // TODO: call timerController.abort() here
+  timerController?.abort();
   timerController = new AbortController();
 
   resetTimer();
+
   $timerBar.style.setProperty(CSS.VARIABLES.TIME_BAR_DURATION, `${duration}s`);
   $timerBar.addEventListener("animationend", onEnd, {
     once: true,
