@@ -41,7 +41,7 @@ export const hideTimer = () => $timer.classList.add(CLASSES.HIDDEN);
 
 let isEnabled = false;
 
-/** Aborts the timer bar and removes its `onEnd` event handler registered by
+/** Aborts the timer bar and removes its `onEnd` handler registered by
  * `startTimer()` */
 export const disableTimerBar = () => {
   timerController.abort();
@@ -52,10 +52,10 @@ export const disableTimerBar = () => {
 };
 
 /** If needed, enables the timer bar before starting it. Also removes previous
- * register of `onEnd` event handler before resgistering the new one
+ * register of `onEnd` handler before resgistering the new one
  * @param {Object} params
  * @param {number} params.duration Timer duration in seconds
- * @param {() => void} params.onEnd Event handler called once timer bar finishes
+ * @param {() => void} params.onEnd Handler called once timer bar finishes
  * @param {(duration: number) => string} [params.onLabel]
  * Display a notification for accessibility purposes
  */
