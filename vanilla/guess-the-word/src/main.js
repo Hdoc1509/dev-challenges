@@ -23,13 +23,14 @@ import "./styles/main.css";
       await removeAvailableWord(word, { difficulty, isInitialization: true });
   });
   await applyDifficulty(difficulty);
-  removeSpinner($word, $typing);
 
   if (words.length === 0)
-    import("./events/handlers/difficulty-complete").then(
+    await import("./events/handlers/difficulty-complete").then(
       ({ handleDifficultyComplete }) => handleDifficultyComplete(),
     );
   else generateRandomWord();
+
+  removeSpinner($word, $typing);
 
   DefinitionPages.setItems(Array.from(discoveredWords.keys()).reverse());
 
