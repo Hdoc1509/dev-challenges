@@ -65,12 +65,11 @@ export const startTimer = ({ duration, onEnd, onLabel }) => {
 
   resetTimer();
 
-  // TODO: set css variables after registering the event handler
-  $timerBar.style.setProperty(CSS.VARIABLES.TIME_BAR_DURATION, `${duration}s`);
   $timerBar.addEventListener("animationend", onEnd, {
     once: true,
     signal: timerController.signal,
   });
+  $timerBar.style.setProperty(CSS.VARIABLES.TIME_BAR_DURATION, `${duration}s`);
   if (!isEnabled) {
     isEnabled = true;
     $timerBar.setAttribute("data-active", "");
