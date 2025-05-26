@@ -1,0 +1,33 @@
+.countdown-bar {
+  --_bg: var(--countdown-bar-bg);
+  --_track-bg: var(--countdown-bar-track-bg);
+  grid-column: 1 / -1;
+
+  position: relative;
+
+  border-radius: 12px;
+  background-color: var(--_bg);
+  height: 8px;
+}
+
+.countdown-bar__track {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  height: 100%;
+  border-radius: inherit;
+  background: var(--_track-bg);
+
+  transform-origin: left center;
+}
+.countdown-bar .countdown-bar__track[data-active] {
+  width: 100%;
+  animation: countdown-bar var(--countdown-bar-duration) linear forwards;
+}
+
+@keyframes countdown-bar {
+  to {
+    transform: scaleX(0);
+  }
+}
