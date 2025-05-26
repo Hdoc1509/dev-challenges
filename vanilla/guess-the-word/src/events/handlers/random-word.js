@@ -18,7 +18,7 @@ import { $hints, $hintsContent, $hintsTriggerLabel } from "@/ui/hints/elements";
 import { RESETS } from "@/consts/resets";
 import { CLASSES } from "@/consts/css-classes";
 
-export function generateRandomWord() {
+export async function generateRandomWord() {
   // FIX: disable random button while showing correct word
 
   if (words.length === 0) {
@@ -32,12 +32,9 @@ export function generateRandomWord() {
 
   setCurrentWord(randomWord);
   if (isAlertInitialized)
-    import("@/ui/alert").then(({ GameAlert }) => GameAlert.reset());
+    await import("@/ui/alert").then(({ GameAlert }) => GameAlert.reset());
   resetTries();
   resetGameResets();
-
-  createWordLetters(scrambleWord(randomWord));
-  createLetterFields(randomWord.length);
 
   if (maxResets === RESETS.MAX.VOID) {
     $mistakesContainer.classList.add(CLASSES.HIDDEN);
@@ -48,16 +45,19 @@ export function generateRandomWord() {
   }
   TriesIndicator.reset();
   if (MasterDifficulty.isApplied())
-    import("@/ui/resets").then(({ ResetsIndicator }) => {
+    await import("@/ui/resets").then(({ ResetsIndicator }) => {
       ResetsIndicator.reset();
     });
   $mistakenLetters.textContent = "0";
   if (InsaneDifficulty.isApplied())
-    import("@/ui/timer").then(({ disableTimerBar }) => disableTimerBar());
+    await import("@/ui/timer").then(({ disableTimerBar }) => disableTimerBar());
   $definitionSection.classList.add(CLASSES.HIDDEN);
   $hints.classList.add(CLASSES.HIDDEN);
   $hintsContent.classList.add(CLASSES.HIDDEN);
   $hintsTriggerLabel.textContent = "Show hints";
   clearHints();
   $reset.disabled = true;
+
+  createWordLetters(scrambleWord(randomWord));
+  createLetterFields(randomWord.length);
 }

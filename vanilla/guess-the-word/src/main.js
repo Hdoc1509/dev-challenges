@@ -28,7 +28,7 @@ import "./styles/main.css";
     await import("./events/handlers/difficulty-complete").then(
       ({ handleDifficultyComplete }) => handleDifficultyComplete(),
     );
-  else generateRandomWord();
+  else await generateRandomWord();
 
   removeSpinner($word, $typing);
 
