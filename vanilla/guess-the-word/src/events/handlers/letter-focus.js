@@ -8,6 +8,8 @@ import { handleLetterInput } from "./letter-input";
 // NOTE: avoids weird behaviors when focusing more than once on the same input
 let $lastFocusedInput = null;
 
+export const resetFocusedInput = () => ($lastFocusedInput = null);
+
 /** @param {FocusEvent} e */
 export const handleLetterFocus = (e) => {
   const $target = e.target;

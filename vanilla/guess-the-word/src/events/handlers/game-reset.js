@@ -14,7 +14,7 @@ import { resetLetterFields } from "@/ui/typing/letter-fields";
 import { $reset } from "@/ui/actions";
 import { CLASSES } from "@/consts/css-classes";
 
-export function resetGame() {
+export async function resetGame() {
   resetTries();
   increaseGameResets();
 
@@ -30,8 +30,12 @@ export function resetGame() {
     import("@/ui/resets").then(({ ResetsIndicator }) =>
       ResetsIndicator.goNext(),
     );
-  if (InsaneDifficulty.isApplied())
+  if (InsaneDifficulty.isApplied()) {
     import("@/ui/timer").then(({ disableTimerBar }) => disableTimerBar());
+    await import("@/events/handlers/letter-focus").then(
+      ({ resetFocusedInput }) => resetFocusedInput(),
+    );
+  }
 
   resetLetterFields();
 

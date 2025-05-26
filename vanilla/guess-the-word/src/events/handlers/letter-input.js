@@ -40,7 +40,10 @@ export function handleLetterInput($currentField) {
     increaseTries();
     handleLetterMistake({ $currentLetter, enteredLetter, tries });
 
-    if (tries === maxTries) return resetGame();
+    if (tries === maxTries) {
+      resetGame();
+      return;
+    }
   } else {
     useLetter(lowercaseLetter);
     $currentLetter.dataset.state = "correct";
