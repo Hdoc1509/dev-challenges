@@ -33,7 +33,9 @@ export function handleLetterInput($currentField) {
       handleGameOver({ $currentField });
       // TODO: move to handleGameOver()
       if (InsaneDifficulty.isApplied())
-        import("@/ui/timer").then(({ disableTimerBar }) => disableTimerBar());
+        import("@/ui/insane-countdown-bar").then(({ InsaneCountdownBar }) =>
+          InsaneCountdownBar.disable(),
+        );
       return;
     }
 
@@ -61,5 +63,7 @@ export function handleLetterInput($currentField) {
   if (isValidTypingLetter($nextLetter)) goNextLetter($nextLetter);
   else if (tries === TRIES.NONE) handleGameSuccess();
   else if (InsaneDifficulty.isApplied())
-    import("@/ui/timer").then(({ disableTimerBar }) => disableTimerBar());
+    import("@/ui/insane-countdown-bar").then(({ InsaneCountdownBar }) =>
+      InsaneCountdownBar.disable(),
+    );
 }

@@ -50,7 +50,9 @@ export async function generateRandomWord() {
     });
   $mistakenLetters.textContent = "0";
   if (InsaneDifficulty.isApplied())
-    await import("@/ui/timer").then(({ disableTimerBar }) => disableTimerBar());
+    import("@/ui/insane-countdown-bar").then(({ InsaneCountdownBar }) =>
+      InsaneCountdownBar.disable(),
+    );
   $definitionSection.classList.add(CLASSES.HIDDEN);
   $hints.classList.add(CLASSES.HIDDEN);
   $hintsContent.classList.add(CLASSES.HIDDEN);

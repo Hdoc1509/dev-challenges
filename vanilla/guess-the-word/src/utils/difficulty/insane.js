@@ -8,10 +8,10 @@ export const InsaneDifficulty = Object.freeze({
     const { handleLetterFocus } = await import(
       "@/events/handlers/letter-focus"
     );
-    const { showTimer } = await import("@/ui/timer");
+    const { showInsaneCountdown } = await import("@/ui/insane-countdown-bar");
 
     isApplied = true;
-    showTimer();
+    showInsaneCountdown();
     document.addEventListener("focusin", handleLetterFocus);
     await setWordsByDifficulty(DIFFICULTY.INSANE);
   },
@@ -21,10 +21,10 @@ export const InsaneDifficulty = Object.freeze({
     const { handleLetterFocus } = await import(
       "@/events/handlers/letter-focus"
     );
-    const { hideTimer } = await import("@/ui/timer");
+    const { hideInsaneCountdown } = await import("@/ui/insane-countdown-bar");
 
     isApplied = false;
-    hideTimer();
+    hideInsaneCountdown();
     document.removeEventListener("focusin", handleLetterFocus);
   },
   isApplied: () => isApplied,

@@ -30,7 +30,9 @@ export function handleDifficultyComplete() {
       $resetsContainer.classList.add(CLASSES.HIDDEN),
     );
   if (InsaneDifficulty.isApplied())
-    import("@/ui/timer").then(({ hideTimer }) => hideTimer());
+    import("@/ui/insane-countdown-bar").then(({ hideInsaneCountdown }) =>
+      hideInsaneCountdown(),
+    );
   $typing.replaceChildren();
   $typing.classList.add(CLASSES.HIDDEN);
 

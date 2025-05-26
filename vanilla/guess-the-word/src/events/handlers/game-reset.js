@@ -31,7 +31,9 @@ export async function resetGame() {
       ResetsIndicator.goNext(),
     );
   if (InsaneDifficulty.isApplied()) {
-    import("@/ui/timer").then(({ disableTimerBar }) => disableTimerBar());
+    import("@/ui/insane-countdown-bar").then(({ InsaneCountdownBar }) =>
+      InsaneCountdownBar.disable(),
+    );
     await import("@/events/handlers/letter-focus").then(
       ({ resetFocusedInput }) => resetFocusedInput(),
     );

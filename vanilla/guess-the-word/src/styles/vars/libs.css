@@ -1,6 +1,3 @@
 :root {
   --alert-time-bar-duration: 4s;
-
-  --timer-bg: var(--slate-600);
-  --timer-bar-bg: var(--primary);
 }

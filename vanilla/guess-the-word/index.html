@@ -55,9 +55,12 @@
           </p>
           <%- include("StepIndicator", { steps: 2 }) %>
         </section>
-        <section id="timer" class="timer | hidden" data-type="countdown">
-          <div class="timer__bar"></div>
-          <span class="timer__label visually-hidden" role="alert"></span>
+        <section id="insane-countdown" class="countdown-bar | hidden">
+          <div class="countdown-bar__track"></div>
+          <span
+            class="countdown-bar__label visually-hidden"
+            role="alert"
+          ></span>
         </section>
         <section class="definition | hidden">
           <button class="button">

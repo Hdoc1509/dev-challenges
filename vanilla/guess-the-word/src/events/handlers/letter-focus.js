@@ -1,5 +1,5 @@
 import { TypingLetterIndex } from "@/state/typing-letter";
-import { startTimer } from "@/ui/timer";
+import { InsaneCountdownBar } from "@/ui/insane-countdown-bar";
 import { isValidLetterField } from "@/ui/typing/validation";
 import { Random } from "@/utils/random";
 import { handleLetterInput } from "./letter-input";
@@ -25,9 +25,8 @@ export const handleLetterFocus = (e) => {
 
   $lastFocusedInput = $target;
 
-  startTimer({
+  InsaneCountdownBar.start({
     duration: timerDuration,
     onEnd: () => handleLetterInput($target),
-    onLabel: (duration) => `${duration} seconds available`,
   });
 };
