@@ -19,7 +19,7 @@ export function handleGameSuccess() {
   showCorrectWord();
 
   if (InsaneDifficulty.isApplied())
-    import("@/ui/timer").then(({ hideTimerBar }) => hideTimerBar());
+    import("@/ui/timer").then(({ disableTimerBar }) => disableTimerBar());
 
   $hints.classList.add(CLASSES.HIDDEN);
   $hintsContent.classList.add(CLASSES.HIDDEN);

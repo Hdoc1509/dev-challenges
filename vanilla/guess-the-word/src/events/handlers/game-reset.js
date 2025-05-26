@@ -31,7 +31,7 @@ export function resetGame() {
       ResetsIndicator.goNext(),
     );
   if (InsaneDifficulty.isApplied())
-    import("@/ui/timer").then(({ hideTimerBar }) => hideTimerBar());
+    import("@/ui/timer").then(({ disableTimerBar }) => disableTimerBar());
 
   resetLetterFields();
 

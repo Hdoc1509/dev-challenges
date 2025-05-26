@@ -28,8 +28,7 @@ const CSS = Object.freeze({
   }),
 });
 
-/** @type {AbortController | undefined} */
-export let timerController;
+let timerController = new AbortController();
 
 const resetTimer = () => {
   $timerBar.classList.remove(CSS.CLASSES.TIMER.BAR);
@@ -42,26 +41,31 @@ export const hideTimer = () => $timer.classList.add(CLASSES.HIDDEN);
 
 let isEnabled = false;
 
-/** Aborts the timer bar animation and prevents its `onEnd` event handler to be
- * called
- * Use `timerController.abort()` to remove `onEnd` event handler */
-export const hideTimerBar = () => {
-  isEnabled = false;
-  $timerBar.removeAttribute("data-active");
+/** Aborts the timer bar and removes its `onEnd` event handler registered by
+ * `startTimer()` */
+export const disableTimerBar = () => {
+  timerController.abort();
+  if (isEnabled) {
+    isEnabled = false;
+    $timerBar.removeAttribute("data-active");
+  }
 };
 
-/** @param {Object} params
+/** If needed, enables the timer bar before starting it. Also removes previous
+ * register of `onEnd` event handler before resgistering the new one
+ * @param {Object} params
  * @param {number} params.duration Timer duration in seconds
  * @param {() => void} params.onEnd Event handler called once timer bar finishes
  * @param {(duration: number) => string} [params.onLabel]
  * Display a notification for accessibility purposes
  */
 export const startTimer = ({ duration, onEnd, onLabel }) => {
-  timerController?.abort();
+  timerController.abort();
   timerController = new AbortController();
 
   resetTimer();
 
+  // TODO: set css variables after registering the event handler
   $timerBar.style.setProperty(CSS.VARIABLES.TIME_BAR_DURATION, `${duration}s`);
   $timerBar.addEventListener("animationend", onEnd, {
     once: true,

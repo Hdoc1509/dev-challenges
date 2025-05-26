@@ -16,9 +16,8 @@ import { $reset } from "@/ui/actions";
 import { CLASSES } from "@/consts/css-classes";
 import { TRIES } from "@/consts/tries";
 
-/** @param {HTMLInputElement} $currentField
- * @param {{ timerController?: AbortController }} options */
-export function handleLetterInput($currentField, { timerController } = {}) {
+/** @param {HTMLInputElement} $currentField */
+export function handleLetterInput($currentField) {
   const retrievedLetter = getLetter($currentField);
   if (retrievedLetter == null) return;
 
@@ -29,13 +28,12 @@ export function handleLetterInput($currentField, { timerController } = {}) {
   addHint(enteredLetter, { letterIndex, isCorrect: isMatch });
 
   if (!isMatch) {
-    if (InsaneDifficulty.isApplied()) timerController?.abort();
-
     if (implementsMaxResets() && gameResets === maxResets) {
       handleLetterMistake({ $currentLetter, enteredLetter, tries });
       handleGameOver({ $currentField });
+      // TODO: move to handleGameOver()
       if (InsaneDifficulty.isApplied())
-        import("@/ui/timer").then(({ hideTimerBar }) => hideTimerBar());
+        import("@/ui/timer").then(({ disableTimerBar }) => disableTimerBar());
       return;
     }
 
@@ -60,5 +58,5 @@ export function handleLetterInput($currentField, { timerController } = {}) {
   if (isValidTypingLetter($nextLetter)) goNextLetter($nextLetter);
   else if (tries === TRIES.NONE) handleGameSuccess();
   else if (InsaneDifficulty.isApplied())
-    import("@/ui/timer").then(({ hideTimerBar }) => hideTimerBar());
+    import("@/ui/timer").then(({ disableTimerBar }) => disableTimerBar());
 }

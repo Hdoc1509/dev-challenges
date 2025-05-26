@@ -53,7 +53,7 @@ export function generateRandomWord() {
     });
   $mistakenLetters.textContent = "0";
   if (InsaneDifficulty.isApplied())
-    import("@/ui/timer").then(({ hideTimerBar }) => hideTimerBar());
+    import("@/ui/timer").then(({ disableTimerBar }) => disableTimerBar());
   $definitionSection.classList.add(CLASSES.HIDDEN);
   $hints.classList.add(CLASSES.HIDDEN);
   $hintsContent.classList.add(CLASSES.HIDDEN);
