@@ -3,6 +3,7 @@ import { isWordRemovedFromGame } from "@/utils/word-removed";
 import { DIFFICULTY } from "@/consts/difficulty";
 
 // TEST: add unit test
+// install vitest, use vitest --dir src
 
 /** @param {any} parsedItem
  * @param {(item: import("./parse").SavedWordItem) => Promise<void>} onParsedItem */

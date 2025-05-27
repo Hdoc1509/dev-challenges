@@ -10,7 +10,8 @@
     "words": "bash ./scripts/words.bash",
     "defs": "bash ./scripts/definitions.bash",
     "mocks": "pnpm run words && pnpm run defs && echo",
-    "typecheck": "pnpm run mocks && tsc --project jsconfig.json"
+    "typecheck": "pnpm run mocks && tsc --project jsconfig.json",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@fontsource-variable/outfit": "catalog:",
@@ -22,6 +23,8 @@
     "zod": "catalog:"
   },
   "devDependencies": {
+    "@playwright/test": "1.52.0",
+    "@types/node": "22.15.21",
     "vite": "catalog:",
     "vite-plugin-html": "catalog:"
   }

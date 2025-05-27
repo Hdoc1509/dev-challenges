@@ -1,4 +1,5 @@
 import { getElementBySelector } from "@lib/dom";
+// TODO: add test by using playwright
 
 const CSS = Object.freeze({
   CLASSES: {

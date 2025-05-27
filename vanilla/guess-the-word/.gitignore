@@ -2,3 +2,9 @@ src/mocks/all-words-data.json
 src/mocks/definitions.json
 src/mocks/words-total.json
 src/mocks/words/
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
