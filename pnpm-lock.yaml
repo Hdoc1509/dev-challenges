@@ -6,21 +6,174 @@ settings:
 
 catalogs:
   default:
+    '@astrojs/check':
+      specifier: 0.7.0
+      version: 0.7.0
+    '@astrojs/netlify':
+      specifier: 5.2.1
+      version: 5.2.1
+    '@astrojs/react':
+      specifier: 3.3.4
+      version: 3.3.4
+    '@fontsource-variable/inter':
+      specifier: 5.1.0
+      version: 5.1.0
+    '@fontsource-variable/montserrat':
+      specifier: 5.0.17
+      version: 5.0.17
+    '@fontsource-variable/mulish':
+      specifier: 5.0.18
+      version: 5.0.18
+    '@fontsource-variable/noto-sans-jp':
+      specifier: 5.0.19
+      version: 5.0.19
     '@fontsource-variable/outfit':
       specifier: 5.1.0
       version: 5.1.0
+    '@fontsource-variable/raleway':
+      specifier: 5.0.19
+      version: 5.0.19
+    '@fontsource/be-vietnam-pro':
+      specifier: 5.1.0
+      version: 5.1.0
+    '@fontsource/inter':
+      specifier: 5.1.0
+      version: 5.1.0
+    '@fontsource/montserrat':
+      specifier: 5.0.17
+      version: 5.0.17
+    '@fontsource/mulish':
+      specifier: 5.0.17
+      version: 5.0.17
+    '@fontsource/noto-sans-jp':
+      specifier: 5.0.19
+      version: 5.0.19
     '@fontsource/outfit':
       specifier: 5.1.0
       version: 5.1.0
+    '@fontsource/poppins':
+      specifier: 5.0.8
+      version: 5.0.8
+    '@fontsource/raleway':
+      specifier: 5.0.18
+      version: 5.0.18
+    '@fontsource/roboto':
+      specifier: 5.0.8
+      version: 5.0.8
+    '@fontsource/ubuntu-mono':
+      specifier: 5.0.20
+      version: 5.0.20
+    '@hrc/button':
+      specifier: 3.1.0
+      version: 3.1.0
+    '@hrc/input':
+      specifier: 1.1.0
+      version: 1.1.0
+    '@hrc/material-icons':
+      specifier: 2.3.0
+      version: 2.3.0
+    '@hrc/spinner':
+      specifier: 0.3.2
+      version: 0.3.2
+    '@hrc/toggle-theme':
+      specifier: 2.3.0
+      version: 2.3.0
+    '@hrc/type-utils':
+      specifier: 1.1.2
+      version: 1.1.2
+    '@material-design-icons/font':
+      specifier: 0.14.13
+      version: 0.14.13
+    '@types/node':
+      specifier: 20.5.0
+      version: 20.5.0
+    '@types/react':
+      specifier: 18.2.79
+      version: 18.2.79
+    '@types/react-dom':
+      specifier: 18.2.25
+      version: 18.2.25
+    '@typescript-eslint/eslint-plugin':
+      specifier: 7.12.0
+      version: 7.12.0
+    '@typescript-eslint/parser':
+      specifier: 7.12.0
+      version: 7.12.0
+    '@vitejs/plugin-react':
+      specifier: 4.2.0
+      version: 4.2.0
+    astro:
+      specifier: 4.8.6
+      version: 4.8.6
+    clsx:
+      specifier: 2.0.0
+      version: 2.0.0
+    eslint:
+      specifier: 8.57.0
+      version: 8.57.0
+    eslint-plugin-astro:
+      specifier: 1.2.0
+      version: 1.2.0
+    eslint-plugin-react:
+      specifier: 7.34.2
+      version: 7.34.2
+    eslint-plugin-react-hooks:
+      specifier: 4.6.2
+      version: 4.6.2
+    eslint-plugin-react-refresh:
+      specifier: 0.4.7
+      version: 0.4.7
+    hygen:
+      specifier: 6.2.11
+      version: 6.2.11
+    npkill:
+      specifier: 0.11.3
+      version: 0.11.3
+    prettier:
+      specifier: 3.0.1
+      version: 3.0.1
+    prettier-plugin-astro:
+      specifier: 0.13.0
+      version: 0.13.0
+    react:
+      specifier: 18.2.0
+      version: 18.2.0
+    react-dom:
+      specifier: 18.2.0
+      version: 18.2.0
+    react-loading-skeleton:
+      specifier: 3.4.0
+      version: 3.4.0
+    react-paginate:
+      specifier: 8.2.0
+      version: 8.2.0
+    react-router-dom:
+      specifier: 6.23.1
+      version: 6.23.1
+    sass:
+      specifier: 1.65.0
+      version: 1.65.0
+    typescript:
+      specifier: 5.3.2
+      version: 5.3.2
     vite:
       specifier: 5.0.2
       version: 5.0.2
+    vite-plugin-hrc-import:
+      specifier: 1.1.0
+      version: 1.1.0
     vite-plugin-html:
       specifier: 3.2.2
       version: 3.2.2
+    vitest:
+      specifier: 0.34.6
+      version: 0.34.6
     zod:
       specifier: 3.22.4
       version: 3.22.4
+    zustand:
+      specifier: 4.4.3
+      version: 4.4.3
 
 importers:
 
@@ -186,7 +339,7 @@ importers:
     devDependencies:
       '@vitejs/plugin-react':
         specifier: 'catalog:'
-        version: 4.2.0(vite@5.0.2(@types/node@20.5.0)(sass@1.65.0)(terser@5.36.0))
+        version: 4.2.0(vite@5.0.2(@types/node@22.15.21)(sass@1.65.0)(terser@5.36.0))
       sass:
         specifier: 'catalog:'
         version: 1.65.0
@@ -195,10 +348,10 @@ importers:
         version: 5.3.2
       vite:
         specifier: 'catalog:'
-        version: 5.0.2(@types/node@20.5.0)(sass@1.65.0)(terser@5.36.0)
+        version: 5.0.2(@types/node@22.15.21)(sass@1.65.0)(terser@5.36.0)
       vite-plugin-hrc-import:
         specifier: 'catalog:'
-        version: 1.1.0(vite@5.0.2(@types/node@20.5.0)(sass@1.65.0)(terser@5.36.0))
+        version: 1.1.0(vite@5.0.2(@types/node@22.15.21)(sass@1.65.0)(terser@5.36.0))
       vitest:
         specifier: 'catalog:'
         version: 0.34.6(playwright@1.52.0)(sass@1.65.0)(terser@5.36.0)
@@ -720,10 +873,10 @@ importers:
         version: 3.22.4
     devDependencies:
       '@playwright/test':
-        specifier: ^1.52.0
+        specifier: 1.52.0
         version: 1.52.0
       '@types/node':
-        specifier: ^22.15.21
+        specifier: 22.15.21
         version: 22.15.21
       vite:
         specifier: 'catalog:'
@@ -5769,17 +5922,6 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@vitejs/plugin-react@4.2.0(vite@5.0.2(@types/node@20.5.0)(sass@1.65.0)(terser@5.36.0))':
-    dependencies:
-      '@babel/core': 7.24.5
-      '@babel/plugin-transform-react-jsx-self': 7.23.3(@babel/core@7.24.5)
-      '@babel/plugin-transform-react-jsx-source': 7.23.3(@babel/core@7.24.5)
-      '@types/babel__core': 7.20.5
-      react-refresh: 0.14.0
-      vite: 5.0.2(@types/node@20.5.0)(sass@1.65.0)(terser@5.36.0)
-    transitivePeerDependencies:
-      - supports-color
-
   '@vitejs/plugin-react@4.2.0(vite@5.0.2(@types/node@22.15.21)(sass@1.65.0)(terser@5.36.0))':
     dependencies:
       '@babel/core': 7.24.5
@@ -8904,14 +9046,14 @@ snapshots:
       unist-util-stringify-position: 4.0.0
       vfile-message: 4.0.2
 
-  vite-node@0.34.6(@types/node@20.5.0)(sass@1.65.0)(terser@5.36.0):
+  vite-node@0.34.6(@types/node@22.15.21)(sass@1.65.0)(terser@5.36.0):
     dependencies:
       cac: 6.7.14
       debug: 4.3.5
       mlly: 1.4.2
       pathe: 1.1.1
       picocolors: 1.0.0
-      vite: 5.2.11(@types/node@20.5.0)(sass@1.65.0)(terser@5.36.0)
+      vite: 5.2.11(@types/node@22.15.21)(sass@1.65.0)(terser@5.36.0)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -8921,10 +9063,6 @@ snapshots:
       - sugarss
       - supports-color
       - terser
-
-  vite-plugin-hrc-import@1.1.0(vite@5.0.2(@types/node@20.5.0)(sass@1.65.0)(terser@5.36.0)):
-    dependencies:
-      vite: 5.0.2(@types/node@20.5.0)(sass@1.65.0)(terser@5.36.0)
 
   vite-plugin-hrc-import@1.1.0(vite@5.0.2(@types/node@22.15.21)(sass@1.65.0)(terser@5.36.0)):
     dependencies:
@@ -8950,17 +9088,6 @@ snapshots:
       pathe: 0.2.0
       vite: 5.0.2(@types/node@22.15.21)(sass@1.65.0)(terser@5.36.0)
 
-  vite@5.0.2(@types/node@20.5.0)(sass@1.65.0)(terser@5.36.0):
-    dependencies:
-      esbuild: 0.19.7
-      postcss: 8.4.38
-      rollup: 4.17.2
-    optionalDependencies:
-      '@types/node': 20.5.0
-      fsevents: 2.3.3
-      sass: 1.65.0
-      terser: 5.36.0
-
   vite@5.0.2(@types/node@22.15.21)(sass@1.65.0)(terser@5.36.0):
     dependencies:
       esbuild: 0.19.7
@@ -8968,17 +9095,6 @@ snapshots:
       rollup: 4.17.2
     optionalDependencies:
       '@types/node': 22.15.21
-      fsevents: 2.3.3
-      sass: 1.65.0
-      terser: 5.36.0
-
-  vite@5.2.11(@types/node@20.5.0)(sass@1.65.0)(terser@5.36.0):
-    dependencies:
-      esbuild: 0.20.2
-      postcss: 8.4.38
-      rollup: 4.17.2
-    optionalDependencies:
-      '@types/node': 20.5.0
       fsevents: 2.3.3
       sass: 1.65.0
       terser: 5.36.0
@@ -9002,7 +9118,7 @@ snapshots:
     dependencies:
       '@types/chai': 4.3.10
       '@types/chai-subset': 1.3.5
-      '@types/node': 20.5.0
+      '@types/node': 22.15.21
       '@vitest/expect': 0.34.6
       '@vitest/runner': 0.34.6
       '@vitest/snapshot': 0.34.6
@@ -9021,8 +9137,8 @@ snapshots:
       strip-literal: 1.3.0
       tinybench: 2.5.1
       tinypool: 0.7.0
-      vite: 5.2.11(@types/node@20.5.0)(sass@1.65.0)(terser@5.36.0)
-      vite-node: 0.34.6(@types/node@20.5.0)(sass@1.65.0)(terser@5.36.0)
+      vite: 5.2.11(@types/node@22.15.21)(sass@1.65.0)(terser@5.36.0)
+      vite-node: 0.34.6(@types/node@22.15.21)(sass@1.65.0)(terser@5.36.0)
       why-is-node-running: 2.2.2
     optionalDependencies:
       playwright: 1.52.0
