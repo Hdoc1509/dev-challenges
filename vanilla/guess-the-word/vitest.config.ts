@@ -2,7 +2,10 @@ import { defineConfig } from "vitest/config";
 
 export default defineConfig({
   test: {
-    environment: "happy-dom",
+    include: ["src/**/*.test.js"],
+    // NOTE: happy-dom does not support :scope selector
+    // until https://github.com/capricorn86/happy-dom/pull/1771 has been merged
+    environment: "jsdom",
   },
 });
 
@@ -11,7 +14,6 @@ export default defineConfig({
 //   - `Pages`, `Pagination`, `Tabs`, `CountdownBar`, `@lib/step-indicator` and
 //     `@lib/alert`
 //   - references:
-//     - https://stevekinney.com/courses/testing/testing-the-dom
 //     - https://stevekinney.com/courses/testing/testing-the-dom-example
 //     - https://stevekinney.com/courses/testing/testing-local-storage
 //     - https://stevekinney.com/courses/testing/testing-library
