@@ -33,6 +33,16 @@ describe("CountdownBar", () => {
     expect($track.hasAttribute("data-active")).toBe(true);
   });
 
+  it("should be disabled with .disabled() method", () => {
+    const { $countdownBar, $track } = createCountdownBar();
+    const TestCountdownBar = new CountdownBar($countdownBar);
+
+    TestCountdownBar.start({ duration: 0, onEnd: () => {} });
+    TestCountdownBar.disable();
+
+    expect($track.hasAttribute("data-active")).toBe(false);
+  });
+
   it("should call `onEnd` handler once countdown finishes", async () => {
     const { $countdownBar, $track } = createCountdownBar();
     const TestCountdownBar = new CountdownBar($countdownBar);
@@ -42,16 +52,6 @@ describe("CountdownBar", () => {
     $track.dispatchEvent(new Event("animationend"));
 
     expect(onEnd).toHaveBeenCalledOnce();
-  });
-
-  it("should be disabled with .disabled() method", () => {
-    const { $countdownBar, $track } = createCountdownBar();
-    const TestCountdownBar = new CountdownBar($countdownBar);
-
-    TestCountdownBar.start({ duration: 0, onEnd: () => {} });
-    TestCountdownBar.disable();
-
-    expect($track.hasAttribute("data-active")).toBe(false);
   });
 
   it("should abort previous `onEnd` handler when calling .start() method", () => {
