@@ -1,27 +1,26 @@
 type HTMLElementConstructor = new (...args: unknown[]) => HTMLElement;
 
-/** Get an element by id and check if it's instance of the expected interface. */
+/** Get an element by id and check if it's instance of the expected interface */
 export function getElementById<T extends HTMLElementConstructor>(
   id: string,
   expectedInterface: T,
   $parent: Document | DocumentFragment = document,
-  // @ts-expect-error: i don't know how to type this better
-): T["prototype"] {
+): InstanceType<T> {
   const $element = $parent.getElementById(id);
 
   if (!($element instanceof expectedInterface))
     throw new Error(`${expectedInterface.name} with "${id}" id not found`);
 
-  return $element;
+  return $element as InstanceType<T>;
 }
 
-/** Get an element by selector and check if it's instance of the expected interface. */
+/** Get an element by selector and check if it's instance of the expected
+ * interface */
 export function getElementBySelector<T extends HTMLElementConstructor>(
   selector: string,
   expectedInterface: T,
   $parent: Document | DocumentFragment | Element = document,
-  // @ts-expect-error: i don't know how to type this better
-): T["prototype"] {
+): InstanceType<T> {
   const $element = $parent.querySelector(selector);
 
   if (!($element instanceof expectedInterface))
@@ -29,16 +28,17 @@ export function getElementBySelector<T extends HTMLElementConstructor>(
       `${expectedInterface.name} that matches "${selector}" selector not found`,
     );
 
-  return $element;
+  return $element as InstanceType<T>;
 }
 
-/** Get all elements by selector and check if they're instances of the expected interface. */
+/** Get all elements by selector and check if they're instances of the expected
+ * interface */
 export function getAllElementsBySelector<T extends HTMLElementConstructor>(
   selector: string,
   expectedInterface: T,
   $parent: Document | DocumentFragment | Element = document,
-  // @ts-expect-error: i don't know how to type this better
-): T["prototype"][] {
+): InstanceType<T>[] {
+  // TODO: return the $elements, do not transform it to an array
   const $elements = $parent.querySelectorAll(selector);
 
   if ($elements.length === 0)
@@ -51,6 +51,7 @@ export function getAllElementsBySelector<T extends HTMLElementConstructor>(
   for (let i = 0; i < $elements.length; i++) {
     const $element = $elements[i];
 
+    // TODO: improve error message
     if (!($element instanceof expectedInterface))
       throw new Error(
         `${expectedInterface.name} at index ${i} doesn't match "${selector}" selector`,
@@ -59,5 +60,5 @@ export function getAllElementsBySelector<T extends HTMLElementConstructor>(
     elements.push($element);
   }
 
-  return elements;
+  return elements as InstanceType<T>[];
 }
