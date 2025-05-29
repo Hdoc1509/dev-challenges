@@ -13,6 +13,10 @@
     "noUnusedParameters": true,
     "noEmit": true,
 
+    // NOTE: prevents weird error about `punycode` and `string_decoder`
+    // reference: https://stackoverflow.com/a/75214352
+    "preserveSymlinks": true,
+
     "paths": {
       "@/*": ["./src/*"]
     }
