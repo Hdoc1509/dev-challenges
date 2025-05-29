@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { CountdownBar } from "./countdown-bar";
 
 const createCountdownBar = ({ labeled = false } = {}) => {
@@ -31,5 +31,16 @@ describe("CountdownBar", () => {
     TestCountdownBar.start({ duration: 0, onEnd: () => {} });
 
     expect($track.hasAttribute("data-active")).toBe(true);
+  });
+
+  it("should call `onEnd` handler once countdown finishes", async () => {
+    const { $countdownBar, $track } = createCountdownBar();
+    const TestCountdownBar = new CountdownBar($countdownBar);
+    const onEnd = vi.fn();
+
+    TestCountdownBar.start({ duration: 0, onEnd });
+    $track.dispatchEvent(new Event("animationend"));
+
+    expect(onEnd).toHaveBeenCalledOnce();
   });
 });
