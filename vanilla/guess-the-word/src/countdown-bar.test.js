@@ -22,6 +22,9 @@ const createCountdownBar = ({ labeled = false } = {}) => {
   return { $countdownBar, $track, $label };
 };
 
+// TODO: add custom fixture
+// https://vitest.dev/guide/test-context.html#extend-test-context
+
 describe("CountdownBar", () => {
   it("should be enabled with .start()  method", () => {
     // reference: https://stackoverflow.com/a/53390149
@@ -43,6 +46,7 @@ describe("CountdownBar", () => {
     expect($track.hasAttribute("data-active")).toBe(false);
   });
 
+  // TODO: remove unused async
   it("should call `onEnd` handler once countdown finishes", async () => {
     const { $countdownBar, $track } = createCountdownBar();
     const TestCountdownBar = new CountdownBar($countdownBar);
@@ -53,6 +57,8 @@ describe("CountdownBar", () => {
 
     expect(onEnd).toHaveBeenCalledOnce();
   });
+
+  it.todo("should remove `onEnd` handler once used", () => {});
 
   it("should abort previous `onEnd` handler when calling .start() method", () => {
     const { $countdownBar, $track } = createCountdownBar();
