@@ -43,4 +43,14 @@ describe("CountdownBar", () => {
 
     expect(onEnd).toHaveBeenCalledOnce();
   });
+
+  it("should be disabled with .disabled() method", () => {
+    const { $countdownBar, $track } = createCountdownBar();
+    const TestCountdownBar = new CountdownBar($countdownBar);
+
+    TestCountdownBar.start({ duration: 0, onEnd: () => {} });
+    TestCountdownBar.disable();
+
+    expect($track.hasAttribute("data-active")).toBe(false);
+  });
 });
