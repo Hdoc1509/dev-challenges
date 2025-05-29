@@ -53,4 +53,18 @@ describe("CountdownBar", () => {
 
     expect($track.hasAttribute("data-active")).toBe(false);
   });
+
+  it("should abort previous `onEnd` handler when calling .start() method", () => {
+    const { $countdownBar, $track } = createCountdownBar();
+    const TestCountdownBar = new CountdownBar($countdownBar);
+    const firstOnEnd = vi.fn();
+    const secondOnEnd = vi.fn();
+
+    TestCountdownBar.start({ duration: 0, onEnd: firstOnEnd });
+    TestCountdownBar.start({ duration: 0, onEnd: secondOnEnd });
+    $track.dispatchEvent(new Event("animationend"));
+
+    expect(firstOnEnd).not.toHaveBeenCalled();
+    expect(secondOnEnd).toHaveBeenCalledOnce();
+  });
 });
