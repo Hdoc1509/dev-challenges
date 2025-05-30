@@ -6,10 +6,6 @@ on:
   pull_request:
     branches: [ main, master ]
 
-# TODO: update actions used to the ones I usually use
-# - add this workflow to root workflows
-# - pick target project based on branch name
-# - use `--if-present` flag for `pnpm run` commmand
 jobs:
   test:
     timeout-minutes: 60

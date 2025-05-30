@@ -81,3 +81,37 @@ jobs:
       - run: |
           pnpm install --frozen-lockfile --filter "@hdoc/dev-challenges" --filter "$APP_NAME"...
           pnpm --filter "$APP_NAME" typecheck
+
+  test-unit:
+    needs: changed-files
+    runs-on: ubuntu-22.04
+    if: ${{ needs.changed-files.outputs.files != 'true' }}
+    env:
+      APP_NAME: ${{ needs.changed-files.outputs.app_name }}
+    steps:
+      - uses: actions/checkout@v4.2.2
+      - uses: pnpm/action-setup@v4.1.0
+      - uses: actions/setup-node@v4.3.0
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: |
+          pnpm install --frozen-lockfile --filter "@hdoc/dev-challenges" --filter "$APP_NAME"...
+          pnpm --filter "$APP_NAME" test:unit --if-present
+
+  test-e2e:
+    needs: changed-files
+    runs-on: ubuntu-22.04
+    if: ${{ needs.changed-files.outputs.files != 'true' }}
+    env:
+      APP_NAME: ${{ needs.changed-files.outputs.app_name }}
+    steps:
+      - uses: actions/checkout@v4.2.2
+      - uses: pnpm/action-setup@v4.1.0
+      - uses: actions/setup-node@v4.3.0
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: |
+          pnpm install --frozen-lockfile --filter "@hdoc/dev-challenges" --filter "$APP_NAME"...
+          pnpm --filter "$APP_NAME" test:e2e --if-present
