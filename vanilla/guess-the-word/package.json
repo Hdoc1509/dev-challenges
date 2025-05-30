@@ -11,6 +11,7 @@
     "defs": "bash ./scripts/definitions.bash",
     "mocks": "pnpm run words && pnpm run defs && echo",
     "typecheck": "pnpm run mocks && tsc --project tsconfig.json",
+    "test:unit": "vitest",
     "test:e2e": "playwright test"
   },
   "dependencies": {
