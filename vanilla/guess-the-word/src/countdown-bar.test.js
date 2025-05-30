@@ -1,7 +1,9 @@
 import { describe, expect, it, vi } from "vitest";
+import { getByRole } from "@testing-library/dom";
 import { CountdownBar } from "./countdown-bar";
 
-const createCountdownBar = ({ labeled = false } = {}) => {
+/** @param {{ onLabel?: (duration: number) => string, labeled?: boolean }} options */
+const createCountdownBar = ({ labeled = false, onLabel } = {}) => {
   const $countdownBar = document.createElement("div");
   const $track = document.createElement("div");
 
@@ -17,7 +19,11 @@ const createCountdownBar = ({ labeled = false } = {}) => {
     $countdownBar.append($label);
   }
 
-  return { TestCountdownBar: new CountdownBar($countdownBar), $track };
+  return {
+    TestCountdownBar: new CountdownBar($countdownBar, { onLabel }),
+    $countdownBar,
+    $track,
+  };
 };
 
 describe("CountdownBar", () => {
@@ -71,5 +77,16 @@ describe("CountdownBar", () => {
 
     expect(firstOnEnd).not.toHaveBeenCalled();
     expect(secondOnEnd).toHaveBeenCalledOnce();
+  });
+
+  it("should not notify an `alert` when `onLabel` is not provided", () => {
+    const { TestCountdownBar, $countdownBar } = createCountdownBar({
+      labeled: true,
+    });
+    const $label = getByRole($countdownBar, "alert");
+
+    TestCountdownBar.start({ duration: 0, onEnd: () => {} });
+
+    expect($label.textContent).toBe("");
   });
 });
