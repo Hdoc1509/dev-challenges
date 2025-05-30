@@ -21,7 +21,7 @@ export const handleLetterFocus = (e) => {
   )
     return;
 
-  const timerDuration = Random.intInRange(3, 5);
+  const timerDuration = Random.int(3, 5);
 
   $lastFocusedInput = $target;
 
