@@ -39,8 +39,7 @@ describe("CountdownBar", () => {
     expect($track.hasAttribute("data-active")).toBe(false);
   });
 
-  // TODO: remove unused async
-  it("should call `onEnd` handler once countdown finishes", async () => {
+  it("should call `onEnd` handler once countdown finishes", () => {
     const { TestCountdownBar, $track } = createCountdownBar();
     const onEnd = vi.fn();
 
