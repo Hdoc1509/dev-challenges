@@ -89,4 +89,16 @@ describe("CountdownBar", () => {
 
     expect($label.textContent).toBe("");
   });
+
+  it("should notify an `alert` when `onLabel` is provided", () => {
+    const { TestCountdownBar, $countdownBar } = createCountdownBar({
+      labeled: true,
+      onLabel: (duration) => `${duration} seconds available`,
+    });
+    const $label = getByRole($countdownBar, "alert");
+    const duration = 3;
+
+    TestCountdownBar.start({ duration, onEnd: () => {} });
+    expect($label.textContent).toBe(`${duration} seconds available`);
+  });
 });
