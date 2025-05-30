@@ -17,17 +17,13 @@ const createCountdownBar = ({ labeled = false } = {}) => {
     $countdownBar.append($label);
   }
 
-  return { $countdownBar, $track };
+  return { TestCountdownBar: new CountdownBar($countdownBar), $track };
 };
-
-// TODO: add custom fixture
-// https://vitest.dev/guide/test-context.html#extend-test-context
 
 describe("CountdownBar", () => {
   it("should be enabled with .start()  method", () => {
     // reference: https://stackoverflow.com/a/53390149
-    const { $countdownBar, $track } = createCountdownBar();
-    const TestCountdownBar = new CountdownBar($countdownBar);
+    const { TestCountdownBar, $track } = createCountdownBar();
 
     TestCountdownBar.start({ duration: 0, onEnd: () => {} });
 
@@ -35,8 +31,7 @@ describe("CountdownBar", () => {
   });
 
   it("should be disabled with .disabled() method", () => {
-    const { $countdownBar, $track } = createCountdownBar();
-    const TestCountdownBar = new CountdownBar($countdownBar);
+    const { TestCountdownBar, $track } = createCountdownBar();
 
     TestCountdownBar.start({ duration: 0, onEnd: () => {} });
     TestCountdownBar.disable();
@@ -46,8 +41,7 @@ describe("CountdownBar", () => {
 
   // TODO: remove unused async
   it("should call `onEnd` handler once countdown finishes", async () => {
-    const { $countdownBar, $track } = createCountdownBar();
-    const TestCountdownBar = new CountdownBar($countdownBar);
+    const { TestCountdownBar, $track } = createCountdownBar();
     const onEnd = vi.fn();
 
     TestCountdownBar.start({ duration: 0, onEnd });
@@ -59,8 +53,7 @@ describe("CountdownBar", () => {
   it.todo("should remove `onEnd` handler once used", () => {});
 
   it("should abort previous `onEnd` handler when calling .start() method", () => {
-    const { $countdownBar, $track } = createCountdownBar();
-    const TestCountdownBar = new CountdownBar($countdownBar);
+    const { TestCountdownBar, $track } = createCountdownBar();
     const firstOnEnd = vi.fn();
     const secondOnEnd = vi.fn();
 
