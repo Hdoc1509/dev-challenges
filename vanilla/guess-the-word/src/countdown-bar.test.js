@@ -49,7 +49,16 @@ describe("CountdownBar", () => {
     expect(onEnd).toHaveBeenCalledOnce();
   });
 
-  it.todo("should remove `onEnd` handler once used", () => {});
+  it("should remove `onEnd` handler once used", () => {
+    const { TestCountdownBar, $track } = createCountdownBar();
+    const onEnd = vi.fn();
+
+    TestCountdownBar.start({ duration: 0, onEnd });
+    $track.dispatchEvent(new Event("animationend"));
+    $track.dispatchEvent(new Event("animationend"));
+
+    expect(onEnd).toHaveBeenCalledOnce();
+  });
 
   it("should abort previous `onEnd` handler when calling .start() method", () => {
     const { TestCountdownBar, $track } = createCountdownBar();
