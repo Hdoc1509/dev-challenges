@@ -114,4 +114,4 @@ jobs:
           cache: pnpm
       - run: |
           pnpm install --frozen-lockfile --filter "@hdoc/dev-challenges" --filter "$APP_NAME"...
-          pnpm --if-present --filter "$APP_NAME" test:e2e
+          pnpm --if-present --filter "$APP_NAME" test:e2e:ci
