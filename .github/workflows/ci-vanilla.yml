@@ -126,7 +126,7 @@ jobs:
 
       # NOTE: playwright is used for e2e tests
       - uses: actions/upload-artifact@v4.6.2
-        if: ${{ !cancelled() }}
+        if: ${{ !cancelled() && failure() }}
         with:
           name: ${{ env.APP_NAME }}--playwright-report
           path: vanilla/${{ env.APP_NAME }}/playwright-report/
