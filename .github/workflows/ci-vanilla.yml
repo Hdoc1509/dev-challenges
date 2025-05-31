@@ -117,3 +117,11 @@ jobs:
       - run: |
           pnpm install --frozen-lockfile --filter "@hdoc/dev-challenges" --filter "$APP_NAME"...
           pnpm --filter "$APP_NAME" test:e2e:ci
+
+      # NOTE: playwright is used for e2e tests
+      - uses: actions/upload-artifact@v4.6.2
+        if: ${{ !cancelled() }}
+        with:
+          name: ${{ env.APP_NAME }}--playwright-report
+          path: vanilla/${{ env.APP_NAME }}/playwright-report/
+          retention-days: 30
