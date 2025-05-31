@@ -3,7 +3,7 @@ name: CI Vanilla
 on:
   push:
     branches:
-      - '*/*'
+      - "*/*"
     paths:
       - "vanilla/**"
       - ".github/workflows/ci-vanilla.yml"
@@ -112,6 +112,8 @@ jobs:
         with:
           node-version-file: .nvmrc
           cache: pnpm
+      - name: Checking for e2e tests
+        run: grep --quiet test:e2e:ci vanilla/"$APP_NAME"/package.json
       - run: |
           pnpm install --frozen-lockfile --filter "@hdoc/dev-challenges" --filter "$APP_NAME"...
-          pnpm --if-present --filter "$APP_NAME" test:e2e:ci
+          pnpm --filter "$APP_NAME" test:e2e:ci
