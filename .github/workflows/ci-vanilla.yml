@@ -99,6 +99,8 @@ jobs:
           pnpm install --frozen-lockfile --filter "@hdoc/dev-challenges" --filter "$APP_NAME"...
           pnpm --if-present --filter "$APP_NAME" test:unit:ci
 
+  # TODO: check test sharding
+  # https://playwright.dev/docs/test-sharding
   test-e2e:
     needs: changed-files
     runs-on: ubuntu-22.04
@@ -112,9 +114,13 @@ jobs:
         with:
           node-version-file: .nvmrc
           cache: pnpm
-      - name: Checking for e2e tests
-        run: grep --quiet test:e2e:ci vanilla/"$APP_NAME"/package.json
-      - run: |
+      - id: check_e2e
+        run: |
+          e2e_exists=$(grep --count test:e2e:ci vanilla/"$APP_NAME"/package.json)
+          echo "e2e_exists=$e2e_exists" >> "$GITHUB_OUTPUT"
+      - id: e2e_install
+        if: ${{ steps.check_e2e.outputs.e2e_exists == '1' }}
+        run: |
           pnpm install --frozen-lockfile --filter "@hdoc/dev-challenges" --filter "$APP_NAME"...
           pnpm --filter "$APP_NAME" test:e2e:ci
 
