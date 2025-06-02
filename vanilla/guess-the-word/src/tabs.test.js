@@ -41,7 +41,7 @@ const createTabs = ({ selectedTab = TABS.FIRST } = {}) => {
     $contentContainer.append($content);
   }
 
-  return { $navContainer, $contentContainer };
+  return { $nav: $navContainer, $content: $contentContainer };
 };
 
 describe("Tabs", () => {
