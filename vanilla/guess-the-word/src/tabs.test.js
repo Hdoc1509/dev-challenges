@@ -60,4 +60,10 @@ describe("Tabs", () => {
       expect(TestTabs.currentTab).toBe($selectedTab);
     }
   });
+
+  it.todo("should check tab trigger correctly", () => {});
+
+  it.todo("should select tab correctly", () => {});
+
+  it.todo("should update `.currentTab` after selecting a tab", () => {});
 });
