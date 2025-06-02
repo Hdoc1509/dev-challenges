@@ -43,7 +43,9 @@ export class Tabs {
 
     if ($tabs.length < 2) throw new Error("At least 2 tabs are required");
 
-    $tabs.forEach(($tab) => {
+    let $currentTab;
+
+    for (const $tab of $tabs) {
       const contentId = /** @type {string} */ (
         $tab.getAttribute("aria-controls")
       );
@@ -54,12 +56,14 @@ export class Tabs {
         $contentContainer,
       );
 
+      if ($tab.getAttribute("aria-selected") === "true") $currentTab = $tab;
       this.#$Content.set($tab, $content);
-    });
+    }
 
-    // TODO: set $current as $selectedTab that has [aria-selected="true"]
-    // check if there is only one $selectedTab
-    this.#$current = $tabs[0];
+    if ($currentTab == null)
+      throw new Error("Expected at least one tab to be selected");
+
+    this.#$current = $currentTab;
   }
 
   get currentTab() {
