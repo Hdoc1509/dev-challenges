@@ -14,6 +14,7 @@ const ATTRIBUTES = Object.freeze({
   }),
 });
 
+// TODO: id must end with `-tab`
 const TAB_VALID_SELECTOR = `.${CLASSES.LINK}[id]:not([id=""])`
   .concat('[aria-controls$="-tab-content"]')
   .concat('[role="tab"]')
@@ -30,6 +31,7 @@ export class Tabs {
 
   /** @param {{ $nav: HTMLDivElement, $content: HTMLDivElement }} params */
   constructor({ $nav, $content: $contentContainer }) {
+    // TODO: add validation for $nav and $contentContainer
     this.#$nav = $nav;
 
     const $tabs = getAllElementsBySelector(
