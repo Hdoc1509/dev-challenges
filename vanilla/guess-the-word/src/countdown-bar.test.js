@@ -14,7 +14,7 @@ const createCountdownBar = ({ labeled = false, onLabel } = {}) => {
   if (labeled) {
     const $label = document.createElement("span");
 
-    $label.classList.add("countdown-bar__label", "visually-hidden");
+    $label.classList.add("countdown-bar__alert", "visually-hidden");
     $label.setAttribute("role", "alert");
     $countdownBar.append($label);
   }

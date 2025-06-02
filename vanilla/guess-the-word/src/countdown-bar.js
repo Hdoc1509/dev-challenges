@@ -1,11 +1,10 @@
 import { getElementBySelector } from "@lib/dom";
-// TODO: add test by using playwright
 
 const CSS = Object.freeze({
   CLASSES: {
     BAR: "countdown-bar",
     TRACK: "countdown-bar__track",
-    LABEL: "countdown-bar__label",
+    ALERT: "countdown-bar__alert",
   },
   VARS: {
     DURATION: "--countdown-bar-duration",
@@ -32,7 +31,7 @@ const getCountdownBarElements = ($countdownBar, { onLabel }) => {
 
   if (onLabel != null)
     $label = getElementBySelector(
-      `:scope > .${CSS.CLASSES.LABEL}.visually-hidden[role='alert']`,
+      `:scope > .${CSS.CLASSES.ALERT}.visually-hidden[role='alert']`,
       HTMLSpanElement,
       $countdownBar,
     );
