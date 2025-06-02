@@ -2,8 +2,8 @@ import { describe, expect, it, vi } from "vitest";
 import { getByRole } from "@testing-library/dom";
 import { CountdownBar } from "./countdown-bar";
 
-/** @param {{ onLabel?: (duration: number) => string, labeled?: boolean }} options */
-const createCountdownBar = ({ labeled = false, onLabel } = {}) => {
+/** @param {{ onAlert?: (duration: number) => string, labeled?: boolean }} options */
+const createCountdownBar = ({ labeled = false, onAlert } = {}) => {
   const $countdownBar = document.createElement("div");
   const $track = document.createElement("div");
 
@@ -20,7 +20,7 @@ const createCountdownBar = ({ labeled = false, onLabel } = {}) => {
   }
 
   return {
-    TestCountdownBar: new CountdownBar($countdownBar, { onLabel }),
+    TestCountdownBar: new CountdownBar($countdownBar, { onAlert }),
     $countdownBar,
     $track,
   };
@@ -79,7 +79,7 @@ describe("CountdownBar", () => {
     expect(secondOnEnd).toHaveBeenCalledOnce();
   });
 
-  it("should not notify an `alert` when `onLabel` is not provided", () => {
+  it("should not notify an `alert` when `onAlert` is not provided", () => {
     const { TestCountdownBar, $countdownBar } = createCountdownBar({
       labeled: true,
     });
@@ -90,10 +90,10 @@ describe("CountdownBar", () => {
     expect($label.textContent).toBe("");
   });
 
-  it("should notify an `alert` when `onLabel` is provided", () => {
+  it("should notify an `alert` when `onAlert` is provided", () => {
     const { TestCountdownBar, $countdownBar } = createCountdownBar({
       labeled: true,
-      onLabel: (duration) => `${duration} seconds available`,
+      onAlert: (duration) => `${duration} seconds available`,
     });
     const $label = getByRole($countdownBar, "alert");
     const duration = 3;
