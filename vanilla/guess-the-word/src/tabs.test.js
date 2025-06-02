@@ -47,7 +47,7 @@ const createTabs = ({ selectedTab = TABS.FIRST } = {}) => {
 };
 
 describe("Tabs", () => {
-  it("should set `.currentTab` correctlty", () => {
+  it("should set initial `.currentTab` correctlty", () => {
     for (const tab of tabNames) {
       const { $nav, $content } = createTabs({ selectedTab: tab });
       document.body.replaceChildren($nav, $content);
