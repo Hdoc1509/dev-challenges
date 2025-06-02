@@ -1,4 +1,6 @@
-import { describe, it } from "vitest";
+import { describe, expect, it } from "vitest";
+import { getByRole } from "@testing-library/dom";
+import { Tabs } from "./tabs";
 
 const TABS = /** @type {const} */ ({
   FIRST: "first",
@@ -45,5 +47,17 @@ const createTabs = ({ selectedTab = TABS.FIRST } = {}) => {
 };
 
 describe("Tabs", () => {
-  it.todo("should set `.currentTab` correctlty", () => {});
+  it("should set `.currentTab` correctlty", () => {
+    for (const tab of tabNames) {
+      const { $nav, $content } = createTabs({ selectedTab: tab });
+      document.body.replaceChildren($nav, $content);
+
+      const $selectedTab = getByRole($nav, "tab", {
+        name: `${tab.toUpperCase()} tab`,
+      });
+      const TestTabs = new Tabs({ $nav, $content });
+
+      expect(TestTabs.currentTab).toBe($selectedTab);
+    }
+  });
 });
