@@ -14,7 +14,8 @@ const ATTRIBUTES = Object.freeze({
   }),
 });
 
-// TODO: id must end with `-tab`
+// TODO: id must end with `_tab`
+// aria-controls must end with `_tab-content`
 const TAB_VALID_SELECTOR = `.${CLASSES.LINK}[id]:not([id=""])`
   .concat('[aria-controls$="-tab-content"]')
   .concat('[role="tab"]')
