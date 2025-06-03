@@ -52,7 +52,7 @@ describe("Tabs", () => {
   // see: https://github.com/jsdom/jsdom/issues/1695
   window.HTMLElement.prototype.scrollIntoView = function () {};
 
-  it("should set initial `.currentTab` correctlty", () => {
+  it("sets initial `.currentTab` correctlty", () => {
     for (const tab of tabNames) {
       const { $nav, $content } = createTabs({ selectedTab: tab });
       document.body.replaceChildren($nav, $content);
@@ -66,7 +66,7 @@ describe("Tabs", () => {
     }
   });
 
-  it("should check tab trigger correctly by using `.isTabLink()` method", () => {
+  it("checks tab trigger correctly by using `.isTabLink()` method", () => {
     const { $nav, $content } = createTabs();
     const $intruder = document.createElement("button");
     $intruder.classList.add("tab-nav__trigger");
@@ -86,7 +86,7 @@ describe("Tabs", () => {
     }
   });
 
-  it("should update `.currentTab` after selecting a tab", () => {
+  it("updates `.currentTab` after selecting a tab", () => {
     const { $nav, $content } = createTabs();
     document.body.replaceChildren($nav, $content);
 
@@ -102,7 +102,7 @@ describe("Tabs", () => {
     }
   });
 
-  it("should select tab correctly by using `.selectTab()` method", () => {
+  it("selects correct tab by using `.selectTab()` method", () => {
     const { $nav, $content } = createTabs();
     document.body.replaceChildren($nav, $content);
 
