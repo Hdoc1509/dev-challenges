@@ -1,11 +1,10 @@
 import { getElementBySelector } from "@lib/dom";
-// TODO: add test by using playwright
 
 const CSS = Object.freeze({
   CLASSES: {
     BAR: "countdown-bar",
     TRACK: "countdown-bar__track",
-    LABEL: "countdown-bar__label",
+    ALERT: "countdown-bar__alert",
   },
   VARS: {
     DURATION: "--countdown-bar-duration",
@@ -21,8 +20,8 @@ const validateTimerElement = ($countdownBar) => {
 };
 
 /** @param {HTMLElement} $countdownBar
- * @param {{ onLabel?: (duration: number) => string}} options */
-const getCountdownBarElements = ($countdownBar, { onLabel }) => {
+ * @param {{ onAlert?: (duration: number) => string}} options */
+const getCountdownBarElements = ($countdownBar, { onAlert }) => {
   const $track = getElementBySelector(
     `:scope > .${CSS.CLASSES.TRACK}`,
     HTMLDivElement,
@@ -30,9 +29,9 @@ const getCountdownBarElements = ($countdownBar, { onLabel }) => {
   );
   let $label;
 
-  if (onLabel != null)
+  if (onAlert != null)
     $label = getElementBySelector(
-      `:scope > .${CSS.CLASSES.LABEL}.visually-hidden[role='alert']`,
+      `:scope > .${CSS.CLASSES.ALERT}.visually-hidden[role='alert']`,
       HTMLSpanElement,
       $countdownBar,
     );
@@ -42,7 +41,7 @@ const getCountdownBarElements = ($countdownBar, { onLabel }) => {
 
 export class CountdownBar {
   #$track;
-  #onLabel;
+  #onAlert;
   #$label;
   #controller = new AbortController();
   #enabled = false;
@@ -51,17 +50,17 @@ export class CountdownBar {
   /**
    * @param {HTMLElement} countdownBarElement
    * @param {Object} options
-   * @param {(duration: number) => string} [options.onLabel]
+   * @param {(duration: number) => string} [options.onAlert]
    * Enables notifications for accessibility purposes
    */
-  constructor(countdownBarElement, { onLabel } = {}) {
+  constructor(countdownBarElement, { onAlert } = {}) {
     validateTimerElement(countdownBarElement);
     const { $track, $label } = getCountdownBarElements(countdownBarElement, {
-      onLabel,
+      onAlert,
     });
 
     this.#$track = $track;
-    this.#onLabel = onLabel;
+    this.#onAlert = onAlert;
     this.#$label = $label;
   }
 
@@ -90,8 +89,8 @@ export class CountdownBar {
       this.#enabled = true;
       this.#$track.setAttribute("data-active", "");
     }
-    if (this.#onLabel != null && this.#$label != null)
-      this.#$label.textContent = this.#onLabel(duration);
+    if (this.#onAlert != null && this.#$label != null)
+      this.#$label.textContent = this.#onAlert(duration);
   }
 
   /** Aborts the countdown and its `onEnd` handler registered by `start()`

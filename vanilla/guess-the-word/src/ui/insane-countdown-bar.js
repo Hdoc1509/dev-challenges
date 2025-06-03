@@ -6,7 +6,7 @@ import "@/styles/countdown-bar.css";
 const $countdownBar = getElementById("insane-countdown", HTMLElement);
 
 export const InsaneCountdownBar = new CountdownBar($countdownBar, {
-  onLabel: (duration) => `${duration} seconds available`,
+  onAlert: (duration) => `${duration} seconds available`,
 });
 
 export const showInsaneCountdown = () =>
