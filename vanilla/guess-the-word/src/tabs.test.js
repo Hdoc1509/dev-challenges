@@ -61,7 +61,25 @@ describe("Tabs", () => {
     }
   });
 
-  it.todo("should check tab trigger correctly", () => {});
+  it("should check tab trigger correctly by using `.isTabLink()` method", () => {
+    const { $nav, $content } = createTabs();
+    const $intruder = document.createElement("button");
+    $intruder.classList.add("tab-nav__trigger");
+    $intruder.setAttribute("role", "tab");
+    $intruder.textContent = "Intruder";
+
+    document.body.replaceChildren($nav, $content, $intruder);
+
+    const TestTabs = new Tabs({ $nav, $content });
+
+    expect(TestTabs.isTabLink($intruder)).toBe(false);
+
+    for (const tab of tabNames) {
+      const $tab = getByRole($nav, "tab", { name: `${tab.toUpperCase()} tab` });
+
+      expect(TestTabs.isTabLink($tab)).toBe(true);
+    }
+  });
 
   it.todo("should select tab correctly", () => {});
 
