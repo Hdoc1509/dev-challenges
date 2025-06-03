@@ -23,8 +23,6 @@ const TAB_VALID_SELECTOR = `.${CLASSES.LINK}[id]:not([id=""])`
 
 // TODO: add methods to retrieve $tab and $content elements
 export class Tabs {
-  /** @type {HTMLElement} */
-  #$nav;
   /** @type {Map<HTMLButtonElement, HTMLDivElement>} */
   #$Content = new Map();
   /** @type {HTMLButtonElement} */
@@ -33,7 +31,6 @@ export class Tabs {
   /** @param {{ $nav: HTMLDivElement, $content: HTMLDivElement }} params */
   constructor({ $nav, $content: $contentContainer }) {
     // TODO: add validation for $nav and $contentContainer
-    this.#$nav = $nav;
 
     const $tabs = getAllElementsBySelector(
       `:scope > ${TAB_VALID_SELECTOR}`,
@@ -76,9 +73,7 @@ export class Tabs {
    */
   isTabLink($element) {
     return (
-      $element instanceof HTMLButtonElement &&
-      this.#$nav.contains($element) &&
-      this.#$Content.has($element)
+      $element instanceof HTMLButtonElement && this.#$Content.has($element)
     );
   }
 
