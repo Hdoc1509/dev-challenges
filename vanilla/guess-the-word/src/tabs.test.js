@@ -31,6 +31,7 @@ const createTabs = ({ selectedTab = TABS.FIRST } = {}) => {
     $trigger.setAttribute("role", "tab");
     $trigger.setAttribute("aria-selected", `${tab === selectedTab}`);
     $trigger.textContent = `${tab.toUpperCase()} tab`;
+    $trigger.disabled = tab === selectedTab;
 
     $content.classList.add("tab-content__item");
     $content.setAttribute("id", contentId);
