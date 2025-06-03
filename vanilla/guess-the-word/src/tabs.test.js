@@ -129,8 +129,27 @@ describe("Tabs", () => {
     }
   });
 
-  it.todo(
-    "should select tab content correctly by using `.selectTab()` method",
-    () => {},
-  );
+  it("selects correct content by using `.selectTab()` method", () => {
+    const { $nav, $content } = createTabs();
+    document.body.replaceChildren($nav, $content);
+
+    const TestTabs = new Tabs({ $nav, $content });
+
+    for (const tab of tabNames) {
+      const name = `${tab.toUpperCase()} tab`;
+      /** @type {HTMLButtonElement} */
+      const $tab = getByRole($nav, "tab", { name });
+      const $tabContent = getByRole($content, "tabpanel", { name });
+      const $initialTab = getByRole($nav, "tab", { selected: true });
+      const $initialTabContent = getByRole($content, "tabpanel", {
+        name: /** @type {string} */ ($initialTab.textContent),
+      });
+
+      TestTabs.selectTab($tab);
+
+      expect($tabContent.hasAttribute("data-active")).toBe(true);
+      if ($tab !== $initialTab)
+        expect($initialTabContent.hasAttribute("data-active")).toBe(false);
+    }
+  });
 });
