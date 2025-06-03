@@ -16,7 +16,7 @@ const ATTRIBUTES = Object.freeze({
 
 // TODO: id must end with `_tab`
 // aria-controls must end with `_tab-content`
-const TAB_VALID_SELECTOR = `.${CLASSES.TRIGGER}[id]:not([id=""])`
+const TAB_VALID_SELECTOR = `.${CLASSES.TRIGGER}[id$="-tab"]`
   .concat('[aria-controls$="-tab-content"]')
   .concat('[role="tab"]')
   .concat('[aria-selected]:not([aria-selected=""])');
