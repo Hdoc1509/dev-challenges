@@ -89,8 +89,7 @@ export class Tabs {
     const $currentContent = this.#$Content.get($currentTab);
     const $targetContent = this.#$Content.get($targetTab);
 
-    if ($currentContent == null || $targetTab == null || $targetContent == null)
-      return;
+    if ($currentContent == null || $targetContent == null) return;
 
     $currentTab.setAttribute(ATTRIBUTES.TAB.SELECTED, "false");
     $currentTab.disabled = false;
