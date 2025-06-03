@@ -102,9 +102,35 @@ describe("Tabs", () => {
     }
   });
 
+  it("should select tab correctly by using `.selectTab()` method", () => {
+    const { $nav, $content } = createTabs();
+    document.body.replaceChildren($nav, $content);
+
+    const TestTabs = new Tabs({ $nav, $content });
+
+    for (const tab of tabNames) {
+      const name = `${tab.toUpperCase()} tab`;
+      /** @type {HTMLButtonElement} */
+      const $tab = getByRole($nav, "tab", { name });
+      /** @type {HTMLButtonElement} */
+      const $initialSelectedTab = getByRole($nav, "tab", { selected: true });
+
+      TestTabs.selectTab($tab);
+
+      const $selectedTab = getByRole($nav, "tab", { name, selected: true });
+
+      expect(TestTabs.currentTab).toBe($tab);
+      expect($selectedTab).toBe($tab);
+      expect($tab.disabled).toBe(true);
+      if ($tab !== $initialSelectedTab) {
+        expect($initialSelectedTab.getAttribute("aria-selected")).toBe("false");
+        expect($initialSelectedTab.disabled).toBe(false);
+      }
+    }
+  });
+
   it.todo(
-    "should select tab correctly by using `.selectTab()` method",
+    "should select tab content correctly by using `.selectTab()` method",
     () => {},
   );
-
 });
