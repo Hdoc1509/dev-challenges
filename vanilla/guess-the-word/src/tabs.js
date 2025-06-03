@@ -1,7 +1,7 @@
 import { getAllElementsBySelector, getElementBySelector } from "@lib/dom";
 
 const CLASSES = Object.freeze({
-  LINK: "tab-nav__trigger",
+  TRIGGER: "tab-nav__trigger",
   CONTENT: "tab-content__item",
 });
 
@@ -14,15 +14,15 @@ const ATTRIBUTES = Object.freeze({
   }),
 });
 
-const TAB_VALID_SELECTOR = `.${CLASSES.LINK}[id]:not([id=""])`
+// TODO: id must end with `_tab`
+// aria-controls must end with `_tab-content`
+const TAB_VALID_SELECTOR = `.${CLASSES.TRIGGER}[id$="-tab"]`
   .concat('[aria-controls$="-tab-content"]')
   .concat('[role="tab"]')
   .concat('[aria-selected]:not([aria-selected=""])');
 
 // TODO: add methods to retrieve $tab and $content elements
 export class Tabs {
-  /** @type {HTMLElement} */
-  #$nav;
   /** @type {Map<HTMLButtonElement, HTMLDivElement>} */
   #$Content = new Map();
   /** @type {HTMLButtonElement} */
@@ -30,7 +30,7 @@ export class Tabs {
 
   /** @param {{ $nav: HTMLDivElement, $content: HTMLDivElement }} params */
   constructor({ $nav, $content: $contentContainer }) {
-    this.#$nav = $nav;
+    // TODO: add validation for $nav and $contentContainer
 
     const $tabs = getAllElementsBySelector(
       `:scope > ${TAB_VALID_SELECTOR}`,
@@ -40,7 +40,9 @@ export class Tabs {
 
     if ($tabs.length < 2) throw new Error("At least 2 tabs are required");
 
-    $tabs.forEach(($tab) => {
+    let $currentTab;
+
+    for (const $tab of $tabs) {
       const contentId = /** @type {string} */ (
         $tab.getAttribute("aria-controls")
       );
@@ -51,12 +53,14 @@ export class Tabs {
         $contentContainer,
       );
 
+      if ($tab.getAttribute("aria-selected") === "true") $currentTab = $tab;
       this.#$Content.set($tab, $content);
-    });
+    }
 
-    // TODO: set $current as $selectedTab that has [aria-selected="true"]
-    // check if there is only one $selectedTab
-    this.#$current = $tabs[0];
+    if ($currentTab == null)
+      throw new Error("Expected at least one tab to be selected");
+
+    this.#$current = $currentTab;
   }
 
   get currentTab() {
@@ -69,9 +73,7 @@ export class Tabs {
    */
   isTabLink($element) {
     return (
-      $element instanceof HTMLButtonElement &&
-      this.#$nav.contains($element) &&
-      $element.matches(`.${CLASSES.LINK}`)
+      $element instanceof HTMLButtonElement && this.#$Content.has($element)
     );
   }
 
@@ -87,8 +89,7 @@ export class Tabs {
     const $currentContent = this.#$Content.get($currentTab);
     const $targetContent = this.#$Content.get($targetTab);
 
-    if ($currentContent == null || $targetTab == null || $targetContent == null)
-      return;
+    if ($currentContent == null || $targetContent == null) return;
 
     $currentTab.setAttribute(ATTRIBUTES.TAB.SELECTED, "false");
     $currentTab.disabled = false;

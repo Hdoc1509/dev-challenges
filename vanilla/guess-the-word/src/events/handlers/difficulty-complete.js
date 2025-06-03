@@ -33,6 +33,7 @@ export function handleDifficultyComplete() {
     import("@/ui/insane-countdown-bar").then(({ hideInsaneCountdown }) =>
       hideInsaneCountdown(),
     );
+  // TODO: use a while loop
   $typing.replaceChildren();
   $typing.classList.add(CLASSES.HIDDEN);
 
