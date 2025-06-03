@@ -47,6 +47,10 @@ const createTabs = ({ selectedTab = TABS.FIRST } = {}) => {
 };
 
 describe("Tabs", () => {
+  // NOTE: avoids runtime error in tests
+  // see: https://github.com/jsdom/jsdom/issues/1695
+  window.HTMLElement.prototype.scrollIntoView = function () {};
+
   it("should set initial `.currentTab` correctlty", () => {
     for (const tab of tabNames) {
       const { $nav, $content } = createTabs({ selectedTab: tab });
@@ -81,7 +85,25 @@ describe("Tabs", () => {
     }
   });
 
-  it.todo("should select tab correctly", () => {});
+  it("should update `.currentTab` after selecting a tab", () => {
+    const { $nav, $content } = createTabs();
+    document.body.replaceChildren($nav, $content);
 
-  it.todo("should update `.currentTab` after selecting a tab", () => {});
+    const TestTabs = new Tabs({ $nav, $content });
+
+    for (const tab of tabNames) {
+      /** @type {HTMLButtonElement} */
+      const $tab = getByRole($nav, "tab", { name: `${tab.toUpperCase()} tab` });
+
+      TestTabs.selectTab($tab);
+
+      expect(TestTabs.currentTab).toBe($tab);
+    }
+  });
+
+  it.todo(
+    "should select tab correctly by using `.selectTab()` method",
+    () => {},
+  );
+
 });
