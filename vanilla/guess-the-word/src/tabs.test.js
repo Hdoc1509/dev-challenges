@@ -31,7 +31,6 @@ const createTabs = ({ selectedTab = TABS.FIRST } = {}) => {
     $trigger.setAttribute("role", "tab");
     $trigger.setAttribute("aria-selected", `${tab === selectedTab}`);
     $trigger.textContent = `${tab.toUpperCase()} tab`;
-    $trigger.disabled = tab === selectedTab;
 
     $content.classList.add("tab-content__item");
     $content.setAttribute("id", contentId);
@@ -121,11 +120,8 @@ describe("Tabs", () => {
 
       expect(TestTabs.currentTab).toBe($tab);
       expect($selectedTab).toBe($tab);
-      expect($tab.disabled).toBe(true);
-      if ($tab !== $initialSelectedTab) {
+      if ($tab !== $initialSelectedTab)
         expect($initialSelectedTab.getAttribute("aria-selected")).toBe("false");
-        expect($initialSelectedTab.disabled).toBe(false);
-      }
     }
   });
 

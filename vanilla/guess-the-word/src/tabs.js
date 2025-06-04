@@ -92,10 +92,8 @@ export class Tabs {
     if ($currentContent == null || $targetContent == null) return;
 
     $currentTab.setAttribute(ATTRIBUTES.TAB.SELECTED, "false");
-    $currentTab.disabled = false;
     $currentContent.removeAttribute(ATTRIBUTES.CONTENT.ACTIVE);
     $targetTab.setAttribute(ATTRIBUTES.TAB.SELECTED, "true");
-    $targetTab.disabled = true;
     $targetTab.scrollIntoView();
     $targetContent.setAttribute(ATTRIBUTES.CONTENT.ACTIVE, "");
 

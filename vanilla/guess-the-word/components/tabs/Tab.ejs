@@ -4,9 +4,6 @@
   role="tab"
   aria-controls="<%= name %>-<%= group %>-tab-content"
   aria-selected="<%= locals.selected ?? false %>"
-  ejs="<% if (locals.selected ?? false) { %>"
-  disabled
-  ejs="<% } %>"
 >
   <%- include(`icon/${icon}`) %>
   <%= capitalize(name) %>
