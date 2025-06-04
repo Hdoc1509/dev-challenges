@@ -1,7 +1,7 @@
 import { getAllElementsBySelector, getElementBySelector } from "@lib/dom";
 
 const CLASSES = Object.freeze({
-  TRIGGER: "tab-nav__tab",
+  TAB: "tab-nav__tab",
   CONTENT: "tab-content__item",
 });
 
@@ -16,7 +16,7 @@ const ATTRIBUTES = Object.freeze({
 
 // TODO: id must end with `_tab`
 // aria-controls must end with `_tab-content`
-const TAB_VALID_SELECTOR = `.${CLASSES.TRIGGER}[id$="-tab"]`
+const TAB_VALID_SELECTOR = `.${CLASSES.TAB}[id$="-tab"]`
   .concat('[aria-controls$="-tab-content"]')
   .concat('[role="tab"]')
   .concat('[aria-selected]:not([aria-selected=""])');
