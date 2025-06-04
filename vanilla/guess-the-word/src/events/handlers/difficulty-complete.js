@@ -3,6 +3,7 @@ import { difficulty } from "@/state/difficulty";
 import { AvailableWords } from "@/state/words";
 import { MasterDifficulty } from "@/utils/difficulty/master";
 import { InsaneDifficulty } from "@/utils/difficulty/insane";
+import { clearChildren } from "@/utils/dom";
 import { createWordLetters } from "@/ui/word";
 import { $triesContainer } from "@/ui/tries";
 import { $mistakesContainer } from "@/ui/mistakes";
@@ -33,7 +34,7 @@ export function handleDifficultyComplete() {
     import("@/ui/insane-countdown-bar").then(({ hideInsaneCountdown }) =>
       hideInsaneCountdown(),
     );
-  while ($typing.firstChild != null) $typing.removeChild($typing.firstChild);
+  clearChildren($typing);
   $typing.classList.add(CLASSES.HIDDEN);
 
   showCompletedDifficultyMessage(difficulty, { allCompleted: gameCompleted });

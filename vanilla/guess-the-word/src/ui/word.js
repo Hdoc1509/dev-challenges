@@ -1,5 +1,6 @@
 import { getElementById } from "@lib/dom";
 import { currentWord } from "@/state/current-word";
+import { clearChildren } from "@/utils/dom";
 
 const ATTRIBUTRES = Object.freeze({
   LETTER: Object.freeze({
@@ -15,7 +16,7 @@ const lettersToUse = [""];
 
 /** @param {string} word */
 export const createWordLetters = (word) => {
-  while ($word.firstChild != null) $word.removeChild($word.firstChild);
+  clearChildren($word);
   $wordLetters.length = 0;
   lettersToUse.length = 0;
 

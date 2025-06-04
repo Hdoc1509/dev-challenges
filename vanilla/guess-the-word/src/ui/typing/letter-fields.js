@@ -1,5 +1,6 @@
 import { getElementById, getElementBySelector } from "@lib/dom";
 import { TypingLetterIndex } from "@/state/typing-letter";
+import { clearChildren } from "@/utils/dom";
 import { createLetterLabel } from "./letter-label";
 import { $typing } from "./elements";
 import { CLASSES } from "@/consts/css-classes";
@@ -12,7 +13,7 @@ const $letterFields = [];
 /** @param {number} quantity */
 export function createLetterFields(quantity) {
   $letterFields.length = 0;
-  while ($typing.firstChild != null) $typing.removeChild($typing.firstChild);
+  clearChildren($typing);
 
   for (let idx = 0; idx < quantity; idx++) {
     const $letterClone = /** @type {DocumentFragment} */ (
