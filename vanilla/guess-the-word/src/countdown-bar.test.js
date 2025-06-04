@@ -31,7 +31,7 @@ describe("CountdownBar", () => {
     // reference: https://stackoverflow.com/a/53390149
     const { TestCountdownBar, $track } = createCountdownBar();
 
-    TestCountdownBar.start({ duration: 0, onEnd: () => {} });
+    TestCountdownBar.start({ duration: 0, onTimesUp: () => {} });
 
     expect($track.hasAttribute("data-active")).toBe(true);
   });
@@ -39,44 +39,44 @@ describe("CountdownBar", () => {
   it("should be disabled with .disabled() method", () => {
     const { TestCountdownBar, $track } = createCountdownBar();
 
-    TestCountdownBar.start({ duration: 0, onEnd: () => {} });
+    TestCountdownBar.start({ duration: 0, onTimesUp: () => {} });
     TestCountdownBar.disable();
 
     expect($track.hasAttribute("data-active")).toBe(false);
   });
 
-  it("should call `onEnd` handler once countdown finishes", () => {
+  it("should call `onTimesUp` handler once countdown finishes", () => {
     const { TestCountdownBar, $track } = createCountdownBar();
-    const onEnd = vi.fn();
+    const onTimesUp = vi.fn();
 
-    TestCountdownBar.start({ duration: 0, onEnd });
+    TestCountdownBar.start({ duration: 0, onTimesUp });
     $track.dispatchEvent(new Event("animationend"));
 
-    expect(onEnd).toHaveBeenCalledOnce();
+    expect(onTimesUp).toHaveBeenCalledOnce();
   });
 
-  it("should remove `onEnd` handler once used", () => {
+  it("should remove `onTimesUp` handler once used", () => {
     const { TestCountdownBar, $track } = createCountdownBar();
-    const onEnd = vi.fn();
+    const onTimesUp = vi.fn();
 
-    TestCountdownBar.start({ duration: 0, onEnd });
+    TestCountdownBar.start({ duration: 0, onTimesUp });
     $track.dispatchEvent(new Event("animationend"));
     $track.dispatchEvent(new Event("animationend"));
 
-    expect(onEnd).toHaveBeenCalledOnce();
+    expect(onTimesUp).toHaveBeenCalledOnce();
   });
 
-  it("should abort previous `onEnd` handler when calling .start() method", () => {
+  it("should abort previous `onTimesUp` handler when calling .start() method", () => {
     const { TestCountdownBar, $track } = createCountdownBar();
-    const firstOnEnd = vi.fn();
-    const secondOnEnd = vi.fn();
+    const firstOnTimesUp = vi.fn();
+    const secondOnTimesUp = vi.fn();
 
-    TestCountdownBar.start({ duration: 0, onEnd: firstOnEnd });
-    TestCountdownBar.start({ duration: 0, onEnd: secondOnEnd });
+    TestCountdownBar.start({ duration: 0, onTimesUp: firstOnTimesUp });
+    TestCountdownBar.start({ duration: 0, onTimesUp: secondOnTimesUp });
     $track.dispatchEvent(new Event("animationend"));
 
-    expect(firstOnEnd).not.toHaveBeenCalled();
-    expect(secondOnEnd).toHaveBeenCalledOnce();
+    expect(firstOnTimesUp).not.toHaveBeenCalled();
+    expect(secondOnTimesUp).toHaveBeenCalledOnce();
   });
 
   it("should not notify an `alert` when `onAlert` is not provided", () => {
@@ -85,7 +85,7 @@ describe("CountdownBar", () => {
     });
     const $label = getByRole($countdownBar, "alert");
 
-    TestCountdownBar.start({ duration: 0, onEnd: () => {} });
+    TestCountdownBar.start({ duration: 0, onTimesUp: () => {} });
 
     expect($label.textContent).toBe("");
   });
@@ -98,7 +98,7 @@ describe("CountdownBar", () => {
     const $label = getByRole($countdownBar, "alert");
     const duration = 3;
 
-    TestCountdownBar.start({ duration, onEnd: () => {} });
+    TestCountdownBar.start({ duration, onTimesUp: () => {} });
     expect($label.textContent).toBe(`${duration} seconds available`);
   });
 });

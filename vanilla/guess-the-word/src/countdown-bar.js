@@ -65,13 +65,13 @@ export class CountdownBar {
   }
 
   /** If needed, enables the countdown before starting it. Also removes previous
-   * register of `onEnd` handler before registering the new one
+   * register of `onTimesUp` handler before registering the new one
    * @param {Object} params
    * @param {number} params.duration Countdown duration in seconds
-   * @param {() => void} params.onEnd Handler called once countdown finishes
+   * @param {() => void} params.onTimesUp Handler called once countdown finishes
    */
   // TODO: move method typing to another file
-  start({ duration, onEnd }) {
+  start({ duration, onTimesUp }) {
     this.#controller.abort();
     this.#controller = new AbortController();
 
@@ -80,7 +80,7 @@ export class CountdownBar {
     void this.#$track.offsetWidth;
     this.#$track.classList.add(CSS.CLASSES.TRACK);
 
-    this.#$track.addEventListener("animationend", onEnd, {
+    this.#$track.addEventListener("animationend", onTimesUp, {
       once: true,
       signal: this.#controller.signal,
     });
@@ -93,7 +93,7 @@ export class CountdownBar {
       this.#$label.textContent = this.#onAlert(duration);
   }
 
-  /** Aborts the countdown and its `onEnd` handler registered by `start()`
+  /** Aborts the countdown and its `onTimesUp` handler registered by `start()`
    * method */
   disable() {
     this.#controller.abort();

@@ -27,6 +27,6 @@ export const handleLetterFocus = (e) => {
 
   InsaneCountdownBar.start({
     duration: timerDuration,
-    onEnd: () => handleLetterInput($target),
+    onTimesUp: () => handleLetterInput($target),
   });
 };
