@@ -1,7 +1,7 @@
 import { getAllElementsBySelector, getElementBySelector } from "@lib/dom";
 
 const CLASSES = Object.freeze({
-  TRIGGER: "tab-nav__trigger",
+  TRIGGER: "tab-nav__tab",
   CONTENT: "tab-content__item",
 });
 

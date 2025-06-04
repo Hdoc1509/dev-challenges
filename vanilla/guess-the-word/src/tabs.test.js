@@ -25,7 +25,7 @@ const createTabs = ({ selectedTab = TABS.FIRST } = {}) => {
     const triggerId = `${tabGroup}_${tab}-tab`;
     const contentId = `${tabGroup}_${tab}-tab-content`;
 
-    $trigger.classList.add("tab-nav__trigger");
+    $trigger.classList.add("tab-nav__tab");
     $trigger.setAttribute("id", triggerId);
     $trigger.setAttribute("aria-controls", contentId);
     $trigger.setAttribute("role", "tab");
