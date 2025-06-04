@@ -10,7 +10,7 @@
       <div id="hints-tab-nav" class="tab-nav" role="tablist">
         <!-- prettier-ignore -->
         <% for (const tab of hintsTabs) { %>
-        <%- include("tabs/TabNavTrigger", { ...tab, contentName: "hints" }) %>
+        <%- include("tabs/Tab", { ...tab, contentName: "hints" }) %>
         <% } %>
       </div>
     </nav>
