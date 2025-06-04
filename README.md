@@ -18,7 +18,7 @@ There are some [packages](#packages) I created while completing them.
 - [x] [Music Player](/vanilla/music-player/)
 - [x] [Random Quote](/vanilla/random-quote/)
 - [x] [QR Code Generator](/vanilla/qr-code-generator/)
-- [ ] [Guess The Word Game](/vanilla/guess-the-word/)
+- [x] [Guess The Word Game](/vanilla/guess-the-word/)
 
 ### Frontend Libraries
 
