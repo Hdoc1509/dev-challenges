@@ -45,7 +45,7 @@ describe("CountdownBar", () => {
     expect($track.hasAttribute("data-active")).toBe(false);
   });
 
-  it("should call `onTimesUp` handler once countdown finishes", () => {
+  it("calls `onTimesUp` handler once countdown finishes", () => {
     const { TestCountdownBar, $track } = createCountdownBar();
     const onTimesUp = vi.fn();
 
@@ -55,7 +55,7 @@ describe("CountdownBar", () => {
     expect(onTimesUp).toHaveBeenCalledOnce();
   });
 
-  it("should remove `onTimesUp` handler once used", () => {
+  it("removes `onTimesUp` handler once used", () => {
     const { TestCountdownBar, $track } = createCountdownBar();
     const onTimesUp = vi.fn();
 
@@ -66,7 +66,7 @@ describe("CountdownBar", () => {
     expect(onTimesUp).toHaveBeenCalledOnce();
   });
 
-  it("should abort previous `onTimesUp` handler when calling .start() method", () => {
+  it("aborts previous `onTimesUp` handler when calling .start() method", () => {
     const { TestCountdownBar, $track } = createCountdownBar();
     const firstOnTimesUp = vi.fn();
     const secondOnTimesUp = vi.fn();
@@ -79,7 +79,7 @@ describe("CountdownBar", () => {
     expect(secondOnTimesUp).toHaveBeenCalledOnce();
   });
 
-  it("should not notify an `alert` when `onAlert` is not provided", () => {
+  it("does not notify an `alert` when `onAlert` is not provided", () => {
     const { TestCountdownBar, $countdownBar } = createCountdownBar({
       labeled: true,
     });
@@ -90,7 +90,7 @@ describe("CountdownBar", () => {
     expect($label.textContent).toBe("");
   });
 
-  it("should notify an `alert` when `onAlert` is provided", () => {
+  it("notifies an `alert` when `onAlert` is provided", () => {
     const { TestCountdownBar, $countdownBar } = createCountdownBar({
       labeled: true,
       onAlert: (duration) => `${duration} seconds available`,
