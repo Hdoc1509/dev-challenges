@@ -66,7 +66,7 @@ describe("Tabs", () => {
     }
   });
 
-  it("checks tab trigger correctly by using `.isTabLink()` method", () => {
+  it("checks tab trigger correctly by using `.isTab()` method", () => {
     const { $nav, $content } = createTabs();
     const $intruder = document.createElement("button");
     $intruder.classList.add("tab-nav__trigger");
@@ -77,12 +77,12 @@ describe("Tabs", () => {
 
     const TestTabs = new Tabs({ $nav, $content });
 
-    expect(TestTabs.isTabLink($intruder)).toBe(false);
+    expect(TestTabs.isTab($intruder)).toBe(false);
 
     for (const tab of tabNames) {
       const $tab = getByRole($nav, "tab", { name: `${tab.toUpperCase()} tab` });
 
-      expect(TestTabs.isTabLink($tab)).toBe(true);
+      expect(TestTabs.isTab($tab)).toBe(true);
     }
   });
 

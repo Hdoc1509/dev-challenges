@@ -71,7 +71,7 @@ export class Tabs {
    * @param {EventTarget | HTMLElement | null} $element
    * @returns {$element is HTMLButtonElement}
    */
-  isTabLink($element) {
+  isTab($element) {
     return (
       $element instanceof HTMLButtonElement && this.#$Content.has($element)
     );
