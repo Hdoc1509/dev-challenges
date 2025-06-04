@@ -1,7 +1,7 @@
 import { getAllElementsBySelector, getElementBySelector } from "@lib/dom";
 
 const CLASSES = Object.freeze({
-  TRIGGER: "tab-nav__trigger",
+  TAB: "tab-nav__tab",
   CONTENT: "tab-content__item",
 });
 
@@ -16,7 +16,7 @@ const ATTRIBUTES = Object.freeze({
 
 // TODO: id must end with `_tab`
 // aria-controls must end with `_tab-content`
-const TAB_VALID_SELECTOR = `.${CLASSES.TRIGGER}[id$="-tab"]`
+const TAB_VALID_SELECTOR = `.${CLASSES.TAB}[id$="-tab"]`
   .concat('[aria-controls$="-tab-content"]')
   .concat('[role="tab"]')
   .concat('[aria-selected]:not([aria-selected=""])');
@@ -71,7 +71,7 @@ export class Tabs {
    * @param {EventTarget | HTMLElement | null} $element
    * @returns {$element is HTMLButtonElement}
    */
-  isTabLink($element) {
+  isTab($element) {
     return (
       $element instanceof HTMLButtonElement && this.#$Content.has($element)
     );
@@ -92,10 +92,8 @@ export class Tabs {
     if ($currentContent == null || $targetContent == null) return;
 
     $currentTab.setAttribute(ATTRIBUTES.TAB.SELECTED, "false");
-    $currentTab.disabled = false;
     $currentContent.removeAttribute(ATTRIBUTES.CONTENT.ACTIVE);
     $targetTab.setAttribute(ATTRIBUTES.TAB.SELECTED, "true");
-    $targetTab.disabled = true;
     $targetTab.scrollIntoView();
     $targetContent.setAttribute(ATTRIBUTES.CONTENT.ACTIVE, "");
 

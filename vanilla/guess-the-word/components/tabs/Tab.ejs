@@ -1,0 +1,10 @@
+<button
+  id="<%= name %>-<%= group %>-tab"
+  class="tab-nav__tab"
+  role="tab"
+  aria-controls="<%= name %>-<%= group %>-tab-content"
+  aria-selected="<%= locals.selected ?? false %>"
+>
+  <%- include(`icon/${icon}`) %>
+  <%= capitalize(name) %>
+</button>

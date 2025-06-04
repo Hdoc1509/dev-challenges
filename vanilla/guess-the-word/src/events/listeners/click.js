@@ -35,7 +35,7 @@ export function setupClickListeners() {
     else if ($target === $showDifficulties) {
       $menu.showModal();
       MenuTabs.selectTab($difficultyTab);
-    } else if (MenuTabs.isTabLink($target)) {
+    } else if (MenuTabs.isTab($target)) {
       if ($target === $definitionsTab)
         DefinitionPages.renderPage(DefinitionPagination.currentPage);
       else if ($target === $statsTab)
@@ -44,7 +44,7 @@ export function setupClickListeners() {
         );
 
       MenuTabs.selectTab($target);
-    } else if (HintsTabs.isTabLink($target)) HintsTabs.selectTab($target);
+    } else if (HintsTabs.isTab($target)) HintsTabs.selectTab($target);
     else if (DefinitionPagination.isTrigger($target))
       DefinitionPagination.handleTrigger($target);
   });

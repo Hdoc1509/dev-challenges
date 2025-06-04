@@ -25,13 +25,12 @@ const createTabs = ({ selectedTab = TABS.FIRST } = {}) => {
     const triggerId = `${tabGroup}_${tab}-tab`;
     const contentId = `${tabGroup}_${tab}-tab-content`;
 
-    $trigger.classList.add("tab-nav__trigger");
+    $trigger.classList.add("tab-nav__tab");
     $trigger.setAttribute("id", triggerId);
     $trigger.setAttribute("aria-controls", contentId);
     $trigger.setAttribute("role", "tab");
     $trigger.setAttribute("aria-selected", `${tab === selectedTab}`);
     $trigger.textContent = `${tab.toUpperCase()} tab`;
-    $trigger.disabled = tab === selectedTab;
 
     $content.classList.add("tab-content__item");
     $content.setAttribute("id", contentId);
@@ -66,7 +65,7 @@ describe("Tabs", () => {
     }
   });
 
-  it("checks tab trigger correctly by using `.isTabLink()` method", () => {
+  it("checks tab trigger correctly by using `.isTab()` method", () => {
     const { $nav, $content } = createTabs();
     const $intruder = document.createElement("button");
     $intruder.classList.add("tab-nav__trigger");
@@ -77,12 +76,12 @@ describe("Tabs", () => {
 
     const TestTabs = new Tabs({ $nav, $content });
 
-    expect(TestTabs.isTabLink($intruder)).toBe(false);
+    expect(TestTabs.isTab($intruder)).toBe(false);
 
     for (const tab of tabNames) {
       const $tab = getByRole($nav, "tab", { name: `${tab.toUpperCase()} tab` });
 
-      expect(TestTabs.isTabLink($tab)).toBe(true);
+      expect(TestTabs.isTab($tab)).toBe(true);
     }
   });
 
@@ -121,11 +120,8 @@ describe("Tabs", () => {
 
       expect(TestTabs.currentTab).toBe($tab);
       expect($selectedTab).toBe($tab);
-      expect($tab.disabled).toBe(true);
-      if ($tab !== $initialSelectedTab) {
+      if ($tab !== $initialSelectedTab)
         expect($initialSelectedTab.getAttribute("aria-selected")).toBe("false");
-        expect($initialSelectedTab.disabled).toBe(false);
-      }
     }
   });
 
