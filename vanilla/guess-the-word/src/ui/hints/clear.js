@@ -1,7 +1,8 @@
 import { $allHintsList, $correctHintsList } from "./elements";
 
 export const clearHints = () => {
-  // TODO: use a while loop
-  $allHintsList.replaceChildren();
-  $correctHintsList.replaceChildren();
+  while ($allHintsList.firstChild != null)
+    $allHintsList.removeChild($allHintsList.firstChild);
+  while ($correctHintsList.firstChild != null)
+    $correctHintsList.removeChild($correctHintsList.firstChild);
 };

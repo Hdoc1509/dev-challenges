@@ -12,8 +12,7 @@ const $letterFields = [];
 /** @param {number} quantity */
 export function createLetterFields(quantity) {
   $letterFields.length = 0;
-  // TODO: use a while loop
-  $typing.replaceChildren();
+  while ($typing.firstChild != null) $typing.removeChild($typing.firstChild);
 
   for (let idx = 0; idx < quantity; idx++) {
     const $letterClone = /** @type {DocumentFragment} */ (

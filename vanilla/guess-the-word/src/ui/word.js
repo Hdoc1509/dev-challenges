@@ -15,8 +15,7 @@ const lettersToUse = [""];
 
 /** @param {string} word */
 export const createWordLetters = (word) => {
-  // TODO: use a while loop
-  $word.replaceChildren();
+  while ($word.firstChild != null) $word.removeChild($word.firstChild);
   $wordLetters.length = 0;
   lettersToUse.length = 0;
 
