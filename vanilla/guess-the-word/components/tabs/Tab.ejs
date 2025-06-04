@@ -1,9 +1,8 @@
-<!-- TODO: rename `contentName` prop to `group` -->
 <button
-  id="<%= name %>-<%= contentName %>-tab"
+  id="<%= name %>-<%= group %>-tab"
   class="tab-nav__tab"
   role="tab"
-  aria-controls="<%= name %>-<%= contentName %>-tab-content"
+  aria-controls="<%= name %>-<%= group %>-tab-content"
   aria-selected="<%= locals.selected ?? false %>"
   ejs="<% if (locals.selected ?? false) { %>"
   disabled
