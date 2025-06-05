@@ -34,10 +34,6 @@
   --step-color-completed: var(--secondary);
 }
 
-.game-card .info .resets {
-  display: flex;
-}
-
 .game-card .info .definition,
 .game-card .info .hints {
   grid-column: 1 / -1;

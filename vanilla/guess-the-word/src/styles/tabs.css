@@ -4,8 +4,6 @@
   --_highlight-size: var(--tab-nav-highlight-size, 3px);
   position: relative;
   display: flex;
-
-  padding: 0;
 }
 
 .tab-nav__tab {
@@ -44,9 +42,6 @@
   --tab-item-highlight: var(--_disabled-hover-color);
 }
 
-.tab-content {
-  display: flex;
-}
 .tab-content__item {
   display: grid;
   gap: 1rem;
