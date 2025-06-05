@@ -1,7 +1,7 @@
 .game-card .actions {
   display: flex;
   justify-content: center;
-  gap: var(--buttons-gap, 1.125rem);
+  gap: 1.125rem;
   flex-wrap: wrap;
 }
 .game-card .actions__control {

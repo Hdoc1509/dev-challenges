@@ -3,7 +3,7 @@
   grid-template-columns: 1fr auto;
   gap: 0.75rem;
 
-  font-size: var(--info-fs, 0.875rem);
+  font-size: 0.875rem;
   font-weight: 600;
 
   --countdown-bar-bg: var(--slate-600);
