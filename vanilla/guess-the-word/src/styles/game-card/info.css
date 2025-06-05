@@ -24,7 +24,6 @@
 
 .game-card .info .tries,
 .game-card .info .resets {
-  display: flex;
   gap: 0.25rem 1ch;
   flex-wrap: wrap;
 }
@@ -40,9 +39,7 @@
 }
 
 .game-card .info .hints {
-  display: flex;
   flex-direction: column;
-  gap: 1rem;
 }
 .game-card .hints .button {
   --icon-size: 1.875em;
@@ -51,9 +48,7 @@
   pointer-events: none;
 }
 .game-card .hints__content {
-  display: flex;
   flex-direction: column;
-  gap: 1rem;
 }
 .game-card .hints__content .tab-nav {
   justify-content: center;
@@ -62,7 +57,6 @@
 .info .difficulty-completed {
   grid-column: 1 / -1;
 
-  display: flex;
   flex-direction: column;
   gap: 0.5rem;
 

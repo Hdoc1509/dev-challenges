@@ -1,8 +1,7 @@
 .game-card .word {
-  display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  column-gap: 1ch;
+  gap: 0 1ch;
 
   background-color: var(--slate-600);
   padding: 0.75rem;

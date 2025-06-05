@@ -71,3 +71,8 @@
 .font-semibold {
   font-weight: 600;
 }
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}

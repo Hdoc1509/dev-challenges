@@ -19,8 +19,6 @@
 }
 
 .menu__header {
-  display: flex;
-  gap: 1rem;
   align-items: center;
 }
 .menu__header #menu-close.button {

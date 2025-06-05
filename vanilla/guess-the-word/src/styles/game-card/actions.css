@@ -1,5 +1,4 @@
 .game-card .actions {
-  display: flex;
   justify-content: center;
   gap: 1.125rem;
   flex-wrap: wrap;

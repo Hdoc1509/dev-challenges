@@ -30,12 +30,12 @@
         </button>
       </header>
       <div
-        class="word font-semibold"
+        class="word | flex font-semibold"
         id="word"
         aria-label="Scrambled word"
       ></div>
       <section class="info">
-        <section class="tries">
+        <section class="tries | flex">
           <p class="tries__description">
             Tries (<span id="current-tries">0</span>/<span id="max-tries"
               >?</span
@@ -47,7 +47,7 @@
           <span>Mistakes:</span>
           <span id="mistaken-letters">0</span>
         </section>
-        <section class="resets | hidden">
+        <section class="resets | flex hidden">
           <p class="resets__description">
             Resets (<span id="current-resets">0</span>/<span id="max-resets"
               >2</span
@@ -67,14 +67,14 @@
             Definition <%- include("icon/Book2") %>
           </button>
         </section>
-        <section class="hints | hidden">
+        <section class="hints | flex hidden">
           <button class="button">
             <span class="button__label">Hints</span>
             <%- include("icon/ProgressHelp") %>
           </button>
           <%- include("info/HintsContent") %>
         </section>
-        <section class="difficulty-completed | hidden">
+        <section class="difficulty-completed | flex hidden">
           <p data-primary>
             You have completed the
             <span class="difficulty-completed__name"></span>
@@ -86,8 +86,8 @@
           </button>
         </section>
       </section>
-      <section id="typing" class="typing font-semibold"></section>
-      <section class="actions">
+      <section id="typing" class="typing | flex font-semibold"></section>
+      <section class="actions | flex">
         <button id="random" class="actions__control button">Random</button>
         <button id="reset" class="actions__control button" disabled>
           Reset
