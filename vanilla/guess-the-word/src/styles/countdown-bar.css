@@ -1,7 +1,6 @@
 .countdown-bar {
   --_bg: var(--countdown-bar-bg);
   --_track-bg: var(--countdown-bar-track-bg);
-  grid-column: 1 / -1;
 
   position: relative;
 

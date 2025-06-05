@@ -55,26 +55,31 @@
           </p>
           <%- include("StepIndicator", { steps: 2 }) %>
         </section>
-        <section id="insane-countdown" class="countdown-bar | hidden">
+        <section
+          id="insane-countdown"
+          class="countdown-bar | col-span-full hidden"
+        >
           <div class="countdown-bar__track"></div>
           <span
             class="countdown-bar__alert visually-hidden"
             role="alert"
           ></span>
         </section>
-        <section class="definition | hidden">
+        <section class="definition | col-span-full hidden">
           <button class="button">
             Definition <%- include("icon/Book2") %>
           </button>
         </section>
-        <section class="hints | flex flex-col hidden">
+        <section class="hints | flex flex-col col-span-full hidden">
           <button class="button">
             <span class="button__label">Hints</span>
             <%- include("icon/ProgressHelp") %>
           </button>
           <%- include("info/HintsContent") %>
         </section>
-        <section class="difficulty-completed | flex flex-col hidden">
+        <section
+          class="difficulty-completed | flex flex-col col-span-full hidden"
+        >
           <p data-primary>
             You have completed the
             <span class="difficulty-completed__name"></span>

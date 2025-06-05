@@ -32,11 +32,6 @@
   --step-color-completed: var(--secondary);
 }
 
-.game-card .info .definition,
-.game-card .info .hints {
-  grid-column: 1 / -1;
-}
-
 .game-card .hints .button {
   --icon-size: 1.875em;
 }
@@ -48,10 +43,7 @@
 }
 
 .info .difficulty-completed {
-  grid-column: 1 / -1;
-
   gap: 0.5rem;
-
   text-align: center;
   font-size: 1rem;
 }

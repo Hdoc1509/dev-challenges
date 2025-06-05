@@ -86,3 +86,7 @@
 .items-center {
   align-items: center;
 }
+
+.col-span-full {
+  grid-column: 1 / -1;
+}
