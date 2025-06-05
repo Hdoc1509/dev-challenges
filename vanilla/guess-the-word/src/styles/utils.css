@@ -87,6 +87,10 @@
   align-items: center;
 }
 
+.justify-center {
+  justify-content: center;
+}
+
 .col-span-full {
   grid-column: 1 / -1;
 }

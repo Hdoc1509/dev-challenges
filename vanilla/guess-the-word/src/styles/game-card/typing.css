@@ -1,9 +1,6 @@
 .game-card .typing {
   gap: 10px;
-  justify-content: center;
-
   margin-block: 2.5rem;
-
   font-size: var(--letter-fs, 1.25rem);
 }
 

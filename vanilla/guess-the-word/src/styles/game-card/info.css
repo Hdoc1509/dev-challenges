@@ -38,9 +38,6 @@
 .game-card .hints .button__label {
   pointer-events: none;
 }
-.game-card .hints__content .tab-nav {
-  justify-content: center;
-}
 
 .info .difficulty-completed {
   gap: 0.5rem;
