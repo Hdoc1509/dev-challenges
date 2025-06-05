@@ -25,7 +25,6 @@
 .game-card .info .tries,
 .game-card .info .resets {
   gap: 0.25rem 1ch;
-  flex-wrap: wrap;
 }
 .game-card .info .step-indicator {
   /* TODO: move to `.game-card .info` selector */

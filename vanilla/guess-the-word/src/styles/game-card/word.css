@@ -1,6 +1,5 @@
 .game-card .word {
   justify-content: center;
-  flex-wrap: wrap;
   gap: 0 1ch;
 
   background-color: var(--slate-600);

@@ -1,7 +1,6 @@
 .game-card .typing {
   gap: 10px;
   justify-content: center;
-  flex-wrap: wrap;
 
   margin-block: 2.5rem;
 

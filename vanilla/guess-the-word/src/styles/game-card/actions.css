@@ -1,7 +1,6 @@
 .game-card .actions {
   justify-content: center;
   gap: 1.125rem;
-  flex-wrap: wrap;
 }
 .game-card .actions__control {
   outline: 2px solid var(--_control-outline-color);
