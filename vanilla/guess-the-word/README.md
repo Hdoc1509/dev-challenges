@@ -52,7 +52,7 @@ create a small game that tests your data management and DOM manipulation with Ja
 
 - [Vite](https://vitejs.dev/)
 - [vite-plugin-html](https://github.com/vbenjs/vite-plugin-html)
-- [BEM](https://getbem.com/)
+- [BEM](https://getbem.com/) and [CUBE CSS](https://cube.fyi/)
 - [fontsource](https://fontsource.org/) fonts:
   - [Outfit](https://fontsource.org/fonts/outfit)
 - [tabler icons](https://tabler.io/icons)
