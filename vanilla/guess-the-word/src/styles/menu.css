@@ -1,8 +1,7 @@
 .menu {
-  /* TODO: rename to `--_max-width` */
-  --menu-max-width: 370px;
+  --_max-width: 370px;
 
-  width: min(var(--menu-max-width), 100%);
+  width: min(var(--_max-width), 100%);
   height: min(350px, 100%);
   margin: auto;
   padding: 1rem;
@@ -14,7 +13,7 @@
 }
 .menu[open] {
   display: grid;
-  grid-template-columns: min(var(--menu-max-width), 100%);
+  grid-template-columns: min(var(--_max-width), 100%);
   grid-template-rows: auto 1fr;
   gap: 1rem;
 }
