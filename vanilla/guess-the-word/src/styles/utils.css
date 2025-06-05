@@ -76,6 +76,9 @@
   display: flex;
   gap: var(--gap, 1rem);
 }
+.flex-col {
+  flex-direction: column;
+}
 
 .items-center {
   align-items: center;

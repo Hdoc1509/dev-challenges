@@ -38,17 +38,11 @@
   grid-column: 1 / -1;
 }
 
-.game-card .info .hints {
-  flex-direction: column;
-}
 .game-card .hints .button {
   --icon-size: 1.875em;
 }
 .game-card .hints .button__label {
   pointer-events: none;
-}
-.game-card .hints__content {
-  flex-direction: column;
 }
 .game-card .hints__content .tab-nav {
   justify-content: center;
@@ -57,7 +51,6 @@
 .info .difficulty-completed {
   grid-column: 1 / -1;
 
-  flex-direction: column;
   gap: 0.5rem;
 
   text-align: center;
