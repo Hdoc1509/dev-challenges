@@ -1,9 +1,9 @@
 .menu {
+  /* TODO: rename to `--_max-width` */
   --menu-max-width: 370px;
-  --menu-max-height: 350px;
 
   width: min(var(--menu-max-width), 100%);
-  height: min(var(--menu-max-height), 100%);
+  height: min(350px, 100%);
   margin: auto;
   padding: 1rem;
   background-color: var(--slate-900);
