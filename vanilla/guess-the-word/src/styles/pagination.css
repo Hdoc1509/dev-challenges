@@ -49,7 +49,6 @@
   background: transparent;
 
   color: var(--text);
-  text-align: center;
 }
 .pagination__current:hover {
   background-color: var(--_hover);

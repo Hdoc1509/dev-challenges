@@ -31,10 +31,13 @@
   color: var(--difficulty-text);
 }
 
+.text-center {
+  text-align: center;
+}
+
 .not-yet {
   color: var(--primary);
   font-size: 1.25rem;
-  text-align: center;
 }
 
 .plus-sign {

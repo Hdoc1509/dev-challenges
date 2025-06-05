@@ -94,7 +94,6 @@
   background-color: var(--red-600-35);
 
   font-weight: bold;
-  text-align: center;
 }
 .definition__retry {
   --button-display: var(--retry-display, flex);
