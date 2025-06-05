@@ -18,10 +18,7 @@
   gap: 1rem;
 }
 
-.menu__header {
-  align-items: center;
-}
-.menu__header #menu-close.button {
+#menu-close.button {
   --button-radius: 6px;
   --button-bg: var(--secondary);
   --button-padding: 0.075em;
@@ -30,7 +27,7 @@
 
   --icon-size: 1.75rem;
 }
-.menu__header nav {
+.menu header nav {
   flex-grow: 1;
   overflow-x: scroll;
 }
