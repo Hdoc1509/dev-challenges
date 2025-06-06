@@ -21,9 +21,6 @@
   font-size: var(--hints-list-font-size, 1.25rem);
 
   list-style: none;
-
-  /* TODO: remove this */
-  counter-reset: hints-counter;
 }
 
 .hint-group {
