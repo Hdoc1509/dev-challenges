@@ -94,3 +94,7 @@
 .col-span-full {
   grid-column: 1 / -1;
 }
+
+.pointer-events-none {
+  pointer-events: none;
+}

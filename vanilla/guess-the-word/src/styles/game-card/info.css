@@ -35,9 +35,6 @@
 .game-card .hints .button {
   --icon-size: 1.875em;
 }
-.game-card .hints .button__label {
-  pointer-events: none;
-}
 
 .info .difficulty-completed {
   gap: 0.5rem;
