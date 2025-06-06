@@ -42,11 +42,6 @@
   --tab-item-highlight: var(--_disabled-hover-color);
 }
 
-.tab-content__item {
-  display: grid;
-  gap: 1rem;
-  width: 100%;
-}
 .tab-content__item:not([data-active]) {
-  display: none;
+  display: none !important;
 }

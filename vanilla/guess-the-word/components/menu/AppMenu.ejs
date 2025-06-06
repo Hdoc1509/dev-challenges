@@ -1,4 +1,4 @@
-<dialog id="app-menu" class="menu">
+<dialog id="app-menu" class="menu | grid">
   <!-- prettier-ignore -->
   <% const menuTabs = [
        { name: "definitions", icon: "Book2", selected: true },
@@ -20,9 +20,10 @@
   </header>
   <div id="menu-tab-content" class="tab-content">
     <!-- TODO: use TabContentItem component -->
+    <!-- TODO: allow to pass custom `class` prop -->
     <div
       id="definitions-menu-tab-content"
-      class="tab-content__item"
+      class="tab-content__item | grid"
       role="tabpanel"
       aria-labelledby="definitions-menu-tab"
       data-active
@@ -39,7 +40,7 @@
     </div>
     <div
       id="stats-menu-tab-content"
-      class="tab-content__item"
+      class="tab-content__item | grid"
       role="tabpanel"
       aria-labelledby="stats-menu-tab"
     >

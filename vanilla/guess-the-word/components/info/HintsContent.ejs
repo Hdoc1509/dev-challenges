@@ -19,7 +19,7 @@
     <!-- prettier-ignore -->
     <% for (const tab of hintsTabs) { %>
     <%- include("tabs/TabContentItem", { ...tab, group: "hints" }) %>
-    <ul class="hints-list"></ul>
+    <ul class="hints-list | grid"></ul>
     <%- include("tabs/TabContentItem", { close: true }) %>
     <% } %>
   </div>
