@@ -35,7 +35,6 @@
 
 .info .difficulty-completed {
   gap: 0.5rem;
-  text-align: center;
   font-size: 1rem;
 }
 .info .difficulty-completed [data-primary] {
