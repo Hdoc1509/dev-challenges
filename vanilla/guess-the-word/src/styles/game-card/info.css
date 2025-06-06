@@ -6,6 +6,9 @@
   font-size: 0.875rem;
   font-weight: 600;
 
+  --step-color: var(--slate-600);
+  --step-color-completed: var(--secondary);
+
   --countdown-bar-bg: var(--slate-600);
   --countdown-bar-track-bg: var(--primary);
 }
@@ -25,11 +28,6 @@
 .game-card .info .tries,
 .game-card .info .resets {
   gap: 0.25rem 1ch;
-}
-.game-card .info .step-indicator {
-  /* TODO: move to `.game-card .info` selector */
-  --step-color: var(--slate-600);
-  --step-color-completed: var(--secondary);
 }
 
 .game-card .hints .button {
