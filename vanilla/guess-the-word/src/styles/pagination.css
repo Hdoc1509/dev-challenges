@@ -1,16 +1,14 @@
 .pagination {
   --_hover: var(--slate-950);
 
+  /* TODO: use `.flex.justify-center` utility classes */
   display: flex;
   justify-content: center;
   gap: 12px;
 
-  padding: 0;
   padding-bottom: 0.125rem;
 
   font-size: var(--pagination-item-size, 1.125rem);
-
-  list-style: none;
 }
 
 .pagination__trigger {

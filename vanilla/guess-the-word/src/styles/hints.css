@@ -15,12 +15,7 @@
 
 .hints-list {
   gap: 1ch;
-
-  padding: 0;
-
   font-size: var(--hints-list-font-size, 1.25rem);
-
-  list-style: none;
 }
 
 .hint-group {
