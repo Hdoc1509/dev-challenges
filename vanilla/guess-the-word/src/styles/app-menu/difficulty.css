@@ -25,3 +25,10 @@
 #difficulty-menu-tab-content .label[data-disabled] .difficulty-name {
   --difficulty-text: var(--_disabled-color);
 }
+
+.plus-sign {
+  color: var(--primary);
+  font-size: 1.25em;
+  line-height: 1;
+  align-self: center;
+}

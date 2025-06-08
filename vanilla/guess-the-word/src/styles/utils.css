@@ -40,13 +40,6 @@
   font-size: 1.25rem;
 }
 
-.plus-sign {
-  color: var(--primary);
-  font-size: 1.25em;
-  line-height: 1;
-  align-self: center;
-}
-
 .hidden {
   display: none !important;
 }
