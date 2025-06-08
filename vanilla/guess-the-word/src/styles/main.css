@@ -4,7 +4,7 @@
 
 @import "global.css";
 
-@import "utils.css";
+@import "utils/main.css";
 
 /* generic blocks */
 @import "button.css";

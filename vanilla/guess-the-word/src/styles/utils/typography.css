@@ -40,63 +40,6 @@
   font-size: 1.25rem;
 }
 
-.hidden {
-  display: none !important;
-}
-
-.visually-hidden {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
-.push-right {
-  margin-left: auto;
-}
-.push-left {
-  margin-right: auto;
-}
-
 .font-semibold {
   font-weight: 600;
-}
-
-.flex {
-  display: flex;
-  gap: var(--gap, 1rem);
-}
-.flex-col {
-  flex-direction: column;
-}
-.flex-wrap {
-  flex-wrap: wrap;
-}
-
-.grid {
-  display: grid;
-  gap: var(--gap, 1rem);
-}
-
-.items-center {
-  align-items: center;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.col-span-full {
-  grid-column: 1 / -1;
-}
-
-.pointer-events-none {
-  pointer-events: none;
-}
-
-.relative {
-  position: relative;
 }
