@@ -54,6 +54,8 @@ export const useLetter = (letter) => {
 };
 
 export const showCorrectWord = async () => {
+  let delay = 250;
+
   for (let i = 0; i < currentWord.length; i++) {
     const letter = currentWord[i];
     const [$letter] = $wordLetters[i];
@@ -65,8 +67,8 @@ export const showCorrectWord = async () => {
       3. letter shrinks
       4. go to next letter */
       $letter.textContent = letter;
-      // TODO: decrease delay timer per changed letter
-      await new Promise((resolve) => setTimeout(resolve, 250));
+      await new Promise((resolve) => setTimeout(resolve, delay));
+      if (delay > 150) delay -= 15;
     }
   }
 };
