@@ -70,6 +70,8 @@ create a small game that tests your data management and DOM manipulation with Ja
   - [versions](https://tabler.io/icons/icon/versions)
   - [writing-sign](https://tabler.io/icons/icon/writing-sign)
   - [x](https://tabler.io/icons/icon/x)
+- [animista](https://animista.net/)
+  - [blink](https://animista.net/play/attention/blink): caret for letter inputs
 - [colorhexa](https://www.colorhexa.com/)
 - [Online Image Compressor](https://imagecompressor.com/) and
   [Squoosh](https://squoosh.app/) for image optimization
