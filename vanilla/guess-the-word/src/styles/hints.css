@@ -1,3 +1,6 @@
+#hints-tab-nav {
+  position: relative;
+}
 #hints-tab-nav.tab-nav::before {
   content: "";
   position: absolute;
@@ -6,6 +9,9 @@
   width: 100%;
   height: var(--_highlight-size); /* defined by tabs.css */
   background-color: var(--_disabled-color); /* defined by tabs.css */
+}
+#hints-tab-nav .tab-nav__tab {
+  position: relative;
 }
 
 #hints-tab-content {

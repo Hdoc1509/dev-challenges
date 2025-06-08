@@ -2,12 +2,10 @@
   --_disabled-color: var(--gray-700);
   --_disabled-hover-color: var(--gray-400);
   --_highlight-size: var(--tab-nav-highlight-size, 3px);
-  position: relative;
   display: flex;
 }
 
 .tab-nav__tab {
-  position: relative;
   display: flex;
   align-items: center;
   gap: 0.5em;
