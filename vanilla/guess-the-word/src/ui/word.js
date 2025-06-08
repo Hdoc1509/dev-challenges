@@ -58,17 +58,18 @@ export const showCorrectWord = async () => {
   let delay = 250;
 
   for (let i = 0; i < currentWord.length; i++) {
-    const letter = currentWord[i];
+    const correctLetter = currentWord[i];
+    const letterToCheck = lettersToUse[i];
     const [$letter] = $wordLetters[i];
 
-    if ($letter.textContent !== letter) {
+    if (letterToCheck !== correctLetter) {
       $letter.style.setProperty("--letter-grow-duration", `${delay}ms`);
       await /** @type {Promise<void>} */ (
         new Promise((resolve) => {
           $letter.addEventListener(
             "transitionend",
             () => {
-              $letter.textContent = letter;
+              $letter.textContent = correctLetter;
               $letter.removeAttribute(ATTRIBUTRES.LETTER.GROW);
               resolve();
             },
