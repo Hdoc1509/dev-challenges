@@ -7,10 +7,14 @@
      ] %>
   <header class="menu__header">
     <nav>
-      <div id="hints-tab-nav" class="tab-nav | justify-center" role="tablist">
+      <div
+        id="hints-tab-nav"
+        class="tab-nav | relative justify-center"
+        role="tablist"
+      >
         <!-- prettier-ignore -->
         <% for (const tab of hintsTabs) { %>
-        <%- include("tabs/Tab", { ...tab, group: "hints" }) %>
+        <%- include("tabs/Tab", { ...tab, group: "hints", class: "relative" }) %>
         <% } %>
       </div>
     </nav>

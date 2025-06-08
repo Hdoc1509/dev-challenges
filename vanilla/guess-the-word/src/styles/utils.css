@@ -103,3 +103,7 @@
 .pointer-events-none {
   pointer-events: none;
 }
+
+.relative {
+  position: relative;
+}
