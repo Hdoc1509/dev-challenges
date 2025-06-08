@@ -5,6 +5,7 @@ import { clearChildren } from "@/utils/dom";
 const ATTRIBUTRES = Object.freeze({
   LETTER: Object.freeze({
     USED: "data-used",
+    GROW: "data-grow",
   }),
 });
 
@@ -61,13 +62,21 @@ export const showCorrectWord = async () => {
     const [$letter] = $wordLetters[i];
 
     if ($letter.textContent !== letter) {
-      /* TODO: try to use a transition
-      1. letter grows
-      2. update the letter
-      3. letter shrinks
-      4. go to next letter */
-      $letter.textContent = letter;
-      await new Promise((resolve) => setTimeout(resolve, delay));
+      $letter.style.setProperty("--letter-grow-duration", `${delay}ms`);
+      await /** @type {Promise<void>} */ (
+        new Promise((resolve) => {
+          $letter.addEventListener(
+            "transitionend",
+            () => {
+              $letter.textContent = letter;
+              $letter.removeAttribute(ATTRIBUTRES.LETTER.GROW);
+              resolve();
+            },
+            { once: true },
+          );
+          $letter.setAttribute(ATTRIBUTRES.LETTER.GROW, "");
+        })
+      );
       if (delay > 150) delay -= 15;
     }
   }

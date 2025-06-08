@@ -11,6 +11,14 @@
   user-select: none;
 }
 
+.game-card .word__letter {
+  transition: transform var(--letter-grow-duration) ease-in;
+}
+
 .game-card .word__letter[data-used] {
   color: var(--slate-950);
+}
+
+.game-card .word__letter[data-grow] {
+  transform: scale(1.25);
 }
