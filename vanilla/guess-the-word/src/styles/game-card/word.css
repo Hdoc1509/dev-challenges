@@ -15,7 +15,9 @@
 
 .game-card .word__letter {
   width: 1.25ch;
-  transition: transform var(--letter-grow-duration) ease-in;
+  transition:
+    transform var(--letter-grow-duration) ease-in,
+    color var(--letter-grow-duration) ease-in;
 }
 
 .game-card .word__letter[data-used] {
