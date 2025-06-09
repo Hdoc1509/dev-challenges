@@ -50,8 +50,6 @@ export const useLetter = (letter) => {
 
   $letter.setAttribute(ATTRIBUTRES.LETTER.USED, "");
   $wordLetters[letterIndex][1] = null;
-  if ($wordLetters.every(([, letterText]) => letterText === null))
-    clearUsedLetters();
 };
 
 export const showCorrectWord = async () => {
