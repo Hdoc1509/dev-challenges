@@ -1,7 +1,6 @@
 import { getDifficultiesOfWord } from "@/utils/difficulty/of-word";
 import { isWordRemovedFromGame } from "@/utils/word-removed";
 import { DIFFICULTIES, DIFFICULTIES_ALL } from "@/consts/difficulty";
-/** @typedef {typeof DIFFICULTIES_ALL} DifficultiesAll */
 
 /** @typedef {(item: SavedWordItem) => Promise<void>} SavedWordParser  */
 
