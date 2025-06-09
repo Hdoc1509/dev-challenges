@@ -60,23 +60,20 @@ export const showCorrectWord = async () => {
     const letterToCheck = lettersToUse[i];
     const [$letter] = $wordLetters[i];
 
-    if (letterToCheck !== correctLetter) {
-      $letter.style.setProperty("--letter-grow-duration", `${delay}ms`);
-      await /** @type {Promise<void>} */ (
-        new Promise((resolve) => {
-          $letter.addEventListener(
-            "transitionend",
-            () => {
-              $letter.textContent = correctLetter;
-              $letter.removeAttribute(ATTRIBUTRES.LETTER.GROW);
-              resolve();
-            },
-            { once: true },
-          );
-          $letter.setAttribute(ATTRIBUTRES.LETTER.GROW, "");
-        })
+    $letter.style.setProperty("--letter-grow-duration", `${delay}ms`);
+    await new Promise((resolve) => {
+      $letter.addEventListener(
+        "transitionend",
+        () => {
+          if (letterToCheck !== correctLetter)
+            $letter.textContent = correctLetter;
+          $letter.removeAttribute(ATTRIBUTRES.LETTER.GROW);
+          resolve(null);
+        },
+        { once: true },
       );
-      if (delay > 150) delay -= 15;
-    }
+      $letter.setAttribute(ATTRIBUTRES.LETTER.GROW, "");
+    });
+    if (delay > 150) delay -= 15;
   }
 };
