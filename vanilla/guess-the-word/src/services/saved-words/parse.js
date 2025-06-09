@@ -3,7 +3,7 @@ import { isWordRemovedFromGame } from "@/utils/word-removed";
 import { DIFFICULTIES, DIFFICULTIES_ALL } from "@/consts/difficulty";
 /** @typedef {typeof DIFFICULTIES_ALL} DifficultiesAll */
 
-// TODO: create SavedWordParser function type
+/** @typedef {(item: SavedWordItem) => Promise<void>} SavedWordParser  */
 
 /** @typedef SavedWordItem
  * @property {string} word
@@ -12,7 +12,7 @@ import { DIFFICULTIES, DIFFICULTIES_ALL } from "@/consts/difficulty";
  */
 
 /** @param {any} parsedItem
- * @param {(item: SavedWordItem) => Promise<void>} onParsedItem */
+ * @param {SavedWordParser} onParsedItem */
 export async function parseSavedWords(parsedItem, onParsedItem) {
   if (!Array.isArray(parsedItem)) return;
 
