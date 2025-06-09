@@ -67,6 +67,7 @@ export const showCorrectWord = async () => {
         () => {
           if (letterToCheck !== correctLetter)
             $letter.textContent = correctLetter;
+          $letter.removeAttribute(ATTRIBUTRES.LETTER.USED);
           $letter.removeAttribute(ATTRIBUTRES.LETTER.GROW);
           resolve(null);
         },
