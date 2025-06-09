@@ -8,6 +8,7 @@
     --definition-content-font-size: 0.875rem;
     --pagination-item-size: 1rem;
     --word-fs: 1.75rem;
+    --letter-grow-scale: 1.5;
     --letter-fs: 1.125rem;
     --hints-list-font-size: 1.125rem;
   }
