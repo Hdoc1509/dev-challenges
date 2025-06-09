@@ -1,5 +1,5 @@
 import { setIsAlertInitialized } from "@/state/alert";
-import { clearUsedLetters, showCorrectWord } from "@/ui/word";
+import { showCorrectWord } from "@/ui/word";
 import { $hints, $hintsContent } from "@/ui/hints/elements";
 import { $reset } from "@/ui/actions";
 import { CLASSES } from "@/consts/css-classes";
@@ -12,7 +12,6 @@ export function handleGameOver({ $currentField }) {
     GameAlert.show({ color: "error", text: "😔 Game Over!" });
   });
 
-  clearUsedLetters();
   showCorrectWord();
 
   $hints.classList.add(CLASSES.HIDDEN);
