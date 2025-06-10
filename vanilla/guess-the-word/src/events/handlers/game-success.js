@@ -7,7 +7,7 @@ import { hasCompletedAllDifficulties } from "@/utils/difficulty/completed";
 import { InsaneDifficulty } from "@/utils/difficulty/insane";
 import { showCorrectWord } from "@/ui/word";
 import { $hints, $hintsContent } from "@/ui/hints/elements";
-import { $reset } from "@/ui/actions";
+import { $randomWord, $reset } from "@/ui/actions";
 import { CLASSES } from "@/consts/css-classes";
 
 export function handleGameSuccess() {
@@ -16,7 +16,8 @@ export function handleGameSuccess() {
     GameAlert.show({ color: "success", text: "🎉 Success!" });
   });
 
-  showCorrectWord();
+  $randomWord.disabled = true;
+  showCorrectWord().then(() => ($randomWord.disabled = false));
 
   if (InsaneDifficulty.isApplied())
     import("@/ui/insane-countdown-bar").then(({ InsaneCountdownBar }) =>

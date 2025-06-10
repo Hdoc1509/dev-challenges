@@ -19,7 +19,8 @@ import { RESETS } from "@/consts/resets";
 import { CLASSES } from "@/consts/css-classes";
 
 export async function generateRandomWord() {
-  // FIX: disable random button while showing correct word
+  // TODO: add auxiliary state to ensure that the button is disabled even if
+  // manipulating the DOM
 
   if (words.length === 0) {
     import("./difficulty-complete").then(({ handleDifficultyComplete }) =>
