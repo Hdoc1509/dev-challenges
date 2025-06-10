@@ -59,6 +59,10 @@ export const showCorrectWord = async () => {
     const correctLetter = currentWord[i];
     const letterToCheck = lettersToUse[i];
     const [$letter] = $wordLetters[i];
+    const hasCorrectPosition = letterToCheck === correctLetter;
+    const isUsed = $letter.hasAttribute(ATTRIBUTRES.LETTER.USED);
+
+    if (hasCorrectPosition && !isUsed) continue;
 
     $letter.style.setProperty("--_transition-duration", `${delay}ms`);
     await new Promise((resolve) => {
