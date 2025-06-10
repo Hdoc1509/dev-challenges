@@ -60,7 +60,7 @@ export const showCorrectWord = async () => {
     const letterToCheck = lettersToUse[i];
     const [$letter] = $wordLetters[i];
 
-    $letter.style.setProperty("--letter-grow-duration", `${delay}ms`);
+    $letter.style.setProperty("--_transition-duration", `${delay}ms`);
     await new Promise((resolve) => {
       $letter.addEventListener(
         "transitionend",
