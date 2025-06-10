@@ -1,5 +1,6 @@
 import { words } from "@/state/words";
 import { setCurrentWord } from "@/state/current-word";
+import { isShowingCorrectWord } from "@/state/correct-word";
 import { resetTries } from "@/state/tries";
 import { maxResets, resetGameResets } from "@/state/resets";
 import { isAlertInitialized } from "@/state/alert";
@@ -11,7 +12,7 @@ import { createWordLetters } from "@/ui/word";
 import { $triesContainer, TriesIndicator } from "@/ui/tries";
 import { $mistakenLetters, $mistakesContainer } from "@/ui/mistakes";
 import { createLetterFields } from "@/ui/typing/letter-fields";
-import { $reset } from "@/ui/actions";
+import { $randomWord, $reset } from "@/ui/actions";
 import { $definitionSection } from "@/ui/definition/elements";
 import { clearHints } from "@/ui/hints/clear";
 import { $hints, $hintsContent, $hintsTriggerLabel } from "@/ui/hints/elements";
@@ -19,8 +20,7 @@ import { RESETS } from "@/consts/resets";
 import { CLASSES } from "@/consts/css-classes";
 
 export async function generateRandomWord() {
-  // TODO: add auxiliary state to ensure that the button is disabled even if
-  // manipulating the DOM
+  if (isShowingCorrectWord) return ($randomWord.disabled = true);
 
   if (words.length === 0) {
     import("./difficulty-complete").then(({ handleDifficultyComplete }) =>

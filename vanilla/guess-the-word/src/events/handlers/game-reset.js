@@ -1,3 +1,4 @@
+import { isShowingCorrectWord } from "@/state/correct-word";
 import { resetTries } from "@/state/tries";
 import {
   gameResets,
@@ -15,6 +16,8 @@ import { $reset } from "@/ui/actions";
 import { CLASSES } from "@/consts/css-classes";
 
 export async function resetGame() {
+  if (isShowingCorrectWord) return ($reset.disabled = true);
+
   resetTries();
   increaseGameResets();
 

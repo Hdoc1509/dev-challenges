@@ -1,3 +1,4 @@
+import { setIsShowingCorrectWord } from "@/state/correct-word";
 import { setIsAlertInitialized } from "@/state/alert";
 import { showCorrectWord } from "@/ui/word";
 import { $hints, $hintsContent } from "@/ui/hints/elements";
@@ -13,7 +14,11 @@ export function handleGameOver({ $currentField }) {
   });
 
   $randomWord.disabled = true;
-  showCorrectWord().then(() => ($randomWord.disabled = false));
+  setIsShowingCorrectWord(true);
+  showCorrectWord().then(() => {
+    $randomWord.disabled = false;
+    setIsShowingCorrectWord(false);
+  });
 
   $hints.classList.add(CLASSES.HIDDEN);
   $hintsContent.classList.add(CLASSES.HIDDEN);

@@ -1,5 +1,6 @@
 import { discoveredWords } from "@/state/discovered-words";
 import { currentWord } from "@/state/current-word";
+import { setIsShowingCorrectWord } from "@/state/correct-word";
 import { setIsAlertInitialized } from "@/state/alert";
 import { handleNewWord } from "./new-word";
 import { handleNewDifficulty } from "./new-difficulty";
@@ -17,7 +18,11 @@ export function handleGameSuccess() {
   });
 
   $randomWord.disabled = true;
-  showCorrectWord().then(() => ($randomWord.disabled = false));
+  setIsShowingCorrectWord(true);
+  showCorrectWord().then(() => {
+    $randomWord.disabled = false;
+    setIsShowingCorrectWord(false);
+  });
 
   if (InsaneDifficulty.isApplied())
     import("@/ui/insane-countdown-bar").then(({ InsaneCountdownBar }) =>
