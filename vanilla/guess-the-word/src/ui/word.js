@@ -65,13 +65,13 @@ export const showCorrectWord = async () => {
     if (hasCorrectPosition && !isUsed) continue;
 
     $letter.style.setProperty("--_transition-duration", `${delay}ms`);
+
     await new Promise((resolve) => {
       $letter.addEventListener(
         "transitionend",
         () => {
-          if (letterToCheck !== correctLetter)
-            $letter.textContent = correctLetter;
-          $letter.removeAttribute(ATTRIBUTRES.LETTER.USED);
+          if (!hasCorrectPosition) $letter.textContent = correctLetter;
+          if (isUsed) $letter.removeAttribute(ATTRIBUTRES.LETTER.USED);
           $letter.removeAttribute(ATTRIBUTRES.LETTER.GROW);
           resolve(null);
         },
@@ -79,6 +79,7 @@ export const showCorrectWord = async () => {
       );
       $letter.setAttribute(ATTRIBUTRES.LETTER.GROW, "");
     });
+
     if (delay > 150) delay -= 15;
   }
 };
