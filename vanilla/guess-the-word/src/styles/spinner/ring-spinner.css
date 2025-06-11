@@ -1,15 +1,10 @@
-.spinner {
+/* adapted from:
+https://github.com/Hdoc1509/hrc/blob/master/packages/spinner/lib/RingSpinner/style.scss */
+.ring-spinner {
   --_delta: -0.125;
-  --_speed: 1.2s;
-  --_color: var(--spinner-color, currentColor);
-  --_size: var(--spinner-size, 40px);
-  display: var(--spinner-display, inline-block);
-  position: relative;
-
-  width: var(--_size);
-  aspect-ratio: 1;
 }
-.spinner div {
+
+.ring-spinner div {
   position: absolute;
 
   width: 100%;
@@ -20,13 +15,13 @@
 
   animation: ring-spinner var(--_speed) cubic-bezier(0.5, 0, 0.5, 1) infinite;
 }
-.spinner div:nth-child(1) {
+.ring-spinner div:nth-child(1) {
   animation-delay: calc(var(--_delta) * 3 * var(--_speed));
 }
-.spinner div:nth-child(2) {
+.ring-spinner div:nth-child(2) {
   animation-delay: calc(var(--_delta) * 2 * var(--_speed));
 }
-.spinner div:nth-child(3) {
+.ring-spinner div:nth-child(3) {
   animation-delay: calc(var(--_delta) * var(--_speed));
 }
 

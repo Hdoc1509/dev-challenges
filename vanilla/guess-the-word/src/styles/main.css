@@ -14,7 +14,7 @@
 @import "radio.css";
 @import "label.css";
 @import "pagination.css";
-@import "spinner.css";
+@import "spinner/main.css";
 @import "progress.css";
 
 /* app-specific blocks */

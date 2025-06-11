@@ -1,0 +1,17 @@
+/* adapted from:
+https://github.com/Hdoc1509/hrc/blob/master/packages/spinner/lib/SpinnerBase/style.scss */
+.spinner {
+  --_size: var(--spinner-size, 40px);
+  --_speed: var(--spinner-animation-duration, 1.2s);
+  --_color: var(--spinner-color, currentColor);
+
+  display: var(--spinner-display, inline-block);
+  position: relative;
+
+  box-sizing: border-box;
+  width: var(--_size);
+  aspect-ratio: 1;
+}
+.spinner * {
+  box-sizing: border-box;
+}
