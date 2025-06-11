@@ -6,8 +6,6 @@ import { setupEventListeners } from "./events/listeners/setup";
 import { generateRandomWord } from "./events/handlers/random-word";
 import { applyDifficulty } from "./utils/difficulty/apply";
 import { DefinitionPages } from "./ui/definition/pages";
-import { $typing } from "./ui/typing/elements.js";
-import { addSpinner } from "./ui/spinner";
 import "@lib/alert/styles.css";
 import "@fontsource-variable/outfit";
 import "@fontsource/outfit/400.css";
@@ -16,7 +14,6 @@ import "./styles/main.css";
 
 (async () => {
   // data initialization
-  addSpinner($typing);
   await loadSavedWords(async ({ word, difficulties }) => {
     for (const difficulty of difficulties)
       await removeAvailableWord(word, { difficulty, isInitialization: true });
