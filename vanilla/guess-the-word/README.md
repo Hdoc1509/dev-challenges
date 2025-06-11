@@ -56,6 +56,7 @@ create a small game that tests your data management and DOM manipulation with Ja
 - [@hrc/spinner](https://hdoc1509.github.io/hrc/packages/spinner/)
   - [SpinnerBase](https://hdoc1509.github.io/hrc/api/spinner-base/)
   - [RingSpinner](https://hdoc1509.github.io/hrc/components/ring-spinner/)
+  - [EllipsisSpinner](https://hdoc1509.github.io/hrc/components/ellipsis-spinner/)
 - [fontsource](https://fontsource.org/) fonts:
   - [Outfit](https://fontsource.org/fonts/outfit)
 - [tabler icons](https://tabler.io/icons)

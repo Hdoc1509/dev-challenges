@@ -1,0 +1,57 @@
+/* adapted from:
+https://github.com/loadingio/css-spinner/blob/master/src/ellipsis/index.styl */
+.ellipsis-spinner {
+  --_speed: var(--spinner-animation-duration, 0.6s);
+  --_ball-size: calc(var(--_size) / 5);
+}
+
+.ellipsis-spinner div {
+  position: absolute;
+  top: calc(calc(var(--_size) - var(--_ball-size)) * 0.5);
+
+  width: var(--_ball-size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: var(--_color);
+
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.ellipsis-spinner div:nth-child(1) {
+  animation: ellipsis-spinner-child-1 var(--_speed) infinite;
+}
+.ellipsis-spinner div:nth-child(2) {
+  animation: ellipsis-spinner-child-2 var(--_speed) infinite;
+}
+.ellipsis-spinner div:nth-child(3) {
+  left: calc(var(--_ball-size) * 2);
+  animation: ellipsis-spinner-child-2 var(--_speed) infinite;
+}
+.ellipsis-spinner div:nth-child(4) {
+  left: calc(var(--_ball-size) * 4);
+  animation: ellipsis-spinner-child-3 var(--_speed) infinite;
+}
+
+@keyframes ellipsis-spinner-child-1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes ellipsis-spinner-child-2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(var(--_ball-size) * 2));
+  }
+}
+@keyframes ellipsis-spinner-child-3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
