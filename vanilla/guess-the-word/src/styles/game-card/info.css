@@ -29,6 +29,18 @@
   gap: 0.25rem 1ch;
 }
 
+.game-card .info .tries {
+  --spinner-size: 2.75em;
+  --spinner-color: var(--slate-600);
+}
+.game-card .info .tries .ellipsis-spinner {
+  height: var(--_ball-size);
+  aspect-ratio: unset;
+}
+.game-card .info .tries .ellipsis-spinner div {
+  top: unset;
+}
+
 .game-card .hints .button {
   --icon-size: 1.875em;
 }
