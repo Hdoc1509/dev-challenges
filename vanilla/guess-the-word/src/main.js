@@ -8,7 +8,7 @@ import { applyDifficulty } from "./utils/difficulty/apply";
 import { DefinitionPages } from "./ui/definition/pages";
 import { $word } from "./ui/word";
 import { $typing } from "./ui/typing/elements.js";
-import { addSpinner, removeSpinner } from "./ui/spinner";
+import { addSpinner } from "./ui/spinner";
 import "@lib/alert/styles.css";
 import "@fontsource-variable/outfit";
 import "@fontsource/outfit/400.css";
@@ -29,8 +29,6 @@ import "./styles/main.css";
       ({ handleDifficultyComplete }) => handleDifficultyComplete(),
     );
   else await generateRandomWord();
-
-  removeSpinner($word, $typing);
 
   DefinitionPages.setItems(Array.from(discoveredWords.keys()).reverse());
 
