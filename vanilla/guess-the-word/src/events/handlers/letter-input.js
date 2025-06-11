@@ -1,4 +1,5 @@
 import { currentWord } from "@/state/current-word";
+import { difficulty } from "@/state/difficulty";
 import { increaseTries, maxTries, tries } from "@/state/tries";
 import { maxResets, gameResets, implementsMaxResets } from "@/state/resets";
 import { handleLetterMistake } from "./letter-mistake";
@@ -13,8 +14,9 @@ import { addHint } from "@/ui/hints/add";
 import { $hints } from "@/ui/hints/elements";
 import { isValidTypingLetter } from "@/ui/typing/validation";
 import { $reset } from "@/ui/actions";
-import { CLASSES } from "@/consts/css-classes";
+import { DIFFICULTY } from "@/consts/difficulty";
 import { TRIES } from "@/consts/tries";
+import { CLASSES } from "@/consts/css-classes";
 
 /** @param {HTMLInputElement} $currentField */
 export function handleLetterInput($currentField) {
@@ -51,7 +53,11 @@ export function handleLetterInput($currentField) {
     $currentLetter.dataset.state = "correct";
   }
 
-  if (tries <= TRIES.FIRST && gameResets <= maxResets)
+  if (
+    difficulty !== DIFFICULTY.VOID &&
+    tries <= TRIES.FIRST &&
+    gameResets <= maxResets
+  )
     $hints.classList.remove(CLASSES.HIDDEN);
 
   const $nextLetter = $currentLetter.nextElementSibling;
