@@ -16,7 +16,10 @@ import { $reset } from "@/ui/actions";
 import { CLASSES } from "@/consts/css-classes";
 
 export async function resetGame() {
-  if (isShowingCorrectWord) return ($reset.disabled = true);
+  if (isShowingCorrectWord) {
+    $reset.disabled = true;
+    return;
+  }
 
   resetTries();
   increaseGameResets();
