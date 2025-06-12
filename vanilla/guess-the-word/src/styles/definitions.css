@@ -33,8 +33,6 @@
 .definition[data-status="loading"] .definition__content {
   --error-display: none;
   --retry-display: none;
-  display: flex;
-  align-items: center;
   padding: 0.25rem 0;
 }
 .definition[data-status="error"] {
@@ -73,16 +71,19 @@
 .definition__content {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0.5em;
 
   padding-block: 0.25rem;
 
   font-size: var(--definition-content-font-size, 1rem);
 }
+.definition__content p:not([class]) {
+  align-self: start;
+}
 .definition__error {
   display: var(--error-display);
 
-  align-self: center;
   padding: 0.25em 0.75em;
   border-radius: 8px;
   background-color: var(--red-600-35);
@@ -91,7 +92,6 @@
 }
 .definition__retry {
   --button-display: var(--retry-display, flex);
-  align-self: center;
   gap: 4px;
 
   --button-padding: 0.25em 0.75em;
