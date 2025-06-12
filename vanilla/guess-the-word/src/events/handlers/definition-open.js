@@ -7,7 +7,7 @@ import {
 import { hasCompletedAllDifficulties } from "@/utils/difficulty/completed";
 import { createRetryButton } from "@/ui/definition/retry";
 import { createErrorMessage } from "@/ui/definition/error-message";
-import { addSpinner, removeSpinner } from "@/ui/spinner";
+import { removeSpinner } from "@/ui/spinner";
 
 /** @param {HTMLDetailsElement} $definitionDetails */
 export async function handleDefinitionOpen($definitionDetails) {
@@ -24,7 +24,6 @@ export async function handleDefinitionOpen($definitionDetails) {
 
   if (word == null) return;
 
-  addSpinner($content);
   $definitionDetails.dataset.status = "loading";
 
   const { getDefinition } = await import("@/services/definition");
