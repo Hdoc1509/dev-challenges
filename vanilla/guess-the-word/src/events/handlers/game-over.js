@@ -1,5 +1,6 @@
 import { setIsShowingCorrectWord } from "@/state/correct-word";
 import { setIsAlertInitialized } from "@/state/alert";
+import { InsaneDifficulty } from "@/utils/difficulty/insane";
 import { showCorrectWord } from "@/ui/word";
 import { $hints, $hintsContent } from "@/ui/hints/elements";
 import { $randomWord, $reset } from "@/ui/actions";
@@ -19,6 +20,11 @@ export function handleGameOver({ $currentField }) {
     $randomWord.disabled = false;
     setIsShowingCorrectWord(false);
   });
+
+  if (InsaneDifficulty.isApplied())
+    import("@/ui/insane-countdown-bar").then(({ InsaneCountdownBar }) =>
+      InsaneCountdownBar.disable(),
+    );
 
   $hints.classList.add(CLASSES.HIDDEN);
   $hintsContent.classList.add(CLASSES.HIDDEN);

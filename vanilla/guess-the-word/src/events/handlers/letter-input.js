@@ -33,11 +33,6 @@ export function handleLetterInput($currentField) {
     if (implementsMaxResets() && gameResets === maxResets) {
       handleLetterMistake({ $currentLetter, enteredLetter, tries });
       handleGameOver({ $currentField });
-      // TODO: move to handleGameOver()
-      if (InsaneDifficulty.isApplied())
-        import("@/ui/insane-countdown-bar").then(({ InsaneCountdownBar }) =>
-          InsaneCountdownBar.disable(),
-        );
       return;
     }
 
