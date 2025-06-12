@@ -5,9 +5,9 @@ import {
   DefinitionNew,
 } from "@/state/definition";
 import { hasCompletedAllDifficulties } from "@/utils/difficulty/completed";
+import { clearChildren } from "@/utils/dom";
 import { createRetryButton } from "@/ui/definition/retry";
 import { createErrorMessage } from "@/ui/definition/error-message";
-import { removeSpinner } from "@/ui/spinner";
 
 /** @param {HTMLDetailsElement} $definitionDetails */
 export async function handleDefinitionOpen($definitionDetails) {
@@ -47,7 +47,8 @@ export async function handleDefinitionOpen($definitionDetails) {
     ":scope > .definition__label > .definition__badge",
   );
 
-  $definitionDetails.dataset.status = "success";
+  clearChildren($content);
+  $definitionDetails.removeAttribute("data-status");
 
   for (const definition of definitions) {
     const $definition = document.createElement("p");
@@ -63,8 +64,4 @@ export async function handleDefinitionOpen($definitionDetails) {
   $definitionDetails.scrollIntoView();
   // TODO: call removeNewBadge($definitionDetails)
   if ($newBadge instanceof HTMLSpanElement) $newBadge.remove();
-  $content.querySelector(":scope > .definition__error")?.remove();
-  $content.querySelector(":scope > .definition__retry")?.remove();
-  removeSpinner($content);
-  $definitionDetails.removeAttribute("data-status");
 }

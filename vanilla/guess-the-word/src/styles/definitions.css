@@ -38,11 +38,6 @@
 .definition[data-status="error"] {
   --spinner-display: none;
 }
-.definition[data-status="success"] {
-  --spinner-display: none;
-  --error-display: none;
-  --retry-display: none;
-}
 .definition__label {
   outline: none;
 
