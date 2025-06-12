@@ -42,12 +42,10 @@ export async function handleDefinitionOpen($definitionDetails) {
     return;
   }
 
-  // TODO: move to removeNewBadge($definitionDetails) separate handler
-  const $newBadge = $definitionDetails.querySelector(
-    ":scope > .definition__label > .definition__badge",
-  );
-
   clearChildren($content);
+  $definitionDetails
+    .querySelector(":scope > .definition__label > .definition__badge")
+    ?.remove();
   $definitionDetails.removeAttribute("data-status");
 
   for (const definition of definitions) {
@@ -62,6 +60,4 @@ export async function handleDefinitionOpen($definitionDetails) {
   DefinitionNew.delete(word);
   if (hasCompletedAllDifficulties({ word })) DefinitionElement.delete(word);
   $definitionDetails.scrollIntoView();
-  // TODO: call removeNewBadge($definitionDetails)
-  if ($newBadge instanceof HTMLSpanElement) $newBadge.remove();
 }
