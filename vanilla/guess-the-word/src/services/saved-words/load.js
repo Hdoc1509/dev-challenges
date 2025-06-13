@@ -10,14 +10,14 @@ const loadWordItem = ({ word, difficulties, completed }) => {
 
 /** @param {(loadedWord: import("./adapter").WordItem) => Promise<void>} onLoadedWord */
 export const loadSavedWords = async (onLoadedWord) => {
-  const oldSavedItem = localStorage.getItem(
-    DISCOVERED_WORDS.LOCAL_STORAGE_OLD_KEY,
+  const legacyItem = localStorage.getItem(
+    DISCOVERED_WORDS.LOCAL_STORAGE_LEGACY_KEY,
   );
   const savedItem = localStorage.getItem(DISCOVERED_WORDS.LOCAL_STORAGE_KEY);
 
-  if (oldSavedItem != null && savedItem == null) {
-    const sanitized = parseStoredItem(oldSavedItem);
-    const { savedWordsLegacyAdapter } = await import("./old-format-adapter");
+  if (legacyItem != null && savedItem == null) {
+    const sanitized = parseStoredItem(legacyItem);
+    const { savedWordsLegacyAdapter } = await import("./legacy-adapter");
 
     await savedWordsLegacyAdapter(sanitized, async (wordItem) => {
       loadWordItem(wordItem);
@@ -26,7 +26,7 @@ export const loadSavedWords = async (onLoadedWord) => {
 
     const data = Array.from(discoveredWords);
 
-    localStorage.removeItem(DISCOVERED_WORDS.LOCAL_STORAGE_OLD_KEY);
+    localStorage.removeItem(DISCOVERED_WORDS.LOCAL_STORAGE_LEGACY_KEY);
     localStorage.setItem(
       DISCOVERED_WORDS.LOCAL_STORAGE_KEY,
       JSON.stringify(data),
