@@ -17,12 +17,11 @@ export const loadSavedWords = async (onLoadedWord) => {
 
   if (oldSavedItem != null && savedItem == null) {
     const sanitized = sanitizeStoredItem(oldSavedItem);
-    // TODO: rename to oldItemFormatAdapter()
-    const { parseOldFormat } = await import("./parse-old");
+    const { savedWordsLegacyAdapter } = await import("./old-format-adapter");
 
-    await parseOldFormat(sanitized, async (parsedItem) => {
-      loadWordItem(parsedItem);
-      await onLoadedWord(parsedItem);
+    await savedWordsLegacyAdapter(sanitized, async (wordItem) => {
+      loadWordItem(wordItem);
+      await onLoadedWord(wordItem);
     });
 
     const data = Array.from(discoveredWords);

@@ -6,8 +6,8 @@ import { DIFFICULTY } from "@/consts/difficulty";
 // install vitest, use vitest --dir src
 
 /** @param {any} parsedItem
- * @param {import("./adapter").OnWordAdapt} onParsedItem */
-export async function parseOldFormat(parsedItem, onParsedItem) {
+ * @param {import("./adapter").OnWordAdapt} onWord */
+export async function savedWordsLegacyAdapter(parsedItem, onWord) {
   if (!Array.isArray(parsedItem)) return [];
 
   /** @type {Array<[string, import("@/consts/difficulty").Difficulty]>} */
@@ -22,7 +22,7 @@ export async function parseOldFormat(parsedItem, onParsedItem) {
   }
 
   for (const [word, difficulty] of data)
-    await onParsedItem({
+    await onWord({
       word,
       difficulties: [difficulty],
       completed: difficulty === DIFFICULTY.EASY,
