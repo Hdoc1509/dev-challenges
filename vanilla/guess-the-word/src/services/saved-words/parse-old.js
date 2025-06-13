@@ -6,7 +6,7 @@ import { DIFFICULTY } from "@/consts/difficulty";
 // install vitest, use vitest --dir src
 
 /** @param {any} parsedItem
- * @param {import("./parse").SavedWordParser} onParsedItem */
+ * @param {import("./adapter").OnWordAdapt} onParsedItem */
 export async function parseOldFormat(parsedItem, onParsedItem) {
   if (!Array.isArray(parsedItem)) return [];
 

@@ -3,12 +3,12 @@ import { sanitizeStoredItem } from "./sanitize";
 import { DIFFICULTIES_ALL } from "@/consts/difficulty";
 import { DISCOVERED_WORDS } from "@/consts/discovered-words";
 
-/** @param {import("./parse").SavedWordItem} wordItem */
+/** @param {import("./adapter").WordItem} wordItem */
 const loadWordItem = ({ word, difficulties, completed }) => {
   discoveredWords.set(word, completed ? DIFFICULTIES_ALL : difficulties);
 };
 
-/** @param {(loadedWord: import("./parse").SavedWordItem) => Promise<void>} onLoadedWord */
+/** @param {(loadedWord: import("./adapter").WordItem) => Promise<void>} onLoadedWord */
 export const loadSavedWords = async (onLoadedWord) => {
   const oldSavedItem = localStorage.getItem(
     DISCOVERED_WORDS.LOCAL_STORAGE_OLD_KEY,
@@ -34,12 +34,11 @@ export const loadSavedWords = async (onLoadedWord) => {
     );
   } else if (savedItem != null) {
     const sanitized = sanitizeStoredItem(savedItem);
-    const { parseSavedWords } = await import("./parse");
+    const { savedWordsAdapter } = await import("./adapter");
 
-    // TODO: rename to itemAdapter()
-    await parseSavedWords(sanitized, async (parsedItem) => {
-      loadWordItem(parsedItem);
-      await onLoadedWord(parsedItem);
+    await savedWordsAdapter(sanitized, async (wordItem) => {
+      loadWordItem(wordItem);
+      await onLoadedWord(wordItem);
     });
   }
 };

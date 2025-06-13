@@ -2,17 +2,17 @@ import { getDifficultiesOfWord } from "@/utils/difficulty/of-word";
 import { isWordRemovedFromGame } from "@/utils/word-removed";
 import { DIFFICULTIES, DIFFICULTIES_ALL } from "@/consts/difficulty";
 
-/** @typedef {(item: SavedWordItem) => Promise<void>} SavedWordParser  */
+/** @typedef {(word: WordItem) => Promise<void>} OnWordAdapt  */
 
-/** @typedef SavedWordItem
+/** @typedef WordItem
  * @property {string} word
  * @property {import("@/consts/difficulty").Difficulty[]} difficulties
  * @property {boolean} completed
  */
 
 /** @param {any} parsedItem
- * @param {SavedWordParser} onParsedItem */
-export async function parseSavedWords(parsedItem, onParsedItem) {
+ * @param {OnWordAdapt} onWord */
+export async function savedWordsAdapter(parsedItem, onWord) {
   if (!Array.isArray(parsedItem)) return;
 
   for (const item of parsedItem) {
@@ -25,7 +25,7 @@ export async function parseSavedWords(parsedItem, onParsedItem) {
     const availableDifficulties = getDifficultiesOfWord(word);
 
     if (savedDifficulties === DIFFICULTIES_ALL)
-      await onParsedItem({
+      await onWord({
         word,
         difficulties: availableDifficulties,
         completed: true,
@@ -38,7 +38,7 @@ export async function parseSavedWords(parsedItem, onParsedItem) {
       ) &&
       !(await isWordRemovedFromGame(word))
     )
-      await onParsedItem({
+      await onWord({
         word,
         difficulties: savedDifficulties,
         completed: availableDifficulties.length === savedDifficulties.length,
