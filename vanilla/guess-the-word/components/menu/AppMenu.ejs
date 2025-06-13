@@ -1,9 +1,9 @@
 <dialog id="app-menu" class="menu | grid">
   <!-- prettier-ignore -->
   <% const menuTabs = [
-       { name: "definitions", icon: "Book2", selected: true },
+       { name: "definitions", icon: "Book2", contentClass: "grid", selected: true },
        { name: "difficulty", icon: "Versions" },
-       { name: "stats", icon: "ChartBar" },
+       { name: "stats", icon: "ChartBar", contentClass: "grid" },
      ] %>
   <header class="flex items-center">
     <nav>
@@ -19,31 +19,15 @@
     </button>
   </header>
   <div id="menu-tab-content" class="tab-content">
-    <!-- TODO: use TabContentItem component -->
-    <div
-      id="definitions-menu-tab-content"
-      class="tab-content__item | grid"
-      role="tabpanel"
-      aria-labelledby="definitions-menu-tab"
-      data-active
-    >
-      <%- include("menu/DefinitionsTabContent") %>
-    </div>
-    <div
-      id="difficulty-menu-tab-content"
-      class="tab-content__item"
-      role="tabpanel"
-      aria-labelledby="difficulty-menu-tab"
-    >
-      <%- include("menu/DifficultyTabContent") %>
-    </div>
-    <div
-      id="stats-menu-tab-content"
-      class="tab-content__item | grid"
-      role="tabpanel"
-      aria-labelledby="stats-menu-tab"
-    >
-      <%- include("menu/StatsTabContent") %>
-    </div>
+    <!-- prettier-ignore -->
+    <% for (const tab of menuTabs) { %>
+    <%- include("tabs/TabContentItem", {
+          ...tab,
+          group: "menu",
+          class: tab.contentClass
+        }) %>
+    <%- include(`menu/${capitalize(tab.name)}TabContent`) %>
+    <%- include("tabs/TabContentItem", { close: true }) %>
+    <% } %>
   </div>
 </dialog>
