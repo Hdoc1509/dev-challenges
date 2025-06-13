@@ -13,7 +13,7 @@
   border-left: 3px solid var(--definition-border-color, var(--slate-600));
   padding-inline: 0.75rem;
 
-  --spinner-size: 2.25rem;
+  --spinner-size: 2.25em;
 }
 .definition[open] {
   --definition-label-text: var(--difficulty-void);
