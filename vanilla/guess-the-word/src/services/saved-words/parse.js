@@ -1,5 +1,5 @@
 /** @param {any} item */
-export function sanitizeStoredItem(item) {
+export function parseStoredItem(item) {
   try {
     return JSON.parse(item);
   } catch {

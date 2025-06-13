@@ -1,5 +1,5 @@
 import { discoveredWords } from "@/state/discovered-words";
-import { sanitizeStoredItem } from "./sanitize";
+import { parseStoredItem } from "./parse";
 import { DIFFICULTIES_ALL } from "@/consts/difficulty";
 import { DISCOVERED_WORDS } from "@/consts/discovered-words";
 
@@ -16,7 +16,7 @@ export const loadSavedWords = async (onLoadedWord) => {
   const savedItem = localStorage.getItem(DISCOVERED_WORDS.LOCAL_STORAGE_KEY);
 
   if (oldSavedItem != null && savedItem == null) {
-    const sanitized = sanitizeStoredItem(oldSavedItem);
+    const sanitized = parseStoredItem(oldSavedItem);
     const { savedWordsLegacyAdapter } = await import("./old-format-adapter");
 
     await savedWordsLegacyAdapter(sanitized, async (wordItem) => {
@@ -32,7 +32,7 @@ export const loadSavedWords = async (onLoadedWord) => {
       JSON.stringify(data),
     );
   } else if (savedItem != null) {
-    const sanitized = sanitizeStoredItem(savedItem);
+    const sanitized = parseStoredItem(savedItem);
     const { savedWordsAdapter } = await import("./adapter");
 
     await savedWordsAdapter(sanitized, async (wordItem) => {
