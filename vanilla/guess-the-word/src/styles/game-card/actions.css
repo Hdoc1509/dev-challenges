@@ -2,13 +2,10 @@
   gap: 1.125rem;
 }
 .game-card .actions__control {
-  outline: 2px solid var(--_control-outline-color);
   --button-font-weight: 600;
   filter: drop-shadow(0px 4px 0px var(--purple-700));
 }
-/* TODO: use same hover/focus rules as <Button /> from @hrc/button */
 .game-card .actions__control:hover,
 .game-card .actions__control:focus {
   transform: translateY(-4px) scale(1.05);
-  --_control-outline-color: var(--text);
 }
