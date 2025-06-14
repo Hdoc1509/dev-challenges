@@ -42,9 +42,9 @@
   text-align: center;
   border-color: var(--slate-600);
 }
-.hint--correct {
+.hint[data-state="correct"] {
   border-color: var(--difficulty-easy);
 }
-.hint--wrong {
+.hint[data-state="wrong"] {
   border-color: var(--rose-600);
 }

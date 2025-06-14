@@ -32,7 +32,7 @@ export const addHint = (enteredLetter, { letterIndex, isCorrect }) => {
   const $allHintsLetter = $allHintsGroup.children[letterIndex];
 
   $allHintsLetter.textContent = enteredLetter;
-  $allHintsLetter.classList.add(`hint--${isCorrect ? "correct" : "wrong"}`);
+  $allHintsLetter.setAttribute("data-state", isCorrect ? "correct" : "wrong");
 
   if (isCorrect) {
     const $correctHintsGroup = /** @type {HTMLLIElement} */ (
@@ -41,6 +41,6 @@ export const addHint = (enteredLetter, { letterIndex, isCorrect }) => {
     const $correctHintsLetter = $correctHintsGroup.children[letterIndex];
 
     $correctHintsLetter.textContent = enteredLetter;
-    $correctHintsLetter.classList.add("hint--correct");
+    $correctHintsLetter.setAttribute("data-state", "correct");
   }
 };
