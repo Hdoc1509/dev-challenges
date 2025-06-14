@@ -53,7 +53,13 @@ create a small game that tests your data management and DOM manipulation with Ja
 - [Vite](https://vitejs.dev/)
 - [vite-plugin-html](https://github.com/vbenjs/vite-plugin-html)
 - [BEM](https://getbem.com/) and [CUBE CSS](https://cube.fyi/)
-- [@hrc/spinner](https://hdoc1509.github.io/hrc/packages/spinner/)
+- [@hrc/input](https://hdoc1509.github.io/hrc/packages/input/) markup and
+  styles:
+  - [Label](https://hdoc1509.github.io/hrc/api/label/)
+  - [Radio](https://hdoc1509.github.io/hrc/components/radio/)
+  - [RadioGroup](https://hdoc1509.github.io/hrc/components/radio-group/)
+- [@hrc/spinner](https://hdoc1509.github.io/hrc/packages/spinner/) markup and
+  styles:
   - [SpinnerBase](https://hdoc1509.github.io/hrc/api/spinner-base/)
   - [RingSpinner](https://hdoc1509.github.io/hrc/components/ring-spinner/)
   - [EllipsisSpinner](https://hdoc1509.github.io/hrc/components/ellipsis-spinner/)
