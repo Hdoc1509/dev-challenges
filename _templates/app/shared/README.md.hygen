@@ -15,13 +15,9 @@
 
 <div align="center">
   <h3>
-    <a href="<%= app_url %>">
-      Solution
-    </a>
+    <a href="<%= app_url %>">Solution</a>
     <span> | </span>
-    <a href="<%= challenge_url %>">
-      Challenge
-    </a>
+    <a href="<%= challenge_url %>">Challenge</a>
   </h3>
 </div>
 
