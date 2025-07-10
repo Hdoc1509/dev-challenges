@@ -4,8 +4,7 @@ import { DIFFICULTIES_ALL } from "@/consts/difficulty";
 import { DISCOVERED_WORDS } from "@/consts/discovered-words";
 
 /** @param {string} word
- * @param {{ difficulty: import("@/consts/difficulty").Difficulty }} config
- * @returns {{ completed: boolean }} */
+ * @param {{ difficulty: import("@/consts/difficulty").Difficulty }} config */
 export const addDiscoveredWord = (word, { difficulty }) => {
   const availableDifficulties = getDifficultiesOfWord(word);
 
