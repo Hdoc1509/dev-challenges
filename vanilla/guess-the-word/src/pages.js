@@ -29,8 +29,8 @@ const error = (message) => {
  * @template Item
  * @callback ItemRenderer
  * @param {Item} item
- * @param {Object} [extraParams]
- * @param {boolean} [extraParams.isNew]
+ * @param {Object} [metadata]
+ * @param {boolean} [metadata.isNew]
  * It's `true` when added by `append(item)` or `prepend(item)`
  * @return {DocumentFragment | HTMLLIElement} */
 
