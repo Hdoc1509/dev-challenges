@@ -31,9 +31,9 @@ export const setWordsByDifficulty = async (difficulty) => {
 };
 
 /** @param {string} word
- * @param {Object} extraParams
- * @param {import("@/consts/difficulty").Difficulty} extraParams.difficulty
- * @param {boolean} [extraParams.isInitialization] */
+ * @param {Object} config
+ * @param {import("@/consts/difficulty").Difficulty} config.difficulty
+ * @param {boolean} [config.isInitialization] */
 export const removeAvailableWord = async (
   word,
   { difficulty, isInitialization = false },

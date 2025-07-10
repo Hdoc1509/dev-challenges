@@ -15,9 +15,9 @@ export class Pagination {
 
   /**
    * @param {HTMLMenuElement} $pagination
-   * @param {Object} extraParams
-   * @param {import("./pages").Pages<any>} extraParams.pagesHandler
-   * @param {boolean} [extraParams.renderCurrent]
+   * @param {Object} config
+   * @param {import("./pages").Pages<any>} config.pagesHandler
+   * @param {boolean} [config.renderCurrent]
    * Whether to call `pagesHandler.renderPage(currentPage)` on initialization
    */
   constructor($pagination, { pagesHandler, renderCurrent = true }) {

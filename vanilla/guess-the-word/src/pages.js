@@ -52,18 +52,18 @@ export class Pages {
 
   /**
    * @param {HTMLDivElement} $pagesContainer
-   * @param {Object} extraParams
-   * @param {Item[]} [extraParams.items]
-   * @param {number} extraParams.itemsPerPage
-   * @param {ItemRenderer<Item>} extraParams.renderItem
+   * @param {Object} config
+   * @param {Item[]} [config.items]
+   * @param {number} config.itemsPerPage
+   * @param {ItemRenderer<Item>} config.renderItem
    * Must return an `HTMLLIElement` or a `DocumentFragment` whose first child is
    * an `HTMLLIElement`
-   * @param {($page: HTMLUListElement) => void} extraParams.clearEmpty
-   * @param {(removedItem: Item) => void} [extraParams.onItemRemoved]
+   * @param {($page: HTMLUListElement) => void} config.clearEmpty
+   * @param {(removedItem: Item) => void} [config.onItemRemoved]
    * Triggered when an element of an item is removed from a page
-   * @param {($page: HTMLUListElement) => void} [extraParams.onPageChange]
-   * @param {HTMLTemplateElement} extraParams.$pageTemplate
-   * @param {HTMLTemplateElement} extraParams.$pageEmptyTemplate
+   * @param {($page: HTMLUListElement) => void} [config.onPageChange]
+   * @param {HTMLTemplateElement} config.$pageTemplate
+   * @param {HTMLTemplateElement} config.$pageEmptyTemplate
    */
   constructor(
     $pagesContainer,
