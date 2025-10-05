@@ -1,7 +1,7 @@
 <% if (!(locals.close ?? false)) { %>
 <div
   id="<%= name %>-<%= group %>-tab-content"
-  class="tab-content__item <%= locals.class ?? "" %>"
+  class="tab-content__item <%= locals.class ?? '' %>"
   role="tabpanel"
   aria-labelledby="<%= name %>-<%= group %>-tab"
   ejs="<% if (locals.selected ?? false) { %>"
