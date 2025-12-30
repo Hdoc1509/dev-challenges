@@ -1,4 +1,3 @@
-<!-- markdownlint-disable MD033 -->
 <h1 align="center">Contact Page</h1>
 
 <div align="center">
@@ -74,3 +73,5 @@ pnpm run dev --open
 ```
 
 [deploy]: https://github.com/Hdoc1509/dev-challenges/actions/workflows/deploy.yml/badge.svg
+
+<!-- markdownlint-disable-file MD033 -->

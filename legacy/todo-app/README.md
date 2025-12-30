@@ -1,4 +1,3 @@
-<!-- markdownlint-disable MD033 -->
 <h1 align="center">Todo App</h1>
 
 <div align="center">
@@ -69,3 +68,5 @@ cd dev-challenges && pnpm install
 cd apps/todo-app
 pnpm run dev --open
 ```
+
+<!-- markdownlint-disable-file MD033 -->

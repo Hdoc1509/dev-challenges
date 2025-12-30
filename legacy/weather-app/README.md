@@ -1,4 +1,3 @@
-<!-- markdownlint-disable MD033 -->
 <h1 align="center">Weather App</h1>
 
 <div align="center">
@@ -90,3 +89,5 @@ cd dev-challenges && pnpm install
 cd legacy/weather-app
 pnpm run dev
 ```
+
+<!-- markdownlint-disable-file MD033 -->

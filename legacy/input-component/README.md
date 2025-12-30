@@ -1,4 +1,3 @@
-<!-- markdownlint-disable MD033 -->
 <h1 align="center">Input Component</h1>
 
 <div align="center">
@@ -79,3 +78,5 @@ cd dev-challenges && pnpm install
 cd apps/input-component
 pnpm run dev --open
 ```
+
+<!-- markdownlint-disable-file MD033 -->

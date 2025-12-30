@@ -1,4 +1,3 @@
-<!-- markdownlint-disable MD033 -->
 <h1 align="center">Random Quote</h1>
 
 <div align="center">
@@ -93,3 +92,5 @@ pnpm run dev --open
 
 [deploy-status]: https://github.com/Hdoc1509/dev-challenges/actions/workflows/deploy.yml/badge.svg
 [deploy-url]: https://github.com/Hdoc1509/dev-challenges/actions/workflows/deploy.yml
+
+<!-- markdownlint-disable-file MD033 -->

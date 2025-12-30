@@ -1,4 +1,3 @@
-<!-- markdownlint-disable MD033 -->
 <h1 align="center">Github Jobs</h1>
 
 <div align="center">
@@ -92,3 +91,5 @@ cd dev-challenges && pnpm install
 cd legacy/github-jobs
 pnpm run dev
 ```
+
+<!-- markdownlint-disable-file MD033 -->

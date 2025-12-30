@@ -1,4 +1,3 @@
-<!-- markdownlint-disable MD033 -->
 <h1 align="center">Guess The Word Game</h1>
 
 <div align="center">
@@ -138,3 +137,5 @@ pnpm run dev --open
 [mdn-weakmap]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap
 [mdn-encapsulate-data]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap#associating_metadata
 [mdn-abortcontroller]: https://developer.mozilla.org/en-US/docs/Web/API/AbortController
+
+<!-- markdownlint-disable-file MD033 -->

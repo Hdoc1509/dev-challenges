@@ -12,7 +12,6 @@
   const deploy_label = is_ssr ? 'Netlify Status' : 'Deploy challenges';
   const dev_cmd_flags = is_ssr ? '' : '--open';
 -%>
-<!-- markdownlint-disable MD033 -->
 <h1 align="center"><%= h.changeCase.title(name) %></h1>
 
 <div align="center">
@@ -74,12 +73,10 @@
 
 ### Extra Features
 
-<!-- markdownlint-disable-next-line MD036 -->
 _WIP_
 
 ### What I learned
 
-<!-- markdownlint-disable-next-line MD036 -->
 _WIP_
 
 ## How To Use
@@ -108,3 +105,5 @@ pnpm run dev<%= dev_cmd_flags %>
 [deploy-status]: https://github.com/Hdoc1509/dev-challenges/actions/workflows/deploy.yml/badge.svg
 [deploy-url]: https://github.com/Hdoc1509/dev-challenges/actions/workflows/deploy.yml
 <% } -%>
+
+<!-- markdownlint-disable-file MD033 MD036 -->

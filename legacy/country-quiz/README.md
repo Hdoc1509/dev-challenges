@@ -1,4 +1,3 @@
-<!-- markdownlint-disable MD033 -->
 <h1 align="center">Country Quiz</h1>
 
 <div align="center">
@@ -79,3 +78,5 @@ cd dev-challenges && pnpm install
 cd apps/country-quiz
 pnpm run dev --open
 ```
+
+<!-- markdownlint-disable-file MD033 -->
