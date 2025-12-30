@@ -9,6 +9,8 @@
   const app_url = is_ssr
     ? `https://hdoc-${name}.netlify.app/`
     : `https://hdoc1509.github.io/dev-challenges/${name}/`;
+  const deploy_label = is_ssr ? 'Netlify Status' : 'Deploy challenges';
+  const dev_cmd_flags = is_ssr ? '' : '--open';
 -%>
 <!-- markdownlint-disable MD033 -->
 <h1 align="center"><%= h.changeCase.title(name) %></h1>
@@ -23,7 +25,7 @@
 
 ## Deploy status
 
-[![<%= is_ssr ? 'Netlify Status' : 'Deploy challenges' %>][deploy-status]][deploy-url]
+[![<%= deploy_label %>][deploy-status]][deploy-url]
 
 ## Overview
 
@@ -92,11 +94,11 @@ git clone https://github.com/Hdoc1509/dev-challenges
 
 # install all required dependencies
 cd dev-challenges
-pnpm install --filter "@hdoc/dev-challenges" --filter <%= name %>...
+pnpm install --filter "@hdoc/dev-challenges" --filter "<%= name %>"...
 
 # run dev-server
-cd <%= path %>/<%= name %>/
-pnpm run dev <%= is_ssr ? '' : '--open' %>
+cd "<%= path %>/<%= name %>"
+pnpm run dev<%= dev_cmd_flags %>
 ```
 
 <% if (is_ssr) { -%>
