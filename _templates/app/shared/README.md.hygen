@@ -5,7 +5,7 @@
     if (is_vanilla) return 'vanilla';
     if (is_ssr) return 'ssr';
     return 'apps';
-  });
+  })();
   const app_url = is_ssr
     ? `https://hdoc-${name}.netlify.app/`
     : `https://hdoc1509.github.io/dev-challenges/${name}/`;
