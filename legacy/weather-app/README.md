@@ -35,7 +35,7 @@ React or Vue. Don’t look at the existing solution. Fulfill user stories below:
 - [x] User story: I can see a visibility indicator
 - [x] User story: I can see the air pressure number
 - [x] User story(optional): I can request my current location weather
-- [x] User story(optional): I can convert temperature in Celcius to Fahrenheit
+- [x] User story(optional): I can convert temperature in Celsius to Fahrenheit
       and vice versa
 
 ### Built With
