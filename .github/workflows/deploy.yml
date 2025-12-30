@@ -35,7 +35,7 @@ jobs:
   build:
     needs: changed-files
     runs-on: ubuntu-22.04
-    if: ${{ needs.changed-files.outputs.files != 'true' }}
+    if: needs.changed-files.outputs.files != 'true'
     strategy:
       matrix:
         node-version: [20.17.0]

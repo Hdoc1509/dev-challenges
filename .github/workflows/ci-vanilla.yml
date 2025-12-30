@@ -24,12 +24,11 @@ jobs:
         id: env_vars
         run: |
           # NOTE: app-name matches app dirname and `.name` in `package.json`
-          app_name="${BRANCH_NAME%/*}" # app-name/feature-name -> app-name
-          feature_name="${BRANCH_NAME#*/}" # app-name/feature-name -> feature-name
+          branch_name='${{ github.ref_name }}'
+          app_name="${branch_name%/*}" # app-name/feature-name -> app-name
+          feature_name="${branch_name#*/}" # app-name/feature-name -> feature-name
           echo "app_name=${app_name}" >> "$GITHUB_OUTPUT"
           echo "feature_name=${feature_name}" >> "$GITHUB_OUTPUT"
-        env:
-          BRANCH_NAME: ${{ github.ref_name }}
 
       - name: Checking for changes of ${{ env.APP_NAME }} in ${{ env.FEATURE_NAME }}
         uses: tj-actions/changed-files@v46.0.4
@@ -51,9 +50,7 @@ jobs:
   lint:
     needs: changed-files
     runs-on: ubuntu-22.04
-    if: ${{ needs.changed-files.outputs.files != 'true' }}
-    env:
-      APP_NAME: ${{ needs.changed-files.outputs.app_name }}
+    if: needs.changed-files.outputs.files != 'true'
     steps:
       - uses: actions/checkout@v4.2.2
       - uses: pnpm/action-setup@v4.1.0
@@ -62,15 +59,14 @@ jobs:
           node-version-file: .nvmrc
           cache: pnpm
       - run: |
-          pnpm install --frozen-lockfile --filter "@hdoc/dev-challenges" --filter "$APP_NAME"...
-          pnpm run lint:vanilla vanilla/"$APP_NAME"
+          app_name='${{ needs.changed-files.outputs.app_name }}'
+          pnpm install --frozen-lockfile --filter "@hdoc/dev-challenges" --filter "$app_name"...
+          pnpm run lint:vanilla vanilla/"$app_name"
 
   typecheck:
     needs: changed-files
     runs-on: ubuntu-22.04
-    if: ${{ needs.changed-files.outputs.files != 'true' }}
-    env:
-      APP_NAME: ${{ needs.changed-files.outputs.app_name }}
+    if: needs.changed-files.outputs.files != 'true'
     steps:
       - uses: actions/checkout@v4.2.2
       - uses: pnpm/action-setup@v4.1.0
@@ -79,15 +75,14 @@ jobs:
           node-version-file: .nvmrc
           cache: pnpm
       - run: |
-          pnpm install --frozen-lockfile --filter "@hdoc/dev-challenges" --filter "$APP_NAME"...
-          pnpm --filter "$APP_NAME" typecheck
+          app_name='${{ needs.changed-files.outputs.app_name }}'
+          pnpm install --frozen-lockfile --filter "@hdoc/dev-challenges" --filter "$app_name"...
+          pnpm --filter "$app_name" typecheck
 
   test-unit:
     needs: changed-files
     runs-on: ubuntu-22.04
-    if: ${{ needs.changed-files.outputs.files != 'true' }}
-    env:
-      APP_NAME: ${{ needs.changed-files.outputs.app_name }}
+    if: needs.changed-files.outputs.files != 'true'
     steps:
       - uses: actions/checkout@v4.2.2
       - uses: pnpm/action-setup@v4.1.0
@@ -96,15 +91,16 @@ jobs:
           node-version-file: .nvmrc
           cache: pnpm
       - run: |
-          pnpm install --frozen-lockfile --filter "@hdoc/dev-challenges" --filter "$APP_NAME"...
-          pnpm --if-present --filter "$APP_NAME" test:unit:ci
+          app_name='${{ needs.changed-files.outputs.app_name }}'
+          pnpm install --frozen-lockfile --filter "@hdoc/dev-challenges" --filter "$app_name"...
+          pnpm --if-present --filter "$app_name" test:unit:ci
 
   # TODO: check test sharding
   # https://playwright.dev/docs/test-sharding
   test-e2e:
     needs: changed-files
     runs-on: ubuntu-22.04
-    if: ${{ needs.changed-files.outputs.files != 'true' }}
+    if: needs.changed-files.outputs.files != 'true'
     env:
       APP_NAME: ${{ needs.changed-files.outputs.app_name }}
     steps:
@@ -119,7 +115,7 @@ jobs:
           e2e_exists=$(grep --count test:e2e:ci vanilla/"$APP_NAME"/package.json)
           echo "e2e_exists=$e2e_exists" >> "$GITHUB_OUTPUT"
       - id: e2e_install
-        if: ${{ steps.check_e2e.outputs.e2e_exists == '1' }}
+        if: steps.check_e2e.outputs.e2e_exists == '1'
         run: |
           pnpm install --frozen-lockfile --filter "@hdoc/dev-challenges" --filter "$APP_NAME"...
           pnpm --filter "$APP_NAME" test:e2e:ci
