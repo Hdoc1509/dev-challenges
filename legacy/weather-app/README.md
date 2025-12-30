@@ -57,6 +57,11 @@ React or Vue. Don’t look at the existing solution. Fulfill user stories below:
 - [Weather API](https://www.weatherapi.com/)
 - [Open-Meteo Weather Forecast API](https://open-meteo.com/en/docs)
 
+### Editor Tools
+
+- [Kulala Language Server](https://github.com/mistweaverco/kulala-ls)
+- [Kulala Formatter](https://github.com/mistweaverco/kulala-fmt)
+
 ### Extra Features
 
 - Loading spinner for Search Drawer

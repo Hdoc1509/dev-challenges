@@ -1,7 +1,12 @@
 ### Random Quote
-GET https://quote-garden.onrender.com/api/v3/quotes/random
+
+GET https://quote-garden.onrender.com/api/v3/quotes/random HTTP/1.1
 
 ### Quotes by Author
-GET https://quote-garden.onrender.com/api/v3/quotes?author=Bill Gates
 
-GET https://quote-garden.onrender.com/api/v3/quotes?author=Bill Gates&limit=3
+GET https://quote-garden.onrender.com/api/v3/quotes?author=Bill Gates HTTP/1.1
+
+### Quotes by Author (with limit)
+
+GET https://quote-garden.onrender.com/api/v3/quotes?author=Bill Gates
+  &limit=3 HTTP/1.1

@@ -87,6 +87,11 @@ create a small game that tests your data management and DOM manipulation with Ja
 - [Words API](https://wordsapi.com/) for mocked words
   - Sample data taken from [Pricing](https://wordsapi.com/#pricing) section
 
+### Editor Tools
+
+- [Kulala Language Server](https://github.com/mistweaverco/kulala-ls)
+- [Kulala Formatter](https://github.com/mistweaverco/kulala-fmt)
+
 ### Extra Features
 
 - +7400 words to discover

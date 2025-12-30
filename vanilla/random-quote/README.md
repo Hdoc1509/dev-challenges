@@ -59,6 +59,11 @@ the use of an external API.
 - [Online Image Compressor](https://imagecompressor.com/) and [Aspect Ratio
   Calculator](https://aspectratiocalculator.com) for screenshot
 
+### Editor Tools
+
+- [Kulala Language Server](https://github.com/mistweaverco/kulala-ls)
+- [Kulala Formatter](https://github.com/mistweaverco/kulala-fmt)
+
 ### Extra Features
 
 - Alert when quote copied to clipboard

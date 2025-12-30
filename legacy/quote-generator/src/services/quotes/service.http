@@ -1,11 +1,16 @@
-# get random quotes (25 items)
-GET https://favqs.com/api/quotes
+### get random quotes (25 items)
+
+GET https://favqs.com/api/quotes HTTP/1.1
 Authorization: Token token={{FAVQS_API_KEY}}
 
-# get quotes by invalid author
-GET https://favqs.com/api/quotes?filter=Invalid&type=author
+### get quotes by invalid author
+
+GET https://favqs.com/api/quotes?filter=Invalid
+  &type=author HTTP/1.1
 Authorization: Token token={{FAVQS_API_KEY}}
 
-# get quotes by author
-GET https://favqs.com/api/quotes?filter=Napoleon Bonaparte&type=author
+### get quotes by author
+
+GET https://favqs.com/api/quotes?filter=Napoleon Bonaparte
+  &type=author HTTP/1.1
 Authorization: Token token={{FAVQS_API_KEY}}

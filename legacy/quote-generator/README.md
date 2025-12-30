@@ -44,6 +44,11 @@ or Vue. Don’t look at the existing solution. Fulfill user stories below:
 - [@material-design-icons/font](https://marella.me/material-design-icons/demo/font/)
 - [FavQs API](https://favqs.com/api)
 
+### Editor Tools
+
+- [Kulala Language Server](https://github.com/mistweaverco/kulala-ls)
+- [Kulala Formatter](https://github.com/mistweaverco/kulala-fmt)
+
 ### Extra Features
 
 - Dark mode

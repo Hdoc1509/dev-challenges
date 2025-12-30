@@ -1,5 +1,12 @@
 ### Get first 10 quotes
-GET https://api.paperquotes.com/quotes/?curated=1&language=en&limit=10
+
+GET https://api.paperquotes.com/quotes/?curated=1
+  &language=en
+  &limit=10 HTTP/1.1
 
 ### Quotes with null author (last 3 quotes)
-GET https://api.paperquotes.com/quotes/?curated=1&lang=en&limit=10&offset=7550
+
+GET https://api.paperquotes.com/quotes/?curated=1
+  &lang=en
+  &limit=10
+  &offset=7550 HTTP/1.1
