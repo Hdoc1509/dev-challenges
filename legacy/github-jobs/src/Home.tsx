@@ -18,6 +18,7 @@ export const Home = () => {
       <SearchOptions />
       <main>
         {status === STATUS.LOADING && <RingSpinner size="large" />}
+        {/* TODO: add styles for error, similar to .remaining-searches__error */}
         {status === STATUS.ERROR && <p className="error">{error.message}</p>}
         {status === STATUS.SUCCESS && <Results jobs={jobs} />}
         {pages > 1 && <Pagination />}
