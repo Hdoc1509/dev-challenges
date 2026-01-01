@@ -48,7 +48,7 @@
 
 <% if (is_vanilla) { -%>
 - [Vite](https://vitejs.dev/)
-- [BEM](https://getbem.com/)
+- [BEM](https://getbem.com/) and [CUBE CSS](https://cube.fyi)
 - [fontsource](https://fontsource.org/) fonts:
   - _List of fonts used in the project_
 <% } else if (is_ssr) { -%>
@@ -57,7 +57,7 @@
 - [TypeScript](https://www.typescriptlang.org/)
 - [Sass](https://sass-lang.com/)
 - [clsx](https://github.com/lukeed/clsx#readme)
-- [BEM](https://getbem.com/)
+- [BEM](https://getbem.com/) and [CUBE CSS](https://cube.fyi)
 - [zod](https://zod.dev/)
 - [zustand](https://zustand.docs.pmnd.rs/getting-started/introduction)
 - [@hrc/button](https://hdoc1509.github.io/hrc/packages/button/)
