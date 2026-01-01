@@ -19,6 +19,7 @@ There are some [packages](#packages) I created while completing them.
 - [x] [Random Quote](/vanilla/random-quote/)
 - [x] [QR Code Generator](/vanilla/qr-code-generator/)
 - [x] [Guess The Word Game](/vanilla/guess-the-word/)
+- [ ] [Flip The Coin](/vanilla/flip-the-coin/)
 
 ### Frontend Libraries
 
