@@ -3,6 +3,7 @@ packages:
   - libs/*
   - legacy/*
   - vanilla/*
+  - packages/*
 
 catalog:
   "@astrojs/check": 0.7.0

@@ -6,18 +6,174 @@ settings:
 
 catalogs:
   default:
+    '@astrojs/check':
+      specifier: 0.7.0
+      version: 0.7.0
+    '@astrojs/netlify':
+      specifier: 5.2.1
+      version: 5.2.1
+    '@astrojs/react':
+      specifier: 3.3.4
+      version: 3.3.4
+    '@fontsource-variable/inter':
+      specifier: 5.1.0
+      version: 5.1.0
+    '@fontsource-variable/montserrat':
+      specifier: 5.0.17
+      version: 5.0.17
+    '@fontsource-variable/mulish':
+      specifier: 5.0.18
+      version: 5.0.18
+    '@fontsource-variable/noto-sans-jp':
+      specifier: 5.0.19
+      version: 5.0.19
     '@fontsource-variable/outfit':
       specifier: 5.1.0
       version: 5.1.0
+    '@fontsource-variable/raleway':
+      specifier: 5.0.19
+      version: 5.0.19
+    '@fontsource/be-vietnam-pro':
+      specifier: 5.1.0
+      version: 5.1.0
+    '@fontsource/inter':
+      specifier: 5.1.0
+      version: 5.1.0
+    '@fontsource/montserrat':
+      specifier: 5.0.17
+      version: 5.0.17
+    '@fontsource/mulish':
+      specifier: 5.0.17
+      version: 5.0.17
+    '@fontsource/noto-sans-jp':
+      specifier: 5.0.19
+      version: 5.0.19
     '@fontsource/outfit':
       specifier: 5.1.0
       version: 5.1.0
+    '@fontsource/poppins':
+      specifier: 5.0.8
+      version: 5.0.8
+    '@fontsource/raleway':
+      specifier: 5.0.18
+      version: 5.0.18
+    '@fontsource/roboto':
+      specifier: 5.0.8
+      version: 5.0.8
+    '@fontsource/ubuntu-mono':
+      specifier: 5.0.20
+      version: 5.0.20
+    '@hrc/button':
+      specifier: 3.1.0
+      version: 3.1.0
+    '@hrc/input':
+      specifier: 1.1.0
+      version: 1.1.0
+    '@hrc/material-icons':
+      specifier: 2.3.0
+      version: 2.3.0
+    '@hrc/spinner':
+      specifier: 0.3.2
+      version: 0.3.2
+    '@hrc/toggle-theme':
+      specifier: 2.3.0
+      version: 2.3.0
+    '@hrc/type-utils':
+      specifier: 1.1.2
+      version: 1.1.2
+    '@material-design-icons/font':
+      specifier: 0.14.13
+      version: 0.14.13
+    '@types/node':
+      specifier: 20.5.0
+      version: 20.5.0
+    '@types/react':
+      specifier: 18.2.79
+      version: 18.2.79
+    '@types/react-dom':
+      specifier: 18.2.25
+      version: 18.2.25
+    '@typescript-eslint/eslint-plugin':
+      specifier: 7.12.0
+      version: 7.12.0
+    '@typescript-eslint/parser':
+      specifier: 7.12.0
+      version: 7.12.0
+    '@vitejs/plugin-react':
+      specifier: 4.2.0
+      version: 4.2.0
+    astro:
+      specifier: 4.8.6
+      version: 4.8.6
+    clsx:
+      specifier: 2.0.0
+      version: 2.0.0
+    eslint:
+      specifier: 8.57.0
+      version: 8.57.0
+    eslint-plugin-astro:
+      specifier: 1.2.0
+      version: 1.2.0
+    eslint-plugin-react:
+      specifier: 7.34.2
+      version: 7.34.2
+    eslint-plugin-react-hooks:
+      specifier: 4.6.2
+      version: 4.6.2
+    eslint-plugin-react-refresh:
+      specifier: 0.4.7
+      version: 0.4.7
+    hygen:
+      specifier: 6.2.11
+      version: 6.2.11
+    npkill:
+      specifier: 0.11.3
+      version: 0.11.3
+    prettier:
+      specifier: 3.0.1
+      version: 3.0.1
+    prettier-plugin-astro:
+      specifier: 0.13.0
+      version: 0.13.0
+    react:
+      specifier: 18.2.0
+      version: 18.2.0
+    react-dom:
+      specifier: 18.2.0
+      version: 18.2.0
+    react-loading-skeleton:
+      specifier: 3.4.0
+      version: 3.4.0
+    react-paginate:
+      specifier: 8.2.0
+      version: 8.2.0
+    react-router-dom:
+      specifier: 6.23.1
+      version: 6.23.1
+    sass:
+      specifier: 1.65.0
+      version: 1.65.0
+    typescript:
+      specifier: 5.3.2
+      version: 5.3.2
     vite:
       specifier: 5.0.2
       version: 5.0.2
+    vite-plugin-hrc-import:
+      specifier: 1.1.0
+      version: 1.1.0
+    vite-plugin-html:
+      specifier: 3.2.2
+      version: 3.2.2
+    vitest:
+      specifier: 0.34.6
+      version: 0.34.6
     zod:
       specifier: 3.22.4
       version: 3.22.4
+    zustand:
+      specifier: 4.4.3
+      version: 4.4.3
 
 importers:
 
@@ -676,6 +832,15 @@ importers:
 
   libs/step-indicator: {}
 
+  packages/vite-plugin-html-minifier:
+    dependencies:
+      html-minifier-next:
+        specifier: 4.16.3
+        version: 4.16.3
+      vite:
+        specifier: 'catalog:'
+        version: 5.0.2(@types/node@22.15.21)(lightningcss@1.30.2)(sass@1.65.0)(terser@5.44.1)
+
   vanilla/contact-page:
     dependencies:
       '@fontsource/be-vietnam-pro':
@@ -744,15 +909,15 @@ importers:
       ejs:
         specifier: 3.1.10
         version: 3.1.10
-      html-minifier-next:
-        specifier: 4.16.3
-        version: 4.16.3
       jsdom:
         specifier: 26.1.0
         version: 26.1.0
       vite:
         specifier: 'catalog:'
         version: 5.0.2(@types/node@22.15.21)(lightningcss@1.30.2)(sass@1.65.0)(terser@5.44.1)
+      vite-plugin-html-minifier:
+        specifier: 'workspace:'
+        version: link:../../packages/vite-plugin-html-minifier
       vitest:
         specifier: 3.1.4
         version: 3.1.4(@types/debug@4.1.12)(@types/node@22.15.21)(happy-dom@17.5.6)(jsdom@26.1.0)(lightningcss@1.30.2)(sass@1.65.0)(terser@5.44.1)
@@ -2753,11 +2918,6 @@ packages:
 
   ejs@3.1.10:
     resolution: {integrity: sha512-UeJmFfOrAQS8OJWPZ4qtgHyWExa088/MtK5UEyoJGFH67cDEXkZSviOiKRCZ4Xij0zxI3JECgYs3oKx+AizQBA==}
-    engines: {node: '>=0.10.0'}
-    hasBin: true
-
-  ejs@3.1.9:
-    resolution: {integrity: sha512-rC+QVNMJWv+MtPgkt0y+0rVEIdbtxVADApW9JXrUVlzHetgcyczP/E7DJmWJ4fJCZF2cPcBk0laWO9ZHMG3DmQ==}
     engines: {node: '>=0.10.0'}
     hasBin: true
 
@@ -5337,7 +5497,7 @@ snapshots:
   '@astrojs/telemetry@3.1.0':
     dependencies:
       ci-info: 4.0.0
-      debug: 4.3.5
+      debug: 4.4.1
       dlv: 1.1.3
       dset: 3.1.3
       is-docker: 3.0.0
@@ -5368,7 +5528,7 @@ snapshots:
       '@babel/traverse': 7.24.5
       '@babel/types': 7.24.5
       convert-source-map: 2.0.0
-      debug: 4.3.5
+      debug: 4.4.1
       gensync: 1.0.0-beta.2
       json5: 2.2.3
       semver: 6.3.1
@@ -5495,7 +5655,7 @@ snapshots:
       '@babel/helper-split-export-declaration': 7.24.5
       '@babel/parser': 7.24.5
       '@babel/types': 7.24.5
-      debug: 4.3.5
+      debug: 4.4.1
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -5768,7 +5928,7 @@ snapshots:
   '@eslint/eslintrc@2.1.4':
     dependencies:
       ajv: 6.12.6
-      debug: 4.3.5
+      debug: 4.4.1
       espree: 9.6.1
       globals: 13.24.0
       ignore: 5.3.1
@@ -5861,7 +6021,7 @@ snapshots:
   '@humanwhocodes/config-array@0.11.14':
     dependencies:
       '@humanwhocodes/object-schema': 2.0.3
-      debug: 4.3.5
+      debug: 4.4.1
       minimatch: 3.1.2
     transitivePeerDependencies:
       - supports-color
@@ -5959,7 +6119,7 @@ snapshots:
   '@jridgewell/gen-mapping@0.3.5':
     dependencies:
       '@jridgewell/set-array': 1.2.1
-      '@jridgewell/sourcemap-codec': 1.4.15
+      '@jridgewell/sourcemap-codec': 1.5.0
       '@jridgewell/trace-mapping': 0.3.25
 
   '@jridgewell/resolve-uri@3.1.1': {}
@@ -5978,7 +6138,7 @@ snapshots:
   '@jridgewell/trace-mapping@0.3.25':
     dependencies:
       '@jridgewell/resolve-uri': 3.1.1
-      '@jridgewell/sourcemap-codec': 1.4.15
+      '@jridgewell/sourcemap-codec': 1.5.0
 
   '@material-design-icons/font@0.14.13': {}
 
@@ -6266,7 +6426,7 @@ snapshots:
       '@typescript-eslint/types': 7.12.0
       '@typescript-eslint/typescript-estree': 7.12.0(typescript@5.3.2)
       '@typescript-eslint/visitor-keys': 7.12.0
-      debug: 4.3.5
+      debug: 4.4.1
       eslint: 8.57.0
     optionalDependencies:
       typescript: 5.3.2
@@ -6282,7 +6442,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/typescript-estree': 7.12.0(typescript@5.3.2)
       '@typescript-eslint/utils': 7.12.0(eslint@8.57.0)(typescript@5.3.2)
-      debug: 4.3.5
+      debug: 4.4.1
       eslint: 8.57.0
       ts-api-utils: 1.3.0(typescript@5.3.2)
     optionalDependencies:
@@ -6296,7 +6456,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 7.12.0
       '@typescript-eslint/visitor-keys': 7.12.0
-      debug: 4.3.5
+      debug: 4.4.1
       globby: 11.1.0
       is-glob: 4.0.3
       minimatch: 9.0.4
@@ -6475,9 +6635,9 @@ snapshots:
 
   '@vscode/l10n@0.0.18': {}
 
-  acorn-jsx@5.3.2(acorn@8.11.3):
+  acorn-jsx@5.3.2(acorn@8.15.0):
     dependencies:
-      acorn: 8.11.3
+      acorn: 8.15.0
 
   acorn-walk@8.3.0: {}
 
@@ -6613,7 +6773,7 @@ snapshots:
       '@typescript-eslint/types': 7.12.0
       '@typescript-eslint/typescript-estree': 7.12.0(typescript@5.3.2)
       astrojs-compiler-sync: 1.0.0(@astrojs/compiler@2.8.0)
-      debug: 4.3.5
+      debug: 4.4.1
       entities: 4.5.0
       eslint-scope: 8.0.1
       eslint-visitor-keys: 4.0.0
@@ -7155,10 +7315,6 @@ snapshots:
     dependencies:
       jake: 10.8.7
 
-  ejs@3.1.9:
-    dependencies:
-      jake: 10.8.7
-
   electron-to-chromium@1.4.775: {}
 
   emmet@2.4.7:
@@ -7374,7 +7530,7 @@ snapshots:
   eslint-plugin-astro@1.2.0(eslint@8.57.0)(typescript@5.3.2):
     dependencies:
       '@eslint-community/eslint-utils': 4.4.0(eslint@8.57.0)
-      '@jridgewell/sourcemap-codec': 1.4.15
+      '@jridgewell/sourcemap-codec': 1.5.0
       '@typescript-eslint/types': 7.12.0
       astro-eslint-parser: 1.0.2(typescript@5.3.2)
       eslint: 8.57.0
@@ -7443,7 +7599,7 @@ snapshots:
       ajv: 6.12.6
       chalk: 4.1.2
       cross-spawn: 7.0.3
-      debug: 4.3.5
+      debug: 4.4.1
       doctrine: 3.0.0
       escape-string-regexp: 4.0.0
       eslint-scope: 7.2.2
@@ -7475,14 +7631,14 @@ snapshots:
 
   espree@10.0.1:
     dependencies:
-      acorn: 8.11.3
-      acorn-jsx: 5.3.2(acorn@8.11.3)
+      acorn: 8.15.0
+      acorn-jsx: 5.3.2(acorn@8.15.0)
       eslint-visitor-keys: 4.0.0
 
   espree@9.6.1:
     dependencies:
-      acorn: 8.11.3
-      acorn-jsx: 5.3.2(acorn@8.11.3)
+      acorn: 8.15.0
+      acorn-jsx: 5.3.2(acorn@8.15.0)
       eslint-visitor-keys: 3.4.3
 
   esprima@4.0.1: {}
@@ -7906,9 +8062,9 @@ snapshots:
       '@types/node': 17.0.45
       chalk: 4.1.2
       change-case: 3.1.0
-      debug: 4.3.5
+      debug: 4.4.1
       degit: 2.8.4
-      ejs: 3.1.9
+      ejs: 3.1.10
       enquirer: 2.4.1
       execa: 5.1.1
       front-matter: 4.0.2
@@ -8655,7 +8811,7 @@ snapshots:
 
   mlly@1.4.2:
     dependencies:
-      acorn: 8.11.3
+      acorn: 8.15.0
       pathe: 1.1.1
       pkg-types: 1.0.3
       ufo: 1.3.2
@@ -9501,7 +9657,7 @@ snapshots:
   terser@5.36.0:
     dependencies:
       '@jridgewell/source-map': 0.3.6
-      acorn: 8.11.3
+      acorn: 8.15.0
       commander: 2.20.3
       source-map-support: 0.5.21
 
@@ -9797,7 +9953,7 @@ snapshots:
   vite-node@0.34.6(@types/node@22.15.21)(lightningcss@1.30.2)(sass@1.65.0)(terser@5.44.1):
     dependencies:
       cac: 6.7.14
-      debug: 4.3.5
+      debug: 4.4.1
       mlly: 1.4.2
       pathe: 1.1.1
       picocolors: 1.0.0
