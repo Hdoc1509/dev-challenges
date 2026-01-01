@@ -50,7 +50,6 @@ create a small game that tests your data management and DOM manipulation with Ja
 ### Built With
 
 - [Vite](https://vitejs.dev/)
-- [vite-plugin-html](https://github.com/vbenjs/vite-plugin-html)
 - [BEM](https://getbem.com/) and [CUBE CSS](https://cube.fyi/)
 - [@hrc/input](https://hdoc1509.github.io/hrc/packages/input/) markup and
   styles:
