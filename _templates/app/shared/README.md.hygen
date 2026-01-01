@@ -10,7 +10,7 @@
     ? `https://hdoc-${name}.netlify.app/`
     : `https://hdoc1509.github.io/dev-challenges/${name}/`;
   const deploy_label = is_ssr ? 'Netlify Status' : 'Deploy challenges';
-  const dev_cmd_flags = is_ssr ? '' : '--open';
+  const dev_cmd_flags = is_ssr ? '' : ' --open';
 -%>
 <h1 align="center"><%= h.changeCase.title(name) %></h1>
 
