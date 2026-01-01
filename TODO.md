@@ -2,6 +2,11 @@
 
 ## Vite
 
+### Update to `v7`
+
+- Ensure `github-jobs`, `quote-generator` and `weather-app` uses version from
+  `catalog:`
+
 ### Use `build.rollupOptions.output.manualChunks` instead of `splitVendorChunkPlugin()`
 
 Create custom `vite-config` package that exports this option. By default, it

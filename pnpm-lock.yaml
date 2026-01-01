@@ -85,8 +85,8 @@ catalogs:
       specifier: 0.14.13
       version: 0.14.13
     '@types/node':
-      specifier: 20.5.0
-      version: 20.5.0
+      specifier: 20.19.27
+      version: 20.19.27
     '@types/react':
       specifier: 18.2.79
       version: 18.2.79
@@ -181,7 +181,7 @@ importers:
     devDependencies:
       '@types/node':
         specifier: 'catalog:'
-        version: 20.5.0
+        version: 20.19.27
       '@types/react':
         specifier: 'catalog:'
         version: 18.2.79
@@ -2190,8 +2190,8 @@ packages:
   '@types/node@17.0.45':
     resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
 
-  '@types/node@20.5.0':
-    resolution: {integrity: sha512-Mgq7eCtoTjT89FqNoTzzXg2XvCi5VMhRV6+I2aYanc6kQCBImeNaAYRs/DyoVqk1YEUJK5gN9VO7HRIdz4Wo3Q==}
+  '@types/node@20.19.27':
+    resolution: {integrity: sha512-N2clP5pJhB2YnZJ3PIHFk5RkygRX5WO/5f0WC08tp0wd+sv0rsJk3MqWn3CbNmT2J505a5336jaQj4ph1AdMug==}
 
   '@types/node@22.15.21':
     resolution: {integrity: sha512-EV/37Td6c+MgKAbkcLG6vqZ2zEYHD7bvSrzqqs2RIhbA6w3x+Dqz8MZM3sP6kGTeLrdoOgKZe+Xja7tUB2DNkQ==}
@@ -6377,7 +6377,9 @@ snapshots:
 
   '@types/node@17.0.45': {}
 
-  '@types/node@20.5.0': {}
+  '@types/node@20.19.27':
+    dependencies:
+      undici-types: 6.21.0
 
   '@types/node@22.15.21':
     dependencies:
