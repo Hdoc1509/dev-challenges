@@ -1,5 +1,9 @@
 # TODO
 
+## Vanilla
+
+- ensure all apps are type-checked before building
+
 ## Legacy
 
 - remove `engines` field from `package.json` files. affected apps:
