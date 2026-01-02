@@ -11,4 +11,4 @@ import type { Plugin } from "vite";
  * `useShortDoctype: true`
  * `minifyCSS: true`
  */
-export function htmlMinifierPlugin(config: MinifierOptions): Plugin;
+export function htmlMinifierPlugin(config?: MinifierOptions): Plugin;
