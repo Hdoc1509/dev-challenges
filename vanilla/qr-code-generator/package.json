@@ -19,6 +19,6 @@
   "devDependencies": {
     "@types/qrcodejs": "1.0.4",
     "vite": "catalog:",
-    "vite-plugin-html": "catalog:"
+    "vite-plugin-html-minifier": "workspace:*"
   }
 }
