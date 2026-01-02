@@ -853,9 +853,9 @@ importers:
       vite:
         specifier: 'catalog:'
         version: 5.0.2(@types/node@22.15.21)(lightningcss@1.30.2)(sass@1.65.0)(terser@5.44.1)
-      vite-plugin-html:
-        specifier: 'catalog:'
-        version: 3.2.2(vite@5.0.2(@types/node@22.15.21)(lightningcss@1.30.2)(sass@1.65.0)(terser@5.44.1))
+      vite-plugin-html-minifier:
+        specifier: workspace:*
+        version: link:../../packages/vite-plugin-html-minifier
 
   vanilla/flip-the-coin:
     dependencies:
