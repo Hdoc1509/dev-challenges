@@ -63,7 +63,7 @@ jobs:
           pnpm install --frozen-lockfile --filter "@hdoc/dev-challenges" --filter "$app_name"...
           pnpm run lint:vanilla vanilla/"$app_name"
 
-  typecheck:
+  build:
     needs: changed-files
     runs-on: ubuntu-22.04
     if: needs.changed-files.outputs.files != 'true'
@@ -77,7 +77,7 @@ jobs:
       - run: |
           app_name='${{ needs.changed-files.outputs.app_name }}'
           pnpm install --frozen-lockfile --filter "@hdoc/dev-challenges" --filter "$app_name"...
-          pnpm --filter "$app_name" typecheck
+          pnpm --filter "$app_name" build
 
   test-unit:
     needs: changed-files
