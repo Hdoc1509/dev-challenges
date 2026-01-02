@@ -3,7 +3,7 @@ name: CI Vanilla
 on:
   push:
     branches:
-      - "*/*"
+      - "!root/*"
     paths:
       - "vanilla/**"
       - ".github/workflows/ci-vanilla.yml"
