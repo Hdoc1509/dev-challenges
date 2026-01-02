@@ -15,6 +15,6 @@
   },
   "devDependencies": {
     "vite": "catalog:",
-    "vite-plugin-html": "catalog:"
+    "vite-plugin-html-minifier": "workspace:*"
   }
 }

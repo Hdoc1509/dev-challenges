@@ -46,7 +46,6 @@ of an external library.
 ### Built With
 
 - [Vite](https://vitejs.dev/)
-- [vite-plugin-html](https://github.com/vbenjs/vite-plugin-html)
 - [BEM](https://getbem.com/)
 - [html2canvas](https://html2canvas.hertzen.com/)
 - [qrcodejs](https://github.com/llyys/qrcodejs)

@@ -13,7 +13,7 @@ export function renderSongData({ title, artist, url, cover }) {
   $songTitle.textContent = title;
   $songAuthor.textContent = artist;
   $songCover.src = cover;
-  $song.src = url; // triggers `durationchange` event of $song element
+  $song.src = url; // NOTE: triggers `durationchange` event of $song element
 }
 
 /** @param {number} timeSeconds */
