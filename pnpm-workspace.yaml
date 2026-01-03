@@ -61,3 +61,7 @@ catalog:
   vite-plugin-hrc-import: 1.1.0
   zod: 3.22.4
   zustand: 4.4.3
+
+catalogs:
+  vite7:
+    vite: 7.3.0
