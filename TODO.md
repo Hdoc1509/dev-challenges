@@ -7,6 +7,7 @@
 ## Legacy
 
 - remove `engines` field from `package.json` files. affected apps:
+
   - `button-component`
   - `input-component`
   - `country-quiz`
@@ -24,7 +25,3 @@
 
 - update `@vitejs/plugin-react` to support `vite@v7`
 - update `astro` and related packages to support `vite@v7`
-
-### guess-the-word
-
-- update `vitest` to support `vite@v7`
