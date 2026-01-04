@@ -8,5 +8,8 @@
     "@hrc/material-icons": "catalog:",
     "@hrc/toggle-theme": "catalog:",
     "@lib/sass-utils": "workspace:*"
+  },
+  "peerDependencies": {
+    "react": "catalog:"
   }
 }
