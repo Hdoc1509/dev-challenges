@@ -28,7 +28,7 @@
   - update `@vitejs/plugin-react` to support `vite@v7`
 - migrate content-only apps to `astro`. pre-render content to static HTML.
 - update projects using `astro` to use `astro@v5`
-  - requires an explicit version in `package.json` instead of `catalog:`
-    protocol
+  - `@astrojs/upgrade` requires an explicit version in `package.json` instead
+    of `catalog:` protocol
 
 [create-vite@8.2.0]: https://github.com/vitejs/vite/tree/create-vite%408.2.0/packages/create-vite/template-react-ts
