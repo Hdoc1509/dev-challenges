@@ -34,9 +34,5 @@
     "vite": "catalog:vite7",
     "vitest": "catalog:vite7",
     "vite-plugin-hrc-import": "catalog:"
-  },
-  "engines": {
-    "node": ">=18",
-    "pnpm": ">=8"
   }
 }
