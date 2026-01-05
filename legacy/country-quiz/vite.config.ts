@@ -5,6 +5,9 @@ import hrcImportPlugin from 'vite-plugin-hrc-import'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  // NOTE: `vite-plugin-hrc-import` IS COMPATIBLE with vite@v7, but requires
+  // updating its `peerDependencies` to allow `vite@6` and `vite@7` to suppress
+  // `unmet peer` warnings.
   plugins: [react(), hrcImportPlugin()],
   base: '/dev-challenges/legacy/country-quiz',
   build: {

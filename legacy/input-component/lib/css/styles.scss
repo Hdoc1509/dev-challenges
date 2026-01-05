@@ -1,6 +1,6 @@
-@import './colors.scss';
+@use './colors.scss';
 
-@import './label.scss';
-@import './input.scss';
-@import './helper-text.scss';
-@import './icon.scss'
+@use './label.scss';
+@use './input.scss';
+@use './helper-text.scss';
+@use './icon.scss'
