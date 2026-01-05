@@ -1,5 +1,10 @@
 # dev-challenges
 
+## Workspace status
+
+[![Workspace status][workspace-ci]][workspace-ci-url]
+[![Deploy challenges][deploy-status]][deploy-url]
+
 Monorepo that hosts my [solutions](#challenges) for
 [DevChallenges](https://devchallenges.io/) and
 [Legacy DevChallenges](https://legacy.devchallenges.io/) _(currently down)_.
@@ -54,3 +59,8 @@ It contains the following packages:
 - [@hrc/spinner](https://hdoc1509.github.io/hrc/packages/spinner/)
 - [@hrc/toggle-theme](https://hdoc1509.github.io/hrc/packages/toggle-theme/)
 - [@hrc/type-utils](https://hdoc1509.github.io/hrc/packages/type-utils/)
+
+[deploy-status]: https://github.com/Hdoc1509/dev-challenges/actions/workflows/deploy.yml/badge.svg
+[deploy-url]: https://github.com/Hdoc1509/dev-challenges/actions/workflows/deploy.yml
+[workspace-ci]: https://github.com/Hdoc1509/dev-challenges/actions/workflows/ci-root.yml/badge.svg
+[workspace-ci-url]: https://github.com/Hdoc1509/dev-challenges/actions/workflows/ci-root.yml
