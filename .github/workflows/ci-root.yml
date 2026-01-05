@@ -3,7 +3,7 @@ name: CI Root
 on:
   push:
     branches:
-      - 'root/*'
+      - "root/*"
 
 jobs:
   changed-files:
@@ -41,7 +41,7 @@ jobs:
           pnpm install --frozen-lockfile
           pnpm run lint
 
-  typecheck:
+  build:
     needs: changed-files
     runs-on: ubuntu-22.04
     if: needs.changed-files.outputs.files != 'true'
@@ -54,4 +54,4 @@ jobs:
           cache: pnpm
       - run: |
           pnpm install --frozen-lockfile
-          pnpm run --recursive typecheck
+          pnpm run build

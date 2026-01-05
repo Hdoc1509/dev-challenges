@@ -33,6 +33,7 @@
     "react-dom": "catalog:",
     "react-paginate": "catalog:",
     "react-router-dom": "catalog:",
+    "vite": "catalog:",
     "zod": "catalog:",
     "zustand": "catalog:"
   },

@@ -1,3 +1,9 @@
+deploy=0
+
+if [[ $1 == "--deploy" ]]; then
+  deploy=1
+fi
+
 mkdir --parents dist/legacy
 
 build_cmd=(pnpm)
@@ -14,6 +20,14 @@ if ! "${build_cmd[@]}"; then
   echo "ERROR: failed while building. Aborting."
   exit 1
 fi
+
+echo "SUCCESS: Build completed!"
+
+if [[ $deploy -eq 0 ]]; then
+  exit 0
+fi
+
+echo "INFO: Preparing to deploy..."
 
 get_challenge_title() {
   local app_path="$1"
@@ -42,3 +56,5 @@ for dist in {legacy,vanilla}/*/dist; do
 
   echo
 done
+
+echo "SUCCESS: Built projects are ready to be deployed!"

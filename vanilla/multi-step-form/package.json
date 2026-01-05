@@ -15,7 +15,7 @@
     "@fontsource/inter": "catalog:"
   },
   "devDependencies": {
-    "vite": "catalog:",
-    "vite-plugin-html": "catalog:"
+    "vite": "catalog:vite7",
+    "vite-plugin-html-minifier": "workspace:*"
   }
 }

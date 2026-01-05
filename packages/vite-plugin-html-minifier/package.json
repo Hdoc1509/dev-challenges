@@ -8,6 +8,6 @@
     "html-minifier-next": "4.16.3"
   },
   "peerDependencies": {
-    "vite": "catalog:"
+    "vite": "catalog:vite7"
   }
 }

@@ -5,12 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "pnpm run mocks && vite",
-    "build": "pnpm run typecheck && vite build",
+    "build": "pnpm run mocks && tsc --project tsconfig.json && vite build",
     "preview": "pnpm run mocks && vite preview",
     "words": "bash ./scripts/words.bash",
     "defs": "bash ./scripts/definitions.bash",
     "mocks": "pnpm run words && pnpm run defs && echo",
-    "typecheck": "pnpm run mocks && tsc --project tsconfig.json",
     "test:unit": "vitest",
     "test:unit:ci": "vitest run",
     "test:e2e": "playwright test",
@@ -32,8 +31,8 @@
     "@types/node": "22.15.21",
     "ejs": "3.1.10",
     "jsdom": "26.1.0",
-    "vite": "catalog:",
-    "vitest": "3.1.4",
-    "vite-plugin-html-minifier": "workspace:"
+    "vite": "catalog:vite7",
+    "vite-plugin-html-minifier": "workspace:",
+    "vitest": "catalog:vite7"
   }
 }

@@ -4,14 +4,18 @@ import {
   buildInjectScripts,
   serverInjectScripts,
 } from "./plugin/inject-scripts";
-// import { createHtmlPlugin } from "vite-plugin-html";
+import { htmlMinifierPlugin } from "vite-plugin-html-minifier";
 
 const BASE_URL = "/dev-challenges/qr-code-generator";
 
 // https://vite.dev/config/
 export default defineConfig({
-  // plugins: [createHtmlPlugin({ minify: true })],
-  plugins: [serverInjectScripts(BASE_URL), buildInjectScripts(BASE_URL)],
+  plugins: [
+    // TODO: merge inject plugins into one plugin that returns an array of plugins
+    serverInjectScripts(BASE_URL),
+    buildInjectScripts(BASE_URL),
+    htmlMinifierPlugin(),
+  ],
   base: BASE_URL,
   build: {
     rollupOptions: {

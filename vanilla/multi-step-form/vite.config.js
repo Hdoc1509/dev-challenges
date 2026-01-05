@@ -1,10 +1,10 @@
 import { resolve } from "node:path";
 import { defineConfig } from "vite";
-import { createHtmlPlugin } from "vite-plugin-html";
+import { htmlMinifierPlugin } from "vite-plugin-html-minifier";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [createHtmlPlugin({ minify: true })],
+  plugins: [htmlMinifierPlugin()],
   base: "/dev-challenges/multi-step-form",
   resolve: {
     alias: {

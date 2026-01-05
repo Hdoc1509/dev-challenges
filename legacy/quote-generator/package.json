@@ -29,6 +29,7 @@
     "astro": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
+    "vite": "catalog:",
     "zod": "catalog:"
   },
   "devDependencies": {
