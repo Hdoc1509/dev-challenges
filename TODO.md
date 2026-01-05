@@ -24,8 +24,6 @@
 
 - update `tsconfig.*.json` files to match [create-vite@8.2.0][create-vite@8.2.0]
 - update `eslint` to `v9` and config files to match [create-vite@8.2.0][create-vite@8.2.0]
-- update `vite` to `v7`:
-  - update `@vitejs/plugin-react` to support `vite@v7`
 - migrate content-only apps to `astro`. pre-render content to static HTML.
 - update projects using `astro` to use `astro@v5`
   - `@astrojs/upgrade` requires an explicit version in `package.json` instead
