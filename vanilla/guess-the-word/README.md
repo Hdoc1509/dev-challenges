@@ -20,7 +20,7 @@
 
 <p align="center">
   <img
-    src="https://github.com/user-attachments/assets/914fc244-c36f-455a-8bab-332787159a9d"
+    src="https://github.com/user-attachments/assets/2681ac99-362d-4ef0-a342-596afa636231"
     alt="guess-the-word screenshot"
     style="aspect-ratio: 16 / 9"
   />
@@ -82,9 +82,12 @@ create a small game that tests your data management and DOM manipulation with Ja
   - [blink](https://animista.net/play/attention/blink): caret for letter inputs
 - [colorhexa](https://www.colorhexa.com/)
 - [Online Image Compressor](https://imagecompressor.com/) and
-  [Squoosh](https://squoosh.app/) for image optimization
+  [Squoosh](https://squoosh.app/) for image and svg optimization
 - [Words API](https://wordsapi.com/) for mocked words
   - Sample data taken from [Pricing](https://wordsapi.com/#pricing) section
+- [Boxy SVG](https://boxy-svg.com/app) to fix misspelled word in
+  `word-scramblle-logo.svg`
+- [svgomg](https://svgomg.net/) for optimization of svg assets
 
 ### Editor Tools
 
