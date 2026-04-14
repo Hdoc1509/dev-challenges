@@ -21,6 +21,8 @@
             <span class="player-card__current-time">00:00</span>
             <span class="player-card__duration">01:12</span>
           </span>
+          <!-- TODO: investigate if `durationchange` event fires on first load,
+               in order to remove initial `max` from here -->
           <input
             aria-label="Play time progress"
             id="progress-bar"
