@@ -19,7 +19,7 @@ export function renderSongData({ title, artist, url, cover }) {
 /** @param {number} timeSeconds */
 export function formatTime(timeSeconds) {
   const minutes = `${Math.floor(timeSeconds / 60)}`.padStart(2, "0");
-  const seconds = `${Math.round(timeSeconds % 60)}`.padStart(2, "0");
+  const seconds = `${Math.floor(timeSeconds % 60)}`.padStart(2, "0");
 
   return `${minutes}:${seconds}`;
 }
