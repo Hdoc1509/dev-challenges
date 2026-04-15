@@ -15,5 +15,5 @@ export function handleSongTimeUpdate() {
 
   previousSecond = currentSecond;
   $songCurrentTime.textContent = formatTime(currentTime);
-  $playProgress.value = currentTime.toString();
+  $playProgress.valueAsNumber = currentTime;
 }
