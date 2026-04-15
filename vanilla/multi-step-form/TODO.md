@@ -1,9 +1,5 @@
 # TODO
 
-- update `NAME_REGEX`:
-  - use `\s` instead of literal space
-  - allow accented characters: `[A-ZáéióúÁÉÍÓÚ]`
-
 - [ ] create a library for stepper slider
 
   - need a `.steps-container`
