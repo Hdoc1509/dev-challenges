@@ -15,9 +15,9 @@ export function StayCard({ stay }: { stay: Stay }) {
           <span className="stay-card__super-host">SUPER HOST</span>
         )}
         <span className="stay-card__type">
-          {type} {beds && `. ${beds} beds`}
+          {`${type}.`}{beds && ` ${beds} beds`}
         </span>
-        <span className="stay-card__rating">
+        <span className="stay-card__rating" aria-label={`${rating} stars`}>
           <Icon name="star" color="error" variant="round" />
           {rating}
         </span>
