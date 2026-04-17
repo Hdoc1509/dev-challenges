@@ -14,15 +14,15 @@ export const SearchResults = ({ results }: { results: Stay[] }) => {
           <span className="search-results__count">{total} stays</span>
         )}
       </header>
-      <div className="search-results__cards">
-        {isEmpty ? (
-          <p>No results</p>
-        ) : (
-          results.map((stay) => (
+      {isEmpty ? (
+        <p>No results</p>
+      ) : (
+        <ul className="search-results__cards">
+          {results.map((stay) => (
             <StayCard key={`${stay.city}-${stay.title}`} stay={stay} />
-          ))
-        )}
-      </div>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };

@@ -6,7 +6,7 @@ export function StayCard({ stay }: { stay: Stay }) {
   const { imageUrl, isSuperHost, type, rating, title, beds } = stay;
 
   return (
-    <div className="stay-card">
+    <li className="stay-card">
       <picture className="stay-card__image">
         <img src={imageUrl} alt={title} title={title} />
       </picture>
@@ -23,6 +23,6 @@ export function StayCard({ stay }: { stay: Stay }) {
         </span>
       </div>
       <p className="stay-card__description">{title}</p>
-    </div>
+    </li>
   );
 }
