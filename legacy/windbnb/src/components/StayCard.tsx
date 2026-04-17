@@ -7,12 +7,9 @@ export function StayCard({ stay }: { stay: Stay }) {
 
   return (
     <div className="stay-card">
-      <img
-        className="stay-card__image"
-        src={imageUrl}
-        alt={title}
-        title={title}
-      />
+      <picture className="stay-card__image">
+        <img src={imageUrl} alt={title} title={title} />
+      </picture>
       <div className="stay-card__features">
         {isSuperHost && (
           <span className="stay-card__super-host">SUPER HOST</span>
