@@ -41,7 +41,7 @@ export const JobCard = ({ job, isInJobPage }: Props) => {
         <Icon name="public" /> {location}
       </p>
       <p className="job-card__created">
-        <Icon name="access_time" /> {createdAt ?? "Unkown date"}
+        <Icon name="access_time" /> {createdAt ?? "Unknown date"}
       </p>
       {isInJobPage && <p className="job-card__description">{description}</p>}
     </div>
