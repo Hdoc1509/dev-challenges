@@ -55,7 +55,6 @@ catalog:
   react-paginate: 8.2.0
   react-router-dom: 6.23.1
   sass: 1.65.0
-  typescript: 5.3.2
   vite: 5.0.2
   vitest: 0.34.6
   vite-plugin-hrc-import: 1.1.0
@@ -66,6 +65,5 @@ catalogs:
   vite7:
     "@vitejs/plugin-react": 5.1.2
     sass: 1.97.1
-    typescript: 5.9.3
     vite: 7.3.0
     vitest: 4.0.16

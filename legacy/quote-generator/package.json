@@ -34,7 +34,6 @@
   },
   "devDependencies": {
     "@astrojs/check": "catalog:",
-    "sass": "catalog:",
-    "typescript": "catalog:"
+    "sass": "catalog:"
   }
 }

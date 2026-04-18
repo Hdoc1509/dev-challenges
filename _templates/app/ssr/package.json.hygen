@@ -37,7 +37,6 @@ to: ssr/<%= name %>/package.json
   },
   "devDependencies": {
     "@astrojs/check": "catalog:",
-    "sass": "catalog:",
-    "typescript": "catalog:"
+    "sass": "catalog:"
   }
 }

@@ -30,7 +30,6 @@ to: apps/<%= name %>/package.json
   "devDependencies": {
     "@vitejs/plugin-react": "catalog:vite7",
     "sass": "catalog:vite7",
-    "typescript": "catalog:vite7",
     "vite": "catalog:vite7"
   }
 }

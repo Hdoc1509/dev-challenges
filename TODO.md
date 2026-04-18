@@ -1,10 +1,5 @@
 # TODO
 
-## All apps
-
-- try to remove `typescript` from `devDependencies`. ensure all projects are
-  using the same version of `typescript`. See [Running scripts in workspaces](https://pnpm.io/9.x/cli/run#details)
-
 ## Vanilla
 
 - ensure all apps are type-checked before building
