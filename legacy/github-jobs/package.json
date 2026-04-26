@@ -11,8 +11,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/netlify": "catalog:",
-    "@astrojs/react": "catalog:",
+    "@astrojs/netlify": "catalog:astro6",
+    "@astrojs/react": "catalog:astro6",
     "@fontsource-variable/montserrat": "catalog:",
     "@fontsource/montserrat": "catalog:",
     "@fontsource/poppins": "catalog:",
@@ -27,20 +27,19 @@
     "@lib/geolocation": "workspace:*",
     "@lib/sass-utils": "workspace:*",
     "@material-design-icons/font": "catalog:",
-    "astro": "catalog:",
+    "astro": "catalog:astro6",
     "clsx": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
     "react-paginate": "catalog:",
     "react-router-dom": "catalog:",
-    "vite": "catalog:",
     "zod": "catalog:",
     "zustand": "catalog:"
   },
   "devDependencies": {
-    "@astrojs/check": "catalog:",
+    "@astrojs/check": "catalog:astro6",
     "@hrc/type-utils": "catalog:",
-    "sass": "catalog:",
+    "sass": "catalog:vite7",
     "vite-plugin-hrc-import": "catalog:"
   }
 }
