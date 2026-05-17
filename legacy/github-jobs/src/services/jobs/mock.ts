@@ -5,8 +5,6 @@ import jobsMock from "@/mocks/jobs.json";
 import type { Search } from "@/types";
 import type { JobsServiceResult } from "./client";
 
-// FIX: thumbnails are returning 404. update mocks
-
 const mockLocations = jobsMock.jobs_results.map(({ location }) => location);
 
 export const getMockedJobs = async (search: Search): JobsServiceResult => {

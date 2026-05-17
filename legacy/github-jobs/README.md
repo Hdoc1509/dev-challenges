@@ -60,8 +60,6 @@ or Vue. Don’t look at the existing solution. Fulfill user stories below:
 - [@material-design-icons/font](https://marella.me/material-design-icons/demo/font/)
 - [SerpApi Goggle Jobs API](https://serpapi.com/google-jobs-api)
 - [Weather API](https://www.weatherapi.com/)
-- [ipquery](https://ipquery.io/) instead of [Geolocation
-  API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation)
 
 ### Extra features
 
