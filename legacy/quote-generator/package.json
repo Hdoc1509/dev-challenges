@@ -11,8 +11,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/netlify": "catalog:",
-    "@astrojs/react": "catalog:",
+    "@astrojs/netlify": "catalog:astro6",
+    "@astrojs/react": "catalog:astro6",
     "@fontsource-variable/montserrat": "catalog:",
     "@fontsource-variable/raleway": "catalog:",
     "@fontsource/montserrat": "catalog:",
@@ -26,14 +26,13 @@
     "@lib/request": "workspace:*",
     "@lib/sass-utils": "workspace:*",
     "@material-design-icons/font": "catalog:",
-    "astro": "catalog:",
+    "astro": "catalog:astro6",
     "react": "catalog:",
     "react-dom": "catalog:",
-    "vite": "catalog:",
     "zod": "catalog:"
   },
   "devDependencies": {
-    "@astrojs/check": "catalog:",
-    "sass": "catalog:"
+    "@astrojs/check": "catalog:astro6",
+    "sass": "catalog:vite7"
   }
 }
