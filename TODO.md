@@ -1,10 +1,5 @@
 # TODO
 
-## Cleaning up workspace
-
-- remove devDependencies of workspace root from `pnpm-workspace.yaml`. declare
-  them in root `package.json` instead.
-
 ## Vanilla
 
 - ensure all apps are type-checked before building
