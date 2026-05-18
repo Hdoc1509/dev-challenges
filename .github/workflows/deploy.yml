@@ -17,10 +17,10 @@ jobs:
     outputs:
       files: ${{ steps.filter.outputs.only_changed }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6.0.1
         with:
           fetch-depth: 2
-      - uses: tj-actions/changed-files@v44
+      - uses: tj-actions/changed-files@v47.0.1
         id: filter
         with:
           files: |
@@ -38,13 +38,13 @@ jobs:
     if: needs.changed-files.outputs.files != 'true'
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6.0.1
 
       - name: Set up Pnpm
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v4.2.0
 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6.2.0
         with:
           node-version-file: .nvmrc
           cache: pnpm
@@ -56,7 +56,7 @@ jobs:
         run: pnpm run build --deploy
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4.0.0
         with:
           path: ./dist
 
@@ -69,4 +69,4 @@ jobs:
     steps:
       - name: Deploy to Github Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v4.0.5

@@ -11,10 +11,10 @@ jobs:
     outputs:
       files: ${{ steps.filter.outputs.only_changed }}
     steps:
-      - uses: actions/checkout@v4.2.2
+      - uses: actions/checkout@v6.0.1
         with:
           fetch-depth: 2
-      - uses: tj-actions/changed-files@v46.0.4
+      - uses: tj-actions/changed-files@v47.0.1
         id: filter
         with:
           files: |
@@ -31,9 +31,9 @@ jobs:
     runs-on: ubuntu-22.04
     if: needs.changed-files.outputs.files != 'true'
     steps:
-      - uses: actions/checkout@v4.2.2
-      - uses: pnpm/action-setup@v4.1.0
-      - uses: actions/setup-node@v4.3.0
+      - uses: actions/checkout@v6.0.1
+      - uses: pnpm/action-setup@v4.2.0
+      - uses: actions/setup-node@v6.2.0
         with:
           node-version-file: .nvmrc
           cache: pnpm
@@ -46,9 +46,9 @@ jobs:
     runs-on: ubuntu-22.04
     if: needs.changed-files.outputs.files != 'true'
     steps:
-      - uses: actions/checkout@v4.2.2
-      - uses: pnpm/action-setup@v4.1.0
-      - uses: actions/setup-node@v4.3.0
+      - uses: actions/checkout@v6.0.1
+      - uses: pnpm/action-setup@v4.2.0
+      - uses: actions/setup-node@v6.2.0
         with:
           node-version-file: .nvmrc
           cache: pnpm
