@@ -2,8 +2,8 @@
 
 ## Cleaning up workspace
 
-- remove unused packages from `pnpm-workspace.yaml`
-- move custom catalogs to default if applicable
+- remove devDependencies of workspace root from `pnpm-workspace.yaml`. declare
+  them in root `package.json` instead.
 
 ## Vanilla
 

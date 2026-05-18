@@ -13,7 +13,7 @@
     "@fontsource/be-vietnam-pro": "catalog:"
   },
   "devDependencies": {
-    "vite": "catalog:vite7",
+    "vite": "catalog:",
     "vite-plugin-html-minifier": "workspace:*"
   }
 }

@@ -6,9 +6,9 @@ packages:
   - packages/*
 
 catalog:
-  "@astrojs/check": 0.7.0
-  "@astrojs/netlify": 5.2.1
-  "@astrojs/react": 3.3.4
+  "@astrojs/check": 0.9.8
+  "@astrojs/netlify": 7.0.7
+  "@astrojs/react": 5.0.3
   "@fontsource-variable/inter": 5.1.0
   "@fontsource-variable/montserrat": 5.0.17
   "@fontsource-variable/mulish": 5.0.18
@@ -37,8 +37,8 @@ catalog:
   "@types/react-dom": 18.2.25
   "@typescript-eslint/eslint-plugin": 7.12.0
   "@typescript-eslint/parser": 7.12.0
-  "@vitejs/plugin-react": 4.2.0
-  astro: 4.8.6
+  "@vitejs/plugin-react": 5.1.2
+  astro: 6.1.8
   clsx: 2.0.0
   eslint: 8.57.0
   eslint-plugin-astro: 1.2.0
@@ -54,21 +54,9 @@ catalog:
   react-loading-skeleton: 3.4.0
   react-paginate: 8.2.0
   react-router-dom: 6.23.1
-  sass: 1.65.0
-  vite: 5.0.2
-  vitest: 0.34.6
+  sass: 1.97.1
+  vite: 7.3.0
+  vitest: 4.0.16
   vite-plugin-hrc-import: 1.1.0
   zod: 3.22.4
   zustand: 4.4.3
-
-catalogs:
-  astro6:
-    "@astrojs/check": 0.9.8
-    "@astrojs/netlify": 7.0.7
-    "@astrojs/react": 5.0.3
-    astro: 6.1.8
-  vite7:
-    "@vitejs/plugin-react": 5.1.2
-    sass: 1.97.1
-    vite: 7.3.0
-    vitest: 4.0.16
