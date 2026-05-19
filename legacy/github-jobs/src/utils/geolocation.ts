@@ -3,8 +3,6 @@ import { searchLocation } from "@/services/geolocation/client";
 import { isDev } from "@/config";
 import type { PromiseWithError } from "@lib/fetcher";
 
-// TODO: avoid calling services on dev mode
-
 export const getLocationOption = async (
   location?: string,
 ): PromiseWithError<string> => {
@@ -12,13 +10,9 @@ export const getLocationOption = async (
 
   if (location === "" || location == null) {
     const [coordsError, coords] = await getCurrentCoords();
-
     if (coordsError) return [coordsError];
 
-    if (coords.zipcode !== "") return [null, coords.zipcode];
-
     const [locationError, coordsLocation] = await searchLocation({ coords });
-
     if (locationError) return [locationError];
 
     return [null, coordsLocation];
@@ -31,7 +25,6 @@ export const getLocationOption = async (
 
   if (!isNaN(zipCode)) {
     const [locationError, zipLocation] = await searchLocation({ zipCode });
-
     if (locationError) return [locationError];
 
     return [null, zipLocation];
