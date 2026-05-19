@@ -10,4 +10,3 @@ const LocationSchema = z.object({
 export const IPQueryResponseSchema = z.object({
   location: LocationSchema,
 });
-export type IpQueryResponse = z.infer<typeof IPQueryResponseSchema>;
