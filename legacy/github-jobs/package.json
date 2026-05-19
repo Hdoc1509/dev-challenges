@@ -24,7 +24,6 @@
     "@hrc/toggle-theme": "catalog:",
     "@lib/components": "workspace:*",
     "@lib/fetcher": "workspace:*",
-    "@lib/geolocation": "workspace:*",
     "@lib/sass-utils": "workspace:*",
     "@material-design-icons/font": "catalog:",
     "astro": "catalog:",

@@ -1,5 +1,4 @@
 import type { Simplify } from "@hrc/type-utils";
-import type { LocationCoords } from "@lib/geolocation";
 
 export type ApplyOption = {
   title: string;
@@ -26,6 +25,7 @@ export type Search = {
   nextPageToken?: string;
 };
 
+export type LocationCoords = { latitude: number; longitude: number };
 export type LocationOptions = { zipCode: number } | { coords: LocationCoords };
 
 export type SetOptional<BaseType, Keys extends keyof BaseType> = Simplify<
