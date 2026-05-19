@@ -1,7 +1,9 @@
-import { getCurrentCoords } from "@lib/geolocation";
+import { getCurrentCoords } from "@/services/ipquery";
 import { searchLocation } from "@/services/geolocation/client";
 import { isDev } from "@/config";
 import type { PromiseWithError } from "@lib/fetcher";
+
+// TODO: avoid calling services on dev mode
 
 export const getLocationOption = async (
   location?: string,
@@ -9,9 +11,11 @@ export const getLocationOption = async (
   if (isDev) return [null, "nowhereland"];
 
   if (location === "" || location == null) {
-    const [coordsError, coords] = await getCurrentCoords({ timeout: 8000 });
+    const [coordsError, coords] = await getCurrentCoords();
 
     if (coordsError) return [coordsError];
+
+    if (coords.zipcode !== "") return [null, coords.zipcode];
 
     const [locationError, coordsLocation] = await searchLocation({ coords });
 
