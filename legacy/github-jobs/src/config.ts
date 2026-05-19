@@ -18,5 +18,15 @@ export const WEATHERAPI = {
   },
 };
 
+export const IPQUERY_API = {
+  URL: "https://api.ipquery.io",
+  ERROR_CODES: {
+    STATUS: {
+      EXCEEDED_RATE_LIMIT: 429,
+      INTERNAL: 500,
+    },
+  },
+};
+
 // https://docs.astro.build/en/guides/environment-variables/#default-environment-variables
 export const isDev = DEV;

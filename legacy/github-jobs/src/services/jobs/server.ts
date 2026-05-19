@@ -15,6 +15,8 @@ import type { Search } from "@/types";
 
 const Schema = JobsResponseSchema.or(JobsErrorResponseSchema);
 
+// FIX: there is a 500 error in the response
+
 export const getJobs = async (
   search: Search,
 ): PromiseWithError<JobsResponse> => {
