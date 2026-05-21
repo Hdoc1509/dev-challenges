@@ -17,6 +17,8 @@ export const searchLocation = async (
 ): PromiseWithError<LocationResponse> => {
   const params = new URLSearchParams({
     q: pickLocationOption(options),
+    // NOTE: there is no `limit` param in the docs nor playground
+    // https://www.weatherapi.com/api-explorer.aspx#search
     limit: SEARCH_LOCATION_PARAMS.LOCATIONS_LIMIT,
     key: WEATHERAPI.KEY,
   } satisfies LocationParams["server"]);
