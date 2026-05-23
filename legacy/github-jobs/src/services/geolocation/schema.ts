@@ -1,5 +1,7 @@
 import * as z from "zod";
 
+// TODO: rename from Location... to SearchLocation...
+// TODO: pick only the needed fields: name, regionand country
 export const LocationResponseSchema = z.array(
   z.object({
     id: z.number(),

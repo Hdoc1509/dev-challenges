@@ -1,6 +1,6 @@
 import { fetcher, type PromiseWithError } from "@lib/fetcher";
 import { ApiErrorSchema } from "@/schemas/api-error";
-import { LocationResponseSchema } from "./schema";
+import { LocationResponseSchema, type LocationResponse } from "./schema";
 import { GeolocationServiceError } from "./service-error";
 import { pickLocationOption } from "@/utils/location-option";
 import type { LocationOptions } from "@/types";
@@ -10,7 +10,7 @@ const ApiResponseSchema = LocationResponseSchema.or(ApiErrorSchema);
 
 export const searchLocation = async (
   options: LocationOptions,
-): PromiseWithError<string> => {
+): PromiseWithError<LocationResponse[number]> => {
   const params = new URLSearchParams({
     q: pickLocationOption(options),
   } satisfies LocationParams["client"]);
@@ -25,5 +25,5 @@ export const searchLocation = async (
 
   if ("error" in data) return [new Error(data.error)];
 
-  return [null, data[0].name];
+  return [null, data[0]];
 };

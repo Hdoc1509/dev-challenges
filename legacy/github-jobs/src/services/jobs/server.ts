@@ -17,6 +17,7 @@ const Schema = JobsResponseSchema.or(JobsErrorResponseSchema);
 
 // FIX: there is a 500 error in the response
 
+// docs: https://serpapi.com/google-jobs-api
 export const getJobs = async (
   search: Search,
 ): PromiseWithError<JobsResponse> => {

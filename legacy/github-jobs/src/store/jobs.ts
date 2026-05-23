@@ -7,6 +7,7 @@ import { STATUS } from "@lib/fetcher";
 import { isDev } from "@/config";
 import type { StoreFetchingState, State, Action } from "./jobs.types";
 
+// PERF: use dynamic import to prevent mock service to be loaded in production
 const getJobsService = isDev ? getMockedJobs : getJobs;
 
 export const useJobsStore = create<State & Action>()((set, get) => ({
