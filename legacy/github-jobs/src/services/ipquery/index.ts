@@ -4,17 +4,18 @@ import {
   ServiceError,
   type PromiseWithError,
 } from "@lib/fetcher";
-import { IPQueryResponseSchema } from "./schema";
+import { IPQueryResponseSchema, type IPQueryResponse } from "./schema";
 import { IPQUERY_API } from "@/config";
-import type { LocationCoords } from "@/types";
 
 const ERROR_MESSAGES = {
   RATE_LIMIT_EXCEEDED: "Rate limit exceeded. Please try again in a few minutes",
   REMOTE_SERVER_ERROR: "Remote server error. Please try again later",
 };
-const IPQueryServiceError = new ServiceError("Geolocation[client]");
+const IPQueryServiceError = new ServiceError("CurrentLocation");
 
-export const getCurrentCoords = async (): PromiseWithError<LocationCoords> => {
+type ServiceResult = PromiseWithError<IPQueryResponse["location"]>;
+
+export const getCurrentLocation = async (): ServiceResult => {
   const [error, data] = await fetcher(`${IPQUERY_API.URL}?format=json`, {
     schema: IPQueryResponseSchema,
     serviceError: IPQueryServiceError,
