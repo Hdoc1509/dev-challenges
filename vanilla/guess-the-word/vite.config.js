@@ -1,9 +1,10 @@
+
 import { resolve } from "node:path";
 import { defineConfig } from "vite";
 import { htmlMinifierPlugin } from "vite-plugin-html-minifier";
 import { ejsPlugin } from "./vite-plugin/ejs.js";
 import { ejsReloadPlugin } from "./vite-plugin/ejs-reload.js";
-import { BUILD_CONFIG } from "./vite-config/build.js";
+// import { BUILD_CONFIG } from "./vite-config/build.js";
 import { EJS_CONFIG } from "./vite-config/ejs.js";
 
 // https://nodejs.org/api/esm.html#importmetadirname
@@ -28,13 +29,13 @@ export default defineConfig({
     ejsReloadPlugin({ dirname: __dirname }),
   ],
   base: "/dev-challenges/guess-the-word",
-  build: {
+  /* build: {
     rollupOptions: {
       output: {
         manualChunks: BUILD_CONFIG.manualChunks,
       },
     },
-  },
+  }, */
   resolve: {
     alias: {
       "@": resolve(__dirname, "src"),
